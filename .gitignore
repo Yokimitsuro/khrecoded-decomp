@@ -1,0 +1,39 @@
+# ROM and anything derived from it (copyrighted, never commit)
+*.nds
+/dsd_extract/
+/asm/
+
+# Build output (regenerated locally)
+/build/
+/build.ninja
+/.ninja_deps
+/.ninja_log
+/objdiff.json
+*.o
+*.elf
+*.lcf
+*.bin
+
+# Toolchain: each contributor provides their own (see CONTRIBUTING.md)
+/tools/mwccarm/
+/tools/dsd.exe
+/tools/dsd
+*.exe
+*.dll
+
+# Misc
+__pycache__/
+*.pyc
+*.png
+*.jpg
+*.zip
+.DS_Store
+
+# Ghidra projects (ROM-derived)
+*.gpr
+*.rep/
+.ghidra/
+
+# Local editor configuration and scratch space
+/.vscode/
+/scratch/

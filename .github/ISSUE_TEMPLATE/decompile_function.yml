@@ -1,0 +1,33 @@
+name: Decompile function
+description: Claim or submit work for a function or module
+title: "[decomp] func_XXXXXXXX"
+labels: ["decompilation"]
+body:
+  - type: input
+    id: function
+    attributes:
+      label: Function or module
+      description: Function name, address or module
+      placeholder: func_ov001_02063a24
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Current status
+      options:
+        - Not started
+        - Researching
+        - Non-matching C
+        - Matching C
+        - ASM stub only
+        - Name identification
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Relevant callers, callees, structs, globals, or the matching khdays-decomp function

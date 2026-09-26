@@ -1,0 +1,31 @@
+name: report
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Generate progress audit
+        run: python tools/audit_progress.py
+      - name: Generate progress report
+        run: python tools/gen_report.py
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: BK9P_report
+          path: build/report.json
+      - name: Upload progress audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: BK9P_progress_audit
+          path: |
+            build/progress_audit.json
+            build/progress_audit.md

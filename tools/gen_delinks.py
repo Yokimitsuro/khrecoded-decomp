@@ -1,0 +1,256 @@
+#!/usr/bin/env python3
+"""Regenerate a module's delinks.txt FILE entries from the source trees.
+
+    python tools/gen_delinks.py config/arm9/overlays/ov000
+
+For every function in symbols.txt that has a source file named after it under
+any `auto/`, `calls/` or `asm_stubs/{auto,calls}/` directory of src/ or libs/,
+emit a FILE entry with the function's exact .text range, marked `complete` so
+`dsd lcf` links the compiled object instead of the delinked original. Every
+other function stays in a `_dsd_gap@<module>_<n>.o` object holding the
+original bytes.
+
+Initialized-data ranges proved by the data verifiers (receipts under
+build/data_receipts/) or already claimed in the committed delinks.txt are kept.
+
+The module header (section table) above the first blank line is preserved.
+"""
+import hashlib
+import json
+import os
+import re
+import sys
+import time
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from project import BUILD_DIR, CONFIG_DIR, ROOT, module_name  # noqa: E402
+
+SUBDIRS = ["auto", "calls", "asm_stubs/auto", "asm_stubs/calls"]
+
+
+def discover_src_roots():
+    """Kept in sync with tools/audit_progress.py."""
+    out = [ROOT / "src" / s for s in SUBDIRS]
+    ov_root = ROOT / "src" / "overlays"
+    if ov_root.exists():
+        for ov in sorted(ov_root.iterdir()):
+            if ov.is_dir():
+                out.extend(ov / s for s in SUBDIRS)
+    libs_root = ROOT / "libs"
+    if libs_root.exists():
+        for top in sorted(libs_root.iterdir()):
+            if not top.is_dir():
+                continue
+            for mod in sorted(top.iterdir()):
+                if mod.is_dir():
+                    out.extend(mod / s for s in SUBDIRS)
+    return out
+
+
+SYM_RE = re.compile(
+    r"(\S+)\s+kind:function\((arm|thumb),[^)]*size=0x([0-9a-fA-F]+)[^)]*\)"
+    r"\s+addr:0x([0-9a-fA-F]+)"
+)
+DATA_LINE_RE = re.compile(r"^\s+\.(rodata|data|ctor|bss)\s+start:0x([0-9a-f]+)\s+end:0x([0-9a-f]+)")
+
+
+def load_known_mismatches():
+    """Sources whose current C does not reproduce the original bytes.
+
+    Keeping them out of delinks.txt lets dsd fill the gap with the original
+    bytes. Regenerate with `python tools/refresh_mismatches.py`; set
+    DECOMP_NO_EXCLUDE=1 to include everything.
+    """
+    if os.environ.get("DECOMP_NO_EXCLUDE") == "1":
+        return set()
+    for p in (BUILD_DIR / "known_mismatches.txt", CONFIG_DIR / "known_mismatches.txt"):
+        if p.exists():
+            return {ln.strip() for ln in p.read_text().splitlines() if ln.strip()}
+    return set()
+
+
+def load_symbols(symbols_path):
+    """[(addr, size, name, mode)] sorted by address."""
+    out = []
+    with symbols_path.open(encoding="utf-8") as f:
+        for line in f:
+            m = SYM_RE.match(line)
+            if m:
+                out.append((int(m.group(4), 16), int(m.group(3), 16), m.group(1), m.group(2)))
+    out.sort()
+    return out
+
+
+def index_sources():
+    """function name -> source path (posix, relative to ROOT)."""
+    index = {}
+    for root in discover_src_roots():
+        if not root.exists():
+            continue
+        for pattern in ("*.c", "*.cpp", "*.s"):
+            for p in sorted(root.glob(pattern)):
+                index[p.stem] = p.relative_to(ROOT).as_posix()
+    return index
+
+
+def read_module_header(delinks_path):
+    header = []
+    with delinks_path.open(encoding="utf-8") as f:
+        for line in f:
+            if line.strip() == "":
+                break
+            header.append(line.rstrip("\n"))
+    return header
+
+
+def gen_files_block(symbols, src_by_name, known_mismatch):
+    blocks = []
+    file_modes = {}
+    matched = gap = 0
+    for addr, size, name, mode in symbols:
+        src = src_by_name.get(name)
+        if src is None or src in known_mismatch:
+            gap += 1
+            continue
+        blocks.append(
+            f"{src}:\n"
+            f"    complete\n"
+            f"    .text       start:0x{addr:08x} end:0x{addr + size:08x}\n"
+        )
+        file_modes[src] = mode
+        matched += 1
+    return blocks, matched, gap, file_modes
+
+
+def committed_data_claims(delinks_txt):
+    """Data section lines already present in the committed delinks.txt, per source.
+
+    Receipts live under build/ (not tracked), so a fresh clone has none; the
+    committed claims are kept as long as their source file exists.
+    """
+    claims = {}
+    if not Path(delinks_txt).is_file():
+        return claims
+    current = None
+    for line in Path(delinks_txt).read_text(encoding="utf-8").splitlines():
+        head = re.match(r"^(\S+\.(?:c|cpp|s)):\s*$", line)
+        if head:
+            current = head.group(1)
+            continue
+        m = DATA_LINE_RE.match(line)
+        if m and current and (ROOT / current).is_file():
+            claims.setdefault(current, []).append((m.group(1), int(m.group(2), 16), int(m.group(3), 16)))
+    return claims
+
+
+def gen_data_block(unit, committed_delinks):
+    """FILE entries for initialized DATA a verifier has proved (or already claimed)."""
+    receipts_dir = BUILD_DIR / "data_receipts"
+    by_source = {}
+    receipted = set()
+    if receipts_dir.is_dir():
+        for path in sorted(receipts_dir.glob("*.json")):
+            receipt = json.loads(path.read_text(encoding="utf-8"))
+            if receipt.get("module") != unit or receipt.get("start") is None:
+                continue
+            source = ROOT / receipt.get("source", "")
+            if not source.is_file():
+                continue
+            receipted.add(receipt["source"])
+            if hashlib.sha256(source.read_bytes()).hexdigest() != receipt.get("source_sha256"):
+                continue
+            by_source.setdefault(receipt["source"], []).append(
+                (receipt["section"], receipt["start"], receipt["end"]))
+    fresh = [(sec, s, e) for spans in by_source.values() for sec, s, e in spans]
+    for source, spans in committed_data_claims(committed_delinks).items():
+        if source in receipted or source in by_source:
+            continue
+        kept = [(sec, s, e) for sec, s, e in spans
+                if not any(sec == fsec and s < fe and fs < e for fsec, fs, fe in fresh)]
+        if kept:
+            by_source[source] = kept
+    blocks, modes, count = [], {}, 0
+    for source in sorted(by_source):
+        lines = [f"{source}:", "    complete"]
+        for section in sorted({item[0] for item in by_source[source]}):
+            spans = sorted((s, e) for sec, s, e in by_source[source] if sec == section)
+            merged = []
+            for start, end in spans:
+                if merged and start == merged[-1][1]:
+                    merged[-1][1] = end
+                else:
+                    merged.append([start, end])
+            for start, end in merged:
+                lines.append(f"    .{section:<10} start:0x{start:08x} end:0x{end:08x}")
+                count += 1
+        blocks.append("\n".join(lines) + "\n")
+        modes[source] = "arm"
+    return blocks, modes, count
+
+
+def merge_file_blocks(blocks):
+    """Combine code and data ownership of one translation unit into one FILE entry."""
+    order, sections = [], {}
+    for block in blocks:
+        lines = [line for line in block.rstrip().splitlines() if line.strip()]
+        if len(lines) < 3 or not lines[0].endswith(":") or lines[1].strip() != "complete":
+            raise ValueError("unrecognized FILE block: %r" % block)
+        source = lines[0][:-1]
+        if source not in sections:
+            order.append(source)
+            sections[source] = []
+        for line in lines[2:]:
+            if line not in sections[source]:
+                sections[source].append(line)
+    return ["\n".join([source + ":", "    complete"] + sections[source]) + "\n" for source in order]
+
+
+def write_text_retry(path, text, tries=8):
+    """Write only when the content changes (the file is a build input), retrying
+    transient OSErrors some Windows setups raise on file creation."""
+    try:
+        if path.exists() and path.read_text(encoding="utf-8") == text:
+            return
+    except OSError:
+        pass
+    for i in range(tries):
+        try:
+            path.write_text(text, encoding="utf-8", newline="\n")
+            return
+        except OSError:
+            if i == tries - 1:
+                raise
+            time.sleep(0.05 * (i + 1))
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("usage: gen_delinks.py <module_dir>   e.g. config/arm9/overlays/ov000", file=sys.stderr)
+        sys.exit(2)
+
+    module_dir = Path(sys.argv[1]).resolve()
+    delinks_txt = module_dir / "delinks.txt"
+    unit = module_name(module_dir)
+
+    header = read_module_header(delinks_txt)
+    symbols = load_symbols(module_dir / "symbols.txt")
+    blocks, matched, gap, file_modes = gen_files_block(symbols, index_sources(), load_known_mismatches())
+    data_blocks, data_modes, data_ranges = gen_data_block(unit, delinks_txt)
+    file_modes.update(data_modes)
+
+    out = ["\n".join(header), ""]
+    out.extend(merge_file_blocks(blocks + data_blocks))
+    write_text_retry(delinks_txt, "\n".join(out).rstrip() + "\n")
+
+    # Each module writes its own mode fragment; configure.py merges them.
+    frag = BUILD_DIR / "file_modes.d" / (unit + ".json")
+    frag.parent.mkdir(parents=True, exist_ok=True)
+    write_text_retry(frag, json.dumps(file_modes, indent=2, sort_keys=True))
+
+    print(f"{delinks_txt.relative_to(ROOT).as_posix()}: {matched} matched, {gap} gap ({len(symbols)} total)"
+          + (f", {data_ranges} data range(s)" if data_ranges else ""))
+
+
+if __name__ == "__main__":
+    main()
