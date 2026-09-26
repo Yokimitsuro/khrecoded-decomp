@@ -52,6 +52,10 @@ src/overlays/ov015/calls/func_ov015_02072854.c:
     complete
     .text       start:0x02072854 end:0x02072860
 
+libs/nns/snd/calls/func_ov015_02072cec.c:
+    complete
+    .text       start:0x02072cec end:0x02072d00
+
 src/overlays/ov015/auto/func_ov015_02072f98.c:
     complete
     .text       start:0x02072f98 end:0x02072f9c

@@ -1,4 +1,4 @@
-extern int func_0200494c(void);
+extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern int OS_DisableInterrupts_IrqAndFiq(void);
 extern void OS_RestoreInterrupts_IrqAndFiq(int state);
@@ -13,7 +13,7 @@ int OSi_DoTryLockByWord(unsigned short id, char *lock, void (*onLock)(void), int
     if (fiq != 0) {
         enabled = OS_DisableInterrupts_IrqAndFiq();
     } else {
-        enabled = func_0200494c();
+        enabled = OS_DisableInterrupts();
     }
     prev = MI_SwapWord(id, lock);
     if (prev == 0) {

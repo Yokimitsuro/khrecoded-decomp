@@ -1,6 +1,6 @@
 extern void func_020028ac(void *thread, void (*func)(void *), void *arg, void *stack, unsigned stackSize, unsigned prio);
 extern void OS_WakeupThreadDirect(void *thread);
-extern int func_0200494c(void);
+extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern void func_020127fc(void *p);
 extern void func_02012808(void *arg);
@@ -10,7 +10,7 @@ extern char data_0205a48c;
 extern char data_0205a8b0;
 
 void func_02012798(char *p) {
-    int state = func_0200494c();
+    int state = OS_DisableInterrupts();
     if (data_0205a488 == 0) {
         data_0205a488 = p;
         func_020127fc(p + 0xc4);

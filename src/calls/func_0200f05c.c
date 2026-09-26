@@ -1,4 +1,4 @@
-extern int func_0200494c(void);
+extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 
 typedef struct SNDCommand {
@@ -25,7 +25,7 @@ void func_0200f05c(SNDCommand *command) {
     SNDCommand *tail;
     int state;
 
-    state = func_0200494c();
+    state = OS_DisableInterrupts();
     tail = data_02057c50.reservedTail;
 
     if (tail == 0) {

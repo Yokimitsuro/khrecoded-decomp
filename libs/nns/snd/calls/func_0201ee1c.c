@@ -21,8 +21,6 @@ typedef volatile unsigned char vu8;
 
 
 
-extern OSIntrMode OS_DisableInterrupts(void);
-extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
 typedef struct CPContext {
     u64 div_numer;
     u64 div_denom;
@@ -344,25 +342,15 @@ typedef struct NNSSndArc {
     struct NNSSndArcInfo * info;
     s32 loadBlockSize;
 } NNSSndArc;
-NNSSndArc * SND_SetActiveSlotSwap(NNSSndArc * arc);
-void * func_0201ee3c(u32 fileId);
-void func_0201ee64(u32 fileId, void * address);
 
-/* func_0201f9e0 -- NitroSystem sndarc_loader.c: DisposeCallback. */
-void func_0201f9e0 (void * mem, NNSSndArc * arc, u32 fileId)
+/* shared-bss */
+NNSSndArc * data_0205e2e4 = 0;   /* sCurrent */
+
+/* func_0201ee1c -- NitroSystem sndarc.c: NNS_SndArcGetFileID. */
+FSFileID func_0201ee1c (void)
 {
-    NNSSndArc * oldArc;
-    OSIntrMode old;
+    NNSSndArc * arc = data_0205e2e4;
 
-    if (arc == NULL) return;
 
-    old = OS_DisableInterrupts();
-    oldArc = SND_SetActiveSlotSwap(arc);
-
-    if (mem == func_0201ee3c(fileId)) {
-        func_0201ee64(fileId, NULL);
-    }
-
-    (void)SND_SetActiveSlotSwap(oldArc);
-    (void)OS_RestoreInterrupts(old);
+    return arc->fileId;
 }

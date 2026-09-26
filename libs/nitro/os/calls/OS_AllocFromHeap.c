@@ -56,7 +56,7 @@ typedef struct {
 
 extern void *data_02056dcc[OS_ARENA_MAX];   /* OSiHeapInfo */
 #define OSiHeapInfo data_02056dcc
-extern OSIntrMode func_0200494c(void);
+extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
 extern Cell *DLAddFront(Cell *list, Cell *cell);
 extern Cell *DLExtract(Cell *list, Cell *cell);
@@ -69,7 +69,7 @@ void * OS_AllocFromHeap (OSArenaId id, OSHeapHandle heap, u32 size)
     Cell * cell;
     Cell * newCell;
     long leftoverSize;
-    OSIntrMode enabled = func_0200494c();
+    OSIntrMode enabled = OS_DisableInterrupts();
 
 
     heapInfo = OSiHeapInfo[id];

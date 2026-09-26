@@ -1,10 +1,10 @@
-extern int func_0200494c(void);
+extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 
 extern char *data_020597fc;
 
 unsigned short func_020113cc(void) {
-    int enabled = func_0200494c();
+    int enabled = OS_DisableInterrupts();
     char *session = *(char **)((char *)&data_020597fc + 4);
     int value;
     if (session != 0) {

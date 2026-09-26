@@ -1,4 +1,4 @@
-extern int func_0200494c(void);
+extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern char *data_0205fdc0;
 
@@ -19,7 +19,7 @@ void FS_EndOverlay(char *overlay) {
         end = start + (*(int *)(overlay + 8) + *(int *)(overlay + 0xc));
         collected = 0;
         last = collected;
-        enabled = func_0200494c();
+        enabled = OS_DisableInterrupts();
         prev = collected;
         listHead = *(char **)&data_0205fdc0;
         node = listHead;

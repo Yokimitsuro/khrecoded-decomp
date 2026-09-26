@@ -2,7 +2,7 @@ typedef int BOOL;
 typedef int OSIntrMode;
 typedef unsigned int u32;
 
-extern OSIntrMode func_0200494c(void);
+extern OSIntrMode OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(OSIntrMode state);
 extern void func_02002abc(void *queue);
 
@@ -16,7 +16,7 @@ extern u32 data_027e00a0;
 
 void OS_WaitIrq(BOOL clear, u32 irqFlags)
 {
-    OSIntrMode last = func_0200494c();
+    OSIntrMode last = OS_DisableInterrupts();
 
     if (clear) {
         OSi_IrqCheckFlags &= ~irqFlags;

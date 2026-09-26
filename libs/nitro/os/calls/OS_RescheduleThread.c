@@ -1,6 +1,6 @@
 typedef int OSIntrMode;
 
-extern OSIntrMode func_0200494c(void);
+extern OSIntrMode OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(OSIntrMode state);
 extern void OSi_RescheduleThread(void);
 
@@ -8,7 +8,7 @@ extern void OSi_RescheduleThread(void);
    scheduler's own work done under a critical section. */
 void OS_RescheduleThread(void)
 {
-    OSIntrMode nLast = func_0200494c();
+    OSIntrMode nLast = OS_DisableInterrupts();
 
     OSi_RescheduleThread();
     OS_RestoreInterrupts(nLast);

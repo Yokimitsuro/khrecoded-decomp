@@ -1,4 +1,4 @@
-extern int func_0200494c();
+extern int OS_DisableInterrupts();
 extern void OS_RestoreInterrupts(int mask);
 extern int *data_02057c50[];
 
@@ -6,7 +6,7 @@ int *func_0200f45c(void) {
     int mask;
     int *h;
     int *n;
-    mask = func_0200494c();
+    mask = OS_DisableInterrupts();
     h = data_02057c50[0];
     if (h == 0) {
         OS_RestoreInterrupts(mask);

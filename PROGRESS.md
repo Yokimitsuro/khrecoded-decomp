@@ -8,7 +8,7 @@ an identified name (NitroSDK, NNS, MSL, ...) but no source yet.
 
 | Module | C matched | ASM stubs | Named | Not started | Total | C % | C bytes % |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| PART main | 673 | 63 | 48 | 1788 | 2572 | 26.2% | 10.6% |
+| PART main | 686 | 63 | 51 | 1772 | 2572 | 26.7% | 10.9% |
 | PART itcm | 23 | 23 | 3 | 78 | 127 | 18.1% | 4.5% |
 | PART ov000 | 9 | 0 | 0 | 69 | 78 | 11.5% | 1.7% |
 | PART ov001 | 187 | 0 | 0 | 1908 | 2095 | 8.9% | 1.1% |
@@ -25,7 +25,7 @@ an identified name (NitroSDK, NNS, MSL, ...) but no source yet.
 | DONE ov012 | 1 | 0 | 0 | 0 | 1 | 100.0% | 100.0% |
 | PART ov013 | 14 | 0 | 0 | 96 | 110 | 12.7% | 0.2% |
 | PART ov014 | 4 | 0 | 0 | 28 | 32 | 12.5% | 0.1% |
-| PART ov015 | 41 | 0 | 0 | 215 | 256 | 16.0% | 1.4% |
+| PART ov015 | 42 | 0 | 0 | 214 | 256 | 16.4% | 1.4% |
 | PART ov016 | 4 | 0 | 0 | 122 | 126 | 3.2% | 0.1% |
 | PART ov017 | 14 | 0 | 0 | 135 | 149 | 9.4% | 0.5% |
 | PART ov018 | 2 | 0 | 0 | 35 | 37 | 5.4% | 0.1% |
@@ -115,7 +115,7 @@ an identified name (NitroSDK, NNS, MSL, ...) but no source yet.
 | DONE ov102 | 3 | 0 | 0 | 0 | 3 | 100.0% | 100.0% |
 | PART ov103 | 2 | 0 | 0 | 37 | 39 | 5.1% | 0.2% |
 | PART ov104 | 6 | 0 | 5 | 29 | 40 | 15.0% | 2.1% |
-| **TOTAL** | **1359** | **87** | **56** | **8896** | **10398** | **13.1%** | **3.04%** |
+| **TOTAL** | **1373** | **87** | **59** | **8879** | **10398** | **13.2%** | **3.08%** |
 
 ## Byte progress
 
@@ -124,4 +124,4 @@ the matched set is dominated by small wrappers. Bytes count real C only.
 
 | C matched bytes | Total code bytes | % |
 |---:|---:|---:|
-| **50,184** | **1,653,248** | **3.04%** |
+| **50,940** | **1,653,248** | **3.08%** |

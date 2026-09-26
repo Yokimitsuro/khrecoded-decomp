@@ -1,4 +1,4 @@
-extern int func_0200494c(void);
+extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern void *DLExtract(void *list, void *node);
 extern void *DLInsert(void *list, void *node);
@@ -8,7 +8,7 @@ extern char *data_02056dcc[];
 void OS_FreeToHeap(int arena, int heap, void *ptr) {
     char *info;
     char *cell;
-    int enabled = func_0200494c();
+    int enabled = OS_DisableInterrupts();
     info = data_02056dcc[arena];
     if (heap < 0) {
         heap = *(int *)info;

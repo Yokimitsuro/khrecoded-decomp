@@ -1,11 +1,11 @@
-extern int func_0200494c(void);
+extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern char *OSi_RemoveLinkFromQueue(void *queue);
 extern void OSi_RescheduleThread(void);
 
 /* Makes every thread waiting on the queue runnable and empties the queue. */
 void OS_WakeupThread(char *queue) {
-    int enabled = func_0200494c();
+    int enabled = OS_DisableInterrupts();
     if (*(int *)queue != 0) {
         while (*(int *)queue != 0) {
             char *thread = OSi_RemoveLinkFromQueue(queue);

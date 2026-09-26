@@ -1,4 +1,4 @@
-extern int func_0200494c(void);
+extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern void MI_CpuFill8(void *dst, int value, int size);
 extern void func_02002abc(void *queue);
@@ -18,7 +18,7 @@ void func_02012808(char *ctx) {
     int enabled;
     for (;;) {
         MI_CpuFill8(&job, 0, 0x24);
-        enabled = func_0200494c();
+        enabled = OS_DisableInterrupts();
         while (*(char *volatile *)(ctx + 0xc0) == 0) {
             func_02002abc(0);
         }
@@ -27,7 +27,7 @@ void func_02012808(char *ctx) {
         if (job.run != 0) {
             job.result = job.run(&job);
         }
-        enabled = func_0200494c();
+        enabled = OS_DisableInterrupts();
         done = job.done;
         *((char *)&data_0205a488 + 0x26) = 0;
         if (done != 0) {

@@ -280,9 +280,21 @@ libs/nitro/os/auto/OSi_RemoveMutexLinkFromQueue.c:
     complete
     .text       start:0x020025c8 end:0x020025f8
 
+libs/nitro/os/calls/func_02002a14.c:
+    complete
+    .text       start:0x02002a14 end:0x02002a4c
+
+libs/nitro/os/calls/func_02002a4c.c:
+    complete
+    .text       start:0x02002a4c end:0x02002aa8
+
 libs/nitro/os/auto/OS_IsThreadTerminated.c:
     complete
     .text       start:0x02002aa8 end:0x02002abc
+
+libs/nitro/os/calls/func_02002abc.c:
+    complete
+    .text       start:0x02002abc end:0x02002b0c
 
 libs/nitro/os/calls/OS_WakeupThread.c:
     complete
@@ -303,6 +315,10 @@ libs/nitro/os/calls/OSi_SleepAlarmCallback.c:
 libs/nitro/os/calls/func_02002d74.c:
     complete
     .text       start:0x02002d74 end:0x02002d84
+
+libs/nitro/os/calls/func_02002db4.c:
+    complete
+    .text       start:0x02002db4 end:0x02002de8
 
 src/auto/OS_SetThreadDestructor.c:
     complete
@@ -456,7 +472,7 @@ libs/nitro/os/asm_stubs/auto/func_02004938.c:
     complete
     .text       start:0x02004938 end:0x0200494c
 
-libs/nitro/os/asm_stubs/auto/func_0200494c.c:
+libs/nitro/os/asm_stubs/auto/OS_DisableInterrupts.c:
     complete
     .text       start:0x0200494c end:0x02004960
 
@@ -1832,6 +1848,14 @@ src/calls/func_0201d30c.c:
     complete
     .text       start:0x0201d30c end:0x0201d318
 
+libs/nns/snd/calls/func_0201d35c.c:
+    complete
+    .text       start:0x0201d35c end:0x0201d38c
+
+libs/nns/snd/calls/func_0201d38c.c:
+    complete
+    .text       start:0x0201d38c end:0x0201d3a8
+
 libs/nitro/snd/calls/SND_ClearChannelBit.c:
     complete
     .text       start:0x0201d3ec end:0x0201d40c
@@ -1924,6 +1948,10 @@ src/calls/func_0201e3bc.c:
     complete
     .text       start:0x0201e3bc end:0x0201e3cc
 
+libs/nns/snd/calls/func_0201e538.c:
+    complete
+    .text       start:0x0201e538 end:0x0201e558
+
 libs/nns/snd/calls/func_0201e558.c:
     complete
     .text       start:0x0201e558 end:0x0201e5d8
@@ -1939,6 +1967,10 @@ libs/nitro/snd/calls/SND_SetActiveSlotSwap.c:
 src/calls/func_0201ea04.c:
     complete
     .text       start:0x0201ea04 end:0x0201ea14
+
+libs/nns/snd/calls/func_0201ee1c.c:
+    complete
+    .text       start:0x0201ee1c end:0x0201ee3c
 
 libs/nns/snd/calls/func_0201f02c.c:
     complete
@@ -2040,9 +2072,29 @@ libs/nns/snd/calls/func_0201fe10.c:
     complete
     .text       start:0x0201fe10 end:0x0201febc
 
+libs/nns/snd/calls/func_02020254.c:
+    complete
+    .text       start:0x02020254 end:0x020202b0
+
+libs/nns/snd/calls/func_020202cc.c:
+    complete
+    .text       start:0x020202cc end:0x020202f4
+
+libs/nns/snd/calls/func_020202f4.c:
+    complete
+    .text       start:0x020202f4 end:0x02020310
+
 src/auto/func_02020310.c:
     complete
     .text       start:0x02020310 end:0x0202031c
+
+libs/nns/snd/calls/func_020209e8.c:
+    complete
+    .text       start:0x020209e8 end:0x02020a58
+
+libs/nns/snd/calls/func_02020aec.c:
+    complete
+    .text       start:0x02020aec end:0x02020b18
 
 src/auto/func_02021810.c:
     complete

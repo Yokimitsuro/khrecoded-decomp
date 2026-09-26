@@ -1,4 +1,4 @@
-extern int func_0200494c(void);
+extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern int OS_DisableInterrupts_IrqAndFiq(void);
 extern void OS_RestoreInterrupts_IrqAndFiq(int state);
@@ -12,7 +12,7 @@ int OSi_DoUnlockByWord(unsigned short id, char *lock, void (*onUnlock)(void), in
     if (fiq != 0) {
         enabled = OS_DisableInterrupts_IrqAndFiq();
     } else {
-        enabled = func_0200494c();
+        enabled = OS_DisableInterrupts();
     }
     *(unsigned short *)(lock + 4) = 0;
     if (onUnlock != 0) {
