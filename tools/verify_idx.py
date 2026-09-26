@@ -99,13 +99,15 @@ def _verified_local_data_relocs(o_path, original_relocs, mine_relocs, addends, m
     if gap_unit:
         module = gap_unit.group(1)
 
+    # The DATA index (tools/index_data.py) is only needed to prove .rodata/.data
+    # bytes; a .bss anchor is proved from symbols.txt alone.
     index_path = os.path.join(ROOT, "build", "data_index.json")
-    if not os.path.exists(index_path):
-        return set(), ""
-    with open(index_path, encoding="utf-8") as fh:
-        data_index = json.load(fh)
-    if isinstance(data_index, dict) and "symbols" in data_index:
-        data_index = data_index["symbols"]
+    data_index = None
+    if os.path.exists(index_path):
+        with open(index_path, encoding="utf-8") as fh:
+            data_index = json.load(fh)
+        if isinstance(data_index, dict) and "symbols" in data_index:
+            data_index = data_index["symbols"]
 
     with open(o_path, "rb") as stream:
         elf = ELFFile(stream)
@@ -171,6 +173,8 @@ def _verified_local_data_relocs(o_path, original_relocs, mine_relocs, addends, m
                 notes.append(".bss @0x%08x (%s)" % (base, "/".join(anchors)))
                 continue
 
+            if data_index is None:
+                return set(), ""
             expected = [None] * len(emitted)
             for entry in data_index.values():
                 if entry.get("module") != module or entry.get("section") != section_name[1:]:

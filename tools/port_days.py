@@ -205,9 +205,25 @@ def compile_source(src, mode, out):
     return None
 
 
+SHARED_MARKERS = {"shared-bss": "/* shared-bss */", "shared-data": "/* shared-data */"}
+
+
+def shared_markers(text):
+    """Markers of a source that defines its module's globals (see tools/share_bss.py)."""
+    return [m for key, m in SHARED_MARKERS.items() if re.search(r"/\*\s*(?:\w+:\s*)?%s\s*\*/" % key, text)]
+
+
 def donor_object(days, rel, mode):
     out = WORK / "obj" / mode / (rel.replace("/", "__") + ".o")
-    return compile_source(Path(days) / rel, mode, out)
+    src = Path(days) / rel
+    fresh = not (out.exists() and out.stat().st_mtime >= src.stat().st_mtime)
+    obj = compile_source(src, mode, out)
+    if obj and fresh and shared_markers(src.read_text(encoding="utf-8", errors="replace")):
+        # The build hands these globals back to the module's delinked data
+        # object; do the same so only the function remains in the object.
+        from share_bss import share
+        share(obj, log=open(os.devnull, "w"))
+    return obj
 
 
 def read_object(path, name):
@@ -327,8 +343,11 @@ def drop_unused_externs(text, used):
 
 
 def port_source(text, mapping, keep_comments, drop_externs):
+    markers = shared_markers(text)
+    text = re.sub(r"/\*\s*\w+:\s*(shared-(?:bss|data))\s*\*/", r"/* \1 */", text)
     if not keep_comments:
         text = strip_comments(text)
+        text = "".join(m + "\n" for m in markers) + text
     text = rename_tokens(text, mapping)
     if drop_externs:
         text = drop_unused_externs(text, set(mapping.values()))
@@ -498,6 +517,7 @@ def main():
         objs = list(ex.map(lambda t: donor_object(days, srcs[t[1]], t[2]), flat))
     reasons = collections.Counter()
     pairs = {}
+    why_not = collections.defaultdict(list)
     for (n, d, mode, strong, library), obj in zip(flat, objs):
         if n in pairs and (pairs[n]["donor_lib"] or not library):
             continue
@@ -507,13 +527,16 @@ def main():
         text, relocs, why = read_object(obj, d)
         if why:
             reasons[re.sub(r" \S+$", "", why)] += 1
+            why_not[n].append("%s: %s" % (d, why))
             continue
         if masked_key(mode, text, [r[0] for r in relocs]) != index_key(R[n]):
             reasons["compiled bytes differ"] += 1
+            why_not[n].append("%s: compiled bytes differ" % d)
             continue
         mapping, why = map_symbols(cfg, n, relocs)
         if mapping is None:
             reasons[re.sub(r" (0x[0-9a-f]+|\S+)$", "", why)] += 1
+            why_not[n].append("%s: %s" % (d, why))
             continue
         pairs[n] = {"rname": n, "donor": d, "mode": mode, "strong": strong,
                     "mapping": mapping, "donor_lib": library,
@@ -521,6 +544,9 @@ def main():
     print("portable: %d functions" % len(pairs))
     for why, c in reasons.most_common():
         print("  rejected %5d  %s" % (c, why))
+    WORK.mkdir(parents=True, exist_ok=True)
+    (WORK / "unported.json").write_text(json.dumps(
+        {n: why_not.get(n, []) for n in cands if n not in pairs}, indent=1, sort_keys=True), encoding="utf-8")
 
     plan = plan_names(cfg, pairs.values()) if args.names else {}
     if args.names:
@@ -574,6 +600,8 @@ def verify(paths, jobs):
     lst.write_text("\n".join(str(p) for p in paths) + "\n", encoding="utf-8")
     r = subprocess.run([sys.executable, str(ROOT / "tools" / "verify_idx.py"), "--batch", "-j", str(jobs),
                         "@" + str(lst)], capture_output=True, text=True)
+    with open(WORK / "verify_out.txt", "a", encoding="utf-8") as fh:
+        fh.write(r.stdout)
     ok = set()
     for line in r.stdout.splitlines():
         parts = line.split("\t")
