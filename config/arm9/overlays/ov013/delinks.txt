@@ -1,0 +1,61 @@
+    .text       start:0x0206c480 end:0x020749f4 kind:code align:32
+    .rodata     start:0x020749f4 end:0x02074b04 kind:rodata align:4
+    .ctor       start:0x02074b04 end:0x02074b04 kind:rodata align:4
+    .data       start:0x02074b20 end:0x02074ce0 kind:data align:32
+    .bss        start:0x02074ce0 end:0x02074d00 kind:bss align:32
+
+src/overlays/ov013/calls/func_ov013_02071444.c:
+    complete
+    .text       start:0x02071444 end:0x02071454
+
+src/overlays/ov013/calls/func_ov013_02071a90.c:
+    complete
+    .text       start:0x02071a90 end:0x02071a9c
+
+src/overlays/ov013/auto/func_ov013_020732a4.c:
+    complete
+    .text       start:0x020732a4 end:0x020732a8
+
+src/overlays/ov013/auto/func_ov013_020739a0.c:
+    complete
+    .text       start:0x020739a0 end:0x020739a4
+
+src/overlays/ov013/auto/func_ov013_02073a98.c:
+    complete
+    .text       start:0x02073a98 end:0x02073a9c
+
+src/overlays/ov013/auto/func_ov013_02073b90.c:
+    complete
+    .text       start:0x02073b90 end:0x02073b94
+
+src/overlays/ov013/auto/func_ov013_02074238.c:
+    complete
+    .text       start:0x02074238 end:0x0207423c
+
+src/overlays/ov013/auto/func_ov013_0207423c.c:
+    complete
+    .text       start:0x0207423c end:0x02074240
+
+src/overlays/ov013/auto/func_ov013_02074348.c:
+    complete
+    .text       start:0x02074348 end:0x0207434c
+
+src/overlays/ov013/auto/func_ov013_0207441c.c:
+    complete
+    .text       start:0x0207441c end:0x02074420
+
+src/overlays/ov013/auto/func_ov013_02074498.c:
+    complete
+    .text       start:0x02074498 end:0x0207449c
+
+src/overlays/ov013/auto/func_ov013_02074718.c:
+    complete
+    .text       start:0x02074718 end:0x0207471c
+
+src/overlays/ov013/auto/func_ov013_020749ec.c:
+    complete
+    .text       start:0x020749ec end:0x020749f0
+
+src/overlays/ov013/auto/func_ov013_020749f0.c:
+    complete
+    .text       start:0x020749f0 end:0x020749f4

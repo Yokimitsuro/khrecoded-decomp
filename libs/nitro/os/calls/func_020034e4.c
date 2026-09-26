@@ -1,0 +1,113 @@
+typedef unsigned char u8;
+typedef unsigned short u16;
+typedef unsigned int u32;
+typedef signed char s8;
+typedef short s16;
+typedef int s32;
+typedef unsigned long long u64;
+typedef long long s64;
+typedef int BOOL;
+typedef int OSIntrMode;
+typedef void *OSMessage;
+typedef volatile unsigned short vu16;
+typedef volatile unsigned int vu32;
+typedef volatile unsigned char vu8;
+
+#define NULL ((void *)0)
+#define TRUE 1
+#define FALSE 0
+#define HW_MAIN_MEM 0x02000000
+
+#define offsetof(type, member) ((u32)&(((type *)0)->member))
+
+#define SDK_ARM9 
+#define OS_InitPrintServer() ((void)0)
+#define SDK_EXCEPTION_BUG 
+
+void func_02002760(void);
+void OS_InitIrqTable(void);
+extern void OSi_InitStackChecker(void);
+void OS_InitLock(void);
+void OSi_InstallExceptionVector(void);
+void OS_InitArena(void);
+void OS_InitArenaEx(void);
+void OS_InitTick(void);
+void OS_InitAlarm(void);
+void func_0200453c(void);
+void func_02004a20(void);
+void OSi_InitVramExclusive(void);
+void func_0200352c(void);
+void CARD_Init(void);
+void MI_Init(void);
+void func_02010250(void);
+void func_02012564(void);
+extern void OSi_CancelDma0 (void);
+
+/* func_020034e4 -- NitroSDK os_init.c: OS_Init. */
+void func_020034e4 (void)
+{
+#ifdef SDK_ARM9
+#ifdef SDK_ENABLE_ARM7_PRINT
+    OS_InitPrintServer();
+#endif
+    OS_InitArena();
+
+    func_0200352c();
+
+    OS_InitLock();
+    OS_InitArenaEx();
+    OS_InitIrqTable();
+    OSi_InitStackChecker();
+    OSi_InstallExceptionVector();
+
+    MI_Init();
+
+    func_0200453c();
+    OSi_InitVramExclusive();
+
+#ifndef SDK_NO_THREAD
+    func_02002760();
+#endif
+
+#ifndef SDK_SMALL_BUILD
+    func_02004a20();
+#endif
+
+#ifndef SDK_TEG
+    func_02012564();
+#endif
+
+#ifndef SDK_SMALL_BUILD
+    CARD_Init();
+#endif
+
+#ifndef SDK_TEG
+    func_02010250();
+#endif
+
+    OSi_CancelDma0();
+
+#else
+    OS_InitArena();
+    func_0200352c();
+    OS_InitLock();
+    OS_InitIrqTable();
+
+#define SDK_EXCEPTION_BUG
+#ifndef SDK_EXCEPTION_BUG
+    OSi_InstallExceptionVector();
+#endif
+    OS_InitTick();
+    OS_InitAlarm();
+    func_02002760();
+
+#ifndef SDK_SMALL_BUILD
+    func_02004a20();
+#endif
+
+#ifndef SDK_TEG
+    func_02012564();
+#endif
+
+#endif
+}

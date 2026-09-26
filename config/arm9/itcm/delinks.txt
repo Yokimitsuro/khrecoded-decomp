@@ -1,0 +1,186 @@
+    .text       start:0x01ff8000 end:0x01fffe94 kind:code align:32
+    .bss        start:0x01fffea0 end:0x01fffec0 kind:bss align:32
+
+src/calls/func_01ff80d4.c:
+    complete
+    .text       start:0x01ff80d4 end:0x01ff80e4
+
+libs/nitro/fs/calls/FSi_WaitForCardThread.c:
+    complete
+    .text       start:0x01ff8140 end:0x01ff8158
+
+libs/nitro/os/asm_stubs/calls/func_01ff8158.c:
+    complete
+    .text       start:0x01ff8158 end:0x01ff81b0
+
+libs/nitro/os/asm_stubs/auto/func_01ff840c.c:
+    complete
+    .text       start:0x01ff840c end:0x01ff8420
+
+libs/nitro/mi/asm_stubs/auto/MIi_CpuClear16.c:
+    complete
+    .text       start:0x01ff8684 end:0x01ff869c
+
+libs/nitro/mi/asm_stubs/auto/MIi_CpuCopy16.c:
+    complete
+    .text       start:0x01ff869c end:0x01ff86b8
+
+libs/nitro/os/asm_stubs/auto/func_01ff86fc.c:
+    complete
+    .text       start:0x01ff86fc end:0x01ff8710
+
+libs/nitro/mi/asm_stubs/auto/MIi_CpuCopy32.c:
+    complete
+    .text       start:0x01ff8710 end:0x01ff8728
+
+libs/nitro/mi/asm_stubs/auto/MIi_CpuSend32.c:
+    complete
+    .text       start:0x01ff8728 end:0x01ff8740
+
+libs/nitro/mi/asm_stubs/auto/MIi_CpuClearFast.c:
+    complete
+    .text       start:0x01ff8740 end:0x01ff878c
+
+libs/nitro/mi/asm_stubs/auto/MIi_CpuCopyFast.c:
+    complete
+    .text       start:0x01ff878c end:0x01ff87c4
+
+libs/nitro/mi/asm_stubs/auto/MI_Copy36B.c:
+    complete
+    .text       start:0x01ff87c4 end:0x01ff87e0
+
+libs/nitro/mi/asm_stubs/auto/MI_Copy48B.c:
+    complete
+    .text       start:0x01ff87e0 end:0x01ff8804
+
+libs/nitro/mi/asm_stubs/auto/MI_Copy64B.c:
+    complete
+    .text       start:0x01ff8804 end:0x01ff8830
+
+libs/nitro/mi/asm_stubs/auto/MI_CpuFill8.c:
+    complete
+    .text       start:0x01ff8830 end:0x01ff88c4
+
+libs/nitro/mi/asm_stubs/auto/MI_CpuCopy8.c:
+    complete
+    .text       start:0x01ff89a8 end:0x01ff8ad8
+
+libs/nitro/mi/asm_stubs/auto/MI_Zero36B.c:
+    complete
+    .text       start:0x01ff90dc end:0x01ff90ea
+
+libs/nitro/mtx/asm_stubs/auto/MTX_Identity33_.c:
+    complete
+    .text       start:0x01ff90ec end:0x01ff9110
+
+libs/nitro/mtx/auto/MTX_RotX33_.c:
+    complete
+    .text       start:0x01ff9220 end:0x01ff923c
+
+libs/nitro/mtx/asm_stubs/auto/MTX_RotY33_.c:
+    complete
+    .text       start:0x01ff923c end:0x01ff9258
+
+libs/nitro/mtx/asm_stubs/auto/MTX_RotZ33_.c:
+    complete
+    .text       start:0x01ff9258 end:0x01ff9270
+
+libs/nitro/mtx/asm_stubs/auto/MTX_Identity43_.c:
+    complete
+    .text       start:0x01ff9480 end:0x01ff94a8
+
+libs/nitro/mtx/asm_stubs/auto/MTX_Copy43To44_.c:
+    complete
+    .text       start:0x01ff94a8 end:0x01ff94dc
+
+libs/nitro/mtx/asm_stubs/auto/MTX_RotX43_.c:
+    complete
+    .text       start:0x01ff9510 end:0x01ff952e
+
+libs/nitro/mtx/asm_stubs/auto/MTX_RotY43_.c:
+    complete
+    .text       start:0x01ff9530 end:0x01ff954a
+
+src/calls/FX_Inv.c:
+    complete
+    .text       start:0x01ff9c84 end:0x01ff9c94
+
+libs/nitro/fx/calls/func_01ff9c94.c:
+    complete
+    .text       start:0x01ff9c94 end:0x01ff9cc0
+
+src/calls/func_01ff9cc0.c:
+    complete
+    .text       start:0x01ff9cc0 end:0x01ff9cd0
+
+libs/nitro/fx/calls/func_01ff9cd0.c:
+    complete
+    .text       start:0x01ff9cd0 end:0x01ff9cfc
+
+libs/nitro/fx/auto/func_01ff9d30.c:
+    complete
+    .text       start:0x01ff9d30 end:0x01ff9d54
+
+libs/nitro/fx/auto/FX_GetSqrtResult.c:
+    complete
+    .text       start:0x01ff9db8 end:0x01ff9de4
+
+libs/nitro/fx/auto/FX_DivAsync.c:
+    complete
+    .text       start:0x01ff9de4 end:0x01ff9e0c
+
+libs/nitro/fx/auto/VEC_DotProduct.c:
+    complete
+    .text       start:0x01ff9e6c end:0x01ff9ea8
+
+libs/nitro/gx/calls/G3_LoadMtx43.c:
+    complete
+    .text       start:0x01ffa170 end:0x01ffa18c
+
+libs/nitro/gx/calls/G3_MultMtx43.c:
+    complete
+    .text       start:0x01ffa18c end:0x01ffa1a8
+
+libs/nitro/gx/calls/G3_MultMtx33.c:
+    complete
+    .text       start:0x01ffa1a8 end:0x01ffa1c4
+
+libs/nitro/gx/asm_stubs/auto/GX_SendFifo48B.c:
+    complete
+    .text       start:0x01ffa1c4 end:0x01ffa1e8
+
+src/auto/func_01ffa1e8.c:
+    complete
+    .text       start:0x01ffa1e8 end:0x01ffa1f4
+
+src/calls/func_01ffa1f4.c:
+    complete
+    .text       start:0x01ffa1f4 end:0x01ffa204
+
+libs/nitro/nns/calls/func_01ffa37c.c:
+    complete
+    .text       start:0x01ffa37c end:0x01ffa450
+
+src/calls/func_01ffb2f8.c:
+    complete
+    .text       start:0x01ffb2f8 end:0x01ffb328
+
+libs/nitro/nns/calls/func_01ffcedc.c:
+    complete
+    .text       start:0x01ffcedc end:0x01ffcf74
+
+libs/nitro/nns/calls/func_01ffd934.c:
+    complete
+    .text       start:0x01ffd934 end:0x01ffda04
+
+src/calls/func_01ffe394.c:
+    complete
+    .text       start:0x01ffe394 end:0x01ffe3d8
+
+libs/nitro/nns/calls/func_01ffe8a0.c:
+    complete
+    .text       start:0x01ffe8a0 end:0x01ffe934
+
+src/calls/func_01fff67c.c:
+    complete
+    .text       start:0x01fff67c end:0x01fff6c8

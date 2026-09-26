@@ -1,0 +1,9 @@
+    .text       start:0x020ba400 end:0x020bcf64 kind:code align:32
+    .rodata     start:0x020bcf64 end:0x020bcf8c kind:rodata align:4
+    .ctor       start:0x020bcf8c end:0x020bcf8c kind:rodata align:4
+    .data       start:0x020bcfa0 end:0x020bd020 kind:data align:32
+    .bss        start:0x020bd020 end:0x020bd040 kind:bss align:32
+
+src/overlays/ov030/calls/func_ov030_020babc8.c:
+    complete
+    .text       start:0x020babc8 end:0x020babe0

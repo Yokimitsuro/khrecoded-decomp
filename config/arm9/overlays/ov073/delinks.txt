@@ -1,0 +1,9 @@
+    .text       start:0x020beac0 end:0x020c40a8 kind:code align:32
+    .rodata     start:0x020c40a8 end:0x020c4148 kind:rodata align:4
+    .ctor       start:0x020c4148 end:0x020c4148 kind:rodata align:4
+    .data       start:0x020c4160 end:0x020c4260 kind:data align:32
+    .bss        start:0x020c4260 end:0x020c4280 kind:bss align:32
+
+src/overlays/ov073/auto/func_ov073_020bff88.c:
+    complete
+    .text       start:0x020bff88 end:0x020bff8c

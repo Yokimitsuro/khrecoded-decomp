@@ -1,0 +1,12 @@
+extern void func_0202b404();
+extern void func_0202b45c();
+extern void func_0202b474();
+void func_0202b490(int param_1, int param_2, int param_3, int *param_4)
+{
+    if (param_4 != 0 && param_2 != 0)
+        func_0202b404(param_1, param_4, param_2, 0, *(int *)((char *)param_4 + 8));
+    if (param_3 != 0)
+        func_0202b45c(param_1, param_3, 0, *(int *)(param_3 + 0x10));
+    if (param_2 != 0)
+        func_0202b474(param_1, param_2, 0, *(int *)(param_2 + 8));
+}

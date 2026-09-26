@@ -1,0 +1,37 @@
+    .text       start:0x020c4280 end:0x020cd0b8 kind:code align:32
+    .rodata     start:0x020cd0b8 end:0x020cd260 kind:rodata align:4
+    .ctor       start:0x020cd260 end:0x020cd260 kind:rodata align:4
+    .data       start:0x020cd280 end:0x020cd400 kind:data align:32
+    .bss        start:0x020cd400 end:0x020cd420 kind:bss align:32
+
+src/overlays/ov076/auto/func_ov076_020c5264.c:
+    complete
+    .text       start:0x020c5264 end:0x020c5268
+
+src/overlays/ov076/calls/func_ov076_020c5c2c.c:
+    complete
+    .text       start:0x020c5c2c end:0x020c5c34
+
+src/overlays/ov076/calls/func_ov076_020c5d30.c:
+    complete
+    .text       start:0x020c5d30 end:0x020c5d38
+
+src/overlays/ov076/calls/func_ov076_020c5d38.c:
+    complete
+    .text       start:0x020c5d38 end:0x020c5d40
+
+src/overlays/ov076/calls/func_ov076_020c8f10.c:
+    complete
+    .text       start:0x020c8f10 end:0x020c8f18
+
+src/overlays/ov076/calls/func_ov076_020ca628.c:
+    complete
+    .text       start:0x020ca628 end:0x020ca630
+
+src/overlays/ov076/calls/func_ov076_020ca630.c:
+    complete
+    .text       start:0x020ca630 end:0x020ca644
+
+src/overlays/ov076/auto/func_ov076_020ccf30.c:
+    complete
+    .text       start:0x020ccf30 end:0x020ccf32

@@ -1,0 +1,112 @@
+typedef unsigned char u8;
+typedef unsigned short u16;
+typedef unsigned int u32;
+typedef signed char s8;
+typedef short s16;
+typedef int s32;
+typedef unsigned long long u64;
+typedef long long s64;
+typedef int BOOL;
+typedef int OSIntrMode;
+typedef void *OSMessage;
+typedef volatile unsigned short vu16;
+typedef volatile unsigned int vu32;
+typedef volatile unsigned char vu8;
+
+#define NULL ((void *)0)
+#define TRUE 1
+#define FALSE 0
+#define HW_MAIN_MEM 0x02000000
+
+
+/* NitroSDK GX VRAM loaders (gx_load2d.c / gx_load3d.c, gxdma.h). */
+typedef void (*MIDmaCallback)(void *);
+#define GX_DMA_NOT_USE      ((u32) ~0)
+#define GX_CPU_FASTER32_SIZE 0x30
+#define HW_OBJ_VRAM         0x06400000
+#define HW_DB_OBJ_VRAM      0x06600000
+#define HW_LCDC_VRAM_E      0x06880000
+#define HW_LCDC_VRAM_F      0x06890000
+#define HW_LCDC_VRAM_G      0x06894000
+typedef enum {
+    GX_VRAM_BGEXTPLTT_NONE    = 0x0000,
+    GX_VRAM_BGEXTPLTT_01_F    = 0x0020,
+    GX_VRAM_BGEXTPLTT_23_G    = 0x0040,
+    GX_VRAM_BGEXTPLTT_0123_E  = 0x0010,
+    GX_VRAM_BGEXTPLTT_0123_FG = 0x0060
+} GXVRamBGExtPltt;
+typedef enum {
+    GX_VRAM_OBJEXTPLTT_NONE = 0x0000,
+    GX_VRAM_OBJEXTPLTT_0_F  = 0x0020,
+    GX_VRAM_OBJEXTPLTT_0_G  = 0x0040
+} GXVRamOBJExtPltt;
+typedef int GXVRamTex;
+
+extern u32 data_020422b8;   /* GXi_DmaId */
+#define GXi_DmaId data_020422b8
+#define MI_CpuCopy32 MIi_CpuCopy32
+/* This SDK names the bank-release helpers GX_DisableBankFor*; 4.x calls them GX_ResetBankFor*. */
+#define GX_ResetBankForBGExtPltt GX_DisableBankForBGExtPltt
+extern GXVRamOBJExtPltt GX_DisableBankForOBJExtPltt(void);
+#define GX_ResetBankForOBJExtPltt GX_DisableBankForOBJExtPltt
+/* Real inline functions, as in the SDK headers: the value they return stays a variable (`ptr`
+ * lands in ip and feeds both branches) where a macro constant would fold into each add. */
+static inline void *G2_GetOBJCharPtr(void) { return (void *)HW_OBJ_VRAM; }
+static inline void *G2S_GetOBJCharPtr(void) { return (void *)HW_DB_OBJ_VRAM; }
+#define GX_RegionCheck_OBJ(a, b)
+#define GX_RegionCheck_SubOBJ(a, b)
+#define GX_RegionCheck_Tex(t, a, b)
+
+static inline void GXi_DmaCopy32(u32 dmaNo, const void *src, void *dest, u32 size)
+{
+    if (dmaNo != GX_DMA_NOT_USE && size > GX_CPU_FASTER32_SIZE) {
+        MI_DmaCopy32(dmaNo, src, dest, size);
+    } else {
+        MI_CpuCopy32(src, dest, size);
+    }
+}
+
+static inline void GXi_DmaCopy32Async(u32 dmaNo, const void *src, void *dest, u32 size,
+                                      MIDmaCallback callback, void *arg)
+{
+    if (dmaNo != GX_DMA_NOT_USE) {
+        MI_DmaCopy32Async(dmaNo, src, dest, size, callback, arg);
+    } else {
+        MI_CpuCopy32(src, dest, size);
+    }
+}
+/* gx_load2d.c statics, one .bss block (data_02056f0c): the extended-palette upload state. */
+extern struct {
+    u32 sSubBGExtPltt;            /* 0x00 */
+    u32 sOBJExtPlttLCDCBlk;       /* 0x04 */
+    GXVRamOBJExtPltt sOBJExtPltt; /* 0x08 */
+    u32 sBGExtPlttLCDCOffset;     /* 0x0c */
+    u32 sBGExtPlttLCDCBlk;        /* 0x10 */
+    GXVRamBGExtPltt sBGExtPltt;   /* 0x14 */
+    u32 sSubOBJExtPltt;           /* 0x18 */
+} data_02056f0c;
+#define sOBJExtPlttLCDCBlk data_02056f0c.sOBJExtPlttLCDCBlk
+#define sOBJExtPltt data_02056f0c.sOBJExtPltt
+#define sBGExtPlttLCDCOffset data_02056f0c.sBGExtPlttLCDCOffset
+#define sBGExtPlttLCDCBlk data_02056f0c.sBGExtPlttLCDCBlk
+#define sBGExtPltt data_02056f0c.sBGExtPltt
+
+/* func_02007da4 -- NitroSDK gx_load2d.c: GX_BeginLoadOBJExtPltt. */
+void func_02007da4 (void)
+{
+
+	sOBJExtPltt = GX_ResetBankForOBJExtPltt();
+
+	switch (sOBJExtPltt) {
+	case GX_VRAM_OBJEXTPLTT_0_F:
+		sOBJExtPlttLCDCBlk = HW_LCDC_VRAM_F;
+		break;
+	case GX_VRAM_OBJEXTPLTT_0_G:
+		sOBJExtPlttLCDCBlk = HW_LCDC_VRAM_G;
+		break;
+	case GX_VRAM_OBJEXTPLTT_NONE:
+		break;
+	default:
+		break;
+	}
+}

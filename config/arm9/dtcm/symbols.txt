@@ -1,0 +1,17 @@
+data_027e0000 kind:data(any) addr:0x027e0000
+data_027e0058 kind:data(any) addr:0x027e0058
+data_027e0068 kind:data(any) addr:0x027e0068
+data_027e0078 kind:data(any) addr:0x027e0078
+data_027e00a0 kind:bss addr:0x027e00a0
+data_027e00a8 kind:bss addr:0x027e00a8
+data_027e00ac kind:bss addr:0x027e00ac
+data_027e00b0 kind:bss addr:0x027e00b0
+data_027e00b4 kind:bss addr:0x027e00b4
+data_027e0134 kind:bss addr:0x027e0134
+data_027e0148 kind:bss addr:0x027e0148
+data_027e0160 kind:bss addr:0x027e0160
+data_027e0164 kind:bss addr:0x027e0164
+data_027e016c kind:bss addr:0x027e016c
+data_027e01ec kind:bss addr:0x027e01ec
+data_027e01f0 kind:bss addr:0x027e01f0
+data_027e01f8 kind:bss addr:0x027e01f8

@@ -1,0 +1,13 @@
+    .text       start:0x020c4280 end:0x020c4fb0 kind:code align:32
+    .rodata     start:0x020c4fb0 end:0x020c4fc0 kind:rodata align:4
+    .ctor       start:0x020c4fc0 end:0x020c4fc0 kind:rodata align:4
+    .data       start:0x020c4fe0 end:0x020c51e0 kind:data align:32
+    .bss        start:0x020c51e0 end:0x020c5200 kind:bss align:32
+
+src/overlays/ov078/auto/func_ov078_020c4370.c:
+    complete
+    .text       start:0x020c4370 end:0x020c4372
+
+src/overlays/ov078/calls/func_ov078_020c4728.c:
+    complete
+    .text       start:0x020c4728 end:0x020c473c

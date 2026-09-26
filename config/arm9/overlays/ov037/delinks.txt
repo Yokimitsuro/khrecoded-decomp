@@ -1,0 +1,17 @@
+    .text       start:0x020ba400 end:0x020bb648 kind:code align:32
+    .rodata     start:0x020bb648 end:0x020bb6b0 kind:rodata align:4
+    .ctor       start:0x020bb6b0 end:0x020bb6b0 kind:rodata align:4
+    .data       start:0x020bb6c0 end:0x020bb780 kind:data align:32
+    .bss        start:0x020bb780 end:0x020bb7a0 kind:bss align:32
+
+src/overlays/ov037/calls/func_ov037_020baa84.c:
+    complete
+    .text       start:0x020baa84 end:0x020baa90
+
+src/overlays/ov037/calls/func_ov037_020bab98.c:
+    complete
+    .text       start:0x020bab98 end:0x020babbc
+
+libs/nitro/card/calls/CARD_GetBackupSectorSize.c:
+    complete
+    .text       start:0x020baca4 end:0x020bacb8

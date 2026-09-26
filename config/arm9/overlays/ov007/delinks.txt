@@ -1,0 +1,16 @@
+    .text       start:0x020a0540 end:0x020a1c18 kind:code align:32
+    .ctor       start:0x020a1c18 end:0x020a1c18 kind:rodata align:4
+    .data       start:0x020a1c20 end:0x020a1c80 kind:data align:32
+    .bss        start:0x020a1c80 end:0x020a1c80 kind:bss align:32
+
+src/overlays/ov007/calls/func_ov007_020a0670.c:
+    complete
+    .text       start:0x020a0670 end:0x020a067e
+
+src/overlays/ov007/calls/func_ov007_020a0680.c:
+    complete
+    .text       start:0x020a0680 end:0x020a06b0
+
+src/overlays/ov007/calls/func_ov007_020a0894.c:
+    complete
+    .text       start:0x020a0894 end:0x020a08a2

@@ -1,0 +1,41 @@
+    .text       start:0x020613e0 end:0x02063798 kind:code align:32
+    .rodata     start:0x02063798 end:0x02063824 kind:rodata align:4
+    .ctor       start:0x02063824 end:0x02063824 kind:rodata align:4
+    .data       start:0x02063840 end:0x02063a00 kind:data align:32
+    .bss        start:0x02063a00 end:0x02063a20 kind:bss align:32
+
+src/overlays/ov000/calls/func_ov000_02062908.c:
+    complete
+    .text       start:0x02062908 end:0x02062920
+
+src/overlays/ov000/calls/func_ov000_02062a58.c:
+    complete
+    .text       start:0x02062a58 end:0x02062a64
+
+src/overlays/ov000/calls/func_ov000_0206300c.c:
+    complete
+    .text       start:0x0206300c end:0x02063018
+
+src/overlays/ov000/auto/func_ov000_02063038.c:
+    complete
+    .text       start:0x02063038 end:0x02063040
+
+src/overlays/ov000/auto/func_ov000_02063040.c:
+    complete
+    .text       start:0x02063040 end:0x02063044
+
+src/overlays/ov000/calls/func_ov000_0206364c.c:
+    complete
+    .text       start:0x0206364c end:0x02063668
+
+src/overlays/ov000/calls/func_ov000_02063668.c:
+    complete
+    .text       start:0x02063668 end:0x02063680
+
+src/overlays/ov000/calls/func_ov000_02063770.c:
+    complete
+    .text       start:0x02063770 end:0x02063784
+
+libs/nitro/card/calls/func_ov000_02063784.c:
+    complete
+    .text       start:0x02063784 end:0x02063798

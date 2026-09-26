@@ -1,0 +1,13 @@
+    .text       start:0x020c4280 end:0x020c5d48 kind:code align:32
+    .rodata     start:0x020c5d48 end:0x020c5d80 kind:rodata align:4
+    .ctor       start:0x020c5d80 end:0x020c5d80 kind:rodata align:4
+    .data       start:0x020c5da0 end:0x020c5e20 kind:data align:32
+    .bss        start:0x020c5e20 end:0x020c5e40 kind:bss align:32
+
+src/overlays/ov080/auto/func_ov080_020c5d28.c:
+    complete
+    .text       start:0x020c5d28 end:0x020c5d2a
+
+src/overlays/ov080/auto/func_ov080_020c5d2c.c:
+    complete
+    .text       start:0x020c5d2c end:0x020c5d2e

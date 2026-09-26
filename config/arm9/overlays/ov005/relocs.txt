@@ -1,0 +1,6 @@
+from:0x020a0548 kind:thumb_call to:0x02025df8 module:main
+from:0x020a0554 kind:thumb_call to:0x02025e0c module:main
+from:0x020a0560 kind:thumb_call to:0x02025e0c module:main
+from:0x020a056c kind:thumb_call to:0x02025e0c module:main
+from:0x020a0576 kind:thumb_call to:0x020725dc module:overlay(1)
+from:0x020a05a0 kind:load to:0x020a0541 module:overlay(5)
