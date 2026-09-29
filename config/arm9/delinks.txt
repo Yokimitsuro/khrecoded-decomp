@@ -1420,6 +1420,10 @@ libs/nns/gfd/auto/func_02013f98.c:
     complete
     .text       start:0x02013f98 end:0x02013fa8
 
+libs/nns/gfd/calls/GfxQueue_Configure.c:
+    complete
+    .text       start:0x02013fe4 end:0x02014008
+
 libs/nitro/gx/calls/GFXi_EnqueueCommand.c:
     complete
     .text       start:0x020140a4 end:0x0201410c
