@@ -489,6 +489,10 @@ libs/nitro/os/calls/OS_Init.c:
     complete
     .text       start:0x020034e4 end:0x0200352c
 
+libs/nitro/os/calls/OS_InitArena.c:
+    complete
+    .text       start:0x0200352c end:0x02003648
+
 libs/nitro/os/calls/OS_InitArenaEx.c:
     complete
     .text       start:0x02003648 end:0x02003690

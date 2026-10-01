@@ -2787,7 +2787,7 @@ OSi_ThreadInfo kind:bss addr:0x02056b6c
 data_02056b70 kind:bss addr:0x02056b70
 data_02056b7c kind:bss addr:0x02056b7c
 data_02056c3c kind:bss addr:0x02056c3c
-data_02056dc4 kind:bss addr:0x02056dc4
+OSi_ArenaState kind:bss addr:0x02056dc4
 data_02056dcc kind:bss addr:0x02056dcc
 OSi_ExceptionState kind:bss addr:0x02056df0
 data_02056df4 kind:bss addr:0x02056df4

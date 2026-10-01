@@ -248,6 +248,7 @@
   "libs/nitro/gx/auto/GX_DispOn.c": "dsi/1.1",
   "libs/nitro/spi/calls/PM_SetLCDPower.c": "dsi/1.1",
   "libs/nitro/fx/calls/FX_Sqrt.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_InitArena.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_InitArenaEx.c": "dsi/1.1",
   "libs/nitro/os/auto/OS_InitEvent.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_WaitEventEx.c": "dsi/1.1",

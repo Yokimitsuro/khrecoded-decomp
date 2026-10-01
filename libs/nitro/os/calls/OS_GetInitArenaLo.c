@@ -1,14 +1,15 @@
+#include "libs/nitro/os/os_arena_internal.h"
+
 typedef unsigned long u32;
 extern u32 OS_GetConsoleType(void);
-extern struct { int initialized; int mainExArenaEnabled; } data_02056dc4;
 
-void *OS_GetInitArenaLo(int arena)
+void *OS_GetInitArenaLo(OSArenaId arena)
 {
     switch (arena) {
     case 0:
         return (void *)0x020d9c40;
     case 2:
-        if (!data_02056dc4.mainExArenaEnabled) {
+        if (!OSi_ArenaState.mainExArenaEnabled) {
             return (void *)0;
         }
         if ((OS_GetConsoleType() & 0xf) == 1) {
