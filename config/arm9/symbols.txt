@@ -312,10 +312,10 @@ func_0200647c kind:function(arm,size=0x20) addr:0x0200647c
 func_0200649c kind:function(arm,size=0x148) addr:0x0200649c
 func_020065e4 kind:function(arm,size=0x28) addr:0x020065e4
 func_0200660c kind:function(arm,size=0x38) addr:0x0200660c
-func_02006644 kind:function(arm,size=0x10) addr:0x02006644
-func_02006654 kind:function(arm,size=0x40) addr:0x02006654
-func_02006694 kind:function(arm,size=0x44) addr:0x02006694
-func_020066d8 kind:function(arm,size=0x68) addr:0x020066d8
+GX_IsDispOn kind:function(arm,size=0x10) addr:0x02006644
+GX_DispOff kind:function(arm,size=0x40) addr:0x02006654
+GX_DispOn kind:function(arm,size=0x44) addr:0x02006694
+GX_SetGraphicsMode kind:function(arm,size=0x68) addr:0x020066d8
 GXS_SetGraphicsMode kind:function(arm,size=0x1c) addr:0x02006740
 GXx_SetMasterBrightness_ kind:function(arm,size=0x28) addr:0x0200675c
 func_02006784 kind:function(arm,size=0x40) addr:0x02006784
@@ -2679,7 +2679,7 @@ data_02055ba0 kind:data(any) addr:0x02055ba0
 data_02055bc0 kind:data(any) addr:0x02055bc0
 data_02055bd0 kind:data(any) addr:0x02055bd0
 data_02055bd8 kind:data(any) addr:0x02055bd8
-data_02055c18 kind:data(any) addr:0x02055c18
+sIsDispOn kind:data(any) addr:0x02055c18
 data_02055c1c kind:data(any) addr:0x02055c1c
 data_02055c20 kind:data(any) addr:0x02055c20
 data_02055c28 kind:data(any) addr:0x02055c28
@@ -2803,7 +2803,7 @@ data_02056ec8 kind:bss addr:0x02056ec8
 data_02056ecc kind:bss addr:0x02056ecc
 data_02056ee0 kind:bss addr:0x02056ee0
 data_02056ee8 kind:bss addr:0x02056ee8
-data_02056f08 kind:bss addr:0x02056f08
+sDispMode kind:bss addr:0x02056f08
 data_02056f0a kind:bss addr:0x02056f0a
 data_02056f0c kind:bss addr:0x02056f0c
 data_02056f28 kind:bss addr:0x02056f28

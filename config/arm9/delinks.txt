@@ -592,6 +592,10 @@ libs/nitro/mi/auto/MI_SetWramBank.c:
     complete
     .text       start:0x02004e48 end:0x02004e58
 
+libs/nitro/mi/calls/MI_StopAllDma.c:
+    complete
+    .text       start:0x020052f0 end:0x02005318
+
 libs/nitro/mi/calls/MIi_CheckDma0SourceAddress.c:
     complete
     .text       start:0x020053a4 end:0x020053f8
@@ -636,11 +640,19 @@ src/auto/func_02006464.c:
     complete
     .text       start:0x02006464 end:0x0200647c
 
-libs/nitro/os/calls/func_02006644.c:
+libs/nitro/gx/auto/GX_IsDispOn.c:
     complete
     .text       start:0x02006644 end:0x02006654
 
-libs/nitro/gx/calls/func_020066d8.c:
+libs/nitro/gx/calls/GX_DispOff.c:
+    complete
+    .text       start:0x02006654 end:0x02006694
+
+libs/nitro/gx/auto/GX_DispOn.c:
+    complete
+    .text       start:0x02006694 end:0x020066d8
+
+libs/nitro/gx/calls/GX_SetGraphicsMode.c:
     complete
     .text       start:0x020066d8 end:0x02006740
 
@@ -1391,6 +1403,10 @@ libs/nitro/spi/calls/PM_GetBackLight.c:
 libs/nitro/spi/calls/PMi_SendPxiData.c:
     complete
     .text       start:0x02010620 end:0x02010638
+
+libs/nitro/spi/calls/PM_SetLCDPower.c:
+    complete
+    .text       start:0x020109f8 end:0x02010a1c
 
 libs/nitro/spi/auto/PM_GetLCDPower.c:
     complete

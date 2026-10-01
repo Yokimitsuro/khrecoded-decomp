@@ -92,6 +92,7 @@ enum PMUtilityParameter {
 };
 
 #define FALSE 0
+#define TRUE 1
 #define PM_SUCCESS 0
 #define PM_BUSY 1
 #define PM_ERROR 2

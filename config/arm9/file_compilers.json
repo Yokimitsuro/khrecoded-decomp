@@ -134,5 +134,7 @@
   "libs/nitro/rtc/calls/RTCi_WriteRawStatus2Async.c": "dsi/1.1",
   "libs/nitro/rtc/calls/RtcCommonCallback.c": "dsi/1.1",
   "libs/nitro/rtc/calls/RTC_GetDayOfWeek.c": "dsi/1.1",
-  "libs/nns/snd/calls/NNSi_SndFaderSet.c": "dsi/1.1"
+  "libs/nns/snd/calls/NNSi_SndFaderSet.c": "dsi/1.1",
+  "libs/nitro/gx/auto/GX_DispOn.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_SetLCDPower.c": "dsi/1.1"
 }
