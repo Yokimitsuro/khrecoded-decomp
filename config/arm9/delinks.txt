@@ -1906,6 +1906,10 @@ src/calls/func_0200f05c.c:
     complete
     .text       start:0x0200f05c end:0x0200f094
 
+libs/nitro/snd/calls/SND_FlushCommand.c:
+    complete
+    .text       start:0x0200f094 end:0x0200f230
+
 libs/nitro/snd/calls/SND_WaitForCommandProc.c:
     complete
     .text       start:0x0200f230 end:0x0200f29c
