@@ -592,6 +592,14 @@ libs/nitro/mi/auto/MI_SetWramBank.c:
     complete
     .text       start:0x02004e48 end:0x02004e58
 
+libs/nitro/mi/calls/MI_WaitDma.c:
+    complete
+    .text       start:0x0200522c end:0x02005288
+
+libs/nitro/mi/calls/MI_StopDma.c:
+    complete
+    .text       start:0x02005288 end:0x020052f0
+
 libs/nitro/mi/calls/MI_StopAllDma.c:
     complete
     .text       start:0x020052f0 end:0x02005318
@@ -1323,6 +1331,10 @@ src/calls/func_020101a0.c:
 src/calls/func_020101b0.c:
     complete
     .text       start:0x020101b0 end:0x020101bc
+
+libs/nitro/spi/calls/PMi_WaitBusy.c:
+    complete
+    .text       start:0x020101bc end:0x02010210
 
 libs/nitro/spi/auto/PMi_DummyCallback.c:
     complete

@@ -1,6 +1,4 @@
-typedef unsigned int u32;
-
-extern void MI_StopDma(u32 dmaNo);
+#include "libs/nitro/mi/mi_dma_internal.h"
 
 void MI_StopAllDma(void)
 {
