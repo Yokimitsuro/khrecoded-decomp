@@ -4,13 +4,29 @@
     .data       start:0x020be800 end:0x020bea20 kind:data align:32
     .bss        start:0x020bea20 end:0x020beac0 kind:bss align:32
 
+src/overlays/ov039/calls/RuntimeState_SetMode.c:
+    complete
+    .text       start:0x020bab00 end:0x020bab18
+
 src/overlays/ov039/calls/func_ov039_020bb708.c:
     complete
     .text       start:0x020bb708 end:0x020bb72c
 
+src/overlays/ov039/calls/RuntimeState_SetCondition.c:
+    complete
+    .text       start:0x020bc05c end:0x020bc074
+
 src/overlays/ov039/calls/func_ov039_020bc1dc.c:
     complete
     .text       start:0x020bc1dc end:0x020bc1ec
+
+src/overlays/ov039/calls/RuntimeState_SetFlags.c:
+    complete
+    .text       start:0x020bc800 end:0x020bc818
+
+src/overlays/ov039/calls/RuntimeState_SetObjectId.c:
+    complete
+    .text       start:0x020bcd88 end:0x020bcda0
 
 src/overlays/ov039/auto/func_ov039_020bcdb8.c:
     complete

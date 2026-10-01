@@ -168,6 +168,10 @@ src/overlays/ov015/auto/func_ov015_02075338.c:
     complete
     .text       start:0x02075338 end:0x0207533c
 
-src/overlays/ov015/calls/func_ov015_02079870.c:
+src/overlays/ov015/calls/MI_CpuClear32_0x800.c:
+    complete
+    .text       start:0x02078f00 end:0x02078f18
+
+src/overlays/ov015/calls/G2S_ClearBG2Screen.c:
     complete
     .text       start:0x02079870 end:0x02079880

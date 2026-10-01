@@ -4,6 +4,10 @@
     .data       start:0x02063840 end:0x02063a00 kind:data align:32
     .bss        start:0x02063a00 end:0x02063a20 kind:bss align:32
 
+src/overlays/ov000/calls/DSProt_OnDetection.c:
+    complete
+    .text       start:0x02061b6c end:0x02061b88
+
 src/overlays/ov000/calls/func_ov000_02062908.c:
     complete
     .text       start:0x02062908 end:0x02062920

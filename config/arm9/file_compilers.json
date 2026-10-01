@@ -1,4 +1,6 @@
 {
+  "src/overlays/ov000/calls/DSProt_OnDetection.c": "2.0/base",
+  "src/overlays/ov015/calls/G2S_ClearBG2Screen.c": "2.0/base",
   "src/overlays/ov104/calls/Dummy_IsBad.c": "2.0/sp2p3",
   "src/overlays/ov104/calls/Dummy_IsGood.c": "2.0/sp2p3",
   "src/overlays/ov104/calls/RC4_Byte.c": "2.0/sp2p3",
