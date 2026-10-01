@@ -19,7 +19,7 @@ typedef struct OSThreadSystem {
     char reserved0c[0x10];
     OSThreadInfo threadInfo;
 } OSThreadSystem;
-extern OSThreadSystem data_02056b50;
+extern OSThreadSystem OSi_ThreadSystemState;
 extern OSThreadInfo OSi_ThreadInfo;
 
 void OSi_RescheduleThread(void)
@@ -30,16 +30,16 @@ void OSi_RescheduleThread(void)
     void *next;
     OSSwitchThreadCallback callback;
 
-    if (data_02056b50.rescheduleCount != 0)
+    if (OSi_ThreadSystemState.rescheduleCount != 0)
         return;
 
     info = &OSi_ThreadInfo;
-    if (data_02056b50.threadInfo.irqDepth != 0 || OS_GetProcMode() == 0x12) {
+    if (OSi_ThreadSystemState.threadInfo.irqDepth != 0 || OS_GetProcMode() == 0x12) {
         info->isNeedRescheduling = 1;
         return;
     }
 
-    currentThreadPtr = (void **)data_02056b50.currentThreadPtr;
+    currentThreadPtr = (void **)OSi_ThreadSystemState.currentThreadPtr;
     current = *currentThreadPtr;
     next = func_02002b9c();
 
@@ -51,7 +51,7 @@ void OSi_RescheduleThread(void)
             return;
     }
 
-    callback = data_02056b50.systemCallback;
+    callback = OSi_ThreadSystemState.systemCallback;
     if (callback != 0)
         callback(current, next);
 
@@ -59,6 +59,6 @@ void OSi_RescheduleThread(void)
     if (callback != 0)
         callback(current, next);
 
-    data_02056b50.threadInfo.currentThread = next;
+    OSi_ThreadSystemState.threadInfo.currentThread = next;
     OS_LoadContext((OSContext *)next);
 }

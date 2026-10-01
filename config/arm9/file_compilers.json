@@ -166,6 +166,7 @@
   "libs/nitro/os/calls/OS_InitLock.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_InitMutex.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_SleepThread.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_Sleep.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_LockMutex.c": "dsi/1.1",
   "libs/nitro/os/calls/OSi_UnlockAllMutex.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_TryLockMutex.c": "dsi/1.1",

@@ -5,10 +5,10 @@ typedef struct OSThreadState {
     u32 nextThreadId;
 } OSThreadState;
 
-extern OSThreadState data_02056b50;
+extern OSThreadState OSi_ThreadSystemState;
 
 int OSi_GetUnusedThreadId(void)
 {
-    data_02056b50.nextThreadId++;
-    return data_02056b50.nextThreadId;
+    OSi_ThreadSystemState.nextThreadId++;
+    return OSi_ThreadSystemState.nextThreadId;
 }

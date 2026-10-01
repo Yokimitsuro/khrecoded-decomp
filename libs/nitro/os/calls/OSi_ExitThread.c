@@ -127,7 +127,7 @@ vu32 exitThreadStatus = 0;   /* exitThreadStatus */
 BOOL OSi_IsThreadInitialized = 0;   /* OSi_IsThreadInitialized */
 OSThread ** OSi_CurrentThreadPtr = 0;   /* OSi_CurrentThreadPtr */
 u32 OSi_RescheduleCount = 0;   /* OSi_RescheduleCount */
-void * data_02056b50 = 0;   /* data_02056b50 */
+void * OSi_ThreadSystemState = 0;   /* OSi_ThreadSystemState */
 OSThreadInfo data_02044330 = {0};   /* data_02044330 */
 
 

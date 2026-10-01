@@ -7,7 +7,7 @@ typedef struct OSThreadInfo {
     OSSwitchThreadCallback switchCallback;
 } OSThreadInfo;
 
-extern OSThreadInfo data_02056b50;
+extern OSThreadInfo OSi_ThreadSystemState;
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 
@@ -17,8 +17,8 @@ OSSwitchThreadCallback OS_SetSwitchThreadCallback(OSSwitchThreadCallback callbac
     OSSwitchThreadCallback previousCallback;
 
     interruptState = OS_DisableInterrupts();
-    previousCallback = data_02056b50.switchCallback;
-    data_02056b50.switchCallback = callback;
+    previousCallback = OSi_ThreadSystemState.switchCallback;
+    OSi_ThreadSystemState.switchCallback = callback;
     OS_RestoreInterrupts(interruptState);
     return previousCallback;
 }

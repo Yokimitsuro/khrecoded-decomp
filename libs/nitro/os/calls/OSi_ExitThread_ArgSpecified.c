@@ -16,7 +16,7 @@ typedef struct OSThreadSystem {
     void *destructorStack;
 } OSThreadSystem;
 
-extern OSThreadSystem data_02056b50;
+extern OSThreadSystem OSi_ThreadSystemState;
 extern void OS_InitContext(OSContext *context, u32 entryPoint, u32 stackPointer);
 extern void OS_LoadContext(OSContext *context);
 extern void OSi_ExitThread(void *argument);
@@ -24,7 +24,7 @@ extern void OSi_ExitThread(void *argument);
 asm void OSi_ExitThread_ArgSpecified(OSThread *thread, void *argument)
 {
     stmfd sp!, {r3, r4, r5, lr}
-    ldr r2, =data_02056b50
+    ldr r2, =OSi_ThreadSystemState
     mov r5, r0
     ldr r2, [r2, #0x14]
     mov r4, r1

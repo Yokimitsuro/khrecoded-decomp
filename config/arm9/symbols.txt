@@ -2781,7 +2781,7 @@ data_02056b1c kind:bss addr:0x02056b1c
 data_02056b20 kind:bss addr:0x02056b20
 OSi_IsResetOccurred kind:bss addr:0x02056b48
 OSi_IsInitLock kind:bss addr:0x02056b4c
-data_02056b50 kind:bss addr:0x02056b50
+OSi_ThreadSystemState kind:bss addr:0x02056b50
 OSi_IsThreadInitialized kind:bss addr:0x02056b5c
 OSi_ThreadInfo kind:bss addr:0x02056b6c
 data_02056b70 kind:bss addr:0x02056b70
