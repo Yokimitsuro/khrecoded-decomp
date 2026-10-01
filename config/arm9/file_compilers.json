@@ -160,6 +160,7 @@
   "libs/nitro/gx/calls/GX_ResetBankForTexPltt.c": "dsi/1.1",
   "libs/nitro/snd/calls/SNDi_UnlockMutex.c": "dsi/1.1",
   "libs/nitro/os/calls/OSi_CommonCallback.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_InitLock.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_InitMutex.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_SleepThread.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_LockMutex.c": "dsi/1.1",

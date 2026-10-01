@@ -94,9 +94,9 @@ OSi_CommonCallback kind:function(arm,size=0x30) addr:0x02002040
 OSi_SendToPxi kind:function(arm,size=0x2c) addr:0x02002070
 OS_InitLock kind:function(arm,size=0xd0) addr:0x0200209c
 OSi_DoLockByWord kind:function(arm,size=0x4c) addr:0x0200216c
-func_020021b8 kind:function(arm,size=0x10) addr:0x020021b8
+OS_LockByWord kind:function(arm,size=0x10) addr:0x020021b8
 OSi_DoUnlockByWord kind:function(arm,size=0x74) addr:0x020021c8
-func_0200223c kind:function(arm,size=0x10) addr:0x0200223c
+OS_UnlockByWord kind:function(arm,size=0x10) addr:0x0200223c
 OSi_DoTryLockByWord kind:function(arm,size=0x6c) addr:0x0200224c
 OS_TryLockByWord kind:function(arm,size=0x10) addr:0x020022b8
 OS_UnlockCartridge_0x020022c8 kind:function(arm,size=0x20) addr:0x020022c8
@@ -2780,7 +2780,7 @@ data_02056b18 kind:bss addr:0x02056b18
 data_02056b1c kind:bss addr:0x02056b1c
 data_02056b20 kind:bss addr:0x02056b20
 OSi_IsResetOccurred kind:bss addr:0x02056b48
-data_02056b4c kind:bss addr:0x02056b4c
+OSi_IsInitLock kind:bss addr:0x02056b4c
 data_02056b50 kind:bss addr:0x02056b50
 data_02056b5c kind:bss addr:0x02056b5c
 OSi_ThreadInfo kind:bss addr:0x02056b6c
