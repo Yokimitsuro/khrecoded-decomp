@@ -62,14 +62,22 @@ typedef int (*CARDReadRomFunction)(void *argument, void *buffer, u32 offset,
 
 typedef struct CARDRomState {
     u32 romBase;
-    u32 cachedPage;
+    BOOL enableCacheInvalidationIC;
     CARDTransferInfo *dmaReadRegisteredInfo;
     CARDReadRomFunction readRom;
+    CARDTransferInfo dmaReadInfo;
 } CARDRomState;
+
+typedef struct CARDRomConfig {
+    u32 cachedPage;
+    BOOL enableCacheInvalidationDC;
+} CARDRomConfig;
 
 extern CARDiCommon cardi_common;
 extern CARDRomState sCardRomState;
+extern CARDRomConfig sCardRomConfig;
 extern CARDTransferInfo sCardDmaReadInfo;
+extern u8 sCardRomCacheBuffer[0x200];
 
 #define REG_MCCNT0 (*(vu16 *)0x040001a0)
 #define REG_MCCNT1 (*(vu32 *)0x040001a4)

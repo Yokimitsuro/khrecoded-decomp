@@ -2681,7 +2681,7 @@ data_02055bd0 kind:data(any) addr:0x02055bd0
 OSi_ProtectionRegionSetters kind:data(any) addr:0x02055bd8
 gGXDataState kind:data(any) addr:0x02055c18
 GXi_DmaId kind:data(any) addr:0x02055c1c
-data_02055c20 kind:data(any) addr:0x02055c20
+sCardRomConfig kind:data(any) addr:0x02055c20
 data_02055c28 kind:data(any) addr:0x02055c28
 data_02055c2c kind:data(any) addr:0x02055c2c
 data_02055c30 kind:data(any) addr:0x02055c30
@@ -2829,7 +2829,7 @@ data_02057520 kind:bss addr:0x02057520
 sCardRomState kind:bss addr:0x02057620
 sCardDmaReadInfo kind:bss addr:0x02057630
 CARDiOwnSignature kind:bss addr:0x0205764c
-data_020576e0 kind:bss addr:0x020576e0
+sCardRomCacheBuffer kind:bss addr:0x020576e0
 sCardPullOutState kind:bss addr:0x020578e0
 data_020578ec kind:bss addr:0x020578ec
 data_020578fc kind:bss addr:0x020578fc

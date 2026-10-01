@@ -1674,6 +1674,10 @@ libs/nitro/card/calls/CARDi_ReadRomSyncCore.c:
     complete
     .text       start:0x02009e94 end:0x02009ed0
 
+libs/nitro/card/calls/CARDi_ReadRom.c:
+    complete
+    .text       start:0x02009ed0 end:0x0200a000
+
 libs/nitro/card/calls/CARDi_InitRom.c:
     complete
     .text       start:0x0200a000 end:0x0200a058
