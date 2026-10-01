@@ -1806,6 +1806,22 @@ libs/nitro/fs/calls/FS_WaitAsync.c:
     complete
     .text       start:0x0200b1f8 end:0x0200b29c
 
+libs/nitro/fs/auto/FSi_DecrementSjisPosition.c:
+    complete
+    .text       start:0x0200b29c end:0x0200b2dc
+
+libs/nitro/fs/auto/FSi_IncrementSjisPositionToSlash.c:
+    complete
+    .text       start:0x0200b2dc end:0x0200b330
+
+libs/nitro/fs/calls/FSi_DecrementSjisPositionToSlash.c:
+    complete
+    .text       start:0x0200b330 end:0x0200b364
+
+libs/nitro/fs/calls/FSi_TrimSjisTrailingSlash.c:
+    complete
+    .text       start:0x0200b364 end:0x0200b3a8
+
 libs/nitro/fs/calls/FS_InitFile.c:
     complete
     .text       start:0x0200b3a8 end:0x0200b3d4

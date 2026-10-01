@@ -18,8 +18,8 @@ identical** to the original game code.
 <!-- progress:start -->
 | Category | Count | Meaning |
 |---|---:|---|
-| Real C matched functions | **1,819** / 10,415 (17.5%) | Functions implemented in C and verified byte-exact |
-| Real C matched **bytes** | **97,626** / 1,656,988 (5.89%) | Code bytes covered by real C; the honest progress figure |
+| Real C matched functions | **1,823** / 10,415 (17.5%) | Functions implemented in C and verified byte-exact |
+| Real C matched **bytes** | **97,894** / 1,656,988 (5.91%) | Code bytes covered by real C; the honest progress figure |
 | Assembly matched functions | **137** (7,734 bytes) | Original SDK, BIOS and DS Protect assembly, verified byte-exact; never counted as C |
 | Reconstructed DATA bytes | **1,204** / 228,172 (0.53%) | Verified byte-exact .rodata, .data, .ctor and .bss reconstructed from source |
 | Named DATA symbols | **79** / 2,372 (3.33%) | Identified DATA names; naming alone does not count as reconstructed DATA |

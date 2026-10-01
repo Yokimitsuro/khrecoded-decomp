@@ -431,5 +431,9 @@
   "libs/nitro/fs/calls/FS_UnloadArchiveTables.c": "dsi/1.1",
   "libs/nitro/fs/calls/FS_MountArchive.c": "dsi/1.1",
   "libs/nitro/fs/calls/FS_SuspendArchive.c": "dsi/1.1",
-  "libs/nitro/fs/calls/FS_ResumeArchive.c": "dsi/1.1"
+  "libs/nitro/fs/calls/FS_ResumeArchive.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FSi_DecrementSjisPosition.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FSi_IncrementSjisPositionToSlash.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_DecrementSjisPositionToSlash.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_TrimSjisTrailingSlash.c": "dsi/1.1"
 }
