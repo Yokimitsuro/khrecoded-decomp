@@ -1,12 +1,11 @@
 /* NitroSDK gx_load3d.c: GX_BeginLoadTex -- release the texture banks to LCDC and record, from
  * sTexStartAddrTable, the LCDC addresses of the (up to two) blocks the bank mask maps to and the
- * size of the first one. The symbol map calls GX_ResetBankForTex "SNDi_UnlockMutex". */
+ * size of the first one. */
 typedef unsigned short u16;
 typedef unsigned int u32;
 typedef int GXVRamTex;
 
-extern GXVRamTex SNDi_UnlockMutex(void);   /* GX_ResetBankForTex */
-#define GX_ResetBankForTex SNDi_UnlockMutex
+extern GXVRamTex GX_ResetBankForTex(void);
 
 /* gx_load3d.c's texture start table (data_02052918): blk1 / blk2 / szBlk1, each >> 12. */
 extern const struct {

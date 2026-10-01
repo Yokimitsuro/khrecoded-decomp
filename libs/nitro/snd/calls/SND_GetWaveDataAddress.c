@@ -80,9 +80,8 @@ typedef struct SNDBankData {
 } SNDBankData;
 
 extern void func_0200eddc(void);   /* SNDi_LockMutex */
-extern void func_0200edf0(void);   /* SNDi_UnlockMutex */
+extern void SNDi_UnlockMutex(void);
 #define SNDi_LockMutex func_0200eddc
-#define SNDi_UnlockMutex func_0200edf0
 
 /* SND_GetWaveDataAddress -- the wave data of entry `index` of the archive: an offset
  * below main RAM is relative to the archive, anything else is an absolute address. */

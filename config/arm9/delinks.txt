@@ -232,9 +232,17 @@ src/calls/func_020022b8.c:
     complete
     .text       start:0x020022b8 end:0x020022c8
 
+libs/nitro/os/calls/OS_UnlockCartridge_0x020022c8.c:
+    complete
+    .text       start:0x020022c8 end:0x020022e8
+
 libs/nitro/os/asm_stubs/calls/OS_UnLockCartridge.c:
     complete
     .text       start:0x020022e8 end:0x020022f4
+
+libs/nitro/os/calls/OS_TryLockCartridge.c:
+    complete
+    .text       start:0x020022f4 end:0x02002314
 
 libs/nitro/os/auto/OSi_AllocateCartridgeBus.c:
     complete
@@ -544,6 +552,10 @@ libs/nitro/os/calls/OS_InitReset.c:
     complete
     .text       start:0x02004a20 end:0x02004a74
 
+libs/nitro/os/calls/OS_GetMacAddress.c:
+    complete
+    .text       start:0x02004adc end:0x02004af8
+
 libs/nitro/os/asm_stubs/auto/func_02004b78.c:
     complete
     .text       start:0x02004b78 end:0x02004b80
@@ -763,6 +775,14 @@ libs/nitro/gx/calls/GX_ResetBankForBGExtPltt.c:
 libs/nitro/gx/calls/GX_ResetBankForOBJExtPltt.c:
     complete
     .text       start:0x02008d14 end:0x02008d38
+
+libs/nitro/gx/calls/GX_ResetBankForTex.c:
+    complete
+    .text       start:0x02008d38 end:0x02008d4c
+
+libs/nitro/gx/calls/GX_ResetBankForTexPltt.c:
+    complete
+    .text       start:0x02008d4c end:0x02008d60
 
 libs/nitro/gx/calls/GX_ResetBankForSubBGExtPltt.c:
     complete
@@ -1056,6 +1076,10 @@ libs/nitro/snd/calls/SND_Init.c:
     complete
     .text       start:0x0200eda4 end:0x0200eddc
 
+libs/nitro/snd/calls/SNDi_UnlockMutex.c:
+    complete
+    .text       start:0x0200edf0 end:0x0200ee04
+
 libs/nitro/snd/calls/SND_AllocCommand.c:
     complete
     .text       start:0x0200efd4 end:0x0200f05c
@@ -1163,6 +1187,14 @@ src/auto/func_02010a1c.c:
 libs/nitro/spi/calls/PM_AppendPostSleepCallback.c:
     complete
     .text       start:0x02010aec end:0x02010b00
+
+libs/nitro/spi/calls/PM_DeletePreSleepCallback.c:
+    complete
+    .text       start:0x02010b18 end:0x02010b28
+
+libs/nitro/spi/calls/PM_DeletePostSleepCallback.c:
+    complete
+    .text       start:0x02010b28 end:0x02010b38
 
 src/calls/func_02010d78.c:
     complete
