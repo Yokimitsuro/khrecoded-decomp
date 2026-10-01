@@ -132,5 +132,6 @@
   "libs/nitro/rtc/calls/RTCi_ReadRawDateTimeAsync.c": "dsi/1.1",
   "libs/nitro/rtc/calls/RTCi_ReadRawTimeAsync.c": "dsi/1.1",
   "libs/nitro/rtc/calls/RTCi_WriteRawStatus2Async.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RtcCommonCallback.c": "dsi/1.1",
   "libs/nitro/rtc/calls/RTC_GetDayOfWeek.c": "dsi/1.1"
 }

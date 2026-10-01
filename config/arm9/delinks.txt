@@ -1064,6 +1064,10 @@ libs/nitro/rtc/calls/RTC_GetDateTime.c:
     complete
     .text       start:0x0200e5a8 end:0x0200e5cc
 
+libs/nitro/rtc/calls/RtcCommonCallback.c:
+    complete
+    .text       start:0x0200e5cc end:0x0200e88c
+
 libs/nitro/rtc/auto/RtcBCD2HEX.c:
     complete
     .text       start:0x0200e88c end:0x0200e8d2
