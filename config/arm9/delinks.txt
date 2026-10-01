@@ -1614,7 +1614,7 @@ libs/nitro/card/calls/CARDi_OnFifoRecv.c:
     complete
     .text       start:0x020094f8 end:0x02009520
 
-src/calls/func_02009a90.c:
+libs/nitro/card/calls/CARD_GetBackupSectorSize.c:
     complete
     .text       start:0x02009a90 end:0x02009a9c
 

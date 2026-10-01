@@ -22,7 +22,7 @@ func_ov037_020babe8 kind:function(arm,size=0x24) addr:0x020babe8
 func_ov037_020bac0c kind:function(arm,size=0x24) addr:0x020bac0c
 func_ov037_020bac30 kind:function(arm,size=0x20) addr:0x020bac30
 func_ov037_020bac50 kind:function(arm,size=0x54) addr:0x020bac50
-CARD_GetBackupSectorSize kind:function(arm,size=0x14) addr:0x020baca4
+ContinueScene_GetResult kind:function(arm,size=0x14) addr:0x020baca4
 func_ov037_020bacb8 kind:function(arm,size=0x74) addr:0x020bacb8
 func_ov037_020bad2c kind:function(arm,size=0x18) addr:0x020bad2c
 func_ov037_020bad44 kind:function(arm,size=0x20) addr:0x020bad44
@@ -54,5 +54,5 @@ data_ov037_020bb734 kind:data(any) addr:0x020bb734
 data_ov037_020bb748 kind:data(any) addr:0x020bb748
 data_ov037_020bb758 kind:data(any) addr:0x020bb758
 data_ov037_020bb770 kind:data(any) addr:0x020bb770
-data_ov037_020bb780 kind:bss addr:0x020bb780
-data_ov037_020bb784 kind:bss addr:0x020bb784
+gContinueSceneState kind:bss addr:0x020bb780
+gContinueScreenContext kind:bss addr:0x020bb784

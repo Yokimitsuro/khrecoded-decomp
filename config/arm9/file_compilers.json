@@ -282,6 +282,8 @@
   "libs/nitro/card/calls/CARDi_DCInvalidateSmart.c": "dsi/1.1",
   "libs/nitro/card/calls/CARDi_OnFifoRecv.c": "dsi/1.1",
   "libs/nitro/card/calls/CARDi_InitRom.c": "dsi/1.1",
+  "libs/nitro/card/calls/CARD_GetBackupSectorSize.c": "dsi/1.1",
+  "src/overlays/ov037/calls/ContinueScene_GetResult.c": "dsi/1.1",
   "libs/nitro/card/calls/CARD_WaitBackupAsync.c": "dsi/1.1",
   "libs/nitro/card/calls/CARD_TryWaitBackupAsync.c": "dsi/1.1",
   "libs/nitro/card/calls/CARD_WaitRomAsync.c": "dsi/1.1",

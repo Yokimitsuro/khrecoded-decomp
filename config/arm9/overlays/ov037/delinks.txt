@@ -12,6 +12,6 @@ src/overlays/ov037/calls/func_ov037_020bab98.c:
     complete
     .text       start:0x020bab98 end:0x020babbc
 
-libs/nitro/card/calls/CARD_GetBackupSectorSize.c:
+src/overlays/ov037/calls/ContinueScene_GetResult.c:
     complete
     .text       start:0x020baca4 end:0x020bacb8
