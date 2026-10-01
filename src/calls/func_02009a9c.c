@@ -1,5 +1,5 @@
-extern int func_020092a0();
+extern int CARDi_WaitAsync();
 
 int func_02009a9c(int arg0) {
-    return func_020092a0(arg0);
+    return CARDi_WaitAsync(arg0);
 }
