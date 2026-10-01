@@ -29,7 +29,7 @@ typedef struct CARDiCommon {
 
 #define OS_LOCK_ID_ERROR (-3)
 
-extern CARDiCommon data_02056fe0;
+extern CARDiCommon cardi_common;
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
 extern void OS_SleepThread(OSThreadQueue *queue);
@@ -38,7 +38,7 @@ extern void OS_Terminate(void);
 void CARDi_LockResource(CARDiOwner owner, CARDTargetMode target)
 {
     OSThreadQueue *queue;
-    CARDiCommon *const common = &data_02056fe0;
+    CARDiCommon *const common = &cardi_common;
     OSIntrMode interruptState = OS_DisableInterrupts();
 
     if (common->lockOwner == owner) {

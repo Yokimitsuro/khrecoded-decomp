@@ -1,4 +1,4 @@
-extern void func_020028ac(void *thread, void (*func)(void *), void *arg, void *stack, unsigned stackSize, unsigned prio);
+extern void OS_CreateThread(void *thread, void (*func)(void *), void *arg, void *stack, unsigned stackSize, unsigned prio);
 extern void OS_WakeupThreadDirect(void *thread);
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
@@ -16,7 +16,7 @@ void func_02012798(char *p) {
         func_020127fc(p + 0xc4);
         func_020127fc(&data_0205a48c);
         *(int *)(p + 0xc0) = 0;
-        func_020028ac(p, func_02012808, p, &data_0205a8b0, 0x400, 0x14);
+        OS_CreateThread(p, func_02012808, p, &data_0205a8b0, 0x400, 0x14);
         OS_WakeupThreadDirect(p);
     }
     OS_RestoreInterrupts(state);

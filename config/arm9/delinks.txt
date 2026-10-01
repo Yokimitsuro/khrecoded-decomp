@@ -1514,19 +1514,23 @@ libs/nitro/card/calls/CARDi_LockBusCondition.c:
     complete
     .text       start:0x0200903c end:0x02009050
 
-src/calls/func_02009114.c:
+libs/nitro/card/calls/CARD_Init.c:
+    complete
+    .text       start:0x02009050 end:0x02009114
+
+libs/nitro/card/calls/CARD_IsEnabled.c:
     complete
     .text       start:0x02009114 end:0x02009120
 
-src/calls/func_02009120.c:
+libs/nitro/card/calls/CARD_CheckEnabled.c:
     complete
     .text       start:0x02009120 end:0x02009130
 
-src/calls/func_02009130.c:
+libs/nitro/card/calls/CARD_Enable.c:
     complete
     .text       start:0x02009130 end:0x0200913c
 
-src/calls/func_0200913c.c:
+libs/nitro/card/calls/CARD_GetResultCode.c:
     complete
     .text       start:0x0200913c end:0x02009148
 
