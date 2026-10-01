@@ -39,7 +39,7 @@ void OSi_InitVramExclusive(void);
 void OS_InitArena(void);
 void CARD_Init(void);
 void MI_Init(void);
-void func_02010250(void);
+void PM_Init(void);
 void func_02012564(void);
 extern void OSi_CancelDma0 (void);
 
@@ -82,7 +82,7 @@ void OS_Init(void)
 #endif
 
 #ifndef SDK_TEG
-    func_02010250();
+    PM_Init();
 #endif
 
     OSi_CancelDma0();

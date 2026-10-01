@@ -614,7 +614,7 @@ MATHi_CalcHMAC kind:function(arm,size=0x1b0) addr:0x0200da9c
 func_0200dc4c kind:function(arm,size=0x288) addr:0x0200dc4c
 func_0200dee4 kind:function(arm,size=0x31c) addr:0x0200dee4
 PXI_Init kind:function(thumb,size=0x8) addr:0x0200e200
-func_0200e208 kind:function(thumb,size=0xa8) addr:0x0200e208
+PXI_InitFifo kind:function(thumb,size=0xa8) addr:0x0200e208
 PXI_SetFifoRecvCallback kind:function(thumb,size=0x4c) addr:0x0200e2b0
 PXI_IsCallbackReady kind:function(thumb,size=0x24) addr:0x0200e2fc
 PXI_SendWordByFifo kind:function(thumb,size=0x68) addr:0x0200e320
@@ -713,11 +713,11 @@ PMi_WaitBusy kind:function(thumb,size=0x54) addr:0x020101bc
 PMi_DummyCallback kind:function(thumb,size=0x8) addr:0x02010210
 PMi_CallCallbackAndUnlock kind:function(thumb,size=0x1c) addr:0x02010218
 PMi_WaitVBlank kind:function(thumb,size=0x1c) addr:0x02010234
-func_02010250 kind:function(thumb,size=0x5c) addr:0x02010250
-func_020102ac kind:function(thumb,size=0x68) addr:0x020102ac
+PM_Init kind:function(thumb,size=0x5c) addr:0x02010250
+PMi_CommonCallback kind:function(thumb,size=0x68) addr:0x020102ac
 PMi_TryToSendPxiData kind:function(thumb,size=0x50) addr:0x02010314
 PMi_TryToSendPxiDataTillSuccess kind:function(thumb,size=0x6c) addr:0x02010364
-func_020103d0 kind:function(thumb,size=0x5c) addr:0x020103d0
+PMi_SendSleepStart kind:function(thumb,size=0x5c) addr:0x020103d0
 PM_SendUtilityCommandAsync kind:function(thumb,size=0x30) addr:0x0201042c
 PM_SendUtilityCommand kind:function(thumb,size=0x20) addr:0x0201045c
 PMi_SetLEDAsync kind:function(thumb,size=0x38) addr:0x0201047c
@@ -744,7 +744,7 @@ PMi_InsertPreSleepCallbackEx kind:function(thumb,size=0x18) addr:0x02010b00
 PM_DeletePreSleepCallback kind:function(thumb,size=0x10) addr:0x02010b18
 PM_DeletePostSleepCallback kind:function(thumb,size=0x10) addr:0x02010b28
 PMi_LCDOnAvoidReset kind:function(thumb,size=0x6c) addr:0x02010b38
-func_02010ba4 kind:function(thumb,size=0x14) addr:0x02010ba4
+PMi_SetDispOffCount kind:function(thumb,size=0x14) addr:0x02010ba4
 STD_CopyString kind:function(thumb,size=0x28) addr:0x02010bb8
 func_02010be0 kind:function(thumb,size=0xa8) addr:0x02010be0
 STD_GetStringLength kind:function(thumb,size=0x54) addr:0x02010c88
@@ -2841,7 +2841,7 @@ data_02057b24 kind:bss addr:0x02057b24
 data_02057b80 kind:bss addr:0x02057b80
 data_02057b84 kind:bss addr:0x02057b84
 data_02057b88 kind:bss addr:0x02057b88
-data_02057b8c kind:bss addr:0x02057b8c
+FifoRecvCallbackTable kind:bss addr:0x02057b8c
 data_02057c0c kind:bss addr:0x02057c0c
 data_02057c10 kind:bss addr:0x02057c10
 data_02057c34 kind:bss addr:0x02057c34

@@ -1024,6 +1024,10 @@ libs/nitro/pxi/auto/PXI_IsCallbackReady.c:
     complete
     .text       start:0x0200e2fc end:0x0200e320
 
+libs/nitro/pxi/calls/PXI_SendWordByFifo.c:
+    complete
+    .text       start:0x0200e320 end:0x0200e388
+
 src/calls/func_0200e8d4.c:
     complete
     .text       start:0x0200e8d4 end:0x0200e8e0
@@ -1268,6 +1272,14 @@ libs/nitro/spi/auto/PMi_WaitVBlank.c:
     complete
     .text       start:0x02010234 end:0x02010250
 
+libs/nitro/spi/calls/PM_Init.c:
+    complete
+    .text       start:0x02010250 end:0x020102ac
+
+libs/nitro/spi/calls/PMi_CommonCallback.c:
+    complete
+    .text       start:0x020102ac end:0x02010314
+
 libs/nitro/spi/calls/PMi_TryToSendPxiData.c:
     complete
     .text       start:0x02010314 end:0x02010364
@@ -1275,6 +1287,10 @@ libs/nitro/spi/calls/PMi_TryToSendPxiData.c:
 libs/nitro/spi/calls/PMi_TryToSendPxiDataTillSuccess.c:
     complete
     .text       start:0x02010364 end:0x020103d0
+
+libs/nitro/spi/calls/PMi_SendSleepStart.c:
+    complete
+    .text       start:0x020103d0 end:0x0201042c
 
 libs/nitro/spi/calls/PM_SendUtilityCommandAsync.c:
     complete
@@ -1363,6 +1379,10 @@ libs/nitro/spi/calls/PM_DeletePostSleepCallback.c:
 libs/nitro/spi/calls/PMi_LCDOnAvoidReset.c:
     complete
     .text       start:0x02010b38 end:0x02010ba4
+
+libs/nitro/spi/auto/PMi_SetDispOffCount.c:
+    complete
+    .text       start:0x02010ba4 end:0x02010bb8
 
 libs/nitro/std/auto/STD_CopyString.c:
     complete

@@ -110,5 +110,10 @@
   "libs/nitro/spi/calls/PM_GetBackLight.c": "dsi/1.1",
   "libs/nitro/spi/calls/PMi_SendPxiData.c": "dsi/1.1",
   "libs/nitro/spi/calls/PM_SendUtilityCommandAsync.c": "dsi/1.1",
-  "libs/nitro/spi/auto/PMi_WaitVBlank.c": "dsi/1.1"
+  "libs/nitro/spi/auto/PMi_WaitVBlank.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_Init.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_CommonCallback.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_SendSleepStart.c": "dsi/1.1",
+  "libs/nitro/spi/auto/PMi_SetDispOffCount.c": "dsi/1.1",
+  "libs/nitro/pxi/calls/PXI_SendWordByFifo.c": "dsi/1.1"
 }

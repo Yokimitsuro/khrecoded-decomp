@@ -1,6 +1,6 @@
-extern void func_0200e208(void);
+extern void PXI_InitFifo(void);
 
 void PXI_Init(void)
 {
-    func_0200e208();
+    PXI_InitFifo();
 }
