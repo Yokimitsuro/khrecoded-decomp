@@ -83,9 +83,9 @@ typedef struct CARDiCommon {
     u32 length;
     u32 dmaChannel;
     const CARDDmaInterface *dmaInterface;
-    u32 requestType;
+    int requestType;
     int requestRetryCount;
-    u32 requestMode;
+    int requestMode;
     void *currentArm9Thread;
 } CARDiCommon;
 
