@@ -1566,6 +1566,10 @@ libs/nitro/card/calls/CARDi_LockResource.c:
     complete
     .text       start:0x020091e8 end:0x0200923c
 
+libs/nitro/card/calls/CARDi_WaitAsync.c:
+    complete
+    .text       start:0x020092a0 end:0x020092b4
+
 libs/nitro/card/calls/CARDi_InitCommand.c:
     complete
     .text       start:0x020092e4 end:0x02009314
@@ -1590,7 +1594,7 @@ src/calls/func_02009a90.c:
     complete
     .text       start:0x02009a90 end:0x02009a9c
 
-src/calls/func_02009a9c.c:
+libs/nitro/card/calls/CARD_WaitBackupAsync.c:
     complete
     .text       start:0x02009a9c end:0x02009aa4
 
