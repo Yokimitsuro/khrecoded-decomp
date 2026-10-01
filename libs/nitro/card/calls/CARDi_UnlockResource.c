@@ -32,32 +32,26 @@ typedef struct CARDiCommon {
 extern CARDiCommon cardi_common;
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
-extern void OS_SleepThread(OSThreadQueue *queue);
+extern void OS_WakeupThread(OSThreadQueue *queue);
 extern void OS_Terminate(void);
 
-void CARDi_LockResource(CARDiOwner owner, CARDTargetMode target)
+void CARDi_UnlockResource(CARDiOwner owner, CARDTargetMode target)
 {
-    OSThreadQueue *queue;
-    CARDiCommon *const common = &cardi_common;
+    CARDiCommon *common = &cardi_common;
     OSIntrMode interruptState = OS_DisableInterrupts();
 
-    if (common->lockOwner == owner) {
+    if (common->lockOwner != owner || !common->lockCount) {
+        OS_Terminate();
+    } else {
         if (common->lockTarget != target) {
             OS_Terminate();
         }
-    } else {
-        queue = common->lockQueue;
-        goto checkOwner;
-waitForOwner:
-        OS_SleepThread(queue);
-checkOwner:
-        if (common->lockOwner != OS_LOCK_ID_ERROR) {
-            goto waitForOwner;
+        if (!--common->lockCount) {
+            common->lockOwner = OS_LOCK_ID_ERROR;
+            common->lockTarget = CARD_TARGET_NONE;
+            OS_WakeupThread(common->lockQueue);
         }
-        common->lockOwner = owner;
-        common->lockTarget = target;
     }
 
-    ++common->lockCount;
     (void)OS_RestoreInterrupts(interruptState);
 }

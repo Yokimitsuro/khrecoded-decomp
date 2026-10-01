@@ -1554,17 +1554,21 @@ src/calls/CARD_UnlockRom.c:
     complete
     .text       start:0x020091ac end:0x020091be
 
-src/calls/func_020091c0.c:
+libs/nitro/card/calls/CARD_LockBackup.c:
     complete
     .text       start:0x020091c0 end:0x020091cc
 
-src/calls/func_020091cc.c:
+libs/nitro/card/calls/CARD_UnlockBackup.c:
     complete
     .text       start:0x020091cc end:0x020091e6
 
 libs/nitro/card/calls/CARDi_LockResource.c:
     complete
     .text       start:0x020091e8 end:0x0200923c
+
+libs/nitro/card/calls/CARDi_UnlockResource.c:
+    complete
+    .text       start:0x0200923c end:0x0200928c
 
 libs/nitro/card/calls/CARDi_WaitAsync.c:
     complete

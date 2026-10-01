@@ -16,7 +16,7 @@ typedef struct CARDiCommon {
     u32 instructionFlushThreshold;
     u32 dataFlushThreshold;
     volatile s32 lockOwner;
-    volatile int lockCount;
+    int lockCount;
     OSThreadQueue lockQueue;
     int lockTarget;
     u8 threadContext[0xc0];
