@@ -1570,6 +1570,10 @@ libs/nitro/card/calls/CARDi_InitCommand.c:
     complete
     .text       start:0x020092e4 end:0x02009314
 
+libs/nitro/card/calls/CARDi_OldTypeTaskThread.c:
+    complete
+    .text       start:0x020093ac end:0x020093e4
+
 src/calls/func_02009a90.c:
     complete
     .text       start:0x02009a90 end:0x02009a9c
