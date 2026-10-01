@@ -1598,6 +1598,10 @@ src/calls/func_02009aa4.c:
     complete
     .text       start:0x02009aa4 end:0x02009aac
 
+libs/nitro/card/calls/CARDi_InitRom.c:
+    complete
+    .text       start:0x0200a000 end:0x0200a058
+
 src/calls/func_0200a058.c:
     complete
     .text       start:0x0200a058 end:0x0200a060

@@ -38,7 +38,10 @@ typedef struct CARDiCommon {
 #define OS_BOOTTYPE_ROM 1
 
 extern CARDiCommon cardi_common;
-extern u32 cardi_rom_base;
+typedef struct CARDRomState {
+    u32 romBase;
+} CARDRomState;
+extern CARDRomState sCardRomState;
 extern int OS_GetBootType(void);
 extern void MI_CpuCopy8(const void *source, void *destination, u32 size);
 extern void CARDi_InitResourceLock(void);
@@ -69,7 +72,7 @@ void CARD_Init(void)
         common->dmaInterface = 0;
         common->instructionFlushThreshold = 0x400;
         common->dataFlushThreshold = 0x2400;
-        cardi_rom_base = 0;
+        sCardRomState.romBase = 0;
         common->priority = CARD_THREAD_PRIORITY_DEFAULT;
 
         CARDi_InitResourceLock();

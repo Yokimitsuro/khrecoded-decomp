@@ -474,7 +474,7 @@ func_02009b4c kind:function(thumb,size=0x44) addr:0x02009b4c
 func_02009b90 kind:function(thumb,size=0x54) addr:0x02009b90
 func_02009be4 kind:function(thumb,size=0x44) addr:0x02009be4
 func_02009c28 kind:function(thumb,size=0x38) addr:0x02009c28
-func_02009c60 kind:function(thumb,size=0xd8) addr:0x02009c60
+CARDi_ReadRomWithCPU kind:function(thumb,size=0xd8) addr:0x02009c60
 func_02009d38 kind:function(thumb,size=0x64) addr:0x02009d38
 func_02009d9c kind:function(thumb,size=0x54) addr:0x02009d9c
 func_02009df0 kind:function(thumb,size=0x24) addr:0x02009df0
@@ -2826,9 +2826,9 @@ data_02057460 kind:bss addr:0x02057460
 data_020574e0 kind:bss addr:0x020574e0
 data_02057500 kind:bss addr:0x02057500
 data_02057520 kind:bss addr:0x02057520
-cardi_rom_base kind:bss addr:0x02057620
+sCardRomState kind:bss addr:0x02057620
 data_02057630 kind:bss addr:0x02057630
-data_0205764c kind:bss addr:0x0205764c
+CARDiOwnSignature kind:bss addr:0x0205764c
 data_020576e0 kind:bss addr:0x020576e0
 sCardPullOutState kind:bss addr:0x020578e0
 data_020578ec kind:bss addr:0x020578ec
