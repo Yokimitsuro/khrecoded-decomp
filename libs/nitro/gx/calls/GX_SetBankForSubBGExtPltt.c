@@ -366,8 +366,7 @@ typedef struct {
     GX_VRAMCnt_ vramCnt;
 } GX_State;
 
-extern GX_State data_02056f48;   /* gGXState */
-#define gGXState data_02056f48
+extern GX_State gGXState;
 extern void GX_VRAMCNT_SetLCDC_(int lcdc);
 
 static inline void GX_VRAMCNT_SetBG_ (GXVRamBG bg)

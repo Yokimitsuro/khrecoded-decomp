@@ -1333,6 +1333,10 @@ libs/nitro/gx/calls/GX_EndLoadTexPltt.c:
     complete
     .text       start:0x02008298 end:0x020082d4
 
+libs/nitro/gx/calls/GX_SetBankForLCDC.c:
+    complete
+    .text       start:0x02008a88 end:0x02008aac
+
 libs/nitro/gx/calls/GX_SetBankForSubOBJ.c:
     complete
     .text       start:0x02008b48 end:0x02008bb8
@@ -1373,6 +1377,14 @@ libs/nitro/gx/calls/GX_ResetBankForSubOBJExtPltt.c:
     complete
     .text       start:0x02008d88 end:0x02008db0
 
+libs/nitro/gx/calls/GX_DisableBankForBG.c:
+    complete
+    .text       start:0x02008e70 end:0x02008e84
+
+libs/nitro/gx/calls/GX_DisableBankForOBJ.c:
+    complete
+    .text       start:0x02008e84 end:0x02008e98
+
 libs/nitro/gx/calls/GX_DisableBankForBGExtPltt.c:
     complete
     .text       start:0x02008e98 end:0x02008ebc
@@ -1380,6 +1392,26 @@ libs/nitro/gx/calls/GX_DisableBankForBGExtPltt.c:
 libs/nitro/gx/calls/GX_DisableBankForOBJExtPltt.c:
     complete
     .text       start:0x02008ebc end:0x02008ee0
+
+libs/nitro/gx/calls/GX_DisableBankForTex.c:
+    complete
+    .text       start:0x02008ee0 end:0x02008ef4
+
+libs/nitro/gx/calls/GX_DisableBankForTexPltt.c:
+    complete
+    .text       start:0x02008ef4 end:0x02008f08
+
+libs/nitro/gx/calls/GX_DisableBankForLCDC.c:
+    complete
+    .text       start:0x02008f08 end:0x02008f1c
+
+libs/nitro/gx/calls/GX_DisableBankForSubBG.c:
+    complete
+    .text       start:0x02008f1c end:0x02008f30
+
+libs/nitro/gx/calls/GX_DisableBankForSubOBJ.c:
+    complete
+    .text       start:0x02008f30 end:0x02008f44
 
 libs/nitro/gx/calls/GX_DisableBankForSubBGExtPltt.c:
     complete

@@ -18,10 +18,10 @@ typedef struct {
     u16 field18;
 } VRAMState;
 
-extern VRAMState data_02056f48;
+extern VRAMState gGXState;
 
 void GX_InitGXState(void) {
-    VRAMState *state = &data_02056f48;
+    VRAMState *state = &gGXState;
     state->field0 = 0;
     state->field2 = 0;
     state->field4 = 0;
