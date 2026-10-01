@@ -232,7 +232,7 @@ libs/nitro/os/calls/OSi_DoTryLockByWord.c:
     complete
     .text       start:0x0200224c end:0x020022b8
 
-src/calls/func_020022b8.c:
+libs/nitro/os/calls/OS_TryLockByWord.c:
     complete
     .text       start:0x020022b8 end:0x020022c8
 
@@ -256,6 +256,10 @@ libs/nitro/os/auto/OSi_FreeCartridgeBus.c:
     complete
     .text       start:0x0200232c end:0x02002344
 
+libs/nitro/os/calls/OS_TryLockCard.c:
+    complete
+    .text       start:0x02002360 end:0x0200237c
+
 libs/nitro/os/auto/OSi_AllocateCardBus.c:
     complete
     .text       start:0x0200237c end:0x02002394
@@ -267,6 +271,14 @@ libs/nitro/os/auto/OSi_FreeCardBus.c:
 src/auto/OS_ReadOwnerOfLockWord.c:
     complete
     .text       start:0x020023ac end:0x020023b4
+
+libs/nitro/os/asm_stubs/auto/OS_GetLockID.c:
+    complete
+    .text       start:0x020023b4 end:0x0200240c
+
+libs/nitro/os/asm_stubs/auto/OS_ReleaseLockID.c:
+    complete
+    .text       start:0x0200240c end:0x0200243c
 
 libs/nitro/os/calls/OS_SPrintf.c:
     complete
@@ -472,6 +484,10 @@ libs/nitro/os/auto/OS_GetArenaLo.c:
     complete
     .text       start:0x020036a4 end:0x020036b8
 
+libs/nitro/os/auto/OS_SetArenaHi.c:
+    complete
+    .text       start:0x0200383c end:0x02003850
+
 libs/nitro/os/auto/OS_SetArenaLo.c:
     complete
     .text       start:0x02003850 end:0x02003864
@@ -560,6 +576,10 @@ libs/nitro/os/auto/OS_CreateVAlarm.c:
     complete
     .text       start:0x02004668 end:0x0200467c
 
+libs/nitro/os/calls/OS_SetVAlarm.c:
+    complete
+    .text       start:0x0200467c end:0x02004708
+
 libs/nitro/os/asm_stubs/auto/func_02004938.c:
     complete
     .text       start:0x02004938 end:0x0200494c
@@ -628,6 +648,10 @@ libs/nitro/os/auto/OS_InitEvent.c:
 libs/nitro/os/calls/OS_WaitEventEx.c:
     complete
     .text       start:0x02004d64 end:0x02004e0c
+
+libs/nitro/os/calls/OS_SignalEvent.c:
+    complete
+    .text       start:0x02004e0c end:0x02004e48
 
 libs/nitro/mi/auto/MI_SetWramBank.c:
     complete
