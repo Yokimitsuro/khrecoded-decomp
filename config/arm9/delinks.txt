@@ -204,6 +204,10 @@ libs/nitro/os/calls/func_02002030.c:
     complete
     .text       start:0x02002030 end:0x02002040
 
+libs/nitro/os/calls/OSi_CommonCallback.c:
+    complete
+    .text       start:0x02002040 end:0x02002070
+
 libs/nitro/os/calls/OSi_SendToPxi.c:
     complete
     .text       start:0x02002070 end:0x0200209c
@@ -371,6 +375,10 @@ libs/nitro/os/auto/OS_InitMessageQueue.c:
 libs/nitro/os/calls/OS_SendMessage.c:
     complete
     .text       start:0x02002f78 end:0x0200300c
+
+libs/nitro/os/calls/OS_InitMutex.c:
+    complete
+    .text       start:0x02003148 end:0x0200316c
 
 libs/nitro/os/calls/OS_UnlockMutex.c:
     complete
@@ -664,6 +672,14 @@ libs/nitro/gx/auto/G3X_SetClearColor.c:
     complete
     .text       start:0x02006c1c end:0x02006c44
 
+libs/nitro/gx/auto/G3X_GetMtxStackLevelPV.c:
+    complete
+    .text       start:0x02006cf8 end:0x02006d24
+
+libs/nitro/gx/auto/G3X_GetMtxStackLevelPJ.c:
+    complete
+    .text       start:0x02006d24 end:0x02006d50
+
 libs/nitro/gx/auto/G3X_SetHOffset.c:
     complete
     .text       start:0x02006d50 end:0x02006d60
@@ -744,6 +760,10 @@ libs/nitro/gx/calls/GXS_BeginLoadBGExtPltt.c:
     complete
     .text       start:0x02007e98 end:0x02007eb0
 
+libs/nitro/gx/calls/GXS_EndLoadBGExtPltt.c:
+    complete
+    .text       start:0x02007f18 end:0x02007f50
+
 libs/nitro/gx/calls/GXS_BeginLoadOBJExtPltt.c:
     complete
     .text       start:0x02007f50 end:0x02007f68
@@ -767,6 +787,10 @@ libs/nitro/gx/calls/GX_SetBankForSubBGExtPltt.c:
 libs/nitro/gx/calls/GX_SetBankForSubOBJExtPltt.c:
     complete
     .text       start:0x02008c38 end:0x02008cb8
+
+libs/nitro/gx/calls/resetBankForX_.c:
+    complete
+    .text       start:0x02008cb8 end:0x02008cf0
 
 libs/nitro/gx/calls/GX_ResetBankForBGExtPltt.c:
     complete
@@ -876,6 +900,10 @@ libs/nitro/gx/asm_stubs/auto/CPi_RestoreContext.c:
     complete
     .text       start:0x0200a1b0 end:0x0200a1ec
 
+libs/nitro/fs/calls/FS_SeekFile.c:
+    complete
+    .text       start:0x0200b65c end:0x0200b688
+
 src/calls/func_0200b754.c:
     complete
     .text       start:0x0200b754 end:0x0200b764
@@ -916,6 +944,10 @@ src/auto/func_0200d2c0.c:
     complete
     .text       start:0x0200d2c0 end:0x0200d2c8
 
+libs/nitro/fs/calls/FSi_OnRomReadDone.c:
+    complete
+    .text       start:0x0200d2c8 end:0x0200d2ec
+
 libs/nitro/fs/calls/FSi_ReadRomCallback.c:
     complete
     .text       start:0x0200d2ec end:0x0200d334
@@ -947,6 +979,10 @@ libs/nitro/math/asm_stubs/auto/func_0200dc4c.c:
 src/calls/PXI_Init.c:
     complete
     .text       start:0x0200e200 end:0x0200e208
+
+libs/nitro/pxi/auto/PXI_IsCallbackReady.c:
+    complete
+    .text       start:0x0200e2fc end:0x0200e320
 
 src/calls/func_0200e8d4.c:
     complete
@@ -1120,6 +1156,10 @@ src/calls/func_0200f45c.c:
     complete
     .text       start:0x0200f45c end:0x0200f4a4
 
+libs/nitro/snd/calls/SND_AlarmInit.c:
+    complete
+    .text       start:0x0200f4e4 end:0x0200f51c
+
 libs/nitro/snd/calls/SNDi_IncAlarmId.c:
     complete
     .text       start:0x0200f51c end:0x0200f53c
@@ -1131,6 +1171,10 @@ libs/nitro/snd/calls/SNDi_SetAlarmHandler.c:
 libs/nitro/snd/calls/SNDi_CallAlarmHandler.c:
     complete
     .text       start:0x0200f56c end:0x0200f5b0
+
+libs/nitro/snd/calls/SND_GetPlayerStatus.c:
+    complete
+    .text       start:0x0200f5b0 end:0x0200f5d8
 
 libs/nitro/snd/calls/SND_CalcChannelVolume.c:
     complete
@@ -1351,6 +1395,10 @@ libs/nitro/nns/auto/RemoveMBlock.c:
 libs/nitro/nns/auto/InsertMBlock.c:
     complete
     .text       start:0x02012c38 end:0x02012c68
+
+libs/nitro/nns/auto/InitMBlock.c:
+    complete
+    .text       start:0x02012c68 end:0x02012c94
 
 libs/nitro/nns/calls/AllocFromHead.c:
     complete
@@ -2655,6 +2703,10 @@ src/calls/func_02029fac.c:
 src/calls/Heap_GetCurrent.c:
     complete
     .text       start:0x0202a16c end:0x0202a17c
+
+libs/nitro/nns/calls/NNS_FndAllocFromDefaultExpHeapEx.c:
+    complete
+    .text       start:0x0202a1b0 end:0x0202a1d8
 
 libs/nitro/nns/calls/NNSi_FndFreeFromDefaultHeap.c:
     complete
