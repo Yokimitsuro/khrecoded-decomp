@@ -11,6 +11,10 @@ src/overlays/ov044/calls/func_ov044_020d0130.c:
     complete
     .text       start:0x020d0130 end:0x020d0140
 
+src/overlays/ov044/calls/NNS_FndFreeToExpHeap_2.c:
+    complete
+    .text       start:0x020d0298 end:0x020d02e0
+
 src/overlays/ov044/auto/func_ov044_020d0580.c:
     complete
     .text       start:0x020d0580 end:0x020d0582

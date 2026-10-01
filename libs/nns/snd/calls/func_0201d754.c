@@ -128,7 +128,7 @@ typedef struct NNSSndFader {
     int counter;
     int frame;
 } NNSSndFader;
-void func_020218e8(NNSSndFader * fader, int target, int frame);
+void NNSi_SndFaderSet(NNSSndFader * fader, int target, int frame);
 struct NNSSndSeqPlayer;
 struct NNSSndPlayer;
 struct NNSSndPlayerHeap;
@@ -191,5 +191,5 @@ void func_0201d754 (NNSSndHandle * handle, int targetVolume, int frames)
 
     if (handle->player->status == NNS_SND_SEQ_PLAYER_STATUS_FADEOUT) return;
 
-    func_020218e8(&handle->player->fader, targetVolume << FADER_SHIFT, frames);
+    NNSi_SndFaderSet(&handle->player->fader, targetVolume << FADER_SHIFT, frames);
 }

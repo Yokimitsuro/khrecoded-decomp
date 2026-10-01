@@ -912,9 +912,21 @@ libs/nitro/gx/asm_stubs/auto/CPi_RestoreContext.c:
     complete
     .text       start:0x0200a1b0 end:0x0200a1ec
 
+libs/nitro/fs/calls/FS_OpenFileDirect.c:
+    complete
+    .text       start:0x0200b4a8 end:0x0200b4e8
+
 libs/nitro/fs/calls/FS_SeekFile.c:
     complete
     .text       start:0x0200b65c end:0x0200b688
+
+libs/nitro/fs/calls/FS_ReadFile.c:
+    complete
+    .text       start:0x0200b688 end:0x0200b6dc
+
+libs/nitro/fs/calls/FS_ReadFileAsync.c:
+    complete
+    .text       start:0x0200b6dc end:0x0200b754
 
 src/calls/func_0200b754.c:
     complete
@@ -2088,6 +2100,10 @@ src/calls/func_0201d30c.c:
     complete
     .text       start:0x0201d30c end:0x0201d318
 
+libs/nns/snd/calls/NNS_SndLockChannel.c:
+    complete
+    .text       start:0x0201d318 end:0x0201d35c
+
 libs/nns/snd/calls/NNS_SndUnlockChannel.c:
     complete
     .text       start:0x0201d35c end:0x0201d38c
@@ -2431,6 +2447,10 @@ libs/nns/snd/calls/AllocPlayer.c:
 libs/nns/snd/auto/FreePlayer.c:
     complete
     .text       start:0x02020534 end:0x02020560
+
+libs/nitro/snd/calls/SNDi_FreeVoiceChannel.c:
+    complete
+    .text       start:0x020207cc end:0x02020824
 
 libs/nns/snd/calls/ForceStopStrm_2.c:
     complete

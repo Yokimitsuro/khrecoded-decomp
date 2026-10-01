@@ -74,5 +74,10 @@
   "libs/nitro/nns/calls/NNS_FndPrependListObject.c": "dsi/1.1",
   "libs/nitro/nns/calls/NNSi_FndInitHeapHead.c": "dsi/1.1",
   "libs/nitro/dgt/auto/DGT_Hash2Reset.c": "dsi/1.1",
-  "libs/nitro/os/calls/OS_GetConsoleType.c": "dsi/1.1"
+  "libs/nitro/os/calls/OS_GetConsoleType.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_OpenFileDirect.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_ReadFile.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_ReadFileAsync.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndLockChannel.c": "dsi/1.1",
+  "libs/nitro/snd/calls/SNDi_FreeVoiceChannel.c": "dsi/1.1"
 }
