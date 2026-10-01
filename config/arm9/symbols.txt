@@ -241,12 +241,12 @@ OSi_AlarmHandler kind:function(arm,size=0x10) addr:0x02004440
 func_02004450 kind:function(arm,size=0xec) addr:0x02004450
 func_0200453c kind:function(arm,size=0x40) addr:0x0200453c
 OSi_InsertVAlarm kind:function(arm,size=0x7c) addr:0x0200457c
-func_020045f8 kind:function(arm,size=0x38) addr:0x020045f8
+OSi_AppendVAlarm kind:function(arm,size=0x38) addr:0x020045f8
 func_02004630 kind:function(arm,size=0x38) addr:0x02004630
 OS_CreateVAlarm kind:function(arm,size=0x14) addr:0x02004668
 OS_SetVAlarm kind:function(arm,size=0x8c) addr:0x0200467c
-func_02004708 kind:function(arm,size=0x40) addr:0x02004708
-func_02004748 kind:function(arm,size=0x168) addr:0x02004748
+OSi_SetNextVAlarm kind:function(arm,size=0x40) addr:0x02004708
+OSi_VAlarmHandler kind:function(arm,size=0x168) addr:0x02004748
 func_020048b0 kind:function(arm,size=0x4c) addr:0x020048b0
 OSi_GetVFrame kind:function(arm,size=0x3c) addr:0x020048fc
 func_02004938 kind:function(arm,size=0x14) addr:0x02004938
@@ -310,7 +310,7 @@ func_02006460 kind:function(arm,size=0x4) addr:0x02006460
 func_02006464 kind:function(arm,size=0x18) addr:0x02006464
 func_0200647c kind:function(arm,size=0x20) addr:0x0200647c
 func_0200649c kind:function(arm,size=0x148) addr:0x0200649c
-func_020065e4 kind:function(arm,size=0x28) addr:0x020065e4
+GX_SetVCountEqVal kind:function(arm,size=0x28) addr:0x020065e4
 func_0200660c kind:function(arm,size=0x38) addr:0x0200660c
 GX_IsDispOn kind:function(arm,size=0x10) addr:0x02006644
 GX_DispOff kind:function(arm,size=0x40) addr:0x02006654
@@ -2797,7 +2797,7 @@ data_02056e90 kind:bss addr:0x02056e90
 data_02056e94 kind:bss addr:0x02056e94
 data_02056e9c kind:bss addr:0x02056e9c
 data_02056ea4 kind:bss addr:0x02056ea4
-data_02056eb0 kind:bss addr:0x02056eb0
+OSi_VAlarmState kind:bss addr:0x02056eb0
 data_02056ec4 kind:bss addr:0x02056ec4
 data_02056ec8 kind:bss addr:0x02056ec8
 data_02056ecc kind:bss addr:0x02056ecc

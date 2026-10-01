@@ -19,6 +19,22 @@ typedef struct OSVAlarm {
     BOOL canceled;
 } OSVAlarm;
 
+typedef struct OSiVAlarmState {
+    u16 enabled;
+    u16 padding;
+    s32 previousVCount;
+    s32 frameCount;
+    OSVAlarm *head;
+    OSVAlarm *tail;
+} OSiVAlarmState;
+
+extern OSiVAlarmState OSi_VAlarmState;
+
+void OSi_InsertVAlarm(OSVAlarm *alarm);
+void OSi_AppendVAlarm(OSVAlarm *alarm);
+void OSi_SetNextVAlarm(OSVAlarm *alarm);
+s32 OSi_GetVFrame(s32 vcount);
+
 void OS_CreateVAlarm(OSVAlarm *alarm);
 void OS_SetVAlarm(OSVAlarm *alarm, s16 count, s16 delay,
                   OSVAlarmHandler handler, void *arg);

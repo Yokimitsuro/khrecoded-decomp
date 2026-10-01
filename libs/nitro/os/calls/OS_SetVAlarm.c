@@ -1,12 +1,8 @@
 #include "libs/nitro/os/os_valarm_internal.h"
 
-typedef int s32;
-
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
 extern void OS_Terminate(void);
-extern s32 OSi_GetVFrame(s32 currentVCount);
-extern void OSi_InsertVAlarm(OSVAlarm *alarm);
 
 void OS_SetVAlarm(OSVAlarm *alarm, s16 count, s16 delay,
                   OSVAlarmHandler handler, void *arg)
