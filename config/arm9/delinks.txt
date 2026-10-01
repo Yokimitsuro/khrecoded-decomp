@@ -1586,6 +1586,10 @@ libs/nitro/fs/calls/FS_NotifyArchiveAsyncEnd.c:
     complete
     .text       start:0x0200b18c end:0x0200b1f8
 
+libs/nitro/fs/calls/FS_WaitAsync.c:
+    complete
+    .text       start:0x0200b1f8 end:0x0200b29c
+
 libs/nitro/fs/calls/FS_OpenFileDirect.c:
     complete
     .text       start:0x0200b4a8 end:0x0200b4e8

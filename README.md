@@ -18,8 +18,8 @@ identical** to the original game code.
 <!-- progress:start -->
 | Category | Count | Meaning |
 |---|---:|---|
-| Real C matched functions | **1,717** / 10,415 (16.5%) | Functions implemented in C and verified byte-exact |
-| Real C matched **bytes** | **86,950** / 1,656,988 (5.25%) | Code bytes covered by real C; the honest progress figure |
+| Real C matched functions | **1,718** / 10,415 (16.5%) | Functions implemented in C and verified byte-exact |
+| Real C matched **bytes** | **87,114** / 1,656,988 (5.26%) | Code bytes covered by real C; the honest progress figure |
 | Assembly matched functions | **137** (7,734 bytes) | Original SDK, BIOS and DS Protect assembly, verified byte-exact; never counted as C |
 | Named, not decompiled | **21** | Functions with a known name (SDK, NitroSystem, ...) but no source yet |
 | Total known functions | **10,415** | Functions in the dsd symbol tables |
