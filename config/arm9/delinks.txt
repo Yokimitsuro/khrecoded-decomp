@@ -2668,19 +2668,23 @@ libs/nns/snd/auto/func_02021890.c:
     complete
     .text       start:0x02021890 end:0x020218d0
 
-libs/nns/snd/auto/func_020218d0.c:
+libs/nns/snd/auto/NNSi_SndFaderInit.c:
     complete
     .text       start:0x020218d0 end:0x020218e8
 
-libs/nns/snd/calls/func_02021910.c:
+libs/nns/snd/calls/NNSi_SndFaderSet.c:
+    complete
+    .text       start:0x020218e8 end:0x02021910
+
+libs/nns/snd/calls/NNSi_SndFaderGet.c:
     complete
     .text       start:0x02021910 end:0x02021944
 
-libs/nns/snd/auto/func_02021944.c:
+libs/nns/snd/auto/NNSi_SndFaderUpdate.c:
     complete
     .text       start:0x02021944 end:0x0202195c
 
-libs/nns/snd/auto/func_0202195c.c:
+libs/nns/snd/auto/NNSi_SndFaderIsFinished.c:
     complete
     .text       start:0x0202195c end:0x02021974
 

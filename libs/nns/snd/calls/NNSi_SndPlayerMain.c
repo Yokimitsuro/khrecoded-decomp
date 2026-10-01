@@ -139,9 +139,9 @@ typedef struct NNSSndFader {
     int counter;
     int frame;
 } NNSSndFader;
-int func_02021910(const NNSSndFader * fader);
-void func_02021944(NNSSndFader * fader);
-BOOL func_0202195c(const NNSSndFader * fader);
+int NNSi_SndFaderGet(const NNSSndFader * fader);
+void NNSi_SndFaderUpdate(NNSSndFader * fader);
+BOOL NNSi_SndFaderIsFinished(const NNSSndFader * fader);
 struct NNSSndSeqPlayer;
 struct NNSSndPlayer;
 struct NNSSndPlayerHeap;
@@ -224,13 +224,13 @@ void NNSi_SndPlayerMain (void)
             }
         }
 
-        func_02021944(&seqPlayer->fader);
+        NNSi_SndFaderUpdate(&seqPlayer->fader);
 
         fader
             = SND_CalcDecibel(seqPlayer->initVolume)
               + SND_CalcDecibel(seqPlayer->extVolume)
               + SND_CalcDecibel(seqPlayer->player->volume)
-              + SND_CalcDecibel(func_02021910(&seqPlayer->fader) >> FADER_SHIFT)
+              + SND_CalcDecibel(NNSi_SndFaderGet(&seqPlayer->fader) >> FADER_SHIFT)
             ;
         if (fader < -32768) fader = -32768;
         else if (fader > 32767) fader = 32767;
@@ -241,7 +241,7 @@ void NNSi_SndPlayerMain (void)
         }
 
         if (seqPlayer->status == NNS_SND_SEQ_PLAYER_STATUS_FADEOUT) {
-            if (func_0202195c(&seqPlayer->fader)) {
+            if (NNSi_SndFaderIsFinished(&seqPlayer->fader)) {
                 func_0201dda0(seqPlayer);
             }
         }

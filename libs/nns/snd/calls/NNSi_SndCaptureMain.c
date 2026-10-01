@@ -45,9 +45,9 @@ typedef struct NNSSndFader {
     int counter;
     int frame;
 } NNSSndFader;
-int func_02021910(const NNSSndFader * fader);
-void func_02021944(NNSSndFader * fader);
-BOOL func_0202195c(const NNSSndFader * fader);
+int NNSi_SndFaderGet(const NNSSndFader * fader);
+void NNSi_SndFaderUpdate(NNSSndFader * fader);
+BOOL NNSi_SndFaderIsFinished(const NNSSndFader * fader);
 typedef struct CaptureParam {
     BOOL activeFlag;
     NNSSndCaptureType type;
@@ -83,16 +83,16 @@ void NNSi_SndCaptureMain (void)
     if (cap->activeFlag && cap->type == NNS_SND_CAPTURE_TYPE_REVERB) {
         fader = &cap->fader;
 
-        func_02021944(fader);
+        NNSi_SndFaderUpdate(fader);
 
         if (cap->fadeOutFlag) {
-            if (func_0202195c(fader)) {
+            if (NNSi_SndFaderIsFinished(fader)) {
                 func_0201e5d8();
                 return;
             }
         }
 
-        volume = (func_02021910(fader) >> 8);
+        volume = (NNSi_SndFaderGet(fader) >> 8);
 
         if (volume != cap->volume) {
             SND_SetChannelVolume(
