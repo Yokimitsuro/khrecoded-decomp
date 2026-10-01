@@ -300,6 +300,10 @@ libs/nitro/os/calls/OSi_GetUnusedThreadId.c:
     complete
     .text       start:0x020024b0 end:0x020024c8
 
+libs/nitro/os/auto/OSi_InsertLinkToQueue.c:
+    complete
+    .text       start:0x020024c8 end:0x02002540
+
 libs/nitro/os/auto/OSi_RemoveLinkFromQueue.c:
     complete
     .text       start:0x02002540 end:0x02002574
@@ -912,6 +916,10 @@ libs/nitro/mi/calls/MI_SendGXCommandAsync.c:
 libs/nitro/mi/calls/MIi_FIFOCallback.c:
     complete
     .text       start:0x020054e4 end:0x02005598
+
+libs/nitro/mi/calls/MIi_DMACallback.c:
+    complete
+    .text       start:0x02005598 end:0x020055f8
 
 libs/nitro/mi/calls/MI_SendGXCommandAsyncFast.c:
     complete
@@ -3040,6 +3048,10 @@ libs/nns/snd/calls/ShutdownStrm.c:
 src/calls/func_0201e3bc.c:
     complete
     .text       start:0x0201e3bc end:0x0201e3cc
+
+libs/nns/snd/calls/StrmCallback.c:
+    complete
+    .text       start:0x0201e3cc end:0x0201e47c
 
 libs/nns/snd/calls/BeginSleep_2.c:
     complete
