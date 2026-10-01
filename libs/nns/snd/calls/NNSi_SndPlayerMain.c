@@ -197,8 +197,8 @@ extern void func_0201dda0(NNSSndSeqPlayer * seqPlayer);
 extern void func_0201dda0 (NNSSndSeqPlayer * seqPlayer);
 extern void func_0201de44 (NNSSndSeqPlayer * seqPlayer);
 
-/* func_0201d988 -- NitroSystem player.c: NNSi_SndPlayerMain. */
-void func_0201d988 (void)
+/* NNSi_SndPlayerMain -- NitroSystem player.c: NNSi_SndPlayerMain. */
+void NNSi_SndPlayerMain (void)
 {
     NNSSndSeqPlayer * seqPlayer;
     NNSSndSeqPlayer * next;

@@ -41,7 +41,7 @@ enum {
 #define PushCommand(c, a0, a1, a2, a3) PushCommand_impl((c), (u32)(a0), (u32)(a1), (u32)(a2), (u32)(a3))
 
 extern BOOL func_0200f2c8(u32 tag);           /* SND_IsFinishedCommandTag */
-extern const SNDCommand *func_0200eed4(u32 flags);   /* SND_RecvCommandReply */
+extern const SNDCommand *SND_RecvCommandReply(u32 flags);   /* SND_RecvCommandReply */
 extern void RequestCommandProc(void);
 
 /* SND_WaitForCommandProc -- block until the ARM7 has processed the command list with
@@ -52,7 +52,7 @@ void SND_WaitForCommandProc(u32 tag)
         return;
     }
 
-    while (func_0200eed4(SND_COMMAND_NOBLOCK) != NULL) {
+    while (SND_RecvCommandReply(SND_COMMAND_NOBLOCK) != NULL) {
     }
 
     if (func_0200f2c8(tag)) {
@@ -62,6 +62,6 @@ void SND_WaitForCommandProc(u32 tag)
     RequestCommandProc();
 
     while (!func_0200f2c8(tag)) {
-        (void)func_0200eed4(SND_COMMAND_BLOCK);
+        (void)SND_RecvCommandReply(SND_COMMAND_BLOCK);
     }
 }

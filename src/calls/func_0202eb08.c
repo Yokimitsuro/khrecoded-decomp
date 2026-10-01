@@ -1,7 +1,7 @@
 extern int func_0201a3cc();
 extern void func_0202c8bc(int a);
 extern void func_0202ca2c(void);
-extern void func_0202a1d8(int a);
+extern void NNSi_FndFreeFromDefaultHeap(int a);
 extern int NNSi_FndGetAllocatorForDefaultHeap(int a);
 
 void func_0202eb08(int *p) {
@@ -13,7 +13,7 @@ void func_0202eb08(int *p) {
         }
         if (p[i + 4]) last = p[i + 4];
     }
-    if (last) func_0202a1d8(last);
+    if (last) NNSi_FndFreeFromDefaultHeap(last);
     if (p[3]) {
         func_0202ca2c();
         func_0202c8bc(p[3]);

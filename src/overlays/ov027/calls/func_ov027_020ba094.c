@@ -1,6 +1,6 @@
 extern void *NNS_FndGetNextListObject(void *pList, void *pObj);
 extern void NNS_FndRemoveListObject(void *pList, void *pObj);
-extern void func_0202a1d8(void *pBlock);
+extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void func_0202c44c(void);
 extern void func_ov027_020ba200(int *pNode, int nFlag);
 
@@ -19,17 +19,17 @@ void func_ov027_020ba094(void)
         if (pNode[0] == 1) {
             func_0202c44c();
             if (pNode[2] != 0) {
-                func_0202a1d8((void *)pNode[2]);
+                NNSi_FndFreeFromDefaultHeap((void *)pNode[2]);
             }
         }
         NNS_FndRemoveListObject(pQueue, pNode);
         if ((pNode[1] & 0x80000000) != 0) {
             pNode[1] = 0;
         } else if (pNode[1] != 0) {
-            func_0202a1d8((void *)pNode[1]);
+            NNSi_FndFreeFromDefaultHeap((void *)pNode[1]);
         }
         if (pNode != 0) {
-            func_0202a1d8(pNode);
+            NNSi_FndFreeFromDefaultHeap(pNode);
         }
         pNode = pNext;
     }

@@ -2,7 +2,7 @@ extern int OS_DisableInterrupts();
 extern void OS_RestoreInterrupts(int mask);
 extern int data_02057c50[];
 
-int func_0200f29c(void) {
+int SND_GetCurrentCommandTag(void) {
     int mask;
     int result;
     mask = OS_DisableInterrupts();

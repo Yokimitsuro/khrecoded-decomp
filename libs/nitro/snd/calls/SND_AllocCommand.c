@@ -43,8 +43,8 @@ enum {
 extern BOOL IsCommandAvailable(void);
 extern SNDCommand *func_0200f45c(void);       /* AllocCommand */
 extern int SND_CountWaitingCommand(void);
-extern const SNDCommand *func_0200eed4(u32 flags);   /* SND_RecvCommandReply */
-extern BOOL func_0200f094(u32 flags);         /* SND_FlushCommand */
+extern const SNDCommand *SND_RecvCommandReply(u32 flags);   /* SND_RecvCommandReply */
+extern BOOL SND_FlushCommand(u32 flags);         /* SND_FlushCommand */
 extern void RequestCommandProc(void);
 
 /* SND_AllocCommand -- take a free command slot; with SND_COMMAND_BLOCK the caller waits,
@@ -65,20 +65,20 @@ SNDCommand *SND_AllocCommand(u32 flags)
         return NULL;
 
     if (SND_CountWaitingCommand() > 0) {
-        while (func_0200eed4(SND_COMMAND_NOBLOCK) != NULL) {
+        while (SND_RecvCommandReply(SND_COMMAND_NOBLOCK) != NULL) {
         }
 
         command = func_0200f45c();
         if (command != NULL)
             return command;
     } else {
-        (void)func_0200f094(SND_COMMAND_BLOCK);
+        (void)SND_FlushCommand(SND_COMMAND_BLOCK);
     }
 
     RequestCommandProc();
 
     do {
-        (void)func_0200eed4(SND_COMMAND_BLOCK);
+        (void)SND_RecvCommandReply(SND_COMMAND_BLOCK);
         command = func_0200f45c();
     } while (command == NULL);
 

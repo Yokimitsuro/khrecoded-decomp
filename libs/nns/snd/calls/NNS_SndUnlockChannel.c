@@ -28,8 +28,8 @@ u32 sAlarmLock = 0;   /* sAlarmLock */
 u32 data_0205d894 = 0;   /* sCaptureLock */
 u32 sChannelLock = 0;   /* sChannelLock */
 
-/* func_0201d35c -- NitroSystem resource_mgr.c: NNS_SndUnlockChannel. */
-void func_0201d35c (u32 chBitFlag)
+/* NNS_SndUnlockChannel -- NitroSystem resource_mgr.c: NNS_SndUnlockChannel. */
+void NNS_SndUnlockChannel (u32 chBitFlag)
 {
 
     if (chBitFlag == 0) return;

@@ -1,5 +1,5 @@
-extern int func_0202a1d8();
+extern int NNSi_FndFreeFromDefaultHeap();
 
 int func_ov001_0208f0d8(int a) {
-    if (a) return func_0202a1d8(a);
+    if (a) return NNSi_FndFreeFromDefaultHeap(a);
 }

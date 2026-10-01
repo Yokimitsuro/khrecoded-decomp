@@ -21,9 +21,9 @@ typedef volatile unsigned char vu8;
 
 #define SND_COMMAND_BLOCK (1 << 0)
 
-BOOL func_0200f094(u32 flags);
+BOOL SND_FlushCommand(u32 flags);
 void SND_WaitForCommandProc(u32 tag);
-u32 func_0200f29c(void);
+u32 SND_GetCurrentCommandTag(void);
 void SND_StopTimer(u32 chBitMask, u32 capBitMask, u32 alarmBitMask, u32 flags);
 typedef enum {
     NNS_SND_CAPTURE_FORMAT_PCM16,
@@ -80,7 +80,7 @@ void func_0201e6bc (void)
         0
         );
 
-    commandTag = func_0200f29c();
-    (void)func_0200f094(SND_COMMAND_BLOCK);
+    commandTag = SND_GetCurrentCommandTag();
+    (void)SND_FlushCommand(SND_COMMAND_BLOCK);
     SND_WaitForCommandProc(commandTag);
 }

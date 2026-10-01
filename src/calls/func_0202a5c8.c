@@ -1,6 +1,6 @@
 extern int  func_0202a148(int arena);
 extern void func_0202a3bc(int node);
-extern void func_0202a1d8(void *p);
+extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern void func_0202a254(void *obj, void *heap);
 extern int  data_020603c8[];
 extern int  data_02060394[];
@@ -23,7 +23,7 @@ int func_0202a5c8(int *param_1)
     func_0202a3bc((int)param_1);
     uVar3 = param_1[3];
     if (param_1[8] != 0) {
-        func_0202a1d8((void *)param_1[8]);
+        NNSi_FndFreeFromDefaultHeap((void *)param_1[8]);
     }
     func_0202a254(param_1, (void *)data_02060394[0]);
     func_0202a148(iVar2);

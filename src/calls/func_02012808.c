@@ -2,7 +2,7 @@ extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern void MI_CpuFill8(void *dst, int value, int size);
 extern void func_02002abc(void *queue);
-extern void func_0200299c(void);
+extern void OS_ExitThread(void);
 extern char data_0205a488;
 
 typedef struct {
@@ -37,7 +37,7 @@ void func_02012808(char *ctx) {
             *(char *volatile *)(ctx + 0xc0) = 0;
             OS_RestoreInterrupts(enabled);
         } else {
-            func_0200299c();
+            OS_ExitThread();
             return;
         }
     }

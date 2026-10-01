@@ -288,11 +288,19 @@ libs/nitro/os/auto/OSi_RemoveMutexLinkFromQueue.c:
     complete
     .text       start:0x020025c8 end:0x020025f8
 
-libs/nitro/os/calls/func_02002a14.c:
+libs/nitro/os/calls/OS_ExitThread.c:
+    complete
+    .text       start:0x0200299c end:0x020029bc
+
+libs/nitro/os/calls/OSi_ExitThread_ArgSpecified.c:
+    complete
+    .text       start:0x020029bc end:0x02002a14
+
+libs/nitro/os/calls/OSi_ExitThread.c:
     complete
     .text       start:0x02002a14 end:0x02002a4c
 
-libs/nitro/os/calls/func_02002a4c.c:
+libs/nitro/os/calls/OSi_ExitThread_Destroy.c:
     complete
     .text       start:0x02002a4c end:0x02002aa8
 
@@ -996,7 +1004,7 @@ libs/nitro/snd/calls/SND_WaitForCommandProc.c:
     complete
     .text       start:0x0200f230 end:0x0200f29c
 
-src/calls/func_0200f29c.c:
+libs/nitro/snd/calls/SND_GetCurrentCommandTag.c:
     complete
     .text       start:0x0200f29c end:0x0200f2c8
 
@@ -1263,6 +1271,10 @@ src/calls/func_0201313c.c:
 libs/nitro/nns/calls/NNS_FndAllocFromExpHeapEx.c:
     complete
     .text       start:0x02013148 end:0x02013178
+
+libs/nitro/nns/calls/NNS_FndFreeToExpHeap.c:
+    complete
+    .text       start:0x020132d8 end:0x02013318
 
 src/calls/func_02013318.c:
     complete
@@ -1864,6 +1876,10 @@ libs/nns/g3d/auto/func_0201c71c.c:
     complete
     .text       start:0x0201c71c end:0x0201c828
 
+libs/nns/snd/calls/NNS_SndMain.c:
+    complete
+    .text       start:0x0201d2a4 end:0x0201d2d4
+
 libs/nns/snd/calls/func_0201d2d4.c:
     complete
     .text       start:0x0201d2d4 end:0x0201d30c
@@ -1872,7 +1888,7 @@ src/calls/func_0201d30c.c:
     complete
     .text       start:0x0201d30c end:0x0201d318
 
-libs/nns/snd/calls/func_0201d35c.c:
+libs/nns/snd/calls/NNS_SndUnlockChannel.c:
     complete
     .text       start:0x0201d35c end:0x0201d38c
 
@@ -1940,7 +1956,7 @@ libs/nns/snd/calls/func_0201d8ac.c:
     complete
     .text       start:0x0201d8ac end:0x0201d8d4
 
-libs/nns/snd/calls/func_0201d988.c:
+libs/nns/snd/calls/NNSi_SndPlayerMain.c:
     complete
     .text       start:0x0201d988 end:0x0201daec
 
@@ -1968,6 +1984,26 @@ libs/nns/snd/calls/func_0201df14.c:
     complete
     .text       start:0x0201df14 end:0x0201df74
 
+libs/nns/snd/calls/NNS_SndStrmFreeChannel.c:
+    complete
+    .text       start:0x0201e044 end:0x0201e06c
+
+libs/nns/snd/calls/NNS_SndStrmStop.c:
+    complete
+    .text       start:0x0201e260 end:0x0201e27c
+
+libs/nns/snd/calls/NNS_SndStrmSetChannelPan.c:
+    complete
+    .text       start:0x0201e2e8 end:0x0201e318
+
+libs/nns/snd/calls/ForceStopStrm.c:
+    complete
+    .text       start:0x0201e318 end:0x0201e38c
+
+libs/nns/snd/calls/ShutdownStrm.c:
+    complete
+    .text       start:0x0201e38c end:0x0201e3bc
+
 src/calls/func_0201e3bc.c:
     complete
     .text       start:0x0201e3bc end:0x0201e3cc
@@ -1976,7 +2012,7 @@ libs/nns/snd/calls/func_0201e538.c:
     complete
     .text       start:0x0201e538 end:0x0201e558
 
-libs/nns/snd/calls/func_0201e558.c:
+libs/nns/snd/calls/NNSi_SndCaptureMain.c:
     complete
     .text       start:0x0201e558 end:0x0201e5d8
 
@@ -2403,6 +2439,10 @@ src/calls/func_02029fac.c:
 src/calls/func_0202a16c.c:
     complete
     .text       start:0x0202a16c end:0x0202a17c
+
+libs/nitro/nns/calls/NNSi_FndFreeFromDefaultHeap.c:
+    complete
+    .text       start:0x0202a1d8 end:0x0202a1f8
 
 libs/nitro/nns/calls/NNSi_FndGetAllocatorForDefaultHeap.c:
     complete

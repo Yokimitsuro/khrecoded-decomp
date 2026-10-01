@@ -115,8 +115,8 @@ struct OSiAlarm {
     OSTick period;
     OSTick start;
 };
-extern void func_02002a4c(void);
-extern void func_02002a4c (void);
+extern void OSi_ExitThread_Destroy(void);
+extern void OSi_ExitThread_Destroy (void);
 
 /* shared-bss */
 u32 OSi_ThreadIdCount = 0;   /* OSi_ThreadIdCount */
@@ -132,8 +132,8 @@ OSThreadInfo data_02044330 = {0};   /* data_02044330 */
 
 
 
-/* func_02002a14 -- NitroSDK os_thread.c: OSi_ExitThread. */
-void func_02002a14 (void * arg)
+/* OSi_ExitThread -- NitroSDK os_thread.c: OSi_ExitThread. */
+void OSi_ExitThread (void * arg)
 {
     OSThread * currentThread = OSi_GetCurrentThread();
     OSThreadDestructor destructor;
@@ -146,5 +146,5 @@ void func_02002a14 (void * arg)
         (void)OS_DisableInterrupts();
     }
 
-    func_02002a4c();
+    OSi_ExitThread_Destroy();
 }

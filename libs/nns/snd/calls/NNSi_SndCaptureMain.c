@@ -71,8 +71,8 @@ typedef struct CaptureParam {
 extern CaptureParam data_0205e290;
 extern void func_0201e5d8 (void);
 
-/* func_0201e558 -- NitroSystem capture.c: NNSi_SndCaptureMain. */
-void func_0201e558 (void)
+/* NNSi_SndCaptureMain -- NitroSystem capture.c: NNSi_SndCaptureMain. */
+void NNSi_SndCaptureMain (void)
 {
     CaptureParam * cap;
     NNSSndFader * fader;

@@ -144,8 +144,8 @@ OSThreadInfo data_02044330 = {0};   /* data_02044330 */
 
 
 
-/* func_02002a4c -- NitroSDK os_thread.c: OSi_ExitThread_Destroy. */
-void func_02002a4c (void)
+/* OSi_ExitThread_Destroy -- NitroSDK os_thread.c: OSi_ExitThread_Destroy. */
+void OSi_ExitThread_Destroy (void)
 {
     OSThread * currentThread = OSi_GetCurrentThread();
 
