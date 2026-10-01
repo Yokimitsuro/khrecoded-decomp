@@ -237,7 +237,8 @@ def main():
     symbols = load_symbols(module_dir / "symbols.txt")
     blocks, matched, gap, file_modes = gen_files_block(symbols, index_sources(), load_known_mismatches())
     data_blocks, data_modes, data_ranges = gen_data_block(unit, delinks_txt)
-    file_modes.update(data_modes)
+    for source, mode in data_modes.items():
+        file_modes.setdefault(source, mode)
 
     out = ["\n".join(header), ""]
     out.extend(merge_file_blocks(blocks + data_blocks))
