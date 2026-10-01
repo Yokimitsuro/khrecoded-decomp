@@ -180,6 +180,10 @@ libs/nitro/os/calls/OSi_EnterDmaCallback.c:
     complete
     .text       start:0x02001eb8 end:0x02001f00
 
+libs/nitro/os/calls/OSi_EnterTimerCallback.c:
+    complete
+    .text       start:0x02001f00 end:0x02001f44
+
 libs/nitro/os/auto/OS_SetIrqMask.c:
     complete
     .text       start:0x02001f44 end:0x02001f70
@@ -315,6 +319,10 @@ libs/nitro/os/auto/OSi_RemoveSpecifiedLinkFromQueue.c:
 libs/nitro/os/auto/OSi_RemoveMutexLinkFromQueue.c:
     complete
     .text       start:0x020025c8 end:0x020025f8
+
+libs/nitro/os/calls/OSi_RescheduleThread.c:
+    complete
+    .text       start:0x0200269c end:0x02002760
 
 libs/nitro/os/calls/OS_ExitThread.c:
     complete
@@ -1924,6 +1932,10 @@ libs/nitro/snd/calls/SND_GetPlayerStatus.c:
 libs/nitro/snd/calls/SND_CalcChannelVolume.c:
     complete
     .text       start:0x0200f6bc end:0x0200f72c
+
+libs/nitro/snd/calls/SND_AssignWaveArc.c:
+    complete
+    .text       start:0x0200f72c end:0x0200f7fc
 
 libs/nitro/snd/calls/SND_DestroyWaveArc.c:
     complete
