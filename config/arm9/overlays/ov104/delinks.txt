@@ -34,3 +34,31 @@ src/overlays/ov104/calls/func_ov104_020d30dc.c:
 src/overlays/ov104/calls/func_ov104_020d30e8.c:
     complete
     .text       start:0x020d30e8 end:0x020d30f4
+
+src/overlays/ov104/calls/RC4_Init.c:
+    complete
+    .text       start:0x020d3248 end:0x020d32d4
+
+src/overlays/ov104/calls/RC4_Byte.c:
+    complete
+    .text       start:0x020d32d4 end:0x020d332c
+
+src/overlays/ov104/calls/RC4_InitSBox.c:
+    complete
+    .text       start:0x020d332c end:0x020d3364
+
+src/overlays/ov104/calls/RC4_EncryptInstructions.c:
+    complete
+    .text       start:0x020d3364 end:0x020d347c
+
+src/overlays/ov104/calls/RC4_DecryptInstructions.c:
+    complete
+    .text       start:0x020d347c end:0x020d3604
+
+src/overlays/ov104/calls/RC4_InitAndEncryptInstructions.c:
+    complete
+    .text       start:0x020d3604 end:0x020d365c
+
+src/overlays/ov104/calls/RC4_InitAndDecryptInstructions.c:
+    complete
+    .text       start:0x020d365c end:0x020d36b4

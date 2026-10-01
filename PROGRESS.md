@@ -114,8 +114,8 @@ an identified name (NitroSDK, NNS, MSL, ...) but no source yet.
 | PART ov101 | 2 | 0 | 0 | 52 | 54 | 3.7% | 0.1% |
 | DONE ov102 | 3 | 0 | 0 | 0 | 3 | 100.0% | 100.0% |
 | PART ov103 | 2 | 0 | 0 | 37 | 39 | 5.1% | 0.2% |
-| PART ov104 | 7 | 1 | 5 | 27 | 40 | 17.5% | 3.9% |
-| **TOTAL** | **1391** | **92** | **62** | **8853** | **10398** | **13.4%** | **3.15%** |
+| PART ov104 | 14 | 1 | 5 | 20 | 40 | 35.0% | 37.2% |
+| **TOTAL** | **1398** | **92** | **62** | **8846** | **10398** | **13.4%** | **3.22%** |
 
 ## Byte progress
 
@@ -124,4 +124,4 @@ the matched set is dominated by small wrappers. Bytes count real C only.
 
 | C matched bytes | Total code bytes | % |
 |---:|---:|---:|
-| **52,032** | **1,653,248** | **3.15%** |
+| **53,164** | **1,653,248** | **3.22%** |
