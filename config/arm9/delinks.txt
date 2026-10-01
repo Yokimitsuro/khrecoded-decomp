@@ -1333,9 +1333,41 @@ libs/nitro/gx/calls/GX_EndLoadTexPltt.c:
     complete
     .text       start:0x02008298 end:0x020082d4
 
+libs/nitro/gx/auto/GX_VRAMCNT_SetLCDC_.c:
+    complete
+    .text       start:0x020082d4 end:0x0200836c
+
+libs/nitro/gx/calls/GX_SetBankForBG.c:
+    complete
+    .text       start:0x0200836c end:0x02008570
+
+libs/nitro/gx/calls/GX_SetBankForOBJ.c:
+    complete
+    .text       start:0x02008570 end:0x020086a0
+
+libs/nitro/gx/calls/GX_SetBankForBGExtPltt.c:
+    complete
+    .text       start:0x020086a0 end:0x02008798
+
+libs/nitro/gx/calls/GX_SetBankForOBJExtPltt.c:
+    complete
+    .text       start:0x02008798 end:0x02008834
+
+libs/nitro/gx/calls/GX_SetBankForTex.c:
+    complete
+    .text       start:0x02008834 end:0x020089ac
+
+libs/nitro/gx/calls/GX_SetBankForTexPltt.c:
+    complete
+    .text       start:0x020089ac end:0x02008a88
+
 libs/nitro/gx/calls/GX_SetBankForLCDC.c:
     complete
     .text       start:0x02008a88 end:0x02008aac
+
+libs/nitro/gx/calls/GX_SetBankForSubBG.c:
+    complete
+    .text       start:0x02008aac end:0x02008b48
 
 libs/nitro/gx/calls/GX_SetBankForSubOBJ.c:
     complete
