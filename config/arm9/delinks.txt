@@ -1598,6 +1598,10 @@ libs/nitro/card/calls/CARDi_EndTask.c:
     complete
     .text       start:0x02009448 end:0x02009480
 
+libs/nitro/card/calls/CARDi_GetDmaInterface.c:
+    complete
+    .text       start:0x02009480 end:0x020094ac
+
 libs/nitro/card/calls/CARDi_ICInvalidateSmart.c:
     complete
     .text       start:0x020094ac end:0x020094be

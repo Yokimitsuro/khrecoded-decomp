@@ -454,7 +454,7 @@ CARDi_ExecuteOldTypeTask kind:function(thumb,size=0x54) addr:0x02009358
 CARDi_OldTypeTaskThread kind:function(thumb,size=0x38) addr:0x020093ac
 CARDi_WaitForTask kind:function(thumb,size=0x64) addr:0x020093e4
 CARDi_EndTask kind:function(thumb,size=0x38) addr:0x02009448
-func_02009480 kind:function(thumb,size=0x2c) addr:0x02009480
+CARDi_GetDmaInterface kind:function(thumb,size=0x2c) addr:0x02009480
 CARDi_ICInvalidateSmart kind:function(thumb,size=0x12) addr:0x020094ac
 CARDi_DCInvalidateSmart kind:function(thumb,size=0x38) addr:0x020094c0
 CARDi_OnFifoRecv kind:function(thumb,size=0x28) addr:0x020094f8
@@ -2581,7 +2581,7 @@ data_02052908 kind:data(any) addr:0x02052908
 data_02052918 kind:data(any) addr:0x02052918
 data_0205291a kind:data(any) addr:0x0205291a
 data_0205291c kind:data(any) addr:0x0205291c
-data_02052978 kind:data(any) addr:0x02052978
+CARDiDmaUsingFormer kind:data(any) addr:0x02052978
 data_02052980 kind:data(any) addr:0x02052980
 data_020529c0 kind:data(any) addr:0x020529c0
 data_020529f4 kind:data(any) addr:0x020529f4
