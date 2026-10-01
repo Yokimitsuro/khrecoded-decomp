@@ -1870,9 +1870,89 @@ src/auto/func_0200c708.c:
     complete
     .text       start:0x0200c708 end:0x0200c710
 
+libs/nitro/fs/calls/FSi_ROMFAT_ReadFile.c:
+    complete
+    .text       start:0x0200c7e0 end:0x0200c824
+
+libs/nitro/fs/calls/FSi_ROMFAT_WriteFile.c:
+    complete
+    .text       start:0x0200c824 end:0x0200c868
+
+libs/nitro/fs/calls/FSi_ROMFAT_SeekDirectory.c:
+    complete
+    .text       start:0x0200c868 end:0x0200c8c0
+
+libs/nitro/fs/calls/FSi_ROMFAT_FindPath.c:
+    complete
+    .text       start:0x0200c9e8 end:0x0200ca74
+
+libs/nitro/fs/calls/FSi_ROMFAT_GetPath.c:
+    complete
+    .text       start:0x0200ca74 end:0x0200cab8
+
+libs/nitro/fs/calls/FSi_ROMFAT_OpenFileFast.c:
+    complete
+    .text       start:0x0200cab8 end:0x0200cb00
+
+libs/nitro/fs/calls/FSi_ROMFAT_OpenFileDirect.c:
+    complete
+    .text       start:0x0200cb00 end:0x0200cb54
+
+libs/nitro/fs/calls/FSi_ROMFAT_CloseFile.c:
+    complete
+    .text       start:0x0200cb54 end:0x0200cb84
+
+libs/nitro/fs/calls/FSi_ROMFAT_Activate.c:
+    complete
+    .text       start:0x0200cb84 end:0x0200cbb8
+
+libs/nitro/fs/calls/FSi_ROMFAT_Idle.c:
+    complete
+    .text       start:0x0200cbb8 end:0x0200cbec
+
+libs/nitro/fs/calls/FSi_ROMFAT_Suspend.c:
+    complete
+    .text       start:0x0200cbec end:0x0200cc20
+
+libs/nitro/fs/calls/FSi_ROMFAT_Resume.c:
+    complete
+    .text       start:0x0200cc20 end:0x0200cc54
+
+libs/nitro/fs/calls/FSi_ROMFAT_OpenFile.c:
+    complete
+    .text       start:0x0200cc54 end:0x0200cca4
+
+libs/nitro/fs/auto/FSi_ROMFAT_SeekFile.c:
+    complete
+    .text       start:0x0200cca4 end:0x0200cd10
+
+libs/nitro/fs/auto/FSi_ROMFAT_GetFileLength.c:
+    complete
+    .text       start:0x0200cd10 end:0x0200cd2c
+
+libs/nitro/fs/auto/FSi_ROMFAT_GetFilePosition.c:
+    complete
+    .text       start:0x0200cd2c end:0x0200cd48
+
+libs/nitro/fs/calls/FSi_ROMFAT_Unmount.c:
+    complete
+    .text       start:0x0200cd48 end:0x0200cd78
+
 libs/nitro/fs/auto/FSi_ROMFAT_GetArchiveCaps.c:
     complete
     .text       start:0x0200cd78 end:0x0200cd84
+
+libs/nitro/fs/calls/FSi_ROMFAT_OpenDirectory.c:
+    complete
+    .text       start:0x0200cd84 end:0x0200cddc
+
+libs/nitro/fs/auto/FSi_ROMFAT_CloseDirectory.c:
+    complete
+    .text       start:0x0200cddc end:0x0200cdf4
+
+libs/nitro/fs/calls/FSi_ROMFAT_GetArchiveResource.c:
+    complete
+    .text       start:0x0200cf20 end:0x0200cf70
 
 libs/nitro/fs/calls/FSi_GetFileLengthIfProc.c:
     complete
@@ -1886,7 +1966,19 @@ libs/nitro/fs/auto/FS_SetArchiveProc.c:
     complete
     .text       start:0x0200d0b0 end:0x0200d0d0
 
-src/auto/func_0200d2c0.c:
+libs/nitro/fs/auto/FS_GetArchiveOffset.c:
+    complete
+    .text       start:0x0200d294 end:0x0200d2a4
+
+libs/nitro/fs/auto/FS_IsArchiveTableLoaded.c:
+    complete
+    .text       start:0x0200d2a4 end:0x0200d2b8
+
+libs/nitro/fs/auto/FS_GetFileImageTop.c:
+    complete
+    .text       start:0x0200d2b8 end:0x0200d2c0
+
+libs/nitro/fs/auto/FSi_IsUnreadableRomOffset.c:
     complete
     .text       start:0x0200d2c0 end:0x0200d2c8
 
@@ -1897,18 +1989,29 @@ libs/nitro/fs/calls/FSi_OnRomReadDone.c:
 libs/nitro/fs/calls/FSi_ReadRomCallback.c:
     complete
     .text       start:0x0200d2ec end:0x0200d334
+    .bss        start:0x02057b1c end:0x02057b80
+    .data       start:0x02055c2c end:0x02055c40
 
-src/auto/func_0200d3b8.c:
+libs/nitro/fs/auto/FSi_EmptyArchiveProc.c:
+    complete
+    .text       start:0x0200d3a4 end:0x0200d3b8
+
+libs/nitro/fs/auto/FSi_ReadDummyCallback.c:
     complete
     .text       start:0x0200d3b8 end:0x0200d3c0
 
-src/auto/func_0200d3c0.c:
+libs/nitro/fs/auto/FSi_WriteDummyCallback.c:
     complete
     .text       start:0x0200d3c0 end:0x0200d3c8
 
-src/auto/func_0200d3c8.c:
+libs/nitro/fs/auto/FSi_OverrideRomArchive.c:
     complete
     .text       start:0x0200d3c8 end:0x0200d3d0
+
+libs/nitro/fs/calls/FS_Init.c:
+    complete
+    .text       start:0x0200d574 end:0x0200d5a0
+    .bss        start:0x02057b80 end:0x02057b84
 
 libs/nitro/os/asm_stubs/auto/func_0200d5a0.c:
     complete

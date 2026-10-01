@@ -18,12 +18,12 @@ identical** to the original game code.
 <!-- progress:start -->
 | Category | Count | Meaning |
 |---|---:|---|
-| Real C matched functions | **1,783** / 10,415 (17.1%) | Functions implemented in C and verified byte-exact |
-| Real C matched **bytes** | **95,046** / 1,656,988 (5.74%) | Code bytes covered by real C; the honest progress figure |
+| Real C matched functions | **1,808** / 10,415 (17.4%) | Functions implemented in C and verified byte-exact |
+| Real C matched **bytes** | **96,482** / 1,656,988 (5.82%) | Code bytes covered by real C; the honest progress figure |
 | Assembly matched functions | **137** (7,734 bytes) | Original SDK, BIOS and DS Protect assembly, verified byte-exact; never counted as C |
-| Reconstructed DATA bytes | **1,080** / 228,172 (0.47%) | Verified byte-exact .rodata, .data, .ctor and .bss reconstructed from source |
-| Named DATA symbols | **17** / 1,904 (0.89%) | Identified DATA names; naming alone does not count as reconstructed DATA |
-| Named, not decompiled | **39** | Functions with a known name (SDK, NitroSystem, ...) but no source yet |
+| Reconstructed DATA bytes | **1,204** / 228,172 (0.53%) | Verified byte-exact .rodata, .data, .ctor and .bss reconstructed from source |
+| Named DATA symbols | **79** / 2,372 (3.33%) | Identified DATA names; naming alone does not count as reconstructed DATA |
+| Named, not decompiled | **30** | Functions with a known name (SDK, NitroSystem, ...) but no source yet |
 | Total known functions | **10,415** | Functions in the dsd symbol tables |
 | Region | EU (`BK9P`) |  |
 | Compiler | CodeWarrior `mwccarm` 3.0 build 139 | Same toolchain and flags as khdays-decomp |

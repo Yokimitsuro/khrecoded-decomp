@@ -16,7 +16,9 @@ SECTION_RE = re.compile(
     r"^\s+\.(rodata|data|ctor|bss)\s+start:0x([0-9a-fA-F]+)\s+end:0x([0-9a-fA-F]+)"
 )
 SOURCE_RE = re.compile(r"^(\S+\.(?:c|cpp|s)):\s*$")
-DATA_SYMBOL_RE = re.compile(r"^(\S+)\s+kind:data\([^)]*\)\s+addr:0x([0-9a-fA-F]+)")
+DATA_SYMBOL_RE = re.compile(
+    r"^(\S+)\s+kind:(?:data\([^)]*\)|bss)\s+addr:0x([0-9a-fA-F]+)"
+)
 PLACEHOLDER = re.compile(r"^data_(?:ov\d{3}_)?[0-9a-fA-F]{8}$")
 
 

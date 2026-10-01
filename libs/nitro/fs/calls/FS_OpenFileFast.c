@@ -1,10 +1,5 @@
 #include "libs/nitro/fs/fs_internal.h"
 
-typedef struct FSFileID {
-    FSArchive *archive;
-    u32 fileId;
-} FSFileID;
-
 typedef struct FSArgumentForOpenFileFast {
     u32 id;
     u32 mode;
