@@ -1,6 +1,6 @@
 #include "libs/nitro/os/os_valarm_internal.h"
 
-extern u32 data_027e0000;
+extern u32 SDK_AUTOLOAD_DTCM_START;
 extern u32 OS_DisableIrqMask(u32 mask);
 extern u32 OS_ResetRequestIrqMask(u32 mask);
 
@@ -36,7 +36,7 @@ void OSi_VAlarmHandler(void *arg)
 
     OS_DisableIrqMask(4);
     SetVCountInterrupt(0);
-    *(volatile u32 *)((u8 *)&data_027e0000 + 0x3ff8) |= 4;
+    *(volatile u32 *)((u8 *)&SDK_AUTOLOAD_DTCM_START + 0x3ff8) |= 4;
 
     currentVCount = GetVCountCompare();
     currentVFrame = OSi_GetVFrame(currentVCount - 1);

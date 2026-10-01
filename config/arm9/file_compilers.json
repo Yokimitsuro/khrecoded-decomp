@@ -203,5 +203,9 @@
   "libs/nitro/os/calls/OSi_CountUpTick.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_GetTick.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_SetTick.c": "dsi/1.1",
-  "libs/nitro/os/calls/OSi_SetTimer.c": "dsi/1.1"
+  "libs/nitro/os/calls/OSi_SetTimer.c": "dsi/1.1",
+  "libs/nitro/os/calls/OSi_InsertAlarm.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_SetAlarm.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_CancelAlarm.c": "dsi/1.1",
+  "libs/nitro/os/calls/OSi_ArrangeTimer.c": "dsi/1.1"
 }

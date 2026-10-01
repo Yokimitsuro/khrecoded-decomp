@@ -696,9 +696,25 @@ libs/nitro/os/auto/OS_CreateAlarm.c:
     complete
     .text       start:0x02004218 end:0x02004228
 
+libs/nitro/os/calls/OSi_InsertAlarm.c:
+    complete
+    .text       start:0x02004228 end:0x02004350
+
+libs/nitro/os/calls/OS_SetAlarm.c:
+    complete
+    .text       start:0x02004350 end:0x020043bc
+
+libs/nitro/os/calls/OS_CancelAlarm.c:
+    complete
+    .text       start:0x020043bc end:0x02004440
+
 libs/nitro/os/asm_stubs/calls/OSi_AlarmHandler.c:
     complete
     .text       start:0x02004440 end:0x02004450
+
+libs/nitro/os/calls/OSi_ArrangeTimer.c:
+    complete
+    .text       start:0x02004450 end:0x0200453c
 
 libs/nitro/os/calls/OS_InitVAlarm.c:
     complete

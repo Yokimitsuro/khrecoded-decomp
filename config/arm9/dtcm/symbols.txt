@@ -1,4 +1,4 @@
-data_027e0000 kind:data(any) addr:0x027e0000
+SDK_AUTOLOAD_DTCM_START kind:data(any) addr:0x027e0000
 data_027e0058 kind:data(any) addr:0x027e0058
 data_027e0068 kind:data(any) addr:0x027e0068
 data_027e0078 kind:data(any) addr:0x027e0078

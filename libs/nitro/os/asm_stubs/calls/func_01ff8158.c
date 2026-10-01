@@ -1,4 +1,4 @@
-extern char data_027e0000[];
+extern char SDK_AUTOLOAD_DTCM_START[];
 extern void func_01ff81b0(void);
 
 /* NitroSDK IRQ dispatcher entry; callback return continues at func_01ff81b0. */
@@ -21,7 +21,7 @@ selectHighestPriority:
     mov     r1, r3, lsr r0
     str     r1, [ip, #4]
     rsbs    r0, r0, #31
-    ldr     r1, =data_027e0000
+    ldr     r1, =SDK_AUTOLOAD_DTCM_START
     ldr     r0, [r1, r0, lsl #2]
     ldr     lr, =func_01ff81b0
     bx      r0

@@ -1,5 +1,7 @@
-void OS_CreateAlarm(int *p)
+#include "libs/nitro/os/os_alarm_internal.h"
+
+void OS_CreateAlarm(OSAlarm *alarm)
 {
-    p[0] = 0;
-    p[2] = 0;
+    alarm->handler = 0;
+    alarm->tag = 0;
 }

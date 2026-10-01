@@ -8,10 +8,10 @@ extern void OS_SleepThread(void *queue);
 
 /* The IRQ check flags and the wait queue both sit near the top of DTCM. The pool
    carries the base and the compiler splits the 0x3ff8 offset itself. */
-extern u32 data_027e0000;
+extern u32 SDK_AUTOLOAD_DTCM_START;
 extern u32 data_027e00a0;
 
-#define DTCM ((char *)&data_027e0000)
+#define DTCM ((char *)&SDK_AUTOLOAD_DTCM_START)
 #define OSi_IrqCheckFlags (*(volatile u32 *)(DTCM + 0x3ff8))
 
 void OS_WaitIrq(BOOL clear, u32 irqFlags)

@@ -1,10 +1,10 @@
 typedef unsigned char u8;
 typedef unsigned int u32;
 
-extern u8 data_027e0000[];
+extern u8 SDK_AUTOLOAD_DTCM_START[];
 extern void SDK_IRQ_STACKSIZE(void);
 
-#define HW_DTCM_IRQ_STACK_END ((u32)data_027e0000 + 0x3f80)
+#define HW_DTCM_IRQ_STACK_END ((u32)SDK_AUTOLOAD_DTCM_START + 0x3f80)
 #define OS_IRQ_STACK_BOTTOM HW_DTCM_IRQ_STACK_END
 #define OS_IRQ_STACK_TOP (OS_IRQ_STACK_BOTTOM - (u32)SDK_IRQ_STACKSIZE)
 #define OS_IRQ_STACK_CHECKNUM_BOTTOM 0xfddb597dUL

@@ -11,10 +11,10 @@ typedef struct {
 } OSiIrqSlot;
 
 extern OSiIrqSlot data_02056ae8[];
-extern u32 data_027e0000;
+extern u32 SDK_AUTOLOAD_DTCM_START;
 
 /* The flat vector table sits at the very start of DTCM, one entry per interrupt bit. */
-#define OSi_IrqTable ((OSIrqFunction *)&data_027e0000)
+#define OSi_IrqTable ((OSIrqFunction *)&SDK_AUTOLOAD_DTCM_START)
 
 #define OS_IRQ_TABLE_MAX 22
 

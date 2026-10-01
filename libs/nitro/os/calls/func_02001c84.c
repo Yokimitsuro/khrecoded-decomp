@@ -21,9 +21,9 @@ extern OSiIrqSlot data_02056ae8[];
 /* One hardware bit index per slot. */
 extern u16 data_02055bc0[];
 
-extern u32 data_027e0000;
+extern u32 SDK_AUTOLOAD_DTCM_START;
 
-#define DTCM ((char *)&data_027e0000)
+#define DTCM ((char *)&SDK_AUTOLOAD_DTCM_START)
 #define OSi_IrqCheckFlags (*(volatile u32 *)(DTCM + 0x3ff8))
 
 void func_02001c84(u32 slot)
