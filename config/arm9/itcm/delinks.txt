@@ -105,6 +105,10 @@ libs/nitro/mtx/asm_stubs/auto/MTX_RotY43_.c:
     complete
     .text       start:0x01ff9530 end:0x01ff954a
 
+libs/nitro/mtx/auto/MTX_MultVec43.c:
+    complete
+    .text       start:0x01ff9ad8 end:0x01ff9b70
+
 libs/nitro/fx/calls/FX_Div.c:
     complete
     .text       start:0x01ff9c84 end:0x01ff9c94

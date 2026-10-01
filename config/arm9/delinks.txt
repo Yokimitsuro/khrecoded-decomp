@@ -488,6 +488,14 @@ libs/nitro/os/auto/OS_GetArenaLo.c:
     complete
     .text       start:0x020036a4 end:0x020036b8
 
+libs/nitro/os/calls/OS_GetInitArenaHi.c:
+    complete
+    .text       start:0x020036b8 end:0x02003798
+
+libs/nitro/os/calls/OS_GetInitArenaLo.c:
+    complete
+    .text       start:0x02003798 end:0x0200383c
+
 libs/nitro/os/auto/OS_SetArenaHi.c:
     complete
     .text       start:0x0200383c end:0x02003850
