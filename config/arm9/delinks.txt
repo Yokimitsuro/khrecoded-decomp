@@ -1582,6 +1582,10 @@ libs/nitro/card/calls/CARDi_EndTask.c:
     complete
     .text       start:0x02009448 end:0x02009480
 
+libs/nitro/card/calls/CARDi_OnFifoRecv.c:
+    complete
+    .text       start:0x020094f8 end:0x02009520
+
 src/calls/func_02009a90.c:
     complete
     .text       start:0x02009a90 end:0x02009a9c
