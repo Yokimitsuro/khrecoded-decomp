@@ -1894,6 +1894,10 @@ libs/nitro/snd/calls/SNDi_UnlockMutex.c:
     complete
     .text       start:0x0200edf0 end:0x0200ee04
 
+libs/nitro/snd/calls/SND_RecvCommandReply.c:
+    complete
+    .text       start:0x0200eed4 end:0x0200efd4
+
 libs/nitro/snd/calls/SND_AllocCommand.c:
     complete
     .text       start:0x0200efd4 end:0x0200f05c
