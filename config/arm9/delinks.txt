@@ -204,7 +204,7 @@ libs/nitro/os/calls/OSi_InitStackChecker.c:
     complete
     .text       start:0x02001ffc end:0x02002030
 
-libs/nitro/os/calls/func_02002030.c:
+libs/nitro/os/calls/OS_IsResetOccurred.c:
     complete
     .text       start:0x02002030 end:0x02002040
 
@@ -1536,6 +1536,10 @@ src/calls/func_020091c0.c:
 src/calls/func_020091cc.c:
     complete
     .text       start:0x020091cc end:0x020091e6
+
+libs/nitro/card/calls/CARDi_LockResource.c:
+    complete
+    .text       start:0x020091e8 end:0x0200923c
 
 src/calls/func_02009a90.c:
     complete

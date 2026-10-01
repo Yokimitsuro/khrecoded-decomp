@@ -13,6 +13,10 @@ libs/nitro/os/asm_stubs/calls/func_01ff8158.c:
     complete
     .text       start:0x01ff8158 end:0x01ff81b0
 
+libs/nitro/os/calls/OSi_DoResetSystem.c:
+    complete
+    .text       start:0x01ff8310 end:0x01ff833c
+
 libs/nitro/os/asm_stubs/auto/func_01ff840c.c:
     complete
     .text       start:0x01ff840c end:0x01ff8420

@@ -253,6 +253,7 @@
   "libs/nitro/os/auto/OS_CreateVAlarm.c": "dsi/1.1",
   "libs/nitro/card/calls/CARD_LockRom.c": "dsi/1.1",
   "libs/nitro/card/calls/CARDi_LockBusCondition.c": "dsi/1.1",
+  "libs/nitro/card/calls/CARDi_LockResource.c": "2.0/base",
   "libs/nitro/card/calls/CARDi_PeekEventListener.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_TryLockByWord.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_TryLockCard.c": "dsi/1.1",
@@ -313,5 +314,6 @@
   "libs/nitro/os/calls/OSi_ArrangeTimer.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_WaitVBlankIntr.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_GetBootType.c": "dsi/1.1",
-  "libs/nitro/os/calls/OS_GetBootInfo.c": "dsi/1.1"
+  "libs/nitro/os/calls/OS_GetBootInfo.c": "dsi/1.1",
+  "libs/nitro/os/calls/OSi_DoResetSystem.c": "dsi/1.1"
 }

@@ -89,7 +89,7 @@ OS_EnableIrqMask kind:function(arm,size=0x30) addr:0x02001f70
 OS_DisableIrqMask kind:function(arm,size=0x30) addr:0x02001fa0
 OS_ResetRequestIrqMask kind:function(arm,size=0x2c) addr:0x02001fd0
 OSi_InitStackChecker kind:function(arm,size=0x34) addr:0x02001ffc
-func_02002030 kind:function(arm,size=0x10) addr:0x02002030
+OS_IsResetOccurred kind:function(arm,size=0x10) addr:0x02002030
 OSi_CommonCallback kind:function(arm,size=0x30) addr:0x02002040
 OSi_SendToPxi kind:function(arm,size=0x2c) addr:0x02002070
 OS_InitLock kind:function(arm,size=0xd0) addr:0x0200209c
@@ -2779,7 +2779,7 @@ data_02056af0 kind:bss addr:0x02056af0
 data_02056b18 kind:bss addr:0x02056b18
 data_02056b1c kind:bss addr:0x02056b1c
 data_02056b20 kind:bss addr:0x02056b20
-data_02056b48 kind:bss addr:0x02056b48
+OSi_IsResetOccurred kind:bss addr:0x02056b48
 data_02056b4c kind:bss addr:0x02056b4c
 data_02056b50 kind:bss addr:0x02056b50
 data_02056b5c kind:bss addr:0x02056b5c
