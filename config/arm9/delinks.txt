@@ -640,9 +640,13 @@ libs/nitro/os/asm_stubs/auto/OS_GetProcMode.c:
     complete
     .text       start:0x020049b0 end:0x020049bc
 
-libs/nitro/os/asm_stubs/auto/func_020049bc.c:
+libs/nitro/os/asm_stubs/auto/OS_SpinWaitCpuCycles.c:
     complete
     .text       start:0x020049bc end:0x020049c8
+
+libs/nitro/os/calls/OS_SpinWait.c:
+    complete
+    .text       start:0x020049c8 end:0x020049e4
 
 libs/nitro/os/calls/OS_InitReset.c:
     complete
