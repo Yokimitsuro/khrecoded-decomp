@@ -457,7 +457,7 @@ func_02009448 kind:function(thumb,size=0x38) addr:0x02009448
 func_02009480 kind:function(thumb,size=0x2c) addr:0x02009480
 func_020094ac kind:function(thumb,size=0x12) addr:0x020094ac
 func_020094c0 kind:function(thumb,size=0x38) addr:0x020094c0
-func_020094f8 kind:function(thumb,size=0x28) addr:0x020094f8
+CARDi_OnFifoRecv kind:function(thumb,size=0x28) addr:0x020094f8
 func_02009520 kind:function(thumb,size=0xd4) addr:0x02009520
 func_020095f4 kind:function(thumb,size=0x158) addr:0x020095f4
 func_0200974c kind:function(thumb,size=0x26c) addr:0x0200974c
@@ -2820,7 +2820,7 @@ data_02056f5c kind:bss addr:0x02056f5c
 sGXSubBgExtPlttBank kind:bss addr:0x02056f5e
 sGXSubObjExtPlttBank kind:bss addr:0x02056f60
 CARDi_EnableFlag kind:bss addr:0x02056f64
-data_02056f80 kind:bss addr:0x02056f80
+cardi_arg kind:bss addr:0x02056f80
 cardi_common kind:bss addr:0x02056fe0
 data_02057460 kind:bss addr:0x02057460
 data_020574e0 kind:bss addr:0x020574e0
