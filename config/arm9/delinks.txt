@@ -368,6 +368,14 @@ libs/nitro/os/asm_stubs/calls/OS_LoadContext.c:
     complete
     .text       start:0x02002ea8 end:0x02002eec
 
+libs/nitro/os/calls/OS_GetConsoleType.c:
+    complete
+    .text       start:0x02002eec end:0x02002f20
+
+libs/nitro/os/calls/CommandPort_IsEnabled.c:
+    complete
+    .text       start:0x02002f38 end:0x02002f50
+
 libs/nitro/os/auto/OS_InitMessageQueue.c:
     complete
     .text       start:0x02002f50 end:0x02002f78
@@ -752,6 +760,10 @@ libs/nitro/gx/auto/G2S_GetBG3CharPtr.c:
     complete
     .text       start:0x0200721c end:0x02007264
 
+libs/nitro/gx/calls/GX_EndLoadBGExtPltt.c:
+    complete
+    .text       start:0x02007d64 end:0x02007da4
+
 libs/nitro/gx/calls/GX_BeginLoadOBJExtPltt.c:
     complete
     .text       start:0x02007da4 end:0x02007dec
@@ -968,6 +980,10 @@ libs/nitro/os/asm_stubs/auto/func_0200d5a0.c:
     complete
     .text       start:0x0200d5a0 end:0x0200d5a8
 
+libs/nitro/dgt/auto/DGT_Hash2Reset.c:
+    complete
+    .text       start:0x0200d6e4 end:0x0200d738
+
 libs/nitro/math/calls/MATH_CalcHMACSHA1.c:
     complete
     .text       start:0x0200da08 end:0x0200da9c
@@ -979,6 +995,10 @@ libs/nitro/math/asm_stubs/auto/func_0200dc4c.c:
 src/calls/PXI_Init.c:
     complete
     .text       start:0x0200e200 end:0x0200e208
+
+libs/nitro/pxi/calls/PXI_SetFifoRecvCallback.c:
+    complete
+    .text       start:0x0200e2b0 end:0x0200e2fc
 
 libs/nitro/pxi/auto/PXI_IsCallbackReady.c:
     complete
@@ -1155,6 +1175,10 @@ libs/nitro/snd/calls/RequestCommandProc.c:
 src/calls/func_0200f45c.c:
     complete
     .text       start:0x0200f45c end:0x0200f4a4
+
+libs/nitro/snd/calls/IsCommandAvailable.c:
+    complete
+    .text       start:0x0200f4a4 end:0x0200f4e4
 
 libs/nitro/snd/calls/SND_AlarmInit.c:
     complete
@@ -1352,6 +1376,18 @@ libs/nitro/nns/auto/NNS_FndInitList.c:
     complete
     .text       start:0x020128a0 end:0x020128b8
 
+libs/nitro/nns/auto/SetFirstObject.c:
+    complete
+    .text       start:0x020128b8 end:0x020128e4
+
+libs/nitro/nns/calls/NNS_FndAppendListObject.c:
+    complete
+    .text       start:0x020128e4 end:0x02012938
+
+libs/nitro/nns/calls/NNS_FndPrependListObject.c:
+    complete
+    .text       start:0x02012938 end:0x02012988
+
 libs/nitro/nns/calls/NNS_FndInsertListObject.c:
     complete
     .text       start:0x02012988 end:0x020129ec
@@ -1379,6 +1415,10 @@ libs/nitro/nns/calls/FindContainHeap.c:
 libs/nitro/nns/calls/FindListContainHeap.c:
     complete
     .text       start:0x02012b28 end:0x02012b50
+
+libs/nitro/nns/calls/NNSi_FndInitHeapHead.c:
+    complete
+    .text       start:0x02012b50 end:0x02012bcc
 
 libs/nitro/nns/calls/NNSi_FndFinalizeHeap.c:
     complete
@@ -1431,6 +1471,10 @@ libs/nitro/nns/calls/NNS_FndFreeToExpHeap.c:
 src/calls/func_02013318.c:
     complete
     .text       start:0x02013318 end:0x0201339c
+
+libs/nitro/nns/calls/NNSi_FndInitExpHeap.c:
+    complete
+    .text       start:0x0201339c end:0x020133e4
 
 libs/nitro/nns/calls/NNSi_AllocFromHeadOfExpHeap.c:
     complete

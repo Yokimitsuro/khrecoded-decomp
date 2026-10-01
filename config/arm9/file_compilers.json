@@ -65,5 +65,14 @@
   "libs/nitro/pxi/auto/PXI_IsCallbackReady.c": "dsi/1.1",
   "libs/nitro/snd/calls/SND_GetPlayerStatus.c": "dsi/1.1",
   "libs/nitro/snd/calls/SND_AlarmInit.c": "dsi/1.1",
-  "libs/nitro/nns/calls/NNS_FndAllocFromDefaultExpHeapEx.c": "dsi/1.1"
+  "libs/nitro/nns/calls/NNS_FndAllocFromDefaultExpHeapEx.c": "dsi/1.1",
+  "libs/nitro/gx/calls/GX_EndLoadBGExtPltt.c": "dsi/1.1",
+  "libs/nitro/snd/calls/IsCommandAvailable.c": "dsi/1.1",
+  "libs/nitro/nns/calls/NNSi_FndInitExpHeap.c": "dsi/1.1",
+  "libs/nitro/nns/calls/NNS_FndAppendListObject.c": "dsi/1.1",
+  "libs/nitro/nns/auto/SetFirstObject.c": "dsi/1.1",
+  "libs/nitro/nns/calls/NNS_FndPrependListObject.c": "dsi/1.1",
+  "libs/nitro/nns/calls/NNSi_FndInitHeapHead.c": "dsi/1.1",
+  "libs/nitro/dgt/auto/DGT_Hash2Reset.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_GetConsoleType.c": "dsi/1.1"
 }
