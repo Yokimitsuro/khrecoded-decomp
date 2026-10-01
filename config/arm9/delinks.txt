@@ -196,6 +196,10 @@ libs/nitro/os/auto/OS_ResetRequestIrqMask.c:
     complete
     .text       start:0x02001fd0 end:0x02001ffc
 
+libs/nitro/os/calls/OSi_InitStackChecker.c:
+    complete
+    .text       start:0x02001ffc end:0x02002030
+
 libs/nitro/os/calls/func_02002030.c:
     complete
     .text       start:0x02002030 end:0x02002040
@@ -2335,6 +2339,10 @@ src/calls/func_02028c20.c:
 src/calls/func_02028c2c.c:
     complete
     .text       start:0x02028c2c end:0x02028c38
+
+libs/nitro/nns/calls/func_02028c38.c:
+    complete
+    .text       start:0x02028c38 end:0x02028dc0
 
 src/calls/func_02028dc0.c:
     complete

@@ -18,10 +18,10 @@ identical** to the original game code.
 <!-- progress:start -->
 | Category | Count | Meaning |
 |---|---:|---|
-| Real C matched functions | **1,375** / 10,398 (13.2%) | Functions implemented in C and verified byte-exact |
-| Real C matched **bytes** | **51,112** / 1,653,248 (3.09%) | Code bytes covered by real C; the honest progress figure |
+| Real C matched functions | **1,377** / 10,398 (13.2%) | Functions implemented in C and verified byte-exact |
+| Real C matched **bytes** | **51,556** / 1,653,248 (3.12%) | Code bytes covered by real C; the honest progress figure |
 | Library assembly functions | **87** (5,350 bytes) | Original NitroSDK/MSL assembly and BIOS veneers, verified byte-exact; never counted as C |
-| Named, not decompiled | **59** | Functions with a known name (SDK, NitroSystem, ...) but no source yet |
+| Named, not decompiled | **58** | Functions with a known name (SDK, NitroSystem, ...) but no source yet |
 | Total known functions | **10,398** | Functions in the dsd symbol tables |
 | Region | EU (`BK9P`) |  |
 | Compiler | CodeWarrior `mwccarm` 3.0 build 139 | Same toolchain and flags as khdays-decomp |

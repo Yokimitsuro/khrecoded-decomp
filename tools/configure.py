@@ -29,6 +29,8 @@ LINK = BUILD_DIR / "link"
 # them linker-absolute gives the real link a definition and lets verify_idx.py
 # accept the extra relocation a source takes when it references them as symbols.
 ABSOLUTE_SYMBOLS = {
+    # Size reserved for the IRQ stack in DTCM.
+    "SDK_IRQ_STACKSIZE": 0x800,
     # Inter-processor lock word at the top of main RAM.
     "data_027ffff0": 0x027FFFF0,
 }
