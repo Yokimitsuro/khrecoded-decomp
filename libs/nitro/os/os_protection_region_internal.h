@@ -14,6 +14,13 @@ typedef enum OSProtectionRegion {
     OS_PROTECTION_REGION_7
 } OSProtectionRegion;
 
+void OS_EnableICacheForProtectionRegion(u32 flags);
+void OS_DisableICacheForProtectionRegion(u32 flags);
+void OS_EnableDCacheForProtectionRegion(u32 flags);
+void OS_DisableDCacheForProtectionRegion(u32 flags);
+void OS_SetDPermissionsForProtectionRegion(u32 setMask, u32 flags);
+void OS_EnableWriteBufferForProtectionRegion(u32 flags);
+void OS_DisableWriteBufferForProtectionRegion(u32 flags);
 void OSi_SetProtectionRegion(OSProtectionRegion region, u32 parameter);
 void OS_SetProtectionRegionEx(OSProtectionRegion region, u32 address, u32 size);
 

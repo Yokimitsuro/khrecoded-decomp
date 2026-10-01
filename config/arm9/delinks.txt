@@ -528,9 +528,33 @@ libs/nitro/os/asm_stubs/auto/OS_DisableProtectionUnit.c:
     complete
     .text       start:0x02003b74 end:0x02003b84
 
+libs/nitro/os/asm_stubs/auto/OS_EnableICacheForProtectionRegion.c:
+    complete
+    .text       start:0x02003b84 end:0x02003b94
+
+libs/nitro/os/asm_stubs/auto/OS_DisableICacheForProtectionRegion.c:
+    complete
+    .text       start:0x02003b94 end:0x02003ba4
+
+libs/nitro/os/asm_stubs/auto/OS_EnableDCacheForProtectionRegion.c:
+    complete
+    .text       start:0x02003ba4 end:0x02003bb4
+
+libs/nitro/os/asm_stubs/auto/OS_DisableDCacheForProtectionRegion.c:
+    complete
+    .text       start:0x02003bb4 end:0x02003bc4
+
 libs/nitro/os/asm_stubs/auto/OS_SetDPermissionsForProtectionRegion.c:
     complete
     .text       start:0x02003bc4 end:0x02003bd8
+
+libs/nitro/os/asm_stubs/auto/OS_EnableWriteBufferForProtectionRegion.c:
+    complete
+    .text       start:0x02003bd8 end:0x02003be8
+
+libs/nitro/os/asm_stubs/auto/OS_DisableWriteBufferForProtectionRegion.c:
+    complete
+    .text       start:0x02003be8 end:0x02003bf8
 
 libs/nitro/os/calls/OSi_SetProtectionRegion.c:
     complete
