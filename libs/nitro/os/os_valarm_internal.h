@@ -38,6 +38,7 @@ int OSi_CompareVCount(OSVAlarm *alarm, s32 currentVFrame, s32 currentVCount);
 void OSi_VAlarmHandler(void *arg);
 s32 OSi_GetVFrame(s32 vcount);
 
+void OS_InitVAlarm(void);
 void OS_CreateVAlarm(OSVAlarm *alarm);
 void OS_SetVAlarm(OSVAlarm *alarm, s16 count, s16 delay,
                   OSVAlarmHandler handler, void *arg);

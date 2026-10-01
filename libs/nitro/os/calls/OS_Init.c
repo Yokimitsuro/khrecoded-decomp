@@ -33,7 +33,7 @@ void PXI_Init(void);
 void OS_InitArenaEx(void);
 void OS_InitTick(void);
 void OS_InitAlarm(void);
-void func_0200453c(void);
+void OS_InitVAlarm(void);
 void OS_InitReset(void);
 void OSi_InitVramExclusive(void);
 void OS_InitArena(void);
@@ -62,7 +62,7 @@ void OS_Init(void)
 
     MI_Init();
 
-    func_0200453c();
+    OS_InitVAlarm();
     OSi_InitVramExclusive();
 
 #ifndef SDK_NO_THREAD

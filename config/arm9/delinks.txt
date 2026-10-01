@@ -572,6 +572,10 @@ libs/nitro/os/asm_stubs/calls/OSi_AlarmHandler.c:
     complete
     .text       start:0x02004440 end:0x02004450
 
+libs/nitro/os/calls/OS_InitVAlarm.c:
+    complete
+    .text       start:0x0200453c end:0x0200457c
+
 libs/nitro/os/calls/OSi_InsertVAlarm.c:
     complete
     .text       start:0x0200457c end:0x020045f8
@@ -608,7 +612,7 @@ libs/nitro/os/calls/OSi_GetVFrame.c:
     complete
     .text       start:0x020048fc end:0x02004938
 
-libs/nitro/os/asm_stubs/auto/func_02004938.c:
+libs/nitro/os/asm_stubs/auto/OS_EnableInterrupts.c:
     complete
     .text       start:0x02004938 end:0x0200494c
 

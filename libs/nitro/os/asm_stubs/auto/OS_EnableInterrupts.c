@@ -6,7 +6,7 @@ typedef unsigned int OSIntrMode;
 
 #define HW_PSR_IRQ_DISABLE           0x80
 
-asm OSIntrMode func_02004938 (void)
+asm OSIntrMode OS_EnableInterrupts (void)
 {
     mrs r0, cpsr
     bic r1, r0, #HW_PSR_IRQ_DISABLE
