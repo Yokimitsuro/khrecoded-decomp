@@ -1,6 +1,6 @@
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
-extern void func_02002abc(void *queue);
+extern void OS_SleepThread(void *queue);
 extern void OS_WakeupThread(void *queue);
 extern long long _s32_div_f(int a, int b);
 
@@ -12,7 +12,7 @@ int OS_SendMessage(char *q, void *msg, int flags) {
             OS_RestoreInterrupts(enabled);
             return 0;
         }
-        func_02002abc(q);
+        OS_SleepThread(q);
     }
     (*(void ***)(q + 0x10))[(int)(_s32_div_f(
         *(int *)(q + 0x18) + *(int *)(q + 0x1c), *(int *)(q + 0x14)) >> 32)] = msg;

@@ -1,7 +1,7 @@
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern void MI_CpuFill8(void *dst, int value, int size);
-extern void func_02002abc(void *queue);
+extern void OS_SleepThread(void *queue);
 extern void OS_ExitThread(void);
 extern char data_0205a488;
 
@@ -20,7 +20,7 @@ void func_02012808(char *ctx) {
         MI_CpuFill8(&job, 0, 0x24);
         enabled = OS_DisableInterrupts();
         while (*(char *volatile *)(ctx + 0xc0) == 0) {
-            func_02002abc(0);
+            OS_SleepThread(0);
         }
         job = *(Ov_CardJob *)*(char *volatile *)(ctx + 0xc0);
         OS_RestoreInterrupts(enabled);

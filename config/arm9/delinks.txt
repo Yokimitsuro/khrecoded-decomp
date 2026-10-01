@@ -320,7 +320,7 @@ libs/nitro/os/auto/OS_IsThreadTerminated.c:
     complete
     .text       start:0x02002aa8 end:0x02002abc
 
-libs/nitro/os/calls/func_02002abc.c:
+libs/nitro/os/calls/OS_SleepThread.c:
     complete
     .text       start:0x02002abc end:0x02002b0c
 
@@ -388,9 +388,25 @@ libs/nitro/os/calls/OS_InitMutex.c:
     complete
     .text       start:0x02003148 end:0x0200316c
 
+libs/nitro/os/calls/OS_LockMutex.c:
+    complete
+    .text       start:0x0200316c end:0x020031bc
+
 libs/nitro/os/calls/OS_UnlockMutex.c:
     complete
     .text       start:0x020031bc end:0x020031cc
+
+libs/nitro/os/calls/OSi_UnlockAllMutex.c:
+    complete
+    .text       start:0x020031cc end:0x02003214
+
+libs/nitro/os/calls/OS_TryLockMutex.c:
+    complete
+    .text       start:0x02003214 end:0x020032a8
+
+libs/nitro/os/auto/OSi_EnqueueTail.c:
+    complete
+    .text       start:0x02003380 end:0x020033a4
 
 libs/nitro/os/auto/OSi_DequeueItem.c:
     complete

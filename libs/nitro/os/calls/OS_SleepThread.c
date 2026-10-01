@@ -135,8 +135,8 @@ OSThreadInfo data_02044330 = {0};   /* data_02044330 */
 
 
 
-/* func_02002abc -- NitroSDK os_thread.c: OS_SleepThread. */
-void func_02002abc (OSThreadQueue * queue)
+/* OS_SleepThread -- NitroSDK os_thread.c: OS_SleepThread. */
+void OS_SleepThread (OSThreadQueue * queue)
 {
     OSIntrMode enable;
     OSThread * currentThread;
