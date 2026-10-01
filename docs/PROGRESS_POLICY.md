@@ -36,6 +36,18 @@ A function may have a known name (for example a NitroSDK name carried over from
 khdays-decomp where the evidence is one-to-one) before it has a C
 implementation. Names help research, but they do not count as progress.
 
+## DATA
+
+DATA progress covers the complete `.rodata`, `.ctor`, `.data` and `.bss` ranges
+declared by every module. A byte only counts as reconstructed after a source file
+owns that range and the full module gate proves the linked output byte-exact.
+
+Named DATA symbols are reported separately. Identifying a variable or table helps
+reverse engineering, but does not count any bytes as reconstructed.
+
+The objdiff v2 report publishes the same totals as `totalData` and
+`matchedData`, so decomp.dev shows DATA independently from code.
+
 ## Why this matters
 
 Byte-exact matching is the technical verification gate, but public progress

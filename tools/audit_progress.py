@@ -21,6 +21,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from project import BUILD_DIR, ROOT  # noqa: E402
+import data_progress  # noqa: E402
 
 SUBTREES = ["auto", "calls", "asm_stubs/auto", "asm_stubs/calls"]
 PLACEHOLDER = re.compile(r"^func_(?:ov\d{3}_)?[0-9a-f]{8}$")
@@ -108,13 +109,14 @@ def classify_functions():
     return out, unknown
 
 
-def summarize(functions, unknown):
+def summarize(functions, unknown, data_units=None):
     counts, sizes = Counter(), Counter()
     units = defaultdict(Counter)
     for f in functions:
         counts[f["category"]] += 1
         sizes[f["category"]] += f["size"]
         units[f["unit"]][f["category"]] += 1
+    data = data_progress.summarize(data_units or data_progress.load_data_units())
     return {
         "total_functions": len(functions),
         "total_code_bytes": sum(f["size"] for f in functions),
@@ -122,6 +124,7 @@ def summarize(functions, unknown):
         "code_bytes": {c: sizes.get(c, 0) for c in CATEGORIES},
         "unknown_source_files": len(unknown),
         "units": {u: dict(c) for u, c in sorted(units.items())},
+        "data": data,
     }
 
 
@@ -145,6 +148,19 @@ def write_markdown(summary):
         "|---|---:|---:|---:|---:|",
         *rows, "",
         "Source files that match no function in symbols.txt: %d" % summary["unknown_source_files"], "",
+        "## DATA", "",
+        "| Category | Bytes or symbols | % |",
+        "|---|---:|---:|",
+        "| Reconstructed byte-exact DATA | %s / %s | %.2f%% |" % (
+            format(summary["data"]["matched_data_bytes"], ","),
+            format(summary["data"]["total_data_bytes"], ","),
+            100.0 * summary["data"]["matched_data_bytes"] / summary["data"]["total_data_bytes"]
+            if summary["data"]["total_data_bytes"] else 100.0),
+        "| Named DATA symbols | %s / %s | %.2f%% |" % (
+            format(summary["data"]["named_data_symbols"], ","),
+            format(summary["data"]["total_data_symbols"], ","),
+            100.0 * summary["data"]["named_data_symbols"] / summary["data"]["total_data_symbols"]
+            if summary["data"]["total_data_symbols"] else 100.0), "",
     ])
 
 
@@ -157,8 +173,10 @@ def main():
                    indent=1, sort_keys=True) + "\n", encoding="utf-8")
     (BUILD_DIR / "progress_audit.md").write_text(write_markdown(summary), encoding="utf-8", newline="\n")
     c = summary["counts"]
-    print("progress_audit -> C=%d, ASM=%d, named=%d, todo=%d, total=%d" % (
-        c["c_decompiled_matched"], c["asm_stub_matched"], c["named"], c["todo"], summary["total_functions"]))
+    d = summary["data"]
+    print("progress_audit -> C=%d, ASM=%d, named=%d, todo=%d, total=%d; DATA=%d/%d bytes" % (
+        c["c_decompiled_matched"], c["asm_stub_matched"], c["named"], c["todo"], summary["total_functions"],
+        d["matched_data_bytes"], d["total_data_bytes"]))
 
 
 if __name__ == "__main__":

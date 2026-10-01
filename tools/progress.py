@@ -7,6 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import audit_progress  # noqa: E402
+import data_progress  # noqa: E402
 from project import ROOT  # noqa: E402
 
 
@@ -59,6 +60,7 @@ def main():
             100.0 * c / total if total else 100.0,
             100.0 * sizes[unit]["c"] / sizes[unit]["total"] if sizes[unit]["total"] else 100.0))
     c_bytes, total_bytes = byte_progress(functions)
+    data = data_progress.summarize(data_progress.load_data_units())
     lines.append("| **TOTAL** | **%d** | **%d** | **%d** | **%d** | **%d** | **%.1f%%** | **%.2f%%** |" % (
         totals["c_decompiled_matched"], totals["asm_stub_matched"], totals["named"], totals["todo"],
         totals["total"], 100.0 * totals["c_decompiled_matched"] / totals["total"],
@@ -73,12 +75,32 @@ def main():
         "| C matched bytes | Total code bytes | % |",
         "|---:|---:|---:|",
         "| **{:,}** | **{:,}** | **{:.2f}%** |".format(c_bytes, total_bytes, 100.0 * c_bytes / total_bytes),
+        "",
+        "## DATA progress",
+        "",
+        "DATA bytes only count after their source-owned range passes byte-exact verification.",
+        "Naming is tracked separately and does not count as reconstructed DATA.",
+        "",
+        "| Metric | Complete | Total | % |",
+        "|---|---:|---:|---:|",
+        "| Reconstructed byte-exact DATA | **{:,}** | **{:,}** | **{:.2f}%** |".format(
+            data["matched_data_bytes"], data["total_data_bytes"],
+            100.0 * data["matched_data_bytes"] / data["total_data_bytes"]
+            if data["total_data_bytes"] else 100.0),
+        "| Named DATA symbols | **{:,}** | **{:,}** | **{:.2f}%** |".format(
+            data["named_data_symbols"], data["total_data_symbols"],
+            100.0 * data["named_data_symbols"] / data["total_data_symbols"]
+            if data["total_data_symbols"] else 100.0),
     ]
     (ROOT / "PROGRESS.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print("PROGRESS.md -> C=%d/%d (%.1f%%), bytes=%s/%s (%.2f%%)" % (
         totals["c_decompiled_matched"], totals["total"],
         100.0 * totals["c_decompiled_matched"] / totals["total"],
         format(c_bytes, ","), format(total_bytes, ","), 100.0 * c_bytes / total_bytes))
+    print("DATA bytes=%s/%s (%.2f%%), named symbols=%d/%d" % (
+        format(data["matched_data_bytes"], ","), format(data["total_data_bytes"], ","),
+        100.0 * data["matched_data_bytes"] / data["total_data_bytes"] if data["total_data_bytes"] else 100.0,
+        data["named_data_symbols"], data["total_data_symbols"]))
 
 
 if __name__ == "__main__":

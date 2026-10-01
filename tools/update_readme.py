@@ -11,6 +11,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import audit_progress  # noqa: E402
+import data_progress  # noqa: E402
 from project import GAME_CODE, ROOT  # noqa: E402
 
 START, END = "<!-- progress:start -->", "<!-- progress:end -->"
@@ -29,6 +30,7 @@ def table():
 
     c, asm, named = count("c_decompiled_matched"), count("asm_stub_matched"), count("named")
     c_b, asm_b = size("c_decompiled_matched"), size("asm_stub_matched")
+    data = data_progress.summarize(data_progress.load_data_units())
     pct = lambda a, b: 100.0 * a / b if b else 0.0  # noqa: E731
     rows = [
         ("Real C matched functions", "**{:,}** / {:,} ({:.1f}%)".format(c, total, pct(c, total)),
@@ -37,6 +39,14 @@ def table():
          "Code bytes covered by real C; the honest progress figure"),
         ("Assembly matched functions", "**{:,}** ({:,} bytes)".format(asm, asm_b),
          "Original SDK, BIOS and DS Protect assembly, verified byte-exact; never counted as C"),
+        ("Reconstructed DATA bytes", "**{:,}** / {:,} ({:.2f}%)".format(
+            data["matched_data_bytes"], data["total_data_bytes"],
+            pct(data["matched_data_bytes"], data["total_data_bytes"])),
+         "Verified byte-exact .rodata, .data, .ctor and .bss reconstructed from source"),
+        ("Named DATA symbols", "**{:,}** / {:,} ({:.2f}%)".format(
+            data["named_data_symbols"], data["total_data_symbols"],
+            pct(data["named_data_symbols"], data["total_data_symbols"])),
+         "Identified DATA names; naming alone does not count as reconstructed DATA"),
         ("Named, not decompiled", "**{:,}**".format(named),
          "Functions with a known name (SDK, NitroSystem, ...) but no source yet"),
         ("Total known functions", "**{:,}**".format(total), "Functions in the dsd symbol tables"),
