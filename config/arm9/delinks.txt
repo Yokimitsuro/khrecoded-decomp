@@ -652,6 +652,10 @@ libs/nitro/os/calls/OS_GetMacAddress.c:
     complete
     .text       start:0x02004adc end:0x02004af8
 
+libs/nitro/os/calls/OS_GetOwnerInfo.c:
+    complete
+    .text       start:0x02004af8 end:0x02004b78
+
 libs/nitro/os/asm_stubs/auto/func_02004b78.c:
     complete
     .text       start:0x02004b78 end:0x02004b80
