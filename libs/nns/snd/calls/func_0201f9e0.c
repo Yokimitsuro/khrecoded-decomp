@@ -346,7 +346,7 @@ typedef struct NNSSndArc {
 } NNSSndArc;
 NNSSndArc * SND_SetActiveSlotSwap(NNSSndArc * arc);
 void * func_0201ee3c(u32 fileId);
-void func_0201ee64(u32 fileId, void * address);
+void NNS_SndArcSetFileAddress(u32 fileId, void * address);
 
 /* func_0201f9e0 -- NitroSystem sndarc_loader.c: DisposeCallback. */
 void func_0201f9e0 (void * mem, NNSSndArc * arc, u32 fileId)
@@ -360,7 +360,7 @@ void func_0201f9e0 (void * mem, NNSSndArc * arc, u32 fileId)
     oldArc = SND_SetActiveSlotSwap(arc);
 
     if (mem == func_0201ee3c(fileId)) {
-        func_0201ee64(fileId, NULL);
+        NNS_SndArcSetFileAddress(fileId, NULL);
     }
 
     (void)SND_SetActiveSlotSwap(oldArc);

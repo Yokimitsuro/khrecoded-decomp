@@ -272,6 +272,10 @@ src/calls/WM_EndKeySharing.c:
     complete
     .text       start:0x020024a4 end:0x020024b0
 
+libs/nitro/os/calls/OSi_GetUnusedThreadId.c:
+    complete
+    .text       start:0x020024b0 end:0x020024c8
+
 libs/nitro/os/auto/OSi_RemoveLinkFromQueue.c:
     complete
     .text       start:0x02002540 end:0x02002574
@@ -315,6 +319,10 @@ libs/nitro/os/calls/OS_RescheduleThread.c:
 libs/nitro/os/calls/OSi_SleepAlarmCallback.c:
     complete
     .text       start:0x02002d2c end:0x02002d4c
+
+libs/nitro/os/calls/OS_SetSwitchThreadCallback.c:
+    complete
+    .text       start:0x02002d4c end:0x02002d74
 
 libs/nitro/os/calls/func_02002d74.c:
     complete
@@ -1524,6 +1532,10 @@ libs/nns/g2d/calls/func_02015278.c:
     complete
     .text       start:0x02015278 end:0x02015288
 
+src/auto/func_02015288.c:
+    complete
+    .text       start:0x02015288 end:0x020152a0
+
 libs/nns/g2d/auto/func_020152a0.c:
     complete
     .text       start:0x020152a0 end:0x020152bc
@@ -1984,6 +1996,10 @@ libs/nns/snd/calls/func_0201ee1c.c:
     complete
     .text       start:0x0201ee1c end:0x0201ee3c
 
+libs/nns/snd/calls/NNS_SndArcSetFileAddress.c:
+    complete
+    .text       start:0x0201ee64 end:0x0201ee80
+
 libs/nns/snd/calls/func_0201f02c.c:
     complete
     .text       start:0x0201f02c end:0x0201f044
@@ -2099,6 +2115,10 @@ libs/nns/snd/calls/func_020202f4.c:
 src/auto/func_02020310.c:
     complete
     .text       start:0x02020310 end:0x0202031c
+
+libs/nns/snd/auto/NNS_SndStrmHandleRelease.c:
+    complete
+    .text       start:0x0202031c end:0x02020334
 
 libs/nns/snd/calls/func_020209e8.c:
     complete
@@ -2383,6 +2403,10 @@ src/calls/func_02029fac.c:
 src/calls/func_0202a16c.c:
     complete
     .text       start:0x0202a16c end:0x0202a17c
+
+libs/nitro/nns/calls/NNSi_FndGetAllocatorForDefaultHeap.c:
+    complete
+    .text       start:0x0202a27c end:0x0202a294
 
 src/calls/func_0202a3bc.c:
     complete
@@ -2851,6 +2875,10 @@ src/calls/func_0203fa00.c:
 src/calls/func_02040ca0.c:
     complete
     .text       start:0x02040ca0 end:0x02040cb8
+
+src/auto/func_020434cc.c:
+    complete
+    .text       start:0x020434cc end:0x020434e4
 
 src/calls/func_02047dc0.c:
     complete
