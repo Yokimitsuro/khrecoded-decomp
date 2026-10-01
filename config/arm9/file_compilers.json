@@ -198,5 +198,10 @@
   "libs/nitro/os/calls/OS_IsTickAvailable.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_InitAlarm.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_EndAlarm.c": "dsi/1.1",
-  "libs/nitro/os/calls/OS_IsAlarmAvailable.c": "dsi/1.1"
+  "libs/nitro/os/calls/OS_IsAlarmAvailable.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_InitTick.c": "dsi/1.1",
+  "libs/nitro/os/calls/OSi_CountUpTick.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_GetTick.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_SetTick.c": "dsi/1.1",
+  "libs/nitro/os/calls/OSi_SetTimer.c": "dsi/1.1"
 }

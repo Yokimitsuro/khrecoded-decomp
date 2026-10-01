@@ -652,13 +652,33 @@ libs/nitro/os/calls/OSi_UnsetTimerReserved.c:
     complete
     .text       start:0x02003edc end:0x02003f00
 
+libs/nitro/os/calls/OS_InitTick.c:
+    complete
+    .text       start:0x02003f00 end:0x02003f70
+
 libs/nitro/os/calls/OS_IsTickAvailable.c:
     complete
     .text       start:0x02003f70 end:0x02003f80
 
+libs/nitro/os/calls/OSi_CountUpTick.c:
+    complete
+    .text       start:0x02003f80 end:0x02003fe8
+
+libs/nitro/os/calls/OS_GetTick.c:
+    complete
+    .text       start:0x02003fe8 end:0x02004088
+
 libs/nitro/os/auto/OS_GetTickLo.c:
     complete
     .text       start:0x02004088 end:0x02004098
+
+libs/nitro/os/calls/OS_SetTick.c:
+    complete
+    .text       start:0x02004098 end:0x02004108
+
+libs/nitro/os/calls/OSi_SetTimer.c:
+    complete
+    .text       start:0x02004108 end:0x02004190
 
 libs/nitro/os/calls/OS_InitAlarm.c:
     complete

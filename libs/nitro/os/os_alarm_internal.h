@@ -1,9 +1,21 @@
 #ifndef NITRO_OS_ALARM_INTERNAL_H
 #define NITRO_OS_ALARM_INTERNAL_H
 
-#include "libs/nitro/os/os_types_internal.h"
+#include "libs/nitro/os/os_tick_internal.h"
 
-typedef struct OSAlarm OSAlarm;
+typedef void (*OSAlarmHandler)(void *arg);
+typedef struct OSiAlarm OSAlarm;
+
+struct OSiAlarm {
+    OSAlarmHandler handler;
+    void *arg;
+    u32 tag;
+    OSTick fire;
+    OSAlarm *prev;
+    OSAlarm *next;
+    OSTick period;
+    OSTick start;
+};
 
 typedef struct OSiAlarmState {
     u16 useAlarm;
@@ -14,6 +26,8 @@ typedef struct OSiAlarmState {
 
 extern OSiAlarmState OSi_AlarmState;
 
+void OSi_SetTimer(OSAlarm *alarm);
+void OSi_AlarmHandler(void *arg);
 void OS_InitAlarm(void);
 void OS_EndAlarm(void);
 BOOL OS_IsAlarmAvailable(void);
