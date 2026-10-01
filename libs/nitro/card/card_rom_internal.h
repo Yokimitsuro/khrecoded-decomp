@@ -30,8 +30,36 @@ typedef struct CARDDmaInterface {
     void (*stop)(u32 channel);
 } CARDDmaInterface;
 
+typedef struct CARDBackupSpec {
+    u32 totalSize;
+    u32 sectorSize;
+    u32 subSectorSize;
+    u32 pageSize;
+    u32 addressWidth;
+    u32 programPageTime;
+    u32 writePageTime;
+    u32 writePageTotalTime;
+    u32 eraseChipTime;
+    u32 eraseChipTotalTime;
+    u32 eraseSectorTime;
+    u32 eraseSectorTotalTime;
+    u32 eraseSubSectorTime;
+    u32 eraseSubSectorTotalTime;
+    u32 erasePageTime;
+    u8 initialStatus;
+    u8 padding0[3];
+    u32 capabilities;
+    u8 padding1[4];
+} CARDBackupSpec;
+
 typedef struct CARDiCommandArg {
     s32 result;
+    u32 type;
+    u32 cardId;
+    u32 source;
+    u32 destination;
+    u32 length;
+    CARDBackupSpec backup;
 } CARDiCommandArg;
 
 typedef struct CARDiCommon {
@@ -55,6 +83,10 @@ typedef struct CARDiCommon {
     u32 length;
     u32 dmaChannel;
     const CARDDmaInterface *dmaInterface;
+    u32 requestType;
+    int requestRetryCount;
+    u32 requestMode;
+    void *currentArm9Thread;
 } CARDiCommon;
 
 typedef int (*CARDReadRomFunction)(void *argument, void *buffer, u32 offset,
@@ -78,6 +110,7 @@ extern CARDRomState sCardRomState;
 extern CARDRomConfig sCardRomConfig;
 extern CARDTransferInfo sCardDmaReadInfo;
 extern u8 sCardRomCacheBuffer[0x200];
+extern u8 sCardBackupCachePageBuffer[0x100];
 
 #define REG_MCCNT0 (*(vu16 *)0x040001a0)
 #define REG_MCCNT1 (*(vu32 *)0x040001a4)

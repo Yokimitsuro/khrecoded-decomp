@@ -1618,6 +1618,22 @@ libs/nitro/card/calls/CARDi_OnFifoRecv.c:
     complete
     .text       start:0x020094f8 end:0x02009520
 
+libs/nitro/card/calls/CARDi_IdentifyBackupCore.c:
+    complete
+    .text       start:0x020099b8 end:0x020099e8
+
+libs/nitro/card/calls/CARDi_BeginBackupCommand.c:
+    complete
+    .text       start:0x020099e8 end:0x02009a20
+
+libs/nitro/card/calls/CARDi_RequestStreamCommand.c:
+    complete
+    .text       start:0x02009a20 end:0x02009a68
+
+libs/nitro/card/calls/CARD_IdentifyBackup.c:
+    complete
+    .text       start:0x02009a68 end:0x02009a90
+
 libs/nitro/card/calls/CARD_GetBackupSectorSize.c:
     complete
     .text       start:0x02009a90 end:0x02009a9c
