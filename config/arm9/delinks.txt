@@ -1760,6 +1760,7 @@ libs/nitro/gx/asm_stubs/auto/CPi_RestoreContext.c:
 libs/nitro/fs/calls/FSi_IsEventCommand.c:
     complete
     .text       start:0x0200a1ec end:0x0200a214
+    .rodata     start:0x020529f4 end:0x02052af4
 
 libs/nitro/fs/calls/FSi_EndCommand.c:
     complete
@@ -1793,9 +1794,41 @@ libs/nitro/fs/calls/FS_WaitAsync.c:
     complete
     .text       start:0x0200b1f8 end:0x0200b29c
 
+libs/nitro/fs/calls/FS_InitFile.c:
+    complete
+    .text       start:0x0200b3a8 end:0x0200b3d4
+
+libs/nitro/fs/calls/FS_CancelFile.c:
+    complete
+    .text       start:0x0200b3d4 end:0x0200b41c
+
+libs/nitro/fs/calls/FS_ConvertPathToFileID.c:
+    complete
+    .text       start:0x0200b41c end:0x0200b4a8
+
 libs/nitro/fs/calls/FS_OpenFileDirect.c:
     complete
     .text       start:0x0200b4a8 end:0x0200b4e8
+
+libs/nitro/fs/calls/FS_OpenFileFast.c:
+    complete
+    .text       start:0x0200b4e8 end:0x0200b540
+
+libs/nitro/fs/calls/FS_OpenFileEx.c:
+    complete
+    .text       start:0x0200b540 end:0x0200b5c4
+
+libs/nitro/fs/calls/FS_CloseFile.c:
+    complete
+    .text       start:0x0200b5c4 end:0x0200b5d8
+
+libs/nitro/fs/calls/FS_SetSeekCache.c:
+    complete
+    .text       start:0x0200b5d8 end:0x0200b604
+
+libs/nitro/fs/calls/FS_GetFileLength.c:
+    complete
+    .text       start:0x0200b604 end:0x0200b65c
 
 libs/nitro/fs/calls/FS_SeekFile.c:
     complete
@@ -1809,11 +1842,11 @@ libs/nitro/fs/calls/FS_ReadFileAsync.c:
     complete
     .text       start:0x0200b6dc end:0x0200b754
 
-src/calls/func_0200b754.c:
+libs/nitro/fs/calls/FS_OpenFile.c:
     complete
     .text       start:0x0200b754 end:0x0200b764
 
-src/calls/func_0200b764.c:
+libs/nitro/fs/calls/FS_GetLength.c:
     complete
     .text       start:0x0200b764 end:0x0200b770
 
@@ -1837,9 +1870,17 @@ src/auto/func_0200c708.c:
     complete
     .text       start:0x0200c708 end:0x0200c710
 
-src/auto/func_0200cd78.c:
+libs/nitro/fs/auto/FSi_ROMFAT_GetArchiveCaps.c:
     complete
     .text       start:0x0200cd78 end:0x0200cd84
+
+libs/nitro/fs/calls/FSi_GetFileLengthIfProc.c:
+    complete
+    .text       start:0x0200d030 end:0x0200d070
+
+libs/nitro/fs/calls/FSi_GetFilePositionIfProc.c:
+    complete
+    .text       start:0x0200d070 end:0x0200d0b0
 
 libs/nitro/fs/auto/FS_SetArchiveProc.c:
     complete

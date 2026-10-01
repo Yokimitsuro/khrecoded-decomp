@@ -12,6 +12,46 @@ typedef struct OSThreadQueue {
     void *head;
     void *tail;
 } OSThreadQueue;
+typedef void (*FSArchiveMethod)(void);
+
+typedef struct FSArchiveInterface {
+    FSArchiveMethod readFile;
+    FSArchiveMethod writeFile;
+    FSArchiveMethod seekDirectory;
+    FSArchiveMethod readDirectory;
+    FSArchiveMethod findPath;
+    FSArchiveMethod getPath;
+    FSArchiveMethod openFileFast;
+    FSArchiveMethod openFileDirect;
+    FSArchiveMethod closeFile;
+    FSArchiveMethod activate;
+    FSArchiveMethod idle;
+    FSArchiveMethod suspend;
+    FSArchiveMethod resume;
+    FSArchiveMethod openFile;
+    FSArchiveMethod seekFile;
+    FSArchiveMethod getFileLength;
+    FSArchiveMethod getFilePosition;
+    FSArchiveMethod mount;
+    FSArchiveMethod unmount;
+    FSArchiveMethod getArchiveCaps;
+    FSArchiveMethod createFile;
+    FSArchiveMethod deleteFile;
+    FSArchiveMethod renameFile;
+    FSArchiveMethod getPathInfo;
+    FSArchiveMethod setPathInfo;
+    FSArchiveMethod createDirectory;
+    FSArchiveMethod deleteDirectory;
+    FSArchiveMethod renameDirectory;
+    FSArchiveMethod getArchiveResource;
+    FSArchiveMethod unused29;
+    FSArchiveMethod flushFile;
+    FSArchiveMethod setFileLength;
+    FSArchiveMethod openDirectory;
+    FSArchiveMethod closeDirectory;
+    FSArchiveMethod setSeekCache;
+    u8 reserved[116];
+} FSArchiveInterface;
 
 typedef struct FSFile {
     struct FSFile *next;
@@ -75,6 +115,16 @@ FSFile *FSi_NextCommand(FSArchive *archive, BOOL owner);
 void FSi_ExecuteAsyncCommand(FSFile *file);
 void FSi_ExecuteSyncCommand(FSFile *file);
 void FS_InitFile(FSFile *file);
+void FS_CancelFile(FSFile *file);
+BOOL FSi_SendCommand(FSFile *file, FSCommandType command, BOOL blocking);
+FSArchive *FS_NormalizePath(const char *path, u32 *baseId, char *relativePath);
+BOOL FSi_GetFileLengthIfProc(FSFile *file, u32 *length);
+u32 FS_GetFileLength(FSFile *file);
+BOOL FSi_GetFilePositionIfProc(FSFile *file, u32 *position);
+FSResult FSi_ROMFAT_GetArchiveCaps(FSArchive *archive, u32 *capabilities);
+BOOL FS_OpenFileEx(FSFile *file, const char *path, u32 mode);
+BOOL FS_OpenFile(FSFile *file, const char *path);
+u32 FS_GetLength(FSFile *file);
 
 static inline FSCommandType FSi_GetCurrentCommand(const FSFile *file)
 {

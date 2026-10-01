@@ -15,8 +15,8 @@ typedef struct FSFileBounds {
     unsigned int imageBottom;
 } FSFileBounds;
 
-extern int func_0200d030(FSFile *file, unsigned int *imageBottom);
-extern int func_0200d070(FSFile *file, unsigned int *imageTop);
+extern int FSi_GetFileLengthIfProc(FSFile *file, unsigned int *imageBottom);
+extern int FSi_GetFilePositionIfProc(FSFile *file, unsigned int *imageTop);
 extern int FSi_SendCommand(FSFile *file, int command, int synchronous);
 
 int FS_ReadFileAsync(FSFile *file, void *destination, int length)
@@ -24,10 +24,10 @@ int FS_ReadFileAsync(FSFile *file, void *destination, int length)
     FSFileBounds bounds;
     FSReadFileArgument *argument;
 
-    if (func_0200d070(file, &bounds.imageTop) == 0) {
+    if (FSi_GetFilePositionIfProc(file, &bounds.imageTop) == 0) {
         goto send;
     }
-    if (func_0200d030(file, &bounds.imageBottom) == 0) {
+    if (FSi_GetFileLengthIfProc(file, &bounds.imageBottom) == 0) {
         goto send;
     }
     if (bounds.imageTop + length > bounds.imageBottom) {
