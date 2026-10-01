@@ -192,5 +192,11 @@
   "src/overlays/ov104/asm_stubs/calls/RunEncrypted_Dummy_IsBad.c": "2.0/sp2p3",
   "src/overlays/ov104/asm_stubs/calls/RunEncrypted_Dummy_IsGood.c": "2.0/sp2p3",
   "src/overlays/ov104/asm_stubs/calls/__sinit_ov104_020d31fc.c": "2.0/sp2p3",
-  "src/overlays/ov104/asm_stubs/calls/__sinit_ov104_020d36b4.c": "2.0/sp2p3"
+  "src/overlays/ov104/asm_stubs/calls/__sinit_ov104_020d36b4.c": "2.0/sp2p3",
+  "libs/nitro/os/calls/OSi_SetTimerReserved.c": "dsi/1.1",
+  "libs/nitro/os/calls/OSi_UnsetTimerReserved.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_IsTickAvailable.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_InitAlarm.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_EndAlarm.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_IsAlarmAvailable.c": "dsi/1.1"
 }

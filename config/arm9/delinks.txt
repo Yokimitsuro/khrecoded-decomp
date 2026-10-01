@@ -644,7 +644,15 @@ libs/nitro/os/asm_stubs/calls/OSi_GetAndDisplayContext.c:
     complete
     .text       start:0x02003da8 end:0x02003dbc
 
-libs/nitro/os/calls/func_02003f70.c:
+libs/nitro/os/calls/OSi_SetTimerReserved.c:
+    complete
+    .text       start:0x02003eb8 end:0x02003edc
+
+libs/nitro/os/calls/OSi_UnsetTimerReserved.c:
+    complete
+    .text       start:0x02003edc end:0x02003f00
+
+libs/nitro/os/calls/OS_IsTickAvailable.c:
     complete
     .text       start:0x02003f70 end:0x02003f80
 
@@ -652,7 +660,15 @@ libs/nitro/os/auto/OS_GetTickLo.c:
     complete
     .text       start:0x02004088 end:0x02004098
 
-libs/nitro/os/calls/func_02004208.c:
+libs/nitro/os/calls/OS_InitAlarm.c:
+    complete
+    .text       start:0x02004190 end:0x020041cc
+
+libs/nitro/os/calls/OS_EndAlarm.c:
+    complete
+    .text       start:0x020041cc end:0x02004208
+
+libs/nitro/os/calls/OS_IsAlarmAvailable.c:
     complete
     .text       start:0x02004208 end:0x02004218
 
