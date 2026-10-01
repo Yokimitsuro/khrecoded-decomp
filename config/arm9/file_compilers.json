@@ -435,5 +435,20 @@
   "libs/nitro/fs/auto/FSi_DecrementSjisPosition.c": "dsi/1.1",
   "libs/nitro/fs/auto/FSi_IncrementSjisPositionToSlash.c": "dsi/1.1",
   "libs/nitro/fs/calls/FSi_DecrementSjisPositionToSlash.c": "dsi/1.1",
-  "libs/nitro/fs/calls/FSi_TrimSjisTrailingSlash.c": "dsi/1.1"
+  "libs/nitro/fs/calls/FSi_TrimSjisTrailingSlash.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FSi_InitOverlay.c": "dsi/1.1",
+  "libs/nitro/fs/data/fsiDefaultDigestKey.c": "dsi/1.1",
+  "libs/nitro/fs/data/FSiOverlayContext.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FSi_GetOverlayBinarySize.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_ClearOverlayImage.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_GetOverlayFileID.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_LoadOverlayInfo.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_LoadOverlayImageAsync.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_LoadOverlayImage.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_CompareDigest.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_StartOverlay.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_EndOverlay.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_UnloadOverlayImage.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_LoadOverlay.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_UnloadOverlay.c": "dsi/1.1"
 }

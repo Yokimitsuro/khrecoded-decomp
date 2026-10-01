@@ -1878,6 +1878,10 @@ libs/nitro/fs/calls/FS_GetLength.c:
     complete
     .text       start:0x0200b764 end:0x0200b770
 
+libs/nitro/fs/auto/FSi_InitOverlay.c:
+    complete
+    .text       start:0x0200b770 end:0x0200b7e0
+
 libs/nitro/fs/auto/FSi_GetOverlayBinarySize.c:
     complete
     .text       start:0x0200b7e0 end:0x0200b7fc
@@ -1886,13 +1890,45 @@ libs/nitro/fs/calls/FS_ClearOverlayImage.c:
     complete
     .text       start:0x0200b7fc end:0x0200b838
 
+libs/nitro/fs/calls/FS_GetOverlayFileID.c:
+    complete
+    .text       start:0x0200b838 end:0x0200b864
+
+libs/nitro/fs/calls/FS_LoadOverlayInfo.c:
+    complete
+    .text       start:0x0200b864 end:0x0200b9c4
+
+libs/nitro/fs/calls/FS_LoadOverlayImageAsync.c:
+    complete
+    .text       start:0x0200b9c4 end:0x0200ba48
+
+libs/nitro/fs/calls/FS_LoadOverlayImage.c:
+    complete
+    .text       start:0x0200ba48 end:0x0200bac8
+
+libs/nitro/fs/calls/FSi_CompareDigest.c:
+    complete
+    .text       start:0x0200bac8 end:0x0200bb88
+
+libs/nitro/fs/calls/FS_StartOverlay.c:
+    complete
+    .text       start:0x0200bb88 end:0x0200bc78
+
 libs/nitro/fs/calls/FS_EndOverlay.c:
     complete
     .text       start:0x0200bc78 end:0x0200bd68
 
-libs/nitro/fs/calls/func_0200bd68.c:
+libs/nitro/fs/calls/FS_UnloadOverlayImage.c:
     complete
     .text       start:0x0200bd68 end:0x0200bd78
+
+libs/nitro/fs/calls/FS_LoadOverlay.c:
+    complete
+    .text       start:0x0200bd78 end:0x0200bdcc
+
+libs/nitro/fs/calls/FS_UnloadOverlay.c:
+    complete
+    .text       start:0x0200bdcc end:0x0200be18
 
 src/auto/func_0200c708.c:
     complete
@@ -4732,3 +4768,11 @@ src/calls/func_02051170.c:
 src/calls/func_02051180.c:
     complete
     .text       start:0x02051180 end:0x02051190
+
+libs/nitro/fs/data/FSiOverlayContext.c:
+    complete
+    .bss        start:0x02057b00 end:0x02057b1c
+
+libs/nitro/fs/data/fsiDefaultDigestKey.c:
+    complete
+    .rodata     start:0x02052980 end:0x020529c0

@@ -7,8 +7,9 @@ only part of the name) still verifies under the name it is given, but breaks
 the link with one multiply-defined and one undefined symbol. tools/gate.sh runs
 this audit before the link.
 
-What it checks, for every source under src/ and libs/, excluding nonmatching/ and asm_stubs/ (the build does not compile
-those):
+What it checks, for every function source under src/ and libs/. It skips
+nonmatching/ and asm_stubs/ (the build does not compile those), and data/
+(data-only translation units):
 
   * if the compiled object exists under build/, the object must export a GLOBAL
     function symbol equal to the file's basename (that is exactly what the
@@ -25,7 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NAME = re.compile(r"^[A-Za-z_]\w*$")
-SKIP_DIRS = {"nonmatching", "asm_stubs"}
+SKIP_DIRS = {"nonmatching", "asm_stubs", "data"}
 
 
 def source_files():
