@@ -364,6 +364,10 @@ libs/nitro/os/calls/OS_SendMessage.c:
     complete
     .text       start:0x02002f78 end:0x0200300c
 
+libs/nitro/os/calls/OS_UnlockMutex.c:
+    complete
+    .text       start:0x020031bc end:0x020031cc
+
 libs/nitro/os/auto/OSi_DequeueItem.c:
     complete
     .text       start:0x020033a4 end:0x020033c8
@@ -412,9 +416,25 @@ libs/nitro/os/calls/OS_Init.c:
     complete
     .text       start:0x020034e4 end:0x0200352c
 
+libs/nitro/os/auto/OS_GetArenaHi.c:
+    complete
+    .text       start:0x02003690 end:0x020036a4
+
+libs/nitro/os/auto/OS_GetArenaLo.c:
+    complete
+    .text       start:0x020036a4 end:0x020036b8
+
+libs/nitro/os/auto/OS_SetArenaLo.c:
+    complete
+    .text       start:0x02003850 end:0x02003864
+
 libs/nitro/os/calls/OS_AllocFromArenaLo.c:
     complete
     .text       start:0x02003864 end:0x020038d0
+
+libs/nitro/nns/auto/DLAddFront.c:
+    complete
+    .text       start:0x020038d0 end:0x020038ec
 
 libs/nitro/nns/auto/DLExtract.c:
     complete
@@ -1139,6 +1159,10 @@ src/calls/func_02010620.c:
 src/auto/func_02010a1c.c:
     complete
     .text       start:0x02010a1c end:0x02010a30
+
+libs/nitro/spi/calls/PM_AppendPostSleepCallback.c:
+    complete
+    .text       start:0x02010aec end:0x02010b00
 
 src/calls/func_02010d78.c:
     complete
@@ -2360,6 +2384,10 @@ src/auto/func_02021c68.c:
     complete
     .text       start:0x02021c68 end:0x02021ca8
 
+libs/msl/c/calls/strlen.c:
+    complete
+    .text       start:0x02021e58 end:0x02021e74
+
 libs/msl/c/auto/func_02021fbc.c:
     complete
     .text       start:0x02021fbc end:0x020220d0
@@ -2827,6 +2855,10 @@ src/calls/func_0202c1dc.c:
 src/calls/func_0202c1f4.c:
     complete
     .text       start:0x0202c1f4 end:0x0202c220
+
+src/calls/Archive_LoadFile.c:
+    complete
+    .text       start:0x0202c48c end:0x0202c4a0
 
 libs/nitro/snd/calls/SND_RegisterSeq.c:
     complete
