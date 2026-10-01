@@ -1,15 +1,15 @@
-/* MIi_DMAFastCallback: clears the pending flag and dispatches the stored DMA callback. */
+#include "libs/nitro/mi/mi_dma_internal.h"
 
-extern int data_02056ee8;
+void MIi_DMAFastCallback(void *unused)
+{
+    MIDmaCallback callback;
+    void *arg;
 
-void MIi_DMAFastCallback(void) {
-    void (*cb)(int);
-    int arg;
-
-    data_02056ee8 = 0;
-    cb = *(void (**)(int))((int)&data_02056ee8 + 0x10);
-    arg = *(int *)((int)&data_02056ee8 + 0x14);
-    if (cb != 0) {
-        cb(arg);
+    (void)unused;
+    MIi_GXDmaParams.isBusy = 0;
+    callback = MIi_GXDmaParams.callback;
+    arg = MIi_GXDmaParams.arg;
+    if (callback != 0) {
+        callback(arg);
     }
 }

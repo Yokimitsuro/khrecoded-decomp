@@ -897,9 +897,25 @@ libs/nitro/mi/calls/MI_StopAllDma.c:
     complete
     .text       start:0x020052f0 end:0x02005318
 
+libs/nitro/mi/calls/MIi_CheckAnotherAutoDMA.c:
+    complete
+    .text       start:0x02005318 end:0x020053a4
+
 libs/nitro/mi/calls/MIi_CheckDma0SourceAddress.c:
     complete
     .text       start:0x020053a4 end:0x020053f8
+
+libs/nitro/mi/calls/MI_SendGXCommandAsync.c:
+    complete
+    .text       start:0x020053f8 end:0x020054e4
+
+libs/nitro/mi/calls/MIi_FIFOCallback.c:
+    complete
+    .text       start:0x020054e4 end:0x02005598
+
+libs/nitro/mi/calls/MI_SendGXCommandAsyncFast.c:
+    complete
+    .text       start:0x020055f8 end:0x020056b4
 
 libs/nitro/mi/calls/MIi_DMAFastCallback.c:
     complete
@@ -908,6 +924,10 @@ libs/nitro/mi/calls/MIi_DMAFastCallback.c:
 libs/nitro/mi/asm_stubs/auto/MI_SwapWord.c:
     complete
     .text       start:0x020056e0 end:0x020056e8
+
+libs/nitro/mi/calls/MIi_CardDmaCopy32.c:
+    complete
+    .text       start:0x020056e8 end:0x02005764
 
 libs/nitro/mi/asm_stubs/auto/func_020057a8.c:
     complete
