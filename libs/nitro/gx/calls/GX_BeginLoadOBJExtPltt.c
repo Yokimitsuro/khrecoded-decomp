@@ -72,7 +72,7 @@ static inline void GXi_DmaCopy32Async(u32 dmaNo, const void *src, void *dest, u3
         MI_CpuCopy32(src, dest, size);
     }
 }
-/* gx_load2d.c statics, one .bss block (data_02056f0c): the extended-palette upload state. */
+/* gx_load2d.c statics, one .bss block (gGXExtPlttLoadState): the extended-palette upload state. */
 extern struct {
     u32 sSubBGExtPltt;            /* 0x00 */
     u32 sOBJExtPlttLCDCBlk;       /* 0x04 */
@@ -81,12 +81,12 @@ extern struct {
     u32 sBGExtPlttLCDCBlk;        /* 0x10 */
     GXVRamBGExtPltt sBGExtPltt;   /* 0x14 */
     u32 sSubOBJExtPltt;           /* 0x18 */
-} data_02056f0c;
-#define sOBJExtPlttLCDCBlk data_02056f0c.sOBJExtPlttLCDCBlk
-#define sOBJExtPltt data_02056f0c.sOBJExtPltt
-#define sBGExtPlttLCDCOffset data_02056f0c.sBGExtPlttLCDCOffset
-#define sBGExtPlttLCDCBlk data_02056f0c.sBGExtPlttLCDCBlk
-#define sBGExtPltt data_02056f0c.sBGExtPltt
+} gGXExtPlttLoadState;
+#define sOBJExtPlttLCDCBlk gGXExtPlttLoadState.sOBJExtPlttLCDCBlk
+#define sOBJExtPltt gGXExtPlttLoadState.sOBJExtPltt
+#define sBGExtPlttLCDCOffset gGXExtPlttLoadState.sBGExtPlttLCDCOffset
+#define sBGExtPlttLCDCBlk gGXExtPlttLoadState.sBGExtPlttLCDCBlk
+#define sBGExtPltt gGXExtPlttLoadState.sBGExtPltt
 
 /* NitroSDK gx_load2d.c: begin loading the main OBJ extended palette. */
 void GX_BeginLoadOBJExtPltt(void)

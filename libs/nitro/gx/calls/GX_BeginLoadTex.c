@@ -15,7 +15,7 @@ extern const struct {
 } data_02052918[16];
 #define sTexStartAddrTable data_02052918
 
-/* gx_load3d.c statics, one .bss block (data_02056f28): the texture / texture-palette upload state. */
+/* gx_load3d.c statics, one .bss block (gGXTextureLoadState): the texture / texture-palette upload state. */
 extern struct {
     u32 pad0;                     /* 0x00 */
     u32 sTexLCDCBlk1;             /* 0x04 */
@@ -25,11 +25,11 @@ extern struct {
     GXVRamTex sTex;               /* 0x14 */
     u32 sTexLCDCBlk2;             /* 0x18 */
     u32 sSzTexBlk1;               /* 0x1c */
-} data_02056f28;
-#define sTexLCDCBlk1 data_02056f28.sTexLCDCBlk1
-#define sTex data_02056f28.sTex
-#define sTexLCDCBlk2 data_02056f28.sTexLCDCBlk2
-#define sSzTexBlk1 data_02056f28.sSzTexBlk1
+} gGXTextureLoadState;
+#define sTexLCDCBlk1 gGXTextureLoadState.sTexLCDCBlk1
+#define sTex gGXTextureLoadState.sTex
+#define sTexLCDCBlk2 gGXTextureLoadState.sTexLCDCBlk2
+#define sSzTexBlk1 gGXTextureLoadState.sSzTexBlk1
 
 void GX_BeginLoadTex(void)
 {

@@ -3,11 +3,17 @@
 
 #include "libs/nitro/os/os_types_internal.h"
 
+typedef void (*MIDmaCallback)(void *);
+
 extern u32 GXi_DmaId;
 extern void MIi_DmaCopy16(u32 channel, const void *source, void *destination,
                           u32 size, BOOL enable);
 extern void MIi_DmaCopy32(u32 channel, const void *source, void *destination,
                           u32 size, BOOL enable);
+extern void MIi_DmaCopy32Async(u32 channel, const void *source,
+                               void *destination, u32 size,
+                               MIDmaCallback callback, void *argument,
+                               BOOL enable);
 extern void MIi_CpuCopy16(const void *source, void *destination, u32 size);
 extern void MIi_CpuCopy32(const void *source, void *destination, u32 size);
 
@@ -31,4 +37,15 @@ static inline void GXi_DmaCopy32(u32 channel, const void *source,
     }
 }
 
+static inline void GXi_DmaCopy32Async(u32 channel, const void *source,
+                                      void *destination, u32 size,
+                                      MIDmaCallback callback, void *argument)
+{
+    if (channel != (u32)-1) {
+        MIi_DmaCopy32Async(channel, source, destination, size, callback,
+                           argument, 1);
+    } else {
+        MIi_CpuCopy32(source, destination, size);
+    }
+}
 #endif

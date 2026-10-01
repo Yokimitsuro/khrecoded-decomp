@@ -1,9 +1,9 @@
 extern void GX_BeginLoadTexPltt(void);
-extern void func_02008228(void *src, unsigned offset, unsigned size);
-extern void func_02008298(void);
+extern void GX_LoadTexPltt(void *src, unsigned offset, unsigned size);
+extern void GX_EndLoadTexPltt(void);
 
 void func_02013e1c(void *src, unsigned offset, unsigned size) {
     GX_BeginLoadTexPltt();
-    func_02008228(src, offset, size);
-    func_02008298();
+    GX_LoadTexPltt(src, offset, size);
+    GX_EndLoadTexPltt();
 }

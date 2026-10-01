@@ -1,9 +1,9 @@
 extern void GXS_BeginLoadOBJExtPltt(void);
-extern void func_02007f68(void *src, unsigned offset, unsigned size);
-extern void func_02007fd0(void);
+extern void GXS_LoadOBJExtPltt(void *src, unsigned offset, unsigned size);
+extern void GXS_EndLoadOBJExtPltt(void);
 
 void func_02013ea0(void *src, unsigned offset, unsigned size) {
     GXS_BeginLoadOBJExtPltt();
-    func_02007f68(src, offset, size);
-    func_02007fd0();
+    GXS_LoadOBJExtPltt(src, offset, size);
+    GXS_EndLoadOBJExtPltt();
 }

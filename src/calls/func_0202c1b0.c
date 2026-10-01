@@ -1,9 +1,9 @@
 extern void GX_BeginLoadTex(void);
-extern void func_02008064(void *src, unsigned offset, unsigned size);
-extern void func_020081b0(void);
+extern void GX_LoadTex(void *src, unsigned offset, unsigned size);
+extern void GX_EndLoadTex(void);
 
 void func_0202c1b0(void *src, unsigned offset, unsigned size) {
     GX_BeginLoadTex();
-    func_02008064(src, offset, size);
-    func_020081b0();
+    GX_LoadTex(src, offset, size);
+    GX_EndLoadTex();
 }

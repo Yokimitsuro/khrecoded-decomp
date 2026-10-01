@@ -1261,6 +1261,14 @@ libs/nitro/gx/calls/GXS_LoadBG3Char.c:
     complete
     .text       start:0x02007bf4 end:0x02007c64
 
+libs/nitro/gx/calls/GX_BeginLoadBGExtPltt.c:
+    complete
+    .text       start:0x02007c64 end:0x02007cf0
+
+libs/nitro/gx/calls/GX_LoadBGExtPltt.c:
+    complete
+    .text       start:0x02007cf0 end:0x02007d64
+
 libs/nitro/gx/calls/GX_EndLoadBGExtPltt.c:
     complete
     .text       start:0x02007d64 end:0x02007da4
@@ -1269,9 +1277,21 @@ libs/nitro/gx/calls/GX_BeginLoadOBJExtPltt.c:
     complete
     .text       start:0x02007da4 end:0x02007dec
 
+libs/nitro/gx/calls/GX_LoadOBJExtPltt.c:
+    complete
+    .text       start:0x02007dec end:0x02007e5c
+
+libs/nitro/gx/calls/GX_EndLoadOBJExtPltt.c:
+    complete
+    .text       start:0x02007e5c end:0x02007e98
+
 libs/nitro/gx/calls/GXS_BeginLoadBGExtPltt.c:
     complete
     .text       start:0x02007e98 end:0x02007eb0
+
+libs/nitro/gx/calls/GXS_LoadBGExtPltt.c:
+    complete
+    .text       start:0x02007eb0 end:0x02007f18
 
 libs/nitro/gx/calls/GXS_EndLoadBGExtPltt.c:
     complete
@@ -1281,13 +1301,37 @@ libs/nitro/gx/calls/GXS_BeginLoadOBJExtPltt.c:
     complete
     .text       start:0x02007f50 end:0x02007f68
 
+libs/nitro/gx/calls/GXS_LoadOBJExtPltt.c:
+    complete
+    .text       start:0x02007f68 end:0x02007fd0
+
+libs/nitro/gx/calls/GXS_EndLoadOBJExtPltt.c:
+    complete
+    .text       start:0x02007fd0 end:0x02008008
+
 libs/nitro/gx/calls/GX_BeginLoadTex.c:
     complete
     .text       start:0x02008008 end:0x02008064
 
+libs/nitro/gx/calls/GX_LoadTex.c:
+    complete
+    .text       start:0x02008064 end:0x020081b0
+
+libs/nitro/gx/calls/GX_EndLoadTex.c:
+    complete
+    .text       start:0x020081b0 end:0x020081f4
+
 libs/nitro/gx/calls/GX_BeginLoadTexPltt.c:
     complete
     .text       start:0x020081f4 end:0x02008228
+
+libs/nitro/gx/calls/GX_LoadTexPltt.c:
+    complete
+    .text       start:0x02008228 end:0x02008298
+
+libs/nitro/gx/calls/GX_EndLoadTexPltt.c:
+    complete
+    .text       start:0x02008298 end:0x020082d4
 
 libs/nitro/gx/calls/GX_SetBankForSubOBJ.c:
     complete
