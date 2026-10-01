@@ -20,8 +20,8 @@ func_ov104_020d251c kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d251c
 func_ov104_020d2558 kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d2558
 func_ov104_020d2594 kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d2594
 __sinit_ov104_020d25d0 kind:function(arm,size=0x34) addr:0x020d25d0
-func_ov104_020d2604 kind:function(arm,size=0x3c) addr:0x020d2604
-func_ov104_020d2640 kind:function(arm,size=0x130) addr:0x020d2640
+Encryptor_CategorizeInstruction kind:function(arm,size=0x3c) addr:0x020d2604
+Encryptor_DecodeFunctionTable kind:function(arm,size=0x130) addr:0x020d2640
 func_ov104_020d2770 kind:function(arm,size=0xc0,dsprot=0xbc) addr:0x020d2770
 func_ov104_020d2830 kind:function(arm,size=0xd8,dsprot=0xd0) addr:0x020d2830
 func_ov104_020d2908 kind:function(arm,size=0x50,dsprot=0x50) addr:0x020d2908

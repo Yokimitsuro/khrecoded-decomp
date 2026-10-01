@@ -3,6 +3,14 @@
     .ctor       start:0x020d3720 end:0x020d3734 kind:rodata align:4
     .bss        start:0x020d3740 end:0x020d3760 kind:bss align:32
 
+src/overlays/ov104/calls/Encryptor_CategorizeInstruction.c:
+    complete
+    .text       start:0x020d2604 end:0x020d2640
+
+src/overlays/ov104/calls/Encryptor_DecodeFunctionTable.c:
+    complete
+    .text       start:0x020d2640 end:0x020d2770
+
 src/overlays/ov104/calls/func_ov104_020d2e6c.c:
     complete
     .text       start:0x020d2e6c end:0x020d2e78

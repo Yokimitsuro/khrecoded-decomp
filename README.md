@@ -18,9 +18,9 @@ identical** to the original game code.
 <!-- progress:start -->
 | Category | Count | Meaning |
 |---|---:|---|
-| Real C matched functions | **1,390** / 10,398 (13.4%) | Functions implemented in C and verified byte-exact |
-| Real C matched **bytes** | **51,972** / 1,653,248 (3.14%) | Code bytes covered by real C; the honest progress figure |
-| Library assembly functions | **91** (5,666 bytes) | Original NitroSDK/MSL assembly and BIOS veneers, verified byte-exact; never counted as C |
+| Real C matched functions | **1,391** / 10,398 (13.4%) | Functions implemented in C and verified byte-exact |
+| Real C matched **bytes** | **52,032** / 1,653,248 (3.15%) | Code bytes covered by real C; the honest progress figure |
+| Library assembly functions | **92** (5,970 bytes) | Original NitroSDK/MSL assembly and BIOS veneers, verified byte-exact; never counted as C |
 | Named, not decompiled | **62** | Functions with a known name (SDK, NitroSystem, ...) but no source yet |
 | Total known functions | **10,398** | Functions in the dsd symbol tables |
 | Region | EU (`BK9P`) |  |
