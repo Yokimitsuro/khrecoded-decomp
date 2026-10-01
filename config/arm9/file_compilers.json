@@ -119,6 +119,7 @@
   "libs/nitro/gx/calls/GX_SetBankForTexPltt.c": "dsi/1.1",
   "libs/nitro/gx/calls/GX_SetBankForLCDC.c": "dsi/1.1",
   "libs/nitro/gx/calls/GX_SetBankForSubBG.c": "dsi/1.1",
+  "libs/nitro/gx/calls/disableBankForX_.c": "dsi/1.1",
   "libs/nitro/gx/calls/GX_DisableBankForBG.c": "dsi/1.1",
   "libs/nitro/gx/calls/GX_DisableBankForOBJ.c": "dsi/1.1",
   "libs/nitro/gx/calls/GX_DisableBankForTex.c": "dsi/1.1",

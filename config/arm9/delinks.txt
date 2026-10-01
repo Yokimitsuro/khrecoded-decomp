@@ -997,6 +997,10 @@ libs/nitro/gx/calls/GX_Init.c:
     complete
     .text       start:0x0200649c end:0x020065e4
 
+libs/nitro/gx/auto/GX_SetVCountEqVal.c:
+    complete
+    .text       start:0x020065e4 end:0x0200660c
+
 libs/nitro/gx/calls/GX_VBlankIntr.c:
     complete
     .text       start:0x0200660c end:0x02006644
@@ -1408,6 +1412,10 @@ libs/nitro/gx/calls/GX_ResetBankForSubBGExtPltt.c:
 libs/nitro/gx/calls/GX_ResetBankForSubOBJExtPltt.c:
     complete
     .text       start:0x02008d88 end:0x02008db0
+
+libs/nitro/gx/calls/disableBankForX_.c:
+    complete
+    .text       start:0x02008db0 end:0x02008e70
 
 libs/nitro/gx/calls/GX_DisableBankForBG.c:
     complete

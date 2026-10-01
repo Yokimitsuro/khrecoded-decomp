@@ -2805,7 +2805,7 @@ OSi_TerminateCallback kind:bss addr:0x02056ee0
 OSi_TerminateCallbackArg kind:bss addr:0x02056ee4
 MIi_GXDmaParams kind:bss addr:0x02056ee8
 gGXBssState kind:bss addr:0x02056f08
-data_02056f0a kind:bss addr:0x02056f0a
+GXi_VRamLockId kind:bss addr:0x02056f0a
 gGXExtPlttLoadState kind:bss addr:0x02056f0c
 gGXTextureLoadState kind:bss addr:0x02056f28
 gGXState kind:bss addr:0x02056f48
