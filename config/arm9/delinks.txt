@@ -632,7 +632,7 @@ libs/nitro/os/calls/OS_SetProtectionRegionEx.c:
     complete
     .text       start:0x02003c94 end:0x02003cbc
 
-src/calls/func_02003d24.c:
+libs/nitro/os/calls/OSi_GetOriginalExceptionHandler.c:
     complete
     .text       start:0x02003d24 end:0x02003d34
 
@@ -808,6 +808,10 @@ libs/nitro/os/calls/OS_InitReset.c:
     complete
     .text       start:0x02004a20 end:0x02004a74
 
+libs/nitro/os/calls/OS_ResetSystem.c:
+    complete
+    .text       start:0x02004a74 end:0x02004adc
+
 libs/nitro/os/calls/OS_GetMacAddress.c:
     complete
     .text       start:0x02004adc end:0x02004af8
@@ -816,13 +820,21 @@ libs/nitro/os/calls/OS_GetOwnerInfo.c:
     complete
     .text       start:0x02004af8 end:0x02004b78
 
-libs/nitro/os/asm_stubs/auto/func_02004b78.c:
+libs/nitro/os/asm_stubs/auto/OsCountZeroBits.c:
     complete
     .text       start:0x02004b78 end:0x02004b80
 
 libs/nitro/os/calls/OSi_InitVramExclusive.c:
     complete
     .text       start:0x02004b80 end:0x02004bb4
+
+libs/nitro/os/calls/OSi_UnlockVram.c:
+    complete
+    .text       start:0x02004bb4 end:0x02004c38
+
+libs/nitro/os/calls/OS_GetLowEntropyData.c:
+    complete
+    .text       start:0x02004c38 end:0x02004d04
 
 libs/nitro/os/calls/OS_Terminate.c:
     complete

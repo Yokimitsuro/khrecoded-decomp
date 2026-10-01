@@ -13,6 +13,7 @@ typedef struct OSiTickState {
 } OSiTickState;
 
 extern OSiTickState OSi_TickState;
+extern volatile OSTick OSi_TickCounter;
 
 void OS_InitTick(void);
 BOOL OS_IsTickAvailable(void);

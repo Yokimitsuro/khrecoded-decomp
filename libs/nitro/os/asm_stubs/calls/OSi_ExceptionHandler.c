@@ -1,14 +1,13 @@
 /* NitroSDK original assembly (libraries/os/src/os_exception.c). */
 
-typedef int BOOL;
-typedef unsigned int u32;
+#include "libs/nitro/os/os_exception_internal.h"
+
 extern void OSi_GetAndDisplayContext(void);
-extern void *data_02056df0;             /* OSi_DebuggerHandler (.bss) */
 
-#define HW_ITCM_END                  0x02000000
-#define OSi_DebuggerHandler          data_02056df0
+#define HW_ITCM_END 0x02000000
+#define OSi_DebuggerHandler OSi_ExceptionState
 
-asm void OSi_ExceptionHandler (void)
+asm void OSi_ExceptionHandler(void)
 {
     ldr r12, = OSi_DebuggerHandler
     ldr r12, [r12]
