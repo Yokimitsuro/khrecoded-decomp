@@ -136,7 +136,7 @@ OS_WakeupThreadDirect kind:function(arm,size=0x28) addr:0x02002b74
 func_02002b9c kind:function(arm,size=0x2c) addr:0x02002b9c
 OS_RescheduleThread kind:function(arm,size=0x1c) addr:0x02002bc8
 OS_SetThreadPriority kind:function(arm,size=0xa8) addr:0x02002be4
-func_02002c8c kind:function(arm,size=0xa0) addr:0x02002c8c
+OS_Sleep kind:function(arm,size=0xa0) addr:0x02002c8c
 OSi_SleepAlarmCallback kind:function(arm,size=0x20) addr:0x02002d2c
 OS_SetSwitchThreadCallback kind:function(arm,size=0x28) addr:0x02002d4c
 func_02002d74 kind:function(arm,size=0x10) addr:0x02002d74
@@ -468,12 +468,12 @@ func_02009a68 kind:function(thumb,size=0x28) addr:0x02009a68
 CARD_GetBackupSectorSize kind:function(thumb,size=0xc) addr:0x02009a90
 CARD_WaitBackupAsync kind:function(thumb,size=0x8) addr:0x02009a9c
 CARD_TryWaitBackupAsync kind:function(thumb,size=0x8) addr:0x02009aa4
-func_02009aac kind:function(thumb,size=0x74) addr:0x02009aac
-func_02009b20 kind:function(thumb,size=0x2c) addr:0x02009b20
-func_02009b4c kind:function(thumb,size=0x44) addr:0x02009b4c
-func_02009b90 kind:function(thumb,size=0x54) addr:0x02009b90
-func_02009be4 kind:function(thumb,size=0x44) addr:0x02009be4
-func_02009c28 kind:function(thumb,size=0x38) addr:0x02009c28
+CARDi_SetRomOp kind:function(thumb,size=0x74) addr:0x02009aac
+CARDi_StartRomPageTransfer kind:function(thumb,size=0x2c) addr:0x02009b20
+CARDi_ReadRomIDCore kind:function(thumb,size=0x44) addr:0x02009b4c
+CARDi_ReadRomStatusCore kind:function(thumb,size=0x54) addr:0x02009b90
+CARDi_RefreshRom kind:function(thumb,size=0x44) addr:0x02009be4
+CARDi_RefreshRomCore kind:function(thumb,size=0x38) addr:0x02009c28
 CARDi_ReadRomWithCPU kind:function(thumb,size=0xd8) addr:0x02009c60
 func_02009d38 kind:function(thumb,size=0x64) addr:0x02009d38
 func_02009d9c kind:function(thumb,size=0x54) addr:0x02009d9c
@@ -2782,7 +2782,7 @@ data_02056b20 kind:bss addr:0x02056b20
 OSi_IsResetOccurred kind:bss addr:0x02056b48
 OSi_IsInitLock kind:bss addr:0x02056b4c
 data_02056b50 kind:bss addr:0x02056b50
-data_02056b5c kind:bss addr:0x02056b5c
+OSi_IsThreadInitialized kind:bss addr:0x02056b5c
 OSi_ThreadInfo kind:bss addr:0x02056b6c
 data_02056b70 kind:bss addr:0x02056b70
 data_02056b7c kind:bss addr:0x02056b7c

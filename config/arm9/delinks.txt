@@ -1626,6 +1626,30 @@ libs/nitro/card/calls/CARD_TryWaitBackupAsync.c:
     complete
     .text       start:0x02009aa4 end:0x02009aac
 
+libs/nitro/card/calls/CARDi_SetRomOp.c:
+    complete
+    .text       start:0x02009aac end:0x02009b20
+
+libs/nitro/card/calls/CARDi_StartRomPageTransfer.c:
+    complete
+    .text       start:0x02009b20 end:0x02009b4c
+
+libs/nitro/card/calls/CARDi_ReadRomIDCore.c:
+    complete
+    .text       start:0x02009b4c end:0x02009b90
+
+libs/nitro/card/calls/CARDi_ReadRomStatusCore.c:
+    complete
+    .text       start:0x02009b90 end:0x02009be4
+
+libs/nitro/card/calls/CARDi_RefreshRom.c:
+    complete
+    .text       start:0x02009be4 end:0x02009c28
+
+libs/nitro/card/calls/CARDi_RefreshRomCore.c:
+    complete
+    .text       start:0x02009c28 end:0x02009c60
+
 libs/nitro/card/calls/CARDi_InitRom.c:
     complete
     .text       start:0x0200a000 end:0x0200a058
