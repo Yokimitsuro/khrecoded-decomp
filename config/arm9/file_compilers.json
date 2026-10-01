@@ -79,5 +79,6 @@
   "libs/nitro/fs/calls/FS_ReadFile.c": "dsi/1.1",
   "libs/nitro/fs/calls/FS_ReadFileAsync.c": "dsi/1.1",
   "libs/nns/snd/calls/NNS_SndLockChannel.c": "dsi/1.1",
-  "libs/nitro/snd/calls/SNDi_FreeVoiceChannel.c": "dsi/1.1"
+  "libs/nitro/snd/calls/SNDi_FreeVoiceChannel.c": "dsi/1.1",
+  "libs/nitro/dgt/calls/DGT_Hash2SetSource.c": "dsi/1.1"
 }
