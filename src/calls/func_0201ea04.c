@@ -1,5 +1,5 @@
-extern int data_0205e2e4;
+extern int sCurrentSoundArchive;
 
 int func_0201ea04(void) {
-    return data_0205e2e4;
+    return sCurrentSoundArchive;
 }

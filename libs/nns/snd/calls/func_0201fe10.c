@@ -158,7 +158,7 @@ typedef struct NNSSndArcSeqArcInfo {
     u32 fileId;
 } NNSSndArcSeqArcInfo;
 const NNSSndArcSeqArcInfo * func_0201ea78(int seqNo);
-void * func_0201ee3c(u32 fileId);
+void * NNS_SndArcGetFileAddress(u32 fileId);
 typedef struct NNSSndFader {
     int origin;
     int target;
@@ -217,7 +217,7 @@ BOOL func_0201fe10 (NNSSndHandle * handle, int playerNo, int bankNo, int playerP
 
     info = func_0201ea78(seqArcNo);
     if (info == NULL) return FALSE;
-    seqArc = (NNSSndSeqArc *)func_0201ee3c(info->fileId);
+    seqArc = (NNSSndSeqArc *)NNS_SndArcGetFileAddress(info->fileId);
     if (seqArc == NULL) return FALSE;
     sound = func_02021890(seqArc, index);
     if (sound == NULL) return FALSE;

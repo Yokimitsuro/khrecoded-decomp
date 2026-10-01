@@ -112,7 +112,7 @@ typedef struct NNSSndArcWaveArcInfo {
 } NNSSndArcWaveArcInfo;
 const NNSSndArcBankInfo * func_0201eadc(int bankNo);
 const NNSSndArcWaveArcInfo * func_0201eb40(int waveArcNo);
-void * func_0201ee3c(u32 fileId);
+void * NNS_SndArcGetFileAddress(u32 fileId);
 extern SNDBankData * func_0201f7e0(u32 fileId, NNSSndHeapHandle heap, BOOL bSetAddr);
 extern BOOL func_0201fbf0(SNDWaveArc * waveArc, const SNDBankData * bank, int waveArcNo, u32 fileId, NNSSndHeapHandle heap);
 extern NNSSndArcLoadResult func_0201f5e0 (int waveArcNo, u32 loadFlag, NNSSndHeapHandle heap, BOOL bSetAddr, struct SNDWaveArc ** pData);
@@ -138,7 +138,7 @@ NNSSndArcLoadResult func_0201f4a0 (int bankNo, u32 loadFlag, NNSSndHeapHandle he
             return NNS_SND_ARC_LOAD_ERROR_FAILED_LOAD_BANK;
         }
     } else {
-        bank = (SNDBankData *)func_0201ee3c(bankInfo->fileId);
+        bank = (SNDBankData *)NNS_SndArcGetFileAddress(bankInfo->fileId);
     }
 
     for (i = 0; i < NNS_SND_ARC_BANK_TO_WAVEARC_NUM; i++) {

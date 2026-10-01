@@ -15,9 +15,9 @@ typedef struct NNSSndArc {
     NNSSndArcFat *fat;
 } NNSSndArc;
 
-extern NNSSndArc *data_0205e2e4;
+extern NNSSndArc *sCurrentSoundArchive;
 
 void NNS_SndArcSetFileAddress(u32 fileId, void *address)
 {
-    data_0205e2e4->fat->files[fileId].memory = address;
+    sCurrentSoundArchive->fat->files[fileId].memory = address;
 }

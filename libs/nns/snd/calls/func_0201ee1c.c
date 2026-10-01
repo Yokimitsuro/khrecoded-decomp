@@ -344,12 +344,12 @@ typedef struct NNSSndArc {
 } NNSSndArc;
 
 /* shared-bss */
-NNSSndArc * data_0205e2e4 = 0;   /* sCurrent */
+NNSSndArc * sCurrentSoundArchive = 0;   /* sCurrent */
 
 /* func_0201ee1c -- NitroSystem sndarc.c: NNS_SndArcGetFileID. */
 FSFileID func_0201ee1c (void)
 {
-    NNSSndArc * arc = data_0205e2e4;
+    NNSSndArc * arc = sCurrentSoundArchive;
 
 
     return arc->fileId;

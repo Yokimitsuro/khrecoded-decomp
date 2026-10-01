@@ -28,5 +28,9 @@
   "src/overlays/ov104/calls/Encryptor_DecryptionWrapperFragment.c": "2.0/sp2p3",
   "src/overlays/ov104/DSProt-Extra.c": "2.0/sp2p3",
   "libs/nns/g3d/calls/texmtxCalc_flag_.c": "dsi/1.1",
-  "libs/nitro/fx/auto/FX_GetDivResult.c": "dsi/1.1"
+  "libs/nitro/fx/auto/FX_GetDivResult.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNSi_G2dBitReaderRead.c": "dsi/1.1",
+  "libs/nitro/fx/auto/VEC_Distance.c": "dsi/1.1",
+  "libs/nitro/fx/auto/VEC_Mag.c": "dsi/1.1",
+  "libs/nns/snd/auto/FreePlayer.c": "dsi/1.1"
 }

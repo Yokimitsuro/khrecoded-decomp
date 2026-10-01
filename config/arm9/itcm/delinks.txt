@@ -137,6 +137,14 @@ libs/nitro/fx/auto/VEC_DotProduct.c:
     complete
     .text       start:0x01ff9e6c end:0x01ff9ea8
 
+libs/nitro/fx/auto/VEC_Mag.c:
+    complete
+    .text       start:0x01ff9f28 end:0x01ff9f88
+
+libs/nitro/fx/auto/VEC_Distance.c:
+    complete
+    .text       start:0x01ffa0f4 end:0x01ffa170
+
 libs/nitro/gx/calls/G3_LoadMtx43.c:
     complete
     .text       start:0x01ffa170 end:0x01ffa18c
