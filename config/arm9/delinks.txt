@@ -1256,11 +1256,15 @@ src/calls/func_020101b0.c:
     complete
     .text       start:0x020101b0 end:0x020101bc
 
+libs/nitro/spi/auto/PMi_DummyCallback.c:
+    complete
+    .text       start:0x02010210 end:0x02010218
+
 src/calls/func_020104b4.c:
     complete
     .text       start:0x020104b4 end:0x020104d0
 
-src/calls/func_0201052c.c:
+libs/nitro/spi/calls/PM_SetBackLight.c:
     complete
     .text       start:0x0201052c end:0x02010548
 
@@ -1268,7 +1272,7 @@ src/calls/func_02010620.c:
     complete
     .text       start:0x02010620 end:0x02010638
 
-src/auto/func_02010a1c.c:
+libs/nitro/spi/auto/PM_GetLCDPower.c:
     complete
     .text       start:0x02010a1c end:0x02010a30
 
@@ -1303,6 +1307,18 @@ libs/nitro/spi/calls/PM_DeletePreSleepCallback.c:
 libs/nitro/spi/calls/PM_DeletePostSleepCallback.c:
     complete
     .text       start:0x02010b28 end:0x02010b38
+
+libs/nitro/spi/calls/PMi_LCDOnAvoidReset.c:
+    complete
+    .text       start:0x02010b38 end:0x02010ba4
+
+libs/nitro/std/auto/STD_CopyString.c:
+    complete
+    .text       start:0x02010bb8 end:0x02010be0
+
+libs/nitro/std/calls/STD_ConcatenateString.c:
+    complete
+    .text       start:0x02010cdc end:0x02010cf2
 
 src/calls/func_02010d78.c:
     complete

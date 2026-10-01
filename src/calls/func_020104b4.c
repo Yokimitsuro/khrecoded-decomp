@@ -221,19 +221,19 @@ typedef void (*MBFakeScanCallbackFunc) (u16 type, void * arg);
 typedef BOOL (*MBFakeCompareGGIDCallbackFunc) (WMStartScanCallback * arg, u32 defaultGGID);
 typedef void * (*MIAllocatorAllocFunction)(void * userdata, u32 length, u32 alignment);
 typedef void (*MIAllocatorFreeFunction)(void * userdata, void * buffer);
-void func_020101bc(void);
-void func_02010210(u32 result, void * arg);
-extern void func_020101bc (void);
-extern void func_02010210 (u32 result, void * arg);
+void PMi_WaitBusy(void);
+void PMi_DummyCallback(u32 result, void * arg);
+extern void PMi_WaitBusy (void);
+extern void PMi_DummyCallback (u32 result, void * arg);
 extern u32 func_0201047c (PMLEDStatus status, PMCallback callback, void * arg);
 
 u32 func_020104b4 (PMLEDStatus status)
 {
     u32 commandResult;
-    u32 sendResult = func_0201047c(status, func_02010210, &commandResult);
+    u32 sendResult = func_0201047c(status, PMi_DummyCallback, &commandResult);
 
     if (sendResult == PM_SUCCESS) {
-        func_020101bc();
+        PMi_WaitBusy();
         return commandResult;
     }
 

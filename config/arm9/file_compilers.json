@@ -89,5 +89,11 @@
   "libs/nitro/spi/calls/PM_PrependPreSleepCallback.c": "dsi/1.1",
   "libs/nitro/spi/calls/PM_AppendPostSleepCallback.c": "dsi/1.1",
   "libs/nitro/spi/calls/PM_DeletePreSleepCallback.c": "dsi/1.1",
-  "libs/nitro/spi/calls/PM_DeletePostSleepCallback.c": "dsi/1.1"
+  "libs/nitro/spi/calls/PM_DeletePostSleepCallback.c": "dsi/1.1",
+  "libs/nitro/spi/auto/PM_GetLCDPower.c": "dsi/1.1",
+  "libs/nitro/std/auto/STD_CopyString.c": "dsi/1.1",
+  "libs/nitro/std/calls/STD_ConcatenateString.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_SetBackLight.c": "dsi/1.1",
+  "libs/nitro/spi/auto/PMi_DummyCallback.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_LCDOnAvoidReset.c": "dsi/1.1"
 }

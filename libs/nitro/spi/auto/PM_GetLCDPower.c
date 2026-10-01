@@ -33,7 +33,7 @@ typedef enum {
     PM_LCD_POWER_ON = 1
 } PMLCDPower;
 
-PMLCDPower func_02010a1c (void)
+PMLCDPower PM_GetLCDPower (void)
 {
     return (reg_GX_POWCNT & REG_GX_POWCNT_LCD_MASK) ? PM_LCD_POWER_ON : PM_LCD_POWER_OFF;
 }
