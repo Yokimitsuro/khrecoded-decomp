@@ -1,0 +1,9 @@
+#include "src/overlays/ov104/calls/dsprot_integrity.h"
+
+u32 Integrity_MACOwner_IsGood(void) {
+    u8 *addr;
+
+    addr = (u8 *)ADDR_PLUS_ADDEND(RunEncrypted_MACOwner_IsGood, ENC_VAL_1) - (ENC_VAL_1 * 2);
+
+    return checkDecryptionWrapper(addr, PRIME_INTEGRITY * PRIME_TRUE, PRIME_INTEGRITY * PRIME_FALSE);
+}

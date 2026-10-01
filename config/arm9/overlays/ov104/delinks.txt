@@ -3,6 +3,46 @@
     .ctor       start:0x020d3720 end:0x020d3734 kind:rodata align:4
     .bss        start:0x020d3740 end:0x020d3760 kind:bss align:32
 
+src/overlays/ov104/calls/DetectFlashcart.c:
+    complete
+    .text       start:0x020d1b20 end:0x020d1bc0
+
+src/overlays/ov104/calls/DetectNotFlashcart.c:
+    complete
+    .text       start:0x020d1bc0 end:0x020d1c60
+
+src/overlays/ov104/calls/DetectEmulator.c:
+    complete
+    .text       start:0x020d1c60 end:0x020d1d00
+
+src/overlays/ov104/calls/DetectNotEmulator.c:
+    complete
+    .text       start:0x020d1d00 end:0x020d1da0
+
+src/overlays/ov104/calls/DetectDummy.c:
+    complete
+    .text       start:0x020d1da0 end:0x020d1e30
+
+src/overlays/ov104/calls/DetectNotDummy.c:
+    complete
+    .text       start:0x020d1e30 end:0x020d1ec0
+
+src/overlays/ov104/calls/Integrity_MACOwner_IsBad.c:
+    complete
+    .text       start:0x020d2070 end:0x020d218c
+
+src/overlays/ov104/calls/Integrity_MACOwner_IsGood.c:
+    complete
+    .text       start:0x020d218c end:0x020d22a8
+
+src/overlays/ov104/calls/Integrity_ROMTest_IsBad.c:
+    complete
+    .text       start:0x020d22a8 end:0x020d23c4
+
+src/overlays/ov104/calls/Integrity_ROMTest_IsGood.c:
+    complete
+    .text       start:0x020d23c4 end:0x020d24e0
+
 src/overlays/ov104/calls/Encryptor_CategorizeInstruction.c:
     complete
     .text       start:0x020d2604 end:0x020d2640
@@ -10,6 +50,18 @@ src/overlays/ov104/calls/Encryptor_CategorizeInstruction.c:
 src/overlays/ov104/calls/Encryptor_DecodeFunctionTable.c:
     complete
     .text       start:0x020d2640 end:0x020d2770
+
+src/overlays/ov104/calls/Encryptor_DecryptFunction.c:
+    complete
+    .text       start:0x020d2770 end:0x020d2830
+
+src/overlays/ov104/calls/Encryptor_EncryptFunction.c:
+    complete
+    .text       start:0x020d2830 end:0x020d2908
+
+src/overlays/ov104/calls/Encryptor_DecryptionWrapperFragment.c:
+    complete
+    .text       start:0x020d2908 end:0x020d2958
 
 src/overlays/ov104/calls/MACOwner_IsBad.c:
     complete
@@ -91,3 +143,8 @@ src/overlays/ov104/calls/RC4_InitAndEncryptInstructions.c:
 src/overlays/ov104/calls/RC4_InitAndDecryptInstructions.c:
     complete
     .text       start:0x020d365c end:0x020d36b4
+
+src/overlays/ov104/DSProt-Extra.c:
+    complete
+    .bss        start:0x020d3740 end:0x020d3744
+    .rodata     start:0x020d3700 end:0x020d3718
