@@ -792,6 +792,18 @@ libs/nitro/os/calls/OS_SpinWait.c:
     complete
     .text       start:0x020049c8 end:0x020049e4
 
+libs/nitro/os/calls/OS_WaitVBlankIntr.c:
+    complete
+    .text       start:0x020049e4 end:0x02004a04
+
+libs/nitro/os/calls/OS_GetBootType.c:
+    complete
+    .text       start:0x02004a04 end:0x02004a14
+
+libs/nitro/os/calls/OS_GetBootInfo.c:
+    complete
+    .text       start:0x02004a14 end:0x02004a20
+
 libs/nitro/os/calls/OS_InitReset.c:
     complete
     .text       start:0x02004a20 end:0x02004a74
