@@ -115,5 +115,22 @@
   "libs/nitro/spi/calls/PMi_CommonCallback.c": "dsi/1.1",
   "libs/nitro/spi/calls/PMi_SendSleepStart.c": "dsi/1.1",
   "libs/nitro/spi/auto/PMi_SetDispOffCount.c": "dsi/1.1",
-  "libs/nitro/pxi/calls/PXI_SendWordByFifo.c": "dsi/1.1"
+  "libs/nitro/pxi/calls/PXI_SendWordByFifo.c": "dsi/1.1",
+  "libs/nitro/pxi/calls/PXI_InitFifo.c": "dsi/1.1",
+  "libs/nitro/pxi/calls/PXIi_HandlerRecvFifoNotEmpty.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTC_Init.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTC_GetDateAsync.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTC_GetDate.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTC_GetTimeAsync.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTC_GetTime.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTC_GetDateTimeAsync.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTC_GetDateTime.c": "dsi/1.1",
+  "libs/nitro/rtc/auto/RtcBCD2HEX.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RtcSendPxiCommand.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTCi_ReadRawDateAsync.c": "dsi/1.1",
+  "libs/nitro/rtc/auto/RtcGetResultCallback.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTCi_ReadRawDateTimeAsync.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTCi_ReadRawTimeAsync.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTCi_WriteRawStatus2Async.c": "dsi/1.1",
+  "libs/nitro/rtc/calls/RTC_GetDayOfWeek.c": "dsi/1.1"
 }

@@ -1016,6 +1016,10 @@ src/calls/PXI_Init.c:
     complete
     .text       start:0x0200e200 end:0x0200e208
 
+libs/nitro/pxi/calls/PXI_InitFifo.c:
+    complete
+    .text       start:0x0200e208 end:0x0200e2b0
+
 libs/nitro/pxi/calls/PXI_SetFifoRecvCallback.c:
     complete
     .text       start:0x0200e2b0 end:0x0200e2fc
@@ -1028,27 +1032,71 @@ libs/nitro/pxi/calls/PXI_SendWordByFifo.c:
     complete
     .text       start:0x0200e320 end:0x0200e388
 
-src/calls/func_0200e8d4.c:
+libs/nitro/pxi/calls/PXIi_HandlerRecvFifoNotEmpty.c:
+    complete
+    .text       start:0x0200e388 end:0x0200e43c
+
+libs/nitro/rtc/calls/RTC_Init.c:
+    complete
+    .text       start:0x0200e43c end:0x0200e47c
+
+libs/nitro/rtc/calls/RTC_GetDateAsync.c:
+    complete
+    .text       start:0x0200e47c end:0x0200e4c4
+
+libs/nitro/rtc/calls/RTC_GetDate.c:
+    complete
+    .text       start:0x0200e4c4 end:0x0200e4e8
+
+libs/nitro/rtc/calls/RTC_GetTimeAsync.c:
+    complete
+    .text       start:0x0200e4e8 end:0x0200e534
+
+libs/nitro/rtc/calls/RTC_GetTime.c:
+    complete
+    .text       start:0x0200e534 end:0x0200e558
+
+libs/nitro/rtc/calls/RTC_GetDateTimeAsync.c:
+    complete
+    .text       start:0x0200e558 end:0x0200e5a8
+
+libs/nitro/rtc/calls/RTC_GetDateTime.c:
+    complete
+    .text       start:0x0200e5a8 end:0x0200e5cc
+
+libs/nitro/rtc/auto/RtcBCD2HEX.c:
+    complete
+    .text       start:0x0200e88c end:0x0200e8d2
+
+libs/nitro/rtc/auto/RtcGetResultCallback.c:
     complete
     .text       start:0x0200e8d4 end:0x0200e8e0
 
-libs/nitro/rtc/asm_stubs/calls/func_0200e8e0.c:
+libs/nitro/rtc/asm_stubs/calls/RtcWaitBusy.c:
     complete
     .text       start:0x0200e8e0 end:0x0200e8f8
 
-src/calls/func_0200e8f8.c:
+libs/nitro/rtc/calls/RTCi_ReadRawDateTimeAsync.c:
     complete
     .text       start:0x0200e8f8 end:0x0200e904
 
-src/calls/func_0200e910.c:
+libs/nitro/rtc/calls/RTCi_ReadRawDateAsync.c:
+    complete
+    .text       start:0x0200e904 end:0x0200e910
+
+libs/nitro/rtc/calls/RTCi_ReadRawTimeAsync.c:
     complete
     .text       start:0x0200e910 end:0x0200e91c
 
-src/calls/func_0200e91c.c:
+libs/nitro/rtc/calls/RTCi_WriteRawStatus2Async.c:
     complete
     .text       start:0x0200e91c end:0x0200e928
 
-src/calls/func_0200e948.c:
+libs/nitro/rtc/calls/RtcSendPxiCommand.c:
+    complete
+    .text       start:0x0200e928 end:0x0200e948
+
+libs/nitro/rtc/calls/RTC_GetDayOfWeek.c:
     complete
     .text       start:0x0200e948 end:0x0200e9a8
 

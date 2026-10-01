@@ -8,7 +8,7 @@ an identified name (NitroSDK, NNS, MSL, ...) but no source yet.
 
 | Module | C matched | ASM stubs | Named | Not started | Total | C % | C bytes % |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| PART main | 817 | 67 | 52 | 1636 | 2572 | 31.8% | 13.2% |
+| PART main | 829 | 67 | 51 | 1625 | 2572 | 32.2% | 13.5% |
 | PART itcm | 28 | 23 | 2 | 74 | 127 | 22.0% | 6.3% |
 | PART ov000 | 10 | 0 | 0 | 68 | 78 | 12.8% | 2.0% |
 | PART ov001 | 187 | 0 | 0 | 1908 | 2095 | 8.9% | 1.1% |
@@ -115,7 +115,7 @@ an identified name (NitroSDK, NNS, MSL, ...) but no source yet.
 | DONE ov102 | 3 | 0 | 0 | 0 | 3 | 100.0% | 100.0% |
 | PART ov103 | 2 | 0 | 0 | 37 | 39 | 5.1% | 0.2% |
 | PART ov104 | 33 | 2 | 22 | 0 | 57 | 57.9% | 75.8% |
-| **TOTAL** | **1545** | **93** | **76** | **8701** | **10415** | **14.8%** | **3.93%** |
+| **TOTAL** | **1557** | **93** | **75** | **8690** | **10415** | **14.9%** | **3.98%** |
 
 ## Byte progress
 
@@ -124,4 +124,4 @@ the matched set is dominated by small wrappers. Bytes count real C only.
 
 | C matched bytes | Total code bytes | % |
 |---:|---:|---:|
-| **65,088** | **1,656,988** | **3.93%** |
+| **65,950** | **1,656,988** | **3.98%** |
