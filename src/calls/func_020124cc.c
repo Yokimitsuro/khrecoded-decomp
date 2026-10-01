@@ -109,8 +109,7 @@ typedef struct CTRDGWork {
 
 extern void func_020124cc(u32 data);
 #define MI_CpuCopy32 MIi_CpuCopy32
-extern int func_0200e320(int tag, u32 data, BOOL err);
-#define PXI_SendWordByFifo func_0200e320
+extern int PXI_SendWordByFifo(int tag, u32 data, BOOL err);
 extern void WaitByLoop(s32 count);
 #define SVC_WaitByLoop WaitByLoop
 

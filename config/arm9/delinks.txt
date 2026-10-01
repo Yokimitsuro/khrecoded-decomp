@@ -1260,15 +1260,67 @@ libs/nitro/spi/auto/PMi_DummyCallback.c:
     complete
     .text       start:0x02010210 end:0x02010218
 
-src/calls/func_020104b4.c:
+libs/nitro/spi/calls/PMi_CallCallbackAndUnlock.c:
+    complete
+    .text       start:0x02010218 end:0x02010234
+
+libs/nitro/spi/auto/PMi_WaitVBlank.c:
+    complete
+    .text       start:0x02010234 end:0x02010250
+
+libs/nitro/spi/calls/PMi_TryToSendPxiData.c:
+    complete
+    .text       start:0x02010314 end:0x02010364
+
+libs/nitro/spi/calls/PMi_TryToSendPxiDataTillSuccess.c:
+    complete
+    .text       start:0x02010364 end:0x020103d0
+
+libs/nitro/spi/calls/PM_SendUtilityCommandAsync.c:
+    complete
+    .text       start:0x0201042c end:0x0201045c
+
+libs/nitro/spi/calls/PM_SendUtilityCommand.c:
+    complete
+    .text       start:0x0201045c end:0x0201047c
+
+libs/nitro/spi/calls/PMi_SetLEDAsync.c:
+    complete
+    .text       start:0x0201047c end:0x020104b4
+
+libs/nitro/spi/calls/PMi_SetLED.c:
     complete
     .text       start:0x020104b4 end:0x020104d0
+
+libs/nitro/spi/calls/PM_SetBackLightAsync.c:
+    complete
+    .text       start:0x020104d0 end:0x0201052c
 
 libs/nitro/spi/calls/PM_SetBackLight.c:
     complete
     .text       start:0x0201052c end:0x02010548
 
-src/calls/func_02010620.c:
+libs/nitro/spi/calls/PM_ForceToPowerOffAsync.c:
+    complete
+    .text       start:0x02010548 end:0x02010562
+
+libs/nitro/spi/calls/PM_ForceToPowerOff.c:
+    complete
+    .text       start:0x02010564 end:0x02010590
+
+libs/nitro/spi/calls/PMi_ForceToPowerOff.c:
+    complete
+    .text       start:0x02010590 end:0x020105bc
+
+libs/nitro/spi/calls/PMi_SetAmp.c:
+    complete
+    .text       start:0x020105bc end:0x020105da
+
+libs/nitro/spi/calls/PM_GetBackLight.c:
+    complete
+    .text       start:0x020105dc end:0x0201061e
+
+libs/nitro/spi/calls/PMi_SendPxiData.c:
     complete
     .text       start:0x02010620 end:0x02010638
 

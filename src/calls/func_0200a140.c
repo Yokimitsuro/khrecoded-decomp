@@ -105,12 +105,12 @@ static inline void CARDi_SetRomOpReadPage1(u32 src)
 extern CARDiCommon data_020464e0;
 #define PXI_FIFO_TAG_CARD 14
 #define PXI_FIFO_SUCCESS 0
-extern int func_0200e320(int tag, u32 data, BOOL err);
+extern int PXI_SendWordByFifo(int tag, u32 data, BOOL err);
 extern void WaitByLoop(s32 count);
 
 void func_0200a140(u32 data, u32 wait)
 {
-    while (func_0200e320(PXI_FIFO_TAG_CARD, data, FALSE) != PXI_FIFO_SUCCESS) {
+    while (PXI_SendWordByFifo(PXI_FIFO_TAG_CARD, data, FALSE) != PXI_FIFO_SUCCESS) {
         WaitByLoop((s32)wait);
     }
 }

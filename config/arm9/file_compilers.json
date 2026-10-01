@@ -95,5 +95,20 @@
   "libs/nitro/std/calls/STD_ConcatenateString.c": "dsi/1.1",
   "libs/nitro/spi/calls/PM_SetBackLight.c": "dsi/1.1",
   "libs/nitro/spi/auto/PMi_DummyCallback.c": "dsi/1.1",
-  "libs/nitro/spi/calls/PMi_LCDOnAvoidReset.c": "dsi/1.1"
+  "libs/nitro/spi/calls/PMi_LCDOnAvoidReset.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_CallCallbackAndUnlock.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_TryToSendPxiData.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_TryToSendPxiDataTillSuccess.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_SendUtilityCommand.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_SetLEDAsync.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_SetLED.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_SetBackLightAsync.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_ForceToPowerOffAsync.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_ForceToPowerOff.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_ForceToPowerOff.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_SetAmp.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_GetBackLight.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_SendPxiData.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_SendUtilityCommandAsync.c": "dsi/1.1",
+  "libs/nitro/spi/auto/PMi_WaitVBlank.c": "dsi/1.1"
 }
