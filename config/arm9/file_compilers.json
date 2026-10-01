@@ -8,5 +8,7 @@
   "src/overlays/ov104/calls/RC4_InitAndDecryptInstructions.c": "2.0/sp2p3",
   "src/overlays/ov104/calls/RC4_InitAndEncryptInstructions.c": "2.0/sp2p3",
   "src/overlays/ov104/calls/RC4_InitSBox.c": "2.0/sp2p3",
-  "src/overlays/ov104/calls/ROMUtil_CRC32.c": "2.0/sp2p3"
+  "src/overlays/ov104/calls/ROMUtil_CRC32.c": "2.0/sp2p3",
+  "src/overlays/ov104/calls/MACOwner_IsBad.c": "2.0/sp2p3",
+  "src/overlays/ov104/calls/MACOwner_IsGood.c": "2.0/sp2p3"
 }

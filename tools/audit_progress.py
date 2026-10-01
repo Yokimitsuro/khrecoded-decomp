@@ -55,7 +55,7 @@ ASM_RE = re.compile("|".join([
     r"\b__asm\b", r"\bINLINE_ASM\b", r"\bNON_MATCHING\b", r"\bGLOBAL_ASM\b", r"\bINCLUDE_ASM\b",
 ]), re.M)
 
-SYM_RE = re.compile(r"(\S+)\s+kind:function\((arm|thumb),[^)]*size=0x([0-9a-fA-F]+)[^)]*\)\s+addr:0x([0-9a-fA-F]+)")
+SYM_RE = re.compile(r"(\S+)\s+kind:function\((arm|thumb),[^\r\n]*size=0x([0-9a-fA-F]+)[^\r\n]*\)\s+addr:0x([0-9a-fA-F]+)")
 
 
 def source_category(path):

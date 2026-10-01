@@ -26,8 +26,8 @@ func_ov104_020d2770 kind:function(arm,size=0xc0,dsprot=0xbc) addr:0x020d2770
 func_ov104_020d2830 kind:function(arm,size=0xd8,dsprot=0xd0) addr:0x020d2830
 func_ov104_020d2908 kind:function(arm,size=0x50,dsprot=0x50) addr:0x020d2908
 __sinit_ov104_020d2958 kind:function(arm,size=0x2c) addr:0x020d2958
-func_ov104_020d2984 kind:function(arm,size=0xb0,dsprot=(0xac,0x7d65)) addr:0x020d2984
-func_ov104_020d2a34 kind:function(arm,size=0xb0,dsprot=(0xac,0x7e45)) addr:0x020d2a34
+MACOwner_IsBad kind:function(arm,size=0xb0,dsprot=(0xac,0x7d65)) addr:0x020d2984
+MACOwner_IsGood kind:function(arm,size=0xb0,dsprot=(0xac,0x7e45)) addr:0x020d2a34
 func_ov104_020d2ae4 kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d2ae4
 func_ov104_020d2b20 kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d2b20
 ROMUtil_CRC32 kind:function(arm,size=0x94,dsprot=(0x90,0x8025)) addr:0x020d2b5c
@@ -56,7 +56,7 @@ RC4_InitAndEncryptInstructions kind:function(arm,size=0x58,dsprot=0x58) addr:0x0
 RC4_InitAndDecryptInstructions kind:function(arm,size=0x58,dsprot=0x58) addr:0x020d365c
 __sinit_ov104_020d36b4 kind:function(arm,size=0x4c) addr:0x020d36b4
 data_ov104_020d3700 kind:data(any) addr:0x020d3700
-data_ov104_020d3718 kind:data(any) addr:0x020d3718
+bad_mac_addr kind:data(any) addr:0x020d3718
 .p__sinit_ov104_020d2028 kind:data(word) addr:0x020d3720
 .p__sinit_ov104_020d25d0 kind:data(word) addr:0x020d3724
 .p__sinit_ov104_020d2958 kind:data(word) addr:0x020d3728

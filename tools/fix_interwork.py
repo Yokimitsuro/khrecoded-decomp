@@ -32,7 +32,7 @@ from elftools.elf.elffile import ELFFile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SYM_RE = re.compile(
-    r"(\S+)\s+kind:function\((arm|thumb),[^)]*size=0x([0-9a-fA-F]+)[^)]*\)"
+    r"(\S+)\s+kind:function\((arm|thumb),[^\r\n]*size=0x([0-9a-fA-F]+)[^\r\n]*\)"
     r"\s+addr:0x([0-9a-fA-F]+)"
 )
 ANY_SYM_RE = re.compile(r"(\S+)\s+kind:\S+\s+addr:0x([0-9a-fA-F]+)")

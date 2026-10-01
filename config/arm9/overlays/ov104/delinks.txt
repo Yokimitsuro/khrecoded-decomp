@@ -11,6 +11,15 @@ src/overlays/ov104/calls/Encryptor_DecodeFunctionTable.c:
     complete
     .text       start:0x020d2640 end:0x020d2770
 
+src/overlays/ov104/calls/MACOwner_IsBad.c:
+    complete
+    .text       start:0x020d2984 end:0x020d2a34
+    .rodata     start:0x020d3718 end:0x020d3720
+
+src/overlays/ov104/calls/MACOwner_IsGood.c:
+    complete
+    .text       start:0x020d2a34 end:0x020d2ae4
+
 src/overlays/ov104/calls/ROMUtil_CRC32.c:
     complete
     .text       start:0x020d2b5c end:0x020d2bf0
