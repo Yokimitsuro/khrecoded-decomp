@@ -18,10 +18,10 @@ identical** to the original game code.
 <!-- progress:start -->
 | Category | Count | Meaning |
 |---|---:|---|
-| Real C matched functions | **1,416** / 10,415 (13.6%) | Functions implemented in C and verified byte-exact |
-| Real C matched **bytes** | **57,294** / 1,656,988 (3.46%) | Code bytes covered by real C; the honest progress figure |
+| Real C matched functions | **1,420** / 10,415 (13.6%) | Functions implemented in C and verified byte-exact |
+| Real C matched **bytes** | **57,652** / 1,656,988 (3.48%) | Code bytes covered by real C; the honest progress figure |
 | Library assembly functions | **93** (6,050 bytes) | Original NitroSDK/MSL assembly and BIOS veneers, verified byte-exact; never counted as C |
-| Named, not decompiled | **86** | Functions with a known name (SDK, NitroSystem, ...) but no source yet |
+| Named, not decompiled | **85** | Functions with a known name (SDK, NitroSystem, ...) but no source yet |
 | Total known functions | **10,415** | Functions in the dsd symbol tables |
 | Region | EU (`BK9P`) |  |
 | Compiler | CodeWarrior `mwccarm` 3.0 build 139 | Same toolchain and flags as khdays-decomp |
@@ -47,6 +47,10 @@ in both ROMs can reuse the Days C directly.
 the Days source, checks it against this ROM, remaps every referenced symbol to
 the address used here and keeps the file only if `tools/verify_idx.py` reports
 a byte-exact match. See [docs/PORTING_FROM_DAYS.md](docs/PORTING_FROM_DAYS.md).
+
+Overlay 104 contains DS Protect 1.28. Its function names and implementation are
+cross-checked against the [1.28 branch of taxicat1/dsprot](https://github.com/taxicat1/dsprot/tree/1.28),
+which identifies BK9E, BK9J and BK9P as using that version in overlay 104.
 
 ## Repository layout
 

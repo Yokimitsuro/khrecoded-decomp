@@ -121,6 +121,10 @@ libs/nitro/fx/auto/func_01ff9d30.c:
     complete
     .text       start:0x01ff9d30 end:0x01ff9d54
 
+libs/nitro/fx/auto/FX_GetDivResult.c:
+    complete
+    .text       start:0x01ff9d54 end:0x01ff9d88
+
 libs/nitro/fx/auto/FX_GetSqrtResult.c:
     complete
     .text       start:0x01ff9db8 end:0x01ff9de4
@@ -160,6 +164,10 @@ src/calls/func_01ffa1f4.c:
 libs/nitro/nns/calls/func_01ffa37c.c:
     complete
     .text       start:0x01ffa37c end:0x01ffa450
+
+libs/nns/g3d/calls/texmtxCalc_flag_.c:
+    complete
+    .text       start:0x01ffa884 end:0x01ffa98c
 
 src/calls/func_01ffb2f8.c:
     complete

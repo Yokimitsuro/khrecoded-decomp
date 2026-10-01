@@ -4,6 +4,10 @@
     .data       start:0x020d1800 end:0x020d1900 kind:data align:32
     .bss        start:0x020d1900 end:0x020d1b20 kind:bss align:32
 
+src/overlays/ov075/auto/func_ov075_020c7bdc.c:
+    complete
+    .text       start:0x020c7bdc end:0x020c7bf4
+
 src/overlays/ov075/auto/func_ov075_020c7d14.c:
     complete
     .text       start:0x020c7d14 end:0x020c7d1c
