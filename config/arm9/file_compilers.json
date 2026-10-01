@@ -166,6 +166,8 @@
   "libs/nitro/os/calls/OS_InitVAlarm.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_GetOwnerInfo.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_SpinWait.c": "dsi/1.1",
+  "libs/nitro/os/calls/OSi_SetProtectionRegion.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_SetProtectionRegionEx.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_Terminate.c": "2.0/sp2p3",
   "libs/nitro/os/calls/OSi_TerminateCore.c": "2.0/sp2p3",
   "src/overlays/ov104/asm_stubs/calls/__DSProt_DetectFlashcart.c": "2.0/sp2p3",

@@ -532,6 +532,14 @@ libs/nitro/os/asm_stubs/auto/OS_SetDPermissionsForProtectionRegion.c:
     complete
     .text       start:0x02003bc4 end:0x02003bd8
 
+libs/nitro/os/calls/OSi_SetProtectionRegion.c:
+    complete
+    .text       start:0x02003bf8 end:0x02003c14
+
+libs/nitro/os/asm_stubs/auto/OS_SetProtectionRegion0.c:
+    complete
+    .text       start:0x02003c14 end:0x02003c1c
+
 libs/nitro/os/asm_stubs/auto/OS_SetProtectionRegion1.c:
     complete
     .text       start:0x02003c1c end:0x02003c24
@@ -539,6 +547,62 @@ libs/nitro/os/asm_stubs/auto/OS_SetProtectionRegion1.c:
 libs/nitro/os/asm_stubs/auto/OS_SetProtectionRegion2.c:
     complete
     .text       start:0x02003c24 end:0x02003c2c
+
+libs/nitro/os/asm_stubs/auto/OS_SetProtectionRegion3.c:
+    complete
+    .text       start:0x02003c2c end:0x02003c34
+
+libs/nitro/os/asm_stubs/auto/OS_SetProtectionRegion4.c:
+    complete
+    .text       start:0x02003c34 end:0x02003c3c
+
+libs/nitro/os/asm_stubs/auto/OS_SetProtectionRegion5.c:
+    complete
+    .text       start:0x02003c3c end:0x02003c44
+
+libs/nitro/os/asm_stubs/auto/OS_SetProtectionRegion6.c:
+    complete
+    .text       start:0x02003c44 end:0x02003c4c
+
+libs/nitro/os/asm_stubs/auto/OS_SetProtectionRegion7.c:
+    complete
+    .text       start:0x02003c4c end:0x02003c54
+
+libs/nitro/os/asm_stubs/auto/OS_GetProtectionRegion0.c:
+    complete
+    .text       start:0x02003c54 end:0x02003c5c
+
+libs/nitro/os/asm_stubs/auto/OS_GetProtectionRegion1.c:
+    complete
+    .text       start:0x02003c5c end:0x02003c64
+
+libs/nitro/os/asm_stubs/auto/OS_GetProtectionRegion2.c:
+    complete
+    .text       start:0x02003c64 end:0x02003c6c
+
+libs/nitro/os/asm_stubs/auto/OS_GetProtectionRegion3.c:
+    complete
+    .text       start:0x02003c6c end:0x02003c74
+
+libs/nitro/os/asm_stubs/auto/OS_GetProtectionRegion4.c:
+    complete
+    .text       start:0x02003c74 end:0x02003c7c
+
+libs/nitro/os/asm_stubs/auto/OS_GetProtectionRegion5.c:
+    complete
+    .text       start:0x02003c7c end:0x02003c84
+
+libs/nitro/os/asm_stubs/auto/OS_GetProtectionRegion6.c:
+    complete
+    .text       start:0x02003c84 end:0x02003c8c
+
+libs/nitro/os/asm_stubs/auto/OS_GetProtectionRegion7.c:
+    complete
+    .text       start:0x02003c8c end:0x02003c94
+
+libs/nitro/os/calls/OS_SetProtectionRegionEx.c:
+    complete
+    .text       start:0x02003c94 end:0x02003cbc
 
 src/calls/func_02003d24.c:
     complete
