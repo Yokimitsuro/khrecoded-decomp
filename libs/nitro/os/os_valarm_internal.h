@@ -33,6 +33,9 @@ extern OSiVAlarmState OSi_VAlarmState;
 void OSi_InsertVAlarm(OSVAlarm *alarm);
 void OSi_AppendVAlarm(OSVAlarm *alarm);
 void OSi_SetNextVAlarm(OSVAlarm *alarm);
+void OSi_DetachVAlarm(OSVAlarm *alarm);
+int OSi_CompareVCount(OSVAlarm *alarm, s32 currentVFrame, s32 currentVCount);
+void OSi_VAlarmHandler(void *arg);
 s32 OSi_GetVFrame(s32 vcount);
 
 void OS_CreateVAlarm(OSVAlarm *alarm);

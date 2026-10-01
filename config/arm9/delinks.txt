@@ -580,6 +580,10 @@ libs/nitro/os/calls/OSi_AppendVAlarm.c:
     complete
     .text       start:0x020045f8 end:0x02004630
 
+libs/nitro/os/calls/OSi_DetachVAlarm.c:
+    complete
+    .text       start:0x02004630 end:0x02004668
+
 libs/nitro/os/auto/OS_CreateVAlarm.c:
     complete
     .text       start:0x02004668 end:0x0200467c
@@ -591,6 +595,14 @@ libs/nitro/os/calls/OS_SetVAlarm.c:
 libs/nitro/os/calls/OSi_SetNextVAlarm.c:
     complete
     .text       start:0x02004708 end:0x02004748
+
+libs/nitro/os/calls/OSi_VAlarmHandler.c:
+    complete
+    .text       start:0x02004748 end:0x020048b0
+
+libs/nitro/os/auto/OSi_CompareVCount.c:
+    complete
+    .text       start:0x020048b0 end:0x020048fc
 
 libs/nitro/os/calls/OSi_GetVFrame.c:
     complete
