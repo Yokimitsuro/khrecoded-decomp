@@ -35,8 +35,8 @@ typedef struct {
     u8 _padding[1];
 } MIUncompContextLZ;
 
-/* func_020057a8 -- NitroSDK mi_uncomp_stream.c: MI_ReadUncompLZ8. */
-asm s32 func_020057a8 (register MIUncompContextLZ * context, register const u8 * data, register u32 len)
+/* NitroSDK streaming LZ77 decompressor. */
+asm s32 MI_ReadUncompLZ8 (register MIUncompContextLZ * context, register const u8 * data, register u32 len)
 {
     stmfd sp !, {r4 - r11}
     ldr r3, [r0, #MIUncompContextLZ.destp]

@@ -34,7 +34,7 @@ extern NNSG3dGlb data_0205a924;
 
 extern void MTX_MultVec43(const VecFx32 *src, const MtxFx43 *mtx, VecFx32 *dst);
 extern void FX_InvAsync(fx32 value);
-extern fx64c func_01ff9d30(void);
+extern fx64c FX_GetDivResultFx64c(void);
 extern void func_0201973c(int *x1, int *y1, int *x2, int *y2);
 
 static inline fx32 FX_Mul32x64c(fx32 x, fx64c y)
@@ -86,7 +86,7 @@ int func_02019f98(const VecFx32 *pWorld, int *px, int *py)
                     (fx64)tmp.z * proj->_21) >> 12);
     vec.y += proj->_31;
 
-    invW = func_01ff9d30();
+    invW = FX_GetDivResultFx64c();
 
     vec.x = (FX_Mul32x64c(vec.x, invW) + 0x1000) / 2;
     vec.y = (FX_Mul32x64c(vec.y, invW) + 0x1000) / 2;

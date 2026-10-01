@@ -60,7 +60,7 @@ typedef enum {
     GX_TEXFMT_A5I3       = 6,
     GX_TEXFMT_DIRECT     = 7
 } GXTexFmt;
-fx32 FX_Inv(fx32 numer, fx32 denom);
+fx32 FX_Div(fx32 numer, fx32 denom);
 typedef void * (*MIAllocatorAllocFunction)(void * userdata, u32 length, u32 alignment);
 typedef void (*MIAllocatorFreeFunction)(void * userdata, void * buffer);
 typedef u32 NNSGfdTexKey;
@@ -216,10 +216,10 @@ void func_020189bc (NNSG3dResMat * pMat, NNSG3dResDictTexToMatIdxData * pBindDat
         h = (s32)(((pTexData->extraParam) & NNS_G3D_TEXIMAGE_PARAMEX_ORIGH_MASK) >> NNS_G3D_TEXIMAGE_PARAMEX_ORIGH_SHIFT);
 
         matData->magW = (w != matData->origWidth) ?
-                        FX_Inv(w << FX32_SHIFT, matData->origWidth << FX32_SHIFT) :
+                        FX_Div(w << FX32_SHIFT, matData->origWidth << FX32_SHIFT) :
                         FX32_ONE;
         matData->magH = (h != matData->origHeight) ?
-                        FX_Inv(h << FX32_SHIFT, matData->origHeight << FX32_SHIFT) :
+                        FX_Div(h << FX32_SHIFT, matData->origHeight << FX32_SHIFT) :
                         FX32_ONE;
     }
 

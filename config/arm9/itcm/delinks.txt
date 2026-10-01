@@ -105,19 +105,19 @@ libs/nitro/mtx/asm_stubs/auto/MTX_RotY43_.c:
     complete
     .text       start:0x01ff9530 end:0x01ff954a
 
-src/calls/FX_Inv.c:
+libs/nitro/fx/calls/FX_Div.c:
     complete
     .text       start:0x01ff9c84 end:0x01ff9c94
 
-libs/nitro/fx/calls/func_01ff9c94.c:
+libs/nitro/fx/calls/FX_DivFx64c.c:
     complete
     .text       start:0x01ff9c94 end:0x01ff9cc0
 
-src/calls/func_01ff9cc0.c:
+libs/nitro/fx/calls/FX_Inv.c:
     complete
     .text       start:0x01ff9cc0 end:0x01ff9cd0
 
-libs/nitro/fx/calls/func_01ff9cd0.c:
+libs/nitro/fx/calls/FX_InvFx64c.c:
     complete
     .text       start:0x01ff9cd0 end:0x01ff9cfc
 
@@ -125,7 +125,7 @@ libs/nitro/fx/calls/FX_Sqrt.c:
     complete
     .text       start:0x01ff9cfc end:0x01ff9d30
 
-libs/nitro/fx/auto/func_01ff9d30.c:
+libs/nitro/fx/auto/FX_GetDivResultFx64c.c:
     complete
     .text       start:0x01ff9d30 end:0x01ff9d54
 

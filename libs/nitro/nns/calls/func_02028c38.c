@@ -36,7 +36,7 @@ extern CameraProjectionState data_0205fe40;
 
 extern void MTX_MultVec43(const VecFx32 *src, const MtxFx43 *mtx, VecFx32 *dst);
 extern void FX_InvAsync(fx32 value);
-extern fx64c func_01ff9d30(void);
+extern fx64c FX_GetDivResultFx64c(void);
 extern void func_0201973c(int *x1, int *y1, int *x2, int *y2);
 
 static inline fx32 FX_Mul32x64c(fx32 x, fx64c y)
@@ -92,7 +92,7 @@ int func_02028c38(const VecFx32 *worldPosition, int *screenX, int *screenY)
                           (fx64)transformed.z * projection->_21) >> 12);
     projected.y += projection->_31;
 
-    inverseW = func_01ff9d30();
+    inverseW = FX_GetDivResultFx64c();
     projected.x = (FX_Mul32x64c(projected.x, inverseW) + 0x1000) / 2;
     projected.y = (FX_Mul32x64c(projected.y, inverseW) + 0x1000) / 2;
 
