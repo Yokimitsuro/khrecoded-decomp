@@ -2077,6 +2077,10 @@ libs/nitro/std/auto/STD_CopyString.c:
     complete
     .text       start:0x02010bb8 end:0x02010be0
 
+libs/nitro/std/auto/STD_GetStringLength.c:
+    complete
+    .text       start:0x02010c88 end:0x02010cdc
+
 libs/nitro/std/calls/STD_ConcatenateString.c:
     complete
     .text       start:0x02010cdc end:0x02010cf2
@@ -3340,6 +3344,10 @@ src/auto/func_02021c68.c:
 libs/msl/c/calls/strlen.c:
     complete
     .text       start:0x02021e58 end:0x02021e74
+
+libs/msl/c/auto/strcpy.c:
+    complete
+    .text       start:0x02021e74 end:0x02021f3c
 
 libs/msl/c/auto/func_02021fbc.c:
     complete
