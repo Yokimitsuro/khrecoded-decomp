@@ -16,6 +16,16 @@ typedef struct OSThreadQueue {
 } OSThreadQueue;
 
 struct FSArchive;
+struct FSFile;
+
+typedef FSResult (*FSArchiveReadFunction)(struct FSArchive *archive,
+                                          void *destination, u32 position,
+                                          u32 size);
+typedef FSResult (*FSArchiveWriteFunction)(struct FSArchive *archive,
+                                           const void *source, u32 position,
+                                           u32 size);
+typedef FSResult (*FSArchiveProcedure)(struct FSFile *file,
+                                       FSCommandType command);
 
 typedef struct FSDirPos {
     struct FSArchive *archive;
@@ -108,10 +118,10 @@ typedef struct FSROMFATArchiveContext {
     u32 fatBackup;
     u32 fntBackup;
     void *loadedTables;
-    void *readFunction;
-    void *writeFunction;
-    u8 reserved[4];
-    void *procedure;
+    FSArchiveReadFunction readFunction;
+    FSArchiveWriteFunction writeFunction;
+    FSArchiveReadFunction tableFunction;
+    FSArchiveProcedure procedure;
     u32 procedureFlags;
 } FSROMFATArchiveContext;
 
@@ -239,7 +249,11 @@ extern FSRomArchiveState fsi_rom_archive_state;
 #define FS_FILE_STATUS_CMD_SHIFT 8UL
 #define FS_FILE_STATUS_CMD_MASK 0x000000ffUL
 
+#define FS_ARCHIVE_FLAG_LOADED 0x00000002UL
 #define FS_ARCHIVE_FLAG_TABLE_LOAD 0x00000004UL
+#define FS_ARCHIVE_FLAG_SUSPEND 0x00000008UL
+#define FS_ARCHIVE_FLAG_RUNNING 0x00000010UL
+#define FS_ARCHIVE_FLAG_SUSPENDING 0x00000040UL
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
@@ -297,6 +311,16 @@ FSResult FSi_ROMFAT_GetArchiveResource(FSArchive *archive,
                                        FSArchiveResource *resource);
 u32 FS_GetArchiveOffset(const FSArchive *archive, u32 position);
 BOOL FS_IsArchiveTableLoaded(volatile const FSArchive *archive);
+
+static inline BOOL FS_IsArchiveLoaded(volatile const FSArchive *archive)
+{
+    return (archive->flags & FS_ARCHIVE_FLAG_LOADED) != 0;
+}
+
+static inline BOOL FS_IsArchiveSuspended(volatile const FSArchive *archive)
+{
+    return (archive->flags & FS_ARCHIVE_FLAG_SUSPEND) != 0;
+}
 u32 FS_GetFileImageTop(const FSFile *file);
 BOOL FSi_IsUnreadableRomOffset(FSArchive *archive, u32 offset);
 FSResult FSi_EmptyArchiveProc(FSFile *file, FSCommandType command);
@@ -317,6 +341,17 @@ static inline void FSi_WaitConditionOn(u32 *flags, u32 bits,
     OSIntrMode interruptState = OS_DisableInterrupts();
 
     while ((*flags & bits) == 0) {
+        OS_SleepThread(queue);
+    }
+    (void)OS_RestoreInterrupts(interruptState);
+}
+
+static inline void FSi_WaitConditionOff(u32 *flags, u32 bits,
+                                        OSThreadQueue *queue)
+{
+    OSIntrMode interruptState = OS_DisableInterrupts();
+
+    while ((*flags & bits) != 0) {
         OS_SleepThread(queue);
     }
     (void)OS_RestoreInterrupts(interruptState);

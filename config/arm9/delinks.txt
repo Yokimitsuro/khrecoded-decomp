@@ -1786,6 +1786,18 @@ libs/nitro/fs/calls/FSi_SendCommand.c:
     complete
     .text       start:0x0200a944 end:0x0200aa7c
 
+libs/nitro/fs/calls/FS_MountArchive.c:
+    complete
+    .text       start:0x0200b058 end:0x0200b0a0
+
+libs/nitro/fs/calls/FS_SuspendArchive.c:
+    complete
+    .text       start:0x0200b0a0 end:0x0200b130
+
+libs/nitro/fs/calls/FS_ResumeArchive.c:
+    complete
+    .text       start:0x0200b130 end:0x0200b18c
+
 libs/nitro/fs/calls/FS_NotifyArchiveAsyncEnd.c:
     complete
     .text       start:0x0200b18c end:0x0200b1f8
@@ -1962,6 +1974,10 @@ libs/nitro/fs/calls/FSi_WriteMemCallback.c:
     complete
     .text       start:0x0200cf98 end:0x0200cfc4
 
+libs/nitro/fs/calls/FS_LoadArchive.c:
+    complete
+    .text       start:0x0200cfc4 end:0x0200d030
+
 libs/nitro/fs/calls/FSi_GetFileLengthIfProc.c:
     complete
     .text       start:0x0200d030 end:0x0200d070
@@ -1973,6 +1989,14 @@ libs/nitro/fs/calls/FSi_GetFilePositionIfProc.c:
 libs/nitro/fs/auto/FS_SetArchiveProc.c:
     complete
     .text       start:0x0200d0b0 end:0x0200d0d0
+
+libs/nitro/fs/calls/FS_LoadArchiveTables.c:
+    complete
+    .text       start:0x0200d0d0 end:0x0200d210
+
+libs/nitro/fs/calls/FS_UnloadArchiveTables.c:
+    complete
+    .text       start:0x0200d210 end:0x0200d294
 
 libs/nitro/fs/auto/FS_GetArchiveOffset.c:
     complete
