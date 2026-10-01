@@ -108,7 +108,7 @@ extern CARDiCommon data_020464e0;
 extern int PXI_SendWordByFifo(int tag, u32 data, BOOL err);
 extern void WaitByLoop(s32 count);
 
-void func_0200a140(u32 data, u32 wait)
+void CARDi_SendtoPxi(u32 data, u32 wait)
 {
     while (PXI_SendWordByFifo(PXI_FIFO_TAG_CARD, data, FALSE) != PXI_FIFO_SUCCESS) {
         WaitByLoop((s32)wait);
