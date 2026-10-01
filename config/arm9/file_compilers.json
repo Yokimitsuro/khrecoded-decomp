@@ -271,6 +271,7 @@
   "libs/nitro/card/calls/CARD_InitPulledOutCallback.c": "dsi/1.1",
   "libs/nitro/card/calls/CARDi_PulledOutCallback.c": "dsi/1.1",
   "libs/nitro/card/calls/CARD_TerminateForPulledOut.c": "dsi/1.1",
+  "libs/nitro/card/calls/CARDi_CheckPulledOutCore.c": "dsi/1.1",
   "libs/nitro/card/calls/CARDi_OldTypeTaskThread.c": "dsi/1.1",
   "libs/nitro/card/calls/CARDi_ExecuteOldTypeTask.c": "dsi/1.1",
   "libs/nitro/card/calls/CARDi_EndTask.c": "dsi/1.1",

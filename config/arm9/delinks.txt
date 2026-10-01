@@ -1622,6 +1622,10 @@ libs/nitro/card/calls/CARD_TerminateForPulledOut.c:
     complete
     .text       start:0x0200a0e4 end:0x0200a110
 
+libs/nitro/card/calls/CARDi_CheckPulledOutCore.c:
+    complete
+    .text       start:0x0200a110 end:0x0200a140
+
 libs/nitro/card/calls/CARDi_SendtoPxi.c:
     complete
     .text       start:0x0200a140 end:0x0200a16e
