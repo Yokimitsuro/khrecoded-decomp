@@ -1686,6 +1686,10 @@ libs/nitro/dgt/calls/DGT_Hash2SetSource.c:
     complete
     .text       start:0x0200d738 end:0x0200d7cc
 
+libs/nitro/dgt/calls/DGT_Hash2GetDigest.c:
+    complete
+    .text       start:0x0200d7cc end:0x0200d9c4
+
 libs/nitro/math/calls/MATH_CalcHMACSHA1.c:
     complete
     .text       start:0x0200da08 end:0x0200da9c
