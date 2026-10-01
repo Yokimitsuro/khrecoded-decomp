@@ -1,5 +1,5 @@
-extern void *func_020034e4();
+extern void *OS_Init();
 
 void *func_020034d8() {
-    return func_020034e4();
+    return OS_Init();
 }

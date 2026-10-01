@@ -11,7 +11,7 @@ func_ov044_020d0130 kind:function(arm,size=0x10) addr:0x020d0130
 func_ov044_020d0140 kind:function(arm,size=0x24) addr:0x020d0140
 func_ov044_020d0164 kind:function(arm,size=0xbc) addr:0x020d0164
 func_ov044_020d0220 kind:function(arm,size=0x78) addr:0x020d0220
-func_ov044_020d0298 kind:function(arm,size=0x48) addr:0x020d0298
+NNS_FndFreeToExpHeap_2 kind:function(arm,size=0x48) addr:0x020d0298
 func_ov044_020d02e0 kind:function(arm,size=0x6c) addr:0x020d02e0
 func_ov044_020d034c kind:function(arm,size=0x234) addr:0x020d034c
 func_ov044_020d0580 kind:function(thumb,size=0x2) addr:0x020d0580
@@ -33,7 +33,7 @@ func_ov044_020d0ba8 kind:function(arm,size=0x1c) addr:0x020d0ba8
 func_ov044_020d0bc4 kind:function(arm,size=0x14) addr:0x020d0bc4
 func_ov044_020d0bd8 kind:function(arm,size=0x144) addr:0x020d0bd8
 func_ov044_020d0d1c kind:function(arm,size=0x84) addr:0x020d0d1c
-func_ov044_020d0da0 kind:function(arm,size=0x20) addr:0x020d0da0
+NNSi_FndFreeFromDefaultHeap_2 kind:function(arm,size=0x20) addr:0x020d0da0
 data_ov044_020d0de0 kind:data(any) addr:0x020d0de0
 data_ov044_020d0de4 kind:data(any) addr:0x020d0de4
 data_ov044_020d0e10 kind:data(any) addr:0x020d0e10

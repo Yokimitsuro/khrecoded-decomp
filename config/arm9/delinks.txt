@@ -408,7 +408,7 @@ src/calls/func_020034d8.c:
     complete
     .text       start:0x020034d8 end:0x020034e4
 
-libs/nitro/os/calls/func_020034e4.c:
+libs/nitro/os/calls/OS_Init.c:
     complete
     .text       start:0x020034e4 end:0x0200352c
 
@@ -519,6 +519,10 @@ libs/nitro/os/asm_stubs/auto/OS_GetProcMode.c:
 libs/nitro/os/asm_stubs/auto/func_020049bc.c:
     complete
     .text       start:0x020049bc end:0x020049c8
+
+libs/nitro/os/calls/OS_InitReset.c:
+    complete
+    .text       start:0x02004a20 end:0x02004a74
 
 libs/nitro/os/asm_stubs/auto/func_02004b78.c:
     complete
@@ -840,6 +844,10 @@ src/auto/func_0200d2c0.c:
     complete
     .text       start:0x0200d2c0 end:0x0200d2c8
 
+libs/nitro/fs/calls/FSi_ReadRomCallback.c:
+    complete
+    .text       start:0x0200d2ec end:0x0200d334
+
 src/auto/func_0200d3b8.c:
     complete
     .text       start:0x0200d3b8 end:0x0200d3c0
@@ -856,11 +864,15 @@ libs/nitro/os/asm_stubs/auto/func_0200d5a0.c:
     complete
     .text       start:0x0200d5a0 end:0x0200d5a8
 
+libs/nitro/math/calls/MATH_CalcHMACSHA1.c:
+    complete
+    .text       start:0x0200da08 end:0x0200da9c
+
 libs/nitro/math/asm_stubs/auto/func_0200dc4c.c:
     complete
     .text       start:0x0200dc4c end:0x0200ded4
 
-src/calls/OS_InitArena.c:
+src/calls/PXI_Init.c:
     complete
     .text       start:0x0200e200 end:0x0200e208
 
@@ -1051,6 +1063,10 @@ libs/nitro/snd/calls/SND_CalcChannelVolume.c:
 libs/nitro/snd/calls/SND_DestroyWaveArc.c:
     complete
     .text       start:0x0200f894 end:0x0200f8dc
+
+libs/nitro/snd/auto/SND_GetFirstInstDataPos.c:
+    complete
+    .text       start:0x0200f8dc end:0x0200f8fc
 
 src/auto/SND_GetWaveDataCount.c:
     complete
@@ -2019,6 +2035,14 @@ libs/nns/snd/calls/ShutdownStrm.c:
 src/calls/func_0201e3bc.c:
     complete
     .text       start:0x0201e3bc end:0x0201e3cc
+
+libs/nns/snd/calls/BeginSleep_2.c:
+    complete
+    .text       start:0x0201e47c end:0x0201e4c8
+
+libs/nns/snd/calls/EndSleep.c:
+    complete
+    .text       start:0x0201e4c8 end:0x0201e538
 
 libs/nns/snd/calls/func_0201e538.c:
     complete

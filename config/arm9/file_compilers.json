@@ -32,5 +32,8 @@
   "libs/nns/g2d/calls/NNSi_G2dBitReaderRead.c": "dsi/1.1",
   "libs/nitro/fx/auto/VEC_Distance.c": "dsi/1.1",
   "libs/nitro/fx/auto/VEC_Mag.c": "dsi/1.1",
-  "libs/nns/snd/auto/FreePlayer.c": "dsi/1.1"
+  "libs/nns/snd/auto/FreePlayer.c": "dsi/1.1",
+  "libs/nitro/snd/auto/SND_GetFirstInstDataPos.c": "dsi/1.1",
+  "libs/nns/snd/calls/BeginSleep_2.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_InitReset.c": "dsi/1.1"
 }

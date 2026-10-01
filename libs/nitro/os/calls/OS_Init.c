@@ -29,30 +29,30 @@ void OS_InitIrqTable(void);
 extern void OSi_InitStackChecker(void);
 void OS_InitLock(void);
 void OSi_InstallExceptionVector(void);
-void OS_InitArena(void);
+void PXI_Init(void);
 void OS_InitArenaEx(void);
 void OS_InitTick(void);
 void OS_InitAlarm(void);
 void func_0200453c(void);
-void func_02004a20(void);
+void OS_InitReset(void);
 void OSi_InitVramExclusive(void);
-void func_0200352c(void);
+void OS_InitArena(void);
 void CARD_Init(void);
 void MI_Init(void);
 void func_02010250(void);
 void func_02012564(void);
 extern void OSi_CancelDma0 (void);
 
-/* func_020034e4 -- NitroSDK os_init.c: OS_Init. */
-void func_020034e4 (void)
+/* NitroSDK operating-system initialization. */
+void OS_Init(void)
 {
 #ifdef SDK_ARM9
 #ifdef SDK_ENABLE_ARM7_PRINT
     OS_InitPrintServer();
 #endif
-    OS_InitArena();
+    PXI_Init();
 
-    func_0200352c();
+    OS_InitArena();
 
     OS_InitLock();
     OS_InitArenaEx();
@@ -70,7 +70,7 @@ void func_020034e4 (void)
 #endif
 
 #ifndef SDK_SMALL_BUILD
-    func_02004a20();
+    OS_InitReset();
 #endif
 
 #ifndef SDK_TEG
@@ -88,8 +88,8 @@ void func_020034e4 (void)
     OSi_CancelDma0();
 
 #else
+    PXI_Init();
     OS_InitArena();
-    func_0200352c();
     OS_InitLock();
     OS_InitIrqTable();
 
@@ -102,7 +102,7 @@ void func_020034e4 (void)
     func_02002760();
 
 #ifndef SDK_SMALL_BUILD
-    func_02004a20();
+    OS_InitReset();
 #endif
 
 #ifndef SDK_TEG

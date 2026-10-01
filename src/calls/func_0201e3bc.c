@@ -156,10 +156,10 @@ typedef struct NNSSndStrm {
     int numChannels;
     u8 channelNo[16 ];
 } NNSSndStrm;
-extern void func_0201e3cc(NNSSndStrm * stream, NNSSndStrmCallbackStatus status);
-extern void func_0201e3cc (NNSSndStrm * stream, NNSSndStrmCallbackStatus status);
+extern void StrmCallback(NNSSndStrm * stream, NNSSndStrmCallbackStatus status);
+extern void StrmCallback (NNSSndStrm * stream, NNSSndStrmCallbackStatus status);
 
 void func_0201e3bc (void * arg)
 {
-    func_0201e3cc((NNSSndStrm *)arg, NNS_SND_STRM_CALLBACK_INTERVAL);
+    StrmCallback((NNSSndStrm *)arg, NNS_SND_STRM_CALLBACK_INTERVAL);
 }
