@@ -865,6 +865,26 @@ libs/nitro/mi/auto/MI_SetWramBank.c:
     complete
     .text       start:0x02004e48 end:0x02004e58
 
+libs/nitro/mi/calls/MIi_DmaFill32.c:
+    complete
+    .text       start:0x02004e58 end:0x02004edc
+
+libs/nitro/mi/calls/MIi_DmaCopy32.c:
+    complete
+    .text       start:0x02004edc end:0x02004f80
+
+libs/nitro/mi/calls/MIi_DmaCopy16.c:
+    complete
+    .text       start:0x02004f80 end:0x02005028
+
+libs/nitro/mi/calls/MIi_DmaFill32Async.c:
+    complete
+    .text       start:0x02005028 end:0x02005130
+
+libs/nitro/mi/calls/MIi_DmaCopy32Async.c:
+    complete
+    .text       start:0x02005130 end:0x0200522c
+
 libs/nitro/mi/calls/MI_WaitDma.c:
     complete
     .text       start:0x0200522c end:0x02005288

@@ -17,6 +17,10 @@ libs/nitro/os/asm_stubs/auto/func_01ff840c.c:
     complete
     .text       start:0x01ff840c end:0x01ff8420
 
+libs/nitro/mi/calls/MIi_DmaSetParameters.c:
+    complete
+    .text       start:0x01ff85b4 end:0x01ff8684
+
 libs/nitro/mi/asm_stubs/auto/MIi_CpuClear16.c:
     complete
     .text       start:0x01ff8684 end:0x01ff869c
