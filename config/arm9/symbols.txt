@@ -158,7 +158,7 @@ OS_LockMutex kind:function(arm,size=0x50) addr:0x0200316c
 OS_UnlockMutex kind:function(arm,size=0x10) addr:0x020031bc
 OSi_UnlockAllMutex kind:function(arm,size=0x48) addr:0x020031cc
 OS_TryLockMutex kind:function(arm,size=0x94) addr:0x02003214
-func_020032a8 kind:function(arm,size=0xd8) addr:0x020032a8
+OSi_UnlockMutexCore kind:function(arm,size=0xd8) addr:0x020032a8
 OSi_EnqueueTail kind:function(arm,size=0x24) addr:0x02003380
 OSi_DequeueItem kind:function(arm,size=0x24) addr:0x020033a4
 DC_StoreAll kind:function(arm,size=0x2c) addr:0x020033c8
@@ -2783,7 +2783,7 @@ data_02056b48 kind:bss addr:0x02056b48
 data_02056b4c kind:bss addr:0x02056b4c
 data_02056b50 kind:bss addr:0x02056b50
 data_02056b5c kind:bss addr:0x02056b5c
-data_02056b6c kind:bss addr:0x02056b6c
+OSi_ThreadInfo kind:bss addr:0x02056b6c
 data_02056b70 kind:bss addr:0x02056b70
 data_02056b7c kind:bss addr:0x02056b7c
 data_02056c3c kind:bss addr:0x02056c3c

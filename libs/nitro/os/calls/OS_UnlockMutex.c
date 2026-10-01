@@ -1,6 +1,8 @@
-extern void func_020032a8(void *mutex, unsigned int lockBit);
+#include "libs/nitro/os/os_mutex_internal.h"
 
-void OS_UnlockMutex(void *mutex)
+extern void OSi_UnlockMutexCore(OSMutex *mutex, u32 type);
+
+void OS_UnlockMutex(OSMutex *mutex)
 {
-    func_020032a8(mutex, 0x10000000);
+    OSi_UnlockMutexCore(mutex, OS_MUTEX_TYPE_STD);
 }

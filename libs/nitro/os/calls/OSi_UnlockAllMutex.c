@@ -13,9 +13,9 @@ void OSi_UnlockAllMutex(OSThread *thread)
 
     do {
         mutex = OSi_RemoveMutexLinkFromQueue(&thread->mutexQueue);
-        OSi_SetMutexCount(mutex, 0);
+        OS_SetMutexCount(mutex, 0);
         mutex->thread = 0;
-        OSi_SetMutexType(mutex, OS_MUTEX_TYPE_NONE);
+        OS_SetMutexType(mutex, OS_MUTEX_TYPE_NONE);
         OS_WakeupThread(&mutex->queue);
     } while (thread->mutexQueue.head != 0);
 }

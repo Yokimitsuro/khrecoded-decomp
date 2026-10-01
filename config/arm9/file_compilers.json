@@ -62,6 +62,7 @@
   "libs/nitro/os/calls/OS_LockMutex.c": "dsi/1.1",
   "libs/nitro/os/calls/OSi_UnlockAllMutex.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_TryLockMutex.c": "dsi/1.1",
+  "libs/nitro/os/calls/OSi_UnlockMutexCore.c": "dsi/1.1",
   "libs/nitro/os/auto/OSi_EnqueueTail.c": "dsi/1.1",
   "libs/nitro/gx/auto/G3X_GetMtxStackLevelPV.c": "dsi/1.1",
   "libs/nitro/gx/auto/G3X_GetMtxStackLevelPJ.c": "dsi/1.1",

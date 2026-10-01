@@ -404,6 +404,10 @@ libs/nitro/os/calls/OS_TryLockMutex.c:
     complete
     .text       start:0x02003214 end:0x020032a8
 
+libs/nitro/os/calls/OSi_UnlockMutexCore.c:
+    complete
+    .text       start:0x020032a8 end:0x02003380
+
 libs/nitro/os/auto/OSi_EnqueueTail.c:
     complete
     .text       start:0x02003380 end:0x020033a4

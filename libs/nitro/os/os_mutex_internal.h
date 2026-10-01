@@ -46,7 +46,7 @@ struct OSThread {
 struct OSMutex {
     OSThreadQueue queue;
     OSThread *thread;
-    u32 count;
+    s32 count;
     OSMutexLink link;
 };
 
@@ -58,27 +58,63 @@ typedef struct OSThreadInfo {
     void *switchCallback;
 } OSThreadInfo;
 
+extern OSThreadInfo OSi_ThreadInfo;
+
+static inline OSThreadInfo *OS_GetThreadInfo(void)
+{
+    return &OSi_ThreadInfo;
+}
+
+static inline OSThread *OS_GetCurrentThread(void)
+{
+    return OS_GetThreadInfo()->current;
+}
+
 enum {
     OS_THREAD_STATE_WAITING = 0,
-    OS_MUTEX_COUNT_MASK = 0x00ffffff,
-    OS_MUTEX_TYPE_MASK = 0xff000000,
+    OSi_MUTEX_COUNT_MASK = 0x00ffffff,
+    OSi_MUTEX_TYPE_MASK = 0xff000000,
     OS_MUTEX_TYPE_NONE = 0,
-    OS_MUTEX_TYPE_NORMAL = 0x10000000
+    OS_MUTEX_TYPE_STD = 0x10000000,
+    OS_MUTEX_TYPE_R = 0x20000000,
+    OS_MUTEX_TYPE_W = 0x30000000
 };
 
-static inline void OSi_SetMutexCount(OSMutex *mutex, s32 count)
+static inline void OS_SetMutexCount(OSMutex *mutex, s32 count)
 {
-    mutex->count = (mutex->count & OS_MUTEX_TYPE_MASK) | ((u32)count & OS_MUTEX_COUNT_MASK);
+    mutex->count = (s32)(((u32)mutex->count & OSi_MUTEX_TYPE_MASK) |
+                         ((u32)count & OSi_MUTEX_COUNT_MASK));
 }
 
-static inline u32 OSi_GetMutexType(const OSMutex *mutex)
+static inline s32 OS_GetMutexCount(OSMutex *mutex)
 {
-    return mutex->count & OS_MUTEX_TYPE_MASK;
+    return (s32)((u32)mutex->count & OSi_MUTEX_COUNT_MASK);
 }
 
-static inline void OSi_SetMutexType(OSMutex *mutex, u32 type)
+static inline void OS_IncreaseMutexCount(OSMutex *mutex)
 {
-    mutex->count = type | (mutex->count & OS_MUTEX_COUNT_MASK);
+    u32 type = (u32)mutex->count & OSi_MUTEX_TYPE_MASK;
+
+    mutex->count++;
+    mutex->count = (s32)(type | ((u32)mutex->count & OSi_MUTEX_COUNT_MASK));
+}
+
+static inline void OS_DecreaseMutexCount(OSMutex *mutex)
+{
+    u32 type = (u32)mutex->count & OSi_MUTEX_TYPE_MASK;
+
+    mutex->count--;
+    mutex->count = (s32)(type | ((u32)mutex->count & OSi_MUTEX_COUNT_MASK));
+}
+
+static inline void OS_SetMutexType(OSMutex *mutex, u32 type)
+{
+    mutex->count = (s32)(type | ((u32)mutex->count & OSi_MUTEX_COUNT_MASK));
+}
+
+static inline u32 OS_GetMutexType(OSMutex *mutex)
+{
+    return (u32)mutex->count & OSi_MUTEX_TYPE_MASK;
 }
 
 #endif
