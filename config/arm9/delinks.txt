@@ -756,10 +756,6 @@ src/calls/func_0200913c.c:
     complete
     .text       start:0x0200913c end:0x02009148
 
-src/calls/func_020091ac.c:
-    complete
-    .text       start:0x020091ac end:0x020091be
-
 src/calls/func_020091c0.c:
     complete
     .text       start:0x020091c0 end:0x020091cc

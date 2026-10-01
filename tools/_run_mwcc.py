@@ -62,6 +62,8 @@ def main():
         mwcc_bin = MWCC_DIR / opt_cc / "mwccarm.exe"
 
     flags = list(CFLAGS)
+    if opt_cc == "2.0/sp2p3":
+        flags.extend(["-fp", "soft", "-ipa", "file"])
     if src_path.suffix.lower() in (".cpp", ".cp", ".cc"):
         flags[flags.index("c99")] = "c++"
 

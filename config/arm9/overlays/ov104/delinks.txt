@@ -24,27 +24,35 @@ src/overlays/ov104/calls/ROMUtil_CRC32.c:
     complete
     .text       start:0x020d2b5c end:0x020d2bf0
 
-src/overlays/ov104/calls/func_ov104_020d2e6c.c:
+src/overlays/ov104/calls/ROMTest_IsBad.c:
+    complete
+    .text       start:0x020d2c2c end:0x020d2e6c
+
+src/overlays/ov104/calls/ROMTest_IsBad_CARD_LockRom_Thunk.c:
     complete
     .text       start:0x020d2e6c end:0x020d2e78
 
-src/overlays/ov104/calls/func_ov104_020d2e78.c:
+src/overlays/ov104/calls/ROMTest_IsBad_CARDi_ReadRom_Thunk.c:
     complete
     .text       start:0x020d2e78 end:0x020d2e84
 
-src/overlays/ov104/calls/func_ov104_020d2e84.c:
+src/overlays/ov104/calls/ROMTest_IsBad_CARD_UnlockRom_Thunk.c:
     complete
     .text       start:0x020d2e84 end:0x020d2e90
 
-src/overlays/ov104/calls/func_ov104_020d30d0.c:
+src/overlays/ov104/calls/ROMTest_IsGood.c:
+    complete
+    .text       start:0x020d2e90 end:0x020d30d0
+
+src/overlays/ov104/calls/ROMTest_IsGood_CARD_LockRom_Thunk.c:
     complete
     .text       start:0x020d30d0 end:0x020d30dc
 
-src/overlays/ov104/calls/func_ov104_020d30dc.c:
+src/overlays/ov104/calls/ROMTest_IsGood_CARDi_ReadRom_Thunk.c:
     complete
     .text       start:0x020d30dc end:0x020d30e8
 
-src/overlays/ov104/calls/func_ov104_020d30e8.c:
+src/overlays/ov104/calls/ROMTest_IsGood_CARD_UnlockRom_Thunk.c:
     complete
     .text       start:0x020d30e8 end:0x020d30f4
 
