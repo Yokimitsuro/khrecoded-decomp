@@ -1586,7 +1586,11 @@ src/calls/func_0200a058.c:
     complete
     .text       start:0x0200a058 end:0x0200a060
 
-src/calls/func_0200a0d8.c:
+libs/nitro/card/calls/CARD_InitPulledOutCallback.c:
+    complete
+    .text       start:0x0200a060 end:0x0200a084
+
+libs/nitro/card/calls/CARD_IsPulledOut.c:
     complete
     .text       start:0x0200a0d8 end:0x0200a0e4
 

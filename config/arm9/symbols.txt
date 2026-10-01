@@ -484,8 +484,8 @@ CARDi_ReadRom kind:function(thumb,size=0x130) addr:0x02009ed0
 CARDi_InitRom kind:function(thumb,size=0x58) addr:0x0200a000
 func_0200a058 kind:function(thumb,size=0x8) addr:0x0200a058
 CARD_InitPulledOutCallback kind:function(thumb,size=0x24) addr:0x0200a060
-func_0200a084 kind:function(thumb,size=0x54) addr:0x0200a084
-func_0200a0d8 kind:function(thumb,size=0xc) addr:0x0200a0d8
+CARDi_PulledOutCallback kind:function(thumb,size=0x54) addr:0x0200a084
+CARD_IsPulledOut kind:function(thumb,size=0xc) addr:0x0200a0d8
 func_0200a0e4 kind:function(thumb,size=0x2c) addr:0x0200a0e4
 func_0200a110 kind:function(thumb,size=0x30) addr:0x0200a110
 func_0200a140 kind:function(thumb,size=0x2e) addr:0x0200a140
@@ -2830,7 +2830,7 @@ cardi_rom_base kind:bss addr:0x02057620
 data_02057630 kind:bss addr:0x02057630
 data_0205764c kind:bss addr:0x0205764c
 data_020576e0 kind:bss addr:0x020576e0
-data_020578e0 kind:bss addr:0x020578e0
+sCardPullOutState kind:bss addr:0x020578e0
 data_020578ec kind:bss addr:0x020578ec
 data_020578fc kind:bss addr:0x020578fc
 data_020579fc kind:bss addr:0x020579fc
