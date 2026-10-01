@@ -324,15 +324,15 @@ G2x_SetBlendAlpha_ kind:function(arm,size=0x1c) addr:0x02006864
 G2x_SetBlendBrightness_ kind:function(arm,size=0x24) addr:0x02006880
 G2x_SetBlendBrightnessExt_ kind:function(arm,size=0x44) addr:0x020068a4
 G3X_Init kind:function(arm,size=0x104) addr:0x020068e8
-G3X_ResetMtxStack kind:function(arm,size=0x6c) addr:0x020069ec
+G3X_Reset kind:function(arm,size=0x6c) addr:0x020069ec
 G3X_ClearFifo kind:function(arm,size=0x24) addr:0x02006a58
 G3X_InitMtxStack kind:function(arm,size=0x98) addr:0x02006a7c
-G3X_ResetMtxStack_2 kind:function(arm,size=0x90) addr:0x02006b14
+G3X_ResetMtxStack kind:function(arm,size=0x90) addr:0x02006b14
 G3X_GetClipMtx kind:function(arm,size=0x30) addr:0x02006ba4
 G3X_GetVectorMtx kind:function(arm,size=0x30) addr:0x02006bd4
 func_02006c04 kind:function(arm,size=0x18) addr:0x02006c04
 G3X_SetClearColor kind:function(arm,size=0x28) addr:0x02006c1c
-func_02006c44 kind:function(arm,size=0xb4) addr:0x02006c44
+G3X_InitTable kind:function(arm,size=0xb4) addr:0x02006c44
 G3X_GetMtxStackLevelPV kind:function(arm,size=0x2c) addr:0x02006cf8
 G3X_GetMtxStackLevelPJ kind:function(arm,size=0x2c) addr:0x02006d24
 G3X_SetHOffset kind:function(arm,size=0x10) addr:0x02006d50
@@ -2680,7 +2680,7 @@ data_02055bc0 kind:data(any) addr:0x02055bc0
 data_02055bd0 kind:data(any) addr:0x02055bd0
 OSi_ProtectionRegionSetters kind:data(any) addr:0x02055bd8
 gGXDataState kind:data(any) addr:0x02055c18
-data_02055c1c kind:data(any) addr:0x02055c1c
+GXi_DmaId kind:data(any) addr:0x02055c1c
 data_02055c20 kind:data(any) addr:0x02055c20
 data_02055c28 kind:data(any) addr:0x02055c28
 data_02055c2c kind:data(any) addr:0x02055c2c

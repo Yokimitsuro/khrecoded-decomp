@@ -1045,7 +1045,11 @@ libs/nitro/gx/calls/G2x_SetBlendBrightnessExt_.c:
     complete
     .text       start:0x020068a4 end:0x020068e8
 
-libs/nitro/gx/calls/G3X_ResetMtxStack.c:
+libs/nitro/gx/calls/G3X_Init.c:
+    complete
+    .text       start:0x020068e8 end:0x020069ec
+
+libs/nitro/gx/calls/G3X_Reset.c:
     complete
     .text       start:0x020069ec end:0x02006a58
 
@@ -1057,7 +1061,7 @@ src/calls/G3X_InitMtxStack.c:
     complete
     .text       start:0x02006a7c end:0x02006b14
 
-src/calls/G3X_ResetMtxStack_2.c:
+libs/nitro/gx/calls/G3X_ResetMtxStack.c:
     complete
     .text       start:0x02006b14 end:0x02006ba4
 
@@ -1072,6 +1076,10 @@ libs/nitro/gx/calls/G3X_GetVectorMtx.c:
 libs/nitro/gx/auto/G3X_SetClearColor.c:
     complete
     .text       start:0x02006c1c end:0x02006c44
+
+libs/nitro/gx/calls/G3X_InitTable.c:
+    complete
+    .text       start:0x02006c44 end:0x02006cf8
 
 libs/nitro/gx/auto/G3X_GetMtxStackLevelPV.c:
     complete
