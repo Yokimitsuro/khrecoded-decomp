@@ -35,5 +35,14 @@
   "libs/nns/snd/auto/FreePlayer.c": "dsi/1.1",
   "libs/nitro/snd/auto/SND_GetFirstInstDataPos.c": "dsi/1.1",
   "libs/nns/snd/calls/BeginSleep_2.c": "dsi/1.1",
-  "libs/nitro/os/calls/OS_InitReset.c": "dsi/1.1"
+  "libs/nitro/os/calls/OS_InitReset.c": "dsi/1.1",
+  "libs/nitro/fx/auto/FX_InvAsync.c": "dsi/1.1",
+  "libs/nitro/gx/calls/GX_ResetBankForBGExtPltt.c": "dsi/1.1",
+  "libs/nitro/gx/calls/GX_ResetBankForOBJExtPltt.c": "dsi/1.1",
+  "libs/nitro/gx/calls/GX_ResetBankForSubBGExtPltt.c": "dsi/1.1",
+  "libs/nitro/gx/calls/GX_ResetBankForSubOBJExtPltt.c": "dsi/1.1",
+  "libs/nitro/gx/calls/GX_DisableBankForBGExtPltt.c": "dsi/1.1",
+  "libs/nitro/gx/calls/GX_DisableBankForOBJExtPltt.c": "dsi/1.1",
+  "libs/nitro/gx/calls/GX_DisableBankForSubBGExtPltt.c": "dsi/1.1",
+  "libs/nitro/gx/calls/GX_DisableBankForSubOBJExtPltt.c": "dsi/1.1"
 }

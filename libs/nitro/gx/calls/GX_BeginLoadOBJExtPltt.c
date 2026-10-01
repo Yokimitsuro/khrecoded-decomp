@@ -45,10 +45,7 @@ typedef int GXVRamTex;
 extern u32 data_020422b8;   /* GXi_DmaId */
 #define GXi_DmaId data_020422b8
 #define MI_CpuCopy32 MIi_CpuCopy32
-/* This SDK names the bank-release helpers GX_DisableBankFor*; 4.x calls them GX_ResetBankFor*. */
-#define GX_ResetBankForBGExtPltt GX_DisableBankForBGExtPltt
-extern GXVRamOBJExtPltt GX_DisableBankForOBJExtPltt(void);
-#define GX_ResetBankForOBJExtPltt GX_DisableBankForOBJExtPltt
+extern GXVRamOBJExtPltt GX_ResetBankForOBJExtPltt(void);
 /* Real inline functions, as in the SDK headers: the value they return stays a variable (`ptr`
  * lands in ip and feeds both branches) where a macro constant would fold into each add. */
 static inline void *G2_GetOBJCharPtr(void) { return (void *)HW_OBJ_VRAM; }
@@ -91,8 +88,8 @@ extern struct {
 #define sBGExtPlttLCDCBlk data_02056f0c.sBGExtPlttLCDCBlk
 #define sBGExtPltt data_02056f0c.sBGExtPltt
 
-/* func_02007da4 -- NitroSDK gx_load2d.c: GX_BeginLoadOBJExtPltt. */
-void func_02007da4 (void)
+/* NitroSDK gx_load2d.c: begin loading the main OBJ extended palette. */
+void GX_BeginLoadOBJExtPltt(void)
 {
 
 	sOBJExtPltt = GX_ResetBankForOBJExtPltt();

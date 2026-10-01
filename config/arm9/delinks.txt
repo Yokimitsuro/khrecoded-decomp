@@ -704,7 +704,7 @@ libs/nitro/gx/auto/G2S_GetBG3CharPtr.c:
     complete
     .text       start:0x0200721c end:0x02007264
 
-libs/nitro/gx/calls/func_02007da4.c:
+libs/nitro/gx/calls/GX_BeginLoadOBJExtPltt.c:
     complete
     .text       start:0x02007da4 end:0x02007dec
 
@@ -735,6 +735,38 @@ libs/nitro/gx/calls/GX_SetBankForSubBGExtPltt.c:
 libs/nitro/gx/calls/GX_SetBankForSubOBJExtPltt.c:
     complete
     .text       start:0x02008c38 end:0x02008cb8
+
+libs/nitro/gx/calls/GX_ResetBankForBGExtPltt.c:
+    complete
+    .text       start:0x02008cf0 end:0x02008d14
+
+libs/nitro/gx/calls/GX_ResetBankForOBJExtPltt.c:
+    complete
+    .text       start:0x02008d14 end:0x02008d38
+
+libs/nitro/gx/calls/GX_ResetBankForSubBGExtPltt.c:
+    complete
+    .text       start:0x02008d60 end:0x02008d88
+
+libs/nitro/gx/calls/GX_ResetBankForSubOBJExtPltt.c:
+    complete
+    .text       start:0x02008d88 end:0x02008db0
+
+libs/nitro/gx/calls/GX_DisableBankForBGExtPltt.c:
+    complete
+    .text       start:0x02008e98 end:0x02008ebc
+
+libs/nitro/gx/calls/GX_DisableBankForOBJExtPltt.c:
+    complete
+    .text       start:0x02008ebc end:0x02008ee0
+
+libs/nitro/gx/calls/GX_DisableBankForSubBGExtPltt.c:
+    complete
+    .text       start:0x02008f44 end:0x02008f6c
+
+libs/nitro/gx/calls/GX_DisableBankForSubOBJExtPltt.c:
+    complete
+    .text       start:0x02008f6c end:0x02008f94
 
 libs/nitro/gx/calls/GX_GetBankForBGExtPltt.c:
     complete
