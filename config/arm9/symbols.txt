@@ -475,11 +475,11 @@ CARDi_ReadRomStatusCore kind:function(thumb,size=0x54) addr:0x02009b90
 CARDi_RefreshRom kind:function(thumb,size=0x44) addr:0x02009be4
 CARDi_RefreshRomCore kind:function(thumb,size=0x38) addr:0x02009c28
 CARDi_ReadRomWithCPU kind:function(thumb,size=0xd8) addr:0x02009c60
-func_02009d38 kind:function(thumb,size=0x64) addr:0x02009d38
-func_02009d9c kind:function(thumb,size=0x54) addr:0x02009d9c
-func_02009df0 kind:function(thumb,size=0x24) addr:0x02009df0
-func_02009e14 kind:function(thumb,size=0x80) addr:0x02009e14
-func_02009e94 kind:function(thumb,size=0x3c) addr:0x02009e94
+CARDi_DmaReadPageCallback kind:function(thumb,size=0x64) addr:0x02009d38
+CARDi_ReadRomWithDMA kind:function(thumb,size=0x54) addr:0x02009d9c
+CARDi_DmaReadDone kind:function(thumb,size=0x24) addr:0x02009df0
+CARDi_IsRomDmaAvailable kind:function(thumb,size=0x80) addr:0x02009e14
+CARDi_ReadRomSyncCore kind:function(thumb,size=0x3c) addr:0x02009e94
 CARDi_ReadRom kind:function(thumb,size=0x130) addr:0x02009ed0
 CARDi_InitRom kind:function(thumb,size=0x58) addr:0x0200a000
 CARD_WaitRomAsync kind:function(thumb,size=0x8) addr:0x0200a058
@@ -2827,7 +2827,7 @@ data_020574e0 kind:bss addr:0x020574e0
 data_02057500 kind:bss addr:0x02057500
 data_02057520 kind:bss addr:0x02057520
 sCardRomState kind:bss addr:0x02057620
-data_02057630 kind:bss addr:0x02057630
+sCardDmaReadInfo kind:bss addr:0x02057630
 CARDiOwnSignature kind:bss addr:0x0205764c
 data_020576e0 kind:bss addr:0x020576e0
 sCardPullOutState kind:bss addr:0x020578e0
