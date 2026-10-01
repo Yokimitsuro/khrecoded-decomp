@@ -1424,6 +1424,10 @@ libs/nns/gfd/calls/GfxQueue_Configure.c:
     complete
     .text       start:0x02013fe4 end:0x02014008
 
+libs/nns/gfd/calls/FrameStep_UpdateTaskQueue.c:
+    complete
+    .text       start:0x0201401c end:0x020140a4
+
 libs/nitro/gx/calls/GFXi_EnqueueCommand.c:
     complete
     .text       start:0x020140a4 end:0x0201410c
