@@ -166,6 +166,7 @@
   "libs/nitro/os/calls/OS_InitVAlarm.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_GetOwnerInfo.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_SpinWait.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_IsOnVram.c": "dsi/1.1",
   "libs/nitro/os/calls/OSi_SetProtectionRegion.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_SetProtectionRegionEx.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_Terminate.c": "2.0/sp2p3",
