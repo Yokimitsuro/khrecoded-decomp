@@ -198,6 +198,7 @@
   "libs/nitro/snd/calls/SNDi_FreeVoiceChannel.c": "dsi/1.1",
   "libs/nitro/dgt/calls/DGT_Hash2SetSource.c": "dsi/1.1",
   "libs/nitro/dgt/calls/DGT_Hash2GetDigest.c": "dsi/1.1",
+  "libs/nitro/math/calls/MATHi_CalcHMAC.c": "dsi/1.1",
   "libs/nitro/dgt/calls/DGTi_Hash2FillSource.c": "dsi/1.1",
   "libs/nitro/spi/calls/PMi_InsertList.c": "dsi/1.1",
   "libs/nitro/spi/calls/PMi_DeleteList.c": "dsi/1.1",
