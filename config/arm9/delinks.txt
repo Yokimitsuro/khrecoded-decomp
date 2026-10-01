@@ -992,6 +992,10 @@ libs/nitro/os/asm_stubs/auto/func_0200d5a0.c:
     complete
     .text       start:0x0200d5a0 end:0x0200d5a8
 
+libs/nitro/dgt/calls/DGTi_Hash2FillSource.c:
+    complete
+    .text       start:0x0200d618 end:0x0200d6a8
+
 libs/nitro/dgt/auto/DGT_Hash2Reset.c:
     complete
     .text       start:0x0200d6e4 end:0x0200d738
