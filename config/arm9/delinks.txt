@@ -460,6 +460,10 @@ libs/nitro/os/calls/OS_Init.c:
     complete
     .text       start:0x020034e4 end:0x0200352c
 
+libs/nitro/os/calls/OS_InitArenaEx.c:
+    complete
+    .text       start:0x02003648 end:0x02003690
+
 libs/nitro/os/auto/OS_GetArenaHi.c:
     complete
     .text       start:0x02003690 end:0x020036a4
@@ -552,6 +556,10 @@ libs/nitro/os/asm_stubs/calls/OSi_AlarmHandler.c:
     complete
     .text       start:0x02004440 end:0x02004450
 
+libs/nitro/os/auto/OS_CreateVAlarm.c:
+    complete
+    .text       start:0x02004668 end:0x0200467c
+
 libs/nitro/os/asm_stubs/auto/func_02004938.c:
     complete
     .text       start:0x02004938 end:0x0200494c
@@ -600,13 +608,26 @@ libs/nitro/os/calls/OSi_InitVramExclusive.c:
     complete
     .text       start:0x02004b80 end:0x02004bb4
 
-libs/nitro/os/calls/func_02004d34.c:
+libs/nitro/os/calls/OS_Terminate.c:
+    complete
+    .text       start:0x02004d04 end:0x02004d34
+    .bss        start:0x02056ee0 end:0x02056ee8
+
+libs/nitro/os/calls/OSi_TerminateCore.c:
     complete
     .text       start:0x02004d34 end:0x02004d44
 
 libs/nitro/os/asm_stubs/auto/OS_Halt.c:
     complete
     .text       start:0x02004d44 end:0x02004d50
+
+libs/nitro/os/auto/OS_InitEvent.c:
+    complete
+    .text       start:0x02004d50 end:0x02004d64
+
+libs/nitro/os/calls/OS_WaitEventEx.c:
+    complete
+    .text       start:0x02004d64 end:0x02004e0c
 
 libs/nitro/mi/auto/MI_SetWramBank.c:
     complete
@@ -892,6 +913,14 @@ src/calls/GX_InitGXState.c:
     complete
     .text       start:0x02008fa4 end:0x02009004
 
+libs/nitro/card/calls/CARDi_PeekEventListener.c:
+    complete
+    .text       start:0x02009004 end:0x0200903c
+
+libs/nitro/card/calls/CARDi_LockBusCondition.c:
+    complete
+    .text       start:0x0200903c end:0x02009050
+
 src/calls/func_02009114.c:
     complete
     .text       start:0x02009114 end:0x02009120
@@ -907,6 +936,10 @@ src/calls/func_02009130.c:
 src/calls/func_0200913c.c:
     complete
     .text       start:0x0200913c end:0x02009148
+
+libs/nitro/card/calls/CARD_LockRom.c:
+    complete
+    .text       start:0x02009164 end:0x020091ac
 
 src/calls/CARD_UnlockRom.c:
     complete

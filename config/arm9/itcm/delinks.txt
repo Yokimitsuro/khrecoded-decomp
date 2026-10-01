@@ -117,6 +117,10 @@ libs/nitro/fx/calls/func_01ff9cd0.c:
     complete
     .text       start:0x01ff9cd0 end:0x01ff9cfc
 
+libs/nitro/fx/calls/FX_Sqrt.c:
+    complete
+    .text       start:0x01ff9cfc end:0x01ff9d30
+
 libs/nitro/fx/auto/func_01ff9d30.c:
     complete
     .text       start:0x01ff9d30 end:0x01ff9d54
