@@ -27,6 +27,34 @@ src/overlays/ov104/calls/DetectNotDummy.c:
     complete
     .text       start:0x020d1e30 end:0x020d1ec0
 
+src/overlays/ov104/asm_stubs/calls/__DSProt_DetectFlashcart.c:
+    complete
+    .text       start:0x020d1ec0 end:0x020d1efc
+
+src/overlays/ov104/asm_stubs/calls/__DSProt_DetectNotFlashcart.c:
+    complete
+    .text       start:0x020d1efc end:0x020d1f38
+
+src/overlays/ov104/asm_stubs/calls/__DSProt_DetectEmulator.c:
+    complete
+    .text       start:0x020d1f38 end:0x020d1f74
+
+src/overlays/ov104/asm_stubs/calls/__DSProt_DetectNotEmulator.c:
+    complete
+    .text       start:0x020d1f74 end:0x020d1fb0
+
+src/overlays/ov104/asm_stubs/calls/__DSProt_DetectDummy.c:
+    complete
+    .text       start:0x020d1fb0 end:0x020d1fec
+
+src/overlays/ov104/asm_stubs/calls/__DSProt_DetectNotDummy.c:
+    complete
+    .text       start:0x020d1fec end:0x020d2028
+
+src/overlays/ov104/asm_stubs/calls/__sinit_ov104_020d2028.c:
+    complete
+    .text       start:0x020d2028 end:0x020d2070
+
 src/overlays/ov104/calls/Integrity_MACOwner_IsBad.c:
     complete
     .text       start:0x020d2070 end:0x020d218c
@@ -42,6 +70,26 @@ src/overlays/ov104/calls/Integrity_ROMTest_IsBad.c:
 src/overlays/ov104/calls/Integrity_ROMTest_IsGood.c:
     complete
     .text       start:0x020d23c4 end:0x020d24e0
+
+src/overlays/ov104/asm_stubs/calls/RunEncrypted_Integrity_MACOwner_IsBad.c:
+    complete
+    .text       start:0x020d24e0 end:0x020d251c
+
+src/overlays/ov104/asm_stubs/calls/RunEncrypted_Integrity_MACOwner_IsGood.c:
+    complete
+    .text       start:0x020d251c end:0x020d2558
+
+src/overlays/ov104/asm_stubs/calls/RunEncrypted_Integrity_ROMTest_IsBad.c:
+    complete
+    .text       start:0x020d2558 end:0x020d2594
+
+src/overlays/ov104/asm_stubs/calls/RunEncrypted_Integrity_ROMTest_IsGood.c:
+    complete
+    .text       start:0x020d2594 end:0x020d25d0
+
+src/overlays/ov104/asm_stubs/calls/__sinit_ov104_020d25d0.c:
+    complete
+    .text       start:0x020d25d0 end:0x020d2604
 
 src/overlays/ov104/calls/Encryptor_CategorizeInstruction.c:
     complete
@@ -63,6 +111,10 @@ src/overlays/ov104/calls/Encryptor_DecryptionWrapperFragment.c:
     complete
     .text       start:0x020d2908 end:0x020d2958
 
+src/overlays/ov104/asm_stubs/calls/__sinit_ov104_020d2958.c:
+    complete
+    .text       start:0x020d2958 end:0x020d2984
+
 src/overlays/ov104/calls/MACOwner_IsBad.c:
     complete
     .text       start:0x020d2984 end:0x020d2a34
@@ -72,9 +124,21 @@ src/overlays/ov104/calls/MACOwner_IsGood.c:
     complete
     .text       start:0x020d2a34 end:0x020d2ae4
 
+src/overlays/ov104/asm_stubs/calls/RunEncrypted_MACOwner_IsBad.c:
+    complete
+    .text       start:0x020d2ae4 end:0x020d2b20
+
+src/overlays/ov104/asm_stubs/calls/RunEncrypted_MACOwner_IsGood.c:
+    complete
+    .text       start:0x020d2b20 end:0x020d2b5c
+
 src/overlays/ov104/calls/ROMUtil_CRC32.c:
     complete
     .text       start:0x020d2b5c end:0x020d2bf0
+
+src/overlays/ov104/asm_stubs/calls/RunEncrypted_ROMUtil_CRC32.c:
+    complete
+    .text       start:0x020d2bf0 end:0x020d2c2c
 
 src/overlays/ov104/calls/ROMTest_IsBad.c:
     complete
@@ -108,6 +172,14 @@ src/overlays/ov104/calls/ROMTest_IsGood_CARD_UnlockRom_Thunk.c:
     complete
     .text       start:0x020d30e8 end:0x020d30f4
 
+src/overlays/ov104/asm_stubs/calls/RunEncrypted_ROMTest_IsBad.c:
+    complete
+    .text       start:0x020d30f4 end:0x020d3130
+
+src/overlays/ov104/asm_stubs/calls/RunEncrypted_ROMTest_IsGood.c:
+    complete
+    .text       start:0x020d3130 end:0x020d316c
+
 src/overlays/ov104/calls/Dummy_IsBad.c:
     complete
     .text       start:0x020d316c end:0x020d3178
@@ -115,6 +187,18 @@ src/overlays/ov104/calls/Dummy_IsBad.c:
 src/overlays/ov104/calls/Dummy_IsGood.c:
     complete
     .text       start:0x020d3178 end:0x020d3184
+
+src/overlays/ov104/asm_stubs/calls/RunEncrypted_Dummy_IsBad.c:
+    complete
+    .text       start:0x020d3184 end:0x020d31c0
+
+src/overlays/ov104/asm_stubs/calls/RunEncrypted_Dummy_IsGood.c:
+    complete
+    .text       start:0x020d31c0 end:0x020d31fc
+
+src/overlays/ov104/asm_stubs/calls/__sinit_ov104_020d31fc.c:
+    complete
+    .text       start:0x020d31fc end:0x020d3248
 
 src/overlays/ov104/calls/RC4_Init.c:
     complete
@@ -143,6 +227,10 @@ src/overlays/ov104/calls/RC4_InitAndEncryptInstructions.c:
 src/overlays/ov104/calls/RC4_InitAndDecryptInstructions.c:
     complete
     .text       start:0x020d365c end:0x020d36b4
+
+src/overlays/ov104/asm_stubs/calls/__sinit_ov104_020d36b4.c:
+    complete
+    .text       start:0x020d36b4 end:0x020d3700
 
 src/overlays/ov104/DSProt-Extra.c:
     complete
