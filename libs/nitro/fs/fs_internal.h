@@ -194,6 +194,14 @@ typedef struct FSArchive {
     u8 reserved[52];
 } FSArchive;
 
+typedef struct FSRomArchiveState {
+    u32 defaultDmaNo;
+    int cardLockId;
+    FSArchive archive;
+} FSRomArchiveState;
+
+extern FSRomArchiveState fsi_rom_archive_state;
+
 #define FS_RESULT_SUCCESS 0
 #define FS_RESULT_BUSY 2
 #define FS_RESULT_CANCELED 3

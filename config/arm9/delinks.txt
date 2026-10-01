@@ -1954,6 +1954,14 @@ libs/nitro/fs/calls/FSi_ROMFAT_GetArchiveResource.c:
     complete
     .text       start:0x0200cf20 end:0x0200cf70
 
+libs/nitro/fs/calls/FSi_ReadMemCallback.c:
+    complete
+    .text       start:0x0200cf70 end:0x0200cf98
+
+libs/nitro/fs/calls/FSi_WriteMemCallback.c:
+    complete
+    .text       start:0x0200cf98 end:0x0200cfc4
+
 libs/nitro/fs/calls/FSi_GetFileLengthIfProc.c:
     complete
     .text       start:0x0200d030 end:0x0200d070
@@ -1992,6 +2000,10 @@ libs/nitro/fs/calls/FSi_ReadRomCallback.c:
     .bss        start:0x02057b1c end:0x02057b80
     .data       start:0x02055c2c end:0x02055c40
 
+libs/nitro/fs/calls/FSi_RomArchiveProc.c:
+    complete
+    .text       start:0x0200d334 end:0x0200d3a4
+
 libs/nitro/fs/auto/FSi_EmptyArchiveProc.c:
     complete
     .text       start:0x0200d3a4 end:0x0200d3b8
@@ -2007,6 +2019,14 @@ libs/nitro/fs/auto/FSi_WriteDummyCallback.c:
 libs/nitro/fs/auto/FSi_OverrideRomArchive.c:
     complete
     .text       start:0x0200d3c8 end:0x0200d3d0
+
+libs/nitro/fs/auto/FS_TryLoadTable.c:
+    complete
+    .text       start:0x0200d524 end:0x0200d544
+
+libs/nitro/fs/auto/FS_CreateFileFromRom.c:
+    complete
+    .text       start:0x0200d544 end:0x0200d574
 
 libs/nitro/fs/calls/FS_Init.c:
     complete

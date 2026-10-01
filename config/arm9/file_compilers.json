@@ -420,5 +420,10 @@
   "libs/nitro/fs/auto/FSi_ReadDummyCallback.c": "dsi/1.1",
   "libs/nitro/fs/auto/FSi_WriteDummyCallback.c": "dsi/1.1",
   "libs/nitro/fs/auto/FSi_OverrideRomArchive.c": "dsi/1.1",
-  "libs/nitro/fs/calls/FS_Init.c": "dsi/1.1"
+  "libs/nitro/fs/calls/FS_Init.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_ReadMemCallback.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_WriteMemCallback.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_RomArchiveProc.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FS_TryLoadTable.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FS_CreateFileFromRom.c": "dsi/1.1"
 }

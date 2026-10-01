@@ -10,12 +10,6 @@ typedef struct {
     char romRootPath[8];
 } FSPathStrings;
 
-typedef struct {
-    u32 defaultDmaNo;
-    int cardLockId;
-    FSArchive archive;
-} FSRomArchiveState;
-
 FSPathStrings fsi_path_strings = {
     "rom",
     ":/",
