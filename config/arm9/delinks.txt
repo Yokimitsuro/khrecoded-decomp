@@ -1073,6 +1073,10 @@ libs/nitro/gx/calls/G3X_GetVectorMtx.c:
     complete
     .text       start:0x02006bd4 end:0x02006c04
 
+libs/nitro/gx/calls/G3X_SetToonTable.c:
+    complete
+    .text       start:0x02006c04 end:0x02006c1c
+
 libs/nitro/gx/auto/G3X_SetClearColor.c:
     complete
     .text       start:0x02006c1c end:0x02006c44
@@ -1160,6 +1164,102 @@ libs/nitro/gx/auto/G2_GetBG3CharPtr.c:
 libs/nitro/gx/auto/G2S_GetBG3CharPtr.c:
     complete
     .text       start:0x0200721c end:0x02007264
+
+libs/nitro/gx/calls/GX_LoadBGPltt.c:
+    complete
+    .text       start:0x02007264 end:0x020072c8
+
+libs/nitro/gx/calls/GXS_LoadBGPltt.c:
+    complete
+    .text       start:0x020072c8 end:0x02007324
+
+libs/nitro/gx/calls/GX_LoadOBJPltt.c:
+    complete
+    .text       start:0x02007324 end:0x02007380
+
+libs/nitro/gx/calls/GXS_LoadOBJPltt.c:
+    complete
+    .text       start:0x02007380 end:0x020073dc
+
+libs/nitro/gx/calls/GX_LoadOAM.c:
+    complete
+    .text       start:0x020073dc end:0x02007440
+
+libs/nitro/gx/calls/GXS_LoadOAM.c:
+    complete
+    .text       start:0x02007440 end:0x0200749c
+
+libs/nitro/gx/calls/GX_LoadOBJ.c:
+    complete
+    .text       start:0x0200749c end:0x02007500
+
+libs/nitro/gx/calls/GXS_LoadOBJ.c:
+    complete
+    .text       start:0x02007500 end:0x02007564
+
+libs/nitro/gx/calls/GX_LoadBG0Scr.c:
+    complete
+    .text       start:0x02007564 end:0x020075d4
+
+libs/nitro/gx/calls/GXS_LoadBG0Scr.c:
+    complete
+    .text       start:0x020075d4 end:0x02007644
+
+libs/nitro/gx/calls/GX_LoadBG1Scr.c:
+    complete
+    .text       start:0x02007644 end:0x020076b4
+
+libs/nitro/gx/calls/GXS_LoadBG1Scr.c:
+    complete
+    .text       start:0x020076b4 end:0x02007724
+
+libs/nitro/gx/calls/GX_LoadBG2Scr.c:
+    complete
+    .text       start:0x02007724 end:0x02007794
+
+libs/nitro/gx/calls/GXS_LoadBG2Scr.c:
+    complete
+    .text       start:0x02007794 end:0x02007804
+
+libs/nitro/gx/calls/GX_LoadBG3Scr.c:
+    complete
+    .text       start:0x02007804 end:0x02007874
+
+libs/nitro/gx/calls/GXS_LoadBG3Scr.c:
+    complete
+    .text       start:0x02007874 end:0x020078e4
+
+libs/nitro/gx/calls/GX_LoadBG0Char.c:
+    complete
+    .text       start:0x020078e4 end:0x02007954
+
+libs/nitro/gx/calls/GXS_LoadBG0Char.c:
+    complete
+    .text       start:0x02007954 end:0x020079c4
+
+libs/nitro/gx/calls/GX_LoadBG1Char.c:
+    complete
+    .text       start:0x020079c4 end:0x02007a34
+
+libs/nitro/gx/calls/GXS_LoadBG1Char.c:
+    complete
+    .text       start:0x02007a34 end:0x02007aa4
+
+libs/nitro/gx/calls/GX_LoadBG2Char.c:
+    complete
+    .text       start:0x02007aa4 end:0x02007b14
+
+libs/nitro/gx/calls/GXS_LoadBG2Char.c:
+    complete
+    .text       start:0x02007b14 end:0x02007b84
+
+libs/nitro/gx/calls/GX_LoadBG3Char.c:
+    complete
+    .text       start:0x02007b84 end:0x02007bf4
+
+libs/nitro/gx/calls/GXS_LoadBG3Char.c:
+    complete
+    .text       start:0x02007bf4 end:0x02007c64
 
 libs/nitro/gx/calls/GX_EndLoadBGExtPltt.c:
     complete
