@@ -1,7 +1,7 @@
-extern void func_02010a88(void *list, void *info);
-extern int data_020597d0;
+extern void PMi_DeleteList(void *list, void *info);
+extern int PMi_PreSleepCallbackList;
 
 void PM_DeletePreSleepCallback(void *info)
 {
-    func_02010a88(&data_020597d0, info);
+    PMi_DeleteList(&PMi_PreSleepCallbackList, info);
 }

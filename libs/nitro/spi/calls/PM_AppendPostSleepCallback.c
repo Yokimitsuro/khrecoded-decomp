@@ -1,7 +1,10 @@
-extern void func_02010a30(void *list, void *info, unsigned int position, int prepend);
-extern int data_020597d8;
+#include "libs/nitro/spi/calls/pm_callback_internal.h"
 
-void PM_AppendPostSleepCallback(void *info)
+void PM_AppendPostSleepCallback(PMGenCallbackInfo *info)
 {
-    func_02010a30(&data_020597d8, info, 0xff, 0);
+    PMi_InsertList(
+        &PMi_PostSleepCallbackList,
+        info,
+        PM_CALLBACK_PRIORITY_MAX,
+        PMi_COMPARE_GT);
 }

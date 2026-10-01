@@ -81,5 +81,13 @@
   "libs/nns/snd/calls/NNS_SndLockChannel.c": "dsi/1.1",
   "libs/nitro/snd/calls/SNDi_FreeVoiceChannel.c": "dsi/1.1",
   "libs/nitro/dgt/calls/DGT_Hash2SetSource.c": "dsi/1.1",
-  "libs/nitro/dgt/calls/DGTi_Hash2FillSource.c": "dsi/1.1"
+  "libs/nitro/dgt/calls/DGTi_Hash2FillSource.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_InsertList.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_DeleteList.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_ExecuteList.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PMi_InsertPreSleepCallbackEx.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_PrependPreSleepCallback.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_AppendPostSleepCallback.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_DeletePreSleepCallback.c": "dsi/1.1",
+  "libs/nitro/spi/calls/PM_DeletePostSleepCallback.c": "dsi/1.1"
 }

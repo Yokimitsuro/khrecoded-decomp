@@ -1272,9 +1272,29 @@ src/auto/func_02010a1c.c:
     complete
     .text       start:0x02010a1c end:0x02010a30
 
+libs/nitro/spi/calls/PMi_InsertList.c:
+    complete
+    .text       start:0x02010a30 end:0x02010a86
+
+libs/nitro/spi/calls/PMi_DeleteList.c:
+    complete
+    .text       start:0x02010a88 end:0x02010abe
+
+libs/nitro/spi/calls/PMi_ExecuteList.c:
+    complete
+    .text       start:0x02010ac0 end:0x02010ad4
+
+libs/nitro/spi/calls/PM_PrependPreSleepCallback.c:
+    complete
+    .text       start:0x02010ad4 end:0x02010aec
+
 libs/nitro/spi/calls/PM_AppendPostSleepCallback.c:
     complete
     .text       start:0x02010aec end:0x02010b00
+
+libs/nitro/spi/calls/PMi_InsertPreSleepCallbackEx.c:
+    complete
+    .text       start:0x02010b00 end:0x02010b18
 
 libs/nitro/spi/calls/PM_DeletePreSleepCallback.c:
     complete

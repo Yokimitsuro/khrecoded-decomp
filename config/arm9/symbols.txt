@@ -735,12 +735,12 @@ func_020106a4 kind:function(thumb,size=0x210) addr:0x020106a4
 func_020108b4 kind:function(thumb,size=0x144) addr:0x020108b4
 func_020109f8 kind:function(thumb,size=0x24) addr:0x020109f8
 func_02010a1c kind:function(thumb,size=0x14) addr:0x02010a1c
-func_02010a30 kind:function(thumb,size=0x56) addr:0x02010a30
-func_02010a88 kind:function(thumb,size=0x36) addr:0x02010a88
-func_02010ac0 kind:function(thumb,size=0x14) addr:0x02010ac0
+PMi_InsertList kind:function(thumb,size=0x56) addr:0x02010a30
+PMi_DeleteList kind:function(thumb,size=0x36) addr:0x02010a88
+PMi_ExecuteList kind:function(thumb,size=0x14) addr:0x02010ac0
 PM_PrependPreSleepCallback kind:function(thumb,size=0x18) addr:0x02010ad4
 PM_AppendPostSleepCallback kind:function(thumb,size=0x14) addr:0x02010aec
-func_02010b00 kind:function(thumb,size=0x18) addr:0x02010b00
+PMi_InsertPreSleepCallbackEx kind:function(thumb,size=0x18) addr:0x02010b00
 PM_DeletePreSleepCallback kind:function(thumb,size=0x10) addr:0x02010b18
 PM_DeletePostSleepCallback kind:function(thumb,size=0x10) addr:0x02010b28
 func_02010b38 kind:function(thumb,size=0x6c) addr:0x02010b38
@@ -2857,8 +2857,8 @@ data_02059780 kind:bss addr:0x02059780
 data_02059784 kind:bss addr:0x02059784
 data_020597a0 kind:bss addr:0x020597a0
 data_020597c0 kind:bss addr:0x020597c0
-data_020597d0 kind:bss addr:0x020597d0
-data_020597d8 kind:bss addr:0x020597d8
+PMi_PreSleepCallbackList kind:bss addr:0x020597d0
+PMi_PostSleepCallbackList kind:bss addr:0x020597d8
 data_020597dc kind:bss addr:0x020597dc
 data_020597ec kind:bss addr:0x020597ec
 data_020597fc kind:bss addr:0x020597fc
