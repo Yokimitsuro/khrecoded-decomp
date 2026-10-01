@@ -30,7 +30,7 @@ func_ov104_020d2984 kind:function(arm,size=0xb0,dsprot=(0xac,0x7d65)) addr:0x020
 func_ov104_020d2a34 kind:function(arm,size=0xb0,dsprot=(0xac,0x7e45)) addr:0x020d2a34
 func_ov104_020d2ae4 kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d2ae4
 func_ov104_020d2b20 kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d2b20
-func_ov104_020d2b5c kind:function(arm,size=0x94,dsprot=(0x90,0x8025)) addr:0x020d2b5c
+ROMUtil_CRC32 kind:function(arm,size=0x94,dsprot=(0x90,0x8025)) addr:0x020d2b5c
 func_ov104_020d2bf0 kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d2bf0
 func_ov104_020d2c2c kind:function(arm,size=0x240,dsprot=(0x23c,0x8145)) addr:0x020d2c2c
 func_ov104_020d2e6c kind:function(arm,size=0xc) addr:0x020d2e6c
@@ -42,8 +42,8 @@ func_ov104_020d30dc kind:function(arm,size=0xc) addr:0x020d30dc
 func_ov104_020d30e8 kind:function(arm,size=0xc) addr:0x020d30e8
 func_ov104_020d30f4 kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d30f4
 func_ov104_020d3130 kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d3130
-func_ov104_020d316c kind:function(arm,size=0xc,dsprot=(0x8,0x8785)) addr:0x020d316c
-func_ov104_020d3178 kind:function(arm,size=0xc,dsprot=(0x8,0x8795)) addr:0x020d3178
+Dummy_IsBad kind:function(arm,size=0xc,dsprot=(0x8,0x8785)) addr:0x020d316c
+Dummy_IsGood kind:function(arm,size=0xc,dsprot=(0x8,0x8795)) addr:0x020d3178
 func_ov104_020d3184 kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d3184
 func_ov104_020d31c0 kind:function(arm,size=0x3c,dsprot=0x24) addr:0x020d31c0
 __sinit_ov104_020d31fc kind:function(arm,size=0x4c) addr:0x020d31fc

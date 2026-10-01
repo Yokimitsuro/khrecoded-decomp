@@ -1,9 +1,12 @@
 {
+  "src/overlays/ov104/calls/Dummy_IsBad.c": "2.0/sp2p3",
+  "src/overlays/ov104/calls/Dummy_IsGood.c": "2.0/sp2p3",
   "src/overlays/ov104/calls/RC4_Byte.c": "2.0/sp2p3",
   "src/overlays/ov104/calls/RC4_DecryptInstructions.c": "2.0/sp2p3",
   "src/overlays/ov104/calls/RC4_EncryptInstructions.c": "2.0/sp2p3",
   "src/overlays/ov104/calls/RC4_Init.c": "2.0/sp2p3",
   "src/overlays/ov104/calls/RC4_InitAndDecryptInstructions.c": "2.0/sp2p3",
   "src/overlays/ov104/calls/RC4_InitAndEncryptInstructions.c": "2.0/sp2p3",
-  "src/overlays/ov104/calls/RC4_InitSBox.c": "2.0/sp2p3"
+  "src/overlays/ov104/calls/RC4_InitSBox.c": "2.0/sp2p3",
+  "src/overlays/ov104/calls/ROMUtil_CRC32.c": "2.0/sp2p3"
 }

@@ -49,7 +49,7 @@ def discover_src_roots():
 
 
 SYM_RE = re.compile(
-    r"(\S+)\s+kind:function\((arm|thumb),[^)]*size=0x([0-9a-fA-F]+)[^)]*\)"
+    r"(\S+)\s+kind:function\((arm|thumb),[^\r\n]*size=0x([0-9a-fA-F]+)[^\r\n]*\)"
     r"\s+addr:0x([0-9a-fA-F]+)"
 )
 DATA_LINE_RE = re.compile(r"^\s+\.(rodata|data|ctor|bss)\s+start:0x([0-9a-f]+)\s+end:0x([0-9a-f]+)")
