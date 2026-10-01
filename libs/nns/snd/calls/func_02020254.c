@@ -487,7 +487,7 @@ typedef struct NNSSndArcStrmInfo {
     u8 playerNo;
     u8 flags;
 } NNSSndArcStrmInfo;
-const NNSSndArcStrmInfo * func_0201eba4(int strmNo);
+const NNSSndArcStrmInfo * NNS_SndArcGetStrmInfo(int strmNo);
 typedef struct NNSSndFader {
     int origin;
     int target;
@@ -576,7 +576,7 @@ BOOL func_02020254 (struct NNSSndStrmHandle * handle, int strmNo, u32 offset)
     const NNSSndArcStrmInfo * strmInfo;
 
 
-    strmInfo = func_0201eba4(strmNo);
+    strmInfo = NNS_SndArcGetStrmInfo(strmNo);
     if (strmInfo == NULL) return FALSE;
 
     return func_02020560(

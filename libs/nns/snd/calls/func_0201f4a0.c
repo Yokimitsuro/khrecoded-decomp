@@ -110,8 +110,8 @@ typedef struct NNSSndArcWaveArcInfo {
     u32 fileId :24;
     u32 flags  :8;
 } NNSSndArcWaveArcInfo;
-const NNSSndArcBankInfo * func_0201eadc(int bankNo);
-const NNSSndArcWaveArcInfo * func_0201eb40(int waveArcNo);
+const NNSSndArcBankInfo * NNS_SndArcGetBankInfo(int bankNo);
+const NNSSndArcWaveArcInfo * NNS_SndArcGetWaveArcInfo(int waveArcNo);
 void * NNS_SndArcGetFileAddress(u32 fileId);
 extern SNDBankData * func_0201f7e0(u32 fileId, NNSSndHeapHandle heap, BOOL bSetAddr);
 extern BOOL func_0201fbf0(SNDWaveArc * waveArc, const SNDBankData * bank, int waveArcNo, u32 fileId, NNSSndHeapHandle heap);
@@ -129,7 +129,7 @@ NNSSndArcLoadResult func_0201f4a0 (int bankNo, u32 loadFlag, NNSSndHeapHandle he
     NNSSndArcLoadResult result;
     int i;
 
-    bankInfo = func_0201eadc(bankNo);
+    bankInfo = NNS_SndArcGetBankInfo(bankNo);
     if (bankInfo == NULL) return NNS_SND_ARC_LOAD_ERROR_INVALID_BANK_NO;
 
     if (loadFlag & NNS_SND_ARC_LOAD_BANK) {
@@ -144,7 +144,7 @@ NNSSndArcLoadResult func_0201f4a0 (int bankNo, u32 loadFlag, NNSSndHeapHandle he
     for (i = 0; i < NNS_SND_ARC_BANK_TO_WAVEARC_NUM; i++) {
         if (bankInfo->waveArcNo[i] == NNS_SND_ARC_INVALID_WAVEARC_NO) continue;
 
-        waveArcInfo = func_0201eb40(bankInfo->waveArcNo[i]);
+        waveArcInfo = NNS_SndArcGetWaveArcInfo(bankInfo->waveArcNo[i]);
         if (waveArcInfo == NULL) return NNS_SND_ARC_LOAD_ERROR_INVALID_WAVEARC_NO;
 
         result = func_0201f5e0(bankInfo->waveArcNo[i], loadFlag, heap, bSetAddr, &waveArc);

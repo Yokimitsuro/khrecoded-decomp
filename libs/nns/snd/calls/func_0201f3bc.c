@@ -116,7 +116,7 @@ typedef struct NNSSndArcSeqInfo {
     u32 fileId;
     struct NNSSndSeqParam param;
 } NNSSndArcSeqInfo;
-const NNSSndArcSeqInfo * func_0201ea14(int seqNo);
+const NNSSndArcSeqInfo * NNS_SndArcGetSeqInfo(int seqNo);
 void * NNS_SndArcGetFileAddress(u32 fileId);
 extern NNSSndSeqData * func_0201f708(u32 fileId, NNSSndHeapHandle heap, BOOL bSetAddr);
 extern NNSSndArcLoadResult func_0201f4a0 (int bankNo, u32 loadFlag, NNSSndHeapHandle heap, BOOL bSetAddr, struct SNDBankData ** pData);
@@ -130,7 +130,7 @@ NNSSndArcLoadResult func_0201f3bc (int seqNo, u32 loadFlag, NNSSndHeapHandle hea
     SNDBankData * bank = NULL;
     NNSSndArcLoadResult result;
 
-    seqInfo = func_0201ea14(seqNo);
+    seqInfo = NNS_SndArcGetSeqInfo(seqNo);
     if (seqInfo == NULL) return NNS_SND_ARC_LOAD_ERROR_INVALID_SEQ_NO;
 
     result = func_0201f4a0(seqInfo->param.bankNo, loadFlag, heap, bSetAddr, NULL);

@@ -133,7 +133,7 @@ typedef struct NNSSndArcSeqInfo {
     u32 fileId;
     struct NNSSndSeqParam param;
 } NNSSndArcSeqInfo;
-const NNSSndArcSeqInfo * func_0201ea14(int seqNo);
+const NNSSndArcSeqInfo * NNS_SndArcGetSeqInfo(int seqNo);
 typedef struct NNSSndFader {
     int origin;
     int target;
@@ -187,7 +187,7 @@ BOOL func_0201fd48 (NNSSndHandle * handle, int seqNo)
     const NNSSndArcSeqInfo * info;
 
 
-    info = func_0201ea14(seqNo);
+    info = NNS_SndArcGetSeqInfo(seqNo);
     if (info == NULL) return FALSE;
 
     return func_0201febc(

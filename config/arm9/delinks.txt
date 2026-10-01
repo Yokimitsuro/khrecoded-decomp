@@ -1996,6 +1996,10 @@ libs/nns/snd/calls/NNS_SndStrmFreeChannel.c:
     complete
     .text       start:0x0201e044 end:0x0201e06c
 
+libs/nns/snd/calls/NNS_SndStrmStart.c:
+    complete
+    .text       start:0x0201e20c end:0x0201e260
+
 libs/nns/snd/calls/NNS_SndStrmStop.c:
     complete
     .text       start:0x0201e260 end:0x0201e27c
@@ -2035,6 +2039,42 @@ libs/nitro/snd/calls/SND_SetActiveSlotSwap.c:
 src/calls/func_0201ea04.c:
     complete
     .text       start:0x0201ea04 end:0x0201ea14
+
+libs/nns/snd/calls/NNS_SndArcGetSeqInfo.c:
+    complete
+    .text       start:0x0201ea14 end:0x0201ea78
+
+libs/nns/snd/calls/NNS_SndArcGetSeqArcInfo.c:
+    complete
+    .text       start:0x0201ea78 end:0x0201eadc
+
+libs/nns/snd/calls/NNS_SndArcGetBankInfo.c:
+    complete
+    .text       start:0x0201eadc end:0x0201eb40
+
+libs/nns/snd/calls/NNS_SndArcGetWaveArcInfo.c:
+    complete
+    .text       start:0x0201eb40 end:0x0201eba4
+
+libs/nns/snd/calls/NNS_SndArcGetStrmInfo.c:
+    complete
+    .text       start:0x0201eba4 end:0x0201ec08
+
+libs/nns/snd/calls/NNS_SndArcGetPlayerInfo.c:
+    complete
+    .text       start:0x0201ec08 end:0x0201ec6c
+
+libs/nns/snd/calls/NNS_SndArcGetStrmPlayerInfo.c:
+    complete
+    .text       start:0x0201ec6c end:0x0201ecd0
+
+libs/nns/snd/calls/NNS_SndArcGetFileOffset.c:
+    complete
+    .text       start:0x0201ed00 end:0x0201ed28
+
+libs/nns/snd/calls/NNS_SndArcGetFileSize.c:
+    complete
+    .text       start:0x0201ed28 end:0x0201ed50
 
 libs/nns/snd/calls/NNS_SndArcReadFile.c:
     complete
@@ -2172,9 +2212,25 @@ libs/nns/snd/auto/NNS_SndStrmHandleRelease.c:
     complete
     .text       start:0x0202031c end:0x02020334
 
+libs/nns/snd/calls/NNS_SndArcStrmGetCurrentPlayingPos.c:
+    complete
+    .text       start:0x02020334 end:0x02020368
+
+libs/nns/snd/calls/NNS_SndArcStrmGetTimeLength.c:
+    complete
+    .text       start:0x02020368 end:0x0202039c
+
+libs/nns/snd/calls/AllocPlayer.c:
+    complete
+    .text       start:0x020204a8 end:0x02020534
+
 libs/nns/snd/auto/FreePlayer.c:
     complete
     .text       start:0x02020534 end:0x02020560
+
+libs/nns/snd/calls/ForceStopStrm_2.c:
+    complete
+    .text       start:0x02020824 end:0x020208bc
 
 libs/nns/snd/calls/AllocChannel.c:
     complete
