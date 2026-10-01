@@ -1586,6 +1586,10 @@ libs/nitro/card/calls/CARDi_TryWaitAsync.c:
     complete
     .text       start:0x020092b4 end:0x020092cc
 
+libs/nitro/card/calls/CARDi_InitResourceLock.c:
+    complete
+    .text       start:0x020092cc end:0x020092e4
+
 libs/nitro/card/calls/CARDi_InitCommand.c:
     complete
     .text       start:0x020092e4 end:0x02009314
@@ -1752,6 +1756,30 @@ libs/nitro/gx/asm_stubs/auto/CP_SaveContext.c:
 libs/nitro/gx/asm_stubs/auto/CPi_RestoreContext.c:
     complete
     .text       start:0x0200a1b0 end:0x0200a1ec
+
+libs/nitro/fs/calls/FSi_IsEventCommand.c:
+    complete
+    .text       start:0x0200a1ec end:0x0200a214
+
+libs/nitro/fs/calls/FSi_EndCommand.c:
+    complete
+    .text       start:0x0200a214 end:0x0200a2b8
+
+libs/nitro/fs/calls/FSi_WaitForArchiveCompletion.c:
+    complete
+    .text       start:0x0200a2b8 end:0x0200a310
+
+libs/nitro/fs/calls/FSi_NextCommand.c:
+    complete
+    .text       start:0x0200a690 end:0x0200a83c
+
+libs/nitro/fs/calls/FSi_ExecuteAsyncCommand.c:
+    complete
+    .text       start:0x0200a83c end:0x0200a8c0
+
+libs/nitro/fs/calls/FSi_ExecuteSyncCommand.c:
+    complete
+    .text       start:0x0200a8c0 end:0x0200a944
 
 libs/nitro/fs/calls/FSi_SendCommand.c:
     complete

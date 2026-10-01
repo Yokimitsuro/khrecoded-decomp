@@ -152,6 +152,7 @@ u32 CARDi_ReadRomStatusCore(void);
 void CARDi_RefreshRom(u32 warningMask);
 void CARDi_RefreshRomCore(void);
 void CARDi_CheckPulledOutCore(u32 id);
+void CARDi_InitResourceLock(void);
 void CARDi_EndTask(CARDiCommon *common);
 
 #endif
