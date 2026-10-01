@@ -286,6 +286,7 @@
   "libs/nitro/card/calls/CARD_UnlockBackup.c": "dsi/1.1",
   "libs/nitro/card/calls/CARDi_LockResource.c": "2.0/base",
   "libs/nitro/card/calls/CARDi_UnlockResource.c": "dsi/1.1",
+  "libs/nitro/card/calls/CARDi_GetAccessLevel.c": "dsi/1.1",
   "libs/nitro/card/calls/CARDi_PeekEventListener.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_TryLockByWord.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_TryLockCard.c": "dsi/1.1",

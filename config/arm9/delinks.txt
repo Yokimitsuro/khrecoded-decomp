@@ -1570,6 +1570,10 @@ libs/nitro/card/calls/CARDi_UnlockResource.c:
     complete
     .text       start:0x0200923c end:0x0200928c
 
+libs/nitro/card/calls/CARDi_GetAccessLevel.c:
+    complete
+    .text       start:0x0200928c end:0x0200929e
+
 libs/nitro/card/calls/CARDi_WaitAsync.c:
     complete
     .text       start:0x020092a0 end:0x020092b4
