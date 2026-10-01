@@ -1,4 +1,4 @@
-extern void func_01ff86fc(unsigned data, void *dst, unsigned size);
+extern void MIi_CpuClear32(unsigned data, void *dst, unsigned size);
 
 void *NNSi_AllocFromHeadOfExpHeap(int *hh, unsigned size, unsigned align) {
     int start = hh[0];
@@ -10,7 +10,7 @@ void *NNSi_AllocFromHeadOfExpHeap(int *hh, unsigned size, unsigned align) {
     flag = (unsigned char)hh[-1];
     bytes = (unsigned)(new_top - start);
     if (flag & 1) {
-        func_01ff86fc(0, (void *)start, bytes);
+        MIi_CpuClear32(0, (void *)start, bytes);
     }
     hh[0] = new_top;
     return (void *)aligned;

@@ -1,5 +1,5 @@
 extern void *func_02013620(void *p);
-extern void func_01ff86fc(unsigned int data, void *dst, unsigned int size);
+extern void MIi_CpuClear32(unsigned int data, void *dst, unsigned int size);
 
 typedef struct {
     char _0[0x20];
@@ -17,7 +17,7 @@ void *func_02013638(X02010ce4 *p)
         unsigned int size = p->size;
 
         if (flags & 1)
-            func_01ff86fc(0, out, size);
+            MIi_CpuClear32(0, out, size);
     }
 
     return out;

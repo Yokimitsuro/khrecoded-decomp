@@ -2,5 +2,5 @@
 
 BOOL GX_IsDispOn(void)
 {
-    return sIsDispOn;
+    return gGXDataState.isDisplayOn;
 }

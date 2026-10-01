@@ -1,7 +1,6 @@
 typedef unsigned int u32;
 
-/* Third linked copy of the NitroSDK startup clear primitive. */
-asm void func_01ff86fc(register u32 value,
+asm void MIi_CpuClear32(register u32 value,
                                     register void *destination,
                                     register u32 size)
 {

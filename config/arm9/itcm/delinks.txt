@@ -29,7 +29,7 @@ libs/nitro/mi/asm_stubs/auto/MIi_CpuCopy16.c:
     complete
     .text       start:0x01ff869c end:0x01ff86b8
 
-libs/nitro/os/asm_stubs/auto/func_01ff86fc.c:
+libs/nitro/mi/asm_stubs/auto/MIi_CpuClear32.c:
     complete
     .text       start:0x01ff86fc end:0x01ff8710
 

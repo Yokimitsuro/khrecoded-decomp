@@ -969,13 +969,37 @@ libs/nitro/mtx/calls/Camera_BuildProjectionMtx.c:
     complete
     .text       start:0x02005dd8 end:0x02005f24
 
-src/auto/func_02006460.c:
+libs/nitro/mtx/calls/MTX_OrthoW.c:
+    complete
+    .text       start:0x02005f24 end:0x02006138
+
+libs/nitro/fx/calls/FX_Atan2.c:
+    complete
+    .text       start:0x02006138 end:0x020062d0
+
+libs/nitro/fx/calls/FX_Atan2Idx.c:
+    complete
+    .text       start:0x020062d0 end:0x02006460
+
+libs/nitro/fx/auto/BootInitHookNoOp.c:
     complete
     .text       start:0x02006460 end:0x02006464
 
-src/auto/func_02006464.c:
+libs/nitro/fx/calls/FX_Mul.c:
     complete
     .text       start:0x02006464 end:0x0200647c
+
+libs/nitro/fx/calls/FX_Mul32x64cFunc.c:
+    complete
+    .text       start:0x0200647c end:0x0200649c
+
+libs/nitro/gx/calls/GX_Init.c:
+    complete
+    .text       start:0x0200649c end:0x020065e4
+
+libs/nitro/gx/calls/GX_VBlankIntr.c:
+    complete
+    .text       start:0x0200660c end:0x02006644
 
 libs/nitro/gx/auto/GX_IsDispOn.c:
     complete
@@ -1001,13 +1025,33 @@ libs/nitro/gx/auto/GXx_SetMasterBrightness_.c:
     complete
     .text       start:0x0200675c end:0x02006784
 
+libs/nitro/gx/auto/GXx_GetMasterBrightness_.c:
+    complete
+    .text       start:0x02006784 end:0x020067c4
+
+libs/nitro/gx/calls/G2x_SetBGyAffine_.c:
+    complete
+    .text       start:0x020067c4 end:0x02006864
+
 libs/nitro/gx/auto/G2x_SetBlendAlpha_.c:
     complete
     .text       start:0x02006864 end:0x02006880
 
+libs/nitro/gx/calls/G2x_SetBlendBrightness_.c:
+    complete
+    .text       start:0x02006880 end:0x020068a4
+
+libs/nitro/gx/calls/G2x_SetBlendBrightnessExt_.c:
+    complete
+    .text       start:0x020068a4 end:0x020068e8
+
 libs/nitro/gx/calls/G3X_ResetMtxStack.c:
     complete
     .text       start:0x020069ec end:0x02006a58
+
+libs/nitro/gx/calls/G3X_ClearFifo.c:
+    complete
+    .text       start:0x02006a58 end:0x02006a7c
 
 src/calls/G3X_InitMtxStack.c:
     complete

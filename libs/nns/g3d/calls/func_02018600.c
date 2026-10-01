@@ -22,10 +22,10 @@ typedef volatile unsigned char vu8;
 
 
 
-void func_01ff86fc(u32 data, void * destp, u32 size);
+void MIi_CpuClear32(u32 data, void * destp, u32 size);
 static inline void MI_CpuFill32 (void * dest, u32 data, u32 size)
 {
-    func_01ff86fc(data, dest, size);
+    MIi_CpuClear32(data, dest, size);
 }
 static inline void MI_CpuClear32 (void * dest, u32 size)
 {

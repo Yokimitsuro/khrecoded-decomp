@@ -1,10 +1,9 @@
 #ifndef NITRO_GX_INTERNAL_H
 #define NITRO_GX_INTERNAL_H
 
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int BOOL;
-typedef volatile unsigned int vu32;
+#include "libs/nitro/os/os_types_internal.h"
+
+typedef volatile u32 vu32;
 
 typedef enum GXBGMode {
     GX_BGMODE_0 = 0,
@@ -39,8 +38,19 @@ typedef enum GXDispMode {
 #define GX_DISPCNT_DISPLAY_MODE_MASK 0x00030000
 #define GX_DISPCNT_VRAM_BLOCK_MASK 0x000c0000
 
-extern u16 sIsDispOn;
-extern u16 sDispMode;
+typedef struct GXDataState {
+    u16 isDisplayOn;
+    u16 padding;
+    u32 dmaId;
+} GXDataState;
+
+typedef struct GXBssState {
+    u16 displayMode;
+    volatile u16 vramLockId;
+} GXBssState;
+
+extern GXDataState gGXDataState;
+extern GXBssState gGXBssState;
 
 BOOL GX_IsDispOn(void);
 void GX_DispOff(void);

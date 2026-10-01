@@ -1,9 +1,8 @@
 #ifndef NITRO_MTX_TYPES_INTERNAL_H
 #define NITRO_MTX_TYPES_INTERNAL_H
 
-#include "libs/nitro/os/os_types_internal.h"
+#include "libs/nitro/fx/fx_types_internal.h"
 
-typedef int fx32;
 
 typedef struct MtxFx22 {
     fx32 _00;
@@ -12,7 +11,6 @@ typedef struct MtxFx22 {
     fx32 _11;
 } MtxFx22;
 
-typedef long long fx64c;
 
 typedef union MtxFx44 {
     struct {

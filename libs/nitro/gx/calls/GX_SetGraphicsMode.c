@@ -4,8 +4,8 @@ void GX_SetGraphicsMode(GXDispMode displayMode, GXBGMode bgMode, GXBG0As bg0Mode
 {
     u32 displayControl = REG_GX_DISPCNT;
 
-    sDispMode = (u16)displayMode;
-    if (!sIsDispOn) {
+    gGXBssState.displayMode = (u16)displayMode;
+    if (!gGXDataState.isDisplayOn) {
         displayMode = GX_DISPMODE_OFF;
     }
 
@@ -18,7 +18,7 @@ void GX_SetGraphicsMode(GXDispMode displayMode, GXBGMode bgMode, GXBG0As bg0Mode
                    | bgMode
                    | (bg0Mode << 3);
 
-    if (sDispMode == GX_DISPMODE_OFF) {
-        sIsDispOn = FALSE;
+    if (gGXBssState.displayMode == GX_DISPMODE_OFF) {
+        gGXDataState.isDisplayOn = FALSE;
     }
 }

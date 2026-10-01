@@ -2,10 +2,10 @@
 
 void GX_DispOn(void)
 {
-    sIsDispOn = TRUE;
-    if (sDispMode != GX_DISPMODE_OFF) {
+    gGXDataState.isDisplayOn = TRUE;
+    if (gGXBssState.displayMode != GX_DISPMODE_OFF) {
         REG_GX_DISPCNT = (REG_GX_DISPCNT & ~GX_DISPCNT_DISPLAY_MODE_MASK)
-                       | (sDispMode << 16);
+                       | (gGXBssState.displayMode << 16);
     } else {
         REG_GX_DISPCNT |= GX_DISPMODE_GRAPHICS << 16;
     }
