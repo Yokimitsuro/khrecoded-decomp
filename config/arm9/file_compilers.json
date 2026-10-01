@@ -172,6 +172,7 @@
   "libs/nitro/gx/auto/G3X_GetMtxStackLevelPJ.c": "dsi/1.1",
   "libs/nitro/gx/calls/GXS_EndLoadBGExtPltt.c": "dsi/1.1",
   "libs/nitro/fs/calls/FSi_OnRomReadDone.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_SendCommand.c": "dsi/1.1",
   "libs/nitro/pxi/auto/PXI_IsCallbackReady.c": "dsi/1.1",
   "libs/nitro/snd/calls/SND_GetPlayerStatus.c": "dsi/1.1",
   "libs/nitro/snd/calls/SND_AlarmInit.c": "dsi/1.1",
