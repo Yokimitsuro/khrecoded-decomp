@@ -557,5 +557,9 @@
   "libs/nns/gfd/calls/NNS_GfdFreeLnkPlttVram.c": "dsi/1.1",
   "libs/nns/gfd/data/sLnkTexInitialSlots.c": "dsi/1.1",
   "libs/nns/gfd/data/sLnkTexVramManager.c": "dsi/1.1",
-  "libs/nns/gfd/data/sLnkPlttVramManager.c": "dsi/1.1"
+  "libs/nns/gfd/data/sLnkPlttVramManager.c": "dsi/1.1",
+  "libs/nns/g2d/auto/NNS_G2dFontGetCharWidthsFromIndex.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNSi_G2dFontGetStringWidth.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNSi_G2dFontGetTextHeight.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNSi_G2dFontGetTextRect.c": "dsi/1.1"
 }

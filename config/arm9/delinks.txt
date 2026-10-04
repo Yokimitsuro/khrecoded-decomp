@@ -3561,21 +3561,37 @@ libs/nns/g2d/calls/NNS_G2dBGLoadScreenRect.c:
     complete
     .text       start:0x020167e4 end:0x02016938
 
-libs/nns/g2d/auto/func_02016938.c:
+libs/nns/g2d/auto/GetGlyphIndex.c:
     complete
     .text       start:0x02016938 end:0x02016a00
 
-src/calls/func_02016a00.c:
+libs/nns/g2d/calls/NNS_G2dFontInitUTF16.c:
     complete
     .text       start:0x02016a00 end:0x02016a24
 
-libs/nns/g2d/calls/func_02016a24.c:
+libs/nns/g2d/calls/NNS_G2dFontFindGlyphIndex.c:
     complete
     .text       start:0x02016a24 end:0x02016a6c
 
-libs/nns/g2d/calls/func_02016bd4.c:
+libs/nns/g2d/auto/NNS_G2dFontGetCharWidthsFromIndex.c:
+    complete
+    .text       start:0x02016a6c end:0x02016ab4
+
+libs/nns/g2d/calls/NNSi_G2dFontGetStringWidth.c:
+    complete
+    .text       start:0x02016ab4 end:0x02016b60
+
+libs/nns/g2d/calls/NNSi_G2dFontGetTextHeight.c:
+    complete
+    .text       start:0x02016b60 end:0x02016bd4
+
+libs/nns/g2d/calls/NNSi_G2dFontGetTextWidth.c:
     complete
     .text       start:0x02016bd4 end:0x02016c2c
+
+libs/nns/g2d/calls/NNSi_G2dFontGetTextRect.c:
+    complete
+    .text       start:0x02016c2c end:0x02016cc0
 
 libs/nns/g2d/calls/func_020174a8.c:
     complete
@@ -3593,7 +3609,7 @@ libs/nns/g2d/calls/NNSi_G2dBitReaderRead.c:
     complete
     .text       start:0x02018400 end:0x02018460
 
-src/auto/func_02018460.c:
+libs/nns/g2d/auto/NNSi_G2dSplitCharUTF16.c:
     complete
     .text       start:0x02018460 end:0x02018474
 

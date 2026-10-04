@@ -48,8 +48,7 @@ typedef struct NNSG2dFontCodeMap {
     u16 mapInfo[];
 } NNSG2dFontCodeMap;
 
-/* func_02016938 -- NitroSystem g2d_Font.c: GetGlyphIndex. */
-u16 func_02016938 (const NNSG2dFontCodeMap * pMap, u16 c)
+u16 GetGlyphIndex (const NNSG2dFontCodeMap * pMap, u16 c)
 {
     u16 index = NNS_G2D_GLYPH_INDEX_NOT_FOUND;
 

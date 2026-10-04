@@ -65,10 +65,9 @@ typedef struct NNSG2dFont {
     NNSG2dFontInformation * pRes;
     NNSiG2dSplitCharCallback cbCharSpliter;
 } NNSG2dFont;
-extern u16 func_02016938 (const NNSG2dFontCodeMap * pMap, u16 c);
+extern u16 GetGlyphIndex (const NNSG2dFontCodeMap * pMap, u16 c);
 
-/* func_02016a24 -- NitroSystem g2d_Font.c: NNS_G2dFontFindGlyphIndex. */
-u16 func_02016a24 (const NNSG2dFont * pFont, u16 c)
+u16 NNS_G2dFontFindGlyphIndex (const NNSG2dFont * pFont, u16 c)
 {
     const NNSG2dFontCodeMap * pMap;
 
@@ -77,7 +76,7 @@ u16 func_02016a24 (const NNSG2dFont * pFont, u16 c)
 
     while (pMap != NULL) {
         if ((pMap->ccodeBegin <= c) && (c <= pMap->ccodeEnd)) {
-            return func_02016938(pMap, c);
+            return GetGlyphIndex(pMap, c);
         }
 
         pMap = pMap->pNext;

@@ -65,17 +65,16 @@ typedef struct NNSG2dFont {
     NNSG2dFontInformation * pRes;
     NNSiG2dSplitCharCallback cbCharSpliter;
 } NNSG2dFont;
-int func_02016ab4(const NNSG2dFont * pFont, int hSpace, const void * str, const void ** pPos);
-extern int func_02016ab4 (const NNSG2dFont * pFont, int hSpace, const void * str, const void ** pPos);
+int NNSi_G2dFontGetStringWidth(const NNSG2dFont * pFont, int hSpace, const void * str, const void ** pPos);
+extern int NNSi_G2dFontGetStringWidth (const NNSG2dFont * pFont, int hSpace, const void * str, const void ** pPos);
 
-/* func_02016bd4 -- NitroSystem g2d_Font.c: NNSi_G2dFontGetTextWidth. */
-int func_02016bd4 (const NNSG2dFont * pFont, int hSpace, const void * txt)
+int NNSi_G2dFontGetTextWidth (const NNSG2dFont * pFont, int hSpace, const void * txt)
 {
     int width = 0;
 
 
     while (txt != NULL) {
-        const int line_width = func_02016ab4(pFont, hSpace, txt, &txt);
+        const int line_width = NNSi_G2dFontGetStringWidth(pFont, hSpace, txt, &txt);
         if (line_width > width) {
             width = line_width;
         }
