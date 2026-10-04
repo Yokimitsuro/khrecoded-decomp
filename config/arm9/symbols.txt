@@ -1039,10 +1039,10 @@ NNSi_G2dTextCanvasDrawText kind:function(arm,size=0x124) addr:0x02017e00
 NNSi_G2dTextCanvasDrawTextRect kind:function(arm,size=0xe0) addr:0x02017f24
 NNSi_G2dTextCanvasDrawTaggedText kind:function(arm,size=0x160) addr:0x02018004
 NNSi_G2dGetUnpackedFont kind:function(arm,size=0x1c4) addr:0x02018164
-func_02018328 kind:function(arm,size=0xd8) addr:0x02018328
+NNSi_G2dUnpackNFT kind:function(arm,size=0xd8) addr:0x02018328
 NNSi_G2dBitReaderRead kind:function(arm,size=0x60) addr:0x02018400
 NNSi_G2dSplitCharUTF16 kind:function(arm,size=0x14) addr:0x02018460
-func_02018474 kind:function(arm,size=0x94) addr:0x02018474
+NNSi_G2dBGGetCharSize kind:function(arm,size=0x94) addr:0x02018474
 NTRi_GetRegionTableSize kind:function(arm,size=0x60) addr:0x02018508
 func_02018568 kind:function(arm,size=0x98) addr:0x02018568
 func_02018600 kind:function(arm,size=0x54) addr:0x02018600
@@ -2608,7 +2608,7 @@ sG2dScreenTablePadding kind:data(any) addr:0x02053098
 VTABLE_BG kind:data(word[3]) addr:0x020530b0
 VTABLE_OBJ1D kind:data(word[3]) addr:0x020530bc
 sMaxObjectSizeTable kind:data(byte[32]) addr:0x020530c8
-sBGControlRegisters kind:data(any) addr:0x020530e8
+NNSiG2dBGCNTTable kind:data(word[8]) addr:0x020530e8
 data_02053108 kind:data(any) addr:0x02053108
 data_02053109 kind:data(any) addr:0x02053109
 data_0205310a kind:data(any) addr:0x0205310a

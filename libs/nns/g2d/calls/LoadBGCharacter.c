@@ -53,7 +53,7 @@ typedef union GXCharFmt256 {
 } GXCharFmt256;
 
 extern u32 GXi_DmaId;
-extern REGType16v * const sBGControlRegisters[];
+extern REGType16v * const NNSiG2dBGCNTTable[];
 extern void DC_FlushRange(const void *startAddress, u32 size);
 extern void MIi_DmaCopy16(u32 dmaNo, const void *source, void *destination,
                           u32 size, BOOL waitForCompletion);
@@ -74,7 +74,7 @@ static inline void NNSi_G2dDmaCopy16(u32 dmaNo, const void *source,
 
 static inline REGType16v *GetBGnCNT(NNSG2dBGSelect bg)
 {
-    return sBGControlRegisters[bg];
+    return NNSiG2dBGCNTTable[bg];
 }
 
 static inline BOOL IsMainBG(NNSG2dBGSelect bg)

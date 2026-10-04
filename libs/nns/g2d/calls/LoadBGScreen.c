@@ -22,9 +22,9 @@ typedef struct NNSG2dScreenData {
     u32 rawData[1];
 } NNSG2dScreenData;
 
-extern volatile u16 * const sBGControlRegisters[];
+extern volatile u16 * const NNSiG2dBGCNTTable[];
 
-extern void func_02018474(int *pWidth, int *pHeight, NNSG2dBGSelect bg);
+extern void NNSi_G2dBGGetCharSize(int *pWidth, int *pHeight, NNSG2dBGSelect bg);
 extern void DC_FlushRange(const void *startAddr, u32 nBytes);
 extern void NNS_G2dBGLoadScreenRect(void *pScreenDst,
                           const NNSG2dScreenData *pScreenData,
@@ -38,7 +38,7 @@ static inline BOOL IsMainBG(NNSG2dBGSelect bg)
 
 static inline volatile u16 *GetBGnCNT(NNSG2dBGSelect bg)
 {
-    return sBGControlRegisters[bg];
+    return NNSiG2dBGCNTTable[bg];
 }
 
 static inline int GetBGScrOffset(void)
@@ -68,7 +68,7 @@ void LoadBGScreen(NNSG2dBGSelect bg, const NNSG2dScreenData *pScreenData)
         const int scn_cwidth = pScreenData->screenWidth / 8;
         const int scn_cheight = pScreenData->screenHeight / 8;
 
-        func_02018474(&plane_cwidth, &plane_cheight, bg);
+        NNSi_G2dBGGetCharSize(&plane_cwidth, &plane_cheight, bg);
         load_cwidth = (plane_cwidth > scn_cwidth) ? scn_cwidth : plane_cwidth;
         load_cheight = (plane_cheight > scn_cheight) ? scn_cheight : plane_cheight;
     }

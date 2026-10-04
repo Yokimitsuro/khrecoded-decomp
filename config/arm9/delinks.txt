@@ -3649,6 +3649,10 @@ libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTaggedText.c:
     complete
     .text       start:0x02018004 end:0x02018164
 
+libs/nns/g2d/auto/NNSi_G2dUnpackNFT.c:
+    complete
+    .text       start:0x02018328 end:0x02018400
+
 libs/nns/g2d/calls/NNSi_G2dBitReaderRead.c:
     complete
     .text       start:0x02018400 end:0x02018460
@@ -3656,6 +3660,10 @@ libs/nns/g2d/calls/NNSi_G2dBitReaderRead.c:
 libs/nns/g2d/auto/NNSi_G2dSplitCharUTF16.c:
     complete
     .text       start:0x02018460 end:0x02018474
+
+libs/nns/g2d/calls/NNSi_G2dBGGetCharSize.c:
+    complete
+    .text       start:0x02018474 end:0x02018508
 
 libs/nitro/nitro/auto/NTRi_GetRegionTableSize.c:
     complete
@@ -5244,6 +5252,10 @@ libs/nitro/math/data/MATHi_SHA1ProcessMessageBlockFunc.c:
 libs/nitro/snd/data/SNDi_SharedWork.c:
     complete
     .bss        start:0x02059780 end:0x02059784
+
+libs/nns/g2d/data/NNSiG2dBGCNTTable.c:
+    complete
+    .rodata     start:0x020530e8 end:0x02053108
 
 libs/nns/g2d/data/g2d_charcanvas_tables.c:
     complete

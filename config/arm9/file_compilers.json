@@ -573,5 +573,8 @@
   "libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTextAlign.c": "dsi/1.1",
   "libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawText.c": "dsi/1.1",
   "libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTextRect.c": "dsi/1.1",
-  "libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTaggedText.c": "dsi/1.1"
+  "libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTaggedText.c": "dsi/1.1",
+  "libs/nns/g2d/auto/NNSi_G2dUnpackNFT.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNSi_G2dBGGetCharSize.c": "dsi/1.1",
+  "libs/nns/g2d/data/NNSiG2dBGCNTTable.c": "dsi/1.1"
 }

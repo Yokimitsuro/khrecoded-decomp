@@ -98,8 +98,8 @@ typedef enum NNSG2dBGSelect {
 } NNSG2dBGSelect;
 inline REGType16v * GetBGnCNT (NNSG2dBGSelect n)
 {
-    extern REGType16v * const sBGControlRegisters[];
-    return sBGControlRegisters[n];
+    extern REGType16v * const NNSiG2dBGCNTTable[];
+    return NNSiG2dBGCNTTable[n];
 }
 inline BOOL IsMainBG (NNSG2dBGSelect bg)
 {
