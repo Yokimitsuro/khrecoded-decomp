@@ -3069,13 +3069,29 @@ libs/nns/gfd/auto/Gfd_DefaultFreePlttVram.c:
     complete
     .text       start:0x02013788 end:0x02013790
 
-libs/nns/gfd/calls/GfdFrmTexVram_SetRegionOrder_.c:
+libs/nns/gfd/calls/DefaultDebugDumpFunc_.c:
+    complete
+    .text       start:0x02013790 end:0x020137c4
+
+libs/nns/gfd/calls/NNSi_GfdSetTexNrmSearchArray.c:
     complete
     .text       start:0x020137c4 end:0x0201380c
+
+libs/nns/gfd/calls/NNS_GfdDumpFrmTexVramManager.c:
+    complete
+    .text       start:0x0201380c end:0x02013838
+
+libs/nns/gfd/calls/NNS_GfdDumpFrmTexVramManagerEx.c:
+    complete
+    .text       start:0x02013838 end:0x020138b0
 
 libs/nns/gfd/calls/NNS_GfdInitFrmTexVramManager.c:
     complete
     .text       start:0x020138b0 end:0x02013930
+
+libs/nns/gfd/calls/NNS_GfdResetFrmTexVramState.c:
+    complete
+    .text       start:0x02013930 end:0x020139b0
 
 libs/nns/gfd/calls/NNS_GfdAllocFrmTexVram.c:
     complete
@@ -3093,9 +3109,17 @@ libs/nns/gfd/calls/NNS_GfdSetFrmTexVramState.c:
     complete
     .text       start:0x02013b64 end:0x02013ba8
 
-src/auto/func_02013ba8.c:
+libs/nns/gfd/auto/FrmPlttVramDebugDumpCallBack_.c:
     complete
     .text       start:0x02013ba8 end:0x02013bac
+
+libs/nns/gfd/calls/NNS_GfdDumpFrmPlttVramManager.c:
+    complete
+    .text       start:0x02013bac end:0x02013bc0
+
+libs/nns/gfd/calls/NNS_GfdDumpFrmPlttVramManagerEx.c:
+    complete
+    .text       start:0x02013bc0 end:0x02013be0
 
 libs/nns/gfd/calls/NNS_GfdInitFrmPlttVramManager.c:
     complete
@@ -3165,6 +3189,10 @@ libs/nns/gfd/auto/ResetTaskQueue_.c:
     complete
     .text       start:0x02013f34 end:0x02013f4c
 
+libs/nns/gfd/calls/NNSi_GfdPushVramTransferTaskQueue.c:
+    complete
+    .text       start:0x02013f4c end:0x02013f88
+
 libs/nns/gfd/auto/NNSi_GfdGetFrontVramTransferTaskQueue.c:
     complete
     .text       start:0x02013f88 end:0x02013f98
@@ -3173,11 +3201,15 @@ libs/nns/gfd/auto/NNSi_GfdGetEndVramTransferTaskQueue.c:
     complete
     .text       start:0x02013f98 end:0x02013fa8
 
+libs/nns/gfd/calls/NNSi_GfdPopVramTransferTaskQueue.c:
+    complete
+    .text       start:0x02013fa8 end:0x02013fe4
+
 libs/nns/gfd/calls/NNS_GfdInitVramTransferManager.c:
     complete
     .text       start:0x02013fe4 end:0x02014008
 
-libs/nns/gfd/calls/NNS_GfdResetVramTransferManager.c:
+libs/nns/gfd/calls/NNS_GfdClearVramTransferManagerTask.c:
     complete
     .text       start:0x02014008 end:0x0201401c
 

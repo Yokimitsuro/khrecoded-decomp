@@ -1,4 +1,3 @@
-typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;
 typedef int BOOL;
@@ -19,10 +18,16 @@ typedef struct NNSGfdVramTransferTaskQueue {
     u16 padding;
     u32 totalSize;
 } NNSGfdVramTransferTaskQueue;
-extern NNSGfdVramTransferTaskQueue sVramTransferTaskQueue;
-extern void ResetTaskQueue_(NNSGfdVramTransferTaskQueue *queue);
 
-void NNS_GfdResetVramTransferManager(void)
+extern u16 GetNextIndex_(const NNSGfdVramTransferTaskQueue *queue, u16 index);extern BOOL IsVramTransferTaskQueueFull_(const NNSGfdVramTransferTaskQueue *queue);
+
+BOOL NNSi_GfdPushVramTransferTaskQueue(NNSGfdVramTransferTaskQueue *queue)
 {
-    ResetTaskQueue_(&sVramTransferTaskQueue);
+    if (!IsVramTransferTaskQueueFull_(queue)) {
+        queue->rear = GetNextIndex_(queue, queue->rear);
+        queue->count++;
+        return 1;
+    } else {
+        return 0;
+    }
 }

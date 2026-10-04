@@ -508,5 +508,14 @@
   "libs/nns/gfd/calls/NNS_GfdAllocFrmPlttVram.c": "dsi/1.1",
   "libs/nns/gfd/calls/NNS_GfdSetFrmPlttVramState.c": "dsi/1.1",
   "libs/nns/gfd/calls/Gfd_RunTransferTask.c": "dsi/1.1",
-  "libs/nns/gfd/calls/NNS_GfdResetVramTransferManager.c": "dsi/1.1"
+  "libs/nns/gfd/calls/NNS_GfdClearVramTransferManagerTask.c": "dsi/1.1",
+  "libs/nns/gfd/calls/NNS_GfdResetFrmTexVramState.c": "dsi/1.1",
+  "libs/nns/gfd/calls/NNSi_GfdPushVramTransferTaskQueue.c": "dsi/1.1",
+  "libs/nns/gfd/calls/NNSi_GfdPopVramTransferTaskQueue.c": "dsi/1.1",
+  "libs/nns/gfd/calls/DefaultDebugDumpFunc_.c": "dsi/1.1",
+  "libs/nns/gfd/calls/NNS_GfdDumpFrmTexVramManager.c": "dsi/1.1",
+  "libs/nns/gfd/calls/NNS_GfdDumpFrmTexVramManagerEx.c": "dsi/1.1",
+  "libs/nns/gfd/auto/FrmPlttVramDebugDumpCallBack_.c": "dsi/1.1",
+  "libs/nns/gfd/calls/NNS_GfdDumpFrmPlttVramManager.c": "dsi/1.1",
+  "libs/nns/gfd/calls/NNS_GfdDumpFrmPlttVramManagerEx.c": "dsi/1.1"
 }

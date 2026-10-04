@@ -20,7 +20,7 @@ typedef struct NNSGfdFrmTexRegionOrder {
 extern NNSGfdFrmTexRegionState sFrmTexVramRegions[5];
 extern NNSGfdFrmTexRegionOrder sFrmTexVramRegionOrder;
 
-void GfdFrmTexVram_SetRegionOrder_(int first, int second, int third, int fourth, int fifth)
+void NNSi_GfdSetTexNrmSearchArray(int first, int second, int third, int fourth, int fifth)
 {
     sFrmTexVramRegionOrder.normal[0] = &sFrmTexVramRegions[first];
     sFrmTexVramRegionOrder.normal[1] = &sFrmTexVramRegions[second];
