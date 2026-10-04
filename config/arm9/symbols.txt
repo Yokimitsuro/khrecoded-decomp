@@ -121,7 +121,7 @@ OSi_InsertLinkToQueue kind:function(arm,size=0x78) addr:0x020024c8
 OSi_RemoveLinkFromQueue kind:function(arm,size=0x34) addr:0x02002540
 OSi_RemoveSpecifiedLinkFromQueue kind:function(arm,size=0x54) addr:0x02002574
 OSi_RemoveMutexLinkFromQueue kind:function(arm,size=0x30) addr:0x020025c8
-func_020025f8 kind:function(arm,size=0x5c) addr:0x020025f8
+OSi_InsertThreadToList kind:function(arm,size=0x5c) addr:0x020025f8
 func_02002654 kind:function(arm,size=0x48) addr:0x02002654
 OSi_RescheduleThread kind:function(arm,size=0xc4) addr:0x0200269c
 func_02002760 kind:function(arm,size=0x14c) addr:0x02002760
@@ -2787,7 +2787,7 @@ OSi_ThreadSystemState kind:bss addr:0x02056b50
 OSi_IsThreadInitialized kind:bss addr:0x02056b5c
 OSi_ThreadInfo kind:bss addr:0x02056b6c
 data_02056b70 kind:bss addr:0x02056b70
-data_02056b7c kind:bss addr:0x02056b7c
+OSi_IdleThread kind:bss addr:0x02056b7c
 data_02056c3c kind:bss addr:0x02056c3c
 OSi_ArenaState kind:bss addr:0x02056dc4
 data_02056dcc kind:bss addr:0x02056dcc
