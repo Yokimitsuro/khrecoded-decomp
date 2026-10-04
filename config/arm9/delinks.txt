@@ -442,6 +442,14 @@ libs/nitro/os/calls/OS_SendMessage.c:
     complete
     .text       start:0x02002f78 end:0x0200300c
 
+libs/nitro/os/calls/OS_ReceiveMessage.c:
+    complete
+    .text       start:0x0200300c end:0x020030ac
+
+libs/nitro/os/calls/OS_JamMessage.c:
+    complete
+    .text       start:0x020030ac end:0x02003148
+
 libs/nitro/os/calls/OS_InitMutex.c:
     complete
     .text       start:0x02003148 end:0x0200316c

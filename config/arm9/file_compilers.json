@@ -490,5 +490,7 @@
   "libs/nitro/os/calls/OSi_RemoveThreadFromList.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_SelectThread.c": "dsi/1.1",
   "libs/nitro/os/calls/OS_DisableScheduler.c": "dsi/1.1",
-  "libs/nitro/os/calls/OSi_DetectDeviceType.c": "dsi/1.1"
+  "libs/nitro/os/calls/OSi_DetectDeviceType.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_ReceiveMessage.c": "dsi/1.1",
+  "libs/nitro/os/calls/OS_JamMessage.c": "dsi/1.1"
 }
