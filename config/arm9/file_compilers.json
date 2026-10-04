@@ -466,5 +466,9 @@
   "libs/nitro/fs/calls/FSi_GetPathCommand.c": "dsi/1.1",
   "libs/nitro/fs/calls/FSi_TranslateCommand.c": "dsi/1.1",
   "libs/nitro/fs/calls/FSi_ROMFAT_ReadDirectory.c": "dsi/1.1",
-  "libs/nitro/fs/calls/FSi_ROMFAT_GetPathInfo.c": "dsi/1.1"
+  "libs/nitro/fs/calls/FSi_ROMFAT_GetPathInfo.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_SetCurrentDirectory.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FSi_CopySafeString.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_InitArchive.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FS_RegisterArchiveName.c": "2.0/sp2p3"
 }

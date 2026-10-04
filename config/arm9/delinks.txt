@@ -1786,6 +1786,23 @@ libs/nitro/fs/calls/FSi_SendCommand.c:
     complete
     .text       start:0x0200a944 end:0x0200aa7c
 
+libs/nitro/fs/calls/FS_SetCurrentDirectory.c:
+    complete
+    .text       start:0x0200ab08 end:0x0200abdc
+
+libs/nitro/fs/auto/FSi_CopySafeString.c:
+    complete
+    .text       start:0x0200abdc end:0x0200ac3c
+
+libs/nitro/fs/calls/FS_InitArchive.c:
+    complete
+    .text       start:0x0200af24 end:0x0200af48
+
+libs/nitro/fs/calls/FS_RegisterArchiveName.c:
+    complete
+    .text       start:0x0200af48 end:0x0200b048
+    .bss        start:0x020578ec end:0x02057b00
+
 libs/nitro/fs/auto/FS_GetArchiveName.c:
     complete
     .text       start:0x0200b048 end:0x0200b058

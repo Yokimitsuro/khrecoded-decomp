@@ -275,6 +275,11 @@ typedef struct FSArchive {
     u8 reserved[52];
 } FSArchive;
 
+extern FSArchive *arc_list;
+extern FSDirPos current_dir_pos;
+extern char FSiLongNameTable[16][16];
+extern char current_dir_path[260];
+
 typedef struct FSiSyncReadParam {
     FSArchive *archive;
     u32 position;
@@ -341,6 +346,7 @@ extern FSRomArchiveState fsi_rom_archive_state;
 #define FS_FILE_STATUS_CMD_SHIFT 8UL
 #define FS_FILE_STATUS_CMD_MASK 0x000000ffUL
 
+#define FS_ARCHIVE_FLAG_REGISTER 0x00000001UL
 #define FS_ARCHIVE_FLAG_LOADED 0x00000002UL
 #define FS_ARCHIVE_FLAG_TABLE_LOAD 0x00000004UL
 #define FS_ARCHIVE_FLAG_SUSPEND 0x00000008UL
@@ -362,6 +368,14 @@ void FSi_ExecuteSyncCommand(FSFile *file);
 void FS_InitFile(FSFile *file);
 void FS_CancelFile(FSFile *file);
 BOOL FSi_SendCommand(FSFile *file, FSCommandType command, BOOL blocking);
+BOOL FS_SetCurrentDirectory(const char *path);
+int FSi_CopySafeString(char *destination, int destinationLength,
+                       const char *source, int sourceLength,
+                       BOOL *stickyFailure);
+void FS_InitArchive(FSArchive *archive);
+BOOL FS_RegisterArchiveName(FSArchive *archive, const char *name,
+                            u32 nameLength);
+FSArchive *FS_FindArchive(const char *name, u32 length);
 FSArchive *FS_NormalizePath(const char *path, u32 *baseId, char *relativePath);
 const char *FS_GetArchiveName(const FSArchive *archive);
 BOOL FSi_GetFileLengthIfProc(FSFile *file, u32 *length);
