@@ -2993,33 +2993,53 @@ libs/nns/fnd/calls/NNS_FndRecordStateForFrmHeap.c:
     complete
     .text       start:0x0201357c end:0x020135cc
 
-libs/nns/fnd/auto/func_02013620.c:
+libs/nns/fnd/auto/NNS_FndFreeByStateToFrmHeap.c:
+    complete
+    .text       start:0x020135cc end:0x02013620
+
+libs/nns/fnd/auto/PopMBlock.c:
     complete
     .text       start:0x02013620 end:0x02013638
 
-src/calls/func_02013638.c:
+libs/nns/fnd/calls/NNS_FndAllocFromUnitHeap.c:
     complete
     .text       start:0x02013638 end:0x02013678
 
-src/auto/func_02013678.c:
+libs/nns/fnd/auto/NNS_FndFreeToUnitHeap.c:
     complete
     .text       start:0x02013678 end:0x02013688
 
-libs/nitro/nns/calls/func_02013688.c:
+libs/nitro/nns/calls/AllocatorAllocForExpHeap.c:
     complete
     .text       start:0x02013688 end:0x0201369c
 
-libs/nitro/nns/calls/func_020136ac.c:
+libs/nitro/nns/calls/AllocatorFreeForExpHeap.c:
+    complete
+    .text       start:0x0201369c end:0x020136ac
+
+libs/nns/fnd/calls/AllocatorAllocForFrmHeap.c:
     complete
     .text       start:0x020136ac end:0x020136c0
 
-src/auto/func_020136c0.c:
+libs/nns/fnd/auto/AllocatorFreeForFrmHeap.c:
     complete
     .text       start:0x020136c0 end:0x020136c4
 
-libs/nns/fnd/calls/func_020136c4.c:
+libs/nns/fnd/calls/AllocatorAllocForUnitHeap.c:
     complete
     .text       start:0x020136c4 end:0x020136e4
+
+libs/nns/fnd/calls/AllocatorFreeForUnitHeap.c:
+    complete
+    .text       start:0x020136e4 end:0x020136f4
+
+libs/nns/fnd/calls/AllocatorAllocForSDKHeap.c:
+    complete
+    .text       start:0x020136f4 end:0x02013710
+
+libs/nns/fnd/calls/AllocatorFreeForSDKHeap.c:
+    complete
+    .text       start:0x02013710 end:0x0201372c
 
 libs/nitro/nns/auto/NNS_FndAllocFromAllocator.c:
     complete
@@ -3029,23 +3049,27 @@ libs/nitro/nns/auto/NNS_FndFreeToAllocator.c:
     complete
     .text       start:0x02013740 end:0x02013754
 
-src/auto/func_02013770.c:
+libs/nitro/nns/calls/NNS_FndInitAllocatorForExpHeap.c:
+    complete
+    .text       start:0x02013754 end:0x02013770
+
+libs/nns/gfd/auto/Gfd_DefaultAllocTexVram.c:
     complete
     .text       start:0x02013770 end:0x02013778
 
-src/auto/func_02013778.c:
+libs/nns/gfd/auto/Gfd_DefaultFreeTexVram.c:
     complete
     .text       start:0x02013778 end:0x02013780
 
-src/auto/func_02013780.c:
+libs/nns/gfd/auto/Gfd_DefaultAllocPlttVram.c:
     complete
     .text       start:0x02013780 end:0x02013788
 
-src/auto/func_02013788.c:
+libs/nns/gfd/auto/Gfd_DefaultFreePlttVram.c:
     complete
     .text       start:0x02013788 end:0x02013790
 
-src/calls/func_020137c4.c:
+src/calls/Party_SetActiveSlots.c:
     complete
     .text       start:0x020137c4 end:0x0201380c
 
