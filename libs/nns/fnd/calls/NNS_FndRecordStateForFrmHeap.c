@@ -74,8 +74,8 @@ static inline NNSiFndFrmHeapHead * GetFrmHeapHeadPtrFromHeapHead (NNSiFndHeapHea
 }
 extern void * NNSi_AllocFromHeadOfExpHeap (NNSiFndFrmHeapHead * pFrmHeapHd, u32 size, int alignment);
 
-/* func_0201357c -- NitroSystem frameheap.c: NNS_FndRecordStateForFrmHeap. */
-BOOL func_0201357c (NNSFndHeapHandle heap, u32 tagName)
+/* NNS_FndRecordStateForFrmHeap -- NitroSystem frameheap.c: NNS_FndRecordStateForFrmHeap. */
+BOOL NNS_FndRecordStateForFrmHeap (NNSFndHeapHandle heap, u32 tagName)
 {
 
     {

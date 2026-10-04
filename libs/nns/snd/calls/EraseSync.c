@@ -25,8 +25,8 @@ BOOL SND_FlushCommand(u32 flags);
 void SND_WaitForCommandProc(u32 tag);
 u32 SND_GetCurrentCommandTag(void);
 
-/* func_0201f30c -- NitroSystem heap.c: EraseSync. */
-void func_0201f30c (void)
+/* EraseSync -- NitroSystem heap.c: EraseSync. */
+void EraseSync (void)
 {
     u32 commandTag;
 

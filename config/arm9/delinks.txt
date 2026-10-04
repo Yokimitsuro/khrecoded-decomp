@@ -2965,31 +2965,31 @@ libs/nitro/nns/calls/NNSi_AllocFromTailOfExpHeap.c:
     complete
     .text       start:0x02013440 end:0x02013498
 
-src/auto/func_02013498.c:
+src/auto/NNS_FndResetFrmHeapHead.c:
     complete
     .text       start:0x02013498 end:0x020134ac
 
-src/auto/func_020134ac.c:
+src/auto/NNS_FndResetFrmHeapTail.c:
     complete
     .text       start:0x020134ac end:0x020134d8
 
-src/calls/func_020134d8.c:
+src/calls/NNS_FndCreateFrmHeapEx.c:
     complete
     .text       start:0x020134d8 end:0x02013510
 
-src/calls/func_02013510.c:
+src/calls/NNS_FndDestroyFrmHeap.c:
     complete
     .text       start:0x02013510 end:0x0201351c
 
-libs/nitro/nns/calls/func_0201351c.c:
+libs/nitro/nns/calls/NNS_FndAllocFromFrmHeapEx.c:
     complete
     .text       start:0x0201351c end:0x02013550
 
-libs/nns/fnd/calls/func_02013550.c:
+libs/nns/fnd/calls/NNS_FndFreeToFrmHeap.c:
     complete
     .text       start:0x02013550 end:0x0201357c
 
-libs/nns/fnd/calls/func_0201357c.c:
+libs/nns/fnd/calls/NNS_FndRecordStateForFrmHeap.c:
     complete
     .text       start:0x0201357c end:0x020135cc
 
@@ -3805,19 +3805,27 @@ libs/nns/snd/calls/SymbolDisposeCallback.c:
     complete
     .text       start:0x0201efac end:0x0201efb8
 
-libs/nns/snd/calls/func_0201f02c.c:
+libs/nns/snd/calls/NNS_SndHeapCreate.c:
+    complete
+    .text       start:0x0201efb8 end:0x0201f02c
+
+libs/nns/snd/calls/NNS_SndHeapDestroy.c:
     complete
     .text       start:0x0201f02c end:0x0201f044
 
-libs/nns/snd/calls/func_0201f044.c:
+libs/nns/snd/calls/NNS_SndHeapClear.c:
     complete
     .text       start:0x0201f044 end:0x0201f100
 
-libs/nns/snd/calls/func_0201f100.c:
+libs/nns/snd/calls/NNS_SndHeapAlloc.c:
     complete
     .text       start:0x0201f100 end:0x0201f168
 
-libs/nns/snd/calls/func_0201f1b8.c:
+libs/nns/snd/calls/NNS_SndHeapSaveState.c:
+    complete
+    .text       start:0x0201f168 end:0x0201f1b8
+
+libs/nns/snd/calls/NNS_SndHeapLoadState.c:
     complete
     .text       start:0x0201f1b8 end:0x0201f28c
 
@@ -3825,15 +3833,15 @@ src/calls/NNS_FndInitListWithOffset0.c:
     complete
     .text       start:0x0201f28c end:0x0201f29c
 
-libs/nns/snd/calls/func_0201f29c.c:
+libs/nns/snd/calls/InitHeap.c:
     complete
     .text       start:0x0201f29c end:0x0201f2d0
 
-libs/nns/snd/calls/func_0201f2d0.c:
+libs/nns/snd/calls/NewSection.c:
     complete
     .text       start:0x0201f2d0 end:0x0201f30c
 
-libs/nns/snd/calls/func_0201f30c.c:
+libs/nns/snd/calls/EraseSync.c:
     complete
     .text       start:0x0201f30c end:0x0201f32c
 

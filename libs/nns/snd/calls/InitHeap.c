@@ -20,8 +20,7 @@ typedef volatile unsigned char vu8;
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-#define HEAP_ALIGN 32
-#define ROUNDUP(value, align) (((u32)(value) + ((align) - 1)) & ~((align) - 1))
+#define NNS_FND_INIT_LIST(list, structName, linkName) NNS_FndInitList(list, offsetof(structName, linkName))
 
 typedef struct {
     void * prevObject;
@@ -33,8 +32,7 @@ typedef struct {
     u16 numObjects;
     u16 offset;
 } NNSFndList;
-void NNS_FndAppendListObject(NNSFndList * list, void * object);
-void * NNS_FndGetPrevListObject(NNSFndList * list, void * object);
+void NNS_FndInitList(NNSFndList * list, u16 offset);
 typedef struct NNSiFndHeapHead NNSiFndHeapHead;
 struct NNSiFndHeapHead {
     u32 signature;
@@ -46,49 +44,29 @@ struct NNSiFndHeapHead {
 };
 typedef NNSiFndHeapHead * NNSFndHeapHandle;
 typedef void (*NNSFndHeapVisitor)(void * memBlock, NNSFndHeapHandle heap, u32 userParam);
-void * func_0201351c(NNSFndHeapHandle heap, u32 size, int alignment);
 typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
 typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
 struct NNSSndHeap;
-typedef void (*NNSSndHeapDisposeCallback)(void * mem, u32 size, u32 data1, u32 data2);
-typedef struct NNSSndHeap * NNSSndHeapHandle;
 typedef struct NNSSndHeap {
     NNSFndHeapHandle handle;
     NNSFndList sectionList;
 } NNSSndHeap;
-typedef struct NNSSndHeapBlock {
-    NNSFndLink link;
-    u32 size;
-    NNSSndHeapDisposeCallback callback;
-    u32 data1;
-    u32 data2;
-    u8 padding[ 0x20 - ((sizeof(NNSFndLink) + sizeof(NNSSndHeapDisposeCallback) + sizeof(u32) * 3) & 0x1f) ];
-    u32 buffer[ 0 ];
-} NNSSndHeapBlock;
 typedef struct NNSSndHeapSection {
     NNSFndList blockList;
     NNSFndLink link;
 } NNSSndHeapSection;
+extern BOOL NewSection(NNSSndHeap * heap);
+extern BOOL NewSection (NNSSndHeap * heap);
 
-/* func_0201f100 -- NitroSystem heap.c: NNS_SndHeapAlloc. */
-void * func_0201f100 (NNSSndHeapHandle heap, u32 size, NNSSndHeapDisposeCallback callback, u32 data1, u32 data2)
+/* InitHeap -- NitroSystem heap.c: InitHeap. */
+BOOL InitHeap (NNSSndHeap * heap, NNSFndHeapHandle handle)
 {
-    NNSSndHeapSection * section;
-    NNSSndHeapBlock * block;
+    NNS_FND_INIT_LIST(&heap->sectionList, NNSSndHeapSection, link);
+    heap->handle = handle;
 
+    if (!NewSection(heap)) {
+        return FALSE;
+    }
 
-    block = (NNSSndHeapBlock *)func_0201351c(
-        heap->handle, sizeof(NNSSndHeapBlock) + ROUNDUP(size, HEAP_ALIGN), HEAP_ALIGN);
-    if (block == NULL) return NULL;
-
-    section = (NNSSndHeapSection *)NNS_FndGetPrevListObject(&heap->sectionList, NULL);
-
-    block->size = size;
-    block->callback = callback;
-    block->data1 = data1;
-    block->data2 = data2;
-    NNS_FndAppendListObject(&section->blockList, block);
-
-
-    return block->buffer;
+    return TRUE;
 }

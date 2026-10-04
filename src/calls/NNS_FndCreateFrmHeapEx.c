@@ -1,6 +1,6 @@
 extern void *NNSi_FndInitExpHeap(void *hh, void *end, int opt);
 
-void *func_020134d8(unsigned int start, unsigned int size, int opt)
+void *NNS_FndCreateFrmHeapEx(unsigned int start, unsigned int size, int opt)
 {
     unsigned int end = size + start;
     unsigned int aligned_start = start + 3;

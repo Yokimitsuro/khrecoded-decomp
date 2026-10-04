@@ -1,7 +1,7 @@
 extern void *NNSi_AllocFromTailOfExpHeap(void *hh, unsigned size, unsigned align);
 extern void *NNSi_AllocFromHeadOfExpHeap(void *hh, unsigned size, unsigned align);
 
-void *func_0201351c(void *heap, unsigned size, int align) {
+void *NNS_FndAllocFromFrmHeapEx(void *heap, unsigned size, int align) {
     if (size == 0) size = 1;
     size = (size + 3) & ~3;
     heap = (char *)heap + 0x24;

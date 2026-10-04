@@ -125,7 +125,7 @@ typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 o
 struct NNSSndHeap;
 typedef void (*NNSSndHeapDisposeCallback)(void * mem, u32 size, u32 data1, u32 data2);
 typedef struct NNSSndHeap * NNSSndHeapHandle;
-void func_0201f02c(NNSSndHeapHandle heap);
+void NNS_SndHeapDestroy(NNSSndHeapHandle heap);
 typedef struct NNSSndFader {
     int origin;
     int target;
@@ -186,7 +186,7 @@ void func_0201dec4 (void * mem, u32, u32, u32)
 
     if (heap->handle == NNS_SND_HEAP_INVALID_HANDLE) return;
 
-    func_0201f02c(heap->handle);
+    NNS_SndHeapDestroy(heap->handle);
 
     seqPlayer = heap->player;
     if (seqPlayer != NULL) {

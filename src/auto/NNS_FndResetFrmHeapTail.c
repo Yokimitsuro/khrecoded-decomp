@@ -1,4 +1,4 @@
-void func_020134ac(int *p)
+void NNS_FndResetFrmHeapTail(int *p)
 {
     int *node = (int *)p[0x2c / 4];
     while (node != 0) {

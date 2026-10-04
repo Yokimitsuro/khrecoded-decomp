@@ -40,7 +40,7 @@ extern const SNDWaveData *SND_GetWaveDataAddress(const SNDWaveArc *waveArc, s32 
 extern u32 SND_GetWaveDataCount(const SNDWaveArc *waveArc);
 extern void SND_SetWaveDataAddress(SNDWaveArc *waveArc, s32 wave, const SNDWaveData *address);
 extern void DC_StoreRange(void *address, u32 size);
-extern void *func_0201f100(NNSSndHeapHandle heap, u32 size, NNSSndHeapDisposeCallback callback, u32 data1, u32 data2);
+extern void *NNS_SndHeapAlloc(NNSSndHeapHandle heap, u32 size, NNSSndHeapDisposeCallback callback, u32 data1, u32 data2);
 extern s32 NNS_SndArcReadFile(u32 fileId, void *buffer, s32 size, s32 offset);
 extern void func_0201fae0(void *mem, u32 size, u32 data1, u32 data2);
 
@@ -74,7 +74,7 @@ BOOL func_0201fb28(SNDWaveArc *waveArc, int waveNo, u32 fileId, NNSSndHeapHandle
             return 0;
         }
 
-        buffer = (SNDWaveData *)func_0201f100(
+        buffer = (SNDWaveData *)NNS_SndHeapAlloc(
             heap,
             len + 32,
             func_0201fae0,

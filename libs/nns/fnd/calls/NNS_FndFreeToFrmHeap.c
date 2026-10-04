@@ -47,18 +47,18 @@ struct NNSiFndHeapHead {
     u32 attribute;
 };
 typedef NNSiFndHeapHead * NNSFndHeapHandle;
-extern void func_02013498 (NNSiFndHeapHead * pHeapHd);
-extern void func_020134ac (NNSiFndHeapHead * pHeapHd);
+extern void NNS_FndResetFrmHeapHead (NNSiFndHeapHead * pHeapHd);
+extern void NNS_FndResetFrmHeapTail (NNSiFndHeapHead * pHeapHd);
 
-/* func_02013550 -- NitroSystem frameheap.c: NNS_FndFreeToFrmHeap. */
-void func_02013550 (NNSFndHeapHandle heap, int mode)
+/* NNS_FndFreeToFrmHeap -- NitroSystem frameheap.c: NNS_FndFreeToFrmHeap. */
+void NNS_FndFreeToFrmHeap (NNSFndHeapHandle heap, int mode)
 {
 
     if (mode & NNS_FND_FRMHEAP_FREE_HEAD) {
-        func_02013498(heap);
+        NNS_FndResetFrmHeapHead(heap);
     }
 
     if (mode & NNS_FND_FRMHEAP_FREE_TAIL) {
-        func_020134ac(heap);
+        NNS_FndResetFrmHeapTail(heap);
     }
 }

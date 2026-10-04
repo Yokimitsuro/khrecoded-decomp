@@ -45,14 +45,14 @@ struct NNSiFndHeapHead {
 };
 typedef NNSiFndHeapHead * NNSFndHeapHandle;
 typedef void (*NNSFndHeapVisitor)(void * memBlock, NNSFndHeapHandle heap, u32 userParam);
-BOOL func_0201357c(NNSFndHeapHandle heap, u32 tagName);
-BOOL func_020135cc(NNSFndHeapHandle heap, u32 tagName);
+BOOL NNS_FndRecordStateForFrmHeap(NNSFndHeapHandle heap, u32 tagName);
+BOOL NNS_FndFreeByStateToFrmHeap(NNSFndHeapHandle heap, u32 tagName);
 typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
 typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
 struct NNSSndHeap;
 typedef void (*NNSSndHeapDisposeCallback)(void * mem, u32 size, u32 data1, u32 data2);
 typedef struct NNSSndHeap * NNSSndHeapHandle;
-void func_0201f044(NNSSndHeapHandle heap);
+void NNS_SndHeapClear(NNSSndHeapHandle heap);
 typedef struct NNSSndHeap {
     NNSFndHeapHandle handle;
     NNSFndList sectionList;
@@ -70,14 +70,14 @@ typedef struct NNSSndHeapSection {
     NNSFndList blockList;
     NNSFndLink link;
 } NNSSndHeapSection;
-extern BOOL func_0201f2d0(NNSSndHeap * heap);
-extern void func_0201f30c(void);
-extern void func_0201f044 (NNSSndHeapHandle heap);
-extern BOOL func_0201f2d0 (NNSSndHeap * heap);
-extern void func_0201f30c (void);
+extern BOOL NewSection(NNSSndHeap * heap);
+extern void EraseSync(void);
+extern void NNS_SndHeapClear (NNSSndHeapHandle heap);
+extern BOOL NewSection (NNSSndHeap * heap);
+extern void EraseSync (void);
 
-/* func_0201f1b8 -- NitroSystem heap.c: NNS_SndHeapLoadState. */
-void func_0201f1b8 (NNSSndHeapHandle heap, int level)
+/* NNS_SndHeapLoadState -- NitroSystem heap.c: NNS_SndHeapLoadState. */
+void NNS_SndHeapLoadState (NNSSndHeapHandle heap, int level)
 {
     NNSSndHeapSection * section;
     void * object = NULL;
@@ -86,7 +86,7 @@ void func_0201f1b8 (NNSSndHeapHandle heap, int level)
 
 
     if (level == 0) {
-        func_0201f044(heap);
+        NNS_SndHeapClear(heap);
         return;
     }
 
@@ -104,11 +104,11 @@ void func_0201f1b8 (NNSSndHeapHandle heap, int level)
         NNS_FndRemoveListObject(&heap->sectionList, section);
     }
 
-    result = func_020135cc(heap->handle, (u32)level);
+    result = NNS_FndFreeByStateToFrmHeap(heap->handle, (u32)level);
 
-    if (doCallback) func_0201f30c();
+    if (doCallback) EraseSync();
 
-    result = func_0201357c(heap->handle, heap->sectionList.numObjects);
+    result = NNS_FndRecordStateForFrmHeap(heap->handle, heap->sectionList.numObjects);
 
-    result = func_0201f2d0(heap);
+    result = NewSection(heap);
 }

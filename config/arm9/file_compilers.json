@@ -1,5 +1,7 @@
 {
   "libs/nns/snd/calls/NNSi_SndArcStrmMain.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndHeapCreate.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndHeapSaveState.c": "dsi/1.1",
   "src/overlays/ov000/calls/DSProt_OnDetection.c": "2.0/base",
   "src/overlays/ov015/calls/G2S_ClearBG2Screen.c": "2.0/base",
   "src/overlays/ov104/calls/Dummy_IsBad.c": "2.0/sp2p3",

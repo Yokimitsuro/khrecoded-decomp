@@ -1,5 +1,5 @@
 extern void *NNSi_FndFinalizeHeap();
 
-void *func_02013510() {
+void *NNS_FndDestroyFrmHeap() {
     return NNSi_FndFinalizeHeap();
 }

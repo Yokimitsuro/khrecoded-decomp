@@ -43,22 +43,22 @@ struct NNSiFndHeapHead {
 };
 typedef NNSiFndHeapHead * NNSFndHeapHandle;
 typedef void (*NNSFndHeapVisitor)(void * memBlock, NNSFndHeapHandle heap, u32 userParam);
-void func_02013510(NNSFndHeapHandle heap);
+void NNS_FndDestroyFrmHeap(NNSFndHeapHandle heap);
 typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
 typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
 struct NNSSndHeap;
 typedef struct NNSSndHeap * NNSSndHeapHandle;
-void func_0201f044(NNSSndHeapHandle heap);
+void NNS_SndHeapClear(NNSSndHeapHandle heap);
 typedef struct NNSSndHeap {
     NNSFndHeapHandle handle;
     NNSFndList sectionList;
 } NNSSndHeap;
-extern void func_0201f044 (NNSSndHeapHandle heap);
+extern void NNS_SndHeapClear (NNSSndHeapHandle heap);
 
-/* func_0201f02c -- NitroSystem heap.c: NNS_SndHeapDestroy. */
-void func_0201f02c (NNSSndHeapHandle heap)
+/* NNS_SndHeapDestroy -- NitroSystem heap.c: NNS_SndHeapDestroy. */
+void NNS_SndHeapDestroy (NNSSndHeapHandle heap)
 {
 
-    func_0201f044(heap);
-    func_02013510(heap->handle);
+    NNS_SndHeapClear(heap);
+    NNS_FndDestroyFrmHeap(heap->handle);
 }
