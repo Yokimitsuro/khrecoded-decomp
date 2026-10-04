@@ -1,5 +1,5 @@
 extern unsigned int data_02055bd0[];
-extern unsigned int func_02002f20(void);
+extern unsigned int OSi_DetectDeviceType(void);
 
 unsigned int OS_GetConsoleType(void)
 {
@@ -7,6 +7,6 @@ unsigned int OS_GetConsoleType(void)
         return data_02055bd0[1];
     }
     data_02055bd0[1] = 0x80000001;
-    data_02055bd0[1] |= func_02002f20();
+    data_02055bd0[1] |= OSi_DetectDeviceType();
     return data_02055bd0[1];
 }

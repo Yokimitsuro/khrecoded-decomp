@@ -148,7 +148,7 @@ OS_InitContext kind:function(arm,size=0x6c) addr:0x02002df0
 OS_SaveContext kind:function(arm,size=0x4c) addr:0x02002e5c
 OS_LoadContext kind:function(arm,size=0x44) addr:0x02002ea8
 OS_GetConsoleType kind:function(arm,size=0x34) addr:0x02002eec
-func_02002f20 kind:function(arm,size=0x18) addr:0x02002f20
+OSi_DetectDeviceType kind:function(arm,size=0x18) addr:0x02002f20
 CommandPort_IsEnabled kind:function(arm,size=0x18) addr:0x02002f38
 OS_InitMessageQueue kind:function(arm,size=0x28) addr:0x02002f50
 OS_SendMessage kind:function(arm,size=0x94) addr:0x02002f78
@@ -2575,7 +2575,7 @@ func_02052528 kind:function(arm,size=0x48) addr:0x02052528
 func_02052570 kind:function(arm,size=0x30) addr:0x02052570
 func_020525a0 kind:function(arm,size=0xbc) addr:0x020525a0
 func_0205265c kind:function(arm,size=0x78) addr:0x0205265c
-data_020526ec kind:data(any) addr:0x020526ec
+OSi_DeviceTypeTable kind:data(any) addr:0x020526ec
 FX_AtanTable_ kind:data(any) addr:0x02052700
 FX_AtanIdxTable_ kind:data(any) addr:0x02052804
 data_02052908 kind:data(any) addr:0x02052908
