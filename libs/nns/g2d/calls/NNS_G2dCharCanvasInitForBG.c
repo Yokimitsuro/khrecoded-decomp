@@ -92,16 +92,15 @@ typedef struct NNSG2dCharCanvas {
     u32 param;
     const NNSiG2dCharCanvasVTable * vtable;
 } NNSG2dCharCanvas;
-extern const NNSiG2dCharCanvasVTable data_020530b0;
-extern void func_020178fc (NNSG2dCharCanvas * pCC, void * charBase, int areaWidth, int areaHeight, NNSG2dCharaColorMode colorMode, const NNSiG2dCharCanvasVTable * vtable, u32 param);
+extern const NNSiG2dCharCanvasVTable VTABLE_BG;
+extern void InitCharCanvas (NNSG2dCharCanvas * pCC, void * charBase, int areaWidth, int areaHeight, NNSG2dCharaColorMode colorMode, const NNSiG2dCharCanvasVTable * vtable, u32 param);
 
-/* func_02017a40 -- NitroSystem g2d_CharCanvas.c: NNS_G2dCharCanvasInitForBG. */
-void func_02017a40 (NNSG2dCharCanvas * pCC, void * charBase, int areaWidth, int areaHeight, NNSG2dCharaColorMode colorMode)
+void NNS_G2dCharCanvasInitForBG (NNSG2dCharCanvas * pCC, void * charBase, int areaWidth, int areaHeight, NNSG2dCharaColorMode colorMode)
 {
 
-    func_020178fc(
+    InitCharCanvas(
         pCC,
         charBase, areaWidth, areaHeight, colorMode,
-        &data_020530b0, (unsigned int)areaWidth
+        &VTABLE_BG, (unsigned int)areaWidth
         );
 }

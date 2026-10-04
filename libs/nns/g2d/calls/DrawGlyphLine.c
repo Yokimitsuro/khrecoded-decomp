@@ -20,6 +20,9 @@ typedef volatile unsigned char vu8;
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
+#define CHARACTER_WIDTH 8
+#define CHARACTER_HEIGHT 8
+
 
 
 void MIi_CpuClearFast(u32 data, void * destp, u32 size);
@@ -133,17 +136,111 @@ static inline u32 SpreadColor32 (const NNSG2dCharCanvas * pCC, int cl)
     return val;
 }
 
-/* func_020174a8 -- NitroSystem g2d_CharCanvas.c: ClearContinuous. */
-void func_020174a8 (const NNSG2dCharCanvas * pCC, int cl)
+typedef struct LC_INFO {
+    const u8 *dst;
+    const u8 *src;
+    int ofs_x;
+    int ofs_y;
+    int width;
+    int height;
+    int dsrc;
+    int srcBpp;
+    int dstBpp;
+    u32 cl;
+} LC_INFO;
+
+inline u8 NNS_G2dFontGetCellHeight(const NNSG2dFont *pFont) { return pFont->pRes->pGlyph->cellHeight; }
+inline u8 NNS_G2dFontGetCellWidth(const NNSG2dFont *pFont) { return pFont->pRes->pGlyph->cellWidth; }
+inline u8 NNS_G2dFontGetBpp(const NNSG2dFont *pFont) { return pFont->pRes->pGlyph->bpp; }
+extern void LetterChar(LC_INFO *i);
+void DrawGlyphLine (const NNSG2dCharCanvas * pCC, const NNSG2dFont * pFont, int x, int y, int cl, const NNSG2dGlyph * pGlyph)
 {
-    u32 data;
+    int ofs_x_base;
+    int ofs_x;
+    int ofs_y;
+    int ofs_x_end;
+    int ofs_y_end;
+    unsigned int nextLineOffset;
+    u8 * pChar;
+    u8 glyphWidth;
+    u8 charHeight;
+    int charSize;
 
+    charSize = GetCharacterSize(pCC);
 
-    data = SpreadColor32(pCC, cl);
+    {
+        int chara_x_num;
+        int chara_y_num;
+        const unsigned int areaWidth = (unsigned int)pCC->areaWidth;
+        const unsigned int areaHeight = (unsigned int)pCC->areaHeight;
+        u8 * const charBase = pCC->charBase;
+        const NNSG2dCharWidths * const pWidth = pGlyph->pWidths;
 
-    MI_CpuFillFast(
-        pCC->charBase,
-        data,
-        (u32)pCC->areaWidth * pCC->areaHeight * GetCharacterSize(pCC)
-        );
+        unsigned int chara_x_begin;
+        unsigned int chara_x_last;
+        unsigned int chara_y_begin;
+        unsigned int chara_y_last;
+
+        glyphWidth = pWidth->glyphWidth;
+        charHeight = NNS_G2dFontGetCellHeight(pFont);
+
+        if ( glyphWidth <= 0 ) {
+            return;
+        }
+
+        if ((x + glyphWidth < 0) || (y + charHeight) < 0 ) {
+            return;
+        }
+
+        chara_x_begin = (x <= 0) ? 0: ((u32)x / CHARACTER_WIDTH);
+        chara_y_begin = (y <= 0) ? 0: ((u32)y / CHARACTER_HEIGHT);
+
+        chara_x_last = (u32)(x + glyphWidth + (CHARACTER_WIDTH - 1)) / CHARACTER_WIDTH;
+        if ( chara_x_last >= areaWidth ) {
+            chara_x_last = areaWidth;
+        }
+        chara_y_last = (u32)(y + charHeight + (CHARACTER_HEIGHT - 1)) / CHARACTER_HEIGHT;
+        if ( chara_y_last >= areaHeight ) {
+            chara_y_last = areaHeight;
+        }
+
+        chara_x_num = (int)(chara_x_last - chara_x_begin);
+        chara_y_num = (int)(chara_y_last - chara_y_begin);
+
+        if ((chara_x_num < 0) || (chara_y_num < 0)) {
+            return;
+        }
+
+        pChar = charBase + (pCC->param * chara_y_begin + chara_x_begin) * charSize;
+
+        nextLineOffset = (pCC->param - chara_x_num) * charSize;
+
+        ofs_x_base = (x < 0) ? x: x & 0x7;
+        ofs_y = (y < 0) ? y: y & 0x7;
+        ofs_x_end = ofs_x_base - CHARACTER_WIDTH * chara_x_num;
+        ofs_y_end = ofs_y - CHARACTER_HEIGHT * chara_y_num;
+    }
+
+    {
+        LC_INFO i;
+
+        i.src = pGlyph->image;
+        i.width = glyphWidth;
+        i.height = charHeight;
+        i.cl = (u32)(cl - 1);
+        i.srcBpp = NNS_G2dFontGetBpp(pFont);
+        i.dstBpp = pCC->dstBpp;
+        i.dsrc = NNS_G2dFontGetCellWidth(pFont) * i.srcBpp;
+
+        for ( ; ofs_y > ofs_y_end; ofs_y -= CHARACTER_HEIGHT) {
+            i.ofs_y = ofs_y;
+            for (ofs_x = ofs_x_base; ofs_x > ofs_x_end; ofs_x -= CHARACTER_WIDTH) {
+                i.dst = pChar;
+                i.ofs_x = ofs_x;
+                LetterChar(&i);
+                pChar += charSize;
+            }
+            pChar += nextLineOffset;
+        }
+    }
 }

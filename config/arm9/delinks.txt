@@ -3593,15 +3593,39 @@ libs/nns/g2d/calls/NNSi_G2dFontGetTextRect.c:
     complete
     .text       start:0x02016c2c end:0x02016cc0
 
-libs/nns/g2d/calls/func_020174a8.c:
+libs/nns/g2d/calls/ClearChar.c:
+    complete
+    .text       start:0x02016da8 end:0x02016ed8
+
+libs/nns/g2d/calls/LetterChar.c:
+    complete
+    .text       start:0x02016ed8 end:0x0201710c
+
+libs/nns/g2d/calls/DrawGlyphLine.c:
+    complete
+    .text       start:0x0201710c end:0x020172a0
+
+libs/nns/g2d/calls/ClearContinuous.c:
     complete
     .text       start:0x020174a8 end:0x020174f8
 
-libs/nns/g2d/calls/func_02017a40.c:
+libs/nns/g2d/calls/ClearLine.c:
+    complete
+    .text       start:0x020174f8 end:0x02017578
+
+libs/nns/g2d/calls/ClearAreaLine.c:
+    complete
+    .text       start:0x02017578 end:0x02017710
+
+libs/nns/g2d/auto/InitCharCanvas.c:
+    complete
+    .text       start:0x020178fc end:0x02017924
+
+libs/nns/g2d/calls/NNS_G2dCharCanvasInitForBG.c:
     complete
     .text       start:0x02017a40 end:0x02017a6c
 
-libs/nns/g2d/auto/func_02017ba0.c:
+libs/nns/g2d/auto/NNS_G2dMapScrToChar256x16Pltt.c:
     complete
     .text       start:0x02017ba0 end:0x02017bfc
 
@@ -5200,6 +5224,10 @@ libs/nitro/math/data/MATHi_SHA1ProcessMessageBlockFunc.c:
 libs/nitro/snd/data/SNDi_SharedWork.c:
     complete
     .bss        start:0x02059780 end:0x02059784
+
+libs/nns/g2d/data/g2d_charcanvas_tables.c:
+    complete
+    .rodata     start:0x020530b0 end:0x020530e8
 
 libs/nns/g2d/data/g2d_oam_size_tables.c:
     complete

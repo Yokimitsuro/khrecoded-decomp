@@ -22,6 +22,33 @@ typedef volatile unsigned char vu8;
 
 
 
+void MIi_CpuClearFast(u32 data, void * destp, u32 size);
+static inline void MI_CpuFillFast (void * dest, u32 data, u32 size)
+{
+    MIi_CpuClearFast(data, dest, size);
+}
+typedef enum {
+    PXI_FIFO_TAG_EX = 0,
+    PXI_FIFO_TAG_USER_0,
+    PXI_FIFO_TAG_USER_1,
+    PXI_FIFO_TAG_SYSTEM,
+    PXI_FIFO_TAG_NVRAM,
+    PXI_FIFO_TAG_RTC,
+    PXI_FIFO_TAG_TOUCHPANEL,
+    PXI_FIFO_TAG_SOUND,
+    PXI_FIFO_TAG_PM,
+    PXI_FIFO_TAG_MIC,
+    PXI_FIFO_TAG_WM,
+    PXI_FIFO_TAG_FS,
+    PXI_FIFO_TAG_OS,
+    PXI_FIFO_TAG_CTRDG,
+    PXI_FIFO_TAG_CARD,
+    PXI_FIFO_TAG_WVR,
+    PXI_FIFO_TAG_CTRDG_Ex,
+    PXI_FIFO_TAG_CTRDG_PHI,
+    PXI_MAX_FIFO_TAG = 32
+} PXIFifoTag;
+typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
 typedef struct NNSG2dCharWidths {
     s8 left;
     u8 glyphWidth;
@@ -70,12 +97,6 @@ typedef struct NNSG2dGlyph {
     const NNSG2dCharWidths * pWidths;
     const u8 * image;
 } NNSG2dGlyph;
-typedef enum NNSG2d256x16PlttBGWidth {
-    NNS_G2D_256x16PLTT_BG_WIDTH_128  = 16,
-    NNS_G2D_256x16PLTT_BG_WIDTH_256  = 32,
-    NNS_G2D_256x16PLTT_BG_WIDTH_512  = 64,
-    NNS_G2D_256x16PLTT_BG_WIDTH_1024 = 128
-} NNSG2d256x16PlttBGWidth;
 struct NNSG2dCharCanvas;
 typedef void (*NNSiG2dDrawGlyphFunc)(const struct NNSG2dCharCanvas * pCC, const NNSG2dFont * pFont, int x, int y, int cl, const NNSG2dGlyph * pGlyph);
 typedef void (*NNSiG2dClearFunc)(const struct NNSG2dCharCanvas * pCC, int cl);
@@ -94,22 +115,34 @@ typedef struct NNSG2dCharCanvas {
     u32 param;
     const NNSiG2dCharCanvasVTable * vtable;
 } NNSG2dCharCanvas;
-
-/* func_02017ba0 -- NitroSystem g2d_CharCanvas.c: NNS_G2dMapScrToChar256x16Pltt. */
-void func_02017ba0 (void * areaBase, int areaWidth, int areaHeight, NNSG2d256x16PlttBGWidth scnWidth, int charNo, int cplt)
+static inline int GetCharacterSize (const NNSG2dCharCanvas * pCC)
 {
-    u16 * pScrBase;
-    int x, y;
-    const u16 cplt_sft = (u16)(cplt << 12);
-
-
-    pScrBase = areaBase;
-
-    for (y = 0; y < areaHeight; ++y) {
-        u16 * pScr = pScrBase;
-        for (x = 0; x < areaWidth; ++x) {
-            *pScr++ = (u16)(cplt_sft | charNo++);
-        }
-        pScrBase += scnWidth;
+    return 8 * 8 * pCC->dstBpp / 8;
+}
+static inline u32 SpreadColor32 (const NNSG2dCharCanvas * pCC, int cl)
+{
+    u32 val = (u32)cl;
+    if ( pCC->dstBpp == 4 ) {
+        val = (val << 4) | val;
+        val |= val << 8;
+        val |= val << 16;
+    } else {
+        val = (val << 8) | val;
+        val |= val << 16;
     }
+    return val;
+}
+
+void ClearContinuous (const NNSG2dCharCanvas * pCC, int cl)
+{
+    u32 data;
+
+
+    data = SpreadColor32(pCC, cl);
+
+    MI_CpuFillFast(
+        pCC->charBase,
+        data,
+        (u32)pCC->areaWidth * pCC->areaHeight * GetCharacterSize(pCC)
+        );
 }
