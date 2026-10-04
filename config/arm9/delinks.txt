@@ -369,6 +369,10 @@ libs/nitro/os/calls/OS_WakeupThreadDirect.c:
     complete
     .text       start:0x02002b74 end:0x02002b9c
 
+libs/nitro/os/calls/OS_SelectThread.c:
+    complete
+    .text       start:0x02002b9c end:0x02002bc8
+
 libs/nitro/os/calls/OS_RescheduleThread.c:
     complete
     .text       start:0x02002bc8 end:0x02002be4

@@ -4,7 +4,7 @@ typedef void (*OSSwitchThreadCallback)(void *from, void *to);
 extern BOOL OS_SaveContext(OSContext *context);
 extern void OS_LoadContext(OSContext *context);
 extern int OS_GetProcMode(void);
-extern void *func_02002b9c(void);
+extern void *OS_SelectThread(void);
 typedef struct OSThreadInfo {
     unsigned short isNeedRescheduling;
     unsigned short irqDepth;
@@ -41,7 +41,7 @@ void OSi_RescheduleThread(void)
 
     currentThreadPtr = (void **)OSi_ThreadSystemState.currentThreadPtr;
     current = *currentThreadPtr;
-    next = func_02002b9c();
+    next = OS_SelectThread();
 
     if (current == next || next == 0)
         return;
