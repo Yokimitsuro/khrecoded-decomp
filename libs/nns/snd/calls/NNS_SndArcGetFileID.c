@@ -346,8 +346,8 @@ typedef struct NNSSndArc {
 /* shared-bss */
 NNSSndArc * sCurrentSoundArchive = 0;   /* sCurrent */
 
-/* func_0201ee1c -- NitroSystem sndarc.c: NNS_SndArcGetFileID. */
-FSFileID func_0201ee1c (void)
+/* NitroSystem sndarc.c */
+FSFileID NNS_SndArcGetFileID (void)
 {
     NNSSndArc * arc = sCurrentSoundArchive;
 
