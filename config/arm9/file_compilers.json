@@ -481,5 +481,6 @@
   "libs/nns/snd/data/sStrmChannel.c": "dsi/1.1",
   "libs/nitro/math/calls/MATHi_SetOverlayTableMode.c": "dsi/1.1",
   "libs/nitro/math/data/MATHi_SHA1ProcessMessageBlockFunc.c": "dsi/1.1",
-  "libs/nitro/math/data/MATHi_OverlayTableMode.c": "dsi/1.1"
+  "libs/nitro/math/data/MATHi_OverlayTableMode.c": "dsi/1.1",
+  "libs/nitro/math/calls/MATHi_SHA1ProcessBlockForOverlay.c": "dsi/1.1"
 }
