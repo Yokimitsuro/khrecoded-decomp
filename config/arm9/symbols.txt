@@ -2683,7 +2683,7 @@ OSi_ProtectionRegionSetters kind:data(any) addr:0x02055bd8
 gGXDataState kind:data(any) addr:0x02055c18
 GXi_DmaId kind:data(any) addr:0x02055c1c
 sCardRomConfig kind:data(any) addr:0x02055c20
-data_02055c28 kind:data(any) addr:0x02055c28
+fsi_path_separator kind:data(short) addr:0x02055c28
 fsi_overlay_rom_name kind:data(any) addr:0x02055c2c
 fsi_path_root_suffix kind:data(any) addr:0x02055c30
 fsi_rom_archive_name kind:data(any) addr:0x02055c34

@@ -1794,6 +1794,11 @@ libs/nitro/fs/auto/FSi_CopySafeString.c:
     complete
     .text       start:0x0200abdc end:0x0200ac3c
 
+libs/nitro/fs/calls/FS_NormalizePath.c:
+    complete
+    .text       start:0x0200ac3c end:0x0200af24
+    .data       start:0x02055c28 end:0x02055c2a
+
 libs/nitro/fs/calls/FS_InitArchive.c:
     complete
     .text       start:0x0200af24 end:0x0200af48
