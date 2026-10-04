@@ -1,8 +1,8 @@
-extern void DC_InvalidateRange(void *address, unsigned int size);
-extern int *data_02059780;
+#include "libs/nitro/snd/snd_work_internal.h"
 
-int SND_GetPlayerStatus(void)
+u32 SND_GetPlayerStatus(void)
 {
-    DC_InvalidateRange(data_02059780 + 1, 4);
-    return data_02059780[1];
+    DC_InvalidateRange((void *)&SNDi_SharedWork->playerStatus,
+                       sizeof(SNDi_SharedWork->playerStatus));
+    return SNDi_SharedWork->playerStatus;
 }

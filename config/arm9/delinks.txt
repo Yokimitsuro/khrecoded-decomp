@@ -2495,6 +2495,18 @@ libs/nitro/snd/calls/SND_GetPlayerStatus.c:
     complete
     .text       start:0x0200f5b0 end:0x0200f5d8
 
+libs/nitro/snd/calls/SND_GetPlayerLocalVariable.c:
+    complete
+    .text       start:0x0200f5d8 end:0x0200f61c
+
+libs/nitro/snd/calls/SNDi_GetFinishedCommandTag.c:
+    complete
+    .text       start:0x0200f61c end:0x0200f640
+
+libs/nitro/snd/calls/SNDi_InitSharedWork.c:
+    complete
+    .text       start:0x0200f640 end:0x0200f6bc
+
 libs/nitro/snd/calls/SND_CalcChannelVolume.c:
     complete
     .text       start:0x0200f6bc end:0x0200f72c
@@ -4862,3 +4874,7 @@ libs/nitro/fs/data/fsiDefaultDigestKey.c:
 libs/nitro/fs/data/fsi_default_command.c:
     complete
     .rodata     start:0x020529c0 end:0x020529f4
+
+libs/nitro/snd/data/SNDi_SharedWork.c:
+    complete
+    .bss        start:0x02059780 end:0x02059784

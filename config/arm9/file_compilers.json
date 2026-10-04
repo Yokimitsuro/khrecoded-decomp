@@ -472,5 +472,9 @@
   "libs/nitro/fs/calls/FS_InitArchive.c": "dsi/1.1",
   "libs/nitro/fs/calls/FS_RegisterArchiveName.c": "2.0/sp2p3",
   "libs/nitro/fs/calls/FS_NormalizePath.c": "dsi/1.1",
-  "libs/nitro/fs/calls/FS_FindArchive.c": "dsi/1.1"
+  "libs/nitro/fs/calls/FS_FindArchive.c": "dsi/1.1",
+  "libs/nitro/snd/calls/SND_GetPlayerLocalVariable.c": "dsi/1.1",
+  "libs/nitro/snd/calls/SNDi_GetFinishedCommandTag.c": "dsi/1.1",
+  "libs/nitro/snd/calls/SNDi_InitSharedWork.c": "dsi/1.1",
+  "libs/nitro/snd/data/SNDi_SharedWork.c": "dsi/1.1"
 }
