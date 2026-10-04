@@ -1,40 +1,59 @@
 typedef unsigned char u8;
 typedef unsigned long u32;
-typedef enum NNSSndStrmFormat { NNS_SND_STRM_FORMAT_PCM8, NNS_SND_STRM_FORMAT_PCM16 } NNSSndStrmFormat;
-typedef enum NNSSndStrmCallbackStatus { NNS_SND_STRM_CALLBACK_SETUP, NNS_SND_STRM_CALLBACK_INTERVAL } NNSSndStrmCallbackStatus;
-typedef void (*NNSSndStrmCallback)(NNSSndStrmCallbackStatus, int, void **, u32, NNSSndStrmFormat, void *);
+
+typedef enum NNSSndStrmFormat {
+    NNS_SND_STRM_FORMAT_PCM8,
+    NNS_SND_STRM_FORMAT_PCM16
+} NNSSndStrmFormat;
+
+typedef enum NNSSndStrmCallbackStatus {
+    NNS_SND_STRM_CALLBACK_SETUP,
+    NNS_SND_STRM_CALLBACK_INTERVAL
+} NNSSndStrmCallbackStatus;
+
+typedef void (*NNSSndStrmCallback)(NNSSndStrmCallbackStatus status,
+                                   int numChannels, void **buffers, u32 length,
+                                   NNSSndStrmFormat format, void *argument);
+
 typedef struct NNSSndStrm {
     u8 reserved00[0x28];
     NNSSndStrmFormat format;
     u32 flags;
-    u32 chBufLen;
+    u32 channelBufferLength;
     int interval;
     NNSSndStrmCallback callback;
-    void *callbackArg;
-    int curBuffer;
+    void *callbackArgument;
+    int currentBuffer;
     int volume;
-    int alarmNo;
-    u32 chBitMask;
+    int alarmNumber;
+    u32 channelBitMask;
     int numChannels;
-    u8 channelNo[16];
+    u8 channelNumber[16];
 } NNSSndStrm;
-typedef struct NNSSndStrmChannel { void *buffer; int volume; } NNSSndStrmChannel;
-extern NNSSndStrmChannel data_0205e1c8[16];
+
+typedef struct NNSSndStrmChannel {
+    void *buffer;
+    int volume;
+} NNSSndStrmChannel;
+
+extern NNSSndStrmChannel sStrmChannel[16];
 extern void *data_0205e188[16];
+
 void StrmCallback(NNSSndStrm *stream, NNSSndStrmCallbackStatus status)
 {
-    const unsigned long blockSize = stream->chBufLen / stream->interval;
-    const unsigned long offset = blockSize * stream->curBuffer;
+    const unsigned long blockSize = stream->channelBufferLength / stream->interval;
+    const unsigned long offset = blockSize * stream->currentBuffer;
     int index;
-    int chNo;
+    int channelNumber;
 
     for (index = 0; index < stream->numChannels; index++) {
-        chNo = stream->channelNo[index];
-        data_0205e188[index] = (u8 *)(data_0205e1c8[chNo].buffer) + offset;
+        channelNumber = stream->channelNumber[index];
+        data_0205e188[index] = (u8 *)(sStrmChannel[channelNumber].buffer) + offset;
     }
 
-    stream->callback(status, stream->numChannels, data_0205e188, blockSize, stream->format, stream->callbackArg);
+    stream->callback(status, stream->numChannels, data_0205e188, blockSize,
+                     stream->format, stream->callbackArgument);
 
-    stream->curBuffer++;
-    if (stream->curBuffer >= stream->interval) stream->curBuffer = 0;
+    stream->currentBuffer++;
+    if (stream->currentBuffer >= stream->interval) stream->currentBuffer = 0;
 }

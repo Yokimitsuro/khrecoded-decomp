@@ -2938,7 +2938,7 @@ data_0205e118 kind:bss addr:0x0205e118
 data_0205e178 kind:bss addr:0x0205e178
 data_0205e17c kind:bss addr:0x0205e17c
 data_0205e188 kind:bss addr:0x0205e188
-data_0205e1c8 kind:bss addr:0x0205e1c8
+sStrmChannel kind:bss addr:0x0205e1c8
 data_0205e248 kind:bss addr:0x0205e248
 data_0205e250 kind:bss addr:0x0205e250
 data_0205e290 kind:bss addr:0x0205e290

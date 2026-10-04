@@ -476,5 +476,7 @@
   "libs/nitro/snd/calls/SND_GetPlayerLocalVariable.c": "dsi/1.1",
   "libs/nitro/snd/calls/SNDi_GetFinishedCommandTag.c": "dsi/1.1",
   "libs/nitro/snd/calls/SNDi_InitSharedWork.c": "dsi/1.1",
-  "libs/nitro/snd/data/SNDi_SharedWork.c": "dsi/1.1"
+  "libs/nitro/snd/data/SNDi_SharedWork.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndStrmSetVolume.c": "dsi/1.1",
+  "libs/nns/snd/data/sStrmChannel.c": "dsi/1.1"
 }
