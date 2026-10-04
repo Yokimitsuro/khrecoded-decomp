@@ -568,5 +568,10 @@
   "libs/nns/g2d/calls/ClearLine.c": "dsi/1.1",
   "libs/nns/g2d/calls/ClearAreaLine.c": "dsi/1.1",
   "libs/nns/g2d/auto/InitCharCanvas.c": "dsi/1.1",
-  "libs/nns/g2d/data/g2d_charcanvas_tables.c": "dsi/1.1"
+  "libs/nns/g2d/data/g2d_charcanvas_tables.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawString.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTextAlign.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawText.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTextRect.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTaggedText.c": "dsi/1.1"
 }

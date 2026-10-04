@@ -3629,6 +3629,26 @@ libs/nns/g2d/auto/NNS_G2dMapScrToChar256x16Pltt.c:
     complete
     .text       start:0x02017ba0 end:0x02017bfc
 
+libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawString.c:
+    complete
+    .text       start:0x02017bfc end:0x02017cb0
+
+libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTextAlign.c:
+    complete
+    .text       start:0x02017cb0 end:0x02017e00
+
+libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawText.c:
+    complete
+    .text       start:0x02017e00 end:0x02017f24
+
+libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTextRect.c:
+    complete
+    .text       start:0x02017f24 end:0x02018004
+
+libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTaggedText.c:
+    complete
+    .text       start:0x02018004 end:0x02018164
+
 libs/nns/g2d/calls/NNSi_G2dBitReaderRead.c:
     complete
     .text       start:0x02018400 end:0x02018460
