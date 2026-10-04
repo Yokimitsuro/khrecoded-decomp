@@ -2826,7 +2826,7 @@ cardi_arg kind:bss addr:0x02056f80
 cardi_common kind:bss addr:0x02056fe0
 data_02057460 kind:bss addr:0x02057460
 data_020574e0 kind:bss addr:0x020574e0
-data_02057500 kind:bss addr:0x02057500
+CARDiHookChain kind:bss addr:0x02057500
 sCardBackupCachePageBuffer kind:bss addr:0x02057520
 sCardRomState kind:bss addr:0x02057620
 sCardDmaReadInfo kind:bss addr:0x02057630

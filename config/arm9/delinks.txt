@@ -1594,6 +1594,11 @@ libs/nitro/card/calls/CARDi_InitCommand.c:
     complete
     .text       start:0x020092e4 end:0x02009314
 
+libs/nitro/card/calls/CARDi_NotifyEvent.c:
+    complete
+    .text       start:0x02009314 end:0x02009358
+    .bss        start:0x02057500 end:0x02057520
+
 libs/nitro/card/calls/CARDi_ExecuteOldTypeTask.c:
     complete
     .text       start:0x02009358 end:0x020093ac
