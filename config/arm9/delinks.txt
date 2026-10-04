@@ -2066,6 +2066,10 @@ libs/nitro/fs/auto/FSi_ROMFAT_CloseDirectory.c:
     complete
     .text       start:0x0200cddc end:0x0200cdf4
 
+libs/nitro/fs/calls/FSi_ROMFAT_GetPathInfo.c:
+    complete
+    .text       start:0x0200cdf4 end:0x0200cf20
+
 libs/nitro/fs/calls/FSi_ROMFAT_GetArchiveResource.c:
     complete
     .text       start:0x0200cf20 end:0x0200cf70

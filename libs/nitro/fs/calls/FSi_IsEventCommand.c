@@ -5,7 +5,6 @@ extern void FSi_ROMFAT_Idle(FSArchive *archive);
 extern void FSi_ROMFAT_Suspend(FSArchive *archive);
 extern void FSi_ROMFAT_Resume(FSArchive *archive);
 extern void FSi_ROMFAT_Unmount(FSArchive *archive);
-extern void FSi_ROMFAT_GetPathInfo(void);
 
 const FSArchiveInterface FSiArchiveProcInterface = {
     (FSArchiveMethod)FSi_ROMFAT_ReadFile,

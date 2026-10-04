@@ -465,5 +465,6 @@
   "libs/nitro/fs/calls/FSi_FindPathCommand.c": "dsi/1.1",
   "libs/nitro/fs/calls/FSi_GetPathCommand.c": "dsi/1.1",
   "libs/nitro/fs/calls/FSi_TranslateCommand.c": "dsi/1.1",
-  "libs/nitro/fs/calls/FSi_ROMFAT_ReadDirectory.c": "dsi/1.1"
+  "libs/nitro/fs/calls/FSi_ROMFAT_ReadDirectory.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_ROMFAT_GetPathInfo.c": "dsi/1.1"
 }

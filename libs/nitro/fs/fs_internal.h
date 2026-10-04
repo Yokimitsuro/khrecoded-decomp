@@ -75,6 +75,14 @@ typedef struct FSDirectoryEntryInfo {
     u32 id;
 } FSDirectoryEntryInfo;
 
+typedef struct FSPathInfo {
+    u32 attributes;
+    FSDateTime creationTime;
+    FSDateTime modificationTime;
+    FSDateTime accessTime;
+    u32 fileSize;
+    u32 id;
+} FSPathInfo;
 typedef struct FSArchiveFAT {
     u32 top;
     u32 bottom;
@@ -319,6 +327,7 @@ extern FSRomArchiveState fsi_rom_archive_state;
 #define FS_COMMAND_INVALID FS_COMMAND_MAX
 
 #define FS_ATTRIBUTE_IS_DIRECTORY 0x00000100UL
+#define FS_ATTRIBUTE_IS_PROTECTED 0x00000200UL
 #define FS_ATTRIBUTE_IS_OFFLINE 0x00000400UL
 
 #define FS_FILE_STATUS_BUSY 0x00000001UL
@@ -405,6 +414,8 @@ FSResult FSi_ROMFAT_GetFilePosition(FSArchive *archive, FSFile *file,
 FSResult FSi_ROMFAT_OpenDirectory(FSArchive *archive, FSFile *file, u32 baseId,
                                   const char *path, u32 mode);
 FSResult FSi_ROMFAT_CloseDirectory(FSArchive *archive, FSFile *file);
+FSResult FSi_ROMFAT_GetPathInfo(FSArchive *archive, u32 baseDirectoryId,
+                               const char *path, FSPathInfo *info);
 FSResult FSi_ROMFAT_GetArchiveResource(FSArchive *archive,
                                        FSArchiveResource *resource);
 u32 FS_GetArchiveOffset(const FSArchive *archive, u32 position);
