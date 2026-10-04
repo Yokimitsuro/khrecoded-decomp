@@ -22,17 +22,10 @@ typedef volatile unsigned char vu8;
 
 
 
-typedef vu16 REGType16v;
 typedef enum {
-    GX_BG_SCRSIZE_AFFINE_128x128      = 0,
-    GX_BG_SCRSIZE_AFFINE_256x256      = 1,
-    GX_BG_SCRSIZE_AFFINE_512x512      = 2,
-    GX_BG_SCRSIZE_AFFINE_1024x1024    = 3
-} GXBGScrSizeAffine;
-typedef enum {
-    GX_BG_AREAOVER_XLU = 0,
-    GX_BG_AREAOVER_REPEAT = 1
-} GXBGAreaOver;
+    GX_BG_COLORMODE_16 = 0,
+    GX_BG_COLORMODE_256 = 1
+} GXBGColorMode;
 typedef enum {
     GX_BG_CHARBASE_0x00000 = 0,
     GX_BG_CHARBASE_0x04000 = 1,
@@ -85,6 +78,13 @@ typedef enum {
     GX_BG_SCRBASE_0xf000 = 30,
     GX_BG_SCRBASE_0xf800 = 31
 } GXBGScrBase;
+typedef enum NNSG2dScreenFormat {
+    NNS_G2D_SCREENFORMAT_TEXT,
+    NNS_G2D_SCREENFORMAT_AFFINE,
+    NNS_G2D_SCREENFORMAT_AFFINEEXT,
+    NNS_G2D_SCREENFORMAT_PLTBMP,
+    NNS_G2D_SCREENFORMAT_DCBMP
+} NNSG2dScreenFormat;
 typedef enum NNSG2dBGSelect {
     NNS_G2D_BGSELECT_MAIN0,
     NNS_G2D_BGSELECT_MAIN1,
@@ -96,42 +96,24 @@ typedef enum NNSG2dBGSelect {
     NNS_G2D_BGSELECT_SUB3,
     NNS_G2D_BGSELECT_NUM
 } NNSG2dBGSelect;
-inline REGType16v * GetBGnCNT (NNSG2dBGSelect n)
-{
-    extern REGType16v * const data_020530e8[];
-    return data_020530e8[n];
-}
-inline BOOL IsMainBG (NNSG2dBGSelect bg)
-{
-    return (bg <= NNS_G2D_BGSELECT_MAIN3);
-}
-inline u16 MakeBGnCNTValAffine (GXBGScrSizeAffine screenSize, GXBGAreaOver areaOver, GXBGScrBase screenBase, GXBGCharBase charBase)
-{
-    return (u16)(
-        (screenSize << 14 )
-        | (screenBase << 8 )
-        | (charBase << 2 )
-        | (areaOver << 13 )
-        );
-}
-inline void SetBGnControlAffine (NNSG2dBGSelect n, GXBGScrSizeAffine screenSize, GXBGAreaOver areaOver, GXBGScrBase screenBase, GXBGCharBase charBase)
-{
-    *GetBGnCNT(n) = (u16)(
-        (*GetBGnCNT(n) & (0x0003 | 0x0040 ))
-        | MakeBGnCNTValAffine(screenSize, areaOver, screenBase, charBase)
-        );
-}
-extern const u8 data_02053020[2][8];
-extern void func_02015bf0 (const u8 modeTable[]);
-extern void func_02015c34 (const u8 modeTable[]);
+extern void SetBGControlText (NNSG2dBGSelect bg, GXBGColorMode colorMode, int screenWidth, int screenHeight, GXBGScrBase scnBase, GXBGCharBase chrBase);
+extern void SetBGControlAffine (NNSG2dBGSelect bg, int screenWidth, int screenHeight, GXBGScrBase scnBase, GXBGCharBase chrBase);
+extern void SetBGControl256x16Pltt (NNSG2dBGSelect bg, int screenWidth, int screenHeight, GXBGScrBase scnBase, GXBGCharBase chrBase);
 
-/* func_02015f78 -- NitroSystem g2d_Screen.c: SetBGnControlToAffine. */
-void func_02015f78 (NNSG2dBGSelect n, GXBGScrSizeAffine size, GXBGAreaOver areaOver, GXBGScrBase scnBase, GXBGCharBase chrBase)
+/* SetBGControlAuto -- NitroSystem g2d_Screen.c: SetBGControlAuto. */
+void SetBGControlAuto (NNSG2dBGSelect bg, NNSG2dScreenFormat screenFormat, GXBGColorMode colorMode, int screenWidth, int screenHeight, GXBGScrBase scnBase, GXBGCharBase chrBase)
 {
-    if (IsMainBG(n)) {
-        func_02015bf0(data_02053020[n - 2]);
-    } else {
-        func_02015c34(data_02053020[n - 6]);
+    switch (screenFormat) {
+    case NNS_G2D_SCREENFORMAT_TEXT:
+        SetBGControlText(bg, colorMode, screenWidth, screenHeight, scnBase, chrBase);
+        break;
+    case NNS_G2D_SCREENFORMAT_AFFINE:
+        SetBGControlAffine(bg, screenWidth, screenHeight, scnBase, chrBase);
+        break;
+    case NNS_G2D_SCREENFORMAT_AFFINEEXT:
+        SetBGControl256x16Pltt(bg, screenWidth, screenHeight, scnBase, chrBase);
+        break;
+    default:
+        break;
     }
-    SetBGnControlAffine(n, size, areaOver, scnBase, chrBase);
 }

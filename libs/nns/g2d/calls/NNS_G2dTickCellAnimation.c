@@ -302,12 +302,12 @@ typedef struct NNSG2dCellAnimation {
     u32 cellTransferStateHandle;
     NNSG2dSRTControl srtCtrl;
 } NNSG2dCellAnimation;
-extern void func_02015698 (NNSG2dCellAnimation * pCellAnim);
+extern void ApplyCurrentAnimResult_ (NNSG2dCellAnimation * pCellAnim);
 
 void NNS_G2dTickCellAnimation (NNSG2dCellAnimation * pCellAnim, fx32 frames)
 {
 
     if ( NNS_G2dTickAnimCtrl(&pCellAnim->animCtrl, frames)) {
-        func_02015698(pCellAnim);
+        ApplyCurrentAnimResult_(pCellAnim);
     }
 }

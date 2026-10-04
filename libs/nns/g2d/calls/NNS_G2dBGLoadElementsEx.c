@@ -84,22 +84,22 @@ typedef enum NNSG2dBGSelect {
     NNS_G2D_BGSELECT_SUB3,
     NNS_G2D_BGSELECT_NUM
 } NNSG2dBGSelect;
-extern void func_02016168 (NNSG2dBGSelect bg, const NNSG2dPaletteData * pPltData, const NNSG2dScreenData * pScnData, const NNSG2dPaletteCompressInfo * pCmpInfo);
-extern void func_020161d8 (NNSG2dBGSelect bg, const NNSG2dCharacterData * pChrData, const NNSG2dCharacterPosInfo * pPosInfo);
-extern void func_020162b4 (NNSG2dBGSelect bg, const NNSG2dScreenData * pScnData);
+extern void LoadBGPalette (NNSG2dBGSelect bg, const NNSG2dPaletteData * pPltData, const NNSG2dScreenData * pScnData, const NNSG2dPaletteCompressInfo * pCmpInfo);
+extern void LoadBGCharacter (NNSG2dBGSelect bg, const NNSG2dCharacterData * pChrData, const NNSG2dCharacterPosInfo * pPosInfo);
+extern void LoadBGScreen (NNSG2dBGSelect bg, const NNSG2dScreenData * pScnData);
 
-/* func_0201670c -- NitroSystem g2d_Screen.c: NNS_G2dBGLoadElementsEx. */
-void func_0201670c (NNSG2dBGSelect bg, const NNSG2dScreenData * pScnData, const NNSG2dCharacterData * pChrData, const NNSG2dPaletteData * pPltData, const NNSG2dCharacterPosInfo * pPosInfo, const NNSG2dPaletteCompressInfo * pCmpInfo)
+/* NNS_G2dBGLoadElementsEx -- NitroSystem g2d_Screen.c: NNS_G2dBGLoadElementsEx. */
+void NNS_G2dBGLoadElementsEx (NNSG2dBGSelect bg, const NNSG2dScreenData * pScnData, const NNSG2dCharacterData * pChrData, const NNSG2dPaletteData * pPltData, const NNSG2dCharacterPosInfo * pPosInfo, const NNSG2dPaletteCompressInfo * pCmpInfo)
 {
 
 
     if (pPltData != NULL && pScnData != NULL) {
-        func_02016168(bg, pPltData, pScnData, pCmpInfo);
+        LoadBGPalette(bg, pPltData, pScnData, pCmpInfo);
     }
     if (pChrData != NULL) {
-        func_020161d8(bg, pChrData, pPosInfo);
+        LoadBGCharacter(bg, pChrData, pPosInfo);
     }
     if (pScnData != NULL) {
-        func_020162b4(bg, pScnData);
+        LoadBGScreen(bg, pScnData);
     }
 }

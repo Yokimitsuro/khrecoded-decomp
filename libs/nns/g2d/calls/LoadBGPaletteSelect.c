@@ -64,18 +64,18 @@ typedef enum NNSG2dBGExtPlttSlot {
     NNS_G2D_BGEXTPLTTSLOT_SUB2,
     NNS_G2D_BGEXTPLTTSLOT_SUB3
 } NNSG2dBGExtPlttSlot;
-extern void func_02015c5c (NNSG2dBGExtPlttSlot slot, const NNSG2dPaletteData * pPltData, const NNSG2dPaletteCompressInfo * pCmpInfo);
-extern void func_02015d8c (NNSG2dBGSelect bg, const NNSG2dPaletteData * pPltData, const NNSG2dPaletteCompressInfo * pCmpInfo);
-extern NNSG2dBGExtPlttSlot func_02015eb8 (NNSG2dBGSelect bg);
+extern void BgExtPltt_Upload (NNSG2dBGExtPlttSlot slot, const NNSG2dPaletteData * pPltData, const NNSG2dPaletteCompressInfo * pCmpInfo);
+extern void BgPltt_Upload (NNSG2dBGSelect bg, const NNSG2dPaletteData * pPltData, const NNSG2dPaletteCompressInfo * pCmpInfo);
+extern NNSG2dBGExtPlttSlot GetBGExtPlttSlot (NNSG2dBGSelect bg);
 
-/* func_02016130 -- NitroSystem g2d_Screen.c: LoadBGPaletteSelect. */
-void func_02016130 (NNSG2dBGSelect bg, BOOL bToExtPltt, const NNSG2dPaletteData * pPltData, const NNSG2dPaletteCompressInfo * pCmpInfo)
+/* LoadBGPaletteSelect -- NitroSystem g2d_Screen.c: LoadBGPaletteSelect. */
+void LoadBGPaletteSelect (NNSG2dBGSelect bg, BOOL bToExtPltt, const NNSG2dPaletteData * pPltData, const NNSG2dPaletteCompressInfo * pCmpInfo)
 {
 
     if (bToExtPltt) {
-        NNSG2dBGExtPlttSlot slot = func_02015eb8(bg);
-        func_02015c5c(slot, pPltData, pCmpInfo);
+        NNSG2dBGExtPlttSlot slot = GetBGExtPlttSlot(bg);
+        BgExtPltt_Upload(slot, pPltData, pCmpInfo);
     } else {
-        func_02015d8c(bg, pPltData, pCmpInfo);
+        BgPltt_Upload(bg, pPltData, pCmpInfo);
     }
 }

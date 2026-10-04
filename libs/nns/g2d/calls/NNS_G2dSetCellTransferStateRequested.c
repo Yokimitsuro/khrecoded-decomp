@@ -43,15 +43,14 @@ typedef struct NNSG2dCellTransferState {
     u32 srcOffset;
     u32 szByte;
 } NNSG2dCellTransferState;
-NNSG2dCellTransferState * func_02015b74(u32 handle);
-extern NNSG2dCellTransferState * func_02015b74 (u32 handle);
+NNSG2dCellTransferState * NNSi_G2dGetCellTransferState(u32 handle);
+extern NNSG2dCellTransferState * NNSi_G2dGetCellTransferState (u32 handle);
 
-/* func_02015b8c -- NitroSystem g2d_CellTransferManager.c: NNS_G2dSetCellTransferStateRequested. */
-void func_02015b8c (u32 handle, u32 srcOffset, u32 szByte)
+void NNS_G2dSetCellTransferStateRequested (u32 handle, u32 srcOffset, u32 szByte)
 {
 
     {
-        NNSG2dCellTransferState * pState = func_02015b74(handle);
+        NNSG2dCellTransferState * pState = NNSi_G2dGetCellTransferState(handle);
 
 
         pState->bTransferRequested = 0xFFFFFFFF;

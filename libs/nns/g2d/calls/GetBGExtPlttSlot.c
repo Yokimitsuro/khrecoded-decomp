@@ -50,14 +50,14 @@ typedef enum NNSG2dBGExtPlttSlot {
     NNS_G2D_BGEXTPLTTSLOT_SUB3
 } NNSG2dBGExtPlttSlot;
 
-extern const u16 data_02053010[8];
+extern const u16 sBGControlRegisterOffsets[8];
 
-NNSG2dBGExtPlttSlot func_02015eb8 (NNSG2dBGSelect bg)
+NNSG2dBGExtPlttSlot GetBGExtPlttSlot (NNSG2dBGSelect bg)
 {
     u32 addr;
     NNSG2dBGExtPlttSlot slot = (NNSG2dBGExtPlttSlot)bg;
 
-    addr = data_02053010[bg];
+    addr = sBGControlRegisterOffsets[bg];
 
     if (addr != 0) {
         addr += HW_REG_BASE;

@@ -161,24 +161,24 @@ typedef enum NNSG2dBGSelect {
     NNS_G2D_BGSELECT_SUB3,
     NNS_G2D_BGSELECT_NUM
 } NNSG2dBGSelect;
-extern GXBGAreaOver data_0205a920;
+extern GXBGAreaOver sBGAreaOver;
 typedef struct ScreenSizeMap {
     u16 width;
     u16 height;
     u16 scnSize;
 } ScreenSizeMap;
-extern const ScreenSizeMap data_02053030[4];
-extern GXBGAreaOver data_0205a920;
-extern const ScreenSizeMap * func_02015bb0 (const ScreenSizeMap tbl[4], int w, int h);
-extern void func_02015ff4 (NNSG2dBGSelect n, GXBGScrSizeAffine size, GXBGAreaOver areaOver, GXBGScrBase scnBase, GXBGCharBase chrBase);
+extern const ScreenSizeMap sAffineScreenSizes[4];
+extern GXBGAreaOver sBGAreaOver;
+extern const ScreenSizeMap * SelectScnSize (const ScreenSizeMap tbl[4], int w, int h);
+extern void SetBGnControlToAffine (NNSG2dBGSelect n, GXBGScrSizeAffine size, GXBGAreaOver areaOver, GXBGScrBase scnBase, GXBGCharBase chrBase);
 
-/* func_020160f0 -- NitroSystem g2d_Screen.c: SetBGControlAffine. */
-void func_020160f0 (NNSG2dBGSelect bg, int screenWidth, int screenHeight, GXBGScrBase scnBase, GXBGCharBase chrBase)
+/* SetBGControlAffine -- NitroSystem g2d_Screen.c: SetBGControlAffine. */
+void SetBGControlAffine (NNSG2dBGSelect bg, int screenWidth, int screenHeight, GXBGScrBase scnBase, GXBGCharBase chrBase)
 {
     const ScreenSizeMap * pSizeMap;
 
 
-    pSizeMap = func_02015bb0(data_02053030, screenWidth, screenHeight);
+    pSizeMap = SelectScnSize(sAffineScreenSizes, screenWidth, screenHeight);
 
-    func_02015ff4(bg, (GXBGScrSizeAffine)pSizeMap->scnSize, data_0205a920, scnBase, chrBase);
+    SetBGnControlToAffine(bg, (GXBGScrSizeAffine)pSizeMap->scnSize, sBGAreaOver, scnBase, chrBase);
 }

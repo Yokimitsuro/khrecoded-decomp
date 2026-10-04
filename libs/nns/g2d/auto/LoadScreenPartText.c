@@ -32,7 +32,7 @@ static inline int CalcTextScreenOffset(int x, int y, int w, int h)
          + x_char;
 }
 
-void func_02016410(void *pScreenDst,
+void LoadScreenPartText(void *pScreenDst,
                    const NNSG2dScreenData *pScreenData,
                    int srcX, int srcY, int dstX, int dstY,
                    int dstW, int dstH, int width, int height)

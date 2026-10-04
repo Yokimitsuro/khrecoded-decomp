@@ -707,8 +707,8 @@ typedef struct NNSG2dCharCanvas {
     const NNSiG2dCharCanvasVTable * vtable;
 } NNSG2dCharCanvas;
 
-/* func_020166a0 -- NitroSystem g2d_Screen.c: LoadScreenPart256x16Pltt. */
-void func_020166a0 (void * pScreenDst, const NNSG2dScreenData * pScnData, int srcX, int srcY, int dstX, int dstY, int dstW, int width, int height)
+/* LoadScreenPart256x16Pltt -- NitroSystem g2d_Screen.c: LoadScreenPart256x16Pltt. */
+void LoadScreenPart256x16Pltt (void * pScreenDst, const NNSG2dScreenData * pScnData, int srcX, int srcY, int dstX, int dstY, int dstW, int width, int height)
 {
 
     {

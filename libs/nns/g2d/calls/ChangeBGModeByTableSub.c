@@ -38,8 +38,8 @@ inline GXBGMode GetBGModeSub (void)
     return (GXBGMode)(((*( REGType32v *) (0x04000000 + 0x1000)) & 0x00000007 ) >> 0 );
 }
 
-/* func_02015c34 -- NitroSystem g2d_Screen.c: ChangeBGModeByTableSub. */
-void func_02015c34 (const u8 modeTable[])
+/* ChangeBGModeByTableSub -- NitroSystem g2d_Screen.c: ChangeBGModeByTableSub. */
+void ChangeBGModeByTableSub (const u8 modeTable[])
 {
     GXBGMode mode = (GXBGMode)modeTable[GetBGModeSub()];
 

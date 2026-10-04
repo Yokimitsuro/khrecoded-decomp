@@ -126,8 +126,8 @@ inline int GetBGNo (NNSG2dBGSelect n)
 }
 inline REGType16v * GetBGnCNT (NNSG2dBGSelect n)
 {
-    extern REGType16v * const data_020530e8[];
-    return data_020530e8[n];
+    extern REGType16v * const sBGControlRegisters[];
+    return sBGControlRegisters[n];
 }
 inline BOOL IsMainBG (NNSG2dBGSelect bg)
 {
@@ -157,20 +157,20 @@ inline void SetBGnControlText (NNSG2dBGSelect n, GXBGScrSizeText screenSize, GXB
         | MakeBGnCNTValText(screenSize, colorMode, screenBase, charBase, bgExtPltt)
         );
 }
-extern const u8 data_02053078[4][8];
-extern void func_02015bf0 (const u8 modeTable[]);
-extern void func_02015c34 (const u8 modeTable[]);
+extern const u8 sBGTextModeTable[4][8];
+extern void ChangeBGModeByTableMain (const u8 modeTable[]);
+extern void ChangeBGModeByTableSub (const u8 modeTable[]);
 
-/* func_02015ee4 -- NitroSystem g2d_Screen.c: SetBGnControlToText. */
-void func_02015ee4 (NNSG2dBGSelect n, GXBGScrSizeText size, GXBGColorMode cmode, GXBGScrBase scnBase, GXBGCharBase chrBase)
+/* SetBGnControlToText -- NitroSystem g2d_Screen.c: SetBGnControlToText. */
+void SetBGnControlToText (NNSG2dBGSelect n, GXBGScrSizeText size, GXBGColorMode cmode, GXBGScrBase scnBase, GXBGCharBase chrBase)
 {
     const int bgNo = GetBGNo(n);
     GXBGExtPltt extPltt = GX_BG_EXTPLTT_01;
     if (IsMainBG(n)) {
         if (!IsMainBGExtPltt01Available()) extPltt = GX_BG_EXTPLTT_23;
-        func_02015bf0(data_02053078[bgNo]);
+        ChangeBGModeByTableMain(sBGTextModeTable[bgNo]);
     } else {
-        func_02015c34(data_02053078[bgNo]);
+        ChangeBGModeByTableSub(sBGTextModeTable[bgNo]);
     }
     SetBGnControlText(n, size, cmode, scnBase, chrBase, extPltt);
 }

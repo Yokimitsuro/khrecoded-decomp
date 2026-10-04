@@ -74,7 +74,7 @@ static inline u32 GetPlttSize(const NNSG2dPaletteData *pPltData)
 }
 
 #pragma opt_dead_assignments off
-void func_02015c5c(NNSG2dBGExtPlttSlot slot,
+void BgExtPltt_Upload(NNSG2dBGExtPlttSlot slot,
                    const NNSG2dPaletteData *pPltData,
                    const NNSG2dPaletteCompressInfo *pCmpInfo)
 {

@@ -3409,13 +3409,41 @@ libs/nns/g2d/auto/NNS_G2dSetImagePaletteLocation.c:
     complete
     .text       start:0x020152ec end:0x020152f8
 
-libs/nns/g2d/calls/func_02015660.c:
+libs/nns/g2d/calls/NNS_G2dLoadImage1DMapping.c:
+    complete
+    .text       start:0x020152f8 end:0x02015510
+
+libs/nns/g2d/calls/NNS_G2dLoadPalette.c:
+    complete
+    .text       start:0x02015510 end:0x02015608
+
+libs/nns/g2d/auto/NNSi_G2dSrtcSetTrans.c:
+    complete
+    .text       start:0x02015608 end:0x02015628
+
+libs/nns/g2d/auto/NNSi_G2dSrtcSetSRTRotZ.c:
+    complete
+    .text       start:0x02015628 end:0x02015644
+
+libs/nns/g2d/auto/NNSi_G2dSrtcSetSRTScale.c:
+    complete
+    .text       start:0x02015644 end:0x02015660
+
+libs/nns/g2d/calls/NNSi_G2dSrtcInitControl.c:
     complete
     .text       start:0x02015660 end:0x02015670
 
-libs/nns/g2d/calls/func_02015670.c:
+libs/nns/g2d/calls/NNSi_G2dSrtcSetInitialValue.c:
     complete
     .text       start:0x02015670 end:0x02015698
+
+libs/nns/g2d/calls/ApplyCurrentAnimResult_.c:
+    complete
+    .text       start:0x02015698 end:0x02015774
+
+libs/nns/g2d/calls/NNS_G2dInitCellAnimation.c:
+    complete
+    .text       start:0x02015774 end:0x020157b0
 
 libs/nns/g2d/calls/NNS_G2dSetCellAnimationSequence.c:
     complete
@@ -3429,79 +3457,79 @@ libs/nns/g2d/calls/NNS_G2dSetCellAnimationCurrentFrame.c:
     complete
     .text       start:0x020157e8 end:0x02015808
 
-src/auto/func_02015808.c:
+libs/nns/g2d/auto/NNS_G2dSetCellAnimationSpeed.c:
     complete
     .text       start:0x02015808 end:0x02015810
 
-src/calls/func_02015b74.c:
+libs/nns/g2d/calls/NNSi_G2dGetCellTransferState.c:
     complete
     .text       start:0x02015b74 end:0x02015b8c
 
-libs/nns/g2d/calls/func_02015b8c.c:
+libs/nns/g2d/calls/NNS_G2dSetCellTransferStateRequested.c:
     complete
     .text       start:0x02015b8c end:0x02015bb0
 
-libs/nns/g2d/calls/func_02015c34.c:
+libs/nns/g2d/calls/ChangeBGModeByTableSub.c:
     complete
     .text       start:0x02015c34 end:0x02015c5c
 
-libs/nitro/nns/calls/func_02015c5c.c:
+libs/nns/g2d/calls/BgExtPltt_Upload.c:
     complete
     .text       start:0x02015c5c end:0x02015d8c
 
-src/calls/func_02015eb8.c:
+libs/nns/g2d/calls/GetBGExtPlttSlot.c:
     complete
     .text       start:0x02015eb8 end:0x02015ee4
 
-libs/nns/g2d/calls/func_02015ee4.c:
+libs/nns/g2d/calls/SetBGnControlToText.c:
     complete
     .text       start:0x02015ee4 end:0x02015f78
 
-libs/nns/g2d/calls/func_02015f78.c:
+libs/nns/g2d/calls/SetBGnControlToAffine.c:
     complete
     .text       start:0x02015f78 end:0x02015ff4
 
-libs/nns/g2d/calls/func_02015ff4.c:
+libs/nns/g2d/calls/SetBGnControlTo256x16Pltt.c:
     complete
     .text       start:0x02015ff4 end:0x02016070
 
-libs/nns/g2d/calls/func_02016070.c:
+libs/nns/g2d/calls/SetBGControlText.c:
     complete
     .text       start:0x02016070 end:0x020160b0
 
-libs/nns/g2d/calls/func_020160b0.c:
+libs/nns/g2d/calls/SetBGControlAffine.c:
     complete
     .text       start:0x020160b0 end:0x020160f0
 
-libs/nns/g2d/calls/func_020160f0.c:
+libs/nns/g2d/calls/SetBGControl256x16Pltt.c:
     complete
     .text       start:0x020160f0 end:0x02016130
 
-libs/nns/g2d/calls/func_02016130.c:
+libs/nns/g2d/calls/LoadBGPaletteSelect.c:
     complete
     .text       start:0x02016130 end:0x02016168
 
-libs/nitro/nns/calls/func_020162b4.c:
+libs/nns/g2d/calls/LoadBGScreen.c:
     complete
     .text       start:0x020162b4 end:0x02016380
 
-libs/nns/g2d/calls/func_02016380.c:
+libs/nns/g2d/calls/SetBGControlAuto.c:
     complete
     .text       start:0x02016380 end:0x02016410
 
-libs/nitro/nns/auto/func_02016410.c:
+libs/nns/g2d/auto/LoadScreenPartText.c:
     complete
     .text       start:0x02016410 end:0x02016638
 
-libs/nns/g2d/calls/func_02016638.c:
+libs/nns/g2d/calls/LoadScreenPartAffine.c:
     complete
     .text       start:0x02016638 end:0x020166a0
 
-libs/nns/g2d/calls/func_020166a0.c:
+libs/nns/g2d/calls/LoadScreenPart256x16Pltt.c:
     complete
     .text       start:0x020166a0 end:0x0201670c
 
-libs/nns/g2d/calls/func_0201670c.c:
+libs/nns/g2d/calls/NNS_G2dBGLoadElementsEx.c:
     complete
     .text       start:0x0201670c end:0x02016768
 

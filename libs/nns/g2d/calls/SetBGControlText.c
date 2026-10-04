@@ -166,17 +166,17 @@ typedef struct ScreenSizeMap {
     u16 height;
     u16 scnSize;
 } ScreenSizeMap;
-extern const ScreenSizeMap data_02053060[4];
-extern const ScreenSizeMap * func_02015bb0 (const ScreenSizeMap tbl[4], int w, int h);
-extern void func_02015ee4 (NNSG2dBGSelect n, GXBGScrSizeText size, GXBGColorMode cmode, GXBGScrBase scnBase, GXBGCharBase chrBase);
+extern const ScreenSizeMap sTextScreenSizes[4];
+extern const ScreenSizeMap * SelectScnSize (const ScreenSizeMap tbl[4], int w, int h);
+extern void SetBGnControlToText (NNSG2dBGSelect n, GXBGScrSizeText size, GXBGColorMode cmode, GXBGScrBase scnBase, GXBGCharBase chrBase);
 
-/* func_02016070 -- NitroSystem g2d_Screen.c: SetBGControlText. */
-void func_02016070 (NNSG2dBGSelect bg, GXBGColorMode colorMode, int screenWidth, int screenHeight, GXBGScrBase scnBase, GXBGCharBase chrBase)
+/* SetBGControlText -- NitroSystem g2d_Screen.c: SetBGControlText. */
+void SetBGControlText (NNSG2dBGSelect bg, GXBGColorMode colorMode, int screenWidth, int screenHeight, GXBGScrBase scnBase, GXBGCharBase chrBase)
 {
     const ScreenSizeMap * pSizeMap;
 
 
-    pSizeMap = func_02015bb0(data_02053060, screenWidth, screenHeight);
+    pSizeMap = SelectScnSize(sTextScreenSizes, screenWidth, screenHeight);
 
-    func_02015ee4(bg, (GXBGScrSizeText)pSizeMap->scnSize, colorMode, scnBase, chrBase);
+    SetBGnControlToText(bg, (GXBGScrSizeText)pSizeMap->scnSize, colorMode, scnBase, chrBase);
 }

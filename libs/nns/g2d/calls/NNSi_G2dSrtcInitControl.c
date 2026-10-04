@@ -20,36 +20,9 @@ typedef volatile unsigned char vu8;
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-#define FX32_ONE ((fx32) 0x0000000000001000L)         // 1.000000000000
 
-void MIi_CpuClear16(u16 data, void * destp, u32 size);
-static inline void MI_CpuFill16 (void * dest, u16 data, u32 size)
-{
-    MIi_CpuClear16(data, dest, size);
-}
+
 typedef s32 fx32;
-typedef enum {
-    PXI_FIFO_TAG_EX = 0,
-    PXI_FIFO_TAG_USER_0,
-    PXI_FIFO_TAG_USER_1,
-    PXI_FIFO_TAG_SYSTEM,
-    PXI_FIFO_TAG_NVRAM,
-    PXI_FIFO_TAG_RTC,
-    PXI_FIFO_TAG_TOUCHPANEL,
-    PXI_FIFO_TAG_SOUND,
-    PXI_FIFO_TAG_PM,
-    PXI_FIFO_TAG_MIC,
-    PXI_FIFO_TAG_WM,
-    PXI_FIFO_TAG_FS,
-    PXI_FIFO_TAG_OS,
-    PXI_FIFO_TAG_CTRDG,
-    PXI_FIFO_TAG_CARD,
-    PXI_FIFO_TAG_WVR,
-    PXI_FIFO_TAG_CTRDG_Ex,
-    PXI_FIFO_TAG_CTRDG_PHI,
-    PXI_MAX_FIFO_TAG = 32
-} PXIFifoTag;
-typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
 typedef enum {
     TP_REQUEST_COMMAND_SAMPLING         = 0x0,
     TP_REQUEST_COMMAND_AUTO_ON          = 0x1,
@@ -176,13 +149,13 @@ typedef struct {
     NNSG2dSRTControlType type;
     NNSG2dSRTData srtData;
 } NNSG2dSRTControl;
+void NNSi_G2dSrtcSetInitialValue(NNSG2dSRTControl * pCtrl);
+extern void NNSi_G2dSrtcSetInitialValue (NNSG2dSRTControl * pCtrl);
 
-/* func_02015670 -- NitroSystem g2d_SRTControl.c: NNSi_G2dSrtcSetInitialValue. */
-void func_02015670 (NNSG2dSRTControl * pCtrl)
+void NNSi_G2dSrtcInitControl (NNSG2dSRTControl * pCtrl, NNSG2dSRTControlType type)
 {
 
-    MI_CpuFill16(&pCtrl->srtData, 0, sizeof(NNSG2dSRTData));
+    pCtrl->type = type;
 
-    pCtrl->srtData.scale.x = FX32_ONE;
-    pCtrl->srtData.scale.y = FX32_ONE;
+    NNSi_G2dSrtcSetInitialValue(pCtrl);
 }

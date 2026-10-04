@@ -22,11 +22,11 @@ typedef struct NNSG2dScreenData {
     u32 rawData[1];
 } NNSG2dScreenData;
 
-extern volatile u16 * const data_020530e8[];
+extern volatile u16 * const sBGControlRegisters[];
 
 extern void func_02018474(int *pWidth, int *pHeight, NNSG2dBGSelect bg);
 extern void DC_FlushRange(const void *startAddr, u32 nBytes);
-extern void func_020167e4(void *pScreenDst,
+extern void NNS_G2dBGLoadScreenRect(void *pScreenDst,
                           const NNSG2dScreenData *pScreenData,
                           int srcX, int srcY, int dstX, int dstY,
                           int dstW, int dstH, int width, int height);
@@ -38,7 +38,7 @@ static inline BOOL IsMainBG(NNSG2dBGSelect bg)
 
 static inline volatile u16 *GetBGnCNT(NNSG2dBGSelect bg)
 {
-    return data_020530e8[bg];
+    return sBGControlRegisters[bg];
 }
 
 static inline int GetBGScrOffset(void)
@@ -54,7 +54,7 @@ static inline void *GetBGnScrPtr(NNSG2dBGSelect bg)
                                    : 0x06200000) + baseBlock);
 }
 
-void func_020162b4(NNSG2dBGSelect bg, const NNSG2dScreenData *pScreenData)
+void LoadBGScreen(NNSG2dBGSelect bg, const NNSG2dScreenData *pScreenData)
 {
     void *pDstBase;
     int plane_cwidth;
@@ -74,7 +74,7 @@ void func_020162b4(NNSG2dBGSelect bg, const NNSG2dScreenData *pScreenData)
     }
 
     DC_FlushRange((void *)pScreenData->rawData, pScreenData->szByte);
-    func_020167e4(pDstBase, pScreenData,
+    NNS_G2dBGLoadScreenRect(pDstBase, pScreenData,
                   0, 0, 0, 0,
                   plane_cwidth, plane_cheight,
                   load_cwidth, load_cheight);

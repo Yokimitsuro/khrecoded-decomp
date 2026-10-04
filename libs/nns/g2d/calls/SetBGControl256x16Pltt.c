@@ -161,24 +161,24 @@ typedef enum NNSG2dBGSelect {
     NNS_G2D_BGSELECT_SUB3,
     NNS_G2D_BGSELECT_NUM
 } NNSG2dBGSelect;
-extern GXBGAreaOver data_0205a920;
+extern GXBGAreaOver sBGAreaOver;
 typedef struct ScreenSizeMap {
     u16 width;
     u16 height;
     u16 scnSize;
 } ScreenSizeMap;
-extern const ScreenSizeMap data_02053048[4];
-extern GXBGAreaOver data_0205a920;
-extern const ScreenSizeMap * func_02015bb0 (const ScreenSizeMap tbl[4], int w, int h);
-extern void func_02015f78 (NNSG2dBGSelect n, GXBGScrSizeAffine size, GXBGAreaOver areaOver, GXBGScrBase scnBase, GXBGCharBase chrBase);
+extern const ScreenSizeMap sAffineExtScreenSizes[4];
+extern GXBGAreaOver sBGAreaOver;
+extern const ScreenSizeMap * SelectScnSize (const ScreenSizeMap tbl[4], int w, int h);
+extern void SetBGnControlTo256x16Pltt (NNSG2dBGSelect n, GXBGScrSizeAffine size, GXBGAreaOver areaOver, GXBGScrBase scnBase, GXBGCharBase chrBase);
 
-/* func_020160b0 -- NitroSystem g2d_Screen.c: SetBGControlAffine. */
-void func_020160b0 (NNSG2dBGSelect bg, int screenWidth, int screenHeight, GXBGScrBase scnBase, GXBGCharBase chrBase)
+/* NitroSystem g2d_Screen.c: select the 256x16-palette affine screen size. */
+void SetBGControl256x16Pltt (NNSG2dBGSelect bg, int screenWidth, int screenHeight, GXBGScrBase scnBase, GXBGCharBase chrBase)
 {
     const ScreenSizeMap * pSizeMap;
 
 
-    pSizeMap = func_02015bb0(data_02053048, screenWidth, screenHeight);
+    pSizeMap = SelectScnSize(sAffineExtScreenSizes, screenWidth, screenHeight);
 
-    func_02015f78(bg, (GXBGScrSizeAffine)pSizeMap->scnSize, data_0205a920, scnBase, chrBase);
+    SetBGnControlTo256x16Pltt(bg, (GXBGScrSizeAffine)pSizeMap->scnSize, sBGAreaOver, scnBase, chrBase);
 }

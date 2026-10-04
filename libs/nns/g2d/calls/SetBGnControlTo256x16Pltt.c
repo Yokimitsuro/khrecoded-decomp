@@ -98,8 +98,8 @@ typedef enum NNSG2dBGSelect {
 } NNSG2dBGSelect;
 inline REGType16v * GetBGnCNT (NNSG2dBGSelect n)
 {
-    extern REGType16v * const data_020530e8[];
-    return data_020530e8[n];
+    extern REGType16v * const sBGControlRegisters[];
+    return sBGControlRegisters[n];
 }
 inline BOOL IsMainBG (NNSG2dBGSelect bg)
 {
@@ -121,17 +121,17 @@ inline void SetBGnControlAffine (NNSG2dBGSelect n, GXBGScrSizeAffine screenSize,
         | MakeBGnCNTValAffine(screenSize, areaOver, screenBase, charBase)
         );
 }
-extern const u8 data_02053000[2][8];
-extern void func_02015bf0 (const u8 modeTable[]);
-extern void func_02015c34 (const u8 modeTable[]);
+extern const u8 sBG256x16PlttModeTable[2][8];
+extern void ChangeBGModeByTableMain (const u8 modeTable[]);
+extern void ChangeBGModeByTableSub (const u8 modeTable[]);
 
-/* func_02015ff4 -- NitroSystem g2d_Screen.c: SetBGnControlToAffine. */
-void func_02015ff4 (NNSG2dBGSelect n, GXBGScrSizeAffine size, GXBGAreaOver areaOver, GXBGScrBase scnBase, GXBGCharBase chrBase)
+/* NitroSystem g2d_Screen.c: configure a 256x16-palette affine background. */
+void SetBGnControlTo256x16Pltt (NNSG2dBGSelect n, GXBGScrSizeAffine size, GXBGAreaOver areaOver, GXBGScrBase scnBase, GXBGCharBase chrBase)
 {
     if (IsMainBG(n)) {
-        func_02015bf0(data_02053000[n - 2]);
+        ChangeBGModeByTableMain(sBG256x16PlttModeTable[n - 2]);
     } else {
-        func_02015c34(data_02053000[n - 6]);
+        ChangeBGModeByTableSub(sBG256x16PlttModeTable[n - 6]);
     }
     SetBGnControlAffine(n, size, areaOver, scnBase, chrBase);
 }
