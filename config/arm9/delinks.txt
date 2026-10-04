@@ -3281,107 +3281,131 @@ libs/nns/gfd/calls/NNS_GfdFreeLnkPlttVram.c:
     complete
     .text       start:0x02014994 end:0x020149d8
 
-libs/nns/g2d/calls/func_02014a34.c:
+libs/nns/g2d/calls/GetUnpackedAnimBankImpl_.c:
     complete
     .text       start:0x02014a34 end:0x02014a70
 
-src/calls/func_02014a70.c:
+libs/nns/g2d/calls/NNS_G2dGetUnpackedAnimBank.c:
     complete
     .text       start:0x02014a70 end:0x02014a7c
 
-libs/nns/g2d/auto/func_02014bbc.c:
+libs/nns/g2d/auto/NNS_G2dGetAnimSequenceByIdx.c:
     complete
     .text       start:0x02014bbc end:0x02014bd4
 
-libs/nns/g2d/calls/func_02014bf0.c:
+libs/nns/g2d/calls/UnPackExtendedData_.c:
     complete
     .text       start:0x02014bf0 end:0x02014c00
 
-libs/nns/g2d/calls/func_02014c00.c:
+libs/nns/g2d/calls/NNS_G2dGetUnpackedCellBank.c:
     complete
     .text       start:0x02014c00 end:0x02014c3c
 
-libs/nns/g2d/auto/func_02014c3c.c:
+libs/nns/g2d/auto/NNS_G2dGetCellDataByIdx.c:
     complete
     .text       start:0x02014c3c end:0x02014c64
 
-libs/nns/g2d/calls/func_02014c64.c:
+libs/nns/g2d/calls/NNS_G2dUnpackNCE.c:
     complete
     .text       start:0x02014c64 end:0x02014d00
 
-src/calls/func_02014d00.c:
+libs/nns/g2d/calls/NNS_G2dGetUnpackedCharacterData.c:
     complete
     .text       start:0x02014d00 end:0x02014d3c
 
-src/auto/func_02014d3c.c:
+libs/nns/g2d/auto/NNS_G2dUnpackNCG.c:
     complete
     .text       start:0x02014d3c end:0x02014d4c
 
-src/calls/func_02014d4c.c:
+libs/nns/g2d/calls/NNS_G2dGetUnpackedBGCharacterData.c:
     complete
     .text       start:0x02014d4c end:0x02014d88
 
-src/auto/func_02014d88.c:
+libs/nns/g2d/auto/NNS_G2dUnpackBGNCG.c:
     complete
     .text       start:0x02014d88 end:0x02014d98
 
-libs/nns/g2d/calls/func_02014d98.c:
+libs/nns/g2d/calls/NNS_G2dGetUnpackedPaletteData.c:
     complete
     .text       start:0x02014d98 end:0x02014dd4
 
-libs/nns/g2d/auto/func_02014dd4.c:
+libs/nns/g2d/auto/NNS_G2dUnpackNCL.c:
     complete
     .text       start:0x02014dd4 end:0x02014de4
 
-libs/nns/g2d/auto/func_02014e14.c:
+libs/nns/g2d/calls/NNS_G2dGetUnpackedScreenData.c:
+    complete
+    .text       start:0x02014de4 end:0x02014e14
+
+libs/nns/g2d/auto/NNS_G2dFindBinaryBlock.c:
     complete
     .text       start:0x02014e14 end:0x02014e5c
 
-libs/nns/g2d/auto/func_02014fb4.c:
+libs/nns/g2d/auto/NNSi_G2dUnpackUserExCellAttrBank.c:
+    complete
+    .text       start:0x02014e5c end:0x02014ea4
+
+libs/nns/g2d/calls/SequenceEdgeHandle_.c:
+    complete
+    .text       start:0x02014ea4 end:0x02014fb4
+
+libs/nns/g2d/auto/SetAnimCtrlCurrentFrameImpl_.c:
     complete
     .text       start:0x02014fb4 end:0x02014fec
 
-libs/nns/g2d/auto/func_02014fec.c:
+libs/nns/g2d/auto/NNS_G2dGetAnimCtrlCurrentElement.c:
     complete
     .text       start:0x02014fec end:0x02014ff8
 
-libs/nns/g2d/calls/func_02015190.c:
+libs/nns/g2d/calls/NNS_G2dTickAnimCtrl.c:
+    complete
+    .text       start:0x02014ff8 end:0x02015190
+
+libs/nns/g2d/calls/NNS_G2dSetAnimCtrlCurrentFrame.c:
     complete
     .text       start:0x02015190 end:0x020151ac
 
-libs/nns/g2d/auto/func_020151ac.c:
+libs/nns/g2d/auto/NNS_G2dGetAnimCtrlCurrentFrame.c:
     complete
     .text       start:0x020151ac end:0x020151c8
 
-libs/nns/g2d/auto/func_02015208.c:
+libs/nns/g2d/calls/NNS_G2dInitAnimCtrl.c:
+    complete
+    .text       start:0x020151c8 end:0x02015208
+
+libs/nns/g2d/auto/NNS_G2dInitAnimCallBackFunctor.c:
     complete
     .text       start:0x02015208 end:0x02015220
 
-libs/nns/g2d/calls/func_02015278.c:
+libs/nns/g2d/calls/NNS_G2dResetAnimCtrlState.c:
+    complete
+    .text       start:0x02015220 end:0x02015278
+
+libs/nns/g2d/calls/NNS_G2dBindAnimCtrl.c:
     complete
     .text       start:0x02015278 end:0x02015288
 
-src/auto/func_02015288.c:
+libs/nns/g2d/auto/NNS_G2dSetAnimCtrlCallBackFunctorAtAnimFrame.c:
     complete
     .text       start:0x02015288 end:0x020152a0
 
-libs/nns/g2d/auto/func_020152a0.c:
+libs/nns/g2d/auto/NNS_G2dInitImageProxy.c:
     complete
     .text       start:0x020152a0 end:0x020152bc
 
-src/auto/func_020152bc.c:
+libs/nns/g2d/auto/NNS_G2dSetImageLocation.c:
     complete
     .text       start:0x020152bc end:0x020152c4
 
-src/auto/func_020152c4.c:
+libs/nns/g2d/auto/NNS_G2dGetImageLocation.c:
     complete
     .text       start:0x020152c4 end:0x020152cc
 
-libs/nns/g2d/auto/func_020152cc.c:
+libs/nns/g2d/auto/NNS_G2dInitImagePaletteProxy.c:
     complete
     .text       start:0x020152cc end:0x020152ec
 
-src/auto/func_020152ec.c:
+libs/nns/g2d/auto/NNS_G2dSetImagePaletteLocation.c:
     complete
     .text       start:0x020152ec end:0x020152f8
 
@@ -3393,15 +3417,15 @@ libs/nns/g2d/calls/func_02015670.c:
     complete
     .text       start:0x02015670 end:0x02015698
 
-src/calls/func_020157b0.c:
+libs/nns/g2d/calls/NNS_G2dSetCellAnimationSequence.c:
     complete
     .text       start:0x020157b0 end:0x020157c8
 
-libs/nns/g2d/calls/func_020157c8.c:
+libs/nns/g2d/calls/NNS_G2dTickCellAnimation.c:
     complete
     .text       start:0x020157c8 end:0x020157e8
 
-libs/nns/g2d/calls/func_020157e8.c:
+libs/nns/g2d/calls/NNS_G2dSetCellAnimationCurrentFrame.c:
     complete
     .text       start:0x020157e8 end:0x02015808
 
@@ -4169,7 +4193,7 @@ src/calls/func_0202198c.c:
     complete
     .text       start:0x0202198c end:0x020219a0
 
-libs/msl/c/auto/func_020219a0.c:
+libs/msl/c/auto/abs.c:
     complete
     .text       start:0x020219a0 end:0x020219ac
 

@@ -1,4 +1,10 @@
 {
+  "libs/nns/g2d/calls/NNS_G2dGetUnpackedScreenData.c": "dsi/1.1",
+  "libs/nns/g2d/auto/NNSi_G2dUnpackUserExCellAttrBank.c": "dsi/1.1",
+  "libs/nns/g2d/calls/SequenceEdgeHandle_.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNS_G2dInitAnimCtrl.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNS_G2dResetAnimCtrlState.c": "dsi/1.1",
+  "libs/nns/g2d/calls/NNS_G2dTickAnimCtrl.c": "dsi/1.1p1",
   "libs/nns/snd/calls/NNSi_SndArcStrmMain.c": "dsi/1.1",
   "libs/nns/snd/calls/NNS_SndHeapCreate.c": "dsi/1.1",
   "libs/nns/snd/calls/NNS_SndHeapSaveState.c": "dsi/1.1",

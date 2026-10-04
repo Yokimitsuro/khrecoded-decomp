@@ -1,4 +1,4 @@
-extern int func_020219a0(int);
+extern int abs(int);
 
 typedef struct Block {
     int pad0;
@@ -14,7 +14,7 @@ int func_02013318(void *heap, int align_in) {
     Block *node;
     unsigned int mask_lo, mask_hi;
 
-    align = func_020219a0(align_in);
+    align = abs(align_in);
     node = *(Block **)((char *)heap + 0x24);
     best_size = 0;
     best_pad = (unsigned int)-1;
