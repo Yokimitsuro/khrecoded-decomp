@@ -2595,8 +2595,8 @@ sAllocatorFuncForExpHeap kind:data(any) addr:0x02052f00
 sAllocatorFuncForSDKHeap kind:data(any) addr:0x02052f08
 sVramTransferTaskHandlers kind:data(any) addr:0x02052f10
 sLnkTexInitialSlots kind:data(any) addr:0x02052fa0
-data_02052fd0 kind:data(any) addr:0x02052fd0
-data_02052fe8 kind:data(any) addr:0x02052fe8
+NNSi_objSizeHTbl kind:data(any) addr:0x02052fd0
+NNSi_objSizeWTbl kind:data(any) addr:0x02052fe8
 sBG256x16PlttModeTable kind:data(any) addr:0x02053000
 sBGControlRegisterOffsets kind:data(any) addr:0x02053010
 sBGAffineModeTable kind:data(any) addr:0x02053020
@@ -2604,6 +2604,7 @@ sAffineExtScreenSizes kind:data(any) addr:0x02053030
 sAffineScreenSizes kind:data(any) addr:0x02053048
 sTextScreenSizes kind:data(any) addr:0x02053060
 sBGTextModeTable kind:data(any) addr:0x02053078
+sG2dScreenTablePadding kind:data(any) addr:0x02053098
 data_020530b0 kind:data(any) addr:0x020530b0
 data_020530bc kind:data(any) addr:0x020530bc
 data_020530c8 kind:data(any) addr:0x020530c8

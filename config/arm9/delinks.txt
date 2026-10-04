@@ -3469,6 +3469,14 @@ libs/nns/g2d/calls/NNS_G2dSetCellTransferStateRequested.c:
     complete
     .text       start:0x02015b8c end:0x02015bb0
 
+libs/nns/g2d/auto/SelectScnSize.c:
+    complete
+    .text       start:0x02015bb0 end:0x02015bf0
+
+libs/nns/g2d/calls/ChangeBGModeByTableMain.c:
+    complete
+    .text       start:0x02015bf0 end:0x02015c34
+
 libs/nns/g2d/calls/ChangeBGModeByTableSub.c:
     complete
     .text       start:0x02015c34 end:0x02015c5c
@@ -3476,6 +3484,10 @@ libs/nns/g2d/calls/ChangeBGModeByTableSub.c:
 libs/nns/g2d/calls/BgExtPltt_Upload.c:
     complete
     .text       start:0x02015c5c end:0x02015d8c
+
+libs/nns/g2d/calls/BgPltt_Upload.c:
+    complete
+    .text       start:0x02015d8c end:0x02015eb8
 
 libs/nns/g2d/calls/GetBGExtPlttSlot.c:
     complete
@@ -3509,6 +3521,14 @@ libs/nns/g2d/calls/LoadBGPaletteSelect.c:
     complete
     .text       start:0x02016130 end:0x02016168
 
+libs/nns/g2d/calls/LoadBGPalette.c:
+    complete
+    .text       start:0x02016168 end:0x020161d8
+
+libs/nns/g2d/calls/LoadBGCharacter.c:
+    complete
+    .text       start:0x020161d8 end:0x020162b4
+
 libs/nns/g2d/calls/LoadBGScreen.c:
     complete
     .text       start:0x020162b4 end:0x02016380
@@ -3532,6 +3552,14 @@ libs/nns/g2d/calls/LoadScreenPart256x16Pltt.c:
 libs/nns/g2d/calls/NNS_G2dBGLoadElementsEx.c:
     complete
     .text       start:0x0201670c end:0x02016768
+
+libs/nns/g2d/calls/NNS_G2dBGSetupEx.c:
+    complete
+    .text       start:0x02016768 end:0x020167e4
+
+libs/nns/g2d/calls/NNS_G2dBGLoadScreenRect.c:
+    complete
+    .text       start:0x020167e4 end:0x02016938
 
 libs/nns/g2d/auto/func_02016938.c:
     complete
@@ -5156,6 +5184,14 @@ libs/nitro/math/data/MATHi_SHA1ProcessMessageBlockFunc.c:
 libs/nitro/snd/data/SNDi_SharedWork.c:
     complete
     .bss        start:0x02059780 end:0x02059784
+
+libs/nns/g2d/data/g2d_oam_size_tables.c:
+    complete
+    .rodata     start:0x02052fd0 end:0x02053000
+
+libs/nns/g2d/data/g2d_screen_tables.c:
+    complete
+    .rodata     start:0x02053000 end:0x02053098
 
 libs/nns/gfd/data/sLnkPlttVramManager.c:
     complete
