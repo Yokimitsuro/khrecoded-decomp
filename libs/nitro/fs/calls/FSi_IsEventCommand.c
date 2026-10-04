@@ -1,67 +1,51 @@
 #include "libs/nitro/fs/fs_internal.h"
 
-extern void FSi_ROMFAT_ReadFile(void);
-extern void FSi_ROMFAT_WriteFile(void);
-extern void FSi_ROMFAT_SeekDirectory(void);
-extern void FSi_ROMFAT_ReadDirectory(void);
-extern void FSi_ROMFAT_FindPath(void);
-extern void FSi_ROMFAT_GetPath(void);
-extern void FSi_ROMFAT_OpenFileFast(void);
-extern void FSi_ROMFAT_OpenFileDirect(void);
-extern void FSi_ROMFAT_CloseFile(void);
-extern void FSi_ROMFAT_Activate(void);
-extern void FSi_ROMFAT_Idle(void);
-extern void FSi_ROMFAT_Suspend(void);
-extern void FSi_ROMFAT_Resume(void);
-extern void FSi_ROMFAT_OpenFile(void);
-extern void FSi_ROMFAT_SeekFile(void);
-extern void FSi_ROMFAT_GetFileLength(void);
-extern void FSi_ROMFAT_GetFilePosition(void);
-extern void FSi_ROMFAT_Unmount(void);
-extern void FSi_ROMFAT_GetArchiveCaps(void);
+extern void FSi_ROMFAT_Activate(FSArchive *archive);
+extern void FSi_ROMFAT_Idle(FSArchive *archive);
+extern void FSi_ROMFAT_Suspend(FSArchive *archive);
+extern void FSi_ROMFAT_Resume(FSArchive *archive);
+extern void FSi_ROMFAT_Unmount(FSArchive *archive);
 extern void FSi_ROMFAT_GetPathInfo(void);
-extern void FSi_ROMFAT_GetArchiveResource(void);
-extern void FSi_ROMFAT_OpenDirectory(void);
-extern void FSi_ROMFAT_CloseDirectory(void);
 
 const FSArchiveInterface FSiArchiveProcInterface = {
-    FSi_ROMFAT_ReadFile,
-    FSi_ROMFAT_WriteFile,
-    FSi_ROMFAT_SeekDirectory,
-    FSi_ROMFAT_ReadDirectory,
-    FSi_ROMFAT_FindPath,
-    FSi_ROMFAT_GetPath,
-    FSi_ROMFAT_OpenFileFast,
-    FSi_ROMFAT_OpenFileDirect,
-    FSi_ROMFAT_CloseFile,
-    FSi_ROMFAT_Activate,
-    FSi_ROMFAT_Idle,
-    FSi_ROMFAT_Suspend,
-    FSi_ROMFAT_Resume,
-    FSi_ROMFAT_OpenFile,
-    FSi_ROMFAT_SeekFile,
-    FSi_ROMFAT_GetFileLength,
-    FSi_ROMFAT_GetFilePosition,
+    (FSArchiveMethod)FSi_ROMFAT_ReadFile,
+    (FSArchiveMethod)FSi_ROMFAT_WriteFile,
+    (FSArchiveMethod)FSi_ROMFAT_SeekDirectory,
+    (FSArchiveMethod)FSi_ROMFAT_ReadDirectory,
+    (FSArchiveMethod)FSi_ROMFAT_FindPath,
+    (FSArchiveMethod)FSi_ROMFAT_GetPath,
+    (FSArchiveMethod)FSi_ROMFAT_OpenFileFast,
+    (FSArchiveMethod)FSi_ROMFAT_OpenFileDirect,
+    (FSArchiveMethod)FSi_ROMFAT_CloseFile,
+    (FSArchiveMethod)FSi_ROMFAT_Activate,
+    (FSArchiveMethod)FSi_ROMFAT_Idle,
+    (FSArchiveMethod)FSi_ROMFAT_Suspend,
+    (FSArchiveMethod)FSi_ROMFAT_Resume,
+    (FSArchiveMethod)FSi_ROMFAT_OpenFile,
+    (FSArchiveMethod)FSi_ROMFAT_SeekFile,
+    (FSArchiveMethod)FSi_ROMFAT_GetFileLength,
+    (FSArchiveMethod)FSi_ROMFAT_GetFilePosition,
     0,
-    FSi_ROMFAT_Unmount,
-    FSi_ROMFAT_GetArchiveCaps,
-    0,
-    0,
-    0,
-    FSi_ROMFAT_GetPathInfo,
+    (FSArchiveMethod)FSi_ROMFAT_Unmount,
+    (FSArchiveMethod)FSi_ROMFAT_GetArchiveCaps,
     0,
     0,
     0,
-    0,
-    FSi_ROMFAT_GetArchiveResource,
-    0,
+    (FSArchiveMethod)FSi_ROMFAT_GetPathInfo,
     0,
     0,
-    FSi_ROMFAT_OpenDirectory,
-    FSi_ROMFAT_CloseDirectory,
+    0,
+    0,
+    (FSArchiveMethod)FSi_ROMFAT_GetArchiveResource,
+    0,
+    0,
+    0,
+    (FSArchiveMethod)FSi_ROMFAT_OpenDirectory,
+    (FSArchiveMethod)FSi_ROMFAT_CloseDirectory,
     0,
     {0}
 };
+
 BOOL FSi_IsEventCommand(FSCommandType command)
 {
     return command == FS_COMMAND_ACTIVATE ||

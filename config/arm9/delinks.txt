@@ -1978,6 +1978,10 @@ libs/nitro/fs/auto/FSi_CloseFileCommand.c:
     complete
     .text       start:0x0200c708 end:0x0200c710
 
+libs/nitro/fs/calls/FSi_TranslateCommand.c:
+    complete
+    .text       start:0x0200c710 end:0x0200c7e0
+
 libs/nitro/fs/calls/FSi_ROMFAT_ReadFile.c:
     complete
     .text       start:0x0200c7e0 end:0x0200c824
@@ -1989,6 +1993,10 @@ libs/nitro/fs/calls/FSi_ROMFAT_WriteFile.c:
 libs/nitro/fs/calls/FSi_ROMFAT_SeekDirectory.c:
     complete
     .text       start:0x0200c868 end:0x0200c8c0
+
+libs/nitro/fs/calls/FSi_ROMFAT_ReadDirectory.c:
+    complete
+    .text       start:0x0200c8c0 end:0x0200c9e8
 
 libs/nitro/fs/calls/FSi_ROMFAT_FindPath.c:
     complete

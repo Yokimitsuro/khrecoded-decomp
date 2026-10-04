@@ -463,5 +463,7 @@
   "libs/nitro/fs/data/fsi_default_command.c": "dsi/1.1",
   "libs/nitro/fs/auto/FS_GetArchiveName.c": "dsi/1.1",
   "libs/nitro/fs/calls/FSi_FindPathCommand.c": "dsi/1.1",
-  "libs/nitro/fs/calls/FSi_GetPathCommand.c": "dsi/1.1"
+  "libs/nitro/fs/calls/FSi_GetPathCommand.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_TranslateCommand.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_ROMFAT_ReadDirectory.c": "dsi/1.1"
 }

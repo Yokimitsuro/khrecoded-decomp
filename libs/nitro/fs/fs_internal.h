@@ -53,6 +53,28 @@ typedef struct FSPathStrings {
 
 extern FSPathStrings fsi_path_strings;
 
+typedef struct FSDateTime {
+    u32 year;
+    u32 month;
+    u32 day;
+    u32 hour;
+    u32 minute;
+    u32 second;
+} FSDateTime;
+
+typedef struct FSDirectoryEntryInfo {
+    char shortName[16];
+    u32 shortNameLength;
+    char longName[260];
+    u32 longNameLength;
+    u32 attributes;
+    FSDateTime accessTime;
+    FSDateTime modificationTime;
+    FSDateTime creationTime;
+    u32 fileSize;
+    u32 id;
+} FSDirectoryEntryInfo;
+
 typedef struct FSArchiveFAT {
     u32 top;
     u32 bottom;
@@ -296,6 +318,9 @@ extern FSRomArchiveState fsi_rom_archive_state;
 #define FS_COMMAND_MAX 35UL
 #define FS_COMMAND_INVALID FS_COMMAND_MAX
 
+#define FS_ATTRIBUTE_IS_DIRECTORY 0x00000100UL
+#define FS_ATTRIBUTE_IS_OFFLINE 0x00000400UL
+
 #define FS_FILE_STATUS_BUSY 0x00000001UL
 #define FS_FILE_STATUS_CANCEL 0x00000002UL
 #define FS_FILE_STATUS_BLOCKING 0x00000004UL
@@ -357,6 +382,8 @@ FSResult FSi_ROMFAT_WriteFile(FSArchive *archive, FSFile *file,
                               const void *buffer, u32 *length);
 FSResult FSi_ROMFAT_SeekDirectory(FSArchive *archive, FSFile *file, u32 id,
                                   u32 position);
+FSResult FSi_ROMFAT_ReadDirectory(FSArchive *archive, FSFile *file,
+                                  FSDirectoryEntryInfo *info);
 FSResult FSi_ROMFAT_FindPath(FSArchive *archive, u32 baseDirectoryId,
                              const char *path, u32 *targetId,
                              BOOL targetIsDirectory);
