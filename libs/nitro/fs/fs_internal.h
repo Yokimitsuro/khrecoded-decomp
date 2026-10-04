@@ -39,6 +39,20 @@ typedef struct FSFileID {
     u32 fileId;
 } FSFileID;
 
+typedef union FSArchiveName {
+    char shortName[4];
+    u32 packed;
+} FSArchiveName;
+
+typedef struct FSPathStrings {
+    char overlayArchiveName[4];
+    char pathRootSuffix[4];
+    char romArchiveName[4];
+    char romRootPath[8];
+} FSPathStrings;
+
+extern FSPathStrings fsi_path_strings;
+
 typedef struct FSArchiveFAT {
     u32 top;
     u32 bottom;
@@ -219,7 +233,7 @@ typedef struct FSFile {
 } FSFile;
 
 typedef struct FSArchive {
-    u32 name;
+    FSArchiveName name;
     struct FSArchive *next;
     FSFile *list;
     OSThreadQueue queue;
@@ -315,6 +329,7 @@ void FS_InitFile(FSFile *file);
 void FS_CancelFile(FSFile *file);
 BOOL FSi_SendCommand(FSFile *file, FSCommandType command, BOOL blocking);
 FSArchive *FS_NormalizePath(const char *path, u32 *baseId, char *relativePath);
+const char *FS_GetArchiveName(const FSArchive *archive);
 BOOL FSi_GetFileLengthIfProc(FSFile *file, u32 *length);
 u32 FS_GetFileLength(FSFile *file);
 BOOL FSi_GetFilePositionIfProc(FSFile *file, u32 *position);
@@ -326,7 +341,7 @@ FSResult FSi_TranslateCommand(FSFile *file, FSCommandType command,
                               BOOL blocking);
 FSResult FSi_ReadTable(FSiSyncReadParam *parameter, void *destination,
                        u32 length);
-FSResult FSi_SeekDirDirect(FSFile *file, u16 directoryId);
+FSResult FSi_SeekDirDirect(FSFile *file, u32 directoryId);
 FSResult FSi_SeekDirCommand(FSFile *file);
 FSResult FSi_ReadDirCommand(FSFile *file);
 FSResult FSi_FindPathCommand(FSFile *file);

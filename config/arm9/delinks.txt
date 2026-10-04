@@ -1786,6 +1786,10 @@ libs/nitro/fs/calls/FSi_SendCommand.c:
     complete
     .text       start:0x0200a944 end:0x0200aa7c
 
+libs/nitro/fs/auto/FS_GetArchiveName.c:
+    complete
+    .text       start:0x0200b048 end:0x0200b058
+
 libs/nitro/fs/calls/FS_MountArchive.c:
     complete
     .text       start:0x0200b058 end:0x0200b0a0
@@ -1945,6 +1949,14 @@ libs/nitro/fs/calls/FSi_SeekDirCommand.c:
 libs/nitro/fs/calls/FSi_ReadDirCommand.c:
     complete
     .text       start:0x0200bf40 end:0x0200c06c
+
+libs/nitro/fs/calls/FSi_FindPathCommand.c:
+    complete
+    .text       start:0x0200c06c end:0x0200c280
+
+libs/nitro/fs/calls/FSi_GetPathCommand.c:
+    complete
+    .text       start:0x0200c280 end:0x0200c5fc
 
 libs/nitro/fs/calls/FSi_OpenFileFastCommand.c:
     complete

@@ -460,5 +460,8 @@
   "libs/nitro/fs/auto/FSi_ReadFileCommand.c": "dsi/1.1",
   "libs/nitro/fs/auto/FSi_WriteFileCommand.c": "dsi/1.1",
   "libs/nitro/fs/auto/FSi_CloseFileCommand.c": "dsi/1.1",
-  "libs/nitro/fs/data/fsi_default_command.c": "dsi/1.1"
+  "libs/nitro/fs/data/fsi_default_command.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FS_GetArchiveName.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_FindPathCommand.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_GetPathCommand.c": "dsi/1.1"
 }

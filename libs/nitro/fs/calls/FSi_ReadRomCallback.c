@@ -3,13 +3,6 @@
 extern int CARDi_ReadRom(int dma, int src, int dst, int len, int callback, int callbackArg, int isAsync);
 extern int FSi_OnRomReadDone(void);
 
-typedef struct {
-    char overlayArchiveName[4];
-    char pathRootSuffix[4];
-    char romArchiveName[4];
-    char romRootPath[8];
-} FSPathStrings;
-
 FSPathStrings fsi_path_strings = {
     "rom",
     ":/",

@@ -1,6 +1,6 @@
 #include "libs/nitro/fs/fs_internal.h"
 
-FSResult FSi_SeekDirDirect(FSFile *file, u16 directoryId)
+FSResult FSi_SeekDirDirect(FSFile *file, u32 directoryId)
 {
     FSSeekDirInfo *argument = (FSSeekDirInfo *)file->reserved2;
 
