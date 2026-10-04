@@ -3221,13 +3221,65 @@ libs/nns/gfd/calls/NNS_GfdRegisterNewVramTransferTask.c:
     complete
     .text       start:0x020140a4 end:0x0201410c
 
-src/auto/func_020141f0.c:
+libs/nns/gfd/calls/TryToMergeBlockRegion_.c:
+    complete
+    .text       start:0x0201410c end:0x020141f0
+
+libs/nns/gfd/auto/NNSi_GfdInitLnkVramMan.c:
     complete
     .text       start:0x020141f0 end:0x020141fc
 
-src/calls/func_0201429c.c:
+libs/nns/gfd/calls/NNSi_GfdInitLnkVramBlockPool.c:
+    complete
+    .text       start:0x020141fc end:0x02014240
+
+libs/nns/gfd/calls/NNSi_GfdAddNewFreeBlock.c:
+    complete
+    .text       start:0x02014240 end:0x0201429c
+
+libs/nns/gfd/calls/NNSi_GfdAllocLnkVram.c:
     complete
     .text       start:0x0201429c end:0x020142b0
+
+libs/nns/gfd/calls/NNSi_GfdMergeAllFreeBlocks.c:
+    complete
+    .text       start:0x020143e8 end:0x0201446c
+
+libs/nns/gfd/calls/NNSi_GfdFreeLnkVram.c:
+    complete
+    .text       start:0x0201446c end:0x020144fc
+
+libs/nns/gfd/auto/NNS_GfdGetLnkTexVramManagerWorkSize.c:
+    complete
+    .text       start:0x020144fc end:0x02014504
+
+libs/nns/gfd/calls/NNS_GfdInitLnkTexVramManager.c:
+    complete
+    .text       start:0x02014504 end:0x0201455c
+
+libs/nns/gfd/calls/NNS_GfdAllocLnkTexVram.c:
+    complete
+    .text       start:0x0201455c end:0x020145e0
+
+libs/nns/gfd/calls/NNS_GfdFreeLnkTexVram.c:
+    complete
+    .text       start:0x020145e0 end:0x0201464c
+
+libs/nns/gfd/auto/NNS_GfdGetLnkPlttVramManagerWorkSize.c:
+    complete
+    .text       start:0x02014864 end:0x0201486c
+
+libs/nns/gfd/calls/NNS_GfdInitLnkPlttVramManager.c:
+    complete
+    .text       start:0x0201486c end:0x020148c0
+
+libs/nns/gfd/calls/NNS_GfdAllocLnkPlttVram.c:
+    complete
+    .text       start:0x020148c0 end:0x02014994
+
+libs/nns/gfd/calls/NNS_GfdFreeLnkPlttVram.c:
+    complete
+    .text       start:0x02014994 end:0x020149d8
 
 libs/nns/g2d/calls/func_02014a34.c:
     complete
@@ -5052,6 +5104,18 @@ libs/nitro/math/data/MATHi_SHA1ProcessMessageBlockFunc.c:
 libs/nitro/snd/data/SNDi_SharedWork.c:
     complete
     .bss        start:0x02059780 end:0x02059784
+
+libs/nns/gfd/data/sLnkPlttVramManager.c:
+    complete
+    .bss        start:0x0205a900 end:0x0205a914
+
+libs/nns/gfd/data/sLnkTexInitialSlots.c:
+    complete
+    .rodata     start:0x02052fa0 end:0x02052fd0
+
+libs/nns/gfd/data/sLnkTexVramManager.c:
+    complete
+    .bss        start:0x0205a8e4 end:0x0205a900
 
 libs/nns/snd/data/sStrmChannel.c:
     complete
