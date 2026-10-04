@@ -1930,7 +1930,39 @@ libs/nitro/fs/calls/FS_UnloadOverlay.c:
     complete
     .text       start:0x0200bdcc end:0x0200be18
 
-src/auto/func_0200c708.c:
+libs/nitro/fs/calls/FSi_ReadTable.c:
+    complete
+    .text       start:0x0200be18 end:0x0200be78
+
+libs/nitro/fs/calls/FSi_SeekDirDirect.c:
+    complete
+    .text       start:0x0200be78 end:0x0200bea4
+
+libs/nitro/fs/calls/FSi_SeekDirCommand.c:
+    complete
+    .text       start:0x0200bea4 end:0x0200bf40
+
+libs/nitro/fs/calls/FSi_ReadDirCommand.c:
+    complete
+    .text       start:0x0200bf40 end:0x0200c06c
+
+libs/nitro/fs/calls/FSi_OpenFileFastCommand.c:
+    complete
+    .text       start:0x0200c5fc end:0x0200c684
+
+libs/nitro/fs/auto/FSi_OpenFileDirectCommand.c:
+    complete
+    .text       start:0x0200c684 end:0x0200c6a8
+
+libs/nitro/fs/auto/FSi_ReadFileCommand.c:
+    complete
+    .text       start:0x0200c6a8 end:0x0200c6d8
+
+libs/nitro/fs/auto/FSi_WriteFileCommand.c:
+    complete
+    .text       start:0x0200c6d8 end:0x0200c708
+
+libs/nitro/fs/auto/FSi_CloseFileCommand.c:
     complete
     .text       start:0x0200c708 end:0x0200c710
 
@@ -4776,3 +4808,7 @@ libs/nitro/fs/data/FSiOverlayContext.c:
 libs/nitro/fs/data/fsiDefaultDigestKey.c:
     complete
     .rodata     start:0x02052980 end:0x020529c0
+
+libs/nitro/fs/data/fsi_default_command.c:
+    complete
+    .rodata     start:0x020529c0 end:0x020529f4

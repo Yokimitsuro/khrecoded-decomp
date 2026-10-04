@@ -39,6 +39,27 @@ typedef struct FSFileID {
     u32 fileId;
 } FSFileID;
 
+typedef struct FSArchiveFAT {
+    u32 top;
+    u32 bottom;
+} FSArchiveFAT;
+
+typedef struct FSArchiveFNT {
+    u32 start;
+    u16 index;
+    u16 parent;
+} FSArchiveFNT;
+
+typedef struct FSDirEntry {
+    union {
+        FSFileID file;
+        FSDirPos directory;
+    } id;
+    BOOL isDirectory;
+    u32 nameLength;
+    char name[128];
+} FSDirEntry;
+
 typedef struct FSROMFATFileProperty {
     u32 ownId;
     u32 top;
@@ -72,6 +93,11 @@ typedef struct FSSeekDirInfo {
     FSDirPos position;
 } FSSeekDirInfo;
 
+typedef struct FSReadDirInfo {
+    FSDirEntry *entry;
+    BOOL skipName;
+} FSReadDirInfo;
+
 typedef struct FSFindPathInfo {
     FSDirPos position;
     const char *path;
@@ -103,6 +129,7 @@ typedef union FSROMFATCommandInfo {
     FSReadFileInfo readFile;
     FSWriteFileInfo writeFile;
     FSSeekDirInfo seekDirectory;
+    FSReadDirInfo readDirectory;
     FSFindPathInfo findPath;
     FSGetPathInfo getPath;
     FSOpenFileFastInfo openFileFast;
@@ -204,6 +231,11 @@ typedef struct FSArchive {
     u8 reserved[52];
 } FSArchive;
 
+typedef struct FSiSyncReadParam {
+    FSArchive *archive;
+    u32 position;
+} FSiSyncReadParam;
+
 typedef struct FSRomArchiveState {
     u32 defaultDmaNo;
     int cardLockId;
@@ -213,11 +245,23 @@ typedef struct FSRomArchiveState {
 extern FSRomArchiveState fsi_rom_archive_state;
 
 #define FS_RESULT_SUCCESS 0
+#define FS_RESULT_FAILURE 1
 #define FS_RESULT_BUSY 2
 #define FS_RESULT_CANCELED 3
 #define FS_RESULT_UNSUPPORTED 4
+#define FS_RESULT_ERROR 5
 #define FS_RESULT_INVALID_PARAMETER 6
+#define FS_RESULT_NO_MORE_RESOURCE 7
+#define FS_RESULT_ALREADY_DONE 8
+#define FS_RESULT_PERMISSION_DENIED 9
+#define FS_RESULT_MEDIA_FATAL 10
+#define FS_RESULT_NO_ENTRY 11
+#define FS_RESULT_MEDIA_NOTHING 12
+#define FS_RESULT_MEDIA_UNKNOWN 13
+#define FS_RESULT_BAD_FORMAT 14
+#define FS_RESULT_MAX 15
 #define FS_RESULT_PROC_ASYNC 256
+#define FS_RESULT_PROC_DEFAULT 257
 #define FS_RESULT_PROC_UNKNOWN 258
 
 #define FS_COMMAND_READFILE 0UL
@@ -280,6 +324,18 @@ BOOL FS_OpenFile(FSFile *file, const char *path);
 u32 FS_GetLength(FSFile *file);
 FSResult FSi_TranslateCommand(FSFile *file, FSCommandType command,
                               BOOL blocking);
+FSResult FSi_ReadTable(FSiSyncReadParam *parameter, void *destination,
+                       u32 length);
+FSResult FSi_SeekDirDirect(FSFile *file, u16 directoryId);
+FSResult FSi_SeekDirCommand(FSFile *file);
+FSResult FSi_ReadDirCommand(FSFile *file);
+FSResult FSi_FindPathCommand(FSFile *file);
+FSResult FSi_GetPathCommand(FSFile *file);
+FSResult FSi_OpenFileFastCommand(FSFile *file);
+FSResult FSi_OpenFileDirectCommand(FSFile *file);
+FSResult FSi_ReadFileCommand(FSFile *file);
+FSResult FSi_WriteFileCommand(FSFile *file);
+FSResult FSi_CloseFileCommand(FSFile *file);
 FSResult FSi_ROMFAT_ReadFile(FSArchive *archive, FSFile *file, void *buffer,
                              u32 *length);
 FSResult FSi_ROMFAT_WriteFile(FSArchive *archive, FSFile *file,

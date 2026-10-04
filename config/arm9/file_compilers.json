@@ -450,5 +450,15 @@
   "libs/nitro/fs/calls/FS_EndOverlay.c": "dsi/1.1",
   "libs/nitro/fs/calls/FS_UnloadOverlayImage.c": "dsi/1.1",
   "libs/nitro/fs/calls/FS_LoadOverlay.c": "dsi/1.1",
-  "libs/nitro/fs/calls/FS_UnloadOverlay.c": "dsi/1.1"
+  "libs/nitro/fs/calls/FS_UnloadOverlay.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_ReadTable.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_SeekDirDirect.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_SeekDirCommand.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_ReadDirCommand.c": "dsi/1.1",
+  "libs/nitro/fs/calls/FSi_OpenFileFastCommand.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FSi_OpenFileDirectCommand.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FSi_ReadFileCommand.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FSi_WriteFileCommand.c": "dsi/1.1",
+  "libs/nitro/fs/auto/FSi_CloseFileCommand.c": "dsi/1.1",
+  "libs/nitro/fs/data/fsi_default_command.c": "dsi/1.1"
 }
