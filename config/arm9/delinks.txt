@@ -1607,6 +1607,10 @@ libs/nitro/card/calls/CARDi_OldTypeTaskThread.c:
     complete
     .text       start:0x020093ac end:0x020093e4
 
+libs/nitro/card/calls/CARDi_WaitForTask.c:
+    complete
+    .text       start:0x020093e4 end:0x02009448
+
 libs/nitro/card/calls/CARDi_EndTask.c:
     complete
     .text       start:0x02009448 end:0x02009480
