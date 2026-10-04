@@ -131,8 +131,8 @@ OSThreadInfo data_02044330 = {0};   /* data_02044330 */
 
 
 
-/* func_02002db4 -- NitroSDK os_thread.c: OS_EnableScheduler. */
-u32 func_02002db4 (void)
+/* OS_EnableScheduler -- NitroSDK os_thread.c: OS_EnableScheduler. */
+u32 OS_EnableScheduler (void)
 {
     OSIntrMode enabled = OS_DisableInterrupts();
     u32 count = 0;

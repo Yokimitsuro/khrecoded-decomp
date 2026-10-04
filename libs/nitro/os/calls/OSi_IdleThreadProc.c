@@ -2,7 +2,7 @@
 extern void OS_EnableInterrupts(void);
 extern void OS_Halt(void);
 
-void func_02002d74(void) {
+void OSi_IdleThreadProc(void) {
     OS_EnableInterrupts();
     for (;;) {
         OS_Halt();

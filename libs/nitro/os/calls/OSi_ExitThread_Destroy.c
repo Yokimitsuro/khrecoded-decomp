@@ -101,8 +101,8 @@ typedef struct OSThreadInfo {
 } OSThreadInfo;
 void OS_RescheduleThread(void);
 void OS_WakeupThread(OSThreadQueue * queue);
-u32 func_02002d84(void);
-u32 func_02002db4(void);
+u32 OS_DisableScheduler(void);
+u32 OS_EnableScheduler(void);
 struct OSMutex {
     OSThreadQueue queue;
     OSThread * thread;
@@ -127,8 +127,8 @@ extern OSThread * OSi_RemoveSpecifiedLinkFromQueue (OSThreadQueue * queue, OSThr
 extern void OSi_RemoveThreadFromList (OSThread * thread);
 extern void OS_WakeupThread (OSThreadQueue * queue);
 extern void OS_RescheduleThread (void);
-extern u32 func_02002d84 (void);
-extern u32 func_02002db4 (void);
+extern u32 OS_DisableScheduler (void);
+extern u32 OS_EnableScheduler (void);
 
 /* shared-bss */
 u32 OSi_ThreadIdCount = 0;   /* OSi_ThreadIdCount */
@@ -150,7 +150,7 @@ void OSi_ExitThread_Destroy (void)
     OSThread * currentThread = OSi_GetCurrentThread();
 
 #ifdef SDK_THREAD_INFINITY
-    (void)func_02002d84();
+    (void)OS_DisableScheduler();
 #endif
 
 #ifndef SDK_THREAD_INFINITY
@@ -177,7 +177,7 @@ void OSi_ExitThread_Destroy (void)
 #endif
 
 #ifdef SDK_THREAD_INFINITY
-    (void)func_02002db4();
+    (void)OS_EnableScheduler();
 #endif
 
     OS_RescheduleThread();
