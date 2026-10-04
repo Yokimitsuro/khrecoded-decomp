@@ -122,9 +122,9 @@ struct OSiAlarm {
     OSTick period;
     OSTick start;
 };
-extern void func_02002654(OSThread * thread);
+extern void OSi_RemoveThreadFromList(OSThread * thread);
 extern OSThread * OSi_RemoveSpecifiedLinkFromQueue (OSThreadQueue * queue, OSThread * thread);
-extern void func_02002654 (OSThread * thread);
+extern void OSi_RemoveThreadFromList (OSThread * thread);
 extern void OS_WakeupThread (OSThreadQueue * queue);
 extern void OS_RescheduleThread (void);
 extern u32 func_02002d84 (void);
@@ -163,7 +163,7 @@ void OSi_ExitThread_Destroy (void)
         (void)OSi_RemoveSpecifiedLinkFromQueue(currentThread->queue, currentThread);
     }
 
-    func_02002654(currentThread);
+    OSi_RemoveThreadFromList(currentThread);
 
 #ifndef SDK_THREAD_INFINITY
     data_02044330.entry[currentThread->id] = NULL;
