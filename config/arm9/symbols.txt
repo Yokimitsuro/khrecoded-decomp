@@ -603,7 +603,7 @@ FS_CreateFileFromRom kind:function(arm,size=0x30) addr:0x0200d544
 FS_Init kind:function(arm,size=0x2c) addr:0x0200d574
 func_0200d5a0 kind:function(arm,size=0x8) addr:0x0200d5a0
 func_0200d5a8 kind:function(arm,size=0x44) addr:0x0200d5a8
-func_0200d5ec kind:function(arm,size=0x2c) addr:0x0200d5ec
+MATHi_SHA1ProcessBlockForOverlay kind:function(arm,size=0x2c) addr:0x0200d5ec
 DGTi_Hash2FillSource kind:function(arm,size=0x90) addr:0x0200d618
 MATHi_SetOverlayTableMode kind:function(arm,size=0x3c) addr:0x0200d6a8
 DGT_Hash2Reset kind:function(arm,size=0x54) addr:0x0200d6e4
@@ -613,7 +613,7 @@ func_0200d9c4 kind:function(arm,size=0x44) addr:0x0200d9c4
 MATH_CalcHMACSHA1 kind:function(arm,size=0x94) addr:0x0200da08
 MATHi_CalcHMAC kind:function(arm,size=0x1b0) addr:0x0200da9c
 func_0200dc4c kind:function(arm,size=0x288) addr:0x0200dc4c
-func_0200dee4 kind:function(arm,size=0x31c) addr:0x0200dee4
+MATHi_SHA1ProcessBlock kind:function(arm,size=0x31c) addr:0x0200dee4
 PXI_Init kind:function(thumb,size=0x8) addr:0x0200e200
 PXI_InitFifo kind:function(thumb,size=0xa8) addr:0x0200e208
 PXI_SetFifoRecvCallback kind:function(thumb,size=0x4c) addr:0x0200e2b0
@@ -2688,7 +2688,7 @@ fsi_overlay_rom_name kind:data(any) addr:0x02055c2c
 fsi_path_root_suffix kind:data(any) addr:0x02055c30
 fsi_rom_archive_name kind:data(any) addr:0x02055c34
 fsi_rom_root_path kind:data(any) addr:0x02055c38
-data_02055c40 kind:data(any) addr:0x02055c40
+MATHi_SHA1ProcessMessageBlockFunc kind:data(any) addr:0x02055c40
 PMi_WaitBusyMethod kind:data(any) addr:0x02055c44
 data_02055c48 kind:data(any) addr:0x02055c48
 data_02055c4c kind:data(any) addr:0x02055c4c
@@ -2844,7 +2844,7 @@ fsi_default_dma_no kind:bss addr:0x02057b1c
 fsi_card_lock_id kind:bss addr:0x02057b20
 fsi_arc_rom kind:bss addr:0x02057b24
 fsi_is_init kind:bss addr:0x02057b80
-data_02057b84 kind:bss addr:0x02057b84
+MATHi_OverlayTableMode kind:bss addr:0x02057b84
 FifoCtrlInit kind:bss addr:0x02057b88
 FifoRecvCallbackTable kind:bss addr:0x02057b8c
 RTCi_Bss kind:bss addr:0x02057c0c

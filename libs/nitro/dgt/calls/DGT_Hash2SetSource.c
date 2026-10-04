@@ -8,7 +8,7 @@ typedef struct DGTHash2Context {
 
 typedef void (*DGTHash2ProcessBlock)(DGTHash2Context *context);
 
-extern DGTHash2ProcessBlock data_02055c40;
+extern DGTHash2ProcessBlock MATHi_SHA1ProcessMessageBlockFunc;
 extern void MI_CpuCopy8(const void *source, void *destination, unsigned int size);
 
 void DGT_Hash2SetSource(
@@ -35,7 +35,7 @@ void DGT_Hash2SetSource(
         context->bufferedBytes += copyLength;
         length -= copyLength;
         if (context->bufferedBytes >= 64) {
-            data_02055c40(context);
+            MATHi_SHA1ProcessMessageBlockFunc(context);
             context->bufferedBytes = 0;
             context->blockCountLow++;
             if (context->blockCountLow == 0) {
