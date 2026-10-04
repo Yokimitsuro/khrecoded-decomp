@@ -1,5 +1,5 @@
-extern void func_02018864(int *ptr, int arg);
-extern void func_02018770(void *pRenderObj, void *pAnmObj);
+extern void NNS_G3dRenderObjRemoveAnmObj(int *ptr, int arg);
+extern void NNS_G3dRenderObjAddAnmObj(void *pRenderObj, void *pAnmObj);
 
 typedef struct {
     short field_00;
@@ -24,13 +24,13 @@ void func_0202f2e0(AnimState *anim, unsigned short nTrack, BlendTable *table, sh
         return;
 
     if (cur != 0)
-        func_02018864((int *)((char *)anim + 0x20), (int)cur);
+        NNS_G3dRenderObjRemoveAnmObj((int *)((char *)anim + 0x20), (int)cur);
 
     anim->blend[nTrack] = nBlend;
     if (nBlend >= 0) {
         target = table->blendAnms[nTrack][nBlend];
         anim->boundAnm[nTrack] = target;
-        func_02018770((char *)anim + 0x20, target);
+        NNS_G3dRenderObjAddAnmObj((char *)anim + 0x20, target);
 
         *(int *)((char *)anim->boundAnm[nTrack] + 4) = 0x1000;
         *(int *)anim->boundAnm[nTrack] = 0;

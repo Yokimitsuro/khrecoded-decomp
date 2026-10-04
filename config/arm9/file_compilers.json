@@ -576,5 +576,9 @@
   "libs/nns/g2d/calls/NNSi_G2dTextCanvasDrawTaggedText.c": "dsi/1.1",
   "libs/nns/g2d/auto/NNSi_G2dUnpackNFT.c": "dsi/1.1",
   "libs/nns/g2d/calls/NNSi_G2dBGGetCharSize.c": "dsi/1.1",
-  "libs/nns/g2d/data/NNSiG2dBGCNTTable.c": "dsi/1.1"
+  "libs/nns/g2d/data/NNSiG2dBGCNTTable.c": "dsi/1.1",
+  "libs/nns/g3d/calls/NNS_G3dAnmObjInit.c": "dsi/1.1",
+  "libs/nns/g3d/auto/updateHintVec_.c": "dsi/1.1",
+  "libs/nns/g3d/auto/NNS_G3dRenderObjSetCallBack.c": "dsi/1.1",
+  "libs/nns/g3d/data/g3d_anm_defaults.c": "dsi/1.1"
 }

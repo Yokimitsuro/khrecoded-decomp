@@ -3669,31 +3669,43 @@ libs/nitro/nitro/auto/NTRi_GetRegionTableSize.c:
     complete
     .text       start:0x02018508 end:0x02018568
 
-libs/nns/g3d/calls/func_02018600.c:
+libs/nns/g3d/calls/NNS_G3dAnmObjInit.c:
+    complete
+    .text       start:0x02018568 end:0x02018600
+
+libs/nns/g3d/calls/NNS_G3dRenderObjInit.c:
     complete
     .text       start:0x02018600 end:0x02018654
 
-libs/nns/g3d/auto/func_02018654.c:
+libs/nns/g3d/auto/addLink_.c:
     complete
     .text       start:0x02018654 end:0x0201870c
 
-libs/nns/g3d/calls/func_02018770.c:
+libs/nns/g3d/auto/updateHintVec_.c:
+    complete
+    .text       start:0x0201870c end:0x02018770
+
+libs/nns/g3d/calls/NNS_G3dRenderObjAddAnmObj.c:
     complete
     .text       start:0x02018770 end:0x020187f0
 
-libs/nns/g3d/auto/func_020187f0.c:
+libs/nns/g3d/auto/removeLink_.c:
     complete
     .text       start:0x020187f0 end:0x02018864
 
-libs/nns/g3d/calls/func_02018864.c:
+libs/nns/g3d/calls/NNS_G3dRenderObjRemoveAnmObj.c:
     complete
     .text       start:0x02018864 end:0x020188b8
 
-libs/nns/g3d/auto/func_020188cc.c:
+libs/nns/g3d/auto/NNS_G3dRenderObjSetCallBack.c:
+    complete
+    .text       start:0x020188b8 end:0x020188cc
+
+libs/nns/g3d/auto/NNS_G3dRenderObjResetCallBack.c:
     complete
     .text       start:0x020188cc end:0x020188e0
 
-libs/nns/g3d/auto/func_020188e0.c:
+libs/nns/g3d/auto/NNS_G3dTexGetRequiredSize.c:
     complete
     .text       start:0x020188e0 end:0x020188f4
 
@@ -5268,6 +5280,10 @@ libs/nns/g2d/data/g2d_oam_size_tables.c:
 libs/nns/g2d/data/g2d_screen_tables.c:
     complete
     .rodata     start:0x02053000 end:0x02053098
+
+libs/nns/g3d/data/g3d_anm_defaults.c:
+    complete
+    .data       start:0x02055cf0 end:0x02055d3c
 
 libs/nns/gfd/data/sLnkPlttVramManager.c:
     complete
