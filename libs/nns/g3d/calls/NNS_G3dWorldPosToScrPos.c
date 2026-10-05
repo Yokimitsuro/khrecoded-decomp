@@ -52,7 +52,7 @@ static inline const MtxFx43 *NNS_G3dGlbGetCameraMtx(void)
     return &NNS_G3dGlb.cameraMtx;
 }
 
-int func_02019f98(const VecFx32 *pWorld, int *px, int *py)
+int NNS_G3dWorldPosToScrPos(const VecFx32 *pWorld, int *px, int *py)
 {
     const MtxFx44 *proj;
     const MtxFx43 *camera;

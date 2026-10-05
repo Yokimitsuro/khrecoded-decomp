@@ -138,8 +138,7 @@ struct NNSFndAllocator {
 };
 void * NNS_FndAllocFromAllocator(NNSFndAllocator * pAllocator, u32 size);
 
-/* func_0201a3a8 -- NitroSystem mem.c: NNS_G3dAllocAnmObj. */
-NNSG3dAnmObj * func_0201a3a8 (NNSFndAllocator * pAlloc, const void * pAnm, const NNSG3dResMdl * pMdl)
+NNSG3dAnmObj * NNS_G3dAllocAnmObj (NNSFndAllocator * pAlloc, const void * pAnm, const NNSG3dResMdl * pMdl)
 {
     u32 sz;
 

@@ -18,10 +18,10 @@ typedef volatile unsigned char vu8;
 #define FALSE 0
 #define HW_MAIN_MEM 0x02000000
 
-#define offsetof(type, member) ((u32)&(((type *)0)->member))
 
+#define NNS_G3D_SIGNATURE_NSBTX '0XTB'
 
-
+typedef u32 NNSGfdTexKey;
 typedef struct NNSG3dResFileHeader_ {
     union {
         char signature[4];
@@ -54,16 +54,52 @@ typedef struct NNSG3dResDict_ {
     u16 ofsEntry;
     NNSG3dResDictTreeNode node[1];
 } NNSG3dResDict;
-typedef struct NNSG3dResMdlSet_ {
+typedef struct NNSG3dResTexInfo_ {
+    NNSGfdTexKey vramKey;
+    u16 sizeTex;
+    u16 ofsDict;
+    u16 flag;
+    u16 dummy_;
+    u32 ofsTex;
+} NNSG3dResTexInfo;
+typedef struct NNSG3dResTex4x4Info_ {
+    NNSGfdTexKey vramKey;
+    u16 sizeTex;
+    u16 ofsDict;
+    u16 flag;
+    u16 dummy_;
+    u32 ofsTex;
+    u32 ofsTexPlttIdx;
+} NNSG3dResTex4x4Info;
+typedef struct NNSG3dResPlttInfo_ {
+    NNSGfdTexKey vramKey;
+    u16 sizePltt;
+    u16 flag;
+    u16 ofsDict;
+    u16 dummy_;
+    u32 ofsPlttData;
+} NNSG3dResPlttInfo;
+typedef struct NNSG3dResTex_ {
     NNSG3dResDataBlockHeader header;
+    NNSG3dResTexInfo texInfo;
+    NNSG3dResTex4x4Info tex4x4Info;
+    NNSG3dResPlttInfo plttInfo;
     NNSG3dResDict dict;
-} NNSG3dResMdlSet;
+} NNSG3dResTex;
 
-/* func_0201ac74 -- NitroSystem res_struct_accessor.c: NNS_G3dGetMdlSet. */
-NNSG3dResMdlSet * func_0201ac74 (const NNSG3dResFileHeader * header)
+NNSG3dResTex * NNS_G3dGetTex (const NNSG3dResFileHeader * header)
 {
     u32 * blks;
 
     blks = (u32 *)((u8 *)header + header->headerSize);
-    return (NNSG3dResMdlSet *)((u8 *)header + blks[0]);
+
+    if (header->dataBlocks == 1) {
+        if (header->sigVal == NNS_G3D_SIGNATURE_NSBTX) {
+            return (NNSG3dResTex *)((u8 *)header + blks[0]);
+        } else {
+            return NULL;
+        }
+    } else {
+        return (NNSG3dResTex *)((u8 *)header + blks[1]);
+    }
 }

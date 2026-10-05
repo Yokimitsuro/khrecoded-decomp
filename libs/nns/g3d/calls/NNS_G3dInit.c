@@ -36,8 +36,7 @@ static inline void G3X_SetFifoIntrCond (GXFifoIntrCond cond)
 }
 void NNS_G3dGlbInit(void);
 
-/* func_02019e4c -- NitroSystem util.c: NNS_G3dInit. */
-void func_02019e4c (void)
+void NNS_G3dInit (void)
 {
     G3X_Init();
 

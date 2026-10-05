@@ -4,7 +4,7 @@ typedef struct {
     int *sections[8];
 } ResGroup;
 
-extern void func_02019e74(void *pResData);
+extern void NNS_G3dResDefaultRelease(void *pResData);
 
 void func_0202d34c(ResGroup *state)
 {
@@ -20,7 +20,7 @@ void func_0202d34c(ResGroup *state)
                 j = 0;
                 while (j < *(unsigned int *)state->sections[i]) {
                     if (i == 7) {
-                        func_02019e74((void *)state->sections[i][j + 1]);
+                        NNS_G3dResDefaultRelease((void *)state->sections[i][j + 1]);
                     }
                     j = j + 1;
                 }

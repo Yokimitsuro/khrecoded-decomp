@@ -3845,23 +3845,35 @@ src/calls/func_02019cf4.c:
     complete
     .text       start:0x02019cf4 end:0x02019d14
 
-libs/nitro/nns/calls/func_02019da0.c:
+libs/nns/g3d/calls/NNS_G3dGetCurrentMtx.c:
+    complete
+    .text       start:0x02019d14 end:0x02019da0
+
+libs/nns/g3d/calls/NNS_G3dGetResultMtx.c:
     complete
     .text       start:0x02019da0 end:0x02019e4c
 
-libs/nns/g3d/calls/func_02019e4c.c:
+libs/nns/g3d/calls/NNS_G3dInit.c:
     complete
     .text       start:0x02019e4c end:0x02019e74
 
-libs/nitro/nns/calls/func_02019f98.c:
+libs/nns/g3d/calls/NNS_G3dResDefaultRelease.c:
+    complete
+    .text       start:0x02019e74 end:0x02019f98
+
+libs/nns/g3d/calls/NNS_G3dWorldPosToScrPos.c:
     complete
     .text       start:0x02019f98 end:0x0201a120
 
-libs/nns/g3d/calls/func_0201a3a8.c:
+libs/nns/g3d/calls/NNS_G3dScrPosToWorldLine.c:
+    complete
+    .text       start:0x0201a120 end:0x0201a3a8
+
+libs/nns/g3d/calls/NNS_G3dAllocAnmObj.c:
     complete
     .text       start:0x0201a3a8 end:0x0201a3cc
 
-src/calls/func_0201a3cc.c:
+libs/nns/g3d/calls/NNS_G3dFreeAnmObj.c:
     complete
     .text       start:0x0201a3cc end:0x0201a3d8
 
@@ -3897,11 +3909,11 @@ libs/nns/g3d/calls/func_0201a914.c:
     complete
     .text       start:0x0201a914 end:0x0201a954
 
-libs/nns/g3d/auto/func_0201ac74.c:
+libs/nns/g3d/auto/NNS_G3dGetMdlSet.c:
     complete
     .text       start:0x0201ac74 end:0x0201ac84
 
-libs/nns/g3d/auto/func_0201ac84.c:
+libs/nns/g3d/auto/NNS_G3dGetTex.c:
     complete
     .text       start:0x0201ac84 end:0x0201acc4
 
