@@ -220,6 +220,10 @@ src/overlays/ov027/calls/func_ov027_020b9098.c:
     complete
     .text       start:0x020b9098 end:0x020b90a0
 
+src/overlays/ov027/auto/func_ov027_020b90a0.c:
+    complete
+    .text       start:0x020b90a0 end:0x020b90a6
+
 src/overlays/ov027/calls/func_ov027_020b90a8.c:
     complete
     .text       start:0x020b90a8 end:0x020b90b8
@@ -239,6 +243,10 @@ src/overlays/ov027/calls/AreAllWidgetMovesFinished.c:
 src/overlays/ov027/calls/GetField84Bit1.c:
     complete
     .text       start:0x020b91b8 end:0x020b91c8
+
+src/overlays/ov027/auto/func_ov027_020b91c8.c:
+    complete
+    .text       start:0x020b91c8 end:0x020b91d0
 
 src/overlays/ov027/calls/StartWidgetMoveTween.c:
     complete

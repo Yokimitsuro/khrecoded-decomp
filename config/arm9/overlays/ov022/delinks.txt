@@ -184,6 +184,10 @@ src/overlays/ov022/calls/ResetSubtitleLine.c:
     complete
     .text       start:0x020a8a70 end:0x020a8a90
 
+src/overlays/ov022/auto/func_ov022_020a8a90.c:
+    complete
+    .text       start:0x020a8a90 end:0x020a8a98
+
 src/overlays/ov022/calls/advanceMovieStreamWindow_020a8a98.c:
     complete
     .text       start:0x020a8a98 end:0x020a8aec

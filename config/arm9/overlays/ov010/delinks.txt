@@ -28,9 +28,17 @@ src/overlays/ov010/auto/func_ov010_020a07b4.c:
     complete
     .text       start:0x020a07b4 end:0x020a07b6
 
+src/overlays/ov010/auto/func_ov010_020a07b8.c:
+    complete
+    .text       start:0x020a07b8 end:0x020a07bc
+
 src/overlays/ov010/calls/FieldObject_SetPosition_020a07bc.c:
     complete
     .text       start:0x020a07bc end:0x020a0828
+
+src/overlays/ov010/auto/func_ov010_020a0828.c:
+    complete
+    .text       start:0x020a0828 end:0x020a082e
 
 src/overlays/ov010/auto/func_ov010_020a0830.c:
     complete
@@ -56,9 +64,17 @@ src/overlays/ov010/auto/func_ov010_020a0a84.c:
     complete
     .text       start:0x020a0a84 end:0x020a0a86
 
+src/overlays/ov010/auto/func_ov010_020a0a88.c:
+    complete
+    .text       start:0x020a0a88 end:0x020a0a8c
+
 src/overlays/ov010/auto/func_ov010_020a0a8c.c:
     complete
     .text       start:0x020a0a8c end:0x020a0a8e
+
+src/overlays/ov010/auto/func_ov010_020a0a90.c:
+    complete
+    .text       start:0x020a0a90 end:0x020a0a96
 
 src/overlays/ov010/auto/func_ov010_020a0a98.c:
     complete

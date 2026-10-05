@@ -20,6 +20,10 @@ src/overlays/ov008/calls/ScriptCmd_CreateChildSpawner.c:
     complete
     .text       start:0x020a0688 end:0x020a06fa
 
+src/overlays/ov008/auto/func_ov008_020a0948.c:
+    complete
+    .text       start:0x020a0948 end:0x020a094c
+
 src/overlays/ov008/calls/SetFieldObjectPosition.c:
     complete
     .text       start:0x020a094c end:0x020a0972
@@ -60,9 +64,17 @@ src/overlays/ov008/auto/func_ov008_020a0d70.c:
     complete
     .text       start:0x020a0d70 end:0x020a0d72
 
+src/overlays/ov008/auto/func_ov008_020a0d74.c:
+    complete
+    .text       start:0x020a0d74 end:0x020a0d78
+
 src/overlays/ov008/calls/SetFieldObjectPosition_020a0d78.c:
     complete
     .text       start:0x020a0d78 end:0x020a0d9e
+
+src/overlays/ov008/auto/func_ov008_020a0da0.c:
+    complete
+    .text       start:0x020a0da0 end:0x020a0da6
 
 src/overlays/ov008/auto/func_ov008_020a0da8.c:
     complete

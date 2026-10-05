@@ -3480,9 +3480,17 @@ src/overlays/ov001/auto/func_ov001_02086088.c:
     complete
     .text       start:0x02086088 end:0x0208608a
 
+src/overlays/ov001/auto/func_ov001_0208608c.c:
+    complete
+    .text       start:0x0208608c end:0x02086090
+
 src/overlays/ov001/calls/SetPanelPosition.c:
     complete
     .text       start:0x02086090 end:0x020860cc
+
+src/overlays/ov001/auto/func_ov001_020860cc.c:
+    complete
+    .text       start:0x020860cc end:0x020860d2
 
 src/overlays/ov001/auto/func_ov001_020860d4.c:
     complete
@@ -3575,6 +3583,10 @@ src/overlays/ov001/calls/StepResourceSlotLoading.c:
 src/overlays/ov001/calls/ResourceCache_FreeAll.c:
     complete
     .text       start:0x02086e18 end:0x02086e58
+
+src/overlays/ov001/auto/func_ov001_02086fcc.c:
+    complete
+    .text       start:0x02086fcc end:0x02086fd2
 
 src/overlays/ov001/calls/AppendNodeToActiveList.c:
     complete
@@ -4823,6 +4835,10 @@ src/overlays/ov001/calls/InitStageObjectActor.c:
 src/overlays/ov001/auto/func_ov001_02090f28.c:
     complete
     .text       start:0x02090f28 end:0x02090f2c
+
+src/overlays/ov001/auto/func_ov001_02090f2c.c:
+    complete
+    .text       start:0x02090f2c end:0x02090f34
 
 src/overlays/ov001/calls/WarpWalkerTo.c:
     complete

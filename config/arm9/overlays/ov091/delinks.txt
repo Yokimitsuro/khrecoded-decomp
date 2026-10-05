@@ -200,6 +200,10 @@ src/overlays/ov091/calls/SetPopupState.c:
     complete
     .text       start:0x020c27a4 end:0x020c27b4
 
+src/overlays/ov091/auto/func_ov091_020c27b4.c:
+    complete
+    .text       start:0x020c27b4 end:0x020c27bc
+
 src/overlays/ov091/calls/func_ov091_020c27ec.c:
     complete
     .text       start:0x020c27ec end:0x020c27f8

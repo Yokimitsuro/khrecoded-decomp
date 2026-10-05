@@ -172,6 +172,10 @@ src/overlays/ov032/calls/UploadGroupMenuTiles.c:
     complete
     .text       start:0x020bbbc8 end:0x020bbbf4
 
+src/overlays/ov032/auto/func_ov032_020bbc98.c:
+    complete
+    .text       start:0x020bbc98 end:0x020bbc9e
+
 src/overlays/ov032/calls/MoveGroupObjectAndSyncActor.c:
     complete
     .text       start:0x020bbce4 end:0x020bbd80

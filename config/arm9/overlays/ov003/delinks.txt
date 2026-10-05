@@ -107,6 +107,10 @@ src/overlays/ov003/calls/SubtitleText_BeginDraw.c:
     complete
     .text       start:0x02064980 end:0x020649a0
 
+src/overlays/ov003/auto/func_ov003_020649a0.c:
+    complete
+    .text       start:0x020649a0 end:0x020649a8
+
 src/overlays/ov003/calls/advanceMovieStreamWindow.c:
     complete
     .text       start:0x020649a8 end:0x020649fc

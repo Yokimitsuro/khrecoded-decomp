@@ -236,6 +236,10 @@ src/overlays/ov052/calls/RefreshActorState.c:
     complete
     .text       start:0x020cce28 end:0x020cce8c
 
+src/overlays/ov052/auto/func_ov052_020ccfbc.c:
+    complete
+    .text       start:0x020ccfbc end:0x020ccfc4
+
 src/overlays/ov052/calls/ExitActorState.c:
     complete
     .text       start:0x020ccfc4 end:0x020cd358

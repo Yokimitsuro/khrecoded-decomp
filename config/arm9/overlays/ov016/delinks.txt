@@ -360,6 +360,10 @@ src/overlays/ov016/calls/IsFieldUnitAction5Mode1.c:
     complete
     .text       start:0x020a6af4 end:0x020a6b12
 
+src/overlays/ov016/auto/func_ov016_020a6b14.c:
+    complete
+    .text       start:0x020a6b14 end:0x020a6b1a
+
 src/overlays/ov016/calls/ResetUnitToBasePosition.c:
     complete
     .text       start:0x020a6b1c end:0x020a6ce4

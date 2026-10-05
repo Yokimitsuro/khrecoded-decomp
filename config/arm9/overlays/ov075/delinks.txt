@@ -100,6 +100,10 @@ src/overlays/ov075/auto/func_ov075_020c7d14.c:
     complete
     .text       start:0x020c7d14 end:0x020c7d1c
 
+src/overlays/ov075/auto/func_ov075_020c7d1c.c:
+    complete
+    .text       start:0x020c7d1c end:0x020c7d24
+
 src/overlays/ov075/calls/ClearGlyphCell.c:
     complete
     .text       start:0x020c8890 end:0x020c8940

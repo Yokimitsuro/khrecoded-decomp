@@ -96,6 +96,10 @@ src/overlays/ov073/calls/ShowStatusPageContents.c:
     complete
     .text       start:0x020c1b48 end:0x020c1c00
 
+src/overlays/ov073/auto/func_ov073_020c1ce0.c:
+    complete
+    .text       start:0x020c1ce0 end:0x020c1ce8
+
 src/overlays/ov073/calls/GetRecordProgressInfo.c:
     complete
     .text       start:0x020c1ce8 end:0x020c1d3c

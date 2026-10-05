@@ -1000,6 +1000,10 @@ src/overlays/ov021/calls/ResolveStageActorRef.c:
     complete
     .text       start:0x020b02d8 end:0x020b0370
 
+src/overlays/ov021/auto/func_ov021_020b038c.c:
+    complete
+    .text       start:0x020b038c end:0x020b0392
+
 src/overlays/ov021/calls/ResolveTaggedValueRef.c:
     complete
     .text       start:0x020b0394 end:0x020b03b6
@@ -1419,6 +1423,10 @@ src/overlays/ov021/calls/CheckWaitCondition.c:
 src/overlays/ov021/auto/func_ov021_020b48a0.c:
     complete
     .text       start:0x020b48a0 end:0x020b48a4
+
+src/overlays/ov021/auto/func_ov021_020b4ac4.c:
+    complete
+    .text       start:0x020b4ac4 end:0x020b4aca
 
 src/overlays/ov021/calls/InitSequencer.c:
     complete
