@@ -38,11 +38,11 @@ typedef struct FieldObject {
 } FieldObject;
 
 extern FieldObject *CreateByteGrid(int headerSize, int width, int height);
-extern void func_ov001_0207f0f8(void);
-extern void func_ov001_0207f150(void);
+extern void AcquireEffectRecordPair(void);
+extern void FieldObject_EnsureModelsLoaded(void);
 extern void FieldObject_LoadAndPlace(void);
 extern void func_ov001_0207f210(void);
-extern void func_ov011_020a0930(void);
+extern void ReleaseChildResourceAndForward(void);
 extern void func_ov001_0207f26c(void);
 extern void func_ov011_020a096c(void);
 extern void func_ov011_020a0970(void);
@@ -64,11 +64,11 @@ FieldObject *FieldObject_Create_020a0fc4(int height)
     object->soundId = 0xbb;
     object->hidden = 0;
     object->radius = 0x3000;
-    object->init = func_ov001_0207f0f8;
-    object->release = func_ov001_0207f150;
+    object->init = AcquireEffectRecordPair;
+    object->release = FieldObject_EnsureModelsLoaded;
     object->update = FieldObject_LoadAndPlace;
     object->destroy = func_ov001_0207f210;
-    object->releaseChild = func_ov011_020a0930;
+    object->releaseChild = ReleaseChildResourceAndForward;
     object->reset = func_ov001_0207f26c;
     object->onTouch = NULL;
     object->onIdle = func_ov011_020a096c;

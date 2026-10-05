@@ -25,7 +25,7 @@ typedef struct Actor {
 extern void func_02038e80(ActorBody *body, u32 arg);
 extern void Obj_SetPosition(SceneObject *object, const VecFx32 *position);
 extern s32 func_ov001_02063a38(void);
-extern int func_ov021_020a8fe8(int mode, u8 kind);
+extern int LookupKindTableValue(int mode, u8 kind);
 
 int RestoreActorPositionMode(Actor *actor)
 {
@@ -46,7 +46,7 @@ int RestoreActorPositionMode(Actor *actor)
         if (func_ov001_02063a38() == 7) {
             mode = 3;
         }
-        result = func_ov021_020a8fe8(mode, actor->body->ownerInfo->kind);
+        result = LookupKindTableValue(mode, actor->body->ownerInfo->kind);
     }
     return result;
 }

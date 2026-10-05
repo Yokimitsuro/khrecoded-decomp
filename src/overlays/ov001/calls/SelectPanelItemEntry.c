@@ -7,7 +7,7 @@ typedef struct {
     s32 high : 5;
 } Panel;
 
-extern void func_ov001_02078800(int entry);
+extern void FieldMenu_FocusEntryById(int entry);
 
 void SelectPanelItemEntry(Panel *panel) {
     int entry = -1;
@@ -20,5 +20,5 @@ void SelectPanelItemEntry(Panel *panel) {
         entry = itemId - 0x117;
         break;
     }
-    func_ov001_02078800(entry);
+    FieldMenu_FocusEntryById(entry);
 }

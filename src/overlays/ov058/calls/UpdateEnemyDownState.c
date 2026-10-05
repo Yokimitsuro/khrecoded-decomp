@@ -50,7 +50,7 @@ extern int func_ov001_0206db8c(int index);
 extern void StopAndClearSoundEmitter(s32 groupId, s32 emitterIndex);
 extern void ResetAnimationTrackState(EffectParams *params);
 extern s16 func_ov021_020a8cc0(EffectParams *params, int group);
-extern u16 func_ov052_020ceb9c(Enemy *enemy);
+extern u16 GetLinkedAngleOffset(Enemy *enemy);
 extern void selectJointAnimationBlend(void *animState, u16 trackIndex, void *blendTable, s16 blendIndex);
 extern void FinishEnemyRecovery(Enemy *enemy);
 
@@ -69,7 +69,7 @@ void UpdateEnemyDownState(Enemy *enemy)
         params.kind = enemy->effectKind;
         params.flagB = 1;
         params.flagA = 0;
-        params.angle = func_ov052_020ceb9c(enemy) + 0x8000;
+        params.angle = GetLinkedAngleOffset(enemy) + 0x8000;
         func_ov021_020a8cc0(&params, func_ov001_0206db8c(9));
         if (enemy->onEnterState != NULL) {
             enemy->onEnterState(enemy, 0xd, -1);

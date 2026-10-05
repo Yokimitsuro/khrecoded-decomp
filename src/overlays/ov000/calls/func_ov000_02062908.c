@@ -252,7 +252,7 @@ typedef struct NNSG2dAnimController {
     const NNSG2dAnimSequence * pAnimSequence;
     NNSG2dAnimCallBackFunctor callbackFunctor;
 } NNSG2dAnimController;
-void func_ov000_02061a50(NNSG2dAnimController * pAnimCtrl, const NNSG2dAnimSequence * pAnimSequence);
+void ReleaseObjectIfActive(NNSG2dAnimController * pAnimCtrl, const NNSG2dAnimSequence * pAnimSequence);
 typedef enum NNS_GFD_DST_TYPE {
     NNS_GFD_DST_3D_TEX_VRAM = 0,
     NNS_GFD_DST_3D_TEX_PLTT,
@@ -300,11 +300,11 @@ typedef struct NNSG2dCellAnimation {
     u32 cellTransferStateHandle;
     NNSG2dSRTControl srtCtrl;
 } NNSG2dCellAnimation;
-extern void func_ov000_020616b4 (NNSG2dCellAnimation * pCellAnim);
+extern void ReleaseEmbeddedIfActive (NNSG2dCellAnimation * pCellAnim);
 
 void func_ov000_02062908 (NNSG2dCellAnimation * pCellAnim, const NNSG2dAnimSequence * pAnimSeq)
 {
 
-    func_ov000_02061a50(&pCellAnim->animCtrl, pAnimSeq);
-    func_ov000_020616b4(pCellAnim);
+    ReleaseObjectIfActive(&pCellAnim->animCtrl, pAnimSeq);
+    ReleaseEmbeddedIfActive(pCellAnim);
 }

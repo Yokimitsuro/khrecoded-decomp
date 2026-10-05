@@ -13,12 +13,12 @@ typedef struct {
     s32 mode;
 } Enemy;
 
-extern u32 func_ov052_020ce5f4(Enemy *enemy);
+extern u32 BuildActorStatusFlags(Enemy *enemy);
 extern PlayerInfo *GetBoundedEntryField(int index);
 
 u32 FilterEnemyStatusFlags(Enemy *enemy)
 {
-    u32 flags = func_ov052_020ce5f4(enemy);
+    u32 flags = BuildActorStatusFlags(enemy);
     u32 playerFlags;
     PlayerInfo *player;
     s32 mode = enemy->mode;

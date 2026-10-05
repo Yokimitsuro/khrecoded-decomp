@@ -22,10 +22,10 @@ typedef struct UnlockRequest {
     u32 flagSlot;
 } UnlockRequest;
 
-extern int func_ov001_020874a0(BOOL skipModeCheck, u32 flagOffset, u32 entryId, u32 slot);
+extern int GetEntryUnlockState(BOOL skipModeCheck, u32 flagOffset, u32 entryId, u32 slot);
 extern RewardEntry *func_ov001_02086950(int index);
 extern s16 *func_ov001_02086974(int index);
-extern void func_ov001_020869b4(u32 *offset, u32 *size);
+extern void GetModeDataRegion(u32 *offset, u32 *size);
 extern void func_ov001_020645dc(u32 flag);
 extern u32 func_ov001_020664f0();
 extern void func_ov001_020869a0(u32 entryId, u32 slot, int useAlt);
@@ -34,13 +34,13 @@ extern int func_ov001_020644b0(void);
 extern void func_ov001_02086a50(int reward, void *target);
 
 void GrantEntryUnlockReward(u8 *owner, UnlockRequest *request) {
-    switch (func_ov001_020874a0(request->skipModeCheck, request->entry, request->flagEntry, request->flagSlot)) {
+    switch (GetEntryUnlockState(request->skipModeCheck, request->entry, request->flagEntry, request->flagSlot)) {
     case 0:
         if (request->entry >= 0) {
             RewardEntry *entry = func_ov001_02086950(request->entry);
             u32 offset;
             u32 size;
-            func_ov001_020869b4(&offset, &size);
+            GetModeDataRegion(&offset, &size);
             func_ov001_020645dc(offset + request->entry);
             if (entry != NULL) {
                 RewardSpec spec;

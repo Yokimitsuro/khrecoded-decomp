@@ -64,7 +64,7 @@ extern void FieldObject_StopActorAnimation(ActorNode *node);
 extern void CloseActiveMode(void);
 extern void func_ov036_020c3368(void);
 extern void HideAllOamEntries(int value);
-extern void func_ov001_02063c78(int value);
+extern void InvokeSessionCallback(int value);
 extern void func_ov001_02088aa4(void);
 extern int ScriptVm_RunFrame(ScriptVm *vm);
 extern void G2x_SetBlendBrightness_(u32 reg, int planes, int value);
@@ -95,11 +95,11 @@ void ScriptVm_FinishSkip(ScriptVm *vm)
         } else {
             func_ov036_020c3368();
             HideAllOamEntries(1);
-            func_ov001_02063c78(1);
+            InvokeSessionCallback(1);
         }
 
         while (ScriptVm_RunFrame(vm)) {
-            func_ov001_02063c78(1);
+            InvokeSessionCallback(1);
             if (func_ov001_02063838()) {
                 func_ov001_02088aa4();
             }

@@ -6,7 +6,7 @@ typedef struct SlotMenu {
 } SlotMenu;
 
 extern void func_ov076_020c7a7c(SlotMenu *menu, int mode);
-extern void func_ov076_020c7274(SlotMenu *menu, int mode, int scrollY);
+extern void SlotMenu_UpdateItemSprites(SlotMenu *menu, int mode, int scrollY);
 
 void SlotMenu_SetBgScrollMode(SlotMenu *menu, int mode, int scrollY)
 {
@@ -17,5 +17,5 @@ void SlotMenu_SetBgScrollMode(SlotMenu *menu, int mode, int scrollY)
         *(volatile u32 *)0x04000018 = (((scrollY - 0x18) << 16) & 0x1ff0000) | 0x1e8;
     }
     func_ov076_020c7a7c(menu, mode);
-    func_ov076_020c7274(menu, mode, scrollY);
+    SlotMenu_UpdateItemSprites(menu, mode, scrollY);
 }

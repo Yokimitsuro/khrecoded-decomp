@@ -11,6 +11,14 @@ src/overlays/ov046/calls/Camera_ApplyOffsetClampHeight.c:
     complete
     .text       start:0x020c0a44 end:0x020c0a90
 
+src/overlays/ov046/calls/Camera_UpdateController.c:
+    complete
+    .text       start:0x020c0a90 end:0x020c0b54
+
+src/overlays/ov046/calls/Camera_Update.c:
+    complete
+    .text       start:0x020c0b8c end:0x020c0c0c
+
 src/overlays/ov046/calls/Camera_SetFrozen.c:
     complete
     .text       start:0x020c0c0c end:0x020c0c3c
@@ -18,6 +26,10 @@ src/overlays/ov046/calls/Camera_SetFrozen.c:
 src/overlays/ov046/calls/Camera_IsFrozen.c:
     complete
     .text       start:0x020c0c3c end:0x020c0c54
+
+src/overlays/ov046/calls/Camera_UpdateViewAxes.c:
+    complete
+    .text       start:0x020c0c54 end:0x020c0d58
 
 src/overlays/ov046/calls/func_ov046_020c0dd4.c:
     complete
@@ -30,6 +42,10 @@ src/overlays/ov046/calls/Camera_SetFollowDistance.c:
 src/overlays/ov046/calls/Camera_SaveSnapshot.c:
     complete
     .text       start:0x020c0df4 end:0x020c0e58
+
+src/overlays/ov046/calls/Camera_RestoreSnapshot.c:
+    complete
+    .text       start:0x020c0e58 end:0x020c0f64
 
 src/overlays/ov046/calls/Camera_StartViewMotionAtAngle.c:
     complete
@@ -47,6 +63,10 @@ src/overlays/ov046/calls/Camera_ChangeModeFromCurrentView.c:
     complete
     .text       start:0x020c1034 end:0x020c1058
 
+src/overlays/ov046/calls/Camera_SetViewMode.c:
+    complete
+    .text       start:0x020c1058 end:0x020c10e4
+
 src/overlays/ov046/calls/func_ov046_020c10e4.c:
     complete
     .text       start:0x020c10e4 end:0x020c10f4
@@ -62,6 +82,10 @@ src/overlays/ov046/calls/Camera_BlendToFollowView.c:
 src/overlays/ov046/calls/Camera_BlendToVelocityAim.c:
     complete
     .text       start:0x020c134c end:0x020c1380
+
+src/overlays/ov046/calls/Camera_BlendToPlayerBackView.c:
+    complete
+    .text       start:0x020c1380 end:0x020c1400
 
 src/overlays/ov046/calls/Camera_GetRaisedPlayerPosition.c:
     complete
@@ -86,6 +110,10 @@ src/overlays/ov046/calls/Camera_GetActiveController.c:
 src/overlays/ov046/calls/func_ov046_020c1608.c:
     complete
     .text       start:0x020c1608 end:0x020c1614
+
+src/overlays/ov046/calls/Camera_GetViewState.c:
+    complete
+    .text       start:0x020c1614 end:0x020c1688
 
 src/overlays/ov046/calls/Camera_StartTargetView.c:
     complete
@@ -127,13 +155,49 @@ src/overlays/ov046/calls/Camera_GetSpeedScaledStep.c:
     complete
     .text       start:0x020c19d4 end:0x020c1a10
 
+src/overlays/ov046/calls/Camera_ComputeFollowDistance.c:
+    complete
+    .text       start:0x020c1a90 end:0x020c1bc8
+
+src/overlays/ov046/calls/Camera_CanTrackTarget.c:
+    complete
+    .text       start:0x020c1bc8 end:0x020c1c60
+
+src/overlays/ov046/calls/CameraCollision_ShouldTestContact.c:
+    complete
+    .text       start:0x020c1c60 end:0x020c1ce8
+
+src/overlays/ov046/calls/CameraProbe_CheckContact.c:
+    complete
+    .text       start:0x020c1ce8 end:0x020c1e60
+
+src/overlays/ov046/calls/IsQueryFacingContact_020c1e60.c:
+    complete
+    .text       start:0x020c1e60 end:0x020c1e74
+
+src/overlays/ov046/calls/Camera_ResolveCollision.c:
+    complete
+    .text       start:0x020c1e74 end:0x020c1fc0
+
+src/overlays/ov046/calls/Camera_GetScreenEdgeMask.c:
+    complete
+    .text       start:0x020c28f0 end:0x020c29ac
+
 src/overlays/ov046/calls/Camera_IsFlag3JustSet.c:
     complete
     .text       start:0x020c29ac end:0x020c29d0
 
+src/overlays/ov046/calls/Camera_SetFollowSuspended.c:
+    complete
+    .text       start:0x020c29e0 end:0x020c2aa4
+
 src/overlays/ov046/calls/Camera_SetStateFlag18.c:
     complete
     .text       start:0x020c2aa4 end:0x020c2ad8
+
+src/overlays/ov046/calls/Camera_LoadOptionFlags.c:
+    complete
+    .text       start:0x020c2b00 end:0x020c2bcc
 
 src/overlays/ov046/calls/Camera_RefreshTargetHeading.c:
     complete
@@ -146,6 +210,14 @@ src/overlays/ov046/calls/Camera_FollowAlongViewDirection.c:
 src/overlays/ov046/calls/Camera_ComputeFollowPoint.c:
     complete
     .text       start:0x020c2c28 end:0x020c2c6c
+
+src/overlays/ov046/calls/Camera_ComputeHeadingOffset.c:
+    complete
+    .text       start:0x020c2c6c end:0x020c2cd8
+
+src/overlays/ov046/calls/Camera_GetEventFocusPoint.c:
+    complete
+    .text       start:0x020c2cd8 end:0x020c2d40
 
 src/overlays/ov046/calls/EventCamera_Update.c:
     complete
@@ -163,9 +235,17 @@ src/overlays/ov046/calls/Camera_BuildSideView.c:
     complete
     .text       start:0x020c2dac end:0x020c2dee
 
+src/overlays/ov046/calls/Camera_BuildViewFromState.c:
+    complete
+    .text       start:0x020c2df0 end:0x020c2e80
+
 src/overlays/ov046/calls/CameraPath_TransformKey.c:
     complete
     .text       start:0x020c2e80 end:0x020c2ee0
+
+src/overlays/ov046/calls/CameraPath_Load.c:
+    complete
+    .text       start:0x020c2ee0 end:0x020c2f64
 
 src/overlays/ov046/calls/CameraPath_Start.c:
     complete
@@ -190,3 +270,11 @@ src/overlays/ov046/calls/CameraPath_SetOverrideView.c:
 src/overlays/ov046/calls/CameraCollision_ShouldBlock.c:
     complete
     .text       start:0x020c322c end:0x020c3274
+
+src/overlays/ov046/calls/CameraCollision_CheckContact.c:
+    complete
+    .text       start:0x020c3274 end:0x020c330e
+
+src/overlays/ov046/calls/Camera_AimViewAtPlayer.c:
+    complete
+    .text       start:0x020c3310 end:0x020c3388

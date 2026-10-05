@@ -16,13 +16,33 @@ src/overlays/ov103/calls/RunSceneStateHandler.c:
     complete
     .text       start:0x020bebb8 end:0x020bebe4
 
+src/overlays/ov103/calls/HandleListScrollDown.c:
+    complete
+    .text       start:0x020bebe4 end:0x020bec54
+
+src/overlays/ov103/calls/HandleListScrollUp.c:
+    complete
+    .text       start:0x020bec54 end:0x020becc4
+
+src/overlays/ov103/calls/SetupMenuDisplay.c:
+    complete
+    .text       start:0x020bed5c end:0x020bef14
+
 src/overlays/ov103/calls/FreeArchiveFiles.c:
     complete
     .text       start:0x020bef58 end:0x020bef80
 
+src/overlays/ov103/calls/LoadGraphicsResources.c:
+    complete
+    .text       start:0x020bef80 end:0x020bf094
+
 src/overlays/ov103/calls/FreeGraphicsResources_020bf094.c:
     complete
     .text       start:0x020bf094 end:0x020bf0c4
+
+src/overlays/ov103/calls/FreeTextLayers.c:
+    complete
+    .text       start:0x020bf34c end:0x020bf3bc
 
 src/overlays/ov103/calls/DrawShadowedAnchoredText_020bf584.c:
     complete
@@ -40,6 +60,34 @@ src/overlays/ov103/calls/SetSlotEntryVisible.c:
     complete
     .text       start:0x020bf698 end:0x020bf6d0
 
+src/overlays/ov103/calls/CreateSlotEntry.c:
+    complete
+    .text       start:0x020bf6d0 end:0x020bf7d4
+
+src/overlays/ov103/calls/SetSlotPosition_020bf7d4.c:
+    complete
+    .text       start:0x020bf7d4 end:0x020bf8e0
+
+src/overlays/ov103/calls/GetSlotEntryResource.c:
+    complete
+    .text       start:0x020bf8e0 end:0x020bf94c
+
+src/overlays/ov103/calls/RefreshRowHighlights.c:
+    complete
+    .text       start:0x020bf94c end:0x020bf9b4
+
+src/overlays/ov103/calls/SetupListPanel.c:
+    complete
+    .text       start:0x020bf9b4 end:0x020bfc20
+
+src/overlays/ov103/calls/ScrollListUp_020bfc20.c:
+    complete
+    .text       start:0x020bfc20 end:0x020bfd60
+
+src/overlays/ov103/calls/ScrollListDown_020bfd60.c:
+    complete
+    .text       start:0x020bfd60 end:0x020bfe9c
+
 src/overlays/ov103/calls/IsEntryFlagSet_020c01a0.c:
     complete
     .text       start:0x020c01a0 end:0x020c01cc
@@ -48,6 +96,10 @@ src/overlays/ov103/calls/SetEntryFlag_020c01cc.c:
     complete
     .text       start:0x020c01cc end:0x020c01ec
 
+src/overlays/ov103/calls/RefreshUnlockedEntries.c:
+    complete
+    .text       start:0x020c01ec end:0x020c0314
+
 src/overlays/ov103/calls/SetScenePhase.c:
     complete
     .text       start:0x020c0314 end:0x020c032c
@@ -55,6 +107,10 @@ src/overlays/ov103/calls/SetScenePhase.c:
 src/overlays/ov103/auto/func_ov103_020c0338.c:
     complete
     .text       start:0x020c0338 end:0x020c033c
+
+src/overlays/ov103/calls/RunFadeInStep.c:
+    complete
+    .text       start:0x020c03e8 end:0x020c0490
 
 src/overlays/ov103/calls/func_ov103_020c0490.c:
     complete

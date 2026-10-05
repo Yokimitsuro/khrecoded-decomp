@@ -10,12 +10,12 @@ typedef struct StageWalker {
     VecFx32 position;
 } StageWalker;
 
-extern u16 func_ov001_02099350(const VecFx32 *target);
-extern void func_ov001_02098fe4(u32 id, VecFx32 *outPosition);
+extern u16 FindNearestStageEntry(const VecFx32 *target);
+extern void SyncStageEntryPosition(u32 id, VecFx32 *outPosition);
 
 void SyncNearestEntryPosition(StageWalker *walker, int unused, VecFx32 *outPosition)
 {
-    if (func_ov001_02099350(&walker->position) != 0) {
-        func_ov001_02098fe4(walker->entryGroup, outPosition);
+    if (FindNearestStageEntry(&walker->position) != 0) {
+        SyncStageEntryPosition(walker->entryGroup, outPosition);
     }
 }

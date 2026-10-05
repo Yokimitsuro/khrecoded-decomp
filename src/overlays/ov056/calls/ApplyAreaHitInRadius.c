@@ -25,8 +25,8 @@ typedef struct {
 } AreaHitSearch;
 
 extern void ResetAnimationTrackState(HitParams *params);
-extern BOOL func_ov056_020d51ac(s32 recordId, void *userData);
-extern BOOL func_ov056_020d520c(s32 recordId, VecFx32 *position, void *userData);
+extern BOOL CanAddRecordToSlots(s32 recordId, void *userData);
+extern BOOL TryAreaHitOnRecord(s32 recordId, VecFx32 *position, void *userData);
 extern void ForEachRecordInRadius(RecordFilter filter, RecordVisitor visitor, VecFx32 *center, fx32 radius, void *userData);
 
 void ApplyAreaHitInRadius(VecFx32 *center, fx32 radius, HitOwner *owner, void *extra)
@@ -38,5 +38,5 @@ void ApplyAreaHitInRadius(VecFx32 *center, fx32 radius, HitOwner *owner, void *e
     search.params.unk_25 = 0;
     search.owner = owner;
     search.extra = extra;
-    ForEachRecordInRadius(func_ov056_020d51ac, func_ov056_020d520c, center, radius, &search);
+    ForEachRecordInRadius(CanAddRecordToSlots, TryAreaHitOnRecord, center, radius, &search);
 }

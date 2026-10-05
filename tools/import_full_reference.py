@@ -377,7 +377,10 @@ def apply(candidates: list[dict]) -> None:
 
         rewrites = {**item["rewrites"], item["source_symbol"]: new_name}
         source = replace_identifiers(item["source_text"], rewrites)
-        destination = destination_dir(module) / f"{new_name}.c"
+        source_suffix = Path(item["source"]).suffix.lower()
+        if source_suffix not in (".c", ".cpp"):
+            source_suffix = ".c"
+        destination = destination_dir(module) / f"{new_name}{source_suffix}"
         destination.parent.mkdir(parents=True, exist_ok=True)
         if destination.exists():
             raise RuntimeError(f"destination already exists: {destination}")
@@ -430,13 +433,72 @@ def apply(candidates: list[dict]) -> None:
                     path.write_text(updated, encoding="utf-8", newline="\n")
 
 
+def repair_cpp_suffixes() -> int:
+    """Restore .cpp for imported reference units that were written as .c."""
+    mappings = json.loads(RESULTS.read_text(encoding="utf-8"))["mappings"]
+    symbols = current_symbols_by_address()
+    compiler_map = json.loads(COMPILERS.read_text(encoding="utf-8"))
+    changed_modules = {}
+    repaired = 0
+
+    for item in mappings:
+        if Path(item["source"]).suffix.lower() != ".cpp":
+            continue
+        module = item["module"]
+        name = symbols.get((module, item["eu"]["address"]))
+        if name is None:
+            continue
+        old_path = destination_dir(module) / f"{name}.c"
+        new_path = destination_dir(module) / f"{name}.cpp"
+        if not old_path.is_file() or new_path.exists():
+            continue
+
+        old_relative = old_path.relative_to(ROOT).as_posix()
+        new_relative = new_path.relative_to(ROOT).as_posix()
+        old_path.rename(new_path)
+
+        delinks_path = config_dir(module) / "delinks.txt"
+        delinks = changed_modules.get(module)
+        if delinks is None:
+            delinks = delinks_path.read_text(encoding="utf-8")
+        updated, count = re.subn(
+            rf"^{re.escape(old_relative)}:$",
+            new_relative + ":",
+            delinks,
+            flags=re.MULTILINE,
+        )
+        if count != 1:
+            raise RuntimeError(f"delink path not found once: {old_relative}")
+        changed_modules[module] = updated
+
+        if old_relative in compiler_map:
+            compiler_map[new_relative] = compiler_map.pop(old_relative)
+        repaired += 1
+
+    for module, delinks in changed_modules.items():
+        (config_dir(module) / "delinks.txt").write_text(
+            delinks, encoding="utf-8", newline="\n"
+        )
+    COMPILERS.write_text(
+        json.dumps(compiler_map, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    return repaired
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--module")
     parser.add_argument("--max-size", type=lambda value: int(value, 0))
+    parser.add_argument("--repair-cpp-suffixes", action="store_true")
     args = parser.parse_args()
+
+    if args.repair_cpp_suffixes:
+        print(f"repaired {repair_cpp_suffixes()} C++ source suffixes")
+        return
 
     candidates = discover(args.module)
     if args.max_size is not None:

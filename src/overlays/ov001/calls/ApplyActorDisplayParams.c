@@ -12,9 +12,9 @@ typedef struct ActorDisplay {
     u16 paramB;
 } ActorDisplay;
 
-extern void func_ov001_0208f374(void *renderer, int layer, u16 paramA, u16 paramB, int flags);
+extern void SetNodeRotationXY(void *renderer, int layer, u16 paramA, u16 paramB, int flags);
 
 void ApplyActorDisplayParams(ActorDisplay *display)
 {
-    func_ov001_0208f374(display->renderer, display->layer, display->paramA, display->paramB, 0);
+    SetNodeRotationXY(display->renderer, display->layer, display->paramA, display->paramB, 0);
 }

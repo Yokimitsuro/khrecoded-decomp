@@ -25,13 +25,13 @@ typedef struct FieldObject {
     s8 unk_53;
 } FieldObject;
 
-extern FieldObject *func_ov001_0207f468(FieldObjectClass *objectClass, u8 slotIndex);
+extern FieldObject *FieldObject_Create(FieldObjectClass *objectClass, u8 slotIndex);
 extern void func_ov001_02080a9c(FieldObject *object);
 
 FieldObject *FieldObject_CreateWithUpdater(FieldObjectClass *objectClass, u8 slotIndex, u16 saveBitOffset,
                                                     u8 saveBitCount, VecFx32 *position, u16 angle)
 {
-    FieldObject *object = func_ov001_0207f468(objectClass, slotIndex);
+    FieldObject *object = FieldObject_Create(objectClass, slotIndex);
 
     object->position = *position;
     object->angle = angle;

@@ -16,7 +16,7 @@ func_ov033_020ba98c kind:function(arm,size=0x24) addr:0x020ba98c
 func_ov033_020ba9b0 kind:function(arm,size=0x20) addr:0x020ba9b0
 func_ov033_020ba9d0 kind:function(arm,size=0x8) addr:0x020ba9d0
 func_ov033_020ba9d8 kind:function(arm,size=0x14) addr:0x020ba9d8
-func_ov033_020ba9ec kind:function(arm,size=0x74) addr:0x020ba9ec
+InstallResumeModeHandlers kind:function(arm,size=0x74) addr:0x020ba9ec
 func_ov033_020baa60 kind:function(arm,size=0xc) addr:0x020baa60
 func_ov033_020baa6c kind:function(arm,size=0x18) addr:0x020baa6c
 data_ov033_020baaa0 kind:data(any) addr:0x020baaa0

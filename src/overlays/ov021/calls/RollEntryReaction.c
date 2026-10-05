@@ -20,7 +20,7 @@ typedef struct ReactionParams {
 } ReactionParams;
 
 extern ReactionEntry *GetBoundedEntryField(int id);
-extern int func_ov052_020d1258(ReactionEntry *entry, int *out);
+extern int SelectFallStateHandler(ReactionEntry *entry, int *out);
 extern void func_ov052_020d1190(ReactionEntry *entry, int reaction);
 extern u32 random_next_scaled(u32 range);
 extern BOOL IsPlayerEntryFlagSet(u8 index, int flag);
@@ -35,7 +35,7 @@ int RollEntryReaction(ReactionSource *source, ReactionParams *params, int *out)
 
     entry->reaction = 0;
     *out = 0x16;
-    if (params->mode != 1 || (result = func_ov052_020d1258(entry, out)) == 0) {
+    if (params->mode != 1 || (result = SelectFallStateHandler(entry, out)) == 0) {
         reaction = 0;
         if (random_next_scaled(0x64000) < 0x4b000) {
             reaction++;

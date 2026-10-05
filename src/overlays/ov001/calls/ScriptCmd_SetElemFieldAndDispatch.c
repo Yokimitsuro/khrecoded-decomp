@@ -2,7 +2,7 @@
 
 extern void ScriptCmd_SetElemField(void *scriptContext, u32 value);
 extern int IsFieldPanelShown(void);
-extern int func_ov001_0208c6cc(void *scriptContext, u32 arg);
+extern int ScriptCmd_ShowPendingDialogText(void *scriptContext, u32 arg);
 extern u32 func_ov001_0208d760(void *scriptContext, u32 value);
 
 u32 ScriptCmd_SetElemFieldAndDispatch(u8 *scriptContext, u32 value)
@@ -17,7 +17,7 @@ u32 ScriptCmd_SetElemFieldAndDispatch(u8 *scriptContext, u32 value)
     }
     sub = *(u8 **)(scriptContext + 0x1c8);
     if (*(s32 *)(sub + 0x1cc) != 0) {
-        flag = func_ov001_0208c6cc(scriptContext, *(u32 *)(sub + 0x50));
+        flag = ScriptCmd_ShowPendingDialogText(scriptContext, *(u32 *)(sub + 0x50));
         if (flag == 1) {
             return func_ov001_0208d760(scriptContext, value);
         }

@@ -25,7 +25,7 @@ typedef struct MenuScene {
 extern MenuScene *data_ov001_020a048c;
 
 extern MenuPanel *func_ov001_02067140(int panelId);
-extern void func_ov001_020671e0(MenuPanel *panel, int panelId);
+extern void SyncDoorMeshState(MenuPanel *panel, int panelId);
 extern void SetPanelItemHighlight(int index, BOOL highlighted);
 
 void ConfigureMenuPanel(int panelId, int flags, int row, int column, BOOL refresh)
@@ -42,7 +42,7 @@ void ConfigureMenuPanel(int panelId, int flags, int row, int column, BOOL refres
         panel->flags = flags;
     }
     if (refresh) {
-        func_ov001_020671e0(panel, panelId);
+        SyncDoorMeshState(panel, panelId);
         if (data_ov001_020a048c->flags & 1) {
             SetPanelItemHighlight(panel->def->itemNumber - 1, panel->flags & 2);
         }

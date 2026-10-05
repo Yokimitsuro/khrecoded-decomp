@@ -6,11 +6,11 @@ typedef struct {
     s32 trackedIndex;
 } TrackedRecordEntry;
 
-extern void func_ov058_020d4520(TrackedRecordEntry *entry);
+extern void InitRecordEntry(TrackedRecordEntry *entry);
 
 void InitTrackedRecordEntry(TrackedRecordEntry *entry)
 {
-    func_ov058_020d4520(entry);
+    InitRecordEntry(entry);
     entry->linkedId = -1;
     entry->trackedIndex = -1;
 }

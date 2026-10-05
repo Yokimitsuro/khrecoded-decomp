@@ -31,7 +31,7 @@ extern void NNS_G3dMdlSetMdlPolygonID(NNSG3dResMdl *model, u32 matId, int polygo
 extern void NNS_G3dMdlSetMdlCullMode(NNSG3dResMdl *model, u32 matId, int cullMode);
 extern void NNS_G3dMdlSetMdlAlpha(NNSG3dResMdl *model, u32 matId, int alpha);
 extern void NNS_G3dMdlSetMdlPolygonMode(NNSG3dResMdl *model, u32 matId, int polygonMode);
-extern void func_01fff3dc(const NNSG3dResMdl *model, u32 materialId, u32 shapeId, BOOL sendMaterial);
+extern void NNS_G3dDraw1Mat1Shp(const NNSG3dResMdl *model, u32 materialId, u32 shapeId, BOOL sendMaterial);
 
 void ShadowVolume_Draw(ShadowVolume *shadow)
 {
@@ -53,13 +53,13 @@ void ShadowVolume_Draw(ShadowVolume *shadow)
     NNS_G3dMdlSetMdlCullMode(model, 0, 1);
     NNS_G3dMdlSetMdlAlpha(model, 0, shadow->alpha);
     NNS_G3dMdlSetMdlPolygonMode(model, 0, 3);
-    func_01fff3dc(model, 0, 0, TRUE);
+    NNS_G3dDraw1Mat1Shp(model, 0, 0, TRUE);
 
     NNS_G3dMdlSetMdlPolygonID(model, 0, 0x3f);
     NNS_G3dMdlSetMdlCullMode(model, 0, 3);
     NNS_G3dMdlSetMdlAlpha(model, 0, shadow->alpha);
     NNS_G3dMdlSetMdlPolygonMode(model, 0, 3);
-    func_01fff3dc(model, 0, 0, TRUE);
+    NNS_G3dDraw1Mat1Shp(model, 0, 0, TRUE);
 
     NNS_G3dGlb.baseScale.x = NNS_G3dGlb.baseScale.y = NNS_G3dGlb.baseScale.z = FX32_ONE;
     NNS_G3dGlb.flags &= ~0xa4;

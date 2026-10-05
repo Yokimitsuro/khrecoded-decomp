@@ -17,7 +17,7 @@ typedef struct FlagTaskParams {
 typedef struct ScriptContext ScriptContext;
 
 extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operand);
-extern void func_ov001_02069274(int target, BOOL enable, int kind, FlagTaskParams *params);
+extern void CreateFieldTaskNode(int target, BOOL enable, int kind, FlagTaskParams *params);
 
 BOOL ScriptCmd_QueueFlagTaskKind1(ScriptContext *context, ScriptOperand *operands)
 {
@@ -31,6 +31,6 @@ BOOL ScriptCmd_QueueFlagTaskKind1(ScriptContext *context, ScriptOperand *operand
     params.second = ScriptVm_ReadOperandInt(context, &operands[3]);
     params.highByte = ScriptVm_ReadOperandInt(context, &operands[4]);
     params.lowByte = ScriptVm_ReadOperandInt(context, &operands[5]);
-    func_ov001_02069274(target, enable != 0, 1, &params);
+    CreateFieldTaskNode(target, enable != 0, 1, &params);
     return TRUE;
 }

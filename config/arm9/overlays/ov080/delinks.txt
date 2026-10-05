@@ -8,6 +8,10 @@ src/overlays/ov080/calls/CountValidSlots.c:
     complete
     .text       start:0x020c4280 end:0x020c42d0
 
+src/overlays/ov080/calls/UpdateSaveSelectScreen.c:
+    complete
+    .text       start:0x020c4760 end:0x020c4af0
+
 src/overlays/ov080/calls/DestroySaveSelectScreen.c:
     complete
     .text       start:0x020c4af0 end:0x020c4ba4

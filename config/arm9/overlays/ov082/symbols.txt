@@ -1,9 +1,9 @@
 func_ov082_020beac0 kind:function(arm,size=0xa8) addr:0x020beac0
-func_ov082_020beb68 kind:function(arm,size=0x3c0) addr:0x020beb68
-func_ov082_020bef28 kind:function(arm,size=0x184) addr:0x020bef28
+SetupOv082Screen kind:function(arm,size=0x3c0) addr:0x020beb68
+RefreshEntryRows kind:function(arm,size=0x184) addr:0x020bef28
 func_ov082_020bf0ac kind:function(arm,size=0x1d4) addr:0x020bf0ac
-func_ov082_020bf280 kind:function(arm,size=0xa0) addr:0x020bf280
-func_ov082_020bf320 kind:function(arm,size=0x70) addr:0x020bf320
+DrawEntryRowFrames kind:function(arm,size=0xa0) addr:0x020bf280
+ShutdownOv082Screen kind:function(arm,size=0x70) addr:0x020bf320
 func_ov082_020bf390 kind:function(arm,size=0xd8) addr:0x020bf390
 func_ov082_020bf468 kind:function(arm,size=0x1f8) addr:0x020bf468
 func_ov082_020bf660 kind:function(arm,size=0x14) addr:0x020bf660

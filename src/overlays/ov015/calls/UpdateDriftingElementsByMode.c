@@ -4,8 +4,8 @@ typedef struct {
     s8 mode;
 } SceneContext;
 
-extern void func_ov015_0206fff0(void);
-extern void func_ov015_02070174(void);
+extern void ScrollDriftingElementsHorizontal(void);
+extern void ScrollDriftingElementsVertical(void);
 extern SceneContext *data_ov015_0207e960;
 
 void UpdateDriftingElementsByMode(void) {
@@ -13,12 +13,12 @@ void UpdateDriftingElementsByMode(void) {
     case 0:
     case 1:
     case 7:
-        func_ov015_0206fff0();
+        ScrollDriftingElementsHorizontal();
         break;
     case 2:
     case 3:
     case 6:
-        func_ov015_02070174();
+        ScrollDriftingElementsVertical();
         break;
     }
 }

@@ -3,6 +3,18 @@
     .data       start:0x020bb320 end:0x020bb3a0 kind:data align:32
     .bss        start:0x020bb3a0 end:0x020bb3c0 kind:bss align:32
 
+src/overlays/ov028/calls/InitFieldOverlayState.c:
+    complete
+    .text       start:0x020ba400 end:0x020ba5a4
+
+src/overlays/ov028/calls/RunSceneStateMachine.c:
+    complete
+    .text       start:0x020ba5a4 end:0x020ba62c
+
+src/overlays/ov028/calls/ReleaseFieldContext.c:
+    complete
+    .text       start:0x020ba62c end:0x020ba69c
+
 src/overlays/ov028/calls/EnterState12WithHalfRate.c:
     complete
     .text       start:0x020bac0c end:0x020bac30
@@ -26,6 +38,10 @@ src/overlays/ov028/calls/ReleaseHandle_020bb0a4.c:
 src/overlays/ov028/calls/IsSceneUnpaused.c:
     complete
     .text       start:0x020bb17c end:0x020bb19c
+
+src/overlays/ov028/calls/InstallSceneHandlers.c:
+    complete
+    .text       start:0x020bb220 end:0x020bb2c8
 
 src/overlays/ov028/calls/SetOrClearStatusBit2.c:
     complete

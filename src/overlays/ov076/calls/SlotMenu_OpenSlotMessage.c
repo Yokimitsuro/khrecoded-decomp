@@ -11,7 +11,7 @@ extern BOOL PlaySoundEffect(int seqArcNo, int index);
 extern void SetWidgetRootTouchEnabled(void *root, BOOL enabled);
 extern void *G2_GetBG1ScrPtr(void);
 extern void MIi_CpuClearFast(u32 value, void *dest, u32 size);
-extern void func_ov076_020c6328(SlotMenu *menu, int windowType, int arg2, u16 style, int messageId);
+extern void SlotMenu_OpenMessagePanel(SlotMenu *menu, int windowType, int arg2, u16 style, int messageId);
 
 void SlotMenu_OpenSlotMessage(SlotMenu *menu, int messageId)
 {
@@ -32,5 +32,5 @@ void SlotMenu_OpenSlotMessage(SlotMenu *menu, int messageId)
     if (!moved) {
         style = 0xb;
     }
-    func_ov076_020c6328(menu, 2, 0, style, messageId);
+    SlotMenu_OpenMessagePanel(menu, 2, 0, style, messageId);
 }

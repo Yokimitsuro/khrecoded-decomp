@@ -8,11 +8,11 @@ typedef struct {
 
 extern SceneState *data_ov030_020bd020;
 
-extern int func_ov001_02063404(void);
+extern int RestoreSessionActors(void);
 extern void ObjectManager_LoadShadowModel(void);
 
 int FinishSceneSetup(void) {
-    if (func_ov001_02063404() == 1 && data_ov030_020bd020->mode != 3) {
+    if (RestoreSessionActors() == 1 && data_ov030_020bd020->mode != 3) {
         data_ov030_020bd020->mode = 0;
     }
     ObjectManager_LoadShadowModel();

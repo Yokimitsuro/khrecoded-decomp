@@ -13,11 +13,11 @@ typedef struct Kind3EntryPool {
 } Kind3EntryPool;
 
 extern Kind3EntryPool *CreateEntryPool(int headerSize, int entrySize, int count);
-extern void func_ov020_020a34bc(void);
+extern void LoadPanelStackPhase(void);
 extern void func_ov020_020a3598(void);
-extern void func_ov020_020a3744(void);
+extern void DrawStackedPanels(void);
 extern void func_ov020_020a359c(void);
-extern void func_ov020_020a35a4(void);
+extern void TryCollidePanelShape(void);
 extern void TryGetFieldHandle_020a3720(void);
 
 Kind3EntryPool *CreateKind3EntryPool(int count)
@@ -26,14 +26,14 @@ Kind3EntryPool *CreateKind3EntryPool(int count)
 
     pool->active = 0;
     pool->selected = -1;
-    pool->callbacks[0] = func_ov020_020a34bc;
+    pool->callbacks[0] = LoadPanelStackPhase;
     pool->callbacks[2] = NULL;
     pool->callbacks[4] = NULL;
     pool->callbacks[5] = NULL;
     pool->callbacks[6] = func_ov020_020a3598;
-    pool->callbacks[14] = func_ov020_020a3744;
+    pool->callbacks[14] = DrawStackedPanels;
     pool->callbacks[7] = func_ov020_020a359c;
-    pool->callbacks[9] = func_ov020_020a35a4;
+    pool->callbacks[9] = TryCollidePanelShape;
     pool->callbacks[8] = TryGetFieldHandle_020a3720;
     pool->callbacks[10] = NULL;
     pool->kind = 3;

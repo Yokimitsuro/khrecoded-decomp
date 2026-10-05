@@ -35,7 +35,7 @@ extern const u8 data_ov032_020bff8c[];
 
 extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
 extern ObjectGroup *func_ov032_020bbc80(GroupObject *object);
-extern BOOL func_ov032_020bf0a8(void *world, int groupIndex);
+extern BOOL IsRowSettledInMode5(void *world, int groupIndex);
 extern u32 random_next_scaled(u32 upperBound);
 
 u32 SelectGroupMemberPose(GroupObject *object, int threshold)
@@ -44,7 +44,7 @@ u32 SelectGroupMemberPose(GroupObject *object, int threshold)
     ObjectGroup *group = func_ov032_020bbc80(object);
     u32 pose = object->defaultPose;
 
-    if (func_ov032_020bf0a8(object->world, work->groupIndex)) {
+    if (IsRowSettledInMode5(object->world, work->groupIndex)) {
         if (group->idleTime > 0xf0 && random_next_scaled(6) == 0) {
             return data_ov032_020bff8c[random_next_scaled(8)];
         }

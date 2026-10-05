@@ -12,6 +12,10 @@ src/overlays/ov034/calls/ClearResultsWidgetOnLayer.c:
     complete
     .text       start:0x020bb090 end:0x020bb0b4
 
+src/overlays/ov034/calls/UpdateResultsFade.c:
+    complete
+    .text       start:0x020bb0b4 end:0x020bb254
+
 src/overlays/ov034/calls/AdvanceResultsTransition.c:
     complete
     .text       start:0x020bb254 end:0x020bb294
@@ -23,6 +27,22 @@ src/overlays/ov034/calls/SetResultsMode.c:
 src/overlays/ov034/calls/EnterResultsTierMode.c:
     complete
     .text       start:0x020bb2b0 end:0x020bb324
+
+src/overlays/ov034/calls/InitResultsScreen.c:
+    complete
+    .text       start:0x020bb324 end:0x020bb598
+
+src/overlays/ov034/calls/ResetResultsObjects.c:
+    complete
+    .text       start:0x020bce70 end:0x020bcf50
+
+src/overlays/ov034/calls/DrawResultsCounter.c:
+    complete
+    .text       start:0x020bcf50 end:0x020bd02e
+
+src/overlays/ov034/calls/DrawResultsLabelText.c:
+    complete
+    .text       start:0x020bd030 end:0x020bd0c0
 
 src/overlays/ov034/calls/CommitResultsRewards.c:
     complete
@@ -75,6 +95,14 @@ src/overlays/ov034/calls/MobiClip_SrcClose_020bde8c.c:
 src/overlays/ov034/auto/func_ov034_020bdea4.c:
     complete
     .text       start:0x020bdea4 end:0x020bdea8
+
+src/overlays/ov034/calls/CreateObjectSlot_020bdec4.c:
+    complete
+    .text       start:0x020bdec4 end:0x020bdf30
+
+src/overlays/ov034/calls/ApplyResultsPartyBonus.c:
+    complete
+    .text       start:0x020be278 end:0x020be348
 
 src/overlays/ov034/calls/ClassifyResultsShopEntry.c:
     complete

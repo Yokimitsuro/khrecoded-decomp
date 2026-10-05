@@ -19,7 +19,7 @@ struct Entity {
     void (*changeState)(Entity *entity, int state);
 };
 
-extern VecFx32 *func_ov001_0206c3f4(void *target);
+extern VecFx32 *GetWaitTargetPosition(void *target);
 extern VecFx32 *func_ov052_020ceb74(Entity *entity);
 
 BOOL TryEnterLevelTargetState(Entity *entity, HitEvent *event)
@@ -36,7 +36,7 @@ BOOL TryEnterLevelTargetState(Entity *entity, HitEvent *event)
         valid = 0;
     }
     if (valid != 0) {
-        VecFx32 *targetPos = func_ov001_0206c3f4(entity->target);
+        VecFx32 *targetPos = GetWaitTargetPosition(entity->target);
         VecFx32 *selfPos = func_ov052_020ceb74(entity);
 
         if (targetPos->y >= selfPos->y) {

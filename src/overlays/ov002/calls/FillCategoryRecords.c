@@ -8,8 +8,8 @@ typedef struct RecordPreset {
 extern s32 data_ov002_0206ae70[];
 extern unsigned int func_0202a9e4(unsigned int range);
 extern void func_ov002_0206aaa0(s32 *preferredItemIds);
-extern s32 func_ov002_0206a888(s32 category, s32 *preferredItemIds);
-extern void func_ov002_020687a4(void *dest, s32 *recordIds, int count);
+extern s32 PickRandomAvailableRecord(s32 category, s32 *preferredItemIds);
+extern void ApplyRecordsToPackedFields(void *dest, s32 *recordIds, int count);
 
 void FillCategoryRecords(void *dest, RecordPreset *preset)
 {
@@ -25,7 +25,7 @@ void FillCategoryRecords(void *dest, RecordPreset *preset)
         ids = preset->recordIds;
         for (i = 0; i < 0x14; i++) {
             if (i != 0x12 && (recordId = ids[i]) != -1) {
-                func_ov002_020687a4(dest, &recordId, 1);
+                ApplyRecordsToPackedFields(dest, &recordId, 1);
             }
         }
         return;
@@ -44,7 +44,7 @@ void FillCategoryRecords(void *dest, RecordPreset *preset)
         if (i == 0x12 && roll >= 10) {
             continue;
         }
-        recordId = func_ov002_0206a888(category, func_0202a9e4(100) < 0x46 ? preferred : NULL);
-        func_ov002_020687a4(dest, &recordId, 1);
+        recordId = PickRandomAvailableRecord(category, func_0202a9e4(100) < 0x46 ? preferred : NULL);
+        ApplyRecordsToPackedFields(dest, &recordId, 1);
     }
 }

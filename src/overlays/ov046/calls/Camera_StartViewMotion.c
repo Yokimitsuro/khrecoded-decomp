@@ -10,7 +10,7 @@ typedef struct CameraManager {
 extern CameraManager *data_ov046_020c3500;
 extern MtxFx43 NNS_G3dGlb_cameraMtx;
 extern void func_01ff913c(const MtxFx43 *src, MtxFx33 *dst);
-extern void func_ov021_020afa90(void *motion, const VecFx32 *forward, const VecFx32 *offset, s32 duration, s32 arg4, s32 arg5);
+extern void InitLaunchedParticle(void *motion, const VecFx32 *forward, const VecFx32 *offset, s32 duration, s32 arg4, s32 arg5);
 
 static inline MtxFx33 GetViewRotation(void)
 {
@@ -22,5 +22,5 @@ static inline MtxFx33 GetViewRotation(void)
 void Camera_StartViewMotion(const VecFx32 *offset, s32 duration, s32 arg4, s32 arg5)
 {
     MtxFx33 rotation = GetViewRotation();
-    func_ov021_020afa90(data_ov046_020c3500->motion, (const VecFx32 *)rotation.m[2], offset, duration, arg4, arg5);
+    InitLaunchedParticle(data_ov046_020c3500->motion, (const VecFx32 *)rotation.m[2], offset, duration, arg4, arg5);
 }

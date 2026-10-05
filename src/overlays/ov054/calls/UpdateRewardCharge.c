@@ -28,7 +28,7 @@ struct Actor {
 
 extern RewardWork *data_ov054_020d3720;
 extern BOOL IsPlayerEntryFlagSet(u32 selection, int flag);
-extern void func_ov052_020d0ee0(Actor *actor, int groupId, int kind, int order, BOOL openMenu);
+extern void ApplyItemRewardEffect(Actor *actor, int groupId, int kind, int order, BOOL openMenu);
 extern void *func_ov001_0206db78(u32 selection);
 extern u16 SharedObject_GetId(void *self);
 extern void func_ov054_020d34d0(Actor *actor, int arg);
@@ -41,7 +41,7 @@ void UpdateRewardCharge(Actor *actor)
         actor->boostTime = 0x3000;
     }
     if ((actor->stateFlags & 0x4000) == 0 && actor->chargeTime >= 0x9000) {
-        func_ov052_020d0ee0(actor, work->rewardGroups[work->rewardKind - 0xb7], work->rewardKind, actor->rewardOrder, TRUE);
+        ApplyItemRewardEffect(actor, work->rewardGroups[work->rewardKind - 0xb7], work->rewardKind, actor->rewardOrder, TRUE);
         actor->stateFlags |= 0x4000;
     }
     if (SharedObject_GetId(func_ov001_0206db78(actor->selection)) == 0) {

@@ -6,11 +6,11 @@ typedef struct {
 } SaveBlock;
 
 extern SaveBlock *data_0205fe0c;
-extern s32 func_ov075_020c49a8(void);
+extern s32 CountUnlockedTiers(void);
 
 BOOL HasPendingUnlocks(void)
 {
-    s32 flaggedCount = func_ov075_020c49a8();
+    s32 flaggedCount = CountUnlockedTiers();
 
     if (data_0205fe0c->unlockCount < flaggedCount) {
         return TRUE;

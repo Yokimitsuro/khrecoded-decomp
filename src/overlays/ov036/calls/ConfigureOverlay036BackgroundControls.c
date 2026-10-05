@@ -1,0 +1,33 @@
+typedef unsigned int u32;
+void ConfigureOverlay036BackgroundControls(void) {
+    u32 value0 = 0x400000aU;
+    u32 value1 = *(const volatile unsigned short *)(value0);
+    u32 value2 = (value0) - (0x2U);
+    u32 value3 = (value1) & (0x43U);
+    u32 value4 = (value3) | (0x8cU);
+    u32 value5 = (value4) | (0x5400U);
+    *(volatile unsigned short *)(value0) = value5;
+    u32 value7 = *(const volatile unsigned short *)((value0 + 0x2U));
+    u32 value8 = (value7) & (0x43U);
+    u32 value9 = (value8) | (0x1600U);
+    *(volatile unsigned short *)((value0 + 0x2U)) = value9;
+    u32 value11 = *(const volatile unsigned short *)((value0 + 0x4U));
+    u32 value12 = (value11) & (0x43U);
+    u32 value13 = (value12) | (0x1700U);
+    *(volatile unsigned short *)((value0 + 0x4U)) = value13;
+    u32 value15 = *(const volatile unsigned short *)(value2);
+    u32 value16 = (value15) & (~(0x3U));
+    u32 value17 = (value16) | (0x2U);
+    *(volatile unsigned short *)(value2) = value17;
+    u32 value19 = *(const volatile unsigned short *)(value0);
+    u32 value20 = (value19) & (~(0x3U));
+    u32 value21 = (value20) | (0x3U);
+    *(volatile unsigned short *)(value0) = value21;
+    u32 value23 = *(const volatile unsigned short *)((value0 + 0x2U));
+    u32 value24 = (value23) & (~(0x3U));
+    *(volatile unsigned short *)((value0 + 0x2U)) = value24;
+    u32 value26 = *(const volatile unsigned short *)((value0 + 0x4U));
+    u32 value27 = (value26) & (~(0x3U));
+    u32 value28 = (value27) | (0x1U);
+    *(volatile unsigned short *)((value0 + 0x4U)) = value28;
+}

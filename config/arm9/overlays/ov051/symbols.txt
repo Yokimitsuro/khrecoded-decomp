@@ -1,6 +1,6 @@
 func_ov051_020c72e0 kind:function(thumb,size=0x18) addr:0x020c72e0
 func_ov051_020c72f8 kind:function(thumb,size=0x18) addr:0x020c72f8
-func_ov051_020c7310 kind:function(thumb,size=0x68) addr:0x020c7310
+LoadNextOverlayForSelection kind:function(thumb,size=0x68) addr:0x020c7310
 func_ov051_020c7378 kind:function(thumb,size=0x18) addr:0x020c7378
 LoadOverlayForMode kind:function(thumb,size=0x34) addr:0x020c7390
 UnloadTrackedOverlay kind:function(thumb,size=0x2c) addr:0x020c73c4

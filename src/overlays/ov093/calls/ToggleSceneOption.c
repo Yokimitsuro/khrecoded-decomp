@@ -6,7 +6,7 @@ typedef struct {
 } SceneWork;
 
 extern int func_ov093_020c2368(SceneWork *work);
-extern void func_ov093_020c0330(int side, int slotIndex, int value, SceneWork *work);
+extern void SetSlotAnimFlag(int side, int slotIndex, int value, SceneWork *work);
 extern BOOL PlaySoundEffect(int seqArcNo, int index);
 
 void ToggleSceneOption(SceneWork *work)
@@ -21,6 +21,6 @@ void ToggleSceneOption(SceneWork *work)
     if (work->optionToggle == 1) {
         visible = FALSE;
     }
-    func_ov093_020c0330(0, 2, visible, work);
+    SetSlotAnimFlag(0, 2, visible, work);
     PlaySoundEffect(0, 1);
 }

@@ -10,7 +10,7 @@ typedef struct CallbackTask {
 } CallbackTask;
 
 extern void func_ov001_020822d4(void *work);
-extern void func_ov001_0207f234(CallbackTask *task, int arg);
+extern void ReleaseOwnerResource(CallbackTask *task, int arg);
 
 void ReleaseTaskWithCallback(CallbackTask *task, int arg)
 {
@@ -18,5 +18,5 @@ void ReleaseTaskWithCallback(CallbackTask *task, int arg)
         task->onFinish(task);
     }
     func_ov001_020822d4(task->work);
-    func_ov001_0207f234(task, arg);
+    ReleaseOwnerResource(task, arg);
 }

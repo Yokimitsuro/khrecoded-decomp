@@ -1,5 +1,5 @@
-extern int func_ov081_020c57b0();
+extern int DrawListPageIndicator();
 
 int func_ov081_020c5478(int arg0) {
-    return func_ov081_020c57b0(arg0);
+    return DrawListPageIndicator(arg0);
 }

@@ -25,8 +25,8 @@ extern FieldActor *ActorRegistry_GetEntityByIndex(u32 actorId);
 extern void func_ov016_020a56dc(void);
 extern void func_ov016_020a46b4(void);
 extern void OnMode11FieldObjectHit(void);
-extern void func_ov016_020a568c(void);
-extern void func_ov016_020a567c(void);
+extern void OnFieldUnitPushedUp(void);
+extern void ForwardModeCheck(void);
 
 void InstallFieldObjectHitCallbacks(FieldObject *obj)
 {
@@ -50,14 +50,14 @@ void InstallFieldObjectHitCallbacks(FieldObject *obj)
             callback = OnMode11FieldObjectHit;
             break;
         default:
-            callback = func_ov016_020a568c;
+            callback = OnFieldUnitPushedUp;
             break;
         }
         actor->hitCallback = callback;
         actor->hitContext = obj;
     }
     if (obj->mode == 5) {
-        actor->touchCallback = func_ov016_020a567c;
+        actor->touchCallback = ForwardModeCheck;
         actor->touchContext = obj;
     }
 }

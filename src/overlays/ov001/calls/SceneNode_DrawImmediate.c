@@ -22,14 +22,14 @@ typedef struct GeometryStateCache {
 extern VecFx32 NNS_G3dGlb_prmBaseScale;
 extern MtxFx43 NNS_G3dGlb_prmBaseRot;
 extern GeometryStateCache NNS_G3dGlb_prmMatColor0;
-extern void func_ov001_0208f3ec(SceneNode *node);
+extern void UpdateNodeRotationYZ(SceneNode *node);
 extern void NNS_G3dGlbFlushVP(void);
 extern void func_01fff67c(int packedRgb);
 extern void func_01ffe1bc(void *renderObj);
 
 void SceneNode_DrawImmediate(SceneNode *node) {
     NNS_G3dGlb_prmBaseScale = node->position;
-    func_ov001_0208f3ec(node);
+    UpdateNodeRotationYZ(node);
     NNS_G3dGlb_prmBaseRot = node->matrix;
     NNS_G3dGlb_prmMatColor0.flags &= ~0xa4;
     NNS_G3dGlbFlushVP();

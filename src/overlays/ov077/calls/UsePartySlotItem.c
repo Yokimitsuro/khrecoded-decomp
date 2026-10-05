@@ -40,7 +40,7 @@ extern void PlaySoundEffect(int id, int channel);
 extern void func_ov073_020c1ed4(SaveState *save, const PartyRefreshArgs *args);
 extern void func_ov077_020c5a6c(ItemScreen *screen, int slot);
 extern void func_ov073_020c2cc4(int page, int cursor);
-extern void func_ov077_020c5900(ItemScreen *screen);
+extern void ShowSlotHeaderMessage(ItemScreen *screen);
 
 static inline u16 GetPartySlot(int i)
 {
@@ -99,7 +99,7 @@ void UsePartySlotItem(ItemScreen *screen)
         func_ov077_020c5a6c(screen, screen->tab);
         func_ov073_020c1ed4(data_0205fe0c, NULL);
         func_ov073_020c2cc4(2, entry->info->category);
-        func_ov077_020c5900(screen);
+        ShowSlotHeaderMessage(screen);
     } else {
         PlaySoundEffect(1, 4);
     }

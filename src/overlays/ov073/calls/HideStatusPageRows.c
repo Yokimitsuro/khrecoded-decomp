@@ -16,7 +16,7 @@ typedef struct StatusPage {
 } StatusPage;
 
 extern void IndexedRecords_SetFlag2(ResourceContainer *container, int cellIndex, BOOL visible);
-extern void func_ov027_020b95a0(ResourceContainer *container, void *element, BOOL visible);
+extern void SetEntrySlotsVisible(ResourceContainer *container, void *element, BOOL visible);
 
 void HideStatusPageRows(StatusMenu *menu, StatusPage *page)
 {
@@ -29,6 +29,6 @@ void HideStatusPageRows(StatusMenu *menu, StatusPage *page)
         IndexedRecords_SetFlag2(container, page->columnCells[2][row], FALSE);
         row++;
     } while (row < 7);
-    func_ov027_020b95a0(menu->container, page->element, FALSE);
+    SetEntrySlotsVisible(menu->container, page->element, FALSE);
     menu->pageVisible = FALSE;
 }

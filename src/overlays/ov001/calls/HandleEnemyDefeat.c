@@ -18,14 +18,14 @@ typedef struct EnemyTableHolder {
 } EnemyTableHolder;
 
 extern EnemyTableHolder *data_ov001_020a0490;
-extern void func_ov001_0206671c(s32 amount, u32 position, u32 kind);
+extern void SpawnDropsPerTenUnits(s32 amount, u32 position, u32 kind);
 extern int func_ov001_020644b0(void);
 extern u32 GetGroupIndexedValue(u8 kind);
 extern int func_ov001_02063a38(void);
 extern BOOL func_ov035_020bae94(void);
 extern BOOL func_ov001_020645c8(u32 flagId);
-extern void func_ov001_02063a80(int index, int amount);
-extern u8 func_ov001_02068530(u32 id);
+extern void AddSessionCounter(int index, int amount);
+extern u8 LookupMappedByteValue(u32 id);
 extern void RollEnemyDrop(int level, int recordId, u32 owner, BOOL reduced);
 extern void func_02027390(int messageId, int category, int amount, int limit);
 extern void AddRegionProgress(u8 enabled);
@@ -41,7 +41,7 @@ void HandleEnemyDefeat(s32 group, s32 index, u32 position, BOOL notify, int leve
     int dropId;
 
     if (group < 0 && index < 0) {
-        func_ov001_0206671c(1000, position, 4);
+        SpawnDropsPerTenUnits(1000, position, 4);
         return;
     }
     record = &holder->table->records[index];
@@ -64,17 +64,17 @@ void HandleEnemyDefeat(s32 group, s32 index, u32 position, BOOL notify, int leve
         dropItem = FALSE;
     }
     if (func_ov001_02063a38() == 4) {
-        func_ov001_02063a80(0, record->counterAmount);
+        AddSessionCounter(0, record->counterAmount);
     }
     switch (kind) {
     case 0x25:
     case 0x35:
     case 0x38:
     case 0x3b:
-        func_ov001_02063a80(0, record->counterAmount);
+        AddSessionCounter(0, record->counterAmount);
         break;
     }
-    dropId = func_ov001_02068530(kind);
+    dropId = LookupMappedByteValue(kind);
     if (dropId == 0x28) {
         dropItem = FALSE;
         countKill = FALSE;

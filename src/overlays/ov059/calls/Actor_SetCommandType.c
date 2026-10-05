@@ -7,23 +7,23 @@ typedef struct Actor {
     s8 commandIndex;
 } Actor;
 
-extern void func_ov001_02078800(s32 entryId);
+extern void FieldMenu_FocusEntryById(s32 entryId);
 
 void Actor_SetCommandType(Actor *actor, s32 commandType)
 {
     actor->commandTypes[actor->commandIndex] = commandType;
     switch (actor->commandTypes[actor->commandIndex]) {
     case 0:
-        func_ov001_02078800(0xdd);
+        FieldMenu_FocusEntryById(0xdd);
         break;
     case 1:
-        func_ov001_02078800(0xde);
+        FieldMenu_FocusEntryById(0xde);
         break;
     case 2:
-        func_ov001_02078800(0xdf);
+        FieldMenu_FocusEntryById(0xdf);
         break;
     case 3:
-        func_ov001_02078800(0xe0);
+        FieldMenu_FocusEntryById(0xe0);
         break;
     }
 }

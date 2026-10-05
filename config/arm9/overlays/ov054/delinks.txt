@@ -4,6 +4,14 @@
     .data       start:0x020d36c0 end:0x020d3720 kind:data align:32
     .bss        start:0x020d3720 end:0x020d3740 kind:bss align:32
 
+src/overlays/ov054/calls/InitOverlay054Entity.c:
+    complete
+    .text       start:0x020d2214 end:0x020d2340
+
+src/overlays/ov054/calls/LoadOverlay054EntityResources.c:
+    complete
+    .text       start:0x020d2340 end:0x020d24fc
+
 src/overlays/ov054/calls/func_ov054_020d24fc.c:
     complete
     .text       start:0x020d24fc end:0x020d250c
@@ -16,9 +24,17 @@ src/overlays/ov054/calls/RequestOverlay054ActorState.c:
     complete
     .text       start:0x020d2574 end:0x020d26a8
 
+src/overlays/ov054/calls/LoadMenuSoundArcs.c:
+    complete
+    .text       start:0x020d26a8 end:0x020d273c
+
 src/overlays/ov054/calls/MapCodeToSlotIndex.c:
     complete
     .text       start:0x020d273c end:0x020d2794
+
+src/overlays/ov054/calls/RefreshModeMenuHighlights.c:
+    complete
+    .text       start:0x020d2ac0 end:0x020d2dcc
 
 src/overlays/ov054/calls/UpdateRewardApproach.c:
     complete
@@ -27,6 +43,10 @@ src/overlays/ov054/calls/UpdateRewardApproach.c:
 src/overlays/ov054/calls/UpdateRewardCharge.c:
     complete
     .text       start:0x020d3098 end:0x020d31d0
+
+src/overlays/ov054/calls/ReleaseActiveDisplay.c:
+    complete
+    .text       start:0x020d31d0 end:0x020d3250
 
 src/overlays/ov054/data/strings/Strings_ov054_020d36c0.c:
     complete

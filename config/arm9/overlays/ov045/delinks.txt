@@ -4,9 +4,17 @@
     .data       start:0x020c0820 end:0x020c08a0 kind:data align:32
     .bss        start:0x020c08a0 end:0x020c08c0 kind:bss align:32
 
+src/overlays/ov045/calls/LoadBg3Graphics.c:
+    complete
+    .text       start:0x020be600 end:0x020be686
+
 src/overlays/ov045/calls/OpenMessageContainer.c:
     complete
     .text       start:0x020be688 end:0x020be6c0
+
+src/overlays/ov045/calls/ShutdownScene.c:
+    complete
+    .text       start:0x020bef94 end:0x020bf07c
 
 src/overlays/ov045/calls/ScrollTileRowPairLeft.c:
     complete
@@ -23,6 +31,10 @@ src/overlays/ov045/calls/InvokeCallbackForRecordId.c:
 src/overlays/ov045/calls/OffsetRecordYById.c:
     complete
     .text       start:0x020bf0fc end:0x020bf122
+
+src/overlays/ov045/calls/DrawTimeRecords.c:
+    complete
+    .text       start:0x020bf124 end:0x020bf1ba
 
 src/overlays/ov045/calls/DrawDigitRecords.c:
     complete
@@ -48,6 +60,10 @@ src/overlays/ov045/calls/DrawShadowedText.c:
     complete
     .text       start:0x020bf2a4 end:0x020bf2da
 
+src/overlays/ov045/calls/GetRemainingScoreTens.c:
+    complete
+    .text       start:0x020bf2dc end:0x020bf344
+
 src/overlays/ov045/calls/CollectRecordPickup.c:
     complete
     .text       start:0x020bf344 end:0x020bf3dc
@@ -56,9 +72,25 @@ src/overlays/ov045/calls/UpdateTweenIsFinished.c:
     complete
     .text       start:0x020bf3dc end:0x020bf3ee
 
+src/overlays/ov045/calls/RunNameRevealStep.c:
+    complete
+    .text       start:0x020bfc50 end:0x020bfec0
+
+src/overlays/ov045/calls/RunIntroSequenceStep.c:
+    complete
+    .text       start:0x020bfec0 end:0x020c0064
+
 src/overlays/ov045/calls/UpdateResultFadeOut.c:
     complete
     .text       start:0x020c0064 end:0x020c0138
+
+src/overlays/ov045/calls/ClearTileRect.c:
+    complete
+    .text       start:0x020c01cc end:0x020c0234
+
+src/overlays/ov045/calls/FinishTextureSlotLoad.c:
+    complete
+    .text       start:0x020c0234 end:0x020c02fc
 
 src/overlays/ov045/calls/StepTextureUpload.c:
     complete
@@ -67,6 +99,26 @@ src/overlays/ov045/calls/StepTextureUpload.c:
 src/overlays/ov045/calls/ReleaseHeapBlockIfAllocated.c:
     complete
     .text       start:0x020c0340 end:0x020c0354
+
+src/overlays/ov045/calls/DrawTexturedQuad.c:
+    complete
+    .text       start:0x020c03f0 end:0x020c04e2
+
+src/overlays/ov045/calls/DrawRotatedSprite.c:
+    complete
+    .text       start:0x020c04e4 end:0x020c05c0
+
+src/overlays/ov045/calls/DrawLayeredPanel.c:
+    complete
+    .text       start:0x020c05c0 end:0x020c0728
+
+src/overlays/ov045/calls/IsCounterNegative.c:
+    complete
+    .text       start:0x020c0728 end:0x020c0740
+
+src/overlays/ov045/calls/RegisterEmbeddedObjectIfPending.c:
+    complete
+    .text       start:0x020c0740 end:0x020c0764
 
 src/overlays/ov045/data/strings/Strings_ov045_020c0834.c:
     complete

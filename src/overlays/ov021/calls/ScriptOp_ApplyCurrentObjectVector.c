@@ -2,10 +2,10 @@
 
 extern struct { int reserved[2]; u32 object; } data_ov021_020b56c4;
 #define currentScriptObject data_ov021_020b56c4.object
-extern u32 func_ov001_020910bc();
+extern u32 StartMotionToTarget();
 extern u32 ResolveTaggedValueRef();
 extern u32 TaggedValueToFixed();
-extern u32 func_ov021_020b03e8();
+extern u32 ResolveVectorOperand();
 
 u32
 ScriptOp_ApplyCurrentObjectVector(u32 context,int operands,u32 unused,u32 argument)
@@ -21,9 +21,9 @@ ScriptOp_ApplyCurrentObjectVector(u32 context,int operands,u32 unused,u32 argume
   savedArgument = argument;
   firstValue = ResolveTaggedValueRef(context,operands + 8);
   secondValue = ResolveTaggedValueRef(context,operands + 0x10);
-  func_ov021_020b03e8(context,operands,vector);
+  ResolveVectorOperand(context,operands,vector);
   firstValue = TaggedValueToFixed(firstValue);
   secondValue = TaggedValueToFixed(secondValue);
-  func_ov001_020910bc(object,vector,firstValue,secondValue);
+  StartMotionToTarget(object,vector,firstValue,secondValue);
   return 0;
 }

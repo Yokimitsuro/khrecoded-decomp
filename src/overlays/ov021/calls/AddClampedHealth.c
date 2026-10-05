@@ -11,7 +11,7 @@ typedef struct BigObject {
     HealthStats *health;
 } BigObject;
 
-extern void func_ov021_020a7588(BigObject *obj);
+extern void SpawnHealEffect(BigObject *obj);
 
 BOOL AddClampedHealth(BigObject *obj, int delta)
 {
@@ -26,7 +26,7 @@ BOOL AddClampedHealth(BigObject *obj, int delta)
     }
     health->current = result;
     if (delta > 0) {
-        func_ov021_020a7588(obj);
+        SpawnHealEffect(obj);
     }
     if (health->current == 0) {
         return TRUE;

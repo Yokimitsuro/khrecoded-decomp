@@ -12,7 +12,7 @@ typedef struct MessageWindow {
 extern void *GetSceneTagTracker(void);
 extern int FindLoadedElementById(void *tracker, int tag);
 extern void func_ov027_020b8514(void *tracker, int entry, s16 x, s16 y);
-extern void func_ov027_020b8408(void *tracker, int entry, int visible);
+extern void SetTagRecordArmed(void *tracker, int entry, int visible);
 
 void PlaceWindowCornerTag(MessageWindow *window)
 {
@@ -29,5 +29,5 @@ void PlaceWindowCornerTag(MessageWindow *window)
     y = window->y + window->height - 1;
     entry = FindLoadedElementById(tracker, 5);
     func_ov027_020b8514(tracker, entry, x, y);
-    func_ov027_020b8408(tracker, entry, 1);
+    SetTagRecordArmed(tracker, entry, 1);
 }

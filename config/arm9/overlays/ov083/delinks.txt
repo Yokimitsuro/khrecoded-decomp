@@ -4,9 +4,21 @@
     .data       start:0x020bf6a0 end:0x020bf720 kind:data align:32
     .bss        start:0x020bf720 end:0x020bf720 kind:bss align:32
 
+src/overlays/ov083/calls/InitScoreScreen.c:
+    complete
+    .text       start:0x020beac0 end:0x020bef3c
+
 src/overlays/ov083/calls/ReleaseScreenResources_020bf310.c:
     complete
     .text       start:0x020bf310 end:0x020bf356
+
+src/overlays/ov083/calls/SetScoreDisplay.c:
+    complete
+    .text       start:0x020bf358 end:0x020bf3a6
+
+src/overlays/ov083/calls/ApplyScoreEvents.c:
+    complete
+    .text       start:0x020bf3a8 end:0x020bf55c
 
 src/overlays/ov083/calls/DrawTableString.c:
     complete
@@ -15,6 +27,26 @@ src/overlays/ov083/calls/DrawTableString.c:
 src/overlays/ov083/calls/DrawFormattedText.c:
     complete
     .text       start:0x020bf58c end:0x020bf5cc
+
+src/overlays/ov083/calls/GetRowColorWithLimit.c:
+    complete
+    .text       start:0x020bf5cc end:0x020bf5ec
+
+src/overlays/ov083/calls/GetRowColorWithStatus.c:
+    complete
+    .text       start:0x020bf5ec end:0x020bf61a
+
+src/overlays/ov083/calls/GetRowColor.c:
+    complete
+    .text       start:0x020bf61c end:0x020bf634
+
+src/overlays/ov083/calls/PushPendingPair.c:
+    complete
+    .text       start:0x020bf634 end:0x020bf656
+
+src/overlays/ov083/calls/SetSharedStateValue.c:
+    complete
+    .text       start:0x020bf658 end:0x020bf66c
 
 src/overlays/ov083/data/strings/Strings_ov083_020bf6e0.c:
     complete

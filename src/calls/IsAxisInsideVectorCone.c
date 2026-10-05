@@ -2,12 +2,12 @@
 #include "nitro/fx_types.h"
 
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 static inline VecFx32 Cross(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 cross;
-    func_01ff9ea8(a, b, &cross);
+    VEC_CrossProduct(a, b, &cross);
     return cross;
 }
 

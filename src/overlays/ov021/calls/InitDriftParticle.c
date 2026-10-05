@@ -17,7 +17,7 @@ typedef struct DriftParticle {
 
 extern const VecFx32 data_0205344c;
 extern u32 random_next_scaled(u32 range);
-extern void func_ov021_020afafc(DriftParticle *particle);
+extern void StepDriftEffect(DriftParticle *particle);
 
 void InitDriftParticle(DriftParticle *particle, const VecFx32 *position, int param30, int param2c)
 {
@@ -31,6 +31,6 @@ void InitDriftParticle(DriftParticle *particle, const VecFx32 *position, int par
     particle->phase = random_next_scaled(0x6488);
     zero = data_0205344c;
     particle->offset = zero;
-    func_ov021_020afafc(particle);
+    StepDriftEffect(particle);
     particle->velocity = zero;
 }

@@ -49,7 +49,7 @@ extern void SetGlobalPackedBit(int bitIndex);
 extern void func_02052528(FadeRecord *record, int value0, int value1, int value2, int value3);
 extern void func_02052570(FadeRecord *record);
 extern void *FindWidgetById(void *root, int id);
-extern void func_ov027_020b95a0(void *panel, void *element, BOOL visible);
+extern void SetEntrySlotsVisible(void *panel, void *element, BOOL visible);
 extern void SetPrimaryElementEnabled(BOOL enabled);
 extern void SetSecondaryElementEnabled(BOOL enabled);
 extern BOOL PrepareAndStartStream(int streamIndex, int streamId);
@@ -104,7 +104,7 @@ void ConfirmSaveSelectStep(SaveSelectScreen *screen)
             }
             if (screen->step != 7) {
                 SetSecondaryElementEnabled(FALSE);
-                func_ov027_020b95a0(screen->panel, FindWidgetById(screen->panel, 8), TRUE);
+                SetEntrySlotsVisible(screen->panel, FindWidgetById(screen->panel, 8), TRUE);
                 PlaySoundEffect(0, 1);
                 IncrementBusyCounter();
             } else {

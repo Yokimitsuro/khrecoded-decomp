@@ -4,9 +4,29 @@
     .data       start:0x020bc480 end:0x020bc500 kind:data align:32
     .bss        start:0x020bc500 end:0x020bc520 kind:bss align:32
 
+src/overlays/ov035/calls/InitMovieSceneWork.c:
+    complete
+    .text       start:0x020ba400 end:0x020ba478
+
+src/overlays/ov035/calls/RunMovieSceneFrame.c:
+    complete
+    .text       start:0x020ba478 end:0x020ba560
+
 src/overlays/ov035/calls/TeardownMovieContext.c:
     complete
     .text       start:0x020ba560 end:0x020ba594
+
+src/overlays/ov035/calls/PollOverlay40Phase.c:
+    complete
+    .text       start:0x020ba648 end:0x020ba688
+
+src/overlays/ov035/calls/FinishMovieSkip.c:
+    complete
+    .text       start:0x020ba688 end:0x020ba6c0
+
+src/overlays/ov035/calls/SetupMovieDisplay.c:
+    complete
+    .text       start:0x020ba8b8 end:0x020ba960
 
 src/overlays/ov035/calls/func_ov035_020ba960.c:
     complete
@@ -20,21 +40,169 @@ src/overlays/ov035/calls/MobiClip_SrcClose_020ba9e0.c:
     complete
     .text       start:0x020ba9e0 end:0x020ba9f8
 
+src/overlays/ov035/calls/BeginMovieCaption.c:
+    complete
+    .text       start:0x020ba9f8 end:0x020baa38
+
+src/overlays/ov035/calls/LoadMovieClipHeader.c:
+    complete
+    .text       start:0x020baa48 end:0x020baae4
+
+src/overlays/ov035/calls/ReleaseMovieResources.c:
+    complete
+    .text       start:0x020baae4 end:0x020bab4c
+
+src/overlays/ov035/calls/FreeMovieCharacterBuffers.c:
+    complete
+    .text       start:0x020bac48 end:0x020bac90
+
 src/overlays/ov035/auto/func_ov035_020bac90.c:
     complete
     .text       start:0x020bac90 end:0x020bac92
+
+src/overlays/ov035/calls/FreeMovieSlotBuffers.c:
+    complete
+    .text       start:0x020bac94 end:0x020bace4
 
 src/overlays/ov035/calls/EndOverlay40Phase.c:
     complete
     .text       start:0x020bad08 end:0x020bad28
 
+src/overlays/ov035/calls/IsMovieWaitingForInput.c:
+    complete
+    .text       start:0x020bad64 end:0x020bad84
+
+src/overlays/ov035/calls/InitMovieSourceOps.c:
+    complete
+    .text       start:0x020badb4 end:0x020bae10
+
+src/overlays/ov035/calls/GetMovieEntryKind.c:
+    complete
+    .text       start:0x020bae10 end:0x020bae3c
+
+src/overlays/ov035/calls/GetMovieEntryValue.c:
+    complete
+    .text       start:0x020bae3c end:0x020bae68
+
+src/overlays/ov035/calls/RequestSceneEvent.c:
+    complete
+    .text       start:0x020baea4 end:0x020baf30
+
+src/overlays/ov035/calls/ShowMovieMessage3700.c:
+    complete
+    .text       start:0x020bafa8 end:0x020bafb4
+
+src/overlays/ov035/calls/GetMovieCounterLimit.c:
+    complete
+    .text       start:0x020bafe4 end:0x020bb034
+
+src/overlays/ov035/calls/StoreMovieCounter.c:
+    complete
+    .text       start:0x020bb034 end:0x020bb074
+
+src/overlays/ov035/calls/LoadMovieCounter.c:
+    complete
+    .text       start:0x020bb074 end:0x020bb0c0
+
+src/overlays/ov035/calls/GetScaledMenuLevel.c:
+    complete
+    .text       start:0x020bb0c0 end:0x020bb110
+
+src/overlays/ov035/calls/CommitSideResult.c:
+    complete
+    .text       start:0x020bb134 end:0x020bb1cc
+
+src/overlays/ov035/calls/OnGroupEventFinished.c:
+    complete
+    .text       start:0x020bb1cc end:0x020bb28c
+
+src/overlays/ov035/calls/LookupMovieCharacterValue.c:
+    complete
+    .text       start:0x020bb31c end:0x020bb354
+
+src/overlays/ov035/calls/TryTriggerGroupEvent.c:
+    complete
+    .text       start:0x020bb398 end:0x020bb42c
+
+src/overlays/ov035/calls/SetMovieSlotFlags.c:
+    complete
+    .text       start:0x020bb42c end:0x020bb468
+
+src/overlays/ov035/calls/CreateMaterialFadeWork.c:
+    complete
+    .text       start:0x020bb4c4 end:0x020bb52c
+
+src/overlays/ov035/calls/LoadFadeModel.c:
+    complete
+    .text       start:0x020bb52c end:0x020bb66c
+
+src/overlays/ov035/calls/UpdateMaterialFades.c:
+    complete
+    .text       start:0x020bb690 end:0x020bb75c
+
+src/overlays/ov035/calls/DrawMovieSceneIfVisible.c:
+    complete
+    .text       start:0x020bb75c end:0x020bb778
+
+src/overlays/ov035/calls/SetMovieModelAlpha.c:
+    complete
+    .text       start:0x020bb778 end:0x020bb7a8
+
+src/overlays/ov035/calls/RemapMovieMenuValue.c:
+    complete
+    .text       start:0x020bb7c8 end:0x020bb7f8
+
 src/overlays/ov035/calls/QueueColorUpload.c:
     complete
     .text       start:0x020bb7f8 end:0x020bb81c
 
+src/overlays/ov035/calls/DrawDigitRow.c:
+    complete
+    .text       start:0x020bb81c end:0x020bb8a4
+
 src/overlays/ov035/calls/SetTilePixel4bpp_020bb8a4.c:
     complete
     .text       start:0x020bb8a4 end:0x020bb8e4
+
+src/overlays/ov035/calls/DrawMovieDigitRow.c:
+    complete
+    .text       start:0x020bb8e4 end:0x020bb910
+
+src/overlays/ov035/calls/SetupMovieCamera.c:
+    complete
+    .text       start:0x020bb910 end:0x020bb98c
+
+src/overlays/ov035/calls/DrawLevelBarQuads.c:
+    complete
+    .text       start:0x020bbc6c end:0x020bbf10
+
+src/overlays/ov035/calls/SetGaugeLevel.c:
+    complete
+    .text       start:0x020bbf10 end:0x020bbf90
+
+src/overlays/ov035/calls/UpdateBarGauge.c:
+    complete
+    .text       start:0x020bbf90 end:0x020bc02c
+
+src/overlays/ov035/calls/InitBarGauge.c:
+    complete
+    .text       start:0x020bc02c end:0x020bc0e4
+
+src/overlays/ov035/calls/UpdateGaugeFrame.c:
+    complete
+    .text       start:0x020bc10c end:0x020bc1f4
+
+src/overlays/ov035/calls/SetMovieMenuRow.c:
+    complete
+    .text       start:0x020bc1f4 end:0x020bc210
+
+src/overlays/ov035/calls/SetChannelRatioLevels.c:
+    complete
+    .text       start:0x020bc210 end:0x020bc270
+
+src/overlays/ov035/calls/UpdateChannelLevel.c:
+    complete
+    .text       start:0x020bc270 end:0x020bc310
 
 src/overlays/ov035/data/strings/Strings_ov035_020bc4c0.c:
     complete

@@ -12,9 +12,17 @@ src/overlays/ov072/calls/GetObjectPaletteValue.c:
     complete
     .text       start:0x020d8134 end:0x020d8158
 
+src/overlays/ov072/calls/InitOv072ActorState.c:
+    complete
+    .text       start:0x020d8158 end:0x020d8250
+
 src/overlays/ov072/calls/SetObjectTimeScale.c:
     complete
     .text       start:0x020d8250 end:0x020d8254
+
+src/overlays/ov072/calls/StopLoopingSounds.c:
+    complete
+    .text       start:0x020d8254 end:0x020d82f8
 
 src/overlays/ov072/calls/IsEventActionAllowed.c:
     complete
@@ -27,6 +35,10 @@ src/overlays/ov072/calls/SnapContactNormalUp.c:
 src/overlays/ov072/calls/FlattenContactNormal.c:
     complete
     .text       start:0x020d8504 end:0x020d8548
+
+src/overlays/ov072/calls/CreateOv072SceneTask.c:
+    complete
+    .text       start:0x020d9acc end:0x020d9bdc
 
 src/overlays/ov072/data/strings/Strings_ov072_020d9c20.c:
     complete

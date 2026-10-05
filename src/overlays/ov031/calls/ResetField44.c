@@ -6,10 +6,10 @@ typedef struct {
 } OverlayState;
 
 extern OverlayState *data_ov031_020bc820;
-extern void func_ov031_020bbedc(void);
+extern void DisableCategory6Objects(void);
 
 void ResetField44(void)
 {
-    func_ov031_020bbedc();
+    DisableCategory6Objects();
     data_ov031_020bc820->unk_44 = 0xffffffff;
 }

@@ -55,19 +55,19 @@ struct Actor {
     VecFx32 velocity;
 };
 
-extern void func_ov052_020c7a80(Actor *actor, VecFx32 *out);
+extern void ResolvePushVelocity(Actor *actor, VecFx32 *out);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
 extern void func_02038e80(PhysicsBody *body, int arg);
 extern void func_ov052_020c7c54(Actor *actor);
 extern int func_ov001_02067ed4(void);
 extern fx32 func_ov001_02068070(void);
 extern void Obj_SetPosition(void *object, const VecFx32 *position);
-extern void func_ov052_020cc21c(Actor *actor);
+extern void SyncLockOnAnimSpeed(Actor *actor);
 extern u32 GetPlayerEntryCount(int player, u32 id);
 extern fx32 FX_Mul(fx32 a, fx32 b);
 extern BOOL IsLockedOnActiveFieldUnit(Actor *actor);
 extern void *func_ov001_0208724c(u32 groupId, u32 entryId);
-extern BOOL func_ov016_020a6ab0(void *unit);
+extern BOOL InitFieldUnitUpwardVelocity(void *unit);
 
 static inline BOOL IsZeroVec(const VecFx32 *v)
 {
@@ -94,7 +94,7 @@ void ApplyActorVelocity(Actor *actor)
     if (!(flags & 1) && !(flags & 0x20)) {
         vel = actor->velocity;
         if (!(flags & 0x800)) {
-            func_ov052_020c7a80(actor, &push);
+            ResolvePushVelocity(actor, &push);
             if (!IsZeroVec(&push)) {
                 vel.x += push.x;
                 vel.z += push.z;
@@ -147,7 +147,7 @@ void ApplyActorVelocity(Actor *actor)
             Obj_SetPosition(actor->body.object, &pos);
         }
     }
-    func_ov052_020cc21c(actor);
+    SyncLockOnAnimSpeed(actor);
     if (!(actor->body.flags & 4)) {
         fx32 speed = actor->fallSpeed;
         if (speed == (fx32)0x80000000) {
@@ -201,7 +201,7 @@ void ApplyActorVelocity(Actor *actor)
             EventInfo *event = &actor->motion.link->target->event;
             void *unit = func_ov001_0208724c(event->groupId, event->entryId);
             int speed = 0;
-            if (func_ov016_020a6ab0(unit)) {
+            if (InitFieldUnitUpwardVelocity(unit)) {
                 speed = 0x850;
             }
             if (speed != 0) {

@@ -24,7 +24,7 @@ typedef struct RenderCommandState {
     FrameTable *frameTableDc;
 } RenderCommandState;
 
-extern void func_01ffa204(const void *source, u32 size);
+extern void FlushGeometryCommandBuffer(const void *source, u32 size);
 
 static inline s32 *GetFrameEntry(FrameTable *table, u32 frame)
 {
@@ -63,7 +63,7 @@ void func_01ffe8a0(RenderCommandState *state)
 no_data:
         data = 0;
 have_data:
-        func_01ffa204((u8 *)data + data->payloadOffset08, data->payloadSize0c);
+        FlushGeometryCommandBuffer((u8 *)data + data->payloadOffset08, data->payloadSize0c);
     }
     state->stream00 += 2;
 }

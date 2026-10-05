@@ -1,12 +1,12 @@
 func_ov070_020d8120 kind:function(thumb,size=0x14) addr:0x020d8120
-func_ov070_020d8134 kind:function(thumb,size=0x24) addr:0x020d8134
-func_ov070_020d8158 kind:function(thumb,size=0xd8) addr:0x020d8158
-func_ov070_020d8230 kind:function(thumb,size=0x6a) addr:0x020d8230
+GetOv070PaletteEntry kind:function(thumb,size=0x24) addr:0x020d8134
+StartOv070BossTurn kind:function(thumb,size=0xd8) addr:0x020d8158
+StopOv070BossEffects kind:function(thumb,size=0x6a) addr:0x020d8230
 func_ov070_020d829c kind:function(thumb,size=0xe) addr:0x020d829c
 func_ov070_020d82ac kind:function(thumb,size=0x10) addr:0x020d82ac
 func_ov070_020d82bc kind:function(thumb,size=0x32c) addr:0x020d82bc
 func_ov070_020d85e8 kind:function(thumb,size=0x2cc) addr:0x020d85e8
-func_ov070_020d88b4 kind:function(thumb,size=0x170) addr:0x020d88b4
+CreateOv070BossObject kind:function(thumb,size=0x170) addr:0x020d88b4
 data_ov070_020d8a24 kind:data(any) addr:0x020d8a24
 data_ov070_020d8a30 kind:data(any) addr:0x020d8a30
 data_ov070_020d8a3c kind:data(any) addr:0x020d8a3c

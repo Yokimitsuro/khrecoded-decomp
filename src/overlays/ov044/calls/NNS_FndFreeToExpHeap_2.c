@@ -9,7 +9,7 @@ typedef struct Ov044HeapFreeRequest {
 } Ov044HeapFreeRequest;
 
 extern Ov044HeapFreeRequest *data_ov044_020d0ec0;
-extern void func_ov044_020d0220(
+extern void SnapshotPanelPose(
     Ov044HeapFreeRequest *request,
     void *memoryBlock,
     Ov044HeapFreeRequest **requestSlot,
@@ -25,5 +25,5 @@ void NNS_FndFreeToExpHeap_2(void *heap, void *memoryBlock)
     data_ov044_020d0ec0->memoryBlock = memoryBlock;
     request = data_ov044_020d0ec0;
     request->active = 1;
-    func_ov044_020d0220(request, memoryBlock, &data_ov044_020d0ec0, 1);
+    SnapshotPanelPose(request, memoryBlock, &data_ov044_020d0ec0, 1);
 }

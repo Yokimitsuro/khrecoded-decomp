@@ -4,6 +4,18 @@
     .data       start:0x0206f8e0 end:0x0206f9a0 kind:data align:32
     .bss        start:0x0206f9a0 end:0x0206f9c0 kind:bss align:32
 
+src/overlays/ov014/calls/ShutdownPanelObjects.c:
+    complete
+    .text       start:0x0206cea0 end:0x0206cf38
+
+src/overlays/ov014/calls/UpdatePanelBanner.c:
+    complete
+    .text       start:0x0206cfa0 end:0x0206d1c0
+
+src/overlays/ov014/calls/UpdatePanelOpenStep.c:
+    complete
+    .text       start:0x0206d25c end:0x0206d2e0
+
 src/overlays/ov014/auto/func_ov014_0206d2e0.c:
     complete
     .text       start:0x0206d2e0 end:0x0206d2e4
@@ -12,9 +24,21 @@ src/overlays/ov014/auto/func_ov014_0206d2e4.c:
     complete
     .text       start:0x0206d2e4 end:0x0206d2e8
 
+src/overlays/ov014/calls/SetPanelDirection.c:
+    complete
+    .text       start:0x0206e66c end:0x0206e6a0
+
+src/overlays/ov014/calls/UpdatePanelFade.c:
+    complete
+    .text       start:0x0206e6a0 end:0x0206e84c
+
 src/overlays/ov014/auto/func_ov014_0206e84c.c:
     complete
     .text       start:0x0206e84c end:0x0206e850
+
+src/overlays/ov014/calls/UpdatePanelCloseStep.c:
+    complete
+    .text       start:0x0206e86c end:0x0206e8fc
 
 src/overlays/ov014/auto/func_ov014_0206e8fc.c:
     complete
@@ -27,6 +51,26 @@ src/overlays/ov014/calls/BindPanelEntryScreen.c:
 src/overlays/ov014/calls/QueryPanelEntry.c:
     complete
     .text       start:0x0206e930 end:0x0206e954
+
+src/overlays/ov014/calls/CopyPanelEntry.c:
+    complete
+    .text       start:0x0206e954 end:0x0206e9c0
+
+src/overlays/ov014/calls/DrawSelectedEntryInfo.c:
+    complete
+    .text       start:0x0206ea4c end:0x0206ec14
+
+src/overlays/ov014/calls/BuildPanelGroupEntries.c:
+    complete
+    .text       start:0x0206f0a0 end:0x0206f230
+
+src/overlays/ov014/calls/SelectPanelEntry.c:
+    complete
+    .text       start:0x0206f230 end:0x0206f42c
+
+src/overlays/ov014/calls/FindHitCellOam.c:
+    complete
+    .text       start:0x0206f740 end:0x0206f7b4
 
 src/overlays/ov014/calls/HitTestPanelGroup.c:
     complete

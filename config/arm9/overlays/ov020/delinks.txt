@@ -12,6 +12,10 @@ src/overlays/ov020/calls/ScriptCmd_CreateSlotObjectKind1.c:
     complete
     .text       start:0x020a1ef0 end:0x020a1f1e
 
+src/overlays/ov020/calls/ScriptCmd_CreatePanelObject.c:
+    complete
+    .text       start:0x020a1f20 end:0x020a201c
+
 src/overlays/ov020/calls/ScriptCmd_CreateSlotObjectKind3.c:
     complete
     .text       start:0x020a201c end:0x020a204a
@@ -28,13 +32,33 @@ src/overlays/ov020/auto/func_ov020_020a21d8.c:
     complete
     .text       start:0x020a21d8 end:0x020a21e0
 
+src/overlays/ov020/calls/TryCollideIdlePanel.c:
+    complete
+    .text       start:0x020a21e0 end:0x020a2364
+
 src/overlays/ov020/auto/func_ov020_020a2364.c:
     complete
     .text       start:0x020a2364 end:0x020a2368
 
+src/overlays/ov020/calls/DrawPanelBlockCells.c:
+    complete
+    .text       start:0x020a2368 end:0x020a254c
+
 src/overlays/ov020/calls/ProbeBlockGroundOffset.c:
     complete
     .text       start:0x020a254c end:0x020a25c0
+
+src/overlays/ov020/calls/CollectPanelCellPositions.c:
+    complete
+    .text       start:0x020a25c0 end:0x020a26d4
+
+src/overlays/ov020/calls/CreateKind2EntryPool.c:
+    complete
+    .text       start:0x020a26d4 end:0x020a273c
+
+src/overlays/ov020/calls/SpawnPanelBlock.c:
+    complete
+    .text       start:0x020a273c end:0x020a2814
 
 src/overlays/ov020/calls/FindLivePrevBlock.c:
     complete
@@ -60,6 +84,10 @@ src/overlays/ov020/calls/ReleaseAndFreeResource.c:
     complete
     .text       start:0x020a2adc end:0x020a2af6
 
+src/overlays/ov020/calls/TryCollideWithCollider_020a2cb8.c:
+    complete
+    .text       start:0x020a2cb8 end:0x020a2e78
+
 src/overlays/ov020/calls/GetRaisedBlockFocus.c:
     complete
     .text       start:0x020a2e78 end:0x020a2eb8
@@ -68,13 +96,33 @@ src/overlays/ov020/calls/TryGetFieldHandle.c:
     complete
     .text       start:0x020a2eb8 end:0x020a2edc
 
+src/overlays/ov020/calls/UpdatePanelAnimations.c:
+    complete
+    .text       start:0x020a2f18 end:0x020a2fb8
+
+src/overlays/ov020/calls/UpdateStackedBlock.c:
+    complete
+    .text       start:0x020a2fb8 end:0x020a3158
+
 src/overlays/ov020/calls/ApplyTypeCapabilityFlag.c:
     complete
     .text       start:0x020a3158 end:0x020a316e
 
+src/overlays/ov020/calls/CreatePanelEntryPool.c:
+    complete
+    .text       start:0x020a3214 end:0x020a3298
+
+src/overlays/ov020/calls/SpawnStackedBlock.c:
+    complete
+    .text       start:0x020a3298 end:0x020a33b8
+
 src/overlays/ov020/calls/ApplyBlockLift.c:
     complete
     .text       start:0x020a33b8 end:0x020a3428
+
+src/overlays/ov020/calls/LoadPanelStackPhase.c:
+    complete
+    .text       start:0x020a34bc end:0x020a3598
 
 src/overlays/ov020/auto/func_ov020_020a3598.c:
     complete
@@ -84,13 +132,25 @@ src/overlays/ov020/auto/func_ov020_020a359c.c:
     complete
     .text       start:0x020a359c end:0x020a35a4
 
+src/overlays/ov020/calls/TryCollidePanelShape.c:
+    complete
+    .text       start:0x020a35a4 end:0x020a3720
+
 src/overlays/ov020/calls/TryGetFieldHandle_020a3720.c:
     complete
     .text       start:0x020a3720 end:0x020a3744
 
+src/overlays/ov020/calls/DrawStackedPanels.c:
+    complete
+    .text       start:0x020a3744 end:0x020a37f8
+
 src/overlays/ov020/calls/CreateKind3EntryPool.c:
     complete
     .text       start:0x020a3960 end:0x020a39b8
+
+src/overlays/ov020/calls/SpawnPanelCollider.c:
+    complete
+    .text       start:0x020a39b8 end:0x020a3a50
 
 src/overlays/ov020/data/tables/gPanelObjectScriptCommandHandlers.c:
     complete

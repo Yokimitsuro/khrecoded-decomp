@@ -58,12 +58,12 @@ typedef struct {
 
 extern s16 data_02053580[];
 extern EntryInfo *GetBoundedEntryField(int index);
-extern void func_ov021_020a91d8(VecFx32 *out, int entryIndex, void *arg);
+extern void GetSelectionSlotPosition(VecFx32 *out, int entryIndex, void *arg);
 extern void MTX_RotY33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
-extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *dst);
+extern void MTX_MultVec33(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *dst);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
-extern void func_ov021_020ab0ac(SpawnDesc *desc);
-extern SpawnedProjectile *func_ov021_020ab0b8(SpawnUnit *unit, SpawnDesc *desc);
+extern void ZeroBytes0x40(SpawnDesc *desc);
+extern SpawnedProjectile *TryConsumeLimitedUse(SpawnUnit *unit, SpawnDesc *desc);
 extern u32 SpawnSoundSlot(u32 owner, u32 kind, VecFx32 *position, u32 flags);
 
 void SpawnSlotProjectile(SpawnUnit *unit, void *arg, SpawnRequest *request)
@@ -78,14 +78,14 @@ void SpawnSlotProjectile(SpawnUnit *unit, void *arg, SpawnRequest *request)
     int index;
 
     unit->flags = 0;
-    func_ov021_020ab0ac(&desc);
+    ZeroBytes0x40(&desc);
     info = GetBoundedEntryField(unit->entryIndex);
     angle = info->facing - 0x8000;
     facing = angle + 0x8000;
-    func_ov021_020a91d8(&offset, unit->entryIndex, arg);
+    GetSelectionSlotPosition(&offset, unit->entryIndex, arg);
     index = facing >> 4;
     MTX_RotY33_(&rot, data_02053580[index], data_02053580[(0x400 - index) & 0xfff]);
-    func_01ff9404(&offset, &rot, &offset);
+    MTX_MultVec33(&offset, &rot, &offset);
     VEC_Add(&offset, &info->position, &desc.position);
     desc.direction.z = 0;
     desc.direction.y = 0;
@@ -98,7 +98,7 @@ void SpawnSlotProjectile(SpawnUnit *unit, void *arg, SpawnRequest *request)
     desc.kind = request->kind;
     desc.subKind = request->subKind;
     desc.power = request->power;
-    projectile = func_ov021_020ab0b8(unit, &desc);
+    projectile = TryConsumeLimitedUse(unit, &desc);
     if (projectile != NULL) {
         projectile->state->active = 1;
         unit->spawnCount++;

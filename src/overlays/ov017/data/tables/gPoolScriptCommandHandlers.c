@@ -1,21 +1,21 @@
 #include "nitro/types.h"
 
 extern void ScriptCmd_CreateSlotObjectKind4(void); /* ScriptCmd_CreateSlotObjectKind4 */
-extern void func_ov017_020a1e30(void); /* ScriptCmd_CreateManagerObject */
+extern void ScriptCmd_CreateManagerObject(void); /* ScriptCmd_CreateManagerObject */
 extern void ScriptCmd_QueueEntryValueMessage(void); /* ScriptCmd_QueueEntryValueMessage */
-extern void func_ov017_020a1f88(void); /* ScriptCmd_QueueEntryPositionMessage */
-extern void func_ov017_020a2018(void); /* ScriptCmd_QueueEntryRotationMessage */
-extern void func_ov017_020a20d0(void); /* ScriptCmd_QueueEntryDirectionMessage */
-extern void func_ov017_020a215c(void); /* ScriptCmd_QueueEntryPathMessages */
+extern void ScriptCmd_QueueEntryPositionMessage(void); /* ScriptCmd_QueueEntryPositionMessage */
+extern void ScriptCmd_QueueEntryRotationMessage(void); /* ScriptCmd_QueueEntryRotationMessage */
+extern void ScriptCmd_QueueEntryDirectionMessage(void); /* ScriptCmd_QueueEntryDirectionMessage */
+extern void ScriptCmd_QueueEntryPathMessages(void); /* ScriptCmd_QueueEntryPathMessages */
 extern void func_ov017_020a2234(void); /* DefaultStepDone */
 extern void ScriptCmd_SetEntryFlag(void); /* ScriptCmd_SetEntryFlag */
 extern void ScriptCmd_ResetEntry(void); /* ScriptCmd_ResetEntry */
 extern void ScriptCmd_QueueEntryMessage(void); /* ScriptCmd_QueueEntryMessage */
-extern void func_ov017_020a22a8(void); /* ScriptCmd_QueueEntryCommand */
+extern void ScriptCmd_QueueEntryCommand(void); /* ScriptCmd_QueueEntryCommand */
 extern void ScriptCmd_CreateSlotObjectKind8(void); /* ScriptCmd_CreateSlotObjectKind8 */
-extern void func_ov017_020a2370(void); /* ScriptCmd_CreateGridObject */
+extern void ScriptCmd_CreateGridObject(void); /* ScriptCmd_CreateGridObject */
 extern void ScriptCmd_CreateSlotObjectKind7(void); /* ScriptCmd_CreateSlotObjectKind7 */
-extern void func_ov017_020a2460(void); /* ScriptCmd_CreatePoolObject */
+extern void ScriptCmd_CreatePoolObject(void); /* ScriptCmd_CreatePoolObject */
 extern void ScriptCmd_InitPool0(void); /* ScriptCmd_InitPool0 */
 extern void ScriptCmd_InitPool1(void); /* ScriptCmd_InitPool1 */
 extern void ScriptCmd_InitPool2(void); /* ScriptCmd_InitPool2 */
@@ -27,17 +27,17 @@ extern void ScriptCmd_SetManagerValue(void); /* ScriptCmd_SetManagerValue */
 void (*gPoolScriptCommandHandlers[46])(void) = {
     ScriptCmd_CreateSlotObjectKind4, /* ScriptCmd_CreateSlotObjectKind4 */
     NULL,
-    func_ov017_020a1e30, /* ScriptCmd_CreateManagerObject */
+    ScriptCmd_CreateManagerObject, /* ScriptCmd_CreateManagerObject */
     NULL,
     ScriptCmd_QueueEntryValueMessage, /* ScriptCmd_QueueEntryValueMessage */
     NULL,
-    func_ov017_020a1f88, /* ScriptCmd_QueueEntryPositionMessage */
+    ScriptCmd_QueueEntryPositionMessage, /* ScriptCmd_QueueEntryPositionMessage */
     NULL,
-    func_ov017_020a2018, /* ScriptCmd_QueueEntryRotationMessage */
+    ScriptCmd_QueueEntryRotationMessage, /* ScriptCmd_QueueEntryRotationMessage */
     NULL,
-    func_ov017_020a20d0, /* ScriptCmd_QueueEntryDirectionMessage */
+    ScriptCmd_QueueEntryDirectionMessage, /* ScriptCmd_QueueEntryDirectionMessage */
     NULL,
-    func_ov017_020a215c, /* ScriptCmd_QueueEntryPathMessages */
+    ScriptCmd_QueueEntryPathMessages, /* ScriptCmd_QueueEntryPathMessages */
     NULL,
     func_ov017_020a2234, /* DefaultStepDone */
     NULL,
@@ -47,15 +47,15 @@ void (*gPoolScriptCommandHandlers[46])(void) = {
     NULL,
     ScriptCmd_QueueEntryMessage, /* ScriptCmd_QueueEntryMessage */
     NULL,
-    func_ov017_020a22a8, /* ScriptCmd_QueueEntryCommand */
+    ScriptCmd_QueueEntryCommand, /* ScriptCmd_QueueEntryCommand */
     NULL,
     ScriptCmd_CreateSlotObjectKind8, /* ScriptCmd_CreateSlotObjectKind8 */
     NULL,
-    func_ov017_020a2370, /* ScriptCmd_CreateGridObject */
+    ScriptCmd_CreateGridObject, /* ScriptCmd_CreateGridObject */
     NULL,
     ScriptCmd_CreateSlotObjectKind7, /* ScriptCmd_CreateSlotObjectKind7 */
     NULL,
-    func_ov017_020a2460, /* ScriptCmd_CreatePoolObject */
+    ScriptCmd_CreatePoolObject, /* ScriptCmd_CreatePoolObject */
     NULL,
     ScriptCmd_InitPool0, /* ScriptCmd_InitPool0 */
     NULL,

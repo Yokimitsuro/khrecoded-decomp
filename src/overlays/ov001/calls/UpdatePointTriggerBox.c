@@ -38,7 +38,7 @@ typedef struct PointTrigger {
 extern SceneContext *data_ov001_020a048c;
 extern void *GetActorRegistry(void);
 extern int func_ov001_02067ed4(void);
-extern BOOL func_ov001_02068268(int setIndex, int recordIndex, VecFx32 *outMin, VecFx32 *outMax);
+extern BOOL ComputeNamedPointBounds(int setIndex, int recordIndex, VecFx32 *outMin, VecFx32 *outMax);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern BOOL func_ov001_02067f08(int itemId, int *outIndex);
@@ -63,7 +63,7 @@ void UpdatePointTriggerBox(PointTrigger *trigger, int index)
     PointItem *item;
 
     GetActorRegistry();
-    if (func_ov001_02068268(func_ov001_02067ed4(), index, &min, &max)) {
+    if (ComputeNamedPointBounds(func_ov001_02067ed4(), index, &min, &max)) {
         VEC_Subtract(&max, &min, &half);
         half.x >>= 1;
         half.y >>= 1;

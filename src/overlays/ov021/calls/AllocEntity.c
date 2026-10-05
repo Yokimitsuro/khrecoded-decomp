@@ -16,7 +16,7 @@ typedef struct {
 } Entity;
 
 extern void *NNSi_FndAllocFromDefaultHeap(u32 size);
-extern void func_ov021_020aafac(void *obj, u32 arg1, u32 arg2);
+extern void InitObjWithCallback(void *obj, u32 arg1, u32 arg2);
 
 Entity *AllocEntity(u8 ownerId, u16 entityId, u32 size, u32 kind)
 {
@@ -29,6 +29,6 @@ Entity *AllocEntity(u8 ownerId, u16 entityId, u32 size, u32 kind)
     entity->kind = kind;
     entity->unk_174 = 0;
     entity->unk_148 = 0;
-    func_ov021_020aafac(entity, kind, 1);
+    InitObjWithCallback(entity, kind, 1);
     return entity;
 }

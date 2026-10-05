@@ -36,7 +36,7 @@ typedef struct {
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
 extern void ActorSlot_Unlink(ChildObject *object);
 extern void Obj_ShutdownBase(void *base);
-extern void func_ov001_0207f234(ChildOwner *owner, void *arg);
+extern void ReleaseOwnerResource(ChildOwner *owner, void *arg);
 
 void ReleaseChildObjects(ChildOwner *owner, void *arg)
 {
@@ -61,5 +61,5 @@ void ReleaseChildObjects(ChildOwner *owner, void *arg)
             slot->object = NULL;
         }
     }
-    func_ov001_0207f234(owner, arg);
+    ReleaseOwnerResource(owner, arg);
 }

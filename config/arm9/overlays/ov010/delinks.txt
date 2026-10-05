@@ -4,6 +4,14 @@
     .data       start:0x020a1da0 end:0x020a1de0 kind:data align:32
     .bss        start:0x020a1de0 end:0x020a1e00 kind:bss align:32
 
+src/overlays/ov010/calls/ScriptCmd_CreateShapedObjectClass.c:
+    complete
+    .text       start:0x020a0540 end:0x020a05cc
+
+src/overlays/ov010/calls/ScriptCmd_CreateObjectWithAngle.c:
+    complete
+    .text       start:0x020a05cc end:0x020a0652
+
 src/overlays/ov010/calls/ScriptCmd_SpawnObjectIntoSlot.c:
     complete
     .text       start:0x020a0654 end:0x020a067e
@@ -12,9 +20,17 @@ src/overlays/ov010/calls/ScriptCmd_CreateObjectAtOrigin.c:
     complete
     .text       start:0x020a0680 end:0x020a06ba
 
+src/overlays/ov010/calls/FieldObject_RespawnShaped.c:
+    complete
+    .text       start:0x020a06bc end:0x020a07b4
+
 src/overlays/ov010/auto/func_ov010_020a07b4.c:
     complete
     .text       start:0x020a07b4 end:0x020a07b6
+
+src/overlays/ov010/calls/FieldObject_SetPosition_020a07bc.c:
+    complete
+    .text       start:0x020a07bc end:0x020a0828
 
 src/overlays/ov010/auto/func_ov010_020a0830.c:
     complete
@@ -28,6 +44,14 @@ src/overlays/ov010/calls/Actor_CheckProximityTrigger.c:
     complete
     .text       start:0x020a086c end:0x020a08a4
 
+src/overlays/ov010/calls/FieldObject_CreateWithShape_020a0958.c:
+    complete
+    .text       start:0x020a0958 end:0x020a09e4
+
+src/overlays/ov010/calls/FieldObject_RespawnIdle.c:
+    complete
+    .text       start:0x020a09e4 end:0x020a0a84
+
 src/overlays/ov010/auto/func_ov010_020a0a84.c:
     complete
     .text       start:0x020a0a84 end:0x020a0a86
@@ -40,6 +64,10 @@ src/overlays/ov010/auto/func_ov010_020a0a98.c:
     complete
     .text       start:0x020a0a98 end:0x020a0a9c
 
+src/overlays/ov010/calls/FieldObject_DrawFrontView.c:
+    complete
+    .text       start:0x020a0a9c end:0x020a0b10
+
 src/overlays/ov010/auto/func_ov010_020a0bf0.c:
     complete
     .text       start:0x020a0bf0 end:0x020a0bf4
@@ -47,6 +75,46 @@ src/overlays/ov010/auto/func_ov010_020a0bf0.c:
 src/overlays/ov010/calls/FieldObject_CreateAtOrigin.c:
     complete
     .text       start:0x020a0c98 end:0x020a0cf8
+
+src/overlays/ov010/calls/LoadObjectSprites.c:
+    complete
+    .text       start:0x020a0d44 end:0x020a0db8
+
+src/overlays/ov010/calls/UpdateObjectEffects.c:
+    complete
+    .text       start:0x020a0db8 end:0x020a0e8c
+
+src/overlays/ov010/calls/StartObjectEffects.c:
+    complete
+    .text       start:0x020a0e8c end:0x020a0f0c
+
+src/overlays/ov010/calls/RestartObjectEffect.c:
+    complete
+    .text       start:0x020a0f0c end:0x020a0f80
+
+src/overlays/ov010/calls/UpdateTargetEffect.c:
+    complete
+    .text       start:0x020a0f80 end:0x020a1048
+
+src/overlays/ov010/calls/SpawnEffectAtTarget.c:
+    complete
+    .text       start:0x020a1048 end:0x020a10d8
+
+src/overlays/ov010/calls/Entity_UpdateSpecialRelease.c:
+    complete
+    .text       start:0x020a12b8 end:0x020a13ec
+
+src/overlays/ov010/calls/Entity_UpdateSpecialCharge.c:
+    complete
+    .text       start:0x020a1728 end:0x020a17c0
+
+src/overlays/ov010/calls/Entity_HandleSpecialAction.c:
+    complete
+    .text       start:0x020a1858 end:0x020a18cc
+
+src/overlays/ov010/calls/Entity_UpdateEventEffect.c:
+    complete
+    .text       start:0x020a18cc end:0x020a1978
 
 src/overlays/ov010/calls/AnimSequence_Init_020a1ac8.c:
     complete
@@ -59,6 +127,14 @@ src/overlays/ov010/calls/AnimSequence_Reset.c:
 src/overlays/ov010/calls/AnimSequence_AddClip.c:
     complete
     .text       start:0x020a1b4c end:0x020a1b6e
+
+src/overlays/ov010/calls/AnimSequence_Update_020a1b70.c:
+    complete
+    .text       start:0x020a1b70 end:0x020a1c94
+
+src/overlays/ov010/calls/AnimSequence_GetCurrentPosition.c:
+    complete
+    .text       start:0x020a1c94 end:0x020a1d40
 
 src/overlays/ov010/data/strings/Strings_ov010_020a1dc0.c:
     complete

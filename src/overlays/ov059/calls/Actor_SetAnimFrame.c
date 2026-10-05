@@ -23,8 +23,8 @@ typedef struct {
 
 extern int *func_01ffb2f8(void *anim, int channel, int frame);
 extern void ApplyModelSetAnimations(ModelSet *set, int frame);
-extern void func_ov021_020ac96c(void *stateMachine, int frame);
-extern void func_ov021_020a8148(void *group, int motion, int frame);
+extern void TransitionState(void *stateMachine, int frame);
+extern void ResetCueGroupBefore(void *group, int motion, int frame);
 
 void Actor_SetAnimFrame(Actor *actor, int frame)
 {
@@ -35,6 +35,6 @@ void Actor_SetAnimFrame(Actor *actor, int frame)
         ApplyModelSetAnimations(&actor->modelSets[i], frame);
     }
     actor->frame = frame;
-    func_ov021_020ac96c(actor->stateMachine, frame);
-    func_ov021_020a8148(actor->cueGroup, actor->motion, frame);
+    TransitionState(actor->stateMachine, frame);
+    ResetCueGroupBefore(actor->cueGroup, actor->motion, frame);
 }

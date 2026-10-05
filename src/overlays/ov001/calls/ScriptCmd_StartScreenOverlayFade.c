@@ -16,7 +16,7 @@ typedef struct OverlayFadeCommand {
 extern int ScriptVm_ReadOperandInt(void *context, ScriptOperand *operand);
 extern fx32 ScriptVm_ReadOperandFx32(void *context, ScriptOperand *operand);
 extern void ScriptCmd_SetElemField(void *context, OverlayFadeCommand *command);
-extern void func_ov001_020889f8(u32 colorIndex, u32 alpha);
+extern void SetManagerCallbackPair(u32 colorIndex, u32 alpha);
 
 int ScriptCmd_StartScreenOverlayFade(void *context, OverlayFadeCommand *command)
 {
@@ -29,7 +29,7 @@ int ScriptCmd_StartScreenOverlayFade(void *context, OverlayFadeCommand *command)
     targetAlpha = ScriptVm_ReadOperandFx32(context, &command->operands[2]);
     duration = ScriptVm_ReadOperandInt(context, &command->operands[3]);
     if (duration == 0) {
-        func_ov001_020889f8(colorIndex, targetAlpha >> 12);
+        SetManagerCallbackPair(colorIndex, targetAlpha >> 12);
         return 1;
     }
     command->framesRemaining = duration;

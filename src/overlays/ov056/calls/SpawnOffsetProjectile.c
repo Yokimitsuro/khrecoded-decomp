@@ -45,10 +45,10 @@ typedef struct {
 extern const VecFx32 data_ov056_020d7fcc;
 extern s16 data_02053580[];
 extern EntryInfo *GetBoundedEntryField(int index);
-extern void func_ov021_020ab0ac(SpawnDesc *desc);
+extern void ZeroBytes0x40(SpawnDesc *desc);
 extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
-extern void *func_ov021_020ab0b8(SpawnUnit *unit, SpawnDesc *desc);
-extern void func_ov021_020af564(int first, int second);
+extern void *TryConsumeLimitedUse(SpawnUnit *unit, SpawnDesc *desc);
+extern void ForwardSubModePairA(int first, int second);
 
 void SpawnOffsetProjectile(SpawnUnit *unit, u32 kind, u32 subKind, s32 power)
 {
@@ -64,7 +64,7 @@ void SpawnOffsetProjectile(SpawnUnit *unit, u32 kind, u32 subKind, s32 power)
     unit->flags = 0;
     angle = info->facing - 0x8000;
     facing = (u16)(angle + 0x8000);
-    func_ov021_020ab0ac(&desc);
+    ZeroBytes0x40(&desc);
     RotateOffsetAroundY(&desc.position, &info->position, facing, &offset);
     desc.position.y -= unit->shape->height / 2;
     index = facing >> 4;
@@ -79,10 +79,10 @@ void SpawnOffsetProjectile(SpawnUnit *unit, u32 kind, u32 subKind, s32 power)
     desc.kind = kind;
     desc.subKind = subKind;
     desc.power = power;
-    if (func_ov021_020ab0b8(unit, &desc) != NULL) {
+    if (TryConsumeLimitedUse(unit, &desc) != NULL) {
         unit->spawnCount++;
     } else {
         unit->flags &= ~1;
     }
-    func_ov021_020af564(3, 1);
+    ForwardSubModePairA(3, 1);
 }

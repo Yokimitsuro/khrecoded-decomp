@@ -10,11 +10,11 @@ typedef struct {
 
 extern const VecFx32 data_ov058_020d8a4c;
 
-extern void func_ov058_020d74b8(EmitterRig *rig, int blend);
+extern void RebindEmitterSlots(EmitterRig *rig, int blend);
 
 void ResetEmitterRigOffset(EmitterRig *rig)
 {
     rig->phase = 1;
-    func_ov058_020d74b8(rig, 0);
+    RebindEmitterSlots(rig, 0);
     rig->offset = data_ov058_020d8a4c;
 }

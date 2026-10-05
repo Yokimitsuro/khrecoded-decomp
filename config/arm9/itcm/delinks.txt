@@ -81,6 +81,10 @@ libs/nitro/mtx/asm_stubs/auto/MTX_Identity33_.c:
     complete
     .text       start:0x01ff90ec end:0x01ff9110
 
+src/calls/MTX_ScaleApply33.c:
+    complete
+    .text       start:0x01ff9158 end:0x01ff9220
+
 libs/nitro/mtx/auto/MTX_RotX33_.c:
     complete
     .text       start:0x01ff9220 end:0x01ff923c
@@ -92,6 +96,14 @@ libs/nitro/mtx/asm_stubs/auto/MTX_RotY33_.c:
 libs/nitro/mtx/asm_stubs/auto/MTX_RotZ33_.c:
     complete
     .text       start:0x01ff9258 end:0x01ff9270
+
+src/calls/MTX_Concat33.c:
+    complete
+    .text       start:0x01ff9270 end:0x01ff9404
+
+src/calls/MTX_MultVec33.c:
+    complete
+    .text       start:0x01ff9404 end:0x01ff9480
 
 libs/nitro/mtx/asm_stubs/auto/MTX_Identity43_.c:
     complete
@@ -165,6 +177,10 @@ libs/nitro/fx/auto/VEC_DotProduct.c:
     complete
     .text       start:0x01ff9e6c end:0x01ff9ea8
 
+src/calls/VEC_CrossProduct.c:
+    complete
+    .text       start:0x01ff9ea8 end:0x01ff9f28
+
 libs/nitro/fx/auto/VEC_Mag.c:
     complete
     .text       start:0x01ff9f28 end:0x01ff9f88
@@ -201,17 +217,37 @@ src/calls/func_01ffa1f4.c:
     complete
     .text       start:0x01ffa1f4 end:0x01ffa204
 
+src/calls/FlushGeometryCommandBuffer.c:
+    complete
+    .text       start:0x01ffa204 end:0x01ffa37c
+
 libs/nns/g3d/calls/NNS_G3dGeBufferOP_N.c:
     complete
     .text       start:0x01ffa37c end:0x01ffa450
+
+src/calls/EmitJointAnimationResult.c:
+    complete
+    .text       start:0x01ffa680 end:0x01ffa73c
 
 libs/nns/g3d/calls/texmtxCalc_flag_.c:
     complete
     .text       start:0x01ffa884 end:0x01ffa98c
 
+src/calls/NNSi_G3dCalcTexMtxRot.c:
+    complete
+    .text       start:0x01ffa98c end:0x01ffaa50
+
+src/calls/BuildTextureTransformVariantH.c:
+    complete
+    .text       start:0x01ffaa50 end:0x01ffaac4
+
 src/calls/BuildTextureTranslationMatrixITCM.c:
     complete
     .text       start:0x01ffaac4 end:0x01ffab10
+
+src/calls/BuildTextureTransformVariantD.c:
+    complete
+    .text       start:0x01ffab10 end:0x01ffabf0
 
 src/calls/BuildTextureVerticalScaleMatrix.c:
     complete
@@ -233,6 +269,18 @@ libs/nitro/nns/calls/func_01ffcedc.c:
     complete
     .text       start:0x01ffcedc end:0x01ffcf74
 
+src/calls/SampleJointRotationStreamITCM.c:
+    complete
+    .text       start:0x01ffd180 end:0x01ffd56c
+
+src/calls/DecodeCompressedRotationITCM.c:
+    complete
+    .text       start:0x01ffd56c end:0x01ffd6ac
+
+src/calls/GetJointSRTAnimResult.c:
+    complete
+    .text       start:0x01ffd6ac end:0x01ffd934
+
 libs/nitro/nns/calls/func_01ffd934.c:
     complete
     .text       start:0x01ffd934 end:0x01ffda04
@@ -245,9 +293,21 @@ src/calls/func_01ffe394.c:
     complete
     .text       start:0x01ffe394 end:0x01ffe3d8
 
+src/calls/NNSi_G3dFuncSbcMAT.c:
+    complete
+    .text       start:0x01ffe3d8 end:0x01ffe8a0
+
 libs/nitro/nns/calls/func_01ffe8a0.c:
     complete
     .text       start:0x01ffe8a0 end:0x01ffe934
+
+src/calls/EmitJointScaleCommand.c:
+    complete
+    .text       start:0x01fff374 end:0x01fff3dc
+
+src/calls/NNS_G3dDraw1Mat1Shp.c:
+    complete
+    .text       start:0x01fff3dc end:0x01fff67c
 
 src/calls/func_01fff67c.c:
     complete

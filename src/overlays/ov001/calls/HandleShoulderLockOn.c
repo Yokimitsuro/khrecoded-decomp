@@ -10,8 +10,8 @@ extern LockOnState *data_ov001_020a04a4;
 extern s16 data_020604fc;
 extern s16 data_02060500;
 
-extern void func_ov001_0206afec(void);
-extern void func_ov001_0206bb74(int open, BOOL withSound);
+extern void SelectNearestTarget(void);
+extern void SetMenuOpenState(int open, BOOL withSound);
 
 void HandleShoulderLockOn(BOOL selectTarget)
 {
@@ -26,7 +26,7 @@ void HandleShoulderLockOn(BOOL selectTarget)
     if (((trigger & 0x100) && (held & 0x200)) || ((held & 0x100) && (trigger & 0x200))) {
         if (state->holdTimer > 0x9000) {
             if (selectTarget) {
-                func_ov001_0206afec();
+                SelectNearestTarget();
             } else {
                 state->flags |= 0x20;
             }
@@ -34,7 +34,7 @@ void HandleShoulderLockOn(BOOL selectTarget)
         }
     } else if (!(held & 0x100) && !(held & 0x200) && (state->flags & 0x20)) {
         if (state->flags & 2) {
-            func_ov001_0206bb74(0, TRUE);
+            SetMenuOpenState(0, TRUE);
         }
         state->flags &= ~0x20;
     }

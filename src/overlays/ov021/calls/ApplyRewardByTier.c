@@ -19,7 +19,7 @@ extern GameSession *data_0205fe0c;
 extern int func_ov001_0206dc38(void);
 extern PartyMember *GetBoundedEntryField(int index);
 extern void AddClampedHealth(PartyMember *member, s16 amount);
-extern void func_ov001_02063a80(int counterId, int amount);
+extern void AddSessionCounter(int counterId, int amount);
 extern void func_ov001_02063d4c(int id, int amount);
 extern int func_ov001_02064784(void);
 extern int ReadSessionPackedBits(int bitOffset, int bitCount);
@@ -68,7 +68,7 @@ void ApplyRewardByTier(int unused, int kind, int tier)
             break;
         }
         if (amount > 0) {
-            func_ov001_02063a80(0, amount);
+            AddSessionCounter(0, amount);
         }
         break;
     case 3:
@@ -116,8 +116,8 @@ void ApplyRewardByTier(int unused, int kind, int tier)
             break;
         }
         if (amount > 0) {
-            func_ov001_02063a80(1, amount);
-            func_ov001_02063a80(2, amount);
+            AddSessionCounter(1, amount);
+            AddSessionCounter(2, amount);
         }
         break;
     case 5:

@@ -25,8 +25,8 @@ typedef struct EventContext {
 
 extern EventContext *data_ov001_020a04bc;
 extern void func_ov001_0206d0ac(void *object);
-extern void func_ov001_0206ce00(void *object, EventRecord *record);
-extern BOOL func_ov001_0206ce78(void *object, EventRecord *record);
+extern void UpdateActorTargetLink(void *object, EventRecord *record);
+extern BOOL UpdateTriggerWallContact(void *object, EventRecord *record);
 extern void func_ov001_0206cdec(EventRecord *record, int extended);
 extern void DropInactiveGroupMember(EventRecord *record);
 
@@ -38,8 +38,8 @@ void UpdatePrimaryEventRecord(void)
 
     if ((entry->flags & 8) && (entry->flags & 0x14) <= 0 && record->pending == 0) {
         func_ov001_0206d0ac(entry->object);
-        func_ov001_0206ce00(entry->object, record);
-        if (!func_ov001_0206ce78(entry->object, record)) {
+        UpdateActorTargetLink(entry->object, record);
+        if (!UpdateTriggerWallContact(entry->object, record)) {
             func_ov001_0206cdec(record, 0);
         }
         DropInactiveGroupMember(record);

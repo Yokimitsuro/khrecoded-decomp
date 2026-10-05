@@ -21,7 +21,7 @@ typedef struct Manager {
 
 extern Manager *data_ov001_020a04a4;
 extern TargetActor *func_ov001_0207f0b4(void);
-extern BOOL func_ov001_0206b4a4(void *origin, TargetActor *actor, s32 range);
+extern BOOL IsActorTargetable(void *origin, TargetActor *actor, s32 range);
 extern VecFx32 *func_ov001_0207f898(TargetActor *actor);
 extern BOOL CheckSideOffsetInRange(const VecFx32 *position, const VecFx32 *facing, fx32 low, fx32 high, s32 direction, fx32 *outOffset);
 extern TargetCandidate *func_ov001_0206b938(TargetCandidate *candidate, TargetActor *actor);
@@ -33,7 +33,7 @@ BOOL ScanActorsForSideTarget(const VecFx32 *facing, fx32 low, fx32 high, s32 dir
     TargetActor *actor;
 
     for (actor = func_ov001_0207f0b4(); actor != NULL; actor = actor->next) {
-        if (func_ov001_0206b4a4(NULL, actor, manager->lockRange) &&
+        if (IsActorTargetable(NULL, actor, manager->lockRange) &&
             CheckSideOffsetInRange(func_ov001_0207f898(actor), facing, low, high, direction, outOffset)) {
             func_ov001_0206b938(&manager->current, actor);
             high = *outOffset;

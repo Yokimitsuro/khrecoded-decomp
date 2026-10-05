@@ -26,10 +26,10 @@ struct GroundActor {
 };
 
 extern void *func_ov001_0206db78(int pool);
-extern BOOL func_ov021_020a753c(void *holder, u16 mask);
+extern BOOL HasFlagsAt0xc(void *holder, u16 mask);
 extern BOOL func_ov021_020a7530(void *holder);
 extern BOOL IsPlayerEntryFlagSet(int player, u32 id);
-extern BOOL func_ov052_020cfb78(GroundActor *actor);
+extern BOOL AnySubObjectBit0Set(GroundActor *actor);
 extern BOOL func_ov001_020645c8(int id);
 extern BOOL func_ov052_020cf008(GroundActor *actor, ActionInput *input);
 extern BOOL FindDashWallTarget(GroundActor *actor, ActionInput *input);
@@ -41,7 +41,7 @@ BOOL SelectGroundAction(GroundActor *actor, ActionInput *input)
     BOOL full;
 
     if (result == FALSE) {
-        if (func_ov021_020a753c(self, 2)) {
+        if (HasFlagsAt0xc(self, 2)) {
             full = FALSE;
             if (input->current >= input->required) {
                 full = TRUE;
@@ -54,12 +54,12 @@ BOOL SelectGroundAction(GroundActor *actor, ActionInput *input)
                 return TRUE;
             }
         }
-        if (func_ov021_020a753c(self, 0x800)) {
+        if (HasFlagsAt0xc(self, 0x800)) {
             if (func_ov021_020a7530(self) && IsPlayerEntryFlagSet(actor->pool, 10)) {
                 actor->onEvent(actor, 8);
                 return TRUE;
             }
-            if (func_ov052_020cfb78(actor) && !func_ov001_020645c8(0x3520) && IsPlayerEntryFlagSet(actor->pool, 11)) {
+            if (AnySubObjectBit0Set(actor) && !func_ov001_020645c8(0x3520) && IsPlayerEntryFlagSet(actor->pool, 11)) {
                 actor->onEvent(actor, 9);
                 return TRUE;
             }

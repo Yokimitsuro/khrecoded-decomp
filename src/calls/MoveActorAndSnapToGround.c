@@ -175,7 +175,7 @@ extern void func_02032000(ContactSet *set, const VecFx32 *normal);
 extern void NegateVecFx32(VecFx32 *vec);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
 extern HitResult *CollWorld_FindHit(void *world, CollQuery *query);
-extern void func_ov059_020cd46c(void *world, CollActor *actor, CollQuery *query, HitResult *hit, VecFx32 *pos,
+extern void Collider_ComputeBoxPushOut(void *world, CollActor *actor, CollQuery *query, HitResult *hit, VecFx32 *pos,
                                 VecFx32 *vel, fx32 height, u32 flags);
 extern void func_020382c4(void *world, CollActor *actor, CollQuery *query, HitResult *hit, VecFx32 *pos,
                           VecFx32 *vel, fx32 height, u32 flags, ContactState *state);
@@ -437,7 +437,7 @@ void MoveActorAndSnapToGround(VecFx32 *pos, VecFx32 *vel, CollActor *actor, u32 
             query.onContact.func = NULL;
             query.filter.func = NULL;
             if (func_ov001_02063a38() == 7) {
-                func_ov059_020cd46c(world, actor, &query, hit, pos, vel, upper.y - pos->y, flags);
+                Collider_ComputeBoxPushOut(world, actor, &query, hit, pos, vel, upper.y - pos->y, flags);
             } else {
                 func_020382c4(world, actor, &query, hit, pos, vel, upper.y - pos->y, flags, &state);
             }

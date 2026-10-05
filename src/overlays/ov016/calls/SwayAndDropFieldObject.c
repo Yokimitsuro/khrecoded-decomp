@@ -43,7 +43,7 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void OffsetBoxByDelta(CollisionBox *src, CollisionBox *dst, VecFx32 *delta);
 extern void Obj_SetPosition(FieldActor *actor, VecFx32 *position);
-extern void func_ov016_020a4a84(FieldObject *object);
+extern void CheckFieldUnitHeightLimit(FieldObject *object);
 extern void func_ov016_020a2578(FieldObject *object);
 
 void SwayAndDropFieldObject(FieldObject *object)
@@ -81,7 +81,7 @@ void SwayAndDropFieldObject(FieldObject *object)
             if (target.y < object->floorY) {
                 object->phase = 4;
                 target.y = object->floorY;
-                func_ov016_020a4a84(object);
+                CheckFieldUnitHeightLimit(object);
             }
             break;
         case 4:

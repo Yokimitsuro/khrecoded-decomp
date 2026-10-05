@@ -10,7 +10,7 @@ extern void ScriptCmd_SetObjectVisible(void); /* ScriptCmd_SetObjectVisible */
 extern void ScriptCmd_SetObjectGroupInteractRange(void); /* ScriptCmd_SetObjectGroupInteractRange */
 extern void ScriptCmd_SetObjectAnimation(void); /* ScriptCmd_SetObjectAnimation */
 extern void ScriptCmd_RegisterTriggerClass(void); /* ScriptCmd_RegisterTriggerClass */
-extern void func_ov001_0207fdcc(void); /* ScriptCmd_SpawnFieldObject */
+extern void ScriptCmd_SpawnFieldObject(void); /* ScriptCmd_SpawnFieldObject */
 extern void ScriptCmd_CreateWorkSlotObject(void); /* ScriptCmd_CreateWorkSlotObject */
 extern void ScriptCmd_CreateRotatedFieldObject_0207ff38(void); /* ScriptCmd_CreateRotatedFieldObject */
 extern void func_ov001_0207ffd4(void); /* ScriptCmd_EnterPhase */
@@ -31,7 +31,7 @@ extern void ScriptCmd_AddGroupObjectAtPosition(void); /* ScriptCmd_AddGroupObjec
 extern void ScriptOp_CallObjectVectorHook(void); /* ScriptOp_CallObjectVectorHook */
 extern void ScriptCmd_SetObjectHeading(void); /* ScriptCmd_SetObjectHeading */
 extern void ScriptCmd_CreateObjectGroupKind9(void); /* ScriptCmd_CreateObjectGroupKind9 */
-extern void func_ov001_02080458(void); /* ScriptCmd_CreateRoamingObject */
+extern void ScriptCmd_CreateRoamingObject(void); /* ScriptCmd_CreateRoamingObject */
 extern void func_ov001_0208055c(void);
 extern void ScriptCmd_CreateFieldObjectFx(void); /* ScriptCmd_CreateFieldObjectFx */
 extern void ScriptCmd_RegisterFieldObject(void); /* ScriptCmd_RegisterFieldObject */
@@ -61,7 +61,7 @@ void (*gFieldObjectScriptCommandHandlers[78])(void) = {
     NULL,
     ScriptCmd_RegisterTriggerClass, /* ScriptCmd_RegisterTriggerClass */
     NULL,
-    func_ov001_0207fdcc, /* ScriptCmd_SpawnFieldObject */
+    ScriptCmd_SpawnFieldObject, /* ScriptCmd_SpawnFieldObject */
     NULL,
     ScriptCmd_CreateWorkSlotObject, /* ScriptCmd_CreateWorkSlotObject */
     NULL,
@@ -103,7 +103,7 @@ void (*gFieldObjectScriptCommandHandlers[78])(void) = {
     NULL,
     ScriptCmd_CreateObjectGroupKind9, /* ScriptCmd_CreateObjectGroupKind9 */
     NULL,
-    func_ov001_02080458, /* ScriptCmd_CreateRoamingObject */
+    ScriptCmd_CreateRoamingObject, /* ScriptCmd_CreateRoamingObject */
     NULL,
     func_ov001_0208055c,
     NULL,

@@ -13,7 +13,7 @@ struct FieldObject {
 };
 
 extern FieldObject *func_ov001_02087264(void);
-extern void func_ov018_020a37d0(FieldObject *object);
+extern void SetFlagBit8(FieldObject *object);
 
 void FlagKind6Objects(void)
 {
@@ -21,7 +21,7 @@ void FlagKind6Objects(void)
 
     for (object = func_ov001_02087264(); object != NULL; object = object->next) {
         if (object->info->kind == 6) {
-            func_ov018_020a37d0(object);
+            SetFlagBit8(object);
         }
     }
 }

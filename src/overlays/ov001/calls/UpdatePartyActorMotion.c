@@ -25,8 +25,8 @@ typedef struct PartyActor {
 extern const VecFx32 data_0205344c;
 extern void func_ov001_020893bc(PartyActor *actor);
 extern void func_ov001_02089bfc(PartyActor *actor);
-extern void func_ov001_02089230(PartyActor *actor, VecFx32 *out);
-extern void func_ov001_02089ad0(PartyActor *actor);
+extern void ApplyActorRootMotion(PartyActor *actor, VecFx32 *out);
+extern void Actor_StepTowardTarget(PartyActor *actor);
 extern void Actor_StepPeriodicAnimEvent(PartyActor *actor);
 extern void AlignPartyLeaderToActor(PartyActor *actor);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -63,7 +63,7 @@ void UpdatePartyActorMotion(PartyActor *actor)
     }
     func_ov001_02089bfc(actor);
     if (actor->flags & 0x40) {
-        func_ov001_02089230(actor, &drift);
+        ApplyActorRootMotion(actor, &drift);
         VEC_Add(&drift, &actor->move, &drift);
         if (VEC_Mag(&drift) <= 0x10) {
             drift.z = 0;
@@ -73,7 +73,7 @@ void UpdatePartyActorMotion(PartyActor *actor)
         SetGroundVelocity(actor->link, &drift);
     }
     if (actor->pendingPath != NULL) {
-        func_ov001_02089ad0(actor);
+        Actor_StepTowardTarget(actor);
     }
     if (actor->flags & 0x10) {
         if (VEC_Mag(&actor->move) != 0 || VEC_Mag(&drift) != 0) {

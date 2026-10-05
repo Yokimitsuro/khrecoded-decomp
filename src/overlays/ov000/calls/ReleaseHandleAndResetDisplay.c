@@ -7,7 +7,7 @@ typedef struct {
 
 extern u32 func_ov000_02063770(void);
 extern void PXI_Init_0202a64c(u32 handle);
-extern void func_ov000_0206141c(Panel *panel);
+extern void SetupDisplayBanksAndLayers(Panel *panel);
 
 void ReleaseHandleAndResetDisplay(Panel *panel)
 {
@@ -19,6 +19,6 @@ void ReleaseHandleAndResetDisplay(Panel *panel)
     PXI_Init_0202a64c(panel->pxiHandle);
     panel->pxiHandle = 0;
     if (needsReset) {
-        func_ov000_0206141c(panel);
+        SetupDisplayBanksAndLayers(panel);
     }
 }

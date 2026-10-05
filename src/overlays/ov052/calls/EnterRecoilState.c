@@ -22,7 +22,7 @@ struct Entity {
 };
 
 extern const s16 data_02053580[];
-extern u16 func_ov052_020ceb9c(Entity *entity);
+extern u16 GetLinkedAngleOffset(Entity *entity);
 extern void func_01ffafb4(fx32 scale, const VecFx32 *src, VecFx32 *dst);
 
 static inline void SetVecFx32(VecFx32 *vector, fx32 x, fx32 y, fx32 z)
@@ -35,7 +35,7 @@ static inline void SetVecFx32(VecFx32 *vector, fx32 x, fx32 y, fx32 z)
 void EnterRecoilState(Entity *entity)
 {
     MotionState *motion = &entity->motion;
-    int angleIndex = (u16)(func_ov052_020ceb9c(entity) + 0x8000) >> 4;
+    int angleIndex = (u16)(GetLinkedAngleOffset(entity) + 0x8000) >> 4;
     VecFx32 direction;
 
     direction.x = 0;

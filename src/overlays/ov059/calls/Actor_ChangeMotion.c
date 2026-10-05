@@ -10,7 +10,7 @@ typedef struct {
     u8 midTable[4];
 } Actor;
 
-extern void func_ov059_020cc970(Actor *actor, void *table, int motion, int index, int arg);
+extern void Actor_ChangeAnimation(Actor *actor, void *table, int motion, int index, int arg);
 
 void Actor_ChangeMotion(Actor *actor, int motion, int arg)
 {
@@ -30,5 +30,5 @@ void Actor_ChangeMotion(Actor *actor, int motion, int arg)
         table = actor->extraTable;
         index = motion - 18;
     }
-    func_ov059_020cc970(actor, table, motion, index, arg);
+    Actor_ChangeAnimation(actor, table, motion, index, arg);
 }

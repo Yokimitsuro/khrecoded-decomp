@@ -10,12 +10,12 @@ typedef struct OverlayDisplaySession {
     void *updateRegistration;
 } OverlayDisplaySession;
 extern OverlayDisplaySession *data_ov026_020b5b20;
-extern void func_ov026_020b5a38(OverlayDisplaySession *session);
+extern void UpdateOverlayDisplaySession(OverlayDisplaySession *session);
 void RunOverlayDisplayUpdate(void) {
     OverlayDisplaySession *session = data_ov026_020b5b20;
     if (session == 0) return;
     if (session->updateInProgress != 0) return;
     session->updateInProgress = 1;
-    func_ov026_020b5a38(session);
+    UpdateOverlayDisplaySession(session);
     session->updateInProgress = 0;
 }

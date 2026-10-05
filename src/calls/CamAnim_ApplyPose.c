@@ -35,7 +35,7 @@ extern VecFx32 data_020558a0;
 extern s16 data_02053580[];
 
 extern void NNSi_G3dAnmCalcNsBca(JointAnimResult *result, void *anmObj, u32 index);
-extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *out);
+extern void MTX_MultVec33(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern fx32 FX_Mul(fx32 a, fx32 b);
@@ -66,8 +66,8 @@ void CamAnim_ApplyPose(CameraAnim *anim)
         anim->position.x = 0;
         anim->position.y = -0x1000;
         anim->position.z = 0;
-        func_01ff9404(&up, &eye.rot, &anim->up);
-        func_01ff9404(&anim->position, &eye.rot, &anim->position);
+        MTX_MultVec33(&up, &eye.rot, &anim->up);
+        MTX_MultVec33(&anim->position, &eye.rot, &anim->position);
         VEC_Add(&anim->position, &anim->target, &anim->position);
     } else {
         scaleY = eye.scale.y;
@@ -75,7 +75,7 @@ void CamAnim_ApplyPose(CameraAnim *anim)
         anim->position.y = scaleY;
         anim->position.z = scaleZ;
         anim->position.x = scaleX;
-        func_01ff9404(&up, &eye.rot, &anim->up);
+        MTX_MultVec33(&up, &eye.rot, &anim->up);
     }
     VEC_Add(&anim->position, &anim->offset, &anim->position);
     VEC_Add(&anim->target, &anim->offset, &anim->target);

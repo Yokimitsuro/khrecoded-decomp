@@ -6,7 +6,7 @@ typedef struct FieldObject {
 } FieldObject;
 
 extern u8 *data_ov001_020a0528;
-extern FieldObject *func_ov001_0206dcac(const void *bounds, void *hitInfo);
+extern FieldObject *FindNextOverlappingEntry(const void *bounds, void *hitInfo);
 
 u16 GetCollidingObjectCode(const void *bounds, void *hitInfo)
 {
@@ -15,7 +15,7 @@ u16 GetCollidingObjectCode(const void *bounds, void *hitInfo)
     if (data_ov001_020a0528 == NULL) {
         return 0;
     }
-    object = func_ov001_0206dcac(bounds, hitInfo);
+    object = FindNextOverlappingEntry(bounds, hitInfo);
     if (object == NULL) {
         return 0;
     }

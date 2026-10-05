@@ -27,7 +27,7 @@ typedef struct {
 
 extern ListInput *func_ov039_020bca20(void);
 extern BOOL func_ov039_020bd888(ScrollList *list, void *owner, ListInput *touch, BOOL changed);
-extern BOOL func_ov039_020bdc48(ScrollList *list, void *owner, int keys, BOOL forceRefresh);
+extern BOOL HandleListKeyInput(ScrollList *list, void *owner, int keys, BOOL forceRefresh);
 
 BOOL UpdateScrollListInput(ScrollList *list, void *owner)
 {
@@ -50,5 +50,5 @@ BOOL UpdateScrollListInput(ScrollList *list, void *owner)
     if (list->touchEnabled != 0 && ((input->touchFlags & 3) || list->dragState != 0)) {
         return func_ov039_020bd888(list, owner, input, changed);
     }
-    return func_ov039_020bdc48(list, owner, input->keys, changed);
+    return HandleListKeyInput(list, owner, input->keys, changed);
 }

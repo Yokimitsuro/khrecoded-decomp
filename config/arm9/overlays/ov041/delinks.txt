@@ -8,6 +8,26 @@ src/overlays/ov041/auto/func_ov041_020bc520.c:
     complete
     .text       start:0x020bc520 end:0x020bc522
 
+src/overlays/ov041/calls/InitMenuScene.c:
+    complete
+    .text       start:0x020bc5e0 end:0x020bc9a4
+
+src/overlays/ov041/calls/SumStageTotals.c:
+    complete
+    .text       start:0x020bc9a4 end:0x020bca5c
+
+src/overlays/ov041/calls/ShutdownMenuScene.c:
+    complete
+    .text       start:0x020bca5c end:0x020bcb48
+
+src/overlays/ov041/calls/GetStageKindSoundId.c:
+    complete
+    .text       start:0x020bcd90 end:0x020bce3e
+
+src/overlays/ov041/calls/GetStageKindMusicId.c:
+    complete
+    .text       start:0x020bce40 end:0x020bceec
+
 src/overlays/ov041/calls/func_ov041_020be088.c:
     complete
     .text       start:0x020be088 end:0x020be090
@@ -15,6 +35,10 @@ src/overlays/ov041/calls/func_ov041_020be088.c:
 src/overlays/ov041/calls/func_ov041_020be090.c:
     complete
     .text       start:0x020be090 end:0x020be098
+
+src/overlays/ov041/calls/IsStageKindAvailable.c:
+    complete
+    .text       start:0x020becbc end:0x020bed58
 
 src/overlays/ov041/calls/FindFreeSlotId.c:
     complete
@@ -24,9 +48,21 @@ src/overlays/ov041/calls/ReleaseEmbeddedObject.c:
     complete
     .text       start:0x020c279c end:0x020c27ac
 
+src/overlays/ov041/calls/MatchesEitherSlotId.c:
+    complete
+    .text       start:0x020c2a24 end:0x020c2a44
+
+src/overlays/ov041/calls/GetPositionAboveGround.c:
+    complete
+    .text       start:0x020c2b00 end:0x020c2b32
+
 src/overlays/ov041/calls/GetActorAnimTrack.c:
     complete
     .text       start:0x020c36b8 end:0x020c370c
+
+src/overlays/ov041/calls/LoadActorAnimation.c:
+    complete
+    .text       start:0x020c370c end:0x020c37d4
 
 src/overlays/ov041/calls/DestroyDisplayObject.c:
     complete
@@ -36,6 +72,10 @@ src/overlays/ov041/calls/PlayActorAnimation.c:
     complete
     .text       start:0x020c3814 end:0x020c386c
 
+src/overlays/ov041/calls/GetPathNodeOffset.c:
+    complete
+    .text       start:0x020c386c end:0x020c38bc
+
 src/overlays/ov041/calls/SetAnimationFrameIfChanged.c:
     complete
     .text       start:0x020c38bc end:0x020c391c
@@ -43,6 +83,10 @@ src/overlays/ov041/calls/SetAnimationFrameIfChanged.c:
 src/overlays/ov041/calls/LoadSharedRecordField.c:
     complete
     .text       start:0x020cdfb0 end:0x020ce004
+
+src/overlays/ov041/calls/InitRecordOwnerSlots.c:
+    complete
+    .text       start:0x020ce1c8 end:0x020ce200
 
 src/overlays/ov041/data/strings/Strings_ov041_020cf710.c:
     complete

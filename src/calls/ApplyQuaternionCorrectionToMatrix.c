@@ -15,7 +15,7 @@ extern void QuaternionFromRotationMatrix(QuatFx32 *dst, MtxFx33 *mtx);
 extern void ScaleVector4ByReciprocalMagnitude(QuatFx32 *dst, QuatFx32 *src);
 extern void MultiplyFixedPointQuaternions(QuatFx32 *dst, QuatFx32 *a, QuatFx32 *b);
 extern void QuaternionToRotationMatrix(MtxFx33 *mtx, QuatFx32 *quat);
-extern void func_01ff9158(MtxFx33 *dst, MtxFx33 *src, fx32 sx, fx32 sy, fx32 sz);
+extern void MTX_ScaleApply33(MtxFx33 *dst, MtxFx33 *src, fx32 sx, fx32 sy, fx32 sz);
 extern QuatFx32 data_02055838;
 
 void ApplyQuaternionCorrectionToMatrix(MtxFx33 *mtx, s32 unused2, s32 unused3, s32 unused4) {
@@ -32,5 +32,5 @@ void ApplyQuaternionCorrectionToMatrix(MtxFx33 *mtx, s32 unused2, s32 unused3, s
     ScaleVector4ByReciprocalMagnitude(&quat, &quat);
     MultiplyFixedPointQuaternions(&quat, &quat, &data_02055838);
     QuaternionToRotationMatrix(mtx, &quat);
-    func_01ff9158(mtx, mtx, scaleX, scaleY, scaleZ);
+    MTX_ScaleApply33(mtx, mtx, scaleX, scaleY, scaleZ);
 }

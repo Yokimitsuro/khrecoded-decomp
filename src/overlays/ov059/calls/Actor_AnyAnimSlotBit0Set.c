@@ -9,7 +9,7 @@ typedef struct {
     AnimSlot slots[2];
 } Actor;
 
-extern BOOL func_ov021_020a9d3c(AnimSlot *slot);
+extern BOOL IsBit0Set(AnimSlot *slot);
 
 BOOL Actor_AnyAnimSlotBit0Set(Actor *actor)
 {
@@ -17,7 +17,7 @@ BOOL Actor_AnyAnimSlotBit0Set(Actor *actor)
     int i;
 
     for (i = 0; i < 2; i++) {
-        if (func_ov021_020a9d3c(&actor->slots[i])) {
+        if (IsBit0Set(&actor->slots[i])) {
             found = TRUE;
             break;
         }

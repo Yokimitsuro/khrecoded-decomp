@@ -8,7 +8,7 @@ typedef struct {
 
 extern void PlaceRigAtPlayerOffset(EmitterRig *rig, int index);
 extern u16 AdvanceAnimationTracks(EmitterRig *rig, fx32 step);
-extern void func_ov058_020d74b8(EmitterRig *rig, int blend);
+extern void RebindEmitterSlots(EmitterRig *rig, int blend);
 extern void func_ov058_020d7a64(int index);
 
 void UpdateHazardRig(EmitterRig *rig, int index, fx32 step)
@@ -22,7 +22,7 @@ void UpdateHazardRig(EmitterRig *rig, int index, fx32 step)
     case 1:
         PlaceRigAtPlayerOffset(rig, index);
         if (AdvanceAnimationTracks(rig, step)) {
-            func_ov058_020d74b8(rig, 1);
+            RebindEmitterSlots(rig, 1);
             rig->phase = 2;
         }
         break;

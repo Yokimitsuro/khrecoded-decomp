@@ -17,7 +17,7 @@ typedef struct {
     s16 slots[8];
 } EffectObj;
 
-extern void func_ov021_020ab310(EffectObj *obj);
+extern void RebindModelAnimTracks(EffectObj *obj);
 
 void AdvanceToSecondPhase(EffectObj *obj)
 {
@@ -29,7 +29,7 @@ void AdvanceToSecondPhase(EffectObj *obj)
     }
     obj->timer = 0;
     if (params->unk_4C >= 0) {
-        func_ov021_020ab310(obj);
+        RebindModelAnimTracks(obj);
         if (!(params->flags & 0x400)) {
             for (i = 0; i < 8; i++) {
                 obj->slots[i] = -1;

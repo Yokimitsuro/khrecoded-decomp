@@ -2,8 +2,8 @@
 
 extern void *func_01ffb2f8(void *obj, s32 arg1, s32 value);
 extern void ApplyModelSetAnimations(void *set, int arg);
-extern void func_ov021_020ac96c(void *obj, s32 value);
-extern void func_ov021_020a8148(void *table, int groupId, s32 time);
+extern void TransitionState(void *obj, s32 value);
+extern void ResetCueGroupBefore(void *table, int groupId, s32 time);
 
 void SetAnimationFrameAll(int entity, int frame)
 {
@@ -13,6 +13,6 @@ void SetAnimationFrameAll(int entity, int frame)
         ApplyModelSetAnimations((void *)(entity + 0xb68 + i * 0x230), frame);
     }
     *(int *)(entity + 0x760) = frame;
-    func_ov021_020ac96c((void *)(entity + 0x874), frame);
-    func_ov021_020a8148((void *)(entity + 0xb2c), *(int *)(entity + 0x75c), frame);
+    TransitionState((void *)(entity + 0x874), frame);
+    ResetCueGroupBefore((void *)(entity + 0xb2c), *(int *)(entity + 0x75c), frame);
 }

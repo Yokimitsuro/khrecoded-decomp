@@ -8,7 +8,7 @@ typedef struct FacingState {
 } FacingState;
 
 extern u32 func_0202a9e4(u32 range);
-extern void func_ov001_0207e1e8(FacingState *state);
+extern void BindHudNodeOffsets(FacingState *state);
 
 void RandomizeFacing(FacingState *state, BOOL apply)
 {
@@ -16,6 +16,6 @@ void RandomizeFacing(FacingState *state, BOOL apply)
     state->turnTarget = -1;
     state->turnSpeed = 0x400;
     if (apply) {
-        func_ov001_0207e1e8(state);
+        BindHudNodeOffsets(state);
     }
 }

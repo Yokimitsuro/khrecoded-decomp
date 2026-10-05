@@ -39,7 +39,7 @@ typedef struct {
 
 extern Actor *GetBoundedEntryField(int index);
 extern void func_ov052_020d1190(Actor *actor, int mode);
-extern int func_ov052_020ceb9c(Actor *actor);
+extern int GetLinkedAngleOffset(Actor *actor);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern void CameraPath_Start(void *path);
@@ -53,7 +53,7 @@ s32 BeginGuardIntroScene(SceneOwner *owner, SceneTask *task, u32 *errorCode)
     actor->flags |= 0x40;
     *errorCode = 0x18;
     func_ov052_020d1190(actor, 0);
-    func_ov052_020ceb9c(actor);
+    GetLinkedAngleOffset(actor);
     ResetAnimationTrackState(&request);
     request.id = actor->player;
     request.layer = 1;

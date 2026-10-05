@@ -12,7 +12,7 @@ extern void *func_ov039_020bc1dc(void);
 extern void func_ov027_020b91e8(void *scene, void *node, int *offset, int flags);
 extern BOOL IsGlobalPackedBitSet(int bit);
 extern int ReadGlobalPackedBits(int bit, int width);
-extern void func_ov027_020b95a0(void *scene, void *node, BOOL visible);
+extern void SetEntrySlotsVisible(void *scene, void *node, BOOL visible);
 extern void func_ov027_020b96c0(void *scene, void *node, int mode);
 
 void RefreshPageTabs(PageMenu *menu)
@@ -37,8 +37,8 @@ void RefreshPageTabs(PageMenu *menu)
             inactive = FALSE;
         }
         u8 *slot = (u8 *)menu + (i + 2) * 4;
-        func_ov027_020b95a0(scene, *(void **)(slot + 0x24), inactive);
-        func_ov027_020b95a0(scene, *(void **)(slot + 0x30), !inactive);
+        SetEntrySlotsVisible(scene, *(void **)(slot + 0x24), inactive);
+        SetEntrySlotsVisible(scene, *(void **)(slot + 0x30), !inactive);
         func_ov027_020b96c0(scene, *(void **)(slot + 0x30), 0);
     }
 }

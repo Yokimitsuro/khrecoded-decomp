@@ -17,7 +17,7 @@ extern const RigOffsetTable data_ov058_020d89d4;
 
 extern int GetBoundedEntryField(int index);
 extern VecFx32 *func_ov052_020ceb74(int entity);
-extern u16 func_ov052_020ceb9c(int entity);
+extern u16 GetLinkedAngleOffset(int entity);
 extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, int angle, const VecFx32 *offset);
 
 void PlaceRigAtPlayerOffset(EmitterRig *rig, int index)
@@ -28,7 +28,7 @@ void PlaceRigAtPlayerOffset(EmitterRig *rig, int index)
     u16 angle;
 
     pos = *func_ov052_020ceb74(entity);
-    angle = func_ov052_020ceb9c(entity) + 0x8000;
+    angle = GetLinkedAngleOffset(entity) + 0x8000;
 
     RotateOffsetAroundY(&pos, &pos, angle, &table.offsets[index]);
     rig->position = pos;

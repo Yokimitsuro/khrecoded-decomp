@@ -23,10 +23,10 @@ typedef struct ItemScreen {
     u32 typeMask;
 } ItemScreen;
 
-extern void func_ov077_020c5ff4(ItemScreen *screen);
+extern void InitItemListEntries(ItemScreen *screen);
 extern void *GetActiveRecordEntryOrNull(u16 index);
 extern void func_02021ca8(void *base, u32 count, u32 size, void *compare);
-extern int func_ov077_020c5f84(const void *a, const void *b);
+extern int ItemList_CompareStock_020c5f84(const void *a, const void *b);
 
 void BuildItemListForType(ItemScreen *screen, u32 type)
 {
@@ -38,7 +38,7 @@ void BuildItemListForType(ItemScreen *screen, u32 type)
     ItemEntry **out = screen->list;
 
     if (!screen->listReady) {
-        func_ov077_020c5ff4(screen);
+        InitItemListEntries(screen);
     }
     screen->listCount = 0;
     if (screen->typeMask & (1 << type)) {
@@ -66,6 +66,6 @@ void BuildItemListForType(ItemScreen *screen, u32 type)
                 }
             }
         }
-        func_02021ca8(screen->list, screen->listCount, 4, func_ov077_020c5f84);
+        func_02021ca8(screen->list, screen->listCount, 4, ItemList_CompareStock_020c5f84);
     }
 }

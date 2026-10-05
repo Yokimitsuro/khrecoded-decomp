@@ -1,6 +1,6 @@
 extern void WH_SetError(unsigned int id);
 extern void SetPanelTransitionMode(int state);
-extern int func_ov015_02074288(void);
+extern int StartWirelessChild(void);
 
 void func_ov015_02074250(int req) {
     if (*(unsigned short *)(req + 2) != 0) {
@@ -8,7 +8,7 @@ void func_ov015_02074250(int req) {
         SetPanelTransitionMode(9);
         return;
     }
-    if (func_ov015_02074288() != 0) {
+    if (StartWirelessChild() != 0) {
         return;
     }
     SetPanelTransitionMode(9);

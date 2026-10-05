@@ -4,7 +4,7 @@ extern u32 data_ov034_020c0fa0[2];
 #define resultsWork ((int)data_ov034_020c0fa0[1])
 extern u32 SetPanelEnabled();
 extern u32 func_ov001_02063620();
-extern u32 func_ov034_020bb324();
+extern u32 InitResultsScreen();
 
 u32 StartResultsScreen(void)
 
@@ -19,7 +19,7 @@ u32 StartResultsScreen(void)
     return 0xffffffff;
   }
   SetPanelEnabled(0);
-  func_ov034_020bb324();
+  InitResultsScreen();
   statusFlags = *(u16 *)(work + 6);
   if ((statusFlags & 1) != 0) {
     *(u16 *)(work + 6) = statusFlags & 0xfffe;

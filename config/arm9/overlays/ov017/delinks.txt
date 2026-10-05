@@ -8,6 +8,10 @@ src/overlays/ov017/calls/ScriptCmd_CreateSlotObjectKind4.c:
     complete
     .text       start:0x020a1e00 end:0x020a1e2e
 
+src/overlays/ov017/calls/ScriptCmd_CreateManagerObject.c:
+    complete
+    .text       start:0x020a1e30 end:0x020a1efa
+
 src/overlays/ov017/calls/ScriptCmd_SetEntryFlag.c:
     complete
     .text       start:0x020a1efc end:0x020a1f36
@@ -15,6 +19,22 @@ src/overlays/ov017/calls/ScriptCmd_SetEntryFlag.c:
 src/overlays/ov017/calls/ScriptCmd_QueueEntryValueMessage.c:
     complete
     .text       start:0x020a1f38 end:0x020a1f88
+
+src/overlays/ov017/calls/ScriptCmd_QueueEntryPositionMessage.c:
+    complete
+    .text       start:0x020a1f88 end:0x020a2018
+
+src/overlays/ov017/calls/ScriptCmd_QueueEntryRotationMessage.c:
+    complete
+    .text       start:0x020a2018 end:0x020a20d0
+
+src/overlays/ov017/calls/ScriptCmd_QueueEntryDirectionMessage.c:
+    complete
+    .text       start:0x020a20d0 end:0x020a215a
+
+src/overlays/ov017/calls/ScriptCmd_QueueEntryPathMessages.c:
+    complete
+    .text       start:0x020a215c end:0x020a2234
 
 src/overlays/ov017/auto/func_ov017_020a2234.c:
     complete
@@ -28,13 +48,25 @@ src/overlays/ov017/calls/ScriptCmd_QueueEntryMessage.c:
     complete
     .text       start:0x020a2264 end:0x020a22a6
 
+src/overlays/ov017/calls/ScriptCmd_QueueEntryCommand.c:
+    complete
+    .text       start:0x020a22a8 end:0x020a2340
+
 src/overlays/ov017/calls/ScriptCmd_CreateSlotObjectKind8.c:
     complete
     .text       start:0x020a2340 end:0x020a236e
 
+src/overlays/ov017/calls/ScriptCmd_CreateGridObject.c:
+    complete
+    .text       start:0x020a2370 end:0x020a2430
+
 src/overlays/ov017/calls/ScriptCmd_CreateSlotObjectKind7.c:
     complete
     .text       start:0x020a2430 end:0x020a245e
+
+src/overlays/ov017/calls/ScriptCmd_CreatePoolObject.c:
+    complete
+    .text       start:0x020a2460 end:0x020a2574
 
 src/overlays/ov017/calls/ScriptCmd_InitPool0.c:
     complete
@@ -64,6 +96,10 @@ src/overlays/ov017/calls/ScriptCmd_SetManagerValue.c:
     complete
     .text       start:0x020a2648 end:0x020a265e
 
+src/overlays/ov017/calls/RestoreGridObjectRecord.c:
+    complete
+    .text       start:0x020a2660 end:0x020a276a
+
 src/overlays/ov017/auto/func_ov017_020a276c.c:
     complete
     .text       start:0x020a276c end:0x020a276e
@@ -72,17 +108,53 @@ src/overlays/ov017/auto/func_ov017_020a2770.c:
     complete
     .text       start:0x020a2770 end:0x020a2774
 
+src/overlays/ov017/calls/CollideGridObjectActor.c:
+    complete
+    .text       start:0x020a2774 end:0x020a2888
+
 src/overlays/ov017/auto/func_ov017_020a2888.c:
     complete
     .text       start:0x020a2888 end:0x020a288a
+
+src/overlays/ov017/calls/BuildFieldObjectCellGrid.c:
+    complete
+    .text       start:0x020a2940 end:0x020a2a12
+
+src/overlays/ov017/calls/CreateGridEntryPool.c:
+    complete
+    .text       start:0x020a2a60 end:0x020a2ac8
+
+src/overlays/ov017/calls/SpawnGridObject.c:
+    complete
+    .text       start:0x020a2ac8 end:0x020a2bd0
+
+src/overlays/ov017/calls/IsFieldTypeOneOrTen.c:
+    complete
+    .text       start:0x020a2bd0 end:0x020a2bf0
+
+src/overlays/ov017/calls/IsState1Or2.c:
+    complete
+    .text       start:0x020a2e6c end:0x020a2e84
 
 src/overlays/ov017/calls/func_ov017_020a2e84.c:
     complete
     .text       start:0x020a2e84 end:0x020a2e90
 
+src/overlays/ov017/calls/ReleaseIfSet.c:
+    complete
+    .text       start:0x020a2e90 end:0x020a2ea4
+
 src/overlays/ov017/calls/FreeBlockChain.c:
     complete
     .text       start:0x020a2ea4 end:0x020a2ec0
+
+src/overlays/ov017/calls/ReleaseFieldObjectResources.c:
+    complete
+    .text       start:0x020a2ec0 end:0x020a2f28
+
+src/overlays/ov017/calls/CollideFieldObjectActor.c:
+    complete
+    .text       start:0x020a3104 end:0x020a3260
 
 src/overlays/ov017/calls/GetOwnerRaisedPosition.c:
     complete
@@ -92,21 +164,185 @@ src/overlays/ov017/calls/GetActorVelocity.c:
     complete
     .text       start:0x020a32a4 end:0x020a32da
 
+src/overlays/ov017/calls/DrawFieldObjectEffects.c:
+    complete
+    .text       start:0x020a32dc end:0x020a33d8
+
+src/overlays/ov017/calls/FieldObject_HandleContact_020a33d8.c:
+    complete
+    .text       start:0x020a33d8 end:0x020a3574
+
+src/overlays/ov017/calls/IsObjectInChain.c:
+    complete
+    .text       start:0x020a3934 end:0x020a3962
+
 src/overlays/ov017/auto/func_ov017_020a3964.c:
     complete
     .text       start:0x020a3964 end:0x020a3966
+
+src/overlays/ov017/calls/LinkObjectChainTail.c:
+    complete
+    .text       start:0x020a3968 end:0x020a39a8
+
+src/overlays/ov017/calls/DiscardMessageNodes.c:
+    complete
+    .text       start:0x020a39a8 end:0x020a3a46
+
+src/overlays/ov017/calls/CreateKind4EntryPool.c:
+    complete
+    .text       start:0x020a3a48 end:0x020a3b08
+
+src/overlays/ov017/calls/IsFieldFlagBit1Set.c:
+    complete
+    .text       start:0x020a3d60 end:0x020a3d6e
+
+src/overlays/ov017/calls/IsFieldObjectActive.c:
+    complete
+    .text       start:0x020a3d70 end:0x020a3d94
+
+src/overlays/ov017/calls/IsFieldIdle.c:
+    complete
+    .text       start:0x020a3e10 end:0x020a3e2e
+
+src/overlays/ov017/calls/ResetFieldObjectToIdle.c:
+    complete
+    .text       start:0x020a3e30 end:0x020a3ee4
+
+src/overlays/ov017/calls/AppendPool0Value.c:
+    complete
+    .text       start:0x020a3ee4 end:0x020a3f0c
+
+src/overlays/ov017/calls/AppendPool1Entry.c:
+    complete
+    .text       start:0x020a3f0c end:0x020a3f3c
+
+src/overlays/ov017/calls/AppendPool2Record.c:
+    complete
+    .text       start:0x020a3f3c end:0x020a3f78
+
+src/overlays/ov017/calls/AppendPool3Entry.c:
+    complete
+    .text       start:0x020a3f78 end:0x020a3fa4
 
 src/overlays/ov017/calls/AppendFieldValueSlot.c:
     complete
     .text       start:0x020a3fa4 end:0x020a3fcc
 
+src/overlays/ov017/calls/AppendPool1Batch.c:
+    complete
+    .text       start:0x020a3fcc end:0x020a400a
+
+src/overlays/ov017/calls/ProcessListHeadIfEmpty.c:
+    complete
+    .text       start:0x020a400c end:0x020a4026
+
+src/overlays/ov017/calls/FormatAndQueueMessage.c:
+    complete
+    .text       start:0x020a4028 end:0x020a4050
+
+src/overlays/ov017/calls/QueueLinkedEntryRange.c:
+    complete
+    .text       start:0x020a4050 end:0x020a407c
+
+src/overlays/ov017/calls/DispatchKind4Entry.c:
+    complete
+    .text       start:0x020a40cc end:0x020a40ec
+
+src/overlays/ov017/calls/IsState2.c:
+    complete
+    .text       start:0x020a40ec end:0x020a40fc
+
 src/overlays/ov017/calls/SetFieldObjectPosition_020a40fc.c:
     complete
     .text       start:0x020a40fc end:0x020a4120
 
+src/overlays/ov017/calls/DispatchListHeadCallback.c:
+    complete
+    .text       start:0x020a4120 end:0x020a413c
+
+src/overlays/ov017/calls/InitPool0.c:
+    complete
+    .text       start:0x020a413c end:0x020a4158
+
+src/overlays/ov017/calls/InitPool1.c:
+    complete
+    .text       start:0x020a4158 end:0x020a4176
+
+src/overlays/ov017/calls/InitPool2.c:
+    complete
+    .text       start:0x020a4178 end:0x020a4196
+
+src/overlays/ov017/calls/InitPool3.c:
+    complete
+    .text       start:0x020a4198 end:0x020a41b6
+
+src/overlays/ov017/calls/InitPool4.c:
+    complete
+    .text       start:0x020a41b8 end:0x020a41d4
+
+src/overlays/ov017/calls/GetPool0Entry.c:
+    complete
+    .text       start:0x020a41d4 end:0x020a41e2
+
+src/overlays/ov017/calls/GetPool1Entry.c:
+    complete
+    .text       start:0x020a41e4 end:0x020a41f4
+
+src/overlays/ov017/calls/GetPool2Entry.c:
+    complete
+    .text       start:0x020a41f4 end:0x020a4204
+
+src/overlays/ov017/calls/GetPool3Entry.c:
+    complete
+    .text       start:0x020a4204 end:0x020a4214
+
+src/overlays/ov017/calls/GetPool4Entry.c:
+    complete
+    .text       start:0x020a4214 end:0x020a4222
+
+src/overlays/ov017/calls/FindKind4FieldObject.c:
+    complete
+    .text       start:0x020a4224 end:0x020a424c
+
+src/overlays/ov017/calls/RefreshListHeadAndDispatch.c:
+    complete
+    .text       start:0x020a425c end:0x020a4274
+
+src/overlays/ov017/calls/InitLinkedEntry.c:
+    complete
+    .text       start:0x020a4274 end:0x020a428e
+
 src/overlays/ov017/auto/func_ov017_020a4290.c:
     complete
     .text       start:0x020a4290 end:0x020a4296
+
+src/overlays/ov017/calls/AdvancePool0Timer.c:
+    complete
+    .text       start:0x020a4298 end:0x020a42d0
+
+src/overlays/ov017/calls/ComputePool1Progress.c:
+    complete
+    .text       start:0x020a42d0 end:0x020a4318
+
+src/overlays/ov017/calls/StepLinearPathMotion.c:
+    complete
+    .text       start:0x020a4318 end:0x020a440c
+
+src/overlays/ov017/calls/ComputePool2Target.c:
+    complete
+    .text       start:0x020a440c end:0x020a4440
+
+src/overlays/ov017/calls/StepOrbitMotion.c:
+    complete
+    .text       start:0x020a4440 end:0x020a44f0
+
+src/overlays/ov017/calls/CopyPool3Entry.c:
+    complete
+    .text       start:0x020a44f0 end:0x020a4508
+
+src/overlays/ov017/calls/CanUseContactTarget.c:
+    complete
+    .text       start:0x020a4508 end:0x020a4546
 
 src/overlays/ov017/calls/IsFacingContact.c:
     complete
@@ -115,6 +351,42 @@ src/overlays/ov017/calls/IsFacingContact.c:
 src/overlays/ov017/calls/ResetFallTarget.c:
     complete
     .text       start:0x020a48dc end:0x020a48ea
+
+src/overlays/ov017/calls/UpdateOwnerFall.c:
+    complete
+    .text       start:0x020a48ec end:0x020a4b2c
+
+src/overlays/ov017/calls/CanUseSwitchTarget.c:
+    complete
+    .text       start:0x020a4b2c end:0x020a4b72
+
+src/overlays/ov017/calls/IsDeltaBeyond16.c:
+    complete
+    .text       start:0x020a4b74 end:0x020a4b88
+
+src/overlays/ov017/calls/FindBusyKind4Object.c:
+    complete
+    .text       start:0x020a4b88 end:0x020a4bd2
+
+src/overlays/ov017/calls/FindSlotLinkedObject.c:
+    complete
+    .text       start:0x020a4bd4 end:0x020a4c00
+
+src/overlays/ov017/calls/FinishPoolActions.c:
+    complete
+    .text       start:0x020a4c54 end:0x020a4e70
+
+src/overlays/ov017/calls/ResetPoolDefaultParams.c:
+    complete
+    .text       start:0x020a4e70 end:0x020a4f00
+
+src/overlays/ov017/calls/FindLinkedEntryTail.c:
+    complete
+    .text       start:0x020a4f00 end:0x020a4f1c
+
+src/overlays/ov017/calls/FindLastLoopEntry.c:
+    complete
+    .text       start:0x020a4f1c end:0x020a4f40
 
 src/overlays/ov017/calls/AppendFieldLinkedEntry.c:
     complete
@@ -128,9 +400,45 @@ src/overlays/ov017/auto/func_ov017_020a4fa0.c:
     complete
     .text       start:0x020a4fa0 end:0x020a4fa4
 
+src/overlays/ov017/calls/InitPool1Entry.c:
+    complete
+    .text       start:0x020a4fa4 end:0x020a4fec
+
+src/overlays/ov017/calls/InitMotionRecord.c:
+    complete
+    .text       start:0x020a4fec end:0x020a501c
+
+src/overlays/ov017/calls/CopyTriple.c:
+    complete
+    .text       start:0x020a501c end:0x020a502a
+
 src/overlays/ov017/auto/func_ov017_020a502c.c:
     complete
     .text       start:0x020a502c end:0x020a5032
+
+src/overlays/ov017/calls/AppendPool4Node.c:
+    complete
+    .text       start:0x020a5034 end:0x020a5068
+
+src/overlays/ov017/calls/AimEntryLandingPoint.c:
+    complete
+    .text       start:0x020a5068 end:0x020a50f8
+
+src/overlays/ov017/calls/IsActiveAncestorChain.c:
+    complete
+    .text       start:0x020a5104 end:0x020a5144
+
+src/overlays/ov017/calls/FindRootObject.c:
+    complete
+    .text       start:0x020a5144 end:0x020a5168
+
+src/overlays/ov017/calls/FindInactiveAncestor.c:
+    complete
+    .text       start:0x020a5168 end:0x020a51a6
+
+src/overlays/ov017/calls/FindInactiveOwnerAncestor.c:
+    complete
+    .text       start:0x020a51a8 end:0x020a51e6
 
 src/overlays/ov017/calls/PropagateStackHeight.c:
     complete
@@ -144,9 +452,41 @@ src/overlays/ov017/auto/func_ov017_020a5264.c:
     complete
     .text       start:0x020a5264 end:0x020a5266
 
+src/overlays/ov017/calls/LoadStageObjectPhase.c:
+    complete
+    .text       start:0x020a52a8 end:0x020a5458
+
+src/overlays/ov017/calls/ReleaseField48.c:
+    complete
+    .text       start:0x020a5458 end:0x020a5472
+
+src/overlays/ov017/calls/CollideKind7Entry.c:
+    complete
+    .text       start:0x020a5608 end:0x020a5714
+
 src/overlays/ov017/calls/GetRaisedPosition.c:
     complete
     .text       start:0x020a5714 end:0x020a5752
+
+src/overlays/ov017/calls/GetListHead.c:
+    complete
+    .text       start:0x020a5754 end:0x020a576a
+
+src/overlays/ov017/calls/DrawKind7EntryStack.c:
+    complete
+    .text       start:0x020a576c end:0x020a5874
+
+src/overlays/ov017/calls/SyncKind7EntryStackHeight.c:
+    complete
+    .text       start:0x020a5ab0 end:0x020a5b66
+
+src/overlays/ov017/calls/CreateKind7EntryPool.c:
+    complete
+    .text       start:0x020a5b68 end:0x020a5bec
+
+src/overlays/ov017/calls/SpawnKind7Entry.c:
+    complete
+    .text       start:0x020a5bec end:0x020a5d6c
 
 src/overlays/ov017/calls/func_ov017_020a5e08.c:
     complete

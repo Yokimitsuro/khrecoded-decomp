@@ -38,14 +38,14 @@ typedef struct FieldObject {
     u32 radius;
 } FieldObject;
 
-extern FieldObject *func_ov001_0207f468(FieldObjectClass *objectClass, u8 slotIndex);
+extern FieldObject *FieldObject_Create(FieldObjectClass *objectClass, u8 slotIndex);
 extern void func_ov001_02080a9c(FieldObject *object);
-extern void func_ov001_0208085c(CollisionShape *shape, const VecFx32 *position, int kind, fx32 sizeX, fx32 sizeY, fx32 sizeZ, s32 angle, BOOL allocate, int unused);
+extern void BuildCollisionShape(CollisionShape *shape, const VecFx32 *position, int kind, fx32 sizeX, fx32 sizeY, fx32 sizeZ, s32 angle, BOOL allocate, int unused);
 
 FieldObject *FieldObject_CreateWithShape(FieldObjectClass *objectClass, u8 slotIndex, u16 saveBitOffset,
                                                   u8 saveBitCount, VecFx32 *position, u16 angle)
 {
-    FieldObject *object = func_ov001_0207f468(objectClass, slotIndex);
+    FieldObject *object = FieldObject_Create(objectClass, slotIndex);
     FieldObjectClass *def = object->objectClass;
 
     object->position = *position;
@@ -56,7 +56,7 @@ FieldObject *FieldObject_CreateWithShape(FieldObjectClass *objectClass, u8 slotI
     object->drawLayer = 0;
     object->radius = 0x800;
     object->update = func_ov001_02080a9c;
-    func_ov001_0208085c(&object->shape, &object->position, def->shapeKind, def->sizeX >> 1, def->sizeY,
+    BuildCollisionShape(&object->shape, &object->position, def->shapeKind, def->sizeX >> 1, def->sizeY,
                                  def->sizeZ >> 1, object->angle, TRUE, 3);
     return object;
 }

@@ -24,8 +24,8 @@ typedef struct ScrollList {
     int selectedIndex;
 } ScrollList;
 
-extern void func_ov025_020b7308(ScrollList *list);
-extern void func_ov025_020b73cc(ScrollList *list);
+extern void ScrollListDownOneRow(ScrollList *list);
+extern void ScrollListUpOneRow(ScrollList *list);
 
 void ScrollListToRow(ScrollList *list, int targetRow)
 {
@@ -34,11 +34,11 @@ void ScrollListToRow(ScrollList *list, int targetRow)
     if (list->busy == 0) {
         if (targetRow >= currentRow) {
             for (; currentRow < targetRow; currentRow++) {
-                func_ov025_020b7308(list);
+                ScrollListDownOneRow(list);
             }
         } else {
             for (; targetRow < currentRow; targetRow++) {
-                func_ov025_020b73cc(list);
+                ScrollListUpOneRow(list);
             }
         }
     }

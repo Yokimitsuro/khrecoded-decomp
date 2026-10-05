@@ -103,7 +103,7 @@ extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern BOOL IsWaitTargetReady(TargetInfo *target);
 extern BOOL ReadActiveMenuState(TargetInfo *out);
 extern BOOL FindNearestTarget(TargetInfo *target, u8 team, u32 kinds);
-extern VecFx32 *func_ov001_0206c3f4(TargetInfo *target);
+extern VecFx32 *GetWaitTargetPosition(TargetInfo *target);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern CollisionShape func_0203ade0(SegmentStorage *storage, const VecFx32 *start, const VecFx32 *end, const VecFx32 *axis, fx32 length);
@@ -197,7 +197,7 @@ void UpdateEnemyTargetTracking(Enemy *enemy, AttackResult *result)
             return;
         }
     }
-    targetPos = func_ov001_0206c3f4(target);
+    targetPos = GetWaitTargetPosition(target);
     origin = enemy->getOrigin != NULL ? enemy->getOrigin(enemy) : &enemy->origin;
     start = *origin;
     end = *targetPos;

@@ -4,6 +4,10 @@
     .data       start:0x0206c280 end:0x0206c460 kind:data align:32
     .bss        start:0x0206c460 end:0x0206c480 kind:bss align:32
 
+src/overlays/ov002/calls/UpdatePanelState.c:
+    complete
+    .text       start:0x0206162c end:0x020617e4
+
 src/overlays/ov002/calls/func_ov002_02061930.c:
     complete
     .text       start:0x02061930 end:0x0206193c
@@ -16,9 +20,53 @@ src/overlays/ov002/calls/GetPanelSlot0.c:
     complete
     .text       start:0x02061948 end:0x02061964
 
+src/overlays/ov002/calls/ActivatePanelSlotCD.c:
+    complete
+    .text       start:0x02061964 end:0x020619e8
+
+src/overlays/ov002/calls/ActivatePanelSlotAB.c:
+    complete
+    .text       start:0x020619e8 end:0x02061a68
+
+src/overlays/ov002/calls/ActivatePanelSlotCD_02061a68.c:
+    complete
+    .text       start:0x02061a68 end:0x02061af0
+
+src/overlays/ov002/calls/ActivatePanelSlotAB_02061af0.c:
+    complete
+    .text       start:0x02061af0 end:0x02061b74
+
+src/overlays/ov002/calls/DrawPanelSlotABText.c:
+    complete
+    .text       start:0x02061b74 end:0x02061c64
+
+src/overlays/ov002/calls/DrawPanelSlotCDText.c:
+    complete
+    .text       start:0x02061c64 end:0x02061d58
+
 src/overlays/ov002/calls/func_ov002_02062000.c:
     complete
     .text       start:0x02062000 end:0x02062014
+
+src/overlays/ov002/calls/CreatePanelTextLayer.c:
+    complete
+    .text       start:0x020625a0 end:0x02062638
+
+src/overlays/ov002/calls/CreatePanelTextLayer6.c:
+    complete
+    .text       start:0x02062638 end:0x020626d4
+
+src/overlays/ov002/calls/OpenPanelTextWindow.c:
+    complete
+    .text       start:0x020626d4 end:0x02062768
+
+src/overlays/ov002/calls/ReleasePanelObjectList.c:
+    complete
+    .text       start:0x02062768 end:0x020627e8
+
+src/overlays/ov002/calls/ReloadPanelResources.c:
+    complete
+    .text       start:0x02062938 end:0x020629a8
 
 src/overlays/ov002/calls/func_ov002_020629a8.c:
     complete
@@ -31,6 +79,10 @@ src/overlays/ov002/calls/IsPanelBusy.c:
 src/overlays/ov002/calls/RefreshMenuContext.c:
     complete
     .text       start:0x02062d0c end:0x02062d28
+
+src/overlays/ov002/calls/DispatchMenuResult.c:
+    complete
+    .text       start:0x02062d28 end:0x02062d94
 
 src/overlays/ov002/calls/func_ov002_02062d94.c:
     complete
@@ -84,6 +136,10 @@ src/overlays/ov002/calls/UpdateListCursorKeys.c:
     complete
     .text       start:0x02062fa0 end:0x02062fb4
 
+src/overlays/ov002/calls/UpdateListCursor.c:
+    complete
+    .text       start:0x02062fb4 end:0x0206314c
+
 src/overlays/ov002/calls/InitScrollList.c:
     complete
     .text       start:0x0206314c end:0x02063188
@@ -116,17 +172,81 @@ src/overlays/ov002/calls/IsButtonYPressed.c:
     complete
     .text       start:0x02063300 end:0x0206331c
 
+src/overlays/ov002/calls/ReleaseContextResources.c:
+    complete
+    .text       start:0x020642b8 end:0x02064328
+
 src/overlays/ov002/calls/func_ov002_02064394.c:
     complete
     .text       start:0x02064394 end:0x020643a0
+
+src/overlays/ov002/calls/DrawMenuLabels.c:
+    complete
+    .text       start:0x020643a0 end:0x02064584
+
+src/overlays/ov002/calls/ShowSaveMessage.c:
+    complete
+    .text       start:0x02064584 end:0x020648c0
 
 src/overlays/ov002/calls/ClosePanelSelectorAll.c:
     complete
     .text       start:0x020648c0 end:0x020648d0
 
+src/overlays/ov002/calls/HasAnyMenuEntryUnlocked.c:
+    complete
+    .text       start:0x020648d0 end:0x020649b0
+
+src/overlays/ov002/calls/ScrollMenuClouds.c:
+    complete
+    .text       start:0x020649b0 end:0x02064b34
+
+src/overlays/ov002/calls/AnimateMenuBgFrames.c:
+    complete
+    .text       start:0x02064b34 end:0x02064c9c
+
+src/overlays/ov002/calls/ApplyMenuEntryValues.c:
+    complete
+    .text       start:0x02064c9c end:0x02064d54
+
+src/overlays/ov002/calls/RunMenuIntroStep.c:
+    complete
+    .text       start:0x02064ff8 end:0x02065070
+
 src/overlays/ov002/auto/func_ov002_02065070.c:
     complete
     .text       start:0x02065070 end:0x02065074
+
+src/overlays/ov002/calls/ResetMenuElement5.c:
+    complete
+    .text       start:0x02065074 end:0x020650e0
+
+src/overlays/ov002/calls/UpdateMenuTouchSelect.c:
+    complete
+    .text       start:0x020650e0 end:0x020651c0
+
+src/overlays/ov002/calls/CloseMenuElement5.c:
+    complete
+    .text       start:0x020651c0 end:0x02065244
+
+src/overlays/ov002/calls/OpenMenuSelector.c:
+    complete
+    .text       start:0x02065244 end:0x02065374
+
+src/overlays/ov002/calls/UpdateSaveMenuState.c:
+    complete
+    .text       start:0x02065374 end:0x02065668
+
+src/overlays/ov002/calls/CloseMenuPopup.c:
+    complete
+    .text       start:0x02065668 end:0x0206574c
+
+src/overlays/ov002/calls/OpenMenuPopup.c:
+    complete
+    .text       start:0x0206574c end:0x020658c0
+
+src/overlays/ov002/calls/UpdateQuitMenuState.c:
+    complete
+    .text       start:0x020658c0 end:0x02065bf4
 
 src/overlays/ov002/calls/ReleaseMenuPanelCallback.c:
     complete
@@ -164,6 +284,10 @@ src/overlays/ov002/auto/func_ov002_02065c50.c:
     complete
     .text       start:0x02065c50 end:0x02065c54
 
+src/overlays/ov002/calls/OnPopupElementTouched.c:
+    complete
+    .text       start:0x02065c54 end:0x02065d54
+
 src/overlays/ov002/calls/UpdateMenuSelectionSound.c:
     complete
     .text       start:0x02065d54 end:0x02065d90
@@ -172,6 +296,10 @@ src/overlays/ov002/calls/SelectMenuEntry3.c:
     complete
     .text       start:0x02065e68 end:0x02065ec4
 
+src/overlays/ov002/calls/SelectMenuEntry4.c:
+    complete
+    .text       start:0x02065ec4 end:0x02065f30
+
 src/overlays/ov002/calls/UnmapCharHighByte.c:
     complete
     .text       start:0x02065f7c end:0x02065fc8
@@ -179,6 +307,22 @@ src/overlays/ov002/calls/UnmapCharHighByte.c:
 src/overlays/ov002/calls/RemapCharHighByte.c:
     complete
     .text       start:0x02065fc8 end:0x02065ff4
+
+src/overlays/ov002/calls/PackWideChars12.c:
+    complete
+    .text       start:0x02065ff4 end:0x0206608c
+
+src/overlays/ov002/calls/UnpackWideChars12.c:
+    complete
+    .text       start:0x0206608c end:0x02066130
+
+src/overlays/ov002/calls/CensorBannedWords.c:
+    complete
+    .text       start:0x02066130 end:0x0206626c
+
+src/overlays/ov002/calls/MatchWideTextPattern.c:
+    complete
+    .text       start:0x0206626c end:0x02066324
 
 src/overlays/ov002/calls/CopyWideStringLowercase.c:
     complete
@@ -204,13 +348,45 @@ src/overlays/ov002/calls/CopyWideStringWithNewline.c:
     complete
     .text       start:0x02066484 end:0x020664e4
 
+src/overlays/ov002/calls/PostPanelEventOff.c:
+    complete
+    .text       start:0x02066504 end:0x02066530
+
+src/overlays/ov002/calls/PostPanelEventOn.c:
+    complete
+    .text       start:0x02066530 end:0x0206655c
+
 src/overlays/ov002/calls/func_ov002_0206655c.c:
     complete
     .text       start:0x0206655c end:0x0206656c
 
+src/overlays/ov002/calls/StartScreenFade.c:
+    complete
+    .text       start:0x0206656c end:0x020665e8
+
+src/overlays/ov002/calls/UpdateScreenFade.c:
+    complete
+    .text       start:0x020665e8 end:0x020666b4
+
+src/overlays/ov002/calls/UpdateMenuTouch.c:
+    complete
+    .text       start:0x0206671c end:0x02066a68
+
 src/overlays/ov002/calls/GetMenuRectSize.c:
     complete
     .text       start:0x02066a90 end:0x02066ad0
+
+src/overlays/ov002/calls/GetMenuCursorTouch.c:
+    complete
+    .text       start:0x02066b2c end:0x02066b84
+
+src/overlays/ov002/calls/GetMenuCursorHeld.c:
+    complete
+    .text       start:0x02066b84 end:0x02066bdc
+
+src/overlays/ov002/calls/GetMenuCursorPosition.c:
+    complete
+    .text       start:0x02066bdc end:0x02066c44
 
 src/overlays/ov002/calls/func_ov002_02066c58.c:
     complete
@@ -220,45 +396,273 @@ src/overlays/ov002/calls/func_ov002_02066c68.c:
     complete
     .text       start:0x02066c68 end:0x02066c78
 
+src/overlays/ov002/calls/DispatchContextCommand.c:
+    complete
+    .text       start:0x02066c78 end:0x02066f7c
+
 src/overlays/ov002/calls/CountSetFlagsInRange.c:
     complete
     .text       start:0x02066f7c end:0x02066fb0
+
+src/overlays/ov002/calls/AppendProfileHistory.c:
+    complete
+    .text       start:0x02066ff8 end:0x02067170
+
+src/overlays/ov002/calls/RemoveContextSlot.c:
+    complete
+    .text       start:0x02067170 end:0x020671f4
+
+src/overlays/ov002/calls/LoadStoredPlayerCard.c:
+    complete
+    .text       start:0x020671f4 end:0x020672f4
 
 src/overlays/ov002/calls/GetContextSlotCount.c:
     complete
     .text       start:0x020672f4 end:0x02067310
 
+src/overlays/ov002/calls/IsContextSlotFlagSet.c:
+    complete
+    .text       start:0x02067310 end:0x02067334
+
+src/overlays/ov002/calls/ExportSlotConfigFlags.c:
+    complete
+    .text       start:0x02067334 end:0x0206739c
+
+src/overlays/ov002/calls/ImportSlotConfigFlags.c:
+    complete
+    .text       start:0x0206739c end:0x0206740c
+
+src/overlays/ov002/calls/GetContextConfigByte1ac8.c:
+    complete
+    .text       start:0x0206740c end:0x02067428
+
+src/overlays/ov002/calls/GetContextConfigFlag1ac8.c:
+    complete
+    .text       start:0x02067428 end:0x02067444
+
+src/overlays/ov002/calls/SetContextConfigByte1ac8.c:
+    complete
+    .text       start:0x02067444 end:0x0206746c
+
+src/overlays/ov002/calls/SetContextConfigFlag1ac8.c:
+    complete
+    .text       start:0x0206746c end:0x02067494
+
+src/overlays/ov002/calls/SetContextConfigNibble.c:
+    complete
+    .text       start:0x02067494 end:0x020674e0
+
+src/overlays/ov002/calls/GetContextConfigNibble1ac8.c:
+    complete
+    .text       start:0x020674e0 end:0x020674fc
+
 src/overlays/ov002/calls/SetClampedPercentValue.c:
     complete
     .text       start:0x020674fc end:0x02067524
+
+src/overlays/ov002/calls/GetContextConfigField1acc.c:
+    complete
+    .text       start:0x02067548 end:0x02067564
+
+src/overlays/ov002/calls/SetTierMaskLowBit.c:
+    complete
+    .text       start:0x0206762c end:0x020676c4
+
+src/overlays/ov002/calls/IsTierMaskBitClear.c:
+    complete
+    .text       start:0x020676c4 end:0x02067708
+
+src/overlays/ov002/calls/SetTierMaskHighBit.c:
+    complete
+    .text       start:0x02067708 end:0x020677a0
+
+src/overlays/ov002/calls/IsTierMaskBitSet.c:
+    complete
+    .text       start:0x020677a0 end:0x020677e4
+
+src/overlays/ov002/calls/SetSlotConfigFlag38.c:
+    complete
+    .text       start:0x020677e4 end:0x02067814
+
+src/overlays/ov002/calls/IsSlotConfigFlagClear.c:
+    complete
+    .text       start:0x02067814 end:0x02067840
+
+src/overlays/ov002/calls/SetSlotConfigFlag38_02067840.c:
+    complete
+    .text       start:0x02067840 end:0x02067870
+
+src/overlays/ov002/calls/SetSlotConfigFlag38_02067870.c:
+    complete
+    .text       start:0x02067870 end:0x020678a0
+
+src/overlays/ov002/calls/IsContextSlotFlag19Set.c:
+    complete
+    .text       start:0x020678a0 end:0x020678cc
 
 src/overlays/ov002/calls/WriteGlobalPackedFlag.c:
     complete
     .text       start:0x020679dc end:0x020679fc
 
+src/overlays/ov002/calls/SetContextConfigByte1ba2.c:
+    complete
+    .text       start:0x02067a0c end:0x02067a2c
+
+src/overlays/ov002/calls/GetContextConfigByte1ba2.c:
+    complete
+    .text       start:0x02067a2c end:0x02067a40
+
+src/overlays/ov002/calls/GetContextConfigFlag1ad0.c:
+    complete
+    .text       start:0x02067a40 end:0x02067a5c
+
+src/overlays/ov002/calls/SetContextConfigFlag1ad0.c:
+    complete
+    .text       start:0x02067a5c end:0x02067a84
+
+src/overlays/ov002/calls/ResetSelectionView.c:
+    complete
+    .text       start:0x02067a84 end:0x02067b24
+
+src/overlays/ov002/calls/LoadAvatarObjPalette.c:
+    complete
+    .text       start:0x02067b24 end:0x02067c10
+
+src/overlays/ov002/calls/SelectCategoryRecord.c:
+    complete
+    .text       start:0x02067fd8 end:0x020680a4
+
+src/overlays/ov002/calls/ResetGroupSlotsPosition.c:
+    complete
+    .text       start:0x020680a4 end:0x02068130
+
+src/overlays/ov002/calls/SetGroupSlotsPosition.c:
+    complete
+    .text       start:0x02068130 end:0x020681b8
+
+src/overlays/ov002/calls/SetGroupSlotsScale.c:
+    complete
+    .text       start:0x020681b8 end:0x02068248
+
+src/overlays/ov002/calls/SetGroupSlotsVisible.c:
+    complete
+    .text       start:0x02068248 end:0x020682c4
+
 src/overlays/ov002/calls/ApplyGroupElements.c:
     complete
     .text       start:0x020682c4 end:0x02068310
+
+src/overlays/ov002/calls/ApplyGroupSlotsAlpha.c:
+    complete
+    .text       start:0x02068310 end:0x020683bc
+
+src/overlays/ov002/calls/SyncMismatchedCategoryEntries.c:
+    complete
+    .text       start:0x020683bc end:0x0206842c
+
+src/overlays/ov002/calls/ReleaseGroupSlots.c:
+    complete
+    .text       start:0x0206842c end:0x02068498
+
+src/overlays/ov002/calls/ResolveCategorySelectionIds.c:
+    complete
+    .text       start:0x02068548 end:0x020687a4
+
+src/overlays/ov002/calls/ApplyRecordsToPackedFields.c:
+    complete
+    .text       start:0x020687a4 end:0x02069190
 
 src/overlays/ov002/calls/ApplyCategoryRecord.c:
     complete
     .text       start:0x02069190 end:0x02069308
 
+src/overlays/ov002/calls/ClearPackedField.c:
+    complete
+    .text       start:0x02069308 end:0x02069504
+
+src/overlays/ov002/calls/GetPackedFieldValue.c:
+    complete
+    .text       start:0x02069504 end:0x02069690
+
+src/overlays/ov002/calls/GetPackedField.c:
+    complete
+    .text       start:0x02069690 end:0x0206985c
+
+src/overlays/ov002/calls/MarkRecordFlagBits.c:
+    complete
+    .text       start:0x0206985c end:0x0206991c
+
+src/overlays/ov002/calls/IsRecordFlagBitSet.c:
+    complete
+    .text       start:0x0206991c end:0x020699c8
+
+src/overlays/ov002/calls/IsCategoryEntryFlagSet.c:
+    complete
+    .text       start:0x020699c8 end:0x020699e8
+
+src/overlays/ov002/calls/GetCategoryFlagState.c:
+    complete
+    .text       start:0x020699e8 end:0x02069aac
+
+src/overlays/ov002/calls/GetRecordFlagState.c:
+    complete
+    .text       start:0x02069aac end:0x02069b8c
+
+src/overlays/ov002/calls/SetRecordFlagFromTable.c:
+    complete
+    .text       start:0x02069cd4 end:0x02069d04
+
 src/overlays/ov002/calls/CopyRecordTableBField.c:
     complete
     .text       start:0x02069d04 end:0x02069d5c
+
+src/overlays/ov002/calls/CopyRecordName.c:
+    complete
+    .text       start:0x02069d5c end:0x02069dd8
+
+src/overlays/ov002/calls/LookupTableOffset.c:
+    complete
+    .text       start:0x02069dd8 end:0x02069df8
 
 src/overlays/ov002/calls/FillCategoryRecords.c:
     complete
     .text       start:0x02069e8c end:0x02069f9c
 
+src/overlays/ov002/calls/CountMatchingSlotIds.c:
+    complete
+    .text       start:0x02069f9c end:0x0206a020
+
 src/overlays/ov002/calls/CollectRecordItemsBySlot.c:
     complete
     .text       start:0x0206a020 end:0x0206a214
 
+src/overlays/ov002/calls/PickRandomUnflaggedRecord.c:
+    complete
+    .text       start:0x0206a214 end:0x0206a45c
+
+src/overlays/ov002/calls/CountFlaggedCategorySelections.c:
+    complete
+    .text       start:0x0206a45c end:0x0206a678
+
+src/overlays/ov002/calls/CountFilledCategorySelections.c:
+    complete
+    .text       start:0x0206a678 end:0x0206a824
+
 src/overlays/ov002/calls/PickRandomRecordWithBias.c:
     complete
     .text       start:0x0206a824 end:0x0206a888
+
+src/overlays/ov002/calls/PickRandomAvailableRecord.c:
+    complete
+    .text       start:0x0206a888 end:0x0206a9f8
+
+src/overlays/ov002/calls/CheckRecordEntryRequirements.c:
+    complete
+    .text       start:0x0206aa28 end:0x0206aaa0
+
+src/overlays/ov002/calls/TallyFlagGroups.c:
+    complete
+    .text       start:0x0206abc0 end:0x0206ac94
 
 src/overlays/ov002/data/strings/Strings_ov002_0206c290.c:
     complete

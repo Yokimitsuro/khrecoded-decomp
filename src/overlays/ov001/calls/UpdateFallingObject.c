@@ -15,14 +15,14 @@ typedef struct FallingObject
     fx32 unk_98;
 } FallingObject;
 
-extern void func_ov001_02085054(void *manager, FallingObject *object);
+extern void AdvanceSpawnerTimer(void *manager, FallingObject *object);
 extern int FX_Mul(int left, int right);
 extern void func_ov001_02085348(FallingObject *object, int mode);
 extern void func_ov001_02084f60(FallingObject *object);
 
 int UpdateFallingObject(FallingObject *object)
 {
-    func_ov001_02085054(object->manager, object);
+    AdvanceSpawnerTimer(object->manager, object);
     object->velocity.x = FX_Mul(object->velocity.x, 0xF33);
     object->velocity.z = FX_Mul(object->velocity.z, 0xF33);
     object->velocity.y -= 0x7B;

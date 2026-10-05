@@ -22,10 +22,10 @@ struct ReactionActor {
 };
 
 extern void *func_ov001_0206db78(int index);
-extern BOOL func_ov021_020a753c(void *holder, u16 mask);
+extern BOOL HasFlagsAt0xc(void *holder, u16 mask);
 extern BOOL func_ov021_020a7530(void *holder);
 extern BOOL IsPlayerEntryFlagSet(int entryId, int flag);
-extern BOOL func_ov052_020cfb78(ReactionActor *actor);
+extern BOOL AnySubObjectBit0Set(ReactionActor *actor);
 extern BOOL func_ov001_020645c8(int flagId);
 extern BOOL func_ov052_020cf008(ReactionActor *actor, ReactionEvent *event);
 
@@ -35,7 +35,7 @@ int UpdateActorReactionState(ReactionActor *actor, ReactionEvent *event)
     int result = actor->checkBusy(actor);
 
     if (result == 0) {
-        if (func_ov021_020a753c(entry, 2)) {
+        if (HasFlagsAt0xc(entry, 2)) {
             BOOL reached = FALSE;
             if (event->progress >= event->threshold) {
                 reached = TRUE;
@@ -48,12 +48,12 @@ int UpdateActorReactionState(ReactionActor *actor, ReactionEvent *event)
                 return 1;
             }
         }
-        if (func_ov021_020a753c(entry, 0x800)) {
+        if (HasFlagsAt0xc(entry, 0x800)) {
             if (func_ov021_020a7530(entry) && IsPlayerEntryFlagSet(actor->entryId, 10)) {
                 actor->setState(actor, 8);
                 return 1;
             }
-            if (func_ov052_020cfb78(actor) && !func_ov001_020645c8(0x3520) &&
+            if (AnySubObjectBit0Set(actor) && !func_ov001_020645c8(0x3520) &&
                 IsPlayerEntryFlagSet(actor->entryId, 0xb)) {
                 actor->setState(actor, 9);
                 return 1;

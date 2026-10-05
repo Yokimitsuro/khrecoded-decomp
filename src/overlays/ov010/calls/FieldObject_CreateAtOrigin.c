@@ -19,11 +19,11 @@ typedef struct FieldObject {
 } FieldObject;
 
 extern const VecFx32 data_0205344c;
-extern FieldObject *func_ov001_0207f468(void *objectClass, int slotIndex);
+extern FieldObject *FieldObject_Create(void *objectClass, int slotIndex);
 
 FieldObject *FieldObject_CreateAtOrigin(void *objectClass, int slotIndex, u16 saveBitOffset, u8 saveBitCount)
 {
-    FieldObject *object = func_ov001_0207f468(objectClass, slotIndex);
+    FieldObject *object = FieldObject_Create(objectClass, slotIndex);
 
     object->position = data_0205344c;
     object->timer = 0;

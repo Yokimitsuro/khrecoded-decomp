@@ -7,13 +7,13 @@ typedef struct ScriptOperand {
 } ScriptOperand;
 
 extern int ScriptVm_ReadOperandInt(void *vm, ScriptOperand *operand);
-extern void *func_ov017_020a4224(void);
-extern void func_ov017_020a413c(void *manager, s32 capacity);
+extern void *FindKind4FieldObject(void);
+extern void InitPool0(void *manager, s32 capacity);
 
 int ScriptCmd_InitPool0(void *vm, ScriptOperand *operands)
 {
     int capacity = ScriptVm_ReadOperandInt(vm, operands);
 
-    func_ov017_020a413c(func_ov017_020a4224(), (u16)capacity);
+    InitPool0(FindKind4FieldObject(), (u16)capacity);
     return 1;
 }

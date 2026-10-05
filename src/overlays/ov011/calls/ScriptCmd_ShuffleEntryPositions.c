@@ -7,7 +7,7 @@ typedef struct ScriptOperand {
 } ScriptOperand;
 
 extern s32 ScriptVm_ReadOperandInt(void *vm, ScriptOperand *operand);
-extern void func_ov001_020689b0(s32 count, s32 *entryIds);
+extern void ShuffleLevelPointPositions(s32 count, s32 *entryIds);
 
 BOOL ScriptCmd_ShuffleEntryPositions(void *vm, ScriptOperand *operands)
 {
@@ -23,6 +23,6 @@ BOOL ScriptCmd_ShuffleEntryPositions(void *vm, ScriptOperand *operands)
         operands++;
         entryIds[i] = entryId;
     }
-    func_ov001_020689b0(count, entryIds);
+    ShuffleLevelPointPositions(count, entryIds);
     return TRUE;
 }

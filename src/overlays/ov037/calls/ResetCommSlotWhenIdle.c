@@ -7,13 +7,13 @@ typedef struct CommState {
 } CommState;
 
 extern CommState *gContinueSceneState;
-extern s32 func_ov001_0206a814(void);
+extern s32 IsScreenModeIdle(void);
 
 s32 ResetCommSlotWhenIdle(void)
 {
     CommState *state = gContinueSceneState;
 
-    if (func_ov001_0206a814() == 0) {
+    if (IsScreenModeIdle() == 0) {
         return -1;
     }
     state->slotIndex = -1;

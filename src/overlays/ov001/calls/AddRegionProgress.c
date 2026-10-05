@@ -32,7 +32,7 @@ extern int func_ov001_020644b0(void);
 extern void WriteSessionPackedBits(int bitOffset, u32 bitCount, u32 value);
 extern void DecrementByteCounter(int index);
 extern u16 func_02029254(int index, const void *src);
-extern void func_ov001_02072530(u32 choice);
+extern void ApplyRegionChoiceEntry(u32 choice);
 
 static inline BOOL IsRegionMilestoneReady(void)
 {
@@ -69,7 +69,7 @@ void AddRegionProgress(int amount)
         DecrementByteCounter(block->recordIndex);
         block->recordIndex++;
         func_02029254(block->recordIndex, NULL);
-        func_ov001_02072530(progress->level);
+        ApplyRegionChoiceEntry(progress->level);
         block->points[progress->region] = 0;
         if (progress->region == 0 && progress->level == 1 && IsRegionMilestoneReady()) {
             WriteSessionPackedBits(0x380a, 1, 1);

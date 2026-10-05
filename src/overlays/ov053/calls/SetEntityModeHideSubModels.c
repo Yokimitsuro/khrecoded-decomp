@@ -9,8 +9,8 @@ typedef struct FieldState {
 
 extern FieldState *data_ov001_020a0480;
 extern BOOL func_ov001_020645c8(u32 value);
-extern void func_ov052_020ceb14(void *entity, int enable);
-extern void func_ov052_020ce7c0(void *entity, int mode, int enable);
+extern void SetSubModelsEnabled(void *entity, int enable);
+extern void SetEntityModeEnabled(void *entity, int mode, int enable);
 
 void SetEntityModeHideSubModels(void *entity, int mode, int enable)
 {
@@ -20,11 +20,11 @@ void SetEntityModeHideSubModels(void *entity, int mode, int enable)
             allowed = FALSE;
         }
         if (enable && allowed) {
-            func_ov052_020ceb14(entity, 0);
+            SetSubModelsEnabled(entity, 0);
         }
         if (enable && data_ov001_020a0480->pendingSubModels) {
             data_ov001_020a0480->pendingSubModels = 0;
         }
     }
-    func_ov052_020ce7c0(entity, mode, enable);
+    SetEntityModeEnabled(entity, mode, enable);
 }

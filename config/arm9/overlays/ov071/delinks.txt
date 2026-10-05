@@ -4,9 +4,21 @@
     .data       start:0x020d96c0 end:0x020d96e0 kind:data align:32
     .bss        start:0x020d96e0 end:0x020d96e0 kind:bss align:32
 
+src/overlays/ov071/calls/GetOv071PaletteEntry.c:
+    complete
+    .text       start:0x020d8134 end:0x020d8158
+
 src/overlays/ov071/calls/SpawnEffectAboveEntity.c:
     complete
     .text       start:0x020d8158 end:0x020d81c8
+
+src/overlays/ov071/calls/InitActorSoundState.c:
+    complete
+    .text       start:0x020d81c8 end:0x020d8290
+
+src/overlays/ov071/calls/CreateOv071SceneTask.c:
+    complete
+    .text       start:0x020d956c end:0x020d967c
 
 src/overlays/ov071/data/strings/Strings_ov071_020d96c0.c:
     complete

@@ -24,7 +24,7 @@ typedef struct FieldObjectDesc {
 
 extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operand);
 extern fx32 ScriptVm_ReadOperandFx32(ScriptContext *context, ScriptOperand *operand);
-extern void *func_ov001_020812e4(u16 count, FieldObjectDesc *desc);
+extern void *CreateEventTriggerClass(u16 count, FieldObjectDesc *desc);
 extern void func_ov001_0207ee2c(int index, void *entry);
 
 BOOL ScriptCmd_RegisterTriggerClass(ScriptContext *context, ScriptOperand *operands)
@@ -42,6 +42,6 @@ BOOL ScriptCmd_RegisterTriggerClass(ScriptContext *context, ScriptOperand *opera
     desc.sizeZ = ScriptVm_ReadOperandFx32(context, &operands[8]);
     desc.unk_14 = ScriptVm_ReadOperandFx32(context, &operands[9]);
     desc.unk_18 = ScriptVm_ReadOperandInt(context, &operands[10]);
-    func_ov001_0207ee2c(classIndex, func_ov001_020812e4(count, &desc));
+    func_ov001_0207ee2c(classIndex, CreateEventTriggerClass(count, &desc));
     return TRUE;
 }

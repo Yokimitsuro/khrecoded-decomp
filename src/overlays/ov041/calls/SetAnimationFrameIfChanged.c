@@ -2,7 +2,7 @@
 
 extern void func_01ffb12c(int object);
 extern int *func_01ffb2f8(int object, int track, int frame);
-extern void func_ov041_020c386c(int object, void *out, int blend);
+extern void GetPathNodeOffset(int object, void *out, int blend);
 
 void SetAnimationFrameIfChanged(int owner, int frame) {
     int object;
@@ -14,7 +14,7 @@ void SetAnimationFrameIfChanged(int owner, int frame) {
         *(u32 *)(object + 0x20) = *(u32 *)(object + 0x20) | 3;
         func_01ffb12c(object);
         *(u32 *)(object + 0x20) = *(u32 *)(object + 0x20) & 0xfffffffc;
-        func_ov041_020c386c(object, (void *)(object + 0x118), 0);
+        GetPathNodeOffset(object, (void *)(object + 0x118), 0);
         *(int *)(object + 0x110) = frame;
         *(u32 *)(object + 0x114) = 2;
     }

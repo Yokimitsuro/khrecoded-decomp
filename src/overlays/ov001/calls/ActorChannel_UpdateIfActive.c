@@ -6,11 +6,11 @@ typedef struct ChannelContext {
 } ChannelContext;
 
 extern ChannelContext *data_ov001_020a0514;
-extern int func_ov001_0208b7a8(void);
+extern int UpdateFieldCamera(void);
 
 void ActorChannel_UpdateIfActive(void)
 {
     if (data_ov001_020a0514->active != 0) {
-        func_ov001_0208b7a8();
+        UpdateFieldCamera();
     }
 }

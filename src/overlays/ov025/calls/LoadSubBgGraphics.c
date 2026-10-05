@@ -30,7 +30,7 @@ extern void GetBgDataFromArchive(BgGraphicsData *out, void *archive, int screenI
 extern void DC_FlushAll(void);
 extern void GXS_LoadBG1Char(const void *src, u32 offset, u32 size);
 extern void GXS_LoadBGPltt(const void *src, u32 offset, u32 size);
-extern void func_ov025_020b75d0(u32 entity, int mode);
+extern void DispatchDrawCommand(u32 entity, int mode);
 
 void LoadSubBgGraphics(MenuScreen *screen, void *archive)
 {
@@ -40,5 +40,5 @@ void LoadSubBgGraphics(MenuScreen *screen, void *archive)
     DC_FlushAll();
     GXS_LoadBG1Char(bg.character->rawData + 0x1a0, 0x1a0, bg.character->size - 0x1a0);
     GXS_LoadBGPltt(bg.palette->rawData, 0, bg.palette->size);
-    func_ov025_020b75d0((u32)screen->drawState, screen->drawMode);
+    DispatchDrawCommand((u32)screen->drawState, screen->drawMode);
 }

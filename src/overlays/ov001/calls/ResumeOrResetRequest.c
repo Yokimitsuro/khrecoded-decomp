@@ -12,7 +12,7 @@ typedef struct Manager {
 
 extern Manager *data_ov001_020a04a4;
 extern void ResetPendingRequest(void);
-extern void func_ov001_0206c528(int requestId);
+extern void UpdateStageEventMessage(int requestId);
 
 void ResumeOrResetRequest(int resume)
 {
@@ -22,5 +22,5 @@ void ResumeOrResetRequest(int resume)
         ResetPendingRequest();
         return;
     }
-    func_ov001_0206c528(state->requestId);
+    UpdateStageEventMessage(state->requestId);
 }

@@ -17,7 +17,7 @@ typedef struct {
     u16 node[1];
 } EffectGroup;
 
-extern void func_ov021_020ab390(EffectEntry *entry);
+extern void DrawOrientedModel(EffectEntry *entry);
 extern void func_ov021_020ae8ac(u16 *node);
 
 void UpdateActiveEntries(EffectGroup *group)
@@ -26,7 +26,7 @@ void UpdateActiveEntries(EffectGroup *group)
 
     for (i = 0; i < group->entryCount; i++) {
         if (group->entries[i].state != -1) {
-            func_ov021_020ab390(&group->entries[i]);
+            DrawOrientedModel(&group->entries[i]);
         }
     }
     if (group->flags & 1) {

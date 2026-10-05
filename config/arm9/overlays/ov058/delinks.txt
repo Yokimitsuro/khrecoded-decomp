@@ -4,6 +4,14 @@
     .data       start:0x020d8a00 end:0x020d8a40 kind:data align:32
     .bss        start:0x020d8a40 end:0x020d9260 kind:bss align:32
 
+src/overlays/ov058/calls/InitRecordEntry.c:
+    complete
+    .text       start:0x020d4520 end:0x020d4544
+
+src/overlays/ov058/calls/IsFacedByPlayer.c:
+    complete
+    .text       start:0x020d46f8 end:0x020d485c
+
 src/overlays/ov058/calls/HasReachedMoveTarget.c:
     complete
     .text       start:0x020d485c end:0x020d4968
@@ -44,6 +52,10 @@ src/overlays/ov058/calls/TryRequestEnemyAction.c:
     complete
     .text       start:0x020d64fc end:0x020d65e4
 
+src/overlays/ov058/calls/ChangeEnemyState.c:
+    complete
+    .text       start:0x020d65e4 end:0x020d690c
+
 src/overlays/ov058/calls/HandleEnemyEvent.c:
     complete
     .text       start:0x020d690c end:0x020d6978
@@ -55,6 +67,10 @@ src/overlays/ov058/calls/SetEnemyModeEnabled.c:
 src/overlays/ov058/calls/ResetEnemyLaunchState.c:
     complete
     .text       start:0x020d6a98 end:0x020d6b54
+
+src/overlays/ov058/calls/UpdateEnemyAnimation.c:
+    complete
+    .text       start:0x020d6b54 end:0x020d6c2c
 
 src/overlays/ov058/calls/RestoreEnemyHealthAndReset.c:
     complete
@@ -68,6 +84,10 @@ src/overlays/ov058/calls/FilterEnemyStatusFlags.c:
     complete
     .text       start:0x020d6d64 end:0x020d6e14
 
+src/overlays/ov058/calls/SetEnemyPose.c:
+    complete
+    .text       start:0x020d6e14 end:0x020d6f78
+
 src/overlays/ov058/calls/UpdateEnemyFallCheck.c:
     complete
     .text       start:0x020d6f78 end:0x020d704c
@@ -76,6 +96,10 @@ src/overlays/ov058/calls/IsEnemyStunnedOrDowned.c:
     complete
     .text       start:0x020d704c end:0x020d7074
 
+src/overlays/ov058/calls/UpdateSceneCameraTransform.c:
+    complete
+    .text       start:0x020d722c end:0x020d72e4
+
 src/overlays/ov058/calls/UpdateBlastFadeSequence.c:
     complete
     .text       start:0x020d72e4 end:0x020d7424
@@ -83,6 +107,14 @@ src/overlays/ov058/calls/UpdateBlastFadeSequence.c:
 src/overlays/ov058/calls/ClearStageEventsAndPlayerFlags.c:
     complete
     .text       start:0x020d7424 end:0x020d74b8
+
+src/overlays/ov058/calls/RebindEmitterSlots.c:
+    complete
+    .text       start:0x020d74b8 end:0x020d7530
+
+src/overlays/ov058/calls/LoadArchiveEffectSlot.c:
+    complete
+    .text       start:0x020d7530 end:0x020d7600
 
 src/overlays/ov058/calls/ReleaseRecordEntry_020d7600.c:
     complete
@@ -95,6 +127,10 @@ src/overlays/ov058/calls/ResetEmitterRigOffset.c:
 src/overlays/ov058/calls/RebindEmitterSlotsPhase3.c:
     complete
     .text       start:0x020d7648 end:0x020d7660
+
+src/overlays/ov058/calls/UpdateEffectSlotPhase.c:
+    complete
+    .text       start:0x020d7660 end:0x020d7740
 
 src/overlays/ov058/calls/ResetEmitterRigAndApply.c:
     complete
@@ -120,9 +156,25 @@ src/overlays/ov058/calls/RebindEmitterSlotsPhase1.c:
     complete
     .text       start:0x020d790c end:0x020d7924
 
+src/overlays/ov058/calls/UpdateRaisedModelAnimation.c:
+    complete
+    .text       start:0x020d7924 end:0x020d79a0
+
 src/overlays/ov058/calls/PurgeNearbyStageObjects.c:
     complete
     .text       start:0x020d79b8 end:0x020d7a64
+
+src/overlays/ov058/calls/ToBoolMask.c:
+    complete
+    .text       start:0x020d7e3c end:0x020d7e50
+
+src/overlays/ov058/calls/LoadSceneModelResources.c:
+    complete
+    .text       start:0x020d7e50 end:0x020d7f08
+
+src/overlays/ov058/calls/StartAnchorSequence.c:
+    complete
+    .text       start:0x020d7f80 end:0x020d81c4
 
 src/overlays/ov058/calls/DrawSceneModels.c:
     complete
@@ -131,6 +183,10 @@ src/overlays/ov058/calls/DrawSceneModels.c:
 src/overlays/ov058/calls/ResetSceneModelState.c:
     complete
     .text       start:0x020d87e0 end:0x020d8834
+
+src/overlays/ov058/calls/ComputeApproachTarget.c:
+    complete
+    .text       start:0x020d8834 end:0x020d8904
 
 src/overlays/ov058/calls/GetSceneSlotAngle.c:
     complete

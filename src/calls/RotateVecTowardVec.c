@@ -4,7 +4,7 @@
 extern s16 data_02053580[];
 
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void VEC_MultAdd(fx32 scale, const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void ScaleVecFx32InPlace(VecFx32 *v, fx32 scale);
@@ -19,7 +19,7 @@ static inline fx32 FxMul(fx32 a, fx32 b)
 static inline VecFx32 CrossVec(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 result;
-    func_01ff9ea8(a, b, &result);
+    VEC_CrossProduct(a, b, &result);
     return result;
 }
 

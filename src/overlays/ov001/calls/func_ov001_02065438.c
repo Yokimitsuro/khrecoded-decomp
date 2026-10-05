@@ -1,8 +1,8 @@
 extern int ScriptVm_ReadOperandInt();
-extern int func_ov001_020639ac();
+extern int ShowSessionNameEntry();
 
 int func_ov001_02065438(int arg0) {
     ScriptVm_ReadOperandInt(arg0);
-    func_ov001_020639ac();
+    ShowSessionNameEntry();
     return 1;
 }

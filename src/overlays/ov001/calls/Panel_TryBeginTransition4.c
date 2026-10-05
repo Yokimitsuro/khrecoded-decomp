@@ -15,7 +15,7 @@ typedef struct Panel {
 
 extern Panel *data_ov001_020a04e8;
 extern u32 func_ov001_0207b3f4(void);
-extern u32 func_ov025_020b6290(s32 index);
+extern u32 LookupChannelEntry(s32 index);
 extern void SetDisplaySetting(int value);
 extern void func_ov001_0207b234(Panel *panel, s32 transitionType);
 
@@ -37,7 +37,7 @@ BOOL Panel_TryBeginTransition4(void)
     if (func_ov001_0207b3f4() == 2) {
         i = 0;
         do {
-            panel->slotIds[i] = func_ov025_020b6290(i);
+            panel->slotIds[i] = LookupChannelEntry(i);
             i++;
         } while (i < 4);
     }

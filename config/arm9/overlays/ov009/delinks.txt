@@ -7,6 +7,10 @@ src/overlays/ov009/calls/ScriptCmd_CreateObjectInSlot_020a0540.c:
     complete
     .text       start:0x020a0540 end:0x020a056a
 
+src/overlays/ov009/calls/ScriptCmd_CreateObjectAtPosition.c:
+    complete
+    .text       start:0x020a056c end:0x020a05e0
+
 src/overlays/ov009/calls/ScriptCmd_SetObjectElementFlag.c:
     complete
     .text       start:0x020a05e0 end:0x020a0616
@@ -43,6 +47,14 @@ src/overlays/ov009/calls/ScriptCmd_SpawnModeTwo.c:
     complete
     .text       start:0x020a0970 end:0x020a097c
 
+src/overlays/ov009/calls/IsNearFirstEntity.c:
+    complete
+    .text       start:0x020a097c end:0x020a09a0
+
+src/overlays/ov009/calls/FieldObject_UpdateFall.c:
+    complete
+    .text       start:0x020a09a0 end:0x020a0a94
+
 src/overlays/ov009/calls/IsKind4WithState0Or3.c:
     complete
     .text       start:0x020a0a94 end:0x020a0aae
@@ -54,6 +66,10 @@ src/overlays/ov009/calls/func_ov009_020a0ad8.c:
 src/overlays/ov009/calls/func_ov009_020a0ae4.c:
     complete
     .text       start:0x020a0ae4 end:0x020a0aee
+
+src/overlays/ov009/calls/FieldObject_CreateAtPosition_020a0b9c.c:
+    complete
+    .text       start:0x020a0b9c end:0x020a0c12
 
 src/overlays/ov009/calls/SetFlagBit0x10At0x4e.c:
     complete

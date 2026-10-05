@@ -16,17 +16,17 @@ typedef struct EventCameraWork {
     VecFx32 translation;
 } EventCameraWork;
 
-extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *dst);
+extern void MTX_MultVec33(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *dst);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 void CameraPath_TransformKey(EventCameraWork *work, CameraPathKey *key)
 {
-    func_01ff9404(&key->position, &work->rotation, &key->position);
-    func_01ff9404(&key->up, &work->rotation, &key->up);
+    MTX_MultVec33(&key->position, &work->rotation, &key->position);
+    MTX_MultVec33(&key->up, &work->rotation, &key->up);
     if (key->targetIsDirection) {
-        func_01ff9404(&key->target, &work->rotation, &key->target);
+        MTX_MultVec33(&key->target, &work->rotation, &key->target);
     } else {
-        func_01ff9404(&key->target, &work->rotation, &key->target);
+        MTX_MultVec33(&key->target, &work->rotation, &key->target);
         VEC_Add(&key->target, &work->translation, &key->target);
     }
     VEC_Add(&key->position, &work->translation, &key->position);

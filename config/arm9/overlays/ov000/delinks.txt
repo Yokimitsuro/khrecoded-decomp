@@ -8,9 +8,37 @@ src/overlays/ov000/calls/HasRecentTouchPoints.c:
     complete
     .text       start:0x020613f8 end:0x0206141c
 
+src/overlays/ov000/calls/SetupDisplayBanksAndLayers.c:
+    complete
+    .text       start:0x0206141c end:0x020615b8
+
 src/overlays/ov000/calls/InitPanelCamera.c:
     complete
     .text       start:0x020615b8 end:0x02061614
+
+src/overlays/ov000/calls/InitPanelScene.c:
+    complete
+    .text       start:0x02061614 end:0x020616b4
+
+src/overlays/ov000/calls/ReleaseEmbeddedIfActive.c:
+    complete
+    .text       start:0x020616b4 end:0x020616dc
+
+src/overlays/ov000/calls/ReleaseHeapExtensions.c:
+    complete
+    .text       start:0x02061818 end:0x0206183c
+
+src/overlays/ov000/calls/InitPanelLayers.c:
+    complete
+    .text       start:0x0206183c end:0x02061a50
+
+src/overlays/ov000/calls/ReleaseObjectIfActive.c:
+    complete
+    .text       start:0x02061a50 end:0x02061a80
+
+src/overlays/ov000/calls/ShowPanelBgScreen.c:
+    complete
+    .text       start:0x02061a80 end:0x02061b30
 
 src/overlays/ov000/calls/DSProt_OnDetection.c:
     complete
@@ -24,6 +52,14 @@ src/overlays/ov000/calls/SetPanelFlag.c:
     complete
     .text       start:0x02061bc4 end:0x02061bf4
 
+src/overlays/ov000/calls/ApplyPanelMenuFlags.c:
+    complete
+    .text       start:0x02061bf4 end:0x02061d04
+
+src/overlays/ov000/calls/HighlightPanelCursorLayer.c:
+    complete
+    .text       start:0x02061d04 end:0x02061db0
+
 src/overlays/ov000/calls/SetPanelState.c:
     complete
     .text       start:0x02061db0 end:0x02061dc4
@@ -31,6 +67,10 @@ src/overlays/ov000/calls/SetPanelState.c:
 src/overlays/ov000/calls/SetPanelMode.c:
     complete
     .text       start:0x02061dc4 end:0x02061de8
+
+src/overlays/ov000/calls/SubmitNumberedPanelRequest.c:
+    complete
+    .text       start:0x02061f54 end:0x02061fc0
 
 src/overlays/ov000/calls/EnterPanelPhase.c:
     complete
@@ -44,13 +84,33 @@ src/overlays/ov000/calls/StopTouchPanelSampling.c:
     complete
     .text       start:0x0206241c end:0x0206243c
 
+src/overlays/ov000/calls/InitPanelSceneAndClearBg1.c:
+    complete
+    .text       start:0x0206243c end:0x02062568
+
 src/overlays/ov000/calls/WaitForAnimationFinish.c:
     complete
     .text       start:0x02062568 end:0x02062598
 
+src/overlays/ov000/calls/ForceReleaseEmbedded.c:
+    complete
+    .text       start:0x02062598 end:0x020625b0
+
 src/overlays/ov000/calls/ResetPanelStateAndLoadSlot0.c:
     complete
     .text       start:0x020625b0 end:0x020625d4
+
+src/overlays/ov000/calls/ScanSaveSlots.c:
+    complete
+    .text       start:0x020625d4 end:0x0206276c
+
+src/overlays/ov000/calls/EnterPanelMenuScreen.c:
+    complete
+    .text       start:0x02062794 end:0x02062838
+
+src/overlays/ov000/calls/UpdatePanelInputWithTimeout.c:
+    complete
+    .text       start:0x02062838 end:0x02062908
 
 src/overlays/ov000/calls/func_ov000_02062908.c:
     complete
@@ -76,9 +136,17 @@ src/overlays/ov000/calls/UpdatePanelLookup.c:
     complete
     .text       start:0x02062c08 end:0x02062c64
 
+src/overlays/ov000/calls/HandleSessionModeTransition.c:
+    complete
+    .text       start:0x02062c64 end:0x02062cf4
+
 src/overlays/ov000/calls/ReleaseHandleAndResetDisplay.c:
     complete
     .text       start:0x02062cf4 end:0x02062d38
+
+src/overlays/ov000/calls/UpdatePanelRequest.c:
+    complete
+    .text       start:0x02062d60 end:0x02062e00
 
 src/overlays/ov000/calls/func_ov000_0206300c.c:
     complete

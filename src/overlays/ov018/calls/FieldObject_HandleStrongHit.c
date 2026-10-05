@@ -43,7 +43,7 @@ typedef struct PushSystem {
 extern const VecFx32 data_0205344c;
 extern const s16 data_02053980;
 
-extern BOOL func_ov018_020a382c(FieldObject *object);
+extern BOOL TestFlagBit10(FieldObject *object);
 extern PushSystem *GetBoundedEntryField(int index);
 extern void PlaySoundChecked(int bank, int soundId);
 
@@ -52,7 +52,7 @@ BOOL FieldObject_HandleStrongHit(void *arg0, Contact *contact, HitInfo *hit, Fie
     PushRequest request;
     PushSystem *system;
 
-    if (func_ov018_020a382c(object)) {
+    if (TestFlagBit10(object)) {
         if (contact != NULL && contact->type == 2) {
             return FALSE;
         }

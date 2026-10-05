@@ -14,7 +14,7 @@ extern WirelessHelper data_ov015_0207e980;
 extern void WH_SetError(int code);
 extern void SetPanelTransitionMode(u32 mode);
 extern BOOL func_ov015_02073894(void);
-extern BOOL func_ov015_02073930(void);
+extern BOOL WH_StartScanStep(void);
 
 void WH_StateOutSetParentParam(WMCallback *cb)
 {
@@ -28,7 +28,7 @@ void WH_StateOutSetParentParam(WMCallback *cb)
             SetPanelTransitionMode(9);
         }
     } else {
-        if (!func_ov015_02073930()) {
+        if (!WH_StartScanStep()) {
             SetPanelTransitionMode(9);
         }
     }

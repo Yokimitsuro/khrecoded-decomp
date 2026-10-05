@@ -6,7 +6,7 @@ typedef struct {
     u32 handle;
 } ResourceSlot;
 
-extern ResourceSlot *func_ov001_0209c224();
+extern ResourceSlot *GetStageEntrySlot();
 extern u32 StopSoundSeqHandle();
 extern u32 func_0204dc50();
 
@@ -15,7 +15,7 @@ void ReleaseSlotResource(void)
     ResourceSlot *slot;
     u32 flag;
 
-    slot = func_ov001_0209c224();
+    slot = GetStageEntrySlot();
     if ((slot != 0) && (slot->handle != 0)) {
         flag = func_0204dc50();
         if (flag != 0) {

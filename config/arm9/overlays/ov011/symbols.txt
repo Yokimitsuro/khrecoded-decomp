@@ -1,12 +1,12 @@
 ScriptCmd_ShuffleEntryPositions kind:function(thumb,size=0x3e) addr:0x020a0540
 ScriptCmd_SpawnActorInSlot kind:function(thumb,size=0x2a) addr:0x020a0580
 ScriptCmd_SpawnFieldObject_020a05ac kind:function(thumb,size=0xe2) addr:0x020a05ac
-func_ov011_020a0690 kind:function(thumb,size=0x34) addr:0x020a0690
+ClearFixedSlots kind:function(thumb,size=0x34) addr:0x020a0690
 func_ov011_020a06c4 kind:function(thumb,size=0x12) addr:0x020a06c4
 ScriptCmd_PostRequestAndSetPanel kind:function(thumb,size=0x2e) addr:0x020a06d8
 func_ov011_020a0708 kind:function(arm,size=0xd4) addr:0x020a0708
 FieldObject_LoadAndPlace kind:function(thumb,size=0x154) addr:0x020a07dc
-func_ov011_020a0930 kind:function(arm,size=0x3c) addr:0x020a0930
+ReleaseChildResourceAndForward kind:function(arm,size=0x3c) addr:0x020a0930
 func_ov011_020a096c kind:function(thumb,size=0x2) addr:0x020a096c
 func_ov011_020a0970 kind:function(thumb,size=0x4) addr:0x020a0970
 FieldObject_SetPositionAndSync kind:function(thumb,size=0x34) addr:0x020a0974
@@ -22,7 +22,7 @@ ClaimNthFreeSpawnPoint kind:function(thumb,size=0x32) addr:0x020a0f1c
 FieldGroup_ShufflePositions kind:function(thumb,size=0x6e) addr:0x020a0f50
 func_ov011_020a0fc0 kind:function(thumb,size=0x4) addr:0x020a0fc0
 FieldObject_Create_020a0fc4 kind:function(thumb,size=0xb0) addr:0x020a0fc4
-func_ov011_020a1074 kind:function(thumb,size=0x6e) addr:0x020a1074
+FieldObject_CreateAt kind:function(thumb,size=0x6e) addr:0x020a1074
 FieldObject_ResetToIdle kind:function(thumb,size=0x5e) addr:0x020a10e4
 FieldObjects_ResetAllAndShuffle kind:function(thumb,size=0x28) addr:0x020a1144
 gCrawlScriptCommandHandlers kind:data(any) addr:0x020a1180

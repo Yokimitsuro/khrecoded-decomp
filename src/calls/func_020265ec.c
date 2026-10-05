@@ -7,7 +7,7 @@ typedef struct ScriptObj {
 
 extern int ScriptVm_ReadOperandInt(void *obj, void *cmd);
 extern s32 func_ov001_02063a38(void);
-extern void func_ov036_020bd9a0(s32 a, s32 b);
+extern void SetSceneCursor(s32 a, s32 b);
 extern int IsSoundParamStale(void);
 extern int SetSelectionIfChanged(int selection);
 extern s8 gScriptState;
@@ -16,7 +16,7 @@ int func_020265ec(ScriptObj *obj, void *cmd)
 {
     int a = ScriptVm_ReadOperandInt(obj, cmd);
     if (func_ov001_02063a38() == 8) {
-        func_ov036_020bd9a0(a, 0);
+        SetSceneCursor(a, 0);
         if (obj->flag != 0) {
             return 1;
         }

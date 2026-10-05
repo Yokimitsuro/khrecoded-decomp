@@ -1,5 +1,5 @@
-extern void *func_ov036_020bc83c();
+extern void *SlideActorSlotsOffscreen();
 
 void *func_ov036_020bc8c8() {
-    return func_ov036_020bc83c();
+    return SlideActorSlotsOffscreen();
 }

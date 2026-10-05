@@ -13,7 +13,7 @@ typedef struct {
 extern CamActor *data_ov043_020bd2e0;
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern void SetSoundListenerFrame(VecFx32 *pos, VecFx32 *dir, VecFx32 *up);
-extern void func_ov043_020bc840(CamActor *camera);
+extern void CommitCameraWithCache(CamActor *camera);
 
 void UpdateCameraBasisAndCommit(int updateBasis)
 {
@@ -25,6 +25,6 @@ void UpdateCameraBasisAndCommit(int updateBasis)
             VEC_Subtract(&camera->target, &camera->pos, &direction);
             SetSoundListenerFrame(&camera->pos, &direction, &camera->up);
         }
-        func_ov043_020bc840(camera);
+        CommitCameraWithCache(camera);
     }
 }

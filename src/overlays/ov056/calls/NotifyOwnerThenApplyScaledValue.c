@@ -8,7 +8,7 @@ typedef struct {
 } OwnerEntity;
 
 extern OwnerEntity *GetBoundedEntryField(u32 handle);
-extern void func_ov056_020d4d7c(Actor *actor, u32 handle);
+extern void ComputeAndApplyLevelScaledValue(Actor *actor, u32 handle);
 
 void NotifyOwnerThenApplyScaledValue(Actor *actor, u32 handle)
 {
@@ -17,5 +17,5 @@ void NotifyOwnerThenApplyScaledValue(Actor *actor, u32 handle)
     if (owner->onEvent != NULL) {
         owner->onEvent(owner, 0);
     }
-    func_ov056_020d4d7c(actor, handle);
+    ComputeAndApplyLevelScaledValue(actor, handle);
 }

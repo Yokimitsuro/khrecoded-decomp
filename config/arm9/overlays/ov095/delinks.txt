@@ -4,6 +4,18 @@
     .data       start:0x020c1780 end:0x020c28e0 kind:data align:32
     .bss        start:0x020c28e0 end:0x020c2900 kind:bss align:32
 
+src/overlays/ov095/calls/UpdatePanelFrame.c:
+    complete
+    .text       start:0x020bee18 end:0x020bee8c
+
+src/overlays/ov095/calls/ConfirmGridMoveA.c:
+    complete
+    .text       start:0x020bee8c end:0x020bef00
+
+src/overlays/ov095/calls/ConfirmGridMoveB.c:
+    complete
+    .text       start:0x020bef00 end:0x020bef74
+
 src/overlays/ov095/calls/ShowPreviousEntry.c:
     complete
     .text       start:0x020bef74 end:0x020befa4
@@ -20,13 +32,33 @@ src/overlays/ov095/calls/OpenEntryDetail.c:
     complete
     .text       start:0x020bf064 end:0x020bf0a4
 
+src/overlays/ov095/calls/GetTiledPixelIndex.c:
+    complete
+    .text       start:0x020bf2e8 end:0x020bf370
+
+src/overlays/ov095/calls/LoadScreenRegion.c:
+    complete
+    .text       start:0x020bf464 end:0x020bf570
+
+src/overlays/ov095/calls/LoadMenuBackgrounds_020bf570.c:
+    complete
+    .text       start:0x020bf570 end:0x020bf814
+
 src/overlays/ov095/calls/FreeEntryBuffers.c:
     complete
     .text       start:0x020bf814 end:0x020bf844
 
+src/overlays/ov095/calls/ReleaseScreenResources_020bf9c8.c:
+    complete
+    .text       start:0x020bf9c8 end:0x020bfa38
+
 src/overlays/ov095/calls/DrawShadowedAnchoredText_020c0000.c:
     complete
     .text       start:0x020c0000 end:0x020c0064
+
+src/overlays/ov095/calls/DrawShadowedTextFitted.c:
+    complete
+    .text       start:0x020c00c0 end:0x020c0148
 
 src/overlays/ov095/calls/ReleaseSlotPool.c:
     complete
@@ -40,6 +72,14 @@ src/overlays/ov095/calls/SetGridEntryVisible.c:
     complete
     .text       start:0x020c01f8 end:0x020c0234
 
+src/overlays/ov095/calls/CreateGridEntry.c:
+    complete
+    .text       start:0x020c0234 end:0x020c031c
+
+src/overlays/ov095/calls/SetGridEntryPosition.c:
+    complete
+    .text       start:0x020c031c end:0x020c0420
+
 src/overlays/ov095/calls/GetGridEntrySpriteData.c:
     complete
     .text       start:0x020c0420 end:0x020c047c
@@ -48,13 +88,49 @@ src/overlays/ov095/calls/GetGridEntry.c:
     complete
     .text       start:0x020c047c end:0x020c0498
 
+src/overlays/ov095/calls/LayoutTabEntries.c:
+    complete
+    .text       start:0x020c0498 end:0x020c0524
+
+src/overlays/ov095/calls/InitGridSprites.c:
+    complete
+    .text       start:0x020c0524 end:0x020c0724
+
 src/overlays/ov095/calls/FreeSlotBuffers_020c0724.c:
     complete
     .text       start:0x020c0724 end:0x020c0750
 
+src/overlays/ov095/calls/DrawGridSprites.c:
+    complete
+    .text       start:0x020c0750 end:0x020c0908
+
+src/overlays/ov095/calls/InitGridTable.c:
+    complete
+    .text       start:0x020c0908 end:0x020c09ac
+
+src/overlays/ov095/calls/FreeGridCells.c:
+    complete
+    .text       start:0x020c09ac end:0x020c0a18
+
 src/overlays/ov095/calls/GetGridCell.c:
     complete
     .text       start:0x020c0a68 end:0x020c0a84
+
+src/overlays/ov095/calls/MoveGridCursorUp.c:
+    complete
+    .text       start:0x020c0a84 end:0x020c0d00
+
+src/overlays/ov095/calls/SelectNextGridRow.c:
+    complete
+    .text       start:0x020c0f98 end:0x020c1080
+
+src/overlays/ov095/calls/SelectPreviousGridCell.c:
+    complete
+    .text       start:0x020c1080 end:0x020c1188
+
+src/overlays/ov095/calls/RefreshCursorMarkers.c:
+    complete
+    .text       start:0x020c1188 end:0x020c1210
 
 src/overlays/ov095/calls/SetPanelMode_020c1210.c:
     complete
@@ -67,6 +143,10 @@ src/overlays/ov095/auto/func_ov095_020c1234.c:
 src/overlays/ov095/calls/EnterPanelState2.c:
     complete
     .text       start:0x020c1238 end:0x020c1254
+
+src/overlays/ov095/calls/UpdateGridScrollDisplay.c:
+    complete
+    .text       start:0x020c1254 end:0x020c1340
 
 src/overlays/ov095/calls/IsEntryFlagSet_020c1340.c:
     complete

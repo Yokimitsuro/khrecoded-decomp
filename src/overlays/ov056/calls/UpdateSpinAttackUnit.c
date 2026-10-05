@@ -60,7 +60,7 @@ extern const VecFx32 data_ov056_020d7f90;
 
 extern int FX_Mul(int left, int right);
 extern void QuatFromAxisAngle(QuatFx32 *out, const VecFx32 *axis, fx32 angle);
-extern void func_ov021_020ab310(SpinUnit *unit, int blend);
+extern void RebindModelAnimTracks(SpinUnit *unit, int blend);
 extern int AdvanceOwnerAnimation(SpinUnit *unit, fx32 step);
 extern void ApplyAreaHitInRadius(VecFx32 *center, fx32 radius, SpinOwner *owner, void *extra);
 
@@ -94,7 +94,7 @@ BOOL UpdateSpinAttackUnit(SpinOwner *owner, SpinUnit *unit, fx32 step)
         }
         break;
     case 4:
-        func_ov021_020ab310(unit, 2);
+        RebindModelAnimTracks(unit, 2);
         params->state.mode = 5;
     case 5:
         params->state.mode = 0;
@@ -138,7 +138,7 @@ BOOL UpdateSpinAttackUnit(SpinOwner *owner, SpinUnit *unit, fx32 step)
             unit->status = -1;
             break;
         case 2:
-            func_ov021_020ab310(unit, 1);
+            RebindModelAnimTracks(unit, 1);
             params->state.mode = 3;
             break;
         }

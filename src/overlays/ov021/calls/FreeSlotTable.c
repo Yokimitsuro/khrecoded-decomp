@@ -10,7 +10,7 @@ typedef struct SlotTable {
     s8 *ids;
 } SlotTable;
 
-extern void func_ov021_020a90a4(SlotRecord *record);
+extern void ReleaseSharedRecordState(SlotRecord *record);
 extern void NNSi_FndFreeFromDefaultHeap(void *memory);
 
 void FreeSlotTable(SlotTable *table)
@@ -20,7 +20,7 @@ void FreeSlotTable(SlotTable *table)
     if (table->count > 0) {
         for (i = 0; i < table->count; i++) {
             if (table->ids[i] >= 0) {
-                func_ov021_020a90a4(&table->records[i]);
+                ReleaseSharedRecordState(&table->records[i]);
             }
         }
         NNSi_FndFreeFromDefaultHeap(table->records);

@@ -8,7 +8,7 @@ typedef struct {
 } SpawnDesc;
 
 extern void func_01ff88c4(void *dst, u32 value, u32 size);
-extern int func_ov001_02096b08(int linkOwner, SpawnDesc *desc, void *position);
+extern int SpawnStageObjectActor(int linkOwner, SpawnDesc *desc, void *position);
 
 int SpawnActorById(int linkOwner, int id, int variant) {
     SpawnDesc desc;
@@ -18,5 +18,5 @@ int SpawnActorById(int linkOwner, int id, int variant) {
     }
     desc.actorId = id;
     desc.variant = variant;
-    return func_ov001_02096b08(linkOwner, &desc, NULL);
+    return SpawnStageObjectActor(linkOwner, &desc, NULL);
 }

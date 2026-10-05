@@ -62,18 +62,18 @@ struct Actor {
 
 extern const BurstSchedule data_ov061_020d8520;
 
-extern void func_ov052_020cffac(Actor *actor, AnimEntry *entry);
+extern void ApplyAnimRootMotion(Actor *actor, AnimEntry *entry);
 extern void func_ov052_020d1a88(SlotEntry *entry, void *source, int mirrored, AnimRecord *record, int player);
 extern void SpawnGroupHitMarker();
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
-extern void func_ov021_020af564(int first, int second);
+extern void ForwardSubModePairA(int first, int second);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern u16 FX_Atan2Idx(int vertical, int horizontal);
-extern int func_ov052_020d014c(Actor *actor, AnimEntry *target, SlotEntry *entry);
-extern BOOL func_ov052_020d02b4(Actor *actor, AnimEntry *data, int which);
-extern void func_ov001_020734f8(void);
+extern int ProcessTargetHitEntries(Actor *actor, AnimEntry *target, SlotEntry *entry);
+extern BOOL UpdateActionPhase(Actor *actor, AnimEntry *data, int which);
+extern void ResetGaugeDisplay(void);
 extern void SetManagerEnabled(u32 enabled);
 
 void UpdateTimedBurstAction(Actor *actor)
@@ -88,7 +88,7 @@ void UpdateTimedBurstAction(Actor *actor)
     u32 flags;
     int i;
 
-    func_ov052_020cffac(actor, entry);
+    ApplyAnimRootMotion(actor, entry);
     func_ov052_020d1a88(&slot, entry, 0, record, actor->player);
     slot.flags |= 4;
     if (record->hitSource != NULL) {
@@ -109,7 +109,7 @@ void UpdateTimedBurstAction(Actor *actor)
             func_ov021_020a8cc0(&request, *record->groupId);
             record->spawnedMask |= bit;
             if (i == 3) {
-                func_ov021_020af564(3, 0);
+                ForwardSubModePairA(3, 0);
             }
             if (actor->getTargetPosition != NULL) {
                 found = actor->getTargetPosition(actor, &target);
@@ -127,17 +127,17 @@ void UpdateTimedBurstAction(Actor *actor)
             }
         }
     }
-    if (func_ov052_020d014c(actor, entry, &slot)) {
+    if (ProcessTargetHitEntries(actor, entry, &slot)) {
         return;
     }
-    if (func_ov052_020d02b4(actor, entry, 0)) {
+    if (UpdateActionPhase(actor, entry, 0)) {
         return;
     }
     if (actor->active == 0) {
         return;
     }
     flags = actor->stateFlags & 4;
-    func_ov001_020734f8();
+    ResetGaugeDisplay();
     SetManagerEnabled(0);
     if (flags) {
         actor->setState(actor, 5);

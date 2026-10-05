@@ -8,9 +8,17 @@ src/overlays/ov088/calls/ConfigureOverlay088Display.c:
     complete
     .text       start:0x020beac0 end:0x020beb0c
 
+src/overlays/ov088/calls/LoadOverlay088Graphics.c:
+    complete
+    .text       start:0x020beb0c end:0x020bebe8
+
 src/overlays/ov088/calls/func_ov088_020bebe8.c:
     complete
     .text       start:0x020bebe8 end:0x020bebfc
+
+src/overlays/ov088/calls/ApplyOverlay088GridStates.c:
+    complete
+    .text       start:0x020bebfc end:0x020bed14
 
 src/overlays/ov088/calls/ClearOverlay088Grid.c:
     complete

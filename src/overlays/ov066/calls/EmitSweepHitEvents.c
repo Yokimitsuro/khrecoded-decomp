@@ -66,7 +66,7 @@ struct Actor {
 
 extern s16 data_02053580[];
 extern const VecFx32 data_0205344c;
-extern int func_ov052_020ceb9c(Actor *actor);
+extern int GetLinkedAngleOffset(Actor *actor);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
 extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
 extern void func_0203ad28(ShapeQuery *query, Sphere *shape, const VecFx32 *center, fx32 radius);
@@ -104,7 +104,7 @@ void EmitSweepHitEvents(Actor *actor)
     if (actor->frame < 0x1f000 || actor->frame >= 0x34000) {
         return;
     }
-    angle = (u16)(func_ov052_020ceb9c(actor) - 0x8000);
+    angle = (u16)(GetLinkedAngleOffset(actor) - 0x8000);
     offset.x = 0;
     offset.y = 0;
     offset.z = 0x800;
@@ -130,7 +130,7 @@ void EmitSweepHitEvents(Actor *actor)
         dir.z = 0;
         dir.y = 0;
         dir.x = 0;
-        index = (u16)func_ov052_020ceb9c(actor) >> 4;
+        index = (u16)GetLinkedAngleOffset(actor) >> 4;
         dir.x = -data_02053580[index];
         dir.z = -data_02053580[(0x400 - index) & 0xfff];
         func_01ffafb4(0x1000, &dir, &dir);

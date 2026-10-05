@@ -24,7 +24,7 @@ typedef struct GroupMember {
 
 extern GroupMember *GetStageActor(s16 groupId);
 extern void *GetStageObjectHandle(u32 id);
-extern int func_ov021_020b4bfc(ScriptRunner *runner, int slot);
+extern int SelectSequenceTrack(ScriptRunner *runner, int slot);
 
 int RunLeaderScriptSlotCommand(ScriptCommand *command)
 {
@@ -32,7 +32,7 @@ int RunLeaderScriptSlotCommand(ScriptCommand *command)
 
     GetStageObjectHandle(command->targetId);
     leader->scriptRunning = 1;
-    if (func_ov021_020b4bfc(&leader->runner, 5) != 4) {
+    if (SelectSequenceTrack(&leader->runner, 5) != 4) {
         return 0;
     }
     if (command->type == 8) {

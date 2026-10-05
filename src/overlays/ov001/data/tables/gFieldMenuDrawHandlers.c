@@ -2,16 +2,16 @@
 
 extern void func_ov001_020761a4(void);
 extern void UpdateGaugeFrameState(void); /* UpdateGaugeFrameState */
-extern void func_ov001_0207621c(void); /* DrawFieldMenuSlots */
-extern void func_ov001_0207639c(void); /* DrawFieldMenuSlotsAlt */
-extern void func_ov001_0207651c(void); /* RefreshFieldMenuSlots */
-extern void func_ov001_020767ec(void); /* RefreshFieldMenuSlotsWrapped */
+extern void DrawFieldMenuSlots(void); /* DrawFieldMenuSlots */
+extern void DrawFieldMenuSlotsAlt(void); /* DrawFieldMenuSlotsAlt */
+extern void RefreshFieldMenuSlots(void); /* RefreshFieldMenuSlots */
+extern void RefreshFieldMenuSlotsWrapped(void); /* RefreshFieldMenuSlotsWrapped */
 
 void (*gFieldMenuDrawHandlers[6])(void) = {
     func_ov001_020761a4,
     UpdateGaugeFrameState, /* UpdateGaugeFrameState */
-    func_ov001_0207621c, /* DrawFieldMenuSlots */
-    func_ov001_0207639c, /* DrawFieldMenuSlotsAlt */
-    func_ov001_0207651c, /* RefreshFieldMenuSlots */
-    func_ov001_020767ec, /* RefreshFieldMenuSlotsWrapped */
+    DrawFieldMenuSlots, /* DrawFieldMenuSlots */
+    DrawFieldMenuSlotsAlt, /* DrawFieldMenuSlotsAlt */
+    RefreshFieldMenuSlots, /* RefreshFieldMenuSlots */
+    RefreshFieldMenuSlotsWrapped, /* RefreshFieldMenuSlotsWrapped */
 };

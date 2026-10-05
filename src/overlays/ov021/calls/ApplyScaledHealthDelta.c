@@ -11,12 +11,12 @@ typedef struct BigObject {
     HealthStats *health;
 } BigObject;
 
-extern s32 func_ov021_020a7670(BigObject *obj, s32 value);
+extern s32 ScaleValueByPercentField(BigObject *obj, s32 value);
 extern BOOL AddClampedHealth(BigObject *obj, int delta);
 
 void ApplyScaledHealthDelta(BigObject *obj, s32 amount, BOOL force)
 {
-    s32 scaled = func_ov021_020a7670(obj, amount);
+    s32 scaled = ScaleValueByPercentField(obj, amount);
     if (obj->health->current != 0 || force) {
         AddClampedHealth(obj, (s16)((scaled + 0xfff) >> 12));
     }

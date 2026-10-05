@@ -1,7 +1,7 @@
 extern int data_ov032_020c0080[];
 #define activeGroup_020c0064 data_ov032_020c0080[1]
 extern unsigned int data_ov001_020a0480;
-extern unsigned int func_ov001_0206a814();
+extern unsigned int IsScreenModeIdle();
 extern unsigned int Panel_CaptureBrightness();
 
 unsigned int FinishGroupTransition(void)
@@ -11,7 +11,7 @@ unsigned int FinishGroupTransition(void)
   int ready;
   
   group = activeGroup_020c0064;
-  ready = func_ov001_0206a814();
+  ready = IsScreenModeIdle();
   if (ready == 0) {
     return 0xffffffff;
   }

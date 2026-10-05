@@ -21,10 +21,10 @@ typedef struct {
 } UnitGroup;
 
 extern int AdvanceOwnerAnimation(UnitObj *owner, fx32 step);
-extern void func_ov021_020ab310(UnitObj *rig, int blend);
+extern void RebindModelAnimTracks(UnitObj *rig, int blend);
 extern void AdvanceToSecondPhase(UnitObj *obj);
 extern void PlaySoundChecked(int id, int flag);
-extern void func_ov021_020af564(int a, int b);
+extern void ForwardSubModePairA(int a, int b);
 
 BOOL AdvanceGroupUnitPhase(UnitGroup *group, UnitObj *unit, fx32 step)
 {
@@ -37,10 +37,10 @@ BOOL AdvanceGroupUnitPhase(UnitGroup *group, UnitObj *unit, fx32 step)
     case 0:
         if (unit == leader) {
             if (done != 0) {
-                func_ov021_020ab310(unit, 1);
+                RebindModelAnimTracks(unit, 1);
             }
         } else if (leader->phase != 0) {
-            func_ov021_020ab310(unit, 1);
+            RebindModelAnimTracks(unit, 1);
         }
         break;
     case 1:
@@ -49,7 +49,7 @@ BOOL AdvanceGroupUnitPhase(UnitGroup *group, UnitObj *unit, fx32 step)
         }
         if (unit == leader) {
             PlaySoundChecked(sound->soundId, 1);
-            func_ov021_020af564(3, 0);
+            ForwardSubModePairA(3, 0);
         }
         break;
     }

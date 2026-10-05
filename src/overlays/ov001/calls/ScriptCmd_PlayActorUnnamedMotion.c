@@ -18,7 +18,7 @@ typedef struct ScriptContext {
 
 extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operand);
 extern int ScriptCmd_ReturnValue(ScriptContext *context, int value);
-extern void func_ov001_0208a69c(void *actor, char *motionName, int motionId, int layer, int mode, int flags);
+extern void ActivateFreeSlotEntry(void *actor, char *motionName, int motionId, int layer, int mode, int flags);
 
 int ScriptCmd_PlayActorUnnamedMotion(ScriptContext *context, ScriptOperand *operands)
 {
@@ -28,6 +28,6 @@ int ScriptCmd_PlayActorUnnamedMotion(ScriptContext *context, ScriptOperand *oper
     actorId = ScriptVm_ReadOperandInt(context, operands);
     layer = ScriptVm_ReadOperandInt(context, operands + 1);
     actorId = ScriptCmd_ReturnValue(context, actorId);
-    func_ov001_0208a69c(context->scene->actorObjects[actorId], NULL, -2, layer, 0, 0);
+    ActivateFreeSlotEntry(context->scene->actorObjects[actorId], NULL, -2, layer, 0, 0);
     return 1;
 }

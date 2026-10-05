@@ -65,12 +65,12 @@ struct Actor {
 
 extern void *func_ov001_0206db78(int player);
 extern BOOL CanUseMemberSlot(Actor *actor, int index);
-extern BOOL func_ov052_020d0688(Actor *actor);
+extern BOOL IsField1078Clear(Actor *actor);
 extern void ApplyTimeScaledSpeed(Actor *actor, fx32 targetSpeed);
-extern void func_ov021_020aa4e8(void *handle);
+extern void ResetObjHandle(void *handle);
 extern BOOL func_ov052_020c9648(Actor *actor, int nextState);
-extern void func_ov001_02063a80(int index, int amount);
-extern void func_ov052_020d1310(Actor *actor, int paused);
+extern void AddSessionCounter(int index, int amount);
+extern void SetActorPaused(Actor *actor, int paused);
 extern int func_ov001_02063a38(void);
 extern BOOL func_ov021_020a7524(void *unit);
 extern int func_ov021_020a7564(void *unit);
@@ -108,7 +108,7 @@ BOOL ExitActorState(Actor *actor, int nextState, BOOL force)
             }
             break;
         case 0x17:
-            if (actor->slotB >= 0 && !func_ov052_020d0688(actor)) {
+            if (actor->slotB >= 0 && !IsField1078Clear(actor)) {
                 actor->slotB = -1;
                 blocked = TRUE;
             }
@@ -145,7 +145,7 @@ BOOL ExitActorState(Actor *actor, int nextState, BOOL force)
         ApplyTimeScaledSpeed(actor, 0x1000);
         break;
     case 0x13:
-        func_ov052_020d1310(actor, 0);
+        SetActorPaused(actor, 0);
         break;
     case 0x14:
         timers->cooldown = 0x9000;
@@ -155,17 +155,17 @@ BOOL ExitActorState(Actor *actor, int nextState, BOOL force)
         break;
     case 0xc:
         if (nextState != 0xb) {
-            func_ov021_020aa4e8(actor->handle);
+            ResetObjHandle(actor->handle);
         }
         break;
     case 0xb:
         if (nextState != 0xc) {
-            func_ov021_020aa4e8(actor->handle);
+            ResetObjHandle(actor->handle);
         }
         if (func_ov052_020c9648(actor, nextState)) {
-            func_ov001_02063a80(0xd, 1);
+            AddSessionCounter(0xd, 1);
         }
-        func_ov052_020d1310(actor, 0);
+        SetActorPaused(actor, 0);
         if (nextState != 0x15 && nextState != 0x18) {
             actor->slotA = -1;
         }
@@ -210,10 +210,10 @@ BOOL ExitActorState(Actor *actor, int nextState, BOOL force)
         actor->flags &= ~0x200000000ULL;
         actor->flags &= ~0x10000000ULL;
         actor->flags |= 0x8000;
-        func_ov052_020d1310(actor, 0);
+        SetActorPaused(actor, 0);
         actor->timers.target = 0;
         if (choice->action == 0x16 && func_ov052_020c9648(actor, nextState)) {
-            func_ov001_02063a80(0xd, 1);
+            AddSessionCounter(0xd, 1);
         }
         if (choice->action == 0x1c && nextState == 3) {
             actor->velY = 0;
@@ -221,7 +221,7 @@ BOOL ExitActorState(Actor *actor, int nextState, BOOL force)
         DeactivateCurrentMember(actor->members);
         break;
     case 0x1b:
-        func_ov052_020d1310(actor, 0);
+        SetActorPaused(actor, 0);
         break;
     }
     return FALSE;

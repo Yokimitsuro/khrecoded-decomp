@@ -18,7 +18,7 @@ extern const s16 data_02053580[];
 extern void func_ov001_0206ba18(RangeResult *result);
 extern VecFx32 *func_ov001_0206dc4c(int index);
 extern u16 GetBiasAdjustedField(int index);
-extern int func_ov021_020af414(void);
+extern int QuerySubModeStatus(void);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
@@ -48,7 +48,7 @@ void ClassifyTargetRange(int index, VecFx32 *target, RangeResult *result, int ta
     facing.x = -data_02053580[angle];
     facing.z = -data_02053580[(0x400 - angle) & 0xfff];
     leaderDot = VEC_DotProduct(&facing, &direction);
-    angle = (u16)func_ov021_020af414() >> 4;
+    angle = (u16)QuerySubModeStatus() >> 4;
     facing.y = 0;
     facing.x = -data_02053580[angle];
     facing.z = -data_02053580[(0x400 - angle) & 0xfff];

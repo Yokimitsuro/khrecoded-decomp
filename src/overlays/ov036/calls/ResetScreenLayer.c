@@ -19,7 +19,7 @@ typedef struct PanelContext {
 } PanelContext;
 
 extern PanelContext data_ov036_020c3940;
-extern void func_ov036_020bbb84(ScreenLayer *layer, int screen);
+extern void ClearScreenLayerGraphics(ScreenLayer *layer, int screen);
 
 void ResetScreenLayer(int screen, s32 useWhiteClearColor)
 {
@@ -28,5 +28,5 @@ void ResetScreenLayer(int screen, s32 useWhiteClearColor)
     layer->pendingImageId = -1;
     layer->activeImageId = -1;
     layer->useWhiteClearColor = useWhiteClearColor;
-    func_ov036_020bbb84(layer, screen);
+    ClearScreenLayerGraphics(layer, screen);
 }

@@ -11,7 +11,7 @@ typedef struct MenuWindows {
 } MenuWindows;
 
 extern MenuWindows *data_ov001_020a04b8;
-extern void func_ov001_0206c8ec(MenuWindow *window);
+extern void FlushScrolledEntryPosition(MenuWindow *window);
 
 void RefreshMenuWindows(void)
 {
@@ -21,8 +21,8 @@ void RefreshMenuWindows(void)
     if (windows == NULL || (windows->flags & 1)) {
         return;
     }
-    func_ov001_0206c8ec(&windows->main);
+    FlushScrolledEntryPosition(&windows->main);
     for (i = 0; i < 3; i++) {
-        func_ov001_0206c8ec(&windows->subs[i]);
+        FlushScrolledEntryPosition(&windows->subs[i]);
     }
 }

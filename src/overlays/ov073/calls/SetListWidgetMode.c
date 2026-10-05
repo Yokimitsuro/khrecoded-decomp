@@ -7,7 +7,7 @@ typedef struct ListWidget {
     u8 mode;
 } ListWidget;
 
-extern void func_ov073_020c305c(ListWidget *list, int mode, u32 *values);
+extern void RefreshListRowStates(ListWidget *list, int mode, u32 *values);
 
 void SetListWidgetMode(ListWidget *list, u8 mode)
 {
@@ -18,7 +18,7 @@ void SetListWidgetMode(ListWidget *list, u8 mode)
     for (i = 0; i < 3; i++) {
         values[i] = list->values[i];
     }
-    func_ov073_020c305c(list, 0, values);
+    RefreshListRowStates(list, 0, values);
     if (list->onChange != NULL) {
         list->onChange();
     }

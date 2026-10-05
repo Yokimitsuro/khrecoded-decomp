@@ -16,13 +16,13 @@ typedef struct FieldObject {
     u8 param;
 } FieldObject;
 
-extern FieldObject *func_ov001_0207f468(void *objectClass, u8 slotIndex);
+extern FieldObject *FieldObject_Create(void *objectClass, u8 slotIndex);
 extern int UpdateProximityGlow(FieldObject *object);
 
 FieldObject *FieldObject_CreateAtPosition(void *objectClass, u8 slotIndex, u16 saveBitOffset, u8 saveBitCount,
                                  const VecFx32 *position, int mode, int isRunning, int param)
 {
-    FieldObject *object = func_ov001_0207f468(objectClass, slotIndex);
+    FieldObject *object = FieldObject_Create(objectClass, slotIndex);
 
     object->position = *position;
     object->saveBitOffset = saveBitOffset;

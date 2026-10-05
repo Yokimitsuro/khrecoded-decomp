@@ -20,7 +20,7 @@ typedef struct {
     FieldObject *objects;
 } FieldContext;
 
-extern int func_ov032_020bbeec(FieldContext *context, int index);
+extern int RollRowDropItem(FieldContext *context, int index);
 extern void ApplyModeToGroupFollowers(FieldContext *context, int index, int mode, int arg3, int arg4);
 
 void QueueFieldObjectModeChange(FieldContext *context, int index, BOOL immediate)
@@ -28,13 +28,13 @@ void QueueFieldObjectModeChange(FieldContext *context, int index, BOOL immediate
     FieldObject *object = &context->objects[index];
 
     if (immediate) {
-        object->nextMode = func_ov032_020bbeec(context, index);
+        object->nextMode = RollRowDropItem(context, index);
         object->mode = object->nextMode;
         object->modeTimer = 0;
         object->pending = 0;
     } else {
         if (object->mode == 3) {
-            object->nextMode = func_ov032_020bbeec(context, index);
+            object->nextMode = RollRowDropItem(context, index);
         } else {
             object->nextMode = 3;
         }

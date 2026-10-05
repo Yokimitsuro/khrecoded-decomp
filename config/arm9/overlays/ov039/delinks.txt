@@ -8,9 +8,37 @@ src/overlays/ov039/calls/RuntimeState_SetMode.c:
     complete
     .text       start:0x020bab00 end:0x020bab18
 
+src/overlays/ov039/calls/GetStateC9C4.c:
+    complete
+    .text       start:0x020bab18 end:0x020bab30
+
+src/overlays/ov039/calls/LoadBgLayerSet3.c:
+    complete
+    .text       start:0x020babac end:0x020bac44
+
+src/overlays/ov039/calls/LoadBgLayerSet4.c:
+    complete
+    .text       start:0x020bac44 end:0x020bacdc
+
+src/overlays/ov039/calls/InitStreamBufferPair.c:
+    complete
+    .text       start:0x020bacdc end:0x020bad54
+
+src/overlays/ov039/calls/UpdateBrightnessAndTasks.c:
+    complete
+    .text       start:0x020bad54 end:0x020baea4
+
 src/overlays/ov039/calls/SetMenuButtonsEnabled.c:
     complete
     .text       start:0x020baea4 end:0x020baf3c
+
+src/overlays/ov039/calls/PollHandlerInput.c:
+    complete
+    .text       start:0x020baf3c end:0x020bb168
+
+src/overlays/ov039/calls/UpdateSubOverlayHandlers.c:
+    complete
+    .text       start:0x020bb168 end:0x020bb2d0
 
 src/overlays/ov039/calls/InitThenDispatchTwoHandlers.c:
     complete
@@ -19,6 +47,14 @@ src/overlays/ov039/calls/InitThenDispatchTwoHandlers.c:
 src/overlays/ov039/calls/UpdateExitSequence.c:
     complete
     .text       start:0x020bb35c end:0x020bb42c
+
+src/overlays/ov039/calls/LoadSelectedHandlerAndStart.c:
+    complete
+    .text       start:0x020bb42c end:0x020bb4c8
+
+src/overlays/ov039/calls/CleanupHandlersAndSetPhase5.c:
+    complete
+    .text       start:0x020bb6a0 end:0x020bb708
 
 src/overlays/ov039/calls/func_ov039_020bb708.c:
     complete
@@ -31,6 +67,10 @@ src/overlays/ov039/calls/DrawWidgetOnScreenLayer.c:
 src/overlays/ov039/calls/ClearWidgetOnScreenLayer.c:
     complete
     .text       start:0x020bb750 end:0x020bb774
+
+src/overlays/ov039/calls/LoadSlotImagePair.c:
+    complete
+    .text       start:0x020bb774 end:0x020bb844
 
 src/overlays/ov039/calls/FreeSlotPair.c:
     complete
@@ -60,6 +100,10 @@ src/overlays/ov039/calls/ClearScreenLayerDirty.c:
     complete
     .text       start:0x020bc148 end:0x020bc16c
 
+src/overlays/ov039/calls/CallStateWidget.c:
+    complete
+    .text       start:0x020bc16c end:0x020bc1ac
+
 src/overlays/ov039/calls/func_ov039_020bc1dc.c:
     complete
     .text       start:0x020bc1dc end:0x020bc1ec
@@ -67,6 +111,22 @@ src/overlays/ov039/calls/func_ov039_020bc1dc.c:
 src/overlays/ov039/calls/UpdateScreenWidgetLayer.c:
     complete
     .text       start:0x020bc204 end:0x020bc228
+
+src/overlays/ov039/calls/BuildSlotImageParams.c:
+    complete
+    .text       start:0x020bc240 end:0x020bc28c
+
+src/overlays/ov039/calls/LoadSlotBgImage.c:
+    complete
+    .text       start:0x020bc28c end:0x020bc338
+
+src/overlays/ov039/calls/LoadSlotBgCharacters.c:
+    complete
+    .text       start:0x020bc434 end:0x020bc4a8
+
+src/overlays/ov039/calls/LoadSlotSubBgImage.c:
+    complete
+    .text       start:0x020bc57c end:0x020bc638
 
 src/overlays/ov039/calls/SetScreenBrightness.c:
     complete
@@ -80,6 +140,10 @@ src/overlays/ov039/calls/AllocateListEntry.c:
     complete
     .text       start:0x020bc6d0 end:0x020bc72c
 
+src/overlays/ov039/calls/RemoveListEntry.c:
+    complete
+    .text       start:0x020bc72c end:0x020bc7a8
+
 src/overlays/ov039/calls/DestroyAllListEntries.c:
     complete
     .text       start:0x020bc7a8 end:0x020bc800
@@ -88,9 +152,25 @@ src/overlays/ov039/calls/RuntimeState_SetFlags.c:
     complete
     .text       start:0x020bc800 end:0x020bc818
 
+src/overlays/ov039/calls/PushStackEntry.c:
+    complete
+    .text       start:0x020bc894 end:0x020bc8c0
+
+src/overlays/ov039/calls/PopStackEntry.c:
+    complete
+    .text       start:0x020bc8c0 end:0x020bc8f0
+
+src/overlays/ov039/calls/ReplaceStackTop.c:
+    complete
+    .text       start:0x020bc8f0 end:0x020bc934
+
 src/overlays/ov039/calls/SetSelectionIfChanged_020bc94c.c:
     complete
     .text       start:0x020bc94c end:0x020bc99c
+
+src/overlays/ov039/calls/GetFieldCa4a.c:
+    complete
+    .text       start:0x020bca00 end:0x020bca20
 
 src/overlays/ov039/calls/IsStatePhase4.c:
     complete
@@ -107,6 +187,18 @@ src/overlays/ov039/calls/IsStatePhase3.c:
 src/overlays/ov039/calls/IsStatePhaseIdle.c:
     complete
     .text       start:0x020bcaf0 end:0x020bcb20
+
+src/overlays/ov039/calls/GetFieldCad0.c:
+    complete
+    .text       start:0x020bcb20 end:0x020bcb40
+
+src/overlays/ov039/calls/FormatStateText.c:
+    complete
+    .text       start:0x020bcccc end:0x020bcd24
+
+src/overlays/ov039/calls/SetTextColorIfFits.c:
+    complete
+    .text       start:0x020bcd24 end:0x020bcd88
 
 src/overlays/ov039/calls/RuntimeState_SetObjectId.c:
     complete
@@ -139,6 +231,10 @@ src/overlays/ov039/calls/func_ov039_020bced0.c:
 src/overlays/ov039/calls/LoadSecondarySubOverlay.c:
     complete
     .text       start:0x020bcf70 end:0x020bcfa8
+
+src/overlays/ov039/calls/UnloadSecondarySubOverlay.c:
+    complete
+    .text       start:0x020bcfa8 end:0x020bcfec
 
 src/overlays/ov039/calls/func_ov039_020bcfec.c:
     complete
@@ -224,13 +320,25 @@ src/overlays/ov039/calls/UpdateScrollInertia.c:
     complete
     .text       start:0x020bd7d0 end:0x020bd886
 
+src/overlays/ov039/calls/HandleListKeyInput.c:
+    complete
+    .text       start:0x020bdc48 end:0x020bdea4
+
 src/overlays/ov039/calls/InitScrollListWidgets.c:
     complete
     .text       start:0x020bdea4 end:0x020bdf2e
 
+src/overlays/ov039/calls/SetupScrollList.c:
+    complete
+    .text       start:0x020bdf30 end:0x020be0e4
+
 src/overlays/ov039/calls/UpdateScrollListInput.c:
     complete
     .text       start:0x020be0e4 end:0x020be158
+
+src/overlays/ov039/calls/RefreshScrollListLayout.c:
+    complete
+    .text       start:0x020be158 end:0x020be254
 
 src/overlays/ov039/calls/SetWidgetDigitDisplay.c:
     complete
@@ -239,6 +347,10 @@ src/overlays/ov039/calls/SetWidgetDigitDisplay.c:
 src/overlays/ov039/calls/SetDigitDisplay.c:
     complete
     .text       start:0x020be2e8 end:0x020be378
+
+src/overlays/ov039/calls/OpenTextFrame.c:
+    complete
+    .text       start:0x020be5d8 end:0x020be66c
 
 src/overlays/ov039/data/strings/Strings_ov039_020be81c.c:
     complete

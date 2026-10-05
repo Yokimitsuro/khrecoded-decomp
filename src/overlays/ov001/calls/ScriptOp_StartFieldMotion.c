@@ -16,7 +16,7 @@ typedef struct MotionParams {
 
 extern int ScriptVm_ReadOperandInt(void *vm, ScriptOperand *operand);
 extern fx32 ScriptVm_ReadOperandFx32(void *vm, ScriptOperand *operand);
-extern void func_ov001_02069274(int id, BOOL repeat, int unused, MotionParams *params);
+extern void CreateFieldTaskNode(int id, BOOL repeat, int unused, MotionParams *params);
 
 int ScriptOp_StartFieldMotion(void *vm, ScriptOperand *operands)
 {
@@ -33,6 +33,6 @@ int ScriptOp_StartFieldMotion(void *vm, ScriptOperand *operands)
     params.end.y = ScriptVm_ReadOperandFx32(vm, &operands[8]);
     params.end.z = ScriptVm_ReadOperandFx32(vm, &operands[9]);
     params.duration = ScriptVm_ReadOperandInt(vm, &operands[10]);
-    func_ov001_02069274(id, repeat != 0, 0, &params);
+    CreateFieldTaskNode(id, repeat != 0, 0, &params);
     return 1;
 }

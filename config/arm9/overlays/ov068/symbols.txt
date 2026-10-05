@@ -1,8 +1,8 @@
 func_ov068_020d8120 kind:function(thumb,size=0x1e) addr:0x020d8120
-func_ov068_020d8140 kind:function(thumb,size=0x80) addr:0x020d8140
-func_ov068_020d81c0 kind:function(thumb,size=0x314) addr:0x020d81c0
-func_ov068_020d84d4 kind:function(thumb,size=0x68) addr:0x020d84d4
-func_ov068_020d853c kind:function(thumb,size=0x138) addr:0x020d853c
+StartOv068BossIntro kind:function(thumb,size=0x80) addr:0x020d8140
+RunOv068BossState kind:function(thumb,size=0x314) addr:0x020d81c0
+EndOv068BossIntro kind:function(thumb,size=0x68) addr:0x020d84d4
+CreateOv068BossObject kind:function(thumb,size=0x138) addr:0x020d853c
 data_ov068_020d8674 kind:data(any) addr:0x020d8674
 sOv068_BaEfFnSrP2_020d86a0 kind:data(any) addr:0x020d86a0
 sOv068_BaChFormatSCiBZ_020d86b0 kind:data(any) addr:0x020d86b0

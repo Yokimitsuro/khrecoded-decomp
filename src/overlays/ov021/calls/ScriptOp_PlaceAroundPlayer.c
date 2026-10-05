@@ -43,7 +43,7 @@ extern void func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern void GetStageEntryPosition(u32 id, VecFx32 *outPosition);
 extern void MTX_Identity33_(MtxFx33 *mtx);
 extern void MTX_RotY33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
-extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *m, VecFx32 *dst);
+extern void MTX_MultVec33(const VecFx32 *vec, const MtxFx33 *m, VecFx32 *dst);
 extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern BOOL func_ov021_020afd48(VecFx32 *from, VecFx32 *to, VecFx32 *hitNormal, VecFx32 *hitPoint, int mode);
 
@@ -86,7 +86,7 @@ s32 ScriptOp_PlaceAroundPlayer(ScriptObject *obj, PlaceCommand *cmd)
     if (flags & 4) {
         MTX_Identity33_(&rotation);
         MTX_RotY33_(&rotation, data_02053580[angle >> 4], data_02053580[(0x400 - (angle >> 4)) & 0xfff]);
-        func_01ff9404(&direction, &rotation, &direction);
+        MTX_MultVec33(&direction, &rotation, &direction);
         VEC_MultAdd(distance, &direction, &base, &obj->position);
         if (func_ov021_020afd48(&player->position, &obj->position, &hitNormal, &hitPoint, 1)) {
             if (flags & 2) {

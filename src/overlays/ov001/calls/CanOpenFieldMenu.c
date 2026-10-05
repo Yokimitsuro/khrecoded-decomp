@@ -12,7 +12,7 @@ typedef struct HudHandle {
 
 extern HudHandle data_ov001_020a04c4;
 
-extern BOOL func_ov001_020638ec(void);
+extern BOOL IsSessionIdleForSceneChange(void);
 extern BOOL IsHudFlag7Set(void);
 extern BOOL IsFieldFlag10Set(void);
 extern BOOL IsFieldFlag8Set(void);
@@ -23,7 +23,7 @@ BOOL CanOpenFieldMenu(void)
 {
     BOOL result = TRUE;
 
-    if (!func_ov001_020638ec()) {
+    if (!IsSessionIdleForSceneChange()) {
         result = FALSE;
     }
     if (data_ov001_020a04c4.hud->busy != 0) {

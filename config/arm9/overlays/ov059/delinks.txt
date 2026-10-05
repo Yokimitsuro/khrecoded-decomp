@@ -4,6 +4,22 @@
     .data       start:0x020cff00 end:0x020cffc0 kind:data align:32
     .bss        start:0x020cffc0 end:0x020cffe0 kind:bss align:32
 
+src/overlays/ov059/calls/Actor_InitVariantCallbacks.c:
+    complete
+    .text       start:0x020c7494 end:0x020c7530
+
+src/overlays/ov059/calls/LoadActorModel.c:
+    complete
+    .text       start:0x020c7530 end:0x020c75b0
+
+src/overlays/ov059/calls/Actor_LoadAnimResources.c:
+    complete
+    .text       start:0x020c75b0 end:0x020c768c
+
+src/overlays/ov059/calls/FreeWorkBuffer.c:
+    complete
+    .text       start:0x020c768c end:0x020c76a4
+
 src/overlays/ov059/calls/Actor_SelectAction.c:
     complete
     .text       start:0x020c784c end:0x020c7980
@@ -24,6 +40,10 @@ src/overlays/ov059/calls/MapKindToSlotIndex_020c7a44.c:
     complete
     .text       start:0x020c7a44 end:0x020c7a68
 
+src/overlays/ov059/calls/Actor_TrySpawnIdleEffect.c:
+    complete
+    .text       start:0x020c7a90 end:0x020c7aec
+
 src/overlays/ov059/calls/Actor_SetTimeScale.c:
     complete
     .text       start:0x020c7da8 end:0x020c7dc8
@@ -31,6 +51,14 @@ src/overlays/ov059/calls/Actor_SetTimeScale.c:
 src/overlays/ov059/calls/Actor_ConsumeKnockback.c:
     complete
     .text       start:0x020c7dc8 end:0x020c7e7c
+
+src/overlays/ov059/calls/Actor_SetPaused.c:
+    complete
+    .text       start:0x020c7e7c end:0x020c7f04
+
+src/overlays/ov059/calls/Actor_DrawGroundShadow.c:
+    complete
+    .text       start:0x020c7f04 end:0x020c7fac
 
 src/overlays/ov059/calls/Actor_HandleFallOut.c:
     complete
@@ -48,13 +76,41 @@ src/overlays/ov059/calls/Actor_ApplyFrameMotion.c:
     complete
     .text       start:0x020c87b4 end:0x020c88e4
 
+src/overlays/ov059/calls/Actor_PlayAnimation.c:
+    complete
+    .text       start:0x020c88e4 end:0x020c8928
+
+src/overlays/ov059/calls/GetAttachmentOffset_020c8928.c:
+    complete
+    .text       start:0x020c8928 end:0x020c897c
+
+src/overlays/ov059/calls/Actor_GetRotatedJointPosition.c:
+    complete
+    .text       start:0x020c897c end:0x020c8a1c
+
 src/overlays/ov059/calls/Actor_ExtendCountdown.c:
     complete
     .text       start:0x020c8a1c end:0x020c8a2c
 
+src/overlays/ov059/calls/Actor_SyncAnimationSpeed.c:
+    complete
+    .text       start:0x020c8a2c end:0x020c8aa4
+
+src/overlays/ov059/calls/Actor_LoadJointBlendSets.c:
+    complete
+    .text       start:0x020c8aa4 end:0x020c8b70
+
 src/overlays/ov059/calls/Actor_FreeAttachedModels.c:
     complete
     .text       start:0x020c8b70 end:0x020c8b9a
+
+src/overlays/ov059/calls/Actor_SetJointBlendMode.c:
+    complete
+    .text       start:0x020c8fbc end:0x020c9068
+
+src/overlays/ov059/calls/Actor_BuildJointHitSphere.c:
+    complete
+    .text       start:0x020c90e8 end:0x020c9154
 
 src/overlays/ov059/calls/NodeCallback_CaptureMatrix.c:
     complete
@@ -63,6 +119,10 @@ src/overlays/ov059/calls/NodeCallback_CaptureMatrix.c:
 src/overlays/ov059/calls/Actor_PlayHitReaction.c:
     complete
     .text       start:0x020c9164 end:0x020c921c
+
+src/overlays/ov059/calls/TryGuardFrontalHit.c:
+    complete
+    .text       start:0x020c921c end:0x020c934c
 
 src/overlays/ov059/calls/Actor_SetCommandType.c:
     complete
@@ -84,6 +144,14 @@ src/overlays/ov059/calls/Actor_SelectInputState.c:
     complete
     .text       start:0x020ca24c end:0x020ca31c
 
+src/overlays/ov059/calls/Actor_UpdateHaltedState.c:
+    complete
+    .text       start:0x020ca610 end:0x020ca68c
+
+src/overlays/ov059/calls/Actor_UpdateTimedHaltedState.c:
+    complete
+    .text       start:0x020ca68c end:0x020ca720
+
 src/overlays/ov059/calls/Actor_TryEnterState5.c:
     complete
     .text       start:0x020ca720 end:0x020ca774
@@ -92,9 +160,17 @@ src/overlays/ov059/calls/Actor_UpdateState14.c:
     complete
     .text       start:0x020ca774 end:0x020ca7b4
 
+src/overlays/ov059/calls/Actor_InitOrbitSlots.c:
+    complete
+    .text       start:0x020cab8c end:0x020cabe0
+
 src/overlays/ov059/calls/Actor_UpdateOrbitEffects.c:
     complete
     .text       start:0x020cabe0 end:0x020cac3c
+
+src/overlays/ov059/calls/Actor_UpdateSettleState.c:
+    complete
+    .text       start:0x020cb510 end:0x020cb5c8
 
 src/overlays/ov059/calls/Actor_UpdateChargeState.c:
     complete
@@ -104,9 +180,21 @@ src/overlays/ov059/calls/Actor_ResetMovementState.c:
     complete
     .text       start:0x020cb6a0 end:0x020cb774
 
+src/overlays/ov059/calls/Actor_ProbeLinkIfFlagClear.c:
+    complete
+    .text       start:0x020cb8b8 end:0x020cb8ec
+
+src/overlays/ov059/calls/ProbeLinkedMeshEntries.c:
+    complete
+    .text       start:0x020cb8ec end:0x020cb92c
+
 src/overlays/ov059/auto/func_ov059_020cb92c.c:
     complete
     .text       start:0x020cb92c end:0x020cb930
+
+src/overlays/ov059/calls/Actor_ExitCommandMode.c:
+    complete
+    .text       start:0x020cb988 end:0x020cba0c
 
 src/overlays/ov059/calls/EffectGroup_RewindEntry.c:
     complete
@@ -115,6 +203,10 @@ src/overlays/ov059/calls/EffectGroup_RewindEntry.c:
 src/overlays/ov059/calls/IsButtonAOrRActive.c:
     complete
     .text       start:0x020cba34 end:0x020cba5a
+
+src/overlays/ov059/calls/Actor_Init.c:
+    complete
+    .text       start:0x020cba5c end:0x020cbd08
 
 src/overlays/ov059/calls/Actor_Update.c:
     complete
@@ -132,6 +224,14 @@ src/overlays/ov059/calls/Actor_SetAnimFrame.c:
     complete
     .text       start:0x020cc880 end:0x020cc8dc
 
+src/overlays/ov059/calls/GetStateTransitionDelay.c:
+    complete
+    .text       start:0x020cc8dc end:0x020cc970
+
+src/overlays/ov059/calls/Actor_ChangeAnimation.c:
+    complete
+    .text       start:0x020cc970 end:0x020cca14
+
 src/overlays/ov059/calls/Actor_PlaySurfaceSound.c:
     complete
     .text       start:0x020cca34 end:0x020ccb08
@@ -139,6 +239,14 @@ src/overlays/ov059/calls/Actor_PlaySurfaceSound.c:
 src/overlays/ov059/calls/Actor_TakeHit.c:
     complete
     .text       start:0x020ccb08 end:0x020ccc88
+
+src/overlays/ov059/calls/Actor_ClearMotionState.c:
+    complete
+    .text       start:0x020ccd0c end:0x020cce30
+
+src/overlays/ov059/calls/Actor_GetRootMotionDelta.c:
+    complete
+    .text       start:0x020cce30 end:0x020cce9c
 
 src/overlays/ov059/calls/Actor_AdvanceFrame.c:
     complete
@@ -168,9 +276,25 @@ src/overlays/ov059/calls/Actor_AnyAnimSlotBit0Set.c:
     complete
     .text       start:0x020cd174 end:0x020cd1a4
 
+src/overlays/ov059/calls/EffectSlot_StartByKind.c:
+    complete
+    .text       start:0x020cd1a4 end:0x020cd244
+
 src/overlays/ov059/calls/Actor_MarkGuardBreakInState3.c:
     complete
     .text       start:0x020cd244 end:0x020cd274
+
+src/overlays/ov059/calls/AddQuantizedViewAngle.c:
+    complete
+    .text       start:0x020cd2e4 end:0x020cd354
+
+src/overlays/ov059/calls/QuantizeSummedAngle.c:
+    complete
+    .text       start:0x020cd354 end:0x020cd36c
+
+src/overlays/ov059/calls/QuantizeFieldAngle.c:
+    complete
+    .text       start:0x020cd36c end:0x020cd384
 
 src/overlays/ov059/calls/func_ov059_020cd3d8.c:
     complete
@@ -179,6 +303,10 @@ src/overlays/ov059/calls/func_ov059_020cd3d8.c:
 src/overlays/ov059/calls/SpawnSourceRewardOrbs.c:
     complete
     .text       start:0x020cd3e4 end:0x020cd46c
+
+src/overlays/ov059/calls/Collider_ComputeBoxPushOut.c:
+    complete
+    .text       start:0x020cd46c end:0x020cd744
 
 src/overlays/ov059/calls/MapStateToEvenIndex.c:
     complete
@@ -196,6 +324,10 @@ src/overlays/ov059/calls/SoundRequest_Play.c:
     complete
     .text       start:0x020cd9e0 end:0x020cda34
 
+src/overlays/ov059/calls/TaskRunner_Update.c:
+    complete
+    .text       start:0x020cdc7c end:0x020cdd30
+
 src/overlays/ov059/calls/Collider_IsOwnerKind11_020cdd30.c:
     complete
     .text       start:0x020cdd30 end:0x020cdd40
@@ -203,6 +335,10 @@ src/overlays/ov059/calls/Collider_IsOwnerKind11_020cdd30.c:
 src/overlays/ov059/calls/PlayCursor_Advance.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd88
+
+src/overlays/ov059/calls/MarkList_Add.c:
+    complete
+    .text       start:0x020cdd88 end:0x020cde6a
 
 src/overlays/ov059/calls/MarkList_AddAtObject.c:
     complete
@@ -219,6 +355,10 @@ src/overlays/ov059/calls/Body_ReflectVelocity.c:
 src/overlays/ov059/calls/Seeker_SelectNearestTarget.c:
     complete
     .text       start:0x020cecac end:0x020ceddc
+
+src/overlays/ov059/calls/EffectGroup_Init.c:
+    complete
+    .text       start:0x020ceddc end:0x020cef1c
 
 src/overlays/ov059/calls/TargetKey_GetPosition.c:
     complete
@@ -239,6 +379,10 @@ src/overlays/ov059/calls/EffectSet_Release.c:
 src/overlays/ov059/calls/SlotTable_ResetIds.c:
     complete
     .text       start:0x020cf22c end:0x020cf250
+
+src/overlays/ov059/calls/CellPanel_Init.c:
+    complete
+    .text       start:0x020cf250 end:0x020cf308
 
 src/overlays/ov059/calls/BufferSlots_FreePair.c:
     complete
@@ -276,9 +420,29 @@ src/overlays/ov059/calls/RewardQueue_PruneOutOfRange.c:
     complete
     .text       start:0x020cf5d4 end:0x020cf67a
 
+src/overlays/ov059/calls/MarkerList_ProjectToScreen.c:
+    complete
+    .text       start:0x020cf67c end:0x020cf6ea
+
+src/overlays/ov059/calls/PopupSprites_Draw.c:
+    complete
+    .text       start:0x020cf6ec end:0x020cf880
+
+src/overlays/ov059/calls/RewardQueue_InsertScored.c:
+    complete
+    .text       start:0x020cf880 end:0x020cf8f8
+
+src/overlays/ov059/calls/GaugePanel_Init.c:
+    complete
+    .text       start:0x020cf8f8 end:0x020cf9f0
+
 src/overlays/ov059/calls/BufferSlotSet_FreeAll.c:
     complete
     .text       start:0x020cf9f0 end:0x020cfa18
+
+src/overlays/ov059/calls/GaugePanel_Update.c:
+    complete
+    .text       start:0x020cfd3c end:0x020cfe0c
 
 src/overlays/ov059/auto/func_ov059_020cfe0c.c:
     complete

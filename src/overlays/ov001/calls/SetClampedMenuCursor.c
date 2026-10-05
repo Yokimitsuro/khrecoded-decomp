@@ -9,7 +9,7 @@ typedef struct MenuState {
 } MenuState;
 
 extern MenuState *data_ov001_020a04cc;
-extern void func_ov001_02074b7c(u32 cursor, int animate);
+extern void UpdateGaugeUnits(u32 cursor, int animate);
 
 void SetClampedMenuCursor(u32 cursor, int animate)
 {
@@ -19,6 +19,6 @@ void SetClampedMenuCursor(u32 cursor, int animate)
         if (cursor > menu->maxCursor) {
             cursor = menu->maxCursor;
         }
-        func_ov001_02074b7c(cursor, animate);
+        UpdateGaugeUnits(cursor, animate);
     }
 }

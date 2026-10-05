@@ -21,7 +21,7 @@ typedef struct {
 } SceneNodeList;
 
 extern SceneNodeList *data_ov001_020a0484;
-extern BOOL func_ov001_020642d0(void);
+extern BOOL IsEntryFlag2Active(void);
 extern VecFx32 *func_ov001_0206dc4c(int target);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern void SetNodeStateRandomDir(SceneNode *node, int target);
@@ -30,7 +30,7 @@ void WakeNearbyIdleNodes(int target)
 {
     SceneNode *node;
 
-    if (func_ov001_020642d0()) {
+    if (IsEntryFlag2Active()) {
         return;
     }
     for (node = data_ov001_020a0484->nodes; node != NULL; node = node->next) {

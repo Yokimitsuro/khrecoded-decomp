@@ -15,6 +15,10 @@ src/overlays/ov011/calls/ScriptCmd_SpawnFieldObject_020a05ac.c:
     complete
     .text       start:0x020a05ac end:0x020a068e
 
+src/overlays/ov011/calls/ClearFixedSlots.c:
+    complete
+    .text       start:0x020a0690 end:0x020a06c4
+
 src/overlays/ov011/calls/func_ov011_020a06c4.c:
     complete
     .text       start:0x020a06c4 end:0x020a06d6
@@ -26,6 +30,10 @@ src/overlays/ov011/calls/ScriptCmd_PostRequestAndSetPanel.c:
 src/overlays/ov011/calls/FieldObject_LoadAndPlace.c:
     complete
     .text       start:0x020a07dc end:0x020a0930
+
+src/overlays/ov011/calls/ReleaseChildResourceAndForward.c:
+    complete
+    .text       start:0x020a0930 end:0x020a096c
 
 src/overlays/ov011/auto/func_ov011_020a096c.c:
     complete
@@ -70,6 +78,10 @@ src/overlays/ov011/calls/FieldGroup_ShufflePositions.c:
 src/overlays/ov011/calls/FieldObject_Create_020a0fc4.c:
     complete
     .text       start:0x020a0fc4 end:0x020a1074
+
+src/overlays/ov011/calls/FieldObject_CreateAt.c:
+    complete
+    .text       start:0x020a1074 end:0x020a10e2
 
 src/overlays/ov011/calls/FieldObject_ResetToIdle.c:
     complete

@@ -24,11 +24,11 @@ typedef struct {
 
 extern TaggedValue *ResolveTaggedValueRef(ScriptContext *context, TaggedValue *value);
 extern s32 TaggedValueToInt(TaggedValue *tagged);
-extern ScriptObject *func_ov021_020b02d8(ScriptContext *context, s32 id);
+extern ScriptObject *ResolveStageActorRef(ScriptContext *context, s32 id);
 
 int ScriptOp_GetObjectPositionById(ScriptContext *context, ScriptCommand *command)
 {
-    ScriptObject *object = func_ov021_020b02d8(context, TaggedValueToInt(ResolveTaggedValueRef(context, &command->operand)));
+    ScriptObject *object = ResolveStageActorRef(context, TaggedValueToInt(ResolveTaggedValueRef(context, &command->operand)));
     if (object != NULL) {
         context->vector = object->position;
     }

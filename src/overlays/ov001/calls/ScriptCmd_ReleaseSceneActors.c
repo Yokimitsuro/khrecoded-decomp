@@ -13,7 +13,7 @@ typedef struct ScriptContext {
 extern void PopVramState(void);
 extern void *ActorSlot_GetByIndex(u16 slotIndex);
 extern u16 ActorSlot_GetFlagsByIndex(u16 slotIndex);
-extern void func_ov001_02089f44(void *actor);
+extern void ActorObject_ReleaseResources(void *actor);
 
 int ScriptCmd_ReleaseSceneActors(ScriptContext *context)
 {
@@ -24,7 +24,7 @@ int ScriptCmd_ReleaseSceneActors(ScriptContext *context)
         for (index = 0; index < 0x200; index++) {
             if (ActorSlot_GetByIndex(index) == NULL || (ActorSlot_GetFlagsByIndex(index) & 4) == 0) {
                 if (context->scene->actorObjects[index] != NULL) {
-                    func_ov001_02089f44(context->scene->actorObjects[index]);
+                    ActorObject_ReleaseResources(context->scene->actorObjects[index]);
                 }
             }
         }

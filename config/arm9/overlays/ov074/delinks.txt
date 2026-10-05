@@ -4,13 +4,29 @@
     .data       start:0x020c59a0 end:0x020c5a60 kind:data align:32
     .bss        start:0x020c5a60 end:0x020c5a60 kind:bss align:32
 
+src/overlays/ov074/calls/ReleaseRootMenu.c:
+    complete
+    .text       start:0x020c4fc4 end:0x020c50d0
+
 src/overlays/ov074/calls/CaptureSelectedJointMtx.c:
     complete
     .text       start:0x020c50d0 end:0x020c5128
 
+src/overlays/ov074/calls/DrawRootMenuText.c:
+    complete
+    .text       start:0x020c5270 end:0x020c5494
+
+src/overlays/ov074/calls/UpdateRootMenuGraphics.c:
+    complete
+    .text       start:0x020c5494 end:0x020c5510
+
 src/overlays/ov074/calls/SelectPreviousRootMenuItem.c:
     complete
     .text       start:0x020c5510 end:0x020c5570
+
+src/overlays/ov074/calls/SelectNextRootMenuItem.c:
+    complete
+    .text       start:0x020c5570 end:0x020c55dc
 
 src/overlays/ov074/calls/ToggleRootMenuOptionLeft.c:
     complete
@@ -19,6 +35,10 @@ src/overlays/ov074/calls/ToggleRootMenuOptionLeft.c:
 src/overlays/ov074/calls/ToggleRootMenuOptionRight.c:
     complete
     .text       start:0x020c5614 end:0x020c564c
+
+src/overlays/ov074/calls/HandleRootMenuCancel.c:
+    complete
+    .text       start:0x020c57fc end:0x020c5940
 
 src/overlays/ov074/data/strings/Strings_ov074_020c5940.c:
     complete

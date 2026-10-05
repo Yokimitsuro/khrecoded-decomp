@@ -4,6 +4,10 @@
     .data       start:0x020c2360 end:0x020c3020 kind:data align:32
     .bss        start:0x020c3020 end:0x020c3040 kind:bss align:32
 
+src/overlays/ov086/calls/UpdateRecordScrollOffset.c:
+    complete
+    .text       start:0x020beac0 end:0x020beb48
+
 src/overlays/ov086/calls/DrawPanelElement.c:
     complete
     .text       start:0x020beb48 end:0x020beb8c
@@ -16,9 +20,81 @@ src/overlays/ov086/calls/ReturnToPrimaryPanel.c:
     complete
     .text       start:0x020bebd0 end:0x020bec08
 
+src/overlays/ov086/calls/DrawRecordHintText.c:
+    complete
+    .text       start:0x020bec08 end:0x020bed4c
+
+src/overlays/ov086/calls/SetPageHeaderVisible.c:
+    complete
+    .text       start:0x020bed4c end:0x020bee2c
+
+src/overlays/ov086/calls/CountUnlockedGroupEntries.c:
+    complete
+    .text       start:0x020bf344 end:0x020bf3b4
+
+src/overlays/ov086/calls/IsGroupEntryStateOne.c:
+    complete
+    .text       start:0x020bf428 end:0x020bf4a4
+
+src/overlays/ov086/calls/CountGroupFlaggedEntries_020bf4a4.c:
+    complete
+    .text       start:0x020bf4a4 end:0x020bf560
+
+src/overlays/ov086/calls/CountGroupEntriesInStateOne.c:
+    complete
+    .text       start:0x020bf560 end:0x020bf5f8
+
+src/overlays/ov086/calls/SumUnlockedGroupEntryCounts.c:
+    complete
+    .text       start:0x020bf5f8 end:0x020bf678
+
 src/overlays/ov086/calls/GetHighestSetFlagTier.c:
     complete
     .text       start:0x020bf678 end:0x020bf6cc
+
+src/overlays/ov086/calls/DrawRecordPanelStats.c:
+    complete
+    .text       start:0x020bf6cc end:0x020bf830
+
+src/overlays/ov086/calls/GetPageSectionIndex.c:
+    complete
+    .text       start:0x020bf830 end:0x020bf8c4
+
+src/overlays/ov086/calls/DrawRecordRowNames.c:
+    complete
+    .text       start:0x020bf8c4 end:0x020bf9f4
+
+src/overlays/ov086/calls/DrawCounterGoalText.c:
+    complete
+    .text       start:0x020bfc00 end:0x020bfd2c
+
+src/overlays/ov086/calls/DrawSecondCounterText.c:
+    complete
+    .text       start:0x020bfd2c end:0x020bfe44
+
+src/overlays/ov086/calls/ShowPrimaryRecordList.c:
+    complete
+    .text       start:0x020bfe44 end:0x020bff44
+
+src/overlays/ov086/calls/RefreshSecondaryPanel.c:
+    complete
+    .text       start:0x020bff44 end:0x020c0148
+
+src/overlays/ov086/calls/RefreshSecondaryPanelList.c:
+    complete
+    .text       start:0x020c0148 end:0x020c0340
+
+src/overlays/ov086/calls/ShowSecondaryPanelElementE.c:
+    complete
+    .text       start:0x020c0340 end:0x020c044c
+
+src/overlays/ov086/calls/RefreshTertiaryPanel.c:
+    complete
+    .text       start:0x020c044c end:0x020c0648
+
+src/overlays/ov086/calls/RefreshRecordGraphPanel.c:
+    complete
+    .text       start:0x020c0648 end:0x020c082c
 
 src/overlays/ov086/calls/StepCursorBackward.c:
     complete
@@ -28,13 +104,53 @@ src/overlays/ov086/calls/StepCursorForward_020c0e10.c:
     complete
     .text       start:0x020c0e10 end:0x020c0e6c
 
+src/overlays/ov086/calls/SetupRecordSubScreenLayers.c:
+    complete
+    .text       start:0x020c0e6c end:0x020c0f28
+
+src/overlays/ov086/calls/LoadRecordSubScreenGraphics.c:
+    complete
+    .text       start:0x020c0f28 end:0x020c1044
+
 src/overlays/ov086/calls/InitRecordTileTable.c:
     complete
     .text       start:0x020c1044 end:0x020c1098
 
+src/overlays/ov086/calls/InitRecordPanelText.c:
+    complete
+    .text       start:0x020c1098 end:0x020c1490
+
 src/overlays/ov086/calls/AddTaggedIndexedRecord.c:
     complete
     .text       start:0x020c1490 end:0x020c14e0
+
+src/overlays/ov086/calls/UpdateRecordSliderTouch.c:
+    complete
+    .text       start:0x020c1620 end:0x020c1694
+
+src/overlays/ov086/calls/HandleRecordScrollInput.c:
+    complete
+    .text       start:0x020c1848 end:0x020c1a48
+
+src/overlays/ov086/calls/DrawPlayTimeDigits.c:
+    complete
+    .text       start:0x020c1a48 end:0x020c1bc8
+
+src/overlays/ov086/calls/InitRecordPanelDigits.c:
+    complete
+    .text       start:0x020c1bc8 end:0x020c1dc8
+
+src/overlays/ov086/calls/InitRecordMenu.c:
+    complete
+    .text       start:0x020c1dc8 end:0x020c1e70
+
+src/overlays/ov086/calls/DestroyRecordMenu.c:
+    complete
+    .text       start:0x020c1e70 end:0x020c1ef4
+
+src/overlays/ov086/calls/UpdateRecordPanelInput.c:
+    complete
+    .text       start:0x020c1ef4 end:0x020c2060
 
 src/overlays/ov086/calls/OnSliderTouched.c:
     complete

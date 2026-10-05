@@ -9,8 +9,8 @@ typedef struct {
 
 extern OverlayState *data_ov031_020bc820;
 extern u32 func_ov001_0206685c(void);
-extern void func_ov001_0206a7c0(int mode);
-extern u32 func_ov001_0206a814(void);
+extern void BeginScreenFadeOut(int mode);
+extern u32 IsScreenModeIdle(void);
 
 u32 TryEnterState16(void)
 {
@@ -24,10 +24,10 @@ u32 TryEnterState16(void)
             return 0xffffffff;
         }
     }
-    result = func_ov001_0206a814();
+    result = IsScreenModeIdle();
     if (result == 0) {
         return 0xffffffff;
     }
-    func_ov001_0206a7c0((int)state->mode);
+    BeginScreenFadeOut((int)state->mode);
     return 0x10;
 }

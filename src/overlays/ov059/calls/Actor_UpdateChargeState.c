@@ -28,7 +28,7 @@ struct Actor {
 extern void *func_ov001_0206db78(u8 index);
 extern void func_ov059_020c999c(Actor *actor);
 extern BOOL IsPlayerEntryFlagSet(int player, u32 id);
-extern BOOL func_ov021_020a753c(void *holder, u16 mask);
+extern BOOL HasFlagsAt0xc(void *holder, u16 mask);
 extern void func_ov059_020ca35c(Actor *actor, int arg1, int arg2);
 
 static inline int Actor_GetMode(Actor *actor) {
@@ -49,7 +49,7 @@ void Actor_UpdateChargeState(Actor *actor) {
     charge = actor->chargeTime;
 
     func_ov059_020c999c(actor);
-    if (Actor_GetMode(actor) != 4 && IsPlayerEntryFlagSet(actor->playerIndex, 15) && func_ov021_020a753c(input, 2)) {
+    if (Actor_GetMode(actor) != 4 && IsPlayerEntryFlagSet(actor->playerIndex, 15) && HasFlagsAt0xc(input, 2)) {
         actor->setState(actor, 14);
         return;
     }

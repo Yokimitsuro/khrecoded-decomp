@@ -23,7 +23,7 @@ typedef struct SpawnExtra {
 extern s32 ScriptVm_ReadOperandInt(void *vm, ScriptOperand *operand);
 extern fx32 ScriptVm_ReadOperandFx32(void *vm, ScriptOperand *operand);
 extern void *func_ov001_0207f050(int index);
-extern void *func_ov011_020a1074(void *objectClass, u16 slotIndex, u16 saveBitOffset,
+extern void *FieldObject_CreateAt(void *objectClass, u16 slotIndex, u16 saveBitOffset,
                                            u8 saveBitCount, VecFx32 *position, SpawnExtra *extra);
 
 BOOL ScriptCmd_SpawnFieldObject_020a05ac(void *vm, ScriptOperand *op)
@@ -69,7 +69,7 @@ BOOL ScriptCmd_SpawnFieldObject_020a05ac(void *vm, ScriptOperand *op)
         extra.data.pair.second = ScriptVm_ReadOperandInt(vm, &op[8]);
         break;
     }
-    func_ov011_020a1074(func_ov001_0207f050(classIndex), slotIndex, saveBitOffset, saveBitCount,
+    FieldObject_CreateAt(func_ov001_0207f050(classIndex), slotIndex, saveBitOffset, saveBitCount,
                                   &position, &extra);
     return TRUE;
 }

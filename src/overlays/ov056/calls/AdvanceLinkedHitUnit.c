@@ -23,7 +23,7 @@ typedef struct EffectSource {
 } EffectSource;
 
 extern void *GetBoundedEntryField(int index);
-extern HitResult func_ov021_020ab0e8(EffectSource *attacker, HitUnit *unit, VecFx32 *position, VecFx32 *offset);
+extern HitResult FindStrongestHit(EffectSource *attacker, HitUnit *unit, VecFx32 *position, VecFx32 *offset);
 extern s16 AdvanceOwnerAnimation(HitUnit *owner, fx32 step);
 
 BOOL AdvanceLinkedHitUnit(EffectSource *source, HitUnit *unit, fx32 step)
@@ -37,7 +37,7 @@ BOOL AdvanceLinkedHitUnit(EffectSource *source, HitUnit *unit, fx32 step)
     offset.y = 0;
     offset.x = 0;
     if (unit->progress == FX32_ONE) {
-        func_ov021_020ab0e8(source, unit, &position, &offset);
+        FindStrongestHit(source, unit, &position, &offset);
     }
     if (unit->phase == 1) {
         u16 finished = AdvanceOwnerAnimation(unit, step);

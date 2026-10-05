@@ -15,6 +15,18 @@ src/overlays/ov047/calls/ApproachAngle.c:
     complete
     .text       start:0x020c4844 end:0x020c48a0
 
+src/overlays/ov047/calls/Camera_ConstrainEye.c:
+    complete
+    .text       start:0x020c5e3c end:0x020c605c
+
+src/overlays/ov047/calls/Camera_UpdateUpVector.c:
+    complete
+    .text       start:0x020c605c end:0x020c6108
+
+src/overlays/ov047/calls/Camera_RefreshCollisionBounds.c:
+    complete
+    .text       start:0x020c6108 end:0x020c629c
+
 src/overlays/ov047/calls/MaxOfInts.c:
     complete
     .text       start:0x020c629c end:0x020c62ec
@@ -22,3 +34,15 @@ src/overlays/ov047/calls/MaxOfInts.c:
 src/overlays/ov047/calls/MinOfInts.c:
     complete
     .text       start:0x020c62ec end:0x020c633c
+
+src/overlays/ov047/calls/CameraSweep_CollectContact.c:
+    complete
+    .text       start:0x020c63d4 end:0x020c64d0
+
+src/overlays/ov047/calls/CameraProbe_TestContact.c:
+    complete
+    .text       start:0x020c64d0 end:0x020c65b4
+
+src/overlays/ov047/calls/TryCopySourceBlock.c:
+    complete
+    .text       start:0x020c6b78 end:0x020c6ba4

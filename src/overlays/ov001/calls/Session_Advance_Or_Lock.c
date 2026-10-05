@@ -2,8 +2,8 @@
 
 extern u32 data_ov001_020a0480;
 extern s32 PopSessionQueue(u32 fieldAddr);
-extern u32 func_ov001_02062c98();
-extern u32 func_ov001_020630e4();
+extern u32 ReleaseSessionHandle();
+extern u32 FlushPendingEntryRefresh();
 
 s32 Session_Advance_Or_Lock(void) {
     u32 base = data_ov001_020a0480;
@@ -16,8 +16,8 @@ s32 Session_Advance_Or_Lock(void) {
         result = 8;
         break;
     case 1:
-        func_ov001_02062c98(base, 1);
-        func_ov001_020630e4();
+        ReleaseSessionHandle(base, 1);
+        FlushPendingEntryRefresh();
         result = 4;
         break;
     }

@@ -4,7 +4,7 @@ extern struct { int reserved; int context; } data_ov032_020c0088;
 #define activeMenu data_ov032_020c0088.context
 extern u32 IsFieldPanelHidden();
 extern u32 func_ov032_020bb914();
-extern u32 func_ov032_020bba00();
+extern u32 UpdateGaugeBarTiles();
 
 u32 UpdateGroupMenuCounter(void)
 
@@ -18,7 +18,7 @@ u32 UpdateGroupMenuCounter(void)
   }
   if ((*(int *)(menu + 0x20) != *(int *)(menu + 0x24)) &&
      (ready = IsFieldPanelHidden(), ready != 0)) {
-    func_ov032_020bba00(menu);
+    UpdateGaugeBarTiles(menu);
   }
   return 0;
 }

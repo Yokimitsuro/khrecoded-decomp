@@ -4,6 +4,10 @@
     .data       start:0x020c4160 end:0x020c4260 kind:data align:32
     .bss        start:0x020c4260 end:0x020c4280 kind:bss align:32
 
+src/overlays/ov073/calls/ResetStatusPageState.c:
+    complete
+    .text       start:0x020beac0 end:0x020beb7c
+
 src/overlays/ov073/calls/SetStatusElementVisible.c:
     complete
     .text       start:0x020beb7c end:0x020beb9a
@@ -11,6 +15,18 @@ src/overlays/ov073/calls/SetStatusElementVisible.c:
 src/overlays/ov073/calls/ResetStatusHeaderText.c:
     complete
     .text       start:0x020beb9c end:0x020bebf0
+
+src/overlays/ov073/calls/MoveSummarySlot.c:
+    complete
+    .text       start:0x020bebf0 end:0x020bed00
+
+src/overlays/ov073/calls/ReleaseStatusPage.c:
+    complete
+    .text       start:0x020bed00 end:0x020bed68
+
+src/overlays/ov073/calls/LoadStatusLabels.c:
+    complete
+    .text       start:0x020bfc78 end:0x020bfef0
 
 src/overlays/ov073/calls/CreateContainerCells.c:
     complete
@@ -20,9 +36,17 @@ src/overlays/ov073/auto/func_ov073_020bff88.c:
     complete
     .text       start:0x020bff88 end:0x020bff8c
 
+src/overlays/ov073/calls/DrawStatusPanel.c:
+    complete
+    .text       start:0x020bff8c end:0x020c0204
+
 src/overlays/ov073/calls/HideStatusPageIcons.c:
     complete
     .text       start:0x020c0204 end:0x020c0240
+
+src/overlays/ov073/calls/FixSelectedSlotIndex.c:
+    complete
+    .text       start:0x020c028c end:0x020c02f4
 
 src/overlays/ov073/calls/HideStatusPageRows.c:
     complete
@@ -35,6 +59,10 @@ src/overlays/ov073/calls/HideStatusScreenElement.c:
 src/overlays/ov073/calls/HideStatusPanelElement.c:
     complete
     .text       start:0x020c1250 end:0x020c1268
+
+src/overlays/ov073/calls/RestoreStatusSubScreen.c:
+    complete
+    .text       start:0x020c1268 end:0x020c1388
 
 src/overlays/ov073/calls/ApplyListScrollRegs.c:
     complete
@@ -52,6 +80,22 @@ src/overlays/ov073/calls/GetPlayerLevelTier.c:
     complete
     .text       start:0x020c1438 end:0x020c14a8
 
+src/overlays/ov073/calls/UpdateStatusPanel.c:
+    complete
+    .text       start:0x020c15d0 end:0x020c175c
+
+src/overlays/ov073/calls/CloseStatusScreen.c:
+    complete
+    .text       start:0x020c1884 end:0x020c1a20
+
+src/overlays/ov073/calls/ShowSelectedRecordName.c:
+    complete
+    .text       start:0x020c1a20 end:0x020c1b48
+
+src/overlays/ov073/calls/ShowStatusPageContents.c:
+    complete
+    .text       start:0x020c1b48 end:0x020c1c00
+
 src/overlays/ov073/calls/GetRecordProgressInfo.c:
     complete
     .text       start:0x020c1ce8 end:0x020c1d3c
@@ -59,6 +103,14 @@ src/overlays/ov073/calls/GetRecordProgressInfo.c:
 src/overlays/ov073/calls/ToggleSharedStateFlag.c:
     complete
     .text       start:0x020c1d3c end:0x020c1d58
+
+src/overlays/ov073/calls/SetStatusHeaderText.c:
+    complete
+    .text       start:0x020c1d58 end:0x020c1ddc
+
+src/overlays/ov073/calls/SetStatusHeaderMessage.c:
+    complete
+    .text       start:0x020c1ddc end:0x020c1e80
 
 src/overlays/ov073/calls/SplitFxToTenths.c:
     complete
@@ -68,6 +120,10 @@ src/overlays/ov073/calls/ReloadStatusRecord.c:
     complete
     .text       start:0x020c29f8 end:0x020c2a22
 
+src/overlays/ov073/calls/OpenStatusRecordList.c:
+    complete
+    .text       start:0x020c2a24 end:0x020c2ae8
+
 src/overlays/ov073/calls/SyncSharedListScroll.c:
     complete
     .text       start:0x020c2ae8 end:0x020c2b0c
@@ -75,6 +131,10 @@ src/overlays/ov073/calls/SyncSharedListScroll.c:
 src/overlays/ov073/calls/SetSharedListMode.c:
     complete
     .text       start:0x020c2b0c end:0x020c2b30
+
+src/overlays/ov073/calls/ShowStatusRecordList.c:
+    complete
+    .text       start:0x020c2b30 end:0x020c2c44
 
 src/overlays/ov073/calls/SetSharedListEntries.c:
     complete
@@ -88,9 +148,33 @@ src/overlays/ov073/calls/GetSharedSelectedIndex.c:
     complete
     .text       start:0x020c2cb0 end:0x020c2cc4
 
+src/overlays/ov073/calls/RefreshListRowColors.c:
+    complete
+    .text       start:0x020c2de4 end:0x020c2e68
+
+src/overlays/ov073/calls/RebuildSlotChain_020c2e68.c:
+    complete
+    .text       start:0x020c2e68 end:0x020c2f7a
+
 src/overlays/ov073/calls/GetScreenTilePtr.c:
     complete
     .text       start:0x020c2f7c end:0x020c2fb0
+
+src/overlays/ov073/calls/DrawListSlotTiles.c:
+    complete
+    .text       start:0x020c2fb0 end:0x020c305a
+
+src/overlays/ov073/calls/RefreshListRowStates.c:
+    complete
+    .text       start:0x020c305c end:0x020c32c6
+
+src/overlays/ov073/calls/ExpandListRow.c:
+    complete
+    .text       start:0x020c32c8 end:0x020c3550
+
+src/overlays/ov073/calls/LoadListViewGraphics.c:
+    complete
+    .text       start:0x020c3550 end:0x020c36a2
 
 src/overlays/ov073/calls/OnListDataLoaded.c:
     complete
@@ -131,6 +215,34 @@ src/overlays/ov073/calls/IsLessOrEqual_020c37f8.c:
 src/overlays/ov073/calls/IsLessThan_020c3804.c:
     complete
     .text       start:0x020c3804 end:0x020c3810
+
+src/overlays/ov073/calls/FindVerticalNeighbor_020c3810.c:
+    complete
+    .text       start:0x020c3810 end:0x020c388a
+
+src/overlays/ov073/calls/HandleListCursorInput.c:
+    complete
+    .text       start:0x020c3a10 end:0x020c3b00
+
+src/overlays/ov073/calls/InitListView.c:
+    complete
+    .text       start:0x020c3b00 end:0x020c3c70
+
+src/overlays/ov073/calls/ReleaseListView.c:
+    complete
+    .text       start:0x020c3c70 end:0x020c3d00
+
+src/overlays/ov073/calls/UpdateListScroll.c:
+    complete
+    .text       start:0x020c3d00 end:0x020c3d80
+
+src/overlays/ov073/calls/AdvanceListToNextSlot.c:
+    complete
+    .text       start:0x020c3d80 end:0x020c3e44
+
+src/overlays/ov073/calls/RewindListToPreviousSlot.c:
+    complete
+    .text       start:0x020c3e44 end:0x020c3f00
 
 src/overlays/ov073/calls/ScrollListWidgetTo.c:
     complete

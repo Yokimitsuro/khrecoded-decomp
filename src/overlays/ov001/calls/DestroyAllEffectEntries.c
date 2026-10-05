@@ -12,7 +12,7 @@ typedef struct EffectList {
 
 extern EffectList *data_ov001_020a04fc;
 
-extern void func_ov001_020862c0(EffectEntry *entry);
+extern void DestroyEntryPool(EffectEntry *entry);
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
 
 void DestroyAllEffectEntries(BOOL notify)
@@ -27,7 +27,7 @@ void DestroyAllEffectEntries(BOOL notify)
             if (notify && entry->onDestroy != NULL) {
                 entry->onDestroy(entry);
             }
-            func_ov001_020862c0(entry);
+            DestroyEntryPool(entry);
             list->entries[i] = NULL;
         }
     }

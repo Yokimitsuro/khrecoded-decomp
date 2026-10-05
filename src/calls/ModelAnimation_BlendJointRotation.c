@@ -29,7 +29,7 @@ typedef struct NNSG3dResJntAnm {
     u32 fullRotationOffset;
 } NNSG3dResJntAnm;
 
-extern BOOL func_01ffd56c(MtxFx33 *rotationMatrix, const void *compactRotationData,
+extern BOOL DecodeCompressedRotationITCM(MtxFx33 *rotationMatrix, const void *compactRotationData,
                           const void *fullRotationData, u32 trackFlags);
 extern void func_01ffcf74(VecFx32 *first, VecFx32 *second);
 extern fx32 VEC_Normalize(const VecFx32 *inputVector, VecFx32 *normalizedVector);
@@ -66,7 +66,7 @@ void ModelAnimation_BlendJointRotation(MtxFx33 *rotationMatrix, fx32 animationFr
             nextKeyframeIndex = 0;
             goto DEFAULT_WEIGHT;
         }
-        if (func_01ffd56c(rotationMatrix, compactRotationData, fullRotationData, rotationKeyIndices[keyframeIndex])) {
+        if (DecodeCompressedRotationITCM(rotationMatrix, compactRotationData, fullRotationData, rotationKeyIndices[keyframeIndex])) {
             CrossProductFixed((const VecFx32 *)&rotationMatrix->_00, (const VecFx32 *)&rotationMatrix->_10,
                       (VecFx32 *)&rotationMatrix->_20);
         } else {
@@ -114,8 +114,8 @@ BLEND:
         MtxFx33 currentRotation, nextRotation;
         BOOL reconstructThirdAxis = 0;
 
-        reconstructThirdAxis |= func_01ffd56c(&currentRotation, compactRotationData, fullRotationData, rotationKeyIndices[keyframeIndex]);
-        reconstructThirdAxis |= func_01ffd56c(&nextRotation, compactRotationData, fullRotationData, rotationKeyIndices[nextKeyframeIndex]);
+        reconstructThirdAxis |= DecodeCompressedRotationITCM(&currentRotation, compactRotationData, fullRotationData, rotationKeyIndices[keyframeIndex]);
+        reconstructThirdAxis |= DecodeCompressedRotationITCM(&nextRotation, compactRotationData, fullRotationData, rotationKeyIndices[nextKeyframeIndex]);
 
         rotationMatrix->_00 = currentRotation._00 * keyframeSpacing + ((frameFraction * (nextRotation._00 - currentRotation._00)) >> 12);
         rotationMatrix->_01 = currentRotation._01 * keyframeSpacing + ((frameFraction * (nextRotation._01 - currentRotation._01)) >> 12);

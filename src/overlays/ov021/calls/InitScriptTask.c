@@ -10,12 +10,12 @@ typedef struct {
 } ScriptTask;
 
 extern void MI_CpuFill8(void *dest, u8 data, u32 size);
-extern void func_ov021_020acdd4(void *task);
+extern void GetIndexedRecordField(void *task);
 
 void InitScriptTask(ScriptTask *task, void *script, void *owner, void *arg) {
     MI_CpuFill8(task, 0, sizeof(ScriptTask));
     task->script = script;
     task->owner = owner;
     task->arg = arg;
-    task->update = func_ov021_020acdd4;
+    task->update = GetIndexedRecordField;
 }

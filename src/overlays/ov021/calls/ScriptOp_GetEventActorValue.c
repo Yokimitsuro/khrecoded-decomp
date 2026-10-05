@@ -25,7 +25,7 @@ typedef struct ScriptContext {
 
 extern ActiveContext data_ov021_020b56c4;
 extern void *ResolveTaggedValueRef(ScriptContext *context, void *value);
-extern EventRecord *func_ov001_0209c114(u32 id);
+extern EventRecord *GetStageEventRecord(u32 id);
 extern u8 *GetStageActor(int id);
 
 int ScriptOp_GetEventActorValue(ScriptContext *context, u8 *operands)
@@ -44,7 +44,7 @@ int ScriptOp_GetEventActorValue(ScriptContext *context, u8 *operands)
     if (source->eventId == 0) {
         return 0;
     }
-    record = func_ov001_0209c114(source->eventId);
+    record = GetStageEventRecord(source->eventId);
     if (record == NULL) {
         return 0;
     }

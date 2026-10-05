@@ -21,7 +21,7 @@ typedef struct SlotMenu {
 } SlotMenu;
 
 extern void *GetActiveRecordEntryOrNull(int index);
-extern void func_ov076_020c8a00(SlotMenu *menu, int slot, int column);
+extern void SlotMenu_UnequipSlotEntry(SlotMenu *menu, int slot, int column);
 extern void func_ov076_020c8354(SlotMenu *menu, int slot, int column, ItemStock *stock);
 extern void func_ov076_020c82f8(SlotMenu *menu, int slot, int column, int recordIndex);
 
@@ -31,7 +31,7 @@ void SlotMenu_AssignStockToSlot(SlotMenu *menu, ItemStock *stock)
     int column = menu->column;
 
     if (stock->def->isRecord == 0) {
-        func_ov076_020c8a00(menu, slot, 1);
+        SlotMenu_UnequipSlotEntry(menu, slot, 1);
         func_ov076_020c8354(menu, slot, 0, stock);
         return;
     }

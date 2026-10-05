@@ -6,13 +6,13 @@ typedef struct StageRecord {
 } StageRecord;
 
 extern int data_ov001_0209f2e8;
-extern StageRecord *func_ov001_0209c114(u32 id);
+extern StageRecord *GetStageEventRecord(u32 id);
 
 BOOL StageRecord_IsDefeated(u32 id)
 {
     StageRecord *record;
 
-    if (data_ov001_0209f2e8 != -1 && (record = func_ov001_0209c114(id)) != NULL) {
+    if (data_ov001_0209f2e8 != -1 && (record = GetStageEventRecord(id)) != NULL) {
         if (record->hitPoints == 0) {
             return TRUE;
         }

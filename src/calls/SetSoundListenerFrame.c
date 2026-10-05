@@ -8,7 +8,7 @@ typedef struct SoundListenerWork {
 } SoundListenerWork;
 
 extern SoundListenerWork *gSoundWork;
-extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 
 void SetSoundListenerFrame(const VecFx32 *position, const VecFx32 *forward, const VecFx32 *up)
@@ -16,7 +16,7 @@ void SetSoundListenerFrame(const VecFx32 *position, const VecFx32 *forward, cons
     SoundListenerWork *work = gSoundWork;
     VecFx32 cross;
 
-    func_01ff9ea8(forward, up, &cross);
+    VEC_CrossProduct(forward, up, &cross);
     func_01ffaff4(&cross, &work->axis);
     work->position = *position;
 }

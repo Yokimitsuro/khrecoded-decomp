@@ -4,9 +4,29 @@
     .data       start:0x020bb6c0 end:0x020bb780 kind:data align:32
     .bss        start:0x020bb780 end:0x020bb7a0 kind:bss align:32
 
+src/overlays/ov037/calls/BeginCommSession.c:
+    complete
+    .text       start:0x020ba400 end:0x020ba47c
+
+src/overlays/ov037/calls/RunCommStepMachine.c:
+    complete
+    .text       start:0x020ba47c end:0x020ba504
+
 src/overlays/ov037/calls/ShutdownCommChannelAndAudio.c:
     complete
     .text       start:0x020ba504 end:0x020ba564
+
+src/overlays/ov037/calls/MarkCommChannelBusy.c:
+    complete
+    .text       start:0x020ba75c end:0x020ba784
+
+src/overlays/ov037/calls/SyncSessionCommFlags.c:
+    complete
+    .text       start:0x020ba784 end:0x020ba810
+
+src/overlays/ov037/calls/NotifyCommSlotIfReady.c:
+    complete
+    .text       start:0x020ba894 end:0x020ba8c8
 
 src/overlays/ov037/calls/ResetCommSlotWhenIdle.c:
     complete
@@ -15,6 +35,14 @@ src/overlays/ov037/calls/ResetCommSlotWhenIdle.c:
 src/overlays/ov037/calls/StoreCommResultSlot.c:
     complete
     .text       start:0x020ba904 end:0x020ba92c
+
+src/overlays/ov037/calls/AdvanceCommWhenReady.c:
+    complete
+    .text       start:0x020ba93c end:0x020ba964
+
+src/overlays/ov037/calls/MarkCommBusyWhenReady.c:
+    complete
+    .text       start:0x020ba964 end:0x020ba9a0
 
 src/overlays/ov037/calls/func_ov037_020baa84.c:
     complete
@@ -36,9 +64,37 @@ src/overlays/ov037/calls/ContinueScene_GetResult.c:
     complete
     .text       start:0x020baca4 end:0x020bacb8
 
+src/overlays/ov037/calls/InitCommHandlerTable.c:
+    complete
+    .text       start:0x020bacb8 end:0x020bad2c
+
+src/overlays/ov037/calls/RefreshMenuListLayout.c:
+    complete
+    .text       start:0x020bad84 end:0x020bae4c
+
+src/overlays/ov037/calls/SetupMainBgLayers.c:
+    complete
+    .text       start:0x020bae4c end:0x020baedc
+
+src/overlays/ov037/calls/LoadMenuModelResources.c:
+    complete
+    .text       start:0x020bafdc end:0x020bb0a8
+
 src/overlays/ov037/calls/ResetCameraProjectionOverrides.c:
     complete
     .text       start:0x020bb0a8 end:0x020bb0e8
+
+src/overlays/ov037/calls/DrawMenuTexts.c:
+    complete
+    .text       start:0x020bb0e8 end:0x020bb300
+
+src/overlays/ov037/calls/BuildMenuEntryList.c:
+    complete
+    .text       start:0x020bb334 end:0x020bb3e0
+
+src/overlays/ov037/calls/UpdateMenuSelection.c:
+    complete
+    .text       start:0x020bb4dc end:0x020bb648
 
 src/overlays/ov037/data/strings/Strings_ov037_020bb704.c:
     complete

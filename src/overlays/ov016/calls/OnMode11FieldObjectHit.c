@@ -41,7 +41,7 @@ typedef struct {
     int arg3;
 } HitContext;
 
-extern void func_ov016_020a568c(void *self, void *other, void *contact, HitInfo *hit, FieldObject *obj, int arg1, int arg2, int arg3);
+extern void OnFieldUnitPushedUp(void *self, void *other, void *contact, HitInfo *hit, FieldObject *obj, int arg1, int arg2, int arg3);
 
 void OnMode11FieldObjectHit(void *self, void *other, void *contact, HitInfo *hit, HitContext context)
 {
@@ -58,5 +58,5 @@ void OnMode11FieldObjectHit(void *self, void *other, void *contact, HitInfo *hit
             obj->variant = state->variant;
         }
     }
-    func_ov016_020a568c(self, other, contact, hit, context.obj, context.arg1, context.arg2, context.arg3);
+    OnFieldUnitPushedUp(self, other, contact, hit, context.obj, context.arg1, context.arg2, context.arg3);
 }

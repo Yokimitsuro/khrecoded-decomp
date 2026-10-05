@@ -16,7 +16,7 @@ typedef struct RewardPopup {
 
 extern RewardPopup *data_ov040_020be284;
 extern u32 func_ov040_020bdc44(u32 code);
-extern u32 func_ov040_020bdbac(u32 flagId);
+extern u32 RewardFlagToItemCode(u32 flagId);
 extern int AddToStackSlot(const StackSlot *request);
 extern void func_ov001_02078360(int a, int b);
 extern int func_ov001_0207865c(void);
@@ -46,7 +46,7 @@ BOOL GrantRewardItem(void *unused, u32 *code, u32 *count)
         func_ov001_02078360(1, 1);
         func_02050394(&replaced, &request, func_ov001_0207865c());
         func_ov001_020785c0(request.id, request.count);
-        *code = func_ov040_020bdbac(replaced.id);
+        *code = RewardFlagToItemCode(replaced.id);
         *count = replaced.count;
     } else {
         func_ov001_02078500(request.id, slot, request.count);

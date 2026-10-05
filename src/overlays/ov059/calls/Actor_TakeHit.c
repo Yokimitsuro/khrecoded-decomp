@@ -23,17 +23,17 @@ typedef struct Actor {
     VecFx32 drift;
 } Actor;
 
-extern BOOL func_ov059_020c921c(Actor *actor, HitInfo *hit);
-extern void func_ov021_020a78d0(Actor *actor, HitInfo *hit);
+extern BOOL TryGuardFrontalHit(Actor *actor, HitInfo *hit);
+extern void RollHitEffect(Actor *actor, HitInfo *hit);
 extern int func_ov021_020a768c(Actor *actor, HitInfo *hit, BOOL critical);
 extern BOOL AddClampedHealth(Actor *actor, int delta);
 extern void TryApplyStatusEffect(Actor *actor, HitInfo *hit);
 extern void Actor_MarkGuardBreakInState3(Actor *actor);
 extern u32 random_next_scaled(u32 upperBound);
-extern VecFx32 func_ov021_020af8f4(fx32 radians);
+extern VecFx32 GetCameraOrbitOffset(fx32 radians);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
-extern void func_ov043_020bcb58(const VecFx32 *launch, int param40, int param44, int param2c);
-extern void func_ov059_020cb988(Actor *actor);
+extern void StartCameraParticle_020bcb58(const VecFx32 *launch, int param40, int param44, int param2c);
+extern void Actor_ExitCommandMode(Actor *actor);
 
 BOOL Actor_TakeHit(Actor *actor, HitInfo *hit)
 {
@@ -41,7 +41,7 @@ BOOL Actor_TakeHit(Actor *actor, HitInfo *hit)
     int damage;
     BOOL knockback;
 
-    if (func_ov059_020c921c(actor, hit)) {
+    if (TryGuardFrontalHit(actor, hit)) {
         return TRUE;
     }
     if (actor->statusFlags & 0x820) {
@@ -53,7 +53,7 @@ BOOL Actor_TakeHit(Actor *actor, HitInfo *hit)
         }
         actor->guardTimer += 0x2d000;
     }
-    func_ov021_020a78d0(actor, hit);
+    RollHitEffect(actor, hit);
     damage = func_ov021_020a768c(actor, hit, actor->mode == 10);
     AddClampedHealth(actor, (s16)-damage);
     hit->damage = damage;
@@ -78,12 +78,12 @@ BOOL Actor_TakeHit(Actor *actor, HitInfo *hit)
         actor->drift.x = 0;
         Actor_MarkGuardBreakInState3(actor);
         sign = random_next_scaled(2) != 0 ? 1 : -1;
-        orbit = func_ov021_020af8f4(random_next_scaled(0x6488));
+        orbit = GetCameraOrbitOffset(random_next_scaled(0x6488));
         offset = orbit;
         ScaleVecFx32InPlace(&offset, 0x1ec);
         launch = offset;
-        func_ov043_020bcb58(&launch, 0x333, (int)((s64)sign * 0x430), 0xa000);
-        func_ov059_020cb988(actor);
+        StartCameraParticle_020bcb58(&launch, 0x333, (int)((s64)sign * 0x430), 0xa000);
+        Actor_ExitCommandMode(actor);
     }
     return TRUE;
 }

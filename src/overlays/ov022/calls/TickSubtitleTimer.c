@@ -14,10 +14,10 @@ typedef struct {
 extern MovieGlobals data_ov022_020b7da8;
 extern MovieFileBank data_ov022_020b7db4;
 
-extern int func_ov022_020a8750(void *timer);
+extern int runMovieSlotState(void *timer);
 
 int TickSubtitleTimer(void) {
-    int done = func_ov022_020a8750(data_ov022_020b7da8.subtitles);
+    int done = runMovieSlotState(data_ov022_020b7da8.subtitles);
 
     if (done) {
         data_ov022_020b7db4.subtitlesDone = 1;

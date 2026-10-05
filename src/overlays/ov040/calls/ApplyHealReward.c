@@ -11,7 +11,7 @@ typedef struct RewardActor {
 } RewardActor;
 
 extern BOOL AddClampedHealth(RewardActor *actor, s16 delta);
-extern int func_ov035_020bafa8(void);
+extern int ShowMovieMessage3700(void);
 extern int func_ov035_020bafb4(void);
 extern void func_ov040_020bda8c(int entry, int amount);
 extern void ApplyRewardByTier(RewardActor *actor, int kind, int tier);
@@ -35,7 +35,7 @@ void ApplyHealReward(RewardActor *actor, int kind, int tier)
         if (actor->health->current != 0 && amount > 0) {
             AddClampedHealth(actor, amount);
         }
-        if (func_ov035_020bafa8() > 0 && amount > 0) {
+        if (ShowMovieMessage3700() > 0 && amount > 0) {
             func_ov040_020bda8c(1, amount);
         }
         if (func_ov035_020bafb4() > 0 && amount > 0) {

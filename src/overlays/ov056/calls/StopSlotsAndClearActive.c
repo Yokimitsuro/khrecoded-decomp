@@ -5,10 +5,10 @@ typedef struct {
     BOOL isActive;
 } BeamEntity;
 
-extern void func_ov021_020aeb8c(BeamEntity *entity);
+extern void ResetCountsAndSlots(BeamEntity *entity);
 
 void StopSlotsAndClearActive(BeamEntity *entity)
 {
-    func_ov021_020aeb8c(entity);
+    ResetCountsAndSlots(entity);
     entity->isActive = FALSE;
 }

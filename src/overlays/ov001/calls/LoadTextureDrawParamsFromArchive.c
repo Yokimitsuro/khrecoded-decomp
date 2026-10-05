@@ -17,7 +17,7 @@ typedef struct ArchiveContext {
 
 extern void *Archive_LoadFile(u32 fileId, u32 heapId);
 extern s32 ValidateResourceTagAndDispatch(void *resource, void *heap);
-extern void func_ov001_0207c5dc(TextureDrawParams *params, void *file, u32 texIndex);
+extern void GetTextureDrawParams(TextureDrawParams *params, void *file, u32 texIndex);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
 void LoadTextureDrawParamsFromArchive(ArchiveContext *context, u32 fileIndex, TextureDrawParams *params, int count, int firstTexture) {
@@ -28,7 +28,7 @@ void LoadTextureDrawParamsFromArchive(ArchiveContext *context, u32 fileIndex, Te
     i = 0;
     ValidateResourceTagAndDispatch(file, NULL);
     for (; i < count; i++) {
-        func_ov001_0207c5dc(&params[i], file, (u8)(i + firstTexture));
+        GetTextureDrawParams(&params[i], file, (u8)(i + firstTexture));
     }
     NNSi_FndFreeFromDefaultHeap(file);
 }

@@ -1,10 +1,10 @@
-func_ov078_020c4280 kind:function(thumb,size=0xf0) addr:0x020c4280
+InitPageMenu kind:function(thumb,size=0xf0) addr:0x020c4280
 func_ov078_020c4370 kind:function(thumb,size=0x2) addr:0x020c4370
 func_ov078_020c4374 kind:function(thumb,size=0x6c) addr:0x020c4374
 func_ov078_020c43e0 kind:function(thumb,size=0x1b0) addr:0x020c43e0
 LoadPageMenuWidgets kind:function(thumb,size=0x198) addr:0x020c4590
 func_ov078_020c4728 kind:function(thumb,size=0x14) addr:0x020c4728
-func_ov078_020c473c kind:function(thumb,size=0x2c) addr:0x020c473c
+InitSequence kind:function(thumb,size=0x2c) addr:0x020c473c
 PlaceCursorNode kind:function(thumb,size=0x2a) addr:0x020c4768
 ShowUnlockedPageTabs kind:function(thumb,size=0x168) addr:0x020c4794
 RefreshPageTabs kind:function(thumb,size=0xa4) addr:0x020c48fc

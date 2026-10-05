@@ -16,8 +16,8 @@ typedef struct StageActor {
 } StageActor;
 
 extern StageController *GetStageController(u32 id);
-extern u8 *func_ov001_0209c114(u32 id);
-extern void func_ov001_02099080(u32 id, VecFx32 *outPosition);
+extern u8 *GetStageEventRecord(u32 id);
+extern void GetStageEntryAnchor(u32 id, VecFx32 *outPosition);
 extern void ChooseWanderDestination(u8 *record, StageActor *actor, VecFx32 *position);
 
 void PlaceActorAtStageAnchor(StageActor *actor, int unused, VecFx32 *position)
@@ -26,9 +26,9 @@ void PlaceActorAtStageAnchor(StageActor *actor, int unused, VecFx32 *position)
     u8 *record = NULL;
 
     if (controller != NULL && controller->eventId != 0) {
-        record = func_ov001_0209c114(controller->eventId);
+        record = GetStageEventRecord(controller->eventId);
     }
-    func_ov001_02099080(actor->anchorId, position);
+    GetStageEntryAnchor(actor->anchorId, position);
     if (record != NULL) {
         ChooseWanderDestination(record, actor, position);
     }

@@ -52,9 +52,25 @@ src/overlays/ov038/auto/func_ov038_020ba6f8.c:
     complete
     .text       start:0x020ba6f8 end:0x020ba700
 
+src/overlays/ov038/calls/InitOv038HandlerTable.c:
+    complete
+    .text       start:0x020ba718 end:0x020ba780
+
 src/overlays/ov038/auto/func_ov038_020ba780.c:
     complete
     .text       start:0x020ba780 end:0x020ba788
+
+src/overlays/ov038/calls/ShowOv038ResultsFadeIn.c:
+    complete
+    .text       start:0x020ba788 end:0x020baab8
+
+src/overlays/ov038/calls/HandleOv038PageInput.c:
+    complete
+    .text       start:0x020baab8 end:0x020babd4
+
+src/overlays/ov038/calls/AdvanceOv038ExitTimer.c:
+    complete
+    .text       start:0x020babd4 end:0x020bac44
 
 src/overlays/ov038/calls/StopOv038SoundStream.c:
     complete
@@ -68,9 +84,17 @@ src/overlays/ov038/calls/FreeOv038ContextBuffers.c:
     complete
     .text       start:0x020bae4c end:0x020bae7c
 
+src/overlays/ov038/calls/LoadOv038Graphics.c:
+    complete
+    .text       start:0x020bae7c end:0x020baf9c
+
 src/overlays/ov038/calls/FreeOv038ContextSlots.c:
     complete
     .text       start:0x020baf9c end:0x020bafd4
+
+src/overlays/ov038/calls/InitOv038SpriteManagers.c:
+    complete
+    .text       start:0x020bafd4 end:0x020bb0e0
 
 src/overlays/ov038/calls/ReleaseOv038SlotPools.c:
     complete
@@ -80,9 +104,25 @@ src/overlays/ov038/calls/InitOv038SlotPools.c:
     complete
     .text       start:0x020bb124 end:0x020bb15c
 
+src/overlays/ov038/calls/CreateOv038Sprite.c:
+    complete
+    .text       start:0x020bb15c end:0x020bb250
+
+src/overlays/ov038/calls/SetOv038SpritePosition.c:
+    complete
+    .text       start:0x020bb250 end:0x020bb2cc
+
+src/overlays/ov038/calls/SetOv038SpriteOffset.c:
+    complete
+    .text       start:0x020bb2cc end:0x020bb34c
+
 src/overlays/ov038/calls/SetOv038PoolRecordFlags.c:
     complete
     .text       start:0x020bb34c end:0x020bb37c
+
+src/overlays/ov038/calls/DrawOv038PercentDigits.c:
+    complete
+    .text       start:0x020bb37c end:0x020bb43c
 
 src/overlays/ov038/calls/ResetOv038ExitState.c:
     complete

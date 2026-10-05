@@ -12,7 +12,7 @@ typedef struct FieldState {
 
 extern OverlayActor *data_ov054_020d3720;
 extern FieldState *data_ov001_020a0480;
-extern void func_ov052_020ccc80(OverlayActor *actor);
+extern void DestroyActorResources(OverlayActor *actor);
 extern void func_ov058_020d7f08(void);
 
 void ShutdownOverlay054(void)
@@ -23,7 +23,7 @@ void ShutdownOverlay054(void)
     if (actor != NULL) {
         mode = actor->savedMode;
         data_ov001_020a0480->savedMode = mode;
-        func_ov052_020ccc80(actor);
+        DestroyActorResources(actor);
         func_ov058_020d7f08();
         data_ov054_020d3720 = NULL;
     }

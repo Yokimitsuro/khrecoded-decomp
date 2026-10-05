@@ -21,7 +21,7 @@ typedef struct {
 
 extern BOOL func_ov001_02087674(FieldObject *obj, HitParams *params);
 extern BOOL PushFieldObject(FieldObject *obj, HitParams *params);
-extern void func_ov016_020a3c04(FieldObject *obj, u8 effectId);
+extern void InitializeFieldEffect(FieldObject *obj, u8 effectId);
 extern void ApplyGroupLeaderHit(FieldObject *obj, int arg);
 extern void EnterFieldUnitPhase5(FieldObject *obj, BOOL hasEffect);
 
@@ -40,7 +40,7 @@ int HandleFieldObjectHit_020a50a4(FieldObject *obj, HitParams *params)
         if (PushFieldObject(obj, params)) {
             result = 0;
         } else if (obj->mode == 11) {
-            func_ov016_020a3c04(obj, params->effectId);
+            InitializeFieldEffect(obj, params->effectId);
             return 0;
         }
         if (obj->weight == 0) {

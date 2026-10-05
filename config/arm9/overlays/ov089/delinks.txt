@@ -8,13 +8,61 @@ src/overlays/ov089/calls/ShouldOpenPopupWindow.c:
     complete
     .text       start:0x020bef20 end:0x020bef54
 
+src/overlays/ov089/calls/MoveCursorToElement.c:
+    complete
+    .text       start:0x020bef54 end:0x020befe0
+
+src/overlays/ov089/calls/RefreshEntryCaption.c:
+    complete
+    .text       start:0x020bf014 end:0x020bf0c4
+
+src/overlays/ov089/calls/LoadEntryModels.c:
+    complete
+    .text       start:0x020bf230 end:0x020bf37c
+
+src/overlays/ov089/calls/LoadMenuBackgrounds.c:
+    complete
+    .text       start:0x020bf3b8 end:0x020bf4a8
+
 src/overlays/ov089/calls/func_ov089_020bf4a8.c:
     complete
     .text       start:0x020bf4a8 end:0x020bf4bc
 
+src/overlays/ov089/calls/LoadEntryMenuWidgets.c:
+    complete
+    .text       start:0x020bf9e0 end:0x020bfaf0
+
+src/overlays/ov089/calls/OpenPopupWindow.c:
+    complete
+    .text       start:0x020bfb08 end:0x020bfbac
+
+src/overlays/ov089/calls/ClosePopupWindow.c:
+    complete
+    .text       start:0x020bfbac end:0x020bfc6c
+
+src/overlays/ov089/calls/InitEntryUnlocks.c:
+    complete
+    .text       start:0x020bfc6c end:0x020bfdcc
+
+src/overlays/ov089/calls/SetPopupConfirmMode.c:
+    complete
+    .text       start:0x020bfdcc end:0x020bff0c
+
+src/overlays/ov089/calls/HandlePopupBackInput.c:
+    complete
+    .text       start:0x020c0088 end:0x020c0104
+
+src/overlays/ov089/calls/InitEntryMenu.c:
+    complete
+    .text       start:0x020c0104 end:0x020c01d4
+
 src/overlays/ov089/calls/ShutdownOverlay089.c:
     complete
     .text       start:0x020c01d4 end:0x020c0214
+
+src/overlays/ov089/calls/UpdateEntryCarousel.c:
+    complete
+    .text       start:0x020c0214 end:0x020c042c
 
 src/overlays/ov089/data/strings/Strings_ov089_020c065c.c:
     complete

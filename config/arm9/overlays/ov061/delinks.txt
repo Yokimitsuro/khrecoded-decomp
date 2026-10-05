@@ -12,6 +12,10 @@ src/overlays/ov061/calls/UpdateTimedBurstAction.c:
     complete
     .text       start:0x020d81e0 end:0x020d8380
 
+src/overlays/ov061/calls/CreateBurstBattleObject.c:
+    complete
+    .text       start:0x020d8380 end:0x020d8520
+
 src/overlays/ov061/data/strings/Strings_ov061_020d8540.c:
     complete
     .data       start:0x020d8540 end:0x020d8569

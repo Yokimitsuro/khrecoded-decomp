@@ -8,6 +8,10 @@ src/overlays/ov019/calls/ScriptCmd_CreateSlotObjectKind5.c:
     complete
     .text       start:0x020a1e00 end:0x020a1e2e
 
+src/overlays/ov019/calls/ScriptCmd_SpawnLinkedObject.c:
+    complete
+    .text       start:0x020a1e30 end:0x020a1f58
+
 src/overlays/ov019/calls/FieldObject_HandlePushContact.c:
     complete
     .text       start:0x020a1f58 end:0x020a2018
@@ -32,6 +36,18 @@ src/overlays/ov019/calls/FindFirstLiveLink.c:
     complete
     .text       start:0x020a2148 end:0x020a2188
 
+src/overlays/ov019/calls/IsLeadLink.c:
+    complete
+    .text       start:0x020a2188 end:0x020a2200
+
+src/overlays/ov019/calls/RefreshLeadLinkFlags.c:
+    complete
+    .text       start:0x020a2200 end:0x020a2270
+
+src/overlays/ov019/calls/SettleLinkHeight.c:
+    complete
+    .text       start:0x020a2270 end:0x020a23c0
+
 src/overlays/ov019/calls/func_ov019_020a23c0.c:
     complete
     .text       start:0x020a23c0 end:0x020a23cc
@@ -40,9 +56,21 @@ src/overlays/ov019/auto/func_ov019_020a23cc.c:
     complete
     .text       start:0x020a23cc end:0x020a23ce
 
+src/overlays/ov019/calls/ResetLinkAnimation.c:
+    complete
+    .text       start:0x020a23d0 end:0x020a2438
+
+src/overlays/ov019/calls/HandleLinkEvent.c:
+    complete
+    .text       start:0x020a2438 end:0x020a274c
+
 src/overlays/ov019/calls/ReleaseOwnerResources.c:
     complete
     .text       start:0x020a274c end:0x020a2792
+
+src/overlays/ov019/calls/TryCollideWithCollider.c:
+    complete
+    .text       start:0x020a2a28 end:0x020a2bec
 
 src/overlays/ov019/calls/GetRaisedFocusPoint.c:
     complete
@@ -52,13 +80,29 @@ src/overlays/ov019/calls/TryGetExtraDataHandle.c:
     complete
     .text       start:0x020a2c48 end:0x020a2c6c
 
+src/overlays/ov019/calls/DrawActorModel.c:
+    complete
+    .text       start:0x020a2c6c end:0x020a2e28
+
+src/overlays/ov019/calls/ApplyDerivedIdState.c:
+    complete
+    .text       start:0x020a31a8 end:0x020a31be
+
 src/overlays/ov019/calls/IsDestroyed.c:
     complete
     .text       start:0x020a3218 end:0x020a322c
 
+src/overlays/ov019/calls/GetObjectPositionIfValid.c:
+    complete
+    .text       start:0x020a322c end:0x020a3254
+
 src/overlays/ov019/calls/SnapshotLinkStates.c:
     complete
     .text       start:0x020a3254 end:0x020a32a4
+
+src/overlays/ov019/calls/CreateKind5EntryPool.c:
+    complete
+    .text       start:0x020a32a4 end:0x020a3348
 
 src/overlays/ov019/calls/SetLinkedCallbackId.c:
     complete

@@ -5,10 +5,10 @@ typedef struct {
     s32 phase;
 } EmitterRig;
 
-extern void func_ov058_020d74b8(EmitterRig *rig, int blend);
+extern void RebindEmitterSlots(EmitterRig *rig, int blend);
 
 void RebindEmitterSlotsPhase3(EmitterRig *rig)
 {
     rig->phase = 3;
-    func_ov058_020d74b8(rig, 2);
+    RebindEmitterSlots(rig, 2);
 }

@@ -77,8 +77,8 @@ struct DragActor {
 
 extern const s16 data_02053580[];
 extern void *func_ov001_0206db78(int index);
-extern BOOL func_ov021_020aa588(AnimClip *clip, s32 frame, int arg);
-extern BOOL func_ov052_020d0544(DragActor *actor);
+extern BOOL IsFrameInSubObjectRange(AnimClip *clip, s32 frame, int arg);
+extern BOOL HandleMemberMenuInput(DragActor *actor);
 extern BOOL func_ov021_020a7524(void *entry);
 extern fx32 ApproachTargetValue(DragMotion *motion);
 extern void ComputeFacingAndDirection(DragActor *actor, VecFx32 *dir);
@@ -90,9 +90,9 @@ extern fx32 FX_Mul(fx32 a, fx32 b);
 extern GroupMember *GetGroupMemberData(int groupId, int member);
 extern u16 FX_Atan2Idx(fx32 y, fx32 x);
 extern void func_ov052_020d1a18(ClipEventContext *ctx, AnimClip *clip, int arg, int entryId);
-extern void func_ov030_020bbd70(void);
-extern BOOL func_ov052_020d014c(DragActor *actor, AnimClip *clip, ClipEventContext *ctx);
-extern BOOL func_ov052_020d02b4(DragActor *actor, AnimClip *clip, int arg);
+extern void SpawnJitteredMarker(void);
+extern BOOL ProcessTargetHitEntries(DragActor *actor, AnimClip *clip, ClipEventContext *ctx);
+extern BOOL UpdateActionPhase(DragActor *actor, AnimClip *clip, int arg);
 extern BOOL func_ov052_020d03d8(DragActor *actor);
 
 void UpdateDraggedActorMotion(DragActor *actor)
@@ -113,8 +113,8 @@ void UpdateDraggedActorMotion(DragActor *actor)
     u32 heavy;
     u32 keepPose;
 
-    if (!(actor->flags & 0x100) && func_ov021_020aa588(clip, actor->frame, 0) &&
-        func_ov052_020d0544(actor)) {
+    if (!(actor->flags & 0x100) && IsFrameInSubObjectRange(clip, actor->frame, 0) &&
+        HandleMemberMenuInput(actor)) {
         actor->pendingAction = 6;
         actor->flags |= 0x100;
     }
@@ -156,9 +156,9 @@ void UpdateDraggedActorMotion(DragActor *actor)
     func_ov052_020d1a18(&ctx, clip, 0, actor->entryId);
     if (anim->spawnData != NULL) {
         ctx.owner = anim;
-        ctx.callback = func_ov030_020bbd70;
+        ctx.callback = SpawnJitteredMarker;
     }
-    if (func_ov052_020d014c(actor, clip, &ctx) || func_ov052_020d02b4(actor, clip, 0) || actor->motionActive == 0) {
+    if (ProcessTargetHitEntries(actor, clip, &ctx) || UpdateActionPhase(actor, clip, 0) || actor->motionActive == 0) {
         return;
     }
     heavy = actor->moveFlags & 4;

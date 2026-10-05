@@ -14,7 +14,7 @@ typedef struct {
 
 extern BOOL InvokeRecordFilter(s32 recordId, RecordSearchContext *context);
 extern BOOL VisitRecordInRadius(s32 recordId, VecFx32 *position, RecordSearchContext *context);
-extern void func_ov056_020d50d8(void *filter, void *visitor, RecordSearchContext *context);
+extern void ForEachRecordPosition(void *filter, void *visitor, RecordSearchContext *context);
 
 void ForEachRecordInRadius(RecordFilter filter, RecordVisitor visitor, VecFx32 *center, fx32 radius, void *userData)
 {
@@ -25,5 +25,5 @@ void ForEachRecordInRadius(RecordFilter filter, RecordVisitor visitor, VecFx32 *
     context.center = center;
     context.radius = radius;
     context.userData = userData;
-    func_ov056_020d50d8(InvokeRecordFilter, VisitRecordInRadius, &context);
+    ForEachRecordPosition(InvokeRecordFilter, VisitRecordInRadius, &context);
 }

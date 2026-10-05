@@ -11,13 +11,13 @@ typedef struct FieldObject {
     u8 saveBitCount;
 } FieldObject;
 
-extern FieldObject *func_ov001_0207f468(void *objectClass, u8 slotIndex);
+extern FieldObject *FieldObject_Create(void *objectClass, u8 slotIndex);
 extern int func_ov001_02081fa8(void);
 extern const VecFx32 data_0205344c;
 
 FieldObject *FieldObject_CreateWithSaveBits(void *objectClass, u8 slotIndex, u16 saveBitOffset, u8 saveBitCount)
 {
-    FieldObject *object = func_ov001_0207f468(objectClass, slotIndex);
+    FieldObject *object = FieldObject_Create(objectClass, slotIndex);
 
     object->position = data_0205344c;
     object->saveBitOffset = saveBitOffset;

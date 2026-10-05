@@ -3,7 +3,7 @@
 extern int data_ov039_020bea20;
 extern int func_ov039_020bd644(void);
 extern void RuntimeState_SetMode(int phase);
-extern void func_ov039_020bacdc(int blockCount, u32 flag);
+extern void InitStreamBufferPair(int blockCount, u32 flag);
 extern void SetMenuButtonsEnabled(BOOL enable);
 
 void StartSubScene(int sceneId, int fadeFrames, BOOL markPending)
@@ -22,7 +22,7 @@ void StartSubScene(int sceneId, int fadeFrames, BOOL markPending)
     }
     *(u8 *)(base + 0xca44) = 1;
     RuntimeState_SetMode(4);
-    func_ov039_020bacdc(-16, fadeFrames);
+    InitStreamBufferPair(-16, fadeFrames);
     SetMenuButtonsEnabled(FALSE);
     if (markPending) {
         *(int *)(base + 0xca0c) = 1;

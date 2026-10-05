@@ -3,14 +3,14 @@
 extern void StopTouchPanelSampling(void); /* StopTouchPanelSampling */
 extern void ApplyPanelSelection(void); /* ApplyPanelSelection */
 extern void func_ov000_02062318(void);
-extern void func_ov000_0206243c(void); /* InitPanelSceneAndClearBg1 */
+extern void InitPanelSceneAndClearBg1(void); /* InitPanelSceneAndClearBg1 */
 extern void WaitForAnimationFinish(void); /* WaitForAnimationFinish */
-extern void func_ov000_02062598(void); /* ForceReleaseEmbedded */
+extern void ForceReleaseEmbedded(void); /* ForceReleaseEmbedded */
 extern void ResetPanelStateAndLoadSlot0(void); /* ResetPanelStateAndLoadSlot0 */
-extern void func_ov000_020625d4(void); /* ScanSaveSlots */
+extern void ScanSaveSlots(void); /* ScanSaveSlots */
 extern void func_ov000_0206276c(void);
-extern void func_ov000_02062794(void); /* EnterPanelMenuScreen */
-extern void func_ov000_02062838(void); /* UpdatePanelInputWithTimeout */
+extern void EnterPanelMenuScreen(void); /* EnterPanelMenuScreen */
+extern void UpdatePanelInputWithTimeout(void); /* UpdatePanelInputWithTimeout */
 extern void func_ov000_02062908(void); /* NNS_G2dSetCellAnimationSequence */
 extern void func_ov000_02062920(void);
 extern void TryEnterPanelState(void); /* TryEnterPanelState */
@@ -19,10 +19,10 @@ extern void SetupPanelField(void); /* SetupPanelField */
 extern void func_ov000_02062a98(void);
 extern void ReleaseFieldAndReset(void); /* ReleaseFieldAndReset */
 extern void UpdatePanelLookup(void); /* UpdatePanelLookup */
-extern void func_ov000_02062c64(void); /* HandleSessionModeTransition */
+extern void HandleSessionModeTransition(void); /* HandleSessionModeTransition */
 extern void ReleaseHandleAndResetDisplay(void); /* ReleaseHandleAndResetDisplay */
 extern void func_ov000_02062d38(void); /* LoadOverlay22AndClearFlag */
-extern void func_ov000_02062d60(void); /* UpdatePanelRequest */
+extern void UpdatePanelRequest(void); /* UpdatePanelRequest */
 extern void func_ov000_02062e00(void);
 extern void func_ov000_02062e3c(void);
 extern void func_ov000_02062e64(void);
@@ -45,14 +45,14 @@ void (*gPanelStateHandlers[43])(void) = {
     ApplyPanelSelection, /* ApplyPanelSelection */
     func_ov000_02062318,
     StopTouchPanelSampling, /* StopTouchPanelSampling */
-    func_ov000_0206243c, /* InitPanelSceneAndClearBg1 */
+    InitPanelSceneAndClearBg1, /* InitPanelSceneAndClearBg1 */
     WaitForAnimationFinish, /* WaitForAnimationFinish */
-    func_ov000_02062598, /* ForceReleaseEmbedded */
+    ForceReleaseEmbedded, /* ForceReleaseEmbedded */
     ResetPanelStateAndLoadSlot0, /* ResetPanelStateAndLoadSlot0 */
-    func_ov000_020625d4, /* ScanSaveSlots */
+    ScanSaveSlots, /* ScanSaveSlots */
     func_ov000_0206276c,
-    func_ov000_02062794, /* EnterPanelMenuScreen */
-    func_ov000_02062838, /* UpdatePanelInputWithTimeout */
+    EnterPanelMenuScreen, /* EnterPanelMenuScreen */
+    UpdatePanelInputWithTimeout, /* UpdatePanelInputWithTimeout */
     func_ov000_02062908, /* NNS_G2dSetCellAnimationSequence */
     func_ov000_02062920,
     TryEnterPanelState, /* TryEnterPanelState */
@@ -64,10 +64,10 @@ void (*gPanelStateHandlers[43])(void) = {
     func_ov000_02062a98,
     ReleaseFieldAndReset, /* ReleaseFieldAndReset */
     UpdatePanelLookup, /* UpdatePanelLookup */
-    func_ov000_02062c64, /* HandleSessionModeTransition */
+    HandleSessionModeTransition, /* HandleSessionModeTransition */
     ReleaseHandleAndResetDisplay, /* ReleaseHandleAndResetDisplay */
     func_ov000_02062d38, /* LoadOverlay22AndClearFlag */
-    func_ov000_02062d60, /* UpdatePanelRequest */
+    UpdatePanelRequest, /* UpdatePanelRequest */
     func_ov000_02062e00,
     func_ov000_02062e3c,
     func_ov000_02062e64,

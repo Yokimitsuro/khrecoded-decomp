@@ -68,7 +68,7 @@ extern World *GetActorRegistry(void);
 extern void InitBoxShape(CollisionShape *shape, void *storage, const VecFx32 *center, const VecFx32 *halfExtents, const MtxFx33 *rotation);
 extern void CollisionQuery_Init(CollisionQuery *query, u16 id, void *actor, u8 kind, u8 unk3C, u8 unk3D, void *shape, QueryWorkspace *workspace, void *filter);
 extern void *SweepWorldCollision(CollisionQuery *query);
-extern void func_ov016_020a41e0(void);
+extern void CheckFieldUnitLinkLatch(void);
 extern void func_ov001_0208645c(FieldObject *object, int mode);
 extern void QuadTree_InsertObject(void *tree, void *node);
 extern void QuadTree_RemoveObject(void *tree, void *node);
@@ -117,7 +117,7 @@ void UpdateFloorSwitch(FieldObject *object)
         center.y += 0xc00;
         InitBoxShape(&shape, &storage, &center, &extent, &data_02053458);
         CollisionQuery_Init(&query, 0, actor, 8, 0, 0, &shape, &workspace, NULL);
-        query.callback.func = func_ov016_020a41e0;
+        query.callback.func = CheckFieldUnitLinkLatch;
         query.callback.arg = object;
         SweepWorldCollision(&query);
     }

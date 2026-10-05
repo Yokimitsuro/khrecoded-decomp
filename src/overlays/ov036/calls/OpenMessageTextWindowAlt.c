@@ -17,7 +17,7 @@ typedef struct TextWindowRequest {
 } TextWindowRequest;
 
 extern const BoxSize data_ov036_020c36b8;
-extern void func_ov036_020c2914(TextWindowRequest *request);
+extern void QueueMessageWindowKind3(TextWindowRequest *request);
 
 BOOL OpenMessageTextWindowAlt(const u16 *text)
 {
@@ -31,6 +31,6 @@ BOOL OpenMessageTextWindowAlt(const u16 *text)
     request.text = text;
     request.optionA = 0;
     request.optionB = 0;
-    func_ov036_020c2914(&request);
+    QueueMessageWindowKind3(&request);
     return TRUE;
 }

@@ -17,7 +17,7 @@ struct Enemy {
     u64 stateFlags;
 };
 
-extern void func_ov021_020a75f8(Enemy *enemy, u16 value);
+extern void SetClampedCursor(Enemy *enemy, u16 value);
 
 void RestoreEnemyHealthAndReset(Enemy *enemy)
 {
@@ -31,7 +31,7 @@ void RestoreEnemyHealthAndReset(Enemy *enemy)
     if (flags & 2) {
         enemy->stateFlags |= 0x800000;
     }
-    func_ov021_020a75f8(enemy, enemy->stats->maxHealth);
+    SetClampedCursor(enemy, enemy->stats->maxHealth);
     if (enemy->resetCallback != NULL) {
         enemy->resetCallback(enemy, 0);
     }

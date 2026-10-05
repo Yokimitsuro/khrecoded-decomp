@@ -78,16 +78,16 @@ extern void *func_ov001_0206db78(int player);
 extern BOOL func_ov021_020a7524(void *unit);
 extern u16 func_ov021_020a7564(void *unit);
 extern u16 FX_Atan2Idx(fx32 y, fx32 x);
-extern VecFx32 *func_ov001_0206c3f4(WaitTarget *wait);
+extern VecFx32 *GetWaitTargetPosition(WaitTarget *wait);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
-extern u16 func_ov052_020ceb9c(Actor *actor);
+extern u16 GetLinkedAngleOffset(Actor *actor);
 extern BOOL func_ov001_02087988(u32 id, EventTargetInfo *out);
 extern BOOL StageRecord_GetSlotPosition(u32 id, u32 slot, SlotPosition *out);
 extern void func_01ffafb4(fx32 scale, const VecFx32 *src, VecFx32 *dst);
 extern void MTX_RotY33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
-extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *m, VecFx32 *dst);
+extern void MTX_MultVec33(const VecFx32 *vec, const MtxFx33 *m, VecFx32 *dst);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern fx32 FX_Mul(fx32 a, fx32 b);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -133,7 +133,7 @@ VecFx32 ComputeApproachStep(Actor *actor, VecFx32 *input, MotionState *motion, B
     if ((actor->isApproaching != NULL ? actor->isApproaching(actor, 0) : 0) == 0 || faced) {
         return original;
     }
-    targetPos = func_ov001_0206c3f4(&actor->wait);
+    targetPos = GetWaitTargetPosition(&actor->wait);
     selfPos = func_ov052_020ceb74(actor);
     VEC_Subtract(targetPos, selfPos, &dir);
     dir.y = 0;
@@ -144,7 +144,7 @@ VecFx32 ComputeApproachStep(Actor *actor, VecFx32 *input, MotionState *motion, B
             actor->onTurn(actor, turn);
         }
     }
-    facing = func_ov052_020ceb9c(actor);
+    facing = GetLinkedAngleOffset(actor);
     if (((MotionSlot *)((u8 *)slots + slotOffset))->kind != 0 || !(motion->flags & 8)) {
         return original;
     }
@@ -169,7 +169,7 @@ VecFx32 ComputeApproachStep(Actor *actor, VecFx32 *input, MotionState *motion, B
         radius = shape->radius;
         index = facing >> 4;
         MTX_RotY33_(&rotation, -data_02053580[index], -data_02053580[(0x400 - index) & 0xfff]);
-        func_01ff9404(&offset, &rotation, &rotated);
+        MTX_MultVec33(&offset, &rotation, &rotated);
         lift = 0;
         rotated.y = 0;
         reach = radius + VEC_Mag(&rotated);
@@ -178,7 +178,7 @@ VecFx32 ComputeApproachStep(Actor *actor, VecFx32 *input, MotionState *motion, B
             moveAngle = FX_Atan2Idx(rotated.x, rotated.z) + 0x8000;
             index = (u16)((u16)(FX_Atan2Idx(dir.x, dir.z) + 0x8000) - moveAngle) >> 4;
             MTX_RotY33_(&rotation, data_02053580[index], data_02053580[(0x400 - index) & 0xfff]);
-            func_01ff9404(&move, &rotation, &move);
+            MTX_MultVec33(&move, &rotation, &move);
             if (adjust && motion->noLift == 0) {
                 fx32 gap = targetPos->y - (actor->height + move.y);
                 fx32 limit = actor->height - selfPos->y;

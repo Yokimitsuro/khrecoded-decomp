@@ -11,7 +11,7 @@ typedef struct FieldObject {
 } FieldObject;
 
 extern void func_ov021_020a8a88(int groupId);
-extern void func_ov001_0207f234(FieldObject *object, void *arg);
+extern void ReleaseOwnerResource(FieldObject *object, void *arg);
 
 void FieldObject_ReleaseGroupAndClose(FieldObject *object, void *arg)
 {
@@ -21,5 +21,5 @@ void FieldObject_ReleaseGroupAndClose(FieldObject *object, void *arg)
         func_ov021_020a8a88(work->groupId);
         work->groupId = -1;
     }
-    func_ov001_0207f234(object, arg);
+    ReleaseOwnerResource(object, arg);
 }

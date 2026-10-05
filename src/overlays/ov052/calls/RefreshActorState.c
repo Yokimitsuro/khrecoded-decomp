@@ -7,9 +7,9 @@ extern void ApplyTimeScaledSpeed(int entity, fx32 targetSpeed);
 extern void func_ov052_020c9854(int entity);
 extern void ApplyActorVelocity(int entity);
 extern fx32 func_ov001_0206db44(void);
-extern void func_ov052_020c969c(int entity);
+extern void UpdateActorFrame(int entity);
 extern void func_ov052_020c97c4(int entity);
-extern void func_ov021_020a7fc4(int subObject, s32 a, s32 b);
+extern void PlayCueGroupSounds(int subObject, s32 a, s32 b);
 
 /* Runs the actor's per-update subsystem refresh */
 void RefreshActorState(int entity)
@@ -23,8 +23,8 @@ void RefreshActorState(int entity)
     if (*(code **)(entity + 0x1ec) != (code *)0) {
         (**(code **)(entity + 0x1ec))(entity, timeScale);
     }
-    func_ov052_020c969c(entity);
+    UpdateActorFrame(entity);
     (**(code **)(entity + 0x9bc))(entity);
     func_ov052_020c97c4(entity);
-    func_ov021_020a7fc4(entity + 0xb2c, *(s32 *)(entity + 0x75c), *(s32 *)(entity + 0x760));
+    PlayCueGroupSounds(entity + 0xb2c, *(s32 *)(entity + 0x75c), *(s32 *)(entity + 0x760));
 }

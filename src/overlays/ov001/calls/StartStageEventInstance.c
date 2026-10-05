@@ -5,11 +5,11 @@ typedef struct {
     u16 activeCount;
 } EventRecord;
 
-extern EventRecord *func_ov001_0209c114(u32 id);
+extern EventRecord *GetStageEventRecord(u32 id);
 extern int func_ov001_0209625c(EventRecord *record, int kind, int count, int arg0, int arg1);
 
 u32 StartStageEventInstance(u32 id, int arg0, int arg1, u16 *outHandle) {
-    EventRecord *record = func_ov001_0209c114(id);
+    EventRecord *record = GetStageEventRecord(id);
     int handle;
     if (record->activeCount == 0) {
         return 0;

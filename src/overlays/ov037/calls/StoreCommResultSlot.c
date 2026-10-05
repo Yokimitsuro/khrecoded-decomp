@@ -6,12 +6,12 @@ typedef struct CommState {
 } CommState;
 
 extern CommState *gContinueSceneState;
-extern s32 func_ov037_020bb4dc(void);
+extern s32 UpdateMenuSelection(void);
 
 s32 StoreCommResultSlot(void)
 {
     CommState *state = gContinueSceneState;
-    s32 result = func_ov037_020bb4dc();
+    s32 result = UpdateMenuSelection();
 
     if (result >= 0) {
         state->result = result;

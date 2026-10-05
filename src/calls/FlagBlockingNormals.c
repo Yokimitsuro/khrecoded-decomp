@@ -4,7 +4,7 @@
 extern void MI_CpuFill8(void *dst, int value, int size);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
 extern void GetUnitCross(VecFx32 *out, const VecFx32 *a, const VecFx32 *b);
@@ -59,7 +59,7 @@ BOOL FlagBlockingNormals(const VecFx32 *dir, const VecFx32 *motion, const VecFx3
             vectors.offset = vectors.scaledSide;
             VEC_Subtract(motion, &vectors.offset, &vectors.difference);
             vectors.radial = vectors.difference;
-            func_01ff9ea8(&vectors.axis, &vectors.radial, &vectors.normalResult);
+            VEC_CrossProduct(&vectors.axis, &vectors.radial, &vectors.normalResult);
             vectors.normal = vectors.normalResult;
             dirDot = VEC_DotProduct(&vectors.normal, dir);
             normalDot = VEC_DotProduct(&vectors.normal, &normals[indices[i]]);
@@ -81,7 +81,7 @@ BOOL FlagBlockingNormals(const VecFx32 *dir, const VecFx32 *motion, const VecFx3
                 if (i != j && VEC_DotProduct(motion, &normals[indices[i]]) < 0
                     && VEC_DotProduct(motion, &normals[indices[j]]) <= 0
                     && VEC_DotProduct(motion, dir) <= 0) {
-                    func_01ff9ea8(dir, &normals[indices[j]], &vectors.edgeResult);
+                    VEC_CrossProduct(dir, &normals[indices[j]], &vectors.edgeResult);
                     vectors.edge = vectors.edgeResult;
                     int pairProjection = VEC_DotProduct(&vectors.edge, &normals[indices[i]]);
                     motionDot = -VEC_DotProduct(&vectors.edge, motion);

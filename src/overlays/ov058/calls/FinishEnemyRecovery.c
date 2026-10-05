@@ -28,7 +28,7 @@ typedef struct {
     AiState ai;
 } Enemy;
 
-extern void func_ov021_020a75f8(Enemy *enemy, u16 value);
+extern void SetClampedCursor(Enemy *enemy, u16 value);
 extern int func_ov001_0206db8c(int index);
 extern void StopAndClearSoundEmitter(s32 groupId, s32 emitterIndex);
 extern void selectJointAnimationBlend(void *animState, u16 trackIndex, void *blendTable, s16 blendIndex);
@@ -44,7 +44,7 @@ void FinishEnemyRecovery(Enemy *enemy)
         if (amount <= 0) {
             amount = 1;
         }
-        func_ov021_020a75f8(enemy, amount);
+        SetClampedCursor(enemy, amount);
     }
     emitter = ai->soundEmitter;
     if (emitter >= 0) {

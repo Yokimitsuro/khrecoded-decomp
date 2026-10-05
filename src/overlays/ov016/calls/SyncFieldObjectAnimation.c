@@ -31,7 +31,7 @@ typedef struct {
     u8 node[4];
 } Actor;
 
-extern BOOL func_ov001_020872e0(FieldObject *obj);
+extern BOOL IsNodeFlagBitClear(FieldObject *obj);
 extern void func_ov016_020a2688(FieldObject *obj, int enabled);
 extern Actor *ActorRegistry_GetEntityByIndex(u32 actorId);
 extern void RebindAnimTracks(void *node, int blendIndex, int frame);
@@ -51,7 +51,7 @@ void SyncFieldObjectAnimation(FieldObject *obj)
         return;
     }
     enabled = obj->flags & 1;
-    if (!func_ov001_020872e0(obj)) {
+    if (!IsNodeFlagBitClear(obj)) {
         enabled = 0;
     }
     if (obj->state == 6) {

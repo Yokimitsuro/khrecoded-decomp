@@ -1,10 +1,10 @@
 func_ov050_020c3520 kind:function(thumb,size=0x10) addr:0x020c3520
 func_ov050_020c3530 kind:function(thumb,size=0x26) addr:0x020c3530
-func_ov050_020c3558 kind:function(thumb,size=0x74) addr:0x020c3558
+CameraCollision_ShouldBlockFacing kind:function(thumb,size=0x74) addr:0x020c3558
 func_ov050_020c35cc kind:function(thumb,size=0x32) addr:0x020c35cc
-func_ov050_020c3600 kind:function(thumb,size=0x2a8) addr:0x020c3600
-func_ov050_020c38a8 kind:function(thumb,size=0x154) addr:0x020c38a8
-func_ov050_020c39fc kind:function(thumb,size=0x134) addr:0x020c39fc
+UpdatePathCameraCollision kind:function(thumb,size=0x2a8) addr:0x020c3600
+TrackPlayerCameraDirection kind:function(thumb,size=0x154) addr:0x020c38a8
+ClampCameraUpVector kind:function(thumb,size=0x134) addr:0x020c39fc
 StartCameraDriftFromParams kind:function(thumb,size=0x34) addr:0x020c3b30
 ResetCameraViewTopDown kind:function(thumb,size=0x58) addr:0x020c3b64
 func_ov050_020c3bbc kind:function(thumb,size=0x8) addr:0x020c3bbc

@@ -12,7 +12,7 @@ typedef struct CounterHud {
 } CounterHud;
 
 extern void func_ov001_0207bab4(CounterHud *hud);
-extern void func_ov001_0207bef4(CounterHud *hud);
+extern void UpdateAnimatedCounterHud(CounterHud *hud);
 
 void DrawCounterHudParts(CounterHud *hud)
 {
@@ -21,5 +21,5 @@ void DrawCounterHudParts(CounterHud *hud)
     func_ov001_0207bab4(hud);
     hud->currentPart = hud->rightPart;
     hud->partX = 0x23000;
-    func_ov001_0207bef4(hud);
+    UpdateAnimatedCounterHud(hud);
 }

@@ -19,7 +19,7 @@ extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operan
 extern ScriptOperand *ScriptVm_ResolveOperand(ScriptContext *context, ScriptOperand *operand);
 extern char *ByteCode_ResolveOperand(ScriptContext *context, ScriptOperand *operand);
 extern int ScriptCmd_ReturnValue(ScriptContext *context, int value);
-extern int func_ov001_0208cf6c(ScriptContext *context, ScriptOperand *target, int actorId);
+extern int ComputeHeadingToScriptTarget(ScriptContext *context, ScriptOperand *target, int actorId);
 extern void func_ov001_0208a764(void *actorObject, int heading, char *turnAnimation, char *followAnimation);
 
 int ScriptCmd_TurnActorTowardTarget(ScriptContext *context, ScriptOperand *operands)
@@ -31,7 +31,7 @@ int ScriptCmd_TurnActorTowardTarget(ScriptContext *context, ScriptOperand *opera
     int heading;
 
     actorId = ScriptCmd_ReturnValue(context, actorId);
-    heading = func_ov001_0208cf6c(context, target, actorId);
+    heading = ComputeHeadingToScriptTarget(context, target, actorId);
     func_ov001_0208a764(context->scene->actorObjects[actorId], heading, turnAnimation, followAnimation);
     return 1;
 }

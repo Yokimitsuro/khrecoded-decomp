@@ -16,8 +16,8 @@ typedef struct ControlledActor {
 extern ControlledActor *GetStageActor(s16 actorId);
 extern u32 func_ov001_0209c5ac(u32 mask);
 extern s32 *GetStageController(u16 index);
-extern BOOL func_ov001_020983b4(s32 *type);
-extern void func_ov001_02098210(s32 *controller);
+extern BOOL IsCommandType4(s32 *type);
+extern void FinishStageObjectSpawn(s32 *controller);
 
 void PostUpdateActorController(ControllerOwner *owner)
 {
@@ -27,8 +27,8 @@ void PostUpdateActorController(ControllerOwner *owner)
     if (actor != NULL && actor->controlData != NULL && func_ov001_0209c5ac(0x40000000) == 0 &&
         actor->controlMode == 2) {
         controller = GetStageController(actor->controllerIndex);
-        if (controller != NULL && !func_ov001_020983b4(controller)) {
-            func_ov001_02098210(controller);
+        if (controller != NULL && !IsCommandType4(controller)) {
+            FinishStageObjectSpawn(controller);
         }
     }
 }

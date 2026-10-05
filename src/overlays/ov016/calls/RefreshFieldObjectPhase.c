@@ -12,9 +12,9 @@ typedef struct {
 } FieldObject;
 
 extern void SyncFieldObjectAnimation(FieldObject *obj);
-extern void func_ov032_020bf410(FieldObject *obj);
+extern void StartGroupPhaseTwo(FieldObject *obj);
 extern void func_ov016_020a234c(FieldObject *obj);
-extern void func_ov016_020a4a84(FieldObject *obj);
+extern void CheckFieldUnitHeightLimit(FieldObject *obj);
 
 void RefreshFieldObjectPhase(FieldObject *obj)
 {
@@ -23,7 +23,7 @@ void RefreshFieldObjectPhase(FieldObject *obj)
 
     SyncFieldObjectAnimation(obj);
     if (obj->phase >= 5) {
-        func_ov032_020bf410(obj);
+        StartGroupPhaseTwo(obj);
     } else {
         func_ov016_020a234c(obj);
     }
@@ -33,6 +33,6 @@ void RefreshFieldObjectPhase(FieldObject *obj)
             obj->drawFlags |= 8;
         }
     } else if ((u8)(phase + 0xfd) <= 1) {
-        func_ov016_020a4a84(obj);
+        CheckFieldUnitHeightLimit(obj);
     }
 }

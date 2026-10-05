@@ -15,7 +15,7 @@ struct Entity {
     u8 target[4];
 };
 
-extern VecFx32 *func_ov001_0206c3f4(void *target);
+extern VecFx32 *GetWaitTargetPosition(void *target);
 extern VecFx32 *func_ov052_020ceb74(Entity *entity);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
@@ -43,7 +43,7 @@ BOOL IsTargetAboveInRange(Entity *entity)
         valid = 0;
     }
     if (valid != 0) {
-        VecFx32 *targetPos = func_ov001_0206c3f4(entity->target);
+        VecFx32 *targetPos = GetWaitTargetPosition(entity->target);
         VecFx32 *selfPos = func_ov052_020ceb74(entity);
         VecFx32 delta;
 

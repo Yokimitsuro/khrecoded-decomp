@@ -58,7 +58,7 @@ extern CollisionShape func_0203ade0(ShapeStorage *storage, const VecFx32 *start,
 extern void CollisionQuery_Init(CollisionQuery *query, u16 id, void *actor, u8 kind, u8 unk3C, u8 unk3D, void *shape, QueryWorkspace *workspace, void *filter);
 extern void *SweepWorldCollision(CollisionQuery *query);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
-extern void func_ov016_020a4468(void);
+extern void IsFieldLinkReady(void);
 extern void StartFieldUnitMotion(FieldObject *object, fx32 speed, int angle);
 
 static inline void BuildSegmentShape(CollisionShape *shape, ShapeStorage *storage, const VecFx32 *start, const VecFx32 *end)
@@ -151,7 +151,7 @@ void ApplyFieldObjectForceToPlayer(FieldObject *object)
     player.y = center.y;
     BuildSegmentShape(&shape, &storage, &center, &player);
     CollisionQuery_Init(&query, 0, actor, 0xf, 2, 0, &shape, &workspace, NULL);
-    query.filter.func = func_ov016_020a4468;
+    query.filter.func = IsFieldLinkReady;
     query.filter.arg = object;
     if (SweepWorldCollision(&query) == NULL) {
         VecFx32 away;

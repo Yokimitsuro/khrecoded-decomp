@@ -12,16 +12,16 @@ typedef struct EventCameraWork {
 } EventCameraWork;
 
 extern BOOL func_ov049_020c379c(EventCameraWork *work);
-extern void func_ov046_020c2df0(EventCameraWork *work, EventCameraWork *source, CameraView *view);
-extern void func_ov046_020c1058(s32 mode, CameraView *view);
+extern void Camera_BuildViewFromState(EventCameraWork *work, EventCameraWork *source, CameraView *view);
+extern void Camera_SetViewMode(s32 mode, CameraView *view);
 
 void *EventCamera_Update(EventCameraWork *work)
 {
     CameraView view;
 
     if (func_ov049_020c379c(work)) {
-        func_ov046_020c2df0(work, work, &view);
-        func_ov046_020c1058(work->returnMode, &view);
+        Camera_BuildViewFromState(work, work, &view);
+        Camera_SetViewMode(work->returnMode, &view);
     }
     return NULL;
 }

@@ -12,7 +12,7 @@ typedef struct SourceHandlerTable {
 } SourceHandlerTable;
 
 extern const SourceHandlerTable data_ov056_020d8030;
-extern void func_ov021_020ae6e8(EffectSource *source);
+extern void ReleaseSceneObject(EffectSource *source);
 
 void ReleaseSourceByKind(EffectSource *source)
 {
@@ -20,5 +20,5 @@ void ReleaseSourceByKind(EffectSource *source)
     if (table.handlers[source->kind] != NULL) {
         table.handlers[source->kind](source);
     }
-    func_ov021_020ae6e8(source);
+    ReleaseSceneObject(source);
 }

@@ -6,7 +6,7 @@ typedef struct ScriptOperand {
 } ScriptOperand;
 
 extern int ScriptVm_ReadOperandInt(void *vm, ScriptOperand *operand);
-extern void *func_ov001_020835c0(u16 entryCount);
+extern void *CreateFieldObjectClassType7(u16 entryCount);
 extern void func_ov001_0207ee2c(int groupIndex, void *group);
 
 int ScriptCmd_CreateObjectGroupKind7(void *vm, ScriptOperand *operands)
@@ -14,6 +14,6 @@ int ScriptCmd_CreateObjectGroupKind7(void *vm, ScriptOperand *operands)
     int groupIndex = ScriptVm_ReadOperandInt(vm, operands);
     int entryCount = ScriptVm_ReadOperandInt(vm, operands + 1);
 
-    func_ov001_0207ee2c(groupIndex, func_ov001_020835c0(entryCount));
+    func_ov001_0207ee2c(groupIndex, CreateFieldObjectClassType7(entryCount));
     return 1;
 }

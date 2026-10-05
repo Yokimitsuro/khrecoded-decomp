@@ -24,13 +24,13 @@ typedef struct FieldObject {
     VecFx32 velocity;
 } FieldObject;
 
-extern FieldObject *func_ov001_0207f468(void *objectClass, u8 slotIndex);
+extern FieldObject *FieldObject_Create(void *objectClass, u8 slotIndex);
 extern void func_ov001_02082c78(FieldObject *object);
 extern const VecFx32 data_0205344c;
 
 FieldObject *FieldObject_CreateWithTimer(void *objectClass, u8 slotIndex, u16 saveBitOffset, u8 saveBitCount, const VecFx32 *position)
 {
-    FieldObject *object = func_ov001_0207f468(objectClass, slotIndex);
+    FieldObject *object = FieldObject_Create(objectClass, slotIndex);
 
     object->position = *position;
     object->angle = 0;

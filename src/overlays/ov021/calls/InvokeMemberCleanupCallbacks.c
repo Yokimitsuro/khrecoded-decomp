@@ -1,6 +1,6 @@
 typedef void code();
 extern unsigned int GetBoundedEntryField();
-extern unsigned int func_ov021_020a7fc0();
+extern unsigned int SetFieldAt0x30();
 
 void InvokeMemberCleanupCallbacks(int *container)
 
@@ -21,7 +21,7 @@ void InvokeMemberCleanupCallbacks(int *container)
       } while (index < container[1]);
     }
     index = GetBoundedEntryField(container[5]);
-    func_ov021_020a7fc0(index + 0xb2c,0xffffffff);
+    SetFieldAt0x30(index + 0xb2c,0xffffffff);
     container[2] = 0;
   }
   return;

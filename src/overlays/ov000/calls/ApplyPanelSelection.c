@@ -6,7 +6,7 @@ typedef struct {
     u32 selection;
 } Panel;
 
-extern void func_ov000_02061a80(Panel *panel, u32 mode);
+extern void ShowPanelBgScreen(Panel *panel, u32 mode);
 extern int func_0202b5e8(void);
 
 void ApplyPanelSelection(Panel *panel)
@@ -30,7 +30,7 @@ void ApplyPanelSelection(Panel *panel)
         mode = 0;
         break;
     }
-    func_ov000_02061a80(panel, mode);
+    ShowPanelBgScreen(panel, mode);
     panel->active = 1;
     func_0202b5e8();
 }

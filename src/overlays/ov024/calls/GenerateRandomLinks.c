@@ -8,7 +8,7 @@ typedef struct Ov024Board {
 } Ov024Board;
 
 extern u32 func_0202a9e4(u32 range);
-extern int func_ov024_020b64f4(s8 *nodeValues, s8 (*links)[4], int startNode, int goalNode);
+extern int GetLinkDistance(s8 *nodeValues, s8 (*links)[4], int startNode, int goalNode);
 extern BOOL func_ov024_020b63e4(s8 *nodeValues, s8 (*links)[4], int first, int second);
 
 void GenerateRandomLinks(Ov024Board *board)
@@ -32,7 +32,7 @@ void GenerateRandomLinks(Ov024Board *board)
         remaining = 5 - first;
         for (step = 0; step < remaining; step++) {
             second = first + (step + secondSeed) % remaining;
-            if (func_ov024_020b64f4(board->slotValues, board->links, first, second + 1) < 0 || func_0202a9e4(100) < 20) {
+            if (GetLinkDistance(board->slotValues, board->links, first, second + 1) < 0 || func_0202a9e4(100) < 20) {
                 func_ov024_020b63e4(board->slotValues, board->links, first, second + 1);
             }
         }

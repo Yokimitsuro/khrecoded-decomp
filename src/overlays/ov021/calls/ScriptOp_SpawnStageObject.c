@@ -53,14 +53,14 @@ extern FieldContext data_ov021_020b56c4;
 
 extern u8 *func_ov001_0209c3e8(void);
 extern TaggedValue *ResolveTaggedValueRef(void *context, TaggedValue *value);
-extern void *func_ov001_0209c114(u32 id);
-extern u16 func_ov021_020b0528(void *context, u32 mode, void *operand, VecFx32 *position, const char **nodeName);
+extern void *GetStageEventRecord(u32 id);
+extern u16 ResolveOffsetPosition(void *context, u32 mode, void *operand, VecFx32 *position, const char **nodeName);
 extern void func_01ff88c4(void *dest, u32 value, u32 size);
 extern u16 GetLargeRecordIndex(FieldPlayer *player);
-extern int func_ov001_02096b08(void *eventRecord, SpawnParams *params, VecFx32 *position);
+extern int SpawnStageObjectActor(void *eventRecord, SpawnParams *params, VecFx32 *position);
 extern StageLink *GetStageController(void);
 extern StageActor *GetStageActor(int id);
-extern void func_ov001_02098124(StageLink *controller);
+extern void UpdateActorController_02098124(StageLink *controller);
 
 s32 ScriptOp_SpawnStageObject(void *context, SpawnCommand *cmd)
 {
@@ -78,12 +78,12 @@ s32 ScriptOp_SpawnStageObject(void *context, SpawnCommand *cmd)
     VecFx32 position;
 
     if (eventRecord == NULL && link != NULL) {
-        eventRecord = func_ov001_0209c114(link->eventId);
+        eventRecord = GetStageEventRecord(link->eventId);
     }
     if (player->spawnEnabled == 0) {
         return 0;
     }
-    flags = func_ov021_020b0528(context, cmd->mode, cmd->position, &position, &nodeName);
+    flags = ResolveOffsetPosition(context, cmd->mode, cmd->position, &position, &nodeName);
     attach = FALSE;
     func_01ff88c4(&params, 0, 0x10);
     params.ownerSlot = ownerSlot->value;
@@ -96,7 +96,7 @@ s32 ScriptOp_SpawnStageObject(void *context, SpawnCommand *cmd)
     params.attach = attach;
     params.align = (flags & 0x10) ? TRUE : FALSE;
     params.walkerKind = *(u16 *)(gameData + 0x18eb8);
-    if (!func_ov001_02096b08(eventRecord, &params, &position)) {
+    if (!SpawnStageObjectActor(eventRecord, &params, &position)) {
         return 0;
     }
     controller = GetStageController();
@@ -113,6 +113,6 @@ s32 ScriptOp_SpawnStageObject(void *context, SpawnCommand *cmd)
             target->attachState[3] = source->attachState[3];
         }
     }
-    func_ov001_02098124(controller);
+    UpdateActorController_02098124(controller);
     return 0;
 }

@@ -9,7 +9,7 @@ typedef struct ScriptOperand {
 typedef struct ScriptContext ScriptContext;
 
 extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operand);
-extern void func_ov001_02069274(int target, BOOL enable, int kind, int *values);
+extern void CreateFieldTaskNode(int target, BOOL enable, int kind, int *values);
 
 BOOL ScriptCmd_QueueFlagTaskKind8(ScriptContext *context, ScriptOperand *operands)
 {
@@ -23,6 +23,6 @@ BOOL ScriptCmd_QueueFlagTaskKind8(ScriptContext *context, ScriptOperand *operand
     values[1] = ScriptVm_ReadOperandInt(context, &operands[3]);
     values[2] = ScriptVm_ReadOperandInt(context, &operands[4]);
     values[3] = ScriptVm_ReadOperandInt(context, &operands[5]);
-    func_ov001_02069274(target, enable != 0, 8, values);
+    CreateFieldTaskNode(target, enable != 0, 8, values);
     return TRUE;
 }

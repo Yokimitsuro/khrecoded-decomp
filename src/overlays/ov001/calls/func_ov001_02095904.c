@@ -1,5 +1,5 @@
-extern int func_ov001_02092b24();
+extern int SetStageEventKind();
 
 int func_ov001_02095904(int arg0) {
-    return func_ov001_02092b24(arg0);
+    return SetStageEventKind(arg0);
 }

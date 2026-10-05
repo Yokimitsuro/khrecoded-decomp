@@ -5,16 +5,16 @@ typedef struct Resource {
     s32 ready;
 } Resource;
 
-extern int func_ov001_0206a814(void);
-extern void func_ov001_0206a834(int arg);
+extern int IsScreenModeIdle(void);
+extern void SetScreenFlag200(int arg);
 
 BOOL IsResourceReadyOrInitialize(Resource *resource)
 {
     if (resource->ready != 0) {
         return TRUE;
     }
-    if (func_ov001_0206a814() != 0) {
-        func_ov001_0206a834(0);
+    if (IsScreenModeIdle() != 0) {
+        SetScreenFlag200(0);
         return TRUE;
     }
     return FALSE;

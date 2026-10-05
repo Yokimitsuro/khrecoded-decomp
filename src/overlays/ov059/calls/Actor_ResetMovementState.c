@@ -35,8 +35,8 @@ struct Actor {
 
 extern const VecFx32 data_0205344c;
 extern fx32 func_0202f4cc(void *player, int arg);
-extern void func_ov059_020cce30(Actor *actor, VecFx32 *out);
-extern void func_ov021_020a75f8(Actor *actor, int value);
+extern void Actor_GetRootMotionDelta(Actor *actor, VecFx32 *out);
+extern void SetClampedCursor(Actor *actor, int value);
 extern void Actor_SetTimeScale(Actor *actor, fx32 scale);
 
 void Actor_ResetMovementState(Actor *actor) {
@@ -45,7 +45,7 @@ void Actor_ResetMovementState(Actor *actor) {
     actor->subMode = 0;
     actor->mode = 0;
     actor->moveVelocity = data_0205344c;
-    func_ov059_020cce30(actor, &delta);
+    Actor_GetRootMotionDelta(actor, &delta);
     actor->rootMotion = delta;
     if (actor->pendingBlend != 0) {
         fx32 frame = func_0202f4cc(actor->anim->player, 0) - FX32_ONE;
@@ -56,7 +56,7 @@ void Actor_ResetMovementState(Actor *actor) {
     }
     if (actor->chargeTime >= 0x96000) {
         actor->statusFlags &= ~(u64)0x800;
-        func_ov021_020a75f8(actor, 999);
+        SetClampedCursor(actor, 999);
         Actor_SetTimeScale(actor, FX32_ONE);
         actor->setState(actor, 1);
     }

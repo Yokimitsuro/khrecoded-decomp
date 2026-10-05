@@ -3,7 +3,7 @@
 extern u32 data_ov044_020d0ec0;
 
 extern void func_ov044_020d034c(void);
-extern void func_ov044_020d0964(void);
+extern void UpdatePanelCamera(void);
 
 u32 UpdatePanelState_020d06a0(void)
 {
@@ -13,6 +13,6 @@ u32 UpdatePanelState_020d06a0(void)
     if (prevState != state || prevState == 6) {
         func_ov044_020d034c();
     }
-    func_ov044_020d0964();
+    UpdatePanelCamera();
     return 0;
 }

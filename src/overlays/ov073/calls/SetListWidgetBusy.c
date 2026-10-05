@@ -13,8 +13,8 @@ typedef struct ListWidget {
     BOOL busy;
 } ListWidget;
 
-extern void func_ov027_020b95a0(ResourceContainer *container, void *element, BOOL visible);
-extern void func_ov073_020c305c(ListWidget *list, int mode, u32 *values);
+extern void SetEntrySlotsVisible(ResourceContainer *container, void *element, BOOL visible);
+extern void RefreshListRowStates(ListWidget *list, int mode, u32 *values);
 
 void SetListWidgetBusy(ListWidget *list, BOOL busy)
 {
@@ -25,7 +25,7 @@ void SetListWidgetBusy(ListWidget *list, BOOL busy)
     if (busy != 0) {
         visible = FALSE;
     }
-    func_ov027_020b95a0(list->container, list->upArrow, visible);
-    func_ov027_020b95a0(list->container, list->downArrow, visible);
-    func_ov073_020c305c(list, 0, list->values);
+    SetEntrySlotsVisible(list->container, list->upArrow, visible);
+    SetEntrySlotsVisible(list->container, list->downArrow, visible);
+    RefreshListRowStates(list, 0, list->values);
 }

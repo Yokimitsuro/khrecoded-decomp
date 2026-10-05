@@ -11,11 +11,11 @@ typedef struct MenuData {
 } MenuData;
 
 extern MenuData *data_ov001_020a04e4;
-extern u32 func_ov001_02071248(u32 slot);
-extern void *func_ov027_020ba134(char *path, int loadMode, void (*callback)(void), void *userData);
+extern u32 MakePrimaryVramKey_02071248(u32 slot);
+extern void *QueueFileLoadRequest(char *path, int loadMode, void (*callback)(void), void *userData);
 extern void func_ov001_02078d7c(void);
 
 void LoadMenuEntryGraphic(void *menu, int index)
 {
-    func_ov027_020ba134((char *)func_ov001_02071248(data_ov001_020a04e4->entries[index].vramSlot), 1, func_ov001_02078d7c, NULL);
+    QueueFileLoadRequest((char *)MakePrimaryVramKey_02071248(data_ov001_020a04e4->entries[index].vramSlot), 1, func_ov001_02078d7c, NULL);
 }

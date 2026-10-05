@@ -32,7 +32,7 @@ typedef struct ObjectGroup {
 
 extern ObjectGroup *func_ov032_020bbc80(GroupObject *object);
 extern GroupObject *func_ov001_02086384(void *world, int index);
-extern void func_ov032_020bc168(void *world, int groupIndex);
+extern void AdvanceRowSequenceStep(void *world, int groupIndex);
 
 void UnlinkGroupMember(GroupObject *object)
 {
@@ -42,7 +42,7 @@ void UnlinkGroupMember(GroupObject *object)
     ObjectGroup *group = func_ov032_020bbc80(object);
 
     group->memberTotal--;
-    func_ov032_020bc168(object->world, object->work->groupIndex);
+    AdvanceRowSequenceStep(object->world, object->work->groupIndex);
     if (object->work->prevLink != -1) {
         prev = func_ov001_02086384(world, object->work->prevLink);
     }

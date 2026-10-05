@@ -10,11 +10,11 @@ typedef struct MovieOverlayState {
 
 extern MovieOverlayState *data_ov022_020b7da0;
 extern char *strcpy(char *dst, const char *src);
-extern void func_ov022_020a6f88(BOOL useCurrentText);
+extern void DrawMovieCaption(BOOL useCurrentText);
 
 void CommitMovieStateText(void)
 {
     strcpy(data_ov022_020b7da0->savedText, data_ov022_020b7da0->currentText);
-    func_ov022_020a6f88(TRUE);
+    DrawMovieCaption(TRUE);
     data_ov022_020b7da0->textVisible = TRUE;
 }

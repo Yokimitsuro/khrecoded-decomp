@@ -51,10 +51,10 @@ struct Actor {
 };
 
 extern SessionState *data_ov001_020a0480;
-extern BOOL func_ov052_020c9a3c(Actor *actor, HitSource *source);
+extern BOOL TryCounterHit(Actor *actor, HitSource *source);
 extern BOOL TryFlagTargetBehind(Actor *actor, HitSource *source);
-extern BOOL func_ov052_020c9cd8(Actor *actor, HitSource *source);
-extern void func_ov021_020a78d0(Actor *actor, HitSource *source);
+extern BOOL TryFrontalHitReaction(Actor *actor, HitSource *source);
+extern void RollHitEffect(Actor *actor, HitSource *source);
 extern int func_ov021_020a768c(Actor *actor, HitSource *source, BOOL weak);
 extern void AddClampedHealth(Actor *actor, s16 amount);
 extern void TryApplyStatusEffect(Actor *actor, HitSource *source);
@@ -62,12 +62,12 @@ extern BOOL func_ov001_02075248(int player);
 extern BOOL IsPlayerEntryFlagSet(int player, u32 id);
 extern void UseFirstAvailableMember(Actor *actor);
 extern void ApplyScaledHealthDelta(Actor *actor, s32 amount, BOOL force);
-extern void func_ov001_020734f8(void);
+extern void ResetGaugeDisplay(void);
 extern int func_ov001_02063b68(int index);
 extern int nextRandom12(void);
 extern fx32 FX_Mul(fx32 a, fx32 b);
-extern void func_ov001_02063a80(int index, int amount);
-extern void func_ov052_020cfda4(Actor *actor);
+extern void AddSessionCounter(int index, int amount);
+extern void MarkStateThreeFlag(Actor *actor);
 extern void AwardPartyGaugePoints(int player, int points);
 
 BOOL ApplyIncomingHit(Actor *actor, HitSource *source)
@@ -92,13 +92,13 @@ BOOL ApplyIncomingHit(Actor *actor, HitSource *source)
         if (flags & 0x100020820ULL) {
             return FALSE;
         }
-        if (func_ov052_020c9a3c(actor, source)) {
+        if (TryCounterHit(actor, source)) {
             return TRUE;
         }
         if (TryFlagTargetBehind(actor, source)) {
             return FALSE;
         }
-        if (func_ov052_020c9cd8(actor, source)) {
+        if (TryFrontalHitReaction(actor, source)) {
             return TRUE;
         }
         if (data_ov001_020a0480->paused) {
@@ -113,7 +113,7 @@ BOOL ApplyIncomingHit(Actor *actor, HitSource *source)
                 actor->recoverTime += 0x14000;
             }
         }
-        func_ov021_020a78d0(actor, source);
+        RollHitEffect(actor, source);
         damage = func_ov021_020a768c(actor, source, actor->stageType == 10);
         AddClampedHealth(actor, -damage);
         source->damage = damage;
@@ -127,7 +127,7 @@ BOOL ApplyIncomingHit(Actor *actor, HitSource *source)
             if (actor->onEffect != NULL) {
                 actor->onEffect(actor, 0, 0xd, 0);
             }
-            func_ov001_020734f8();
+            ResetGaugeDisplay();
         }
         if (source->flags & 0x10) {
             knocked = FALSE;
@@ -153,7 +153,7 @@ BOOL ApplyIncomingHit(Actor *actor, HitSource *source)
                 if (amount <= 0) {
                     amount = 1;
                 }
-                func_ov001_02063a80(1, -amount);
+                AddSessionCounter(1, -amount);
             }
         }
     }
@@ -176,7 +176,7 @@ BOOL ApplyIncomingHit(Actor *actor, HitSource *source)
         if (grounded) {
             actor->velY = 0x580;
         }
-        func_ov052_020cfda4(actor);
+        MarkStateThreeFlag(actor);
         if (source->flags & 0x400) {
             actor->flags |= 0x800000000ULL;
         }

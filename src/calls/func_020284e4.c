@@ -1,16 +1,16 @@
 #include "nitro/types.h"
 
 extern u32 func_ov001_02063838();
-extern u32 func_ov001_02088844();
-extern u32 func_ov036_020bc600();
+extern u32 GetManagerStateFlag();
+extern u32 SnapshotActorSlotPositions();
 
 void func_020284e4(void) {
   int active;
 
   active = func_ov001_02063838();
   if (active != 0) {
-    func_ov001_02088844();
+    GetManagerStateFlag();
     return;
   }
-  func_ov036_020bc600();
+  SnapshotActorSlotPositions();
 }

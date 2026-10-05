@@ -5,8 +5,8 @@ typedef struct {
     u8 blendTable[4];
 } EnemyActor;
 
-extern void func_ov052_020ce0e0(EnemyActor *actor, void *blendTable, int state, int blendIndex, int frames);
-extern void func_ov052_020cde40(EnemyActor *actor, int state, int frames, int blendIndex);
+extern void ChangeActorState(EnemyActor *actor, void *blendTable, int state, int blendIndex, int frames);
+extern void RequestActorMode(EnemyActor *actor, int state, int frames, int blendIndex);
 
 void HandleEnemyEvent(EnemyActor *actor, int event, int frames)
 {
@@ -29,8 +29,8 @@ void HandleEnemyEvent(EnemyActor *actor, int event, int frames)
         break;
     }
     if (blendTable != NULL) {
-        func_ov052_020ce0e0(actor, blendTable, event, blendIndex, delay);
+        ChangeActorState(actor, blendTable, event, blendIndex, delay);
         return;
     }
-    func_ov052_020cde40(actor, event, frames, blendIndex);
+    RequestActorMode(actor, event, frames, blendIndex);
 }

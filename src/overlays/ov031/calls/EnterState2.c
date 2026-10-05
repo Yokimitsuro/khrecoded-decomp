@@ -8,12 +8,12 @@ typedef struct {
 } OverlayState;
 
 extern OverlayState *data_ov031_020bc820;
-extern u32 func_ov001_02063404(void);
+extern u32 RestoreSessionActors(void);
 extern void ObjectManager_LoadShadowModel(void);
 
 u32 EnterState2(void)
 {
-    if (func_ov001_02063404() == 1 && data_ov031_020bc820->mode != 3) {
+    if (RestoreSessionActors() == 1 && data_ov031_020bc820->mode != 3) {
         data_ov031_020bc820->mode = 0;
     }
     ObjectManager_LoadShadowModel();

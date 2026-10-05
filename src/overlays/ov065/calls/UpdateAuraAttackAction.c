@@ -33,11 +33,11 @@ struct Actor {
     void (*updateCallback)();
 };
 
-extern void func_ov052_020cffac(Actor *actor, AnimEntry *entry);
+extern void ApplyAnimRootMotion(Actor *actor, AnimEntry *entry);
 extern void func_ov052_020d1a88(SlotEntry *entry, void *source, int mirrored, AnimRecord *record, int player);
-extern int func_ov052_020d014c(Actor *actor, AnimEntry *target, SlotEntry *entry);
-extern BOOL func_ov052_020d02b4(Actor *actor, AnimEntry *data, int which);
-extern void func_ov001_020734f8(void);
+extern int ProcessTargetHitEntries(Actor *actor, AnimEntry *target, SlotEntry *entry);
+extern BOOL UpdateActionPhase(Actor *actor, AnimEntry *data, int which);
+extern void ResetGaugeDisplay(void);
 extern void SetManagerEnabled(u32 enabled);
 extern void FireMarkedGroupShot();
 extern void SpawnTimedAuraMarker(AnimRecord *record, Actor *actor, s32 frame);
@@ -49,21 +49,21 @@ void UpdateAuraAttackAction(Actor *actor)
     SlotEntry slot;
     u32 flags;
 
-    func_ov052_020cffac(actor, entry);
+    ApplyAnimRootMotion(actor, entry);
     func_ov052_020d1a88(&slot, entry, 0, record, actor->player);
     actor->updateCallback = FireMarkedGroupShot;
     SpawnTimedAuraMarker(record, actor, actor->frame);
-    if (func_ov052_020d014c(actor, entry, &slot)) {
+    if (ProcessTargetHitEntries(actor, entry, &slot)) {
         return;
     }
-    if (func_ov052_020d02b4(actor, entry, 0)) {
+    if (UpdateActionPhase(actor, entry, 0)) {
         return;
     }
     if (actor->active == 0) {
         return;
     }
     flags = actor->stateFlags & 4;
-    func_ov001_020734f8();
+    ResetGaugeDisplay();
     SetManagerEnabled(0);
     if (flags) {
         actor->setState(actor, 5);

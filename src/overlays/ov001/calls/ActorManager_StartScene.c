@@ -18,8 +18,8 @@ typedef struct ActorManager {
 
 extern ActorManager *data_ov001_020a0500;
 extern void *OS_SPrintf(char *dst, const char *fmt, ...);
-extern void func_ov001_02088424(void);
-extern void func_ov001_020883ac(void);
+extern void ReloadModeMessageArchive(void);
+extern void TryFinishIntroSequence(void);
 extern void *Obj_SetWord14(void *object, void (*callback)(void));
 
 void ActorManager_StartScene(SceneRequest *request)
@@ -34,6 +34,6 @@ void ActorManager_StartScene(SceneRequest *request)
     for (slotIndex = 0; slotIndex < 5; slotIndex++) {
         manager->slots[slotIndex] = -1;
     }
-    func_ov001_02088424();
-    Obj_SetWord14(manager->rootObject, func_ov001_020883ac);
+    ReloadModeMessageArchive();
+    Obj_SetWord14(manager->rootObject, TryFinishIntroSequence);
 }

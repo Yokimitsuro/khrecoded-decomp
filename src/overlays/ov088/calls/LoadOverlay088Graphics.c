@@ -1,0 +1,30 @@
+typedef struct Overlay088PaletteResource { unsigned int unknown[2]; unsigned int size; void *data; } Overlay088PaletteResource;
+typedef struct Overlay088ImageResource { unsigned int unknown[4]; unsigned int size; void *data; } Overlay088ImageResource;
+typedef struct Overlay088ResourceView { unsigned int unknown[2]; Overlay088PaletteResource *palette; } Overlay088ResourceView;
+extern void *func_ov039_020bc1c4(void);
+extern int BuildSlotImageParams(int group, int index);
+extern void *func_0202c4a0(int resourceId, int kind);
+extern void GetBgDataFromArchive(Overlay088ResourceView *view, void *resource, int first, int second, int flags);
+extern void GXS_LoadBGPltt(const void *data, unsigned offset, unsigned size);
+extern void NNSi_FndFreeFromDefaultHeap(void *buffer);
+extern void NNS_G2dGetUnpackedBGCharacterData(void *resource, Overlay088ImageResource **image);
+extern void GXS_LoadBG3Char(const void *data, unsigned offset, unsigned size);
+extern void func_ov027_020b7e44(void *context, int resourceId);
+extern int FindActiveRecordById(void *context, int id);
+extern void func_ov027_020b8230(void *context, int resource);
+void LoadOverlay088Graphics(void *unusedContext) {
+    void *context = func_ov039_020bc1c4();
+    void *resource;
+    Overlay088ResourceView view;
+    Overlay088ImageResource *image;
+    resource = func_0202c4a0(BuildSlotImageParams(2, 0x12), 0xe);
+    GetBgDataFromArchive(&view, resource, -1, -1, 0);
+    GXS_LoadBGPltt(view.palette->data, 0, view.palette->size);
+    NNSi_FndFreeFromDefaultHeap(resource);
+    resource = func_0202c4a0(BuildSlotImageParams(3, 1), 0xe);
+    NNS_G2dGetUnpackedBGCharacterData(resource, &image);
+    GXS_LoadBG3Char(image->data, 0, image->size);
+    NNSi_FndFreeFromDefaultHeap(resource);
+    func_ov027_020b7e44(context, BuildSlotImageParams(2, 0x14));
+    func_ov027_020b8230(context, FindActiveRecordById(context, 1000));
+}

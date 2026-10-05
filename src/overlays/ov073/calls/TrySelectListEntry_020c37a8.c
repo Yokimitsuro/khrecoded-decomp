@@ -6,7 +6,7 @@ typedef struct ListView {
 } ListView;
 
 extern void SelectListEntry(ListView *list, int entryIndex);
-extern BOOL func_ov073_020c32c8(ListView *list, int entryIndex);
+extern BOOL ExpandListRow(ListView *list, int entryIndex);
 
 BOOL TrySelectListEntry_020c37a8(ListView *list, int entryIndex)
 {
@@ -17,7 +17,7 @@ BOOL TrySelectListEntry_020c37a8(ListView *list, int entryIndex)
         selectable = FALSE;
     }
     SelectListEntry(list, entryIndex);
-    if (!selectable || !func_ov073_020c32c8(list, entryIndex)) {
+    if (!selectable || !ExpandListRow(list, entryIndex)) {
         return FALSE;
     }
     return TRUE;

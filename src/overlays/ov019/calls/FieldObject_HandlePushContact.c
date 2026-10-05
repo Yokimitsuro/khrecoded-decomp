@@ -64,7 +64,7 @@ typedef struct EffectRequest {
 extern void SpawnSoundSlot(u32 owner, u32 kind, VecFx32 *position, u32 flags);
 extern PartyEntry *GetBoundedEntryField(int index);
 extern BOOL IsMovingAgainstDirection(FieldObject *object, int entryIndex, VecFx32 *direction);
-extern BOOL func_ov001_0208655c(FieldObject *object, int arg, VecFx32 *direction, fx32 threshold);
+extern BOOL SendPushMessage(FieldObject *object, int arg, VecFx32 *direction, fx32 threshold);
 extern void ResetAnimationTrackState(EffectRequest *request);
 extern void func_ov021_020a8cc0(EffectRequest *request, int bank);
 
@@ -97,7 +97,7 @@ void FieldObject_HandlePushContact(void *arg0, void *arg1, VecFx32 *direction, C
     entry = GetBoundedEntryField(0);
     origin = &entry->position;
     threshold = (entry->pushParams->strength << 12) / 10;
-    if (func_ov001_0208655c(object, 0, direction, threshold)) {
+    if (SendPushMessage(object, 0, direction, threshold)) {
         ResetAnimationTrackState(&effect);
         effect.unk_25 = cleared;
         effect.position = *origin;

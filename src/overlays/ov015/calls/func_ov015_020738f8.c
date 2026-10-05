@@ -1,6 +1,6 @@
 extern void WH_SetError(unsigned int id);
 extern void SetPanelTransitionMode(int state);
-extern int func_ov015_02073930(void);
+extern int WH_StartScanStep(void);
 
 void func_ov015_020738f8(int req) {
     if (*(unsigned short *)(req + 2) != 0) {
@@ -8,7 +8,7 @@ void func_ov015_020738f8(int req) {
         SetPanelTransitionMode(9);
         return;
     }
-    if (func_ov015_02073930() != 0) {
+    if (WH_StartScanStep() != 0) {
         return;
     }
     SetPanelTransitionMode(9);

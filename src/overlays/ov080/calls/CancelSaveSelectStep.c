@@ -17,7 +17,7 @@ typedef struct {
 } SaveSelectScreen;
 
 extern int func_ov039_020bc934(void);
-extern void func_ov039_020bc8c0(void);
+extern void PopStackEntry(void);
 extern void StartSubScene(int a, int b, int c);
 extern void DecrementBusyCounterIfPositive(void);
 extern BOOL PlaySoundEffect(int seqArcNo, int index);
@@ -27,7 +27,7 @@ void CancelSaveSelectStep(SaveSelectScreen *screen)
     switch (screen->step) {
     case 0:
         if (func_ov039_020bc934() < 2) {
-            func_ov039_020bc8c0();
+            PopStackEntry();
             StartSubScene(0, -1, 0);
         } else if (screen->returnMode != 0) {
             screen->step = 2;

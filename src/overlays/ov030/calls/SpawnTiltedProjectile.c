@@ -43,11 +43,11 @@ typedef struct {
 
 extern const s16 data_02053580[];
 extern EntryInfo *GetBoundedEntryField(int index);
-extern void func_ov021_020ab0ac(SpawnDesc *desc);
-extern int func_ov021_020ab0b8(SpawnUnit *unit, SpawnDesc *desc);
+extern void ZeroBytes0x40(SpawnDesc *desc);
+extern int TryConsumeLimitedUse(SpawnUnit *unit, SpawnDesc *desc);
 extern int random_next_scaled(int range);
 extern void MTX_RotZ33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
-extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *dst);
+extern void MTX_MultVec33(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *dst);
 
 void SpawnTiltedProjectile(SpawnUnit *unit)
 {
@@ -62,7 +62,7 @@ void SpawnTiltedProjectile(SpawnUnit *unit)
     info = GetBoundedEntryField(unit->entryIndex);
     angle = info->facing - 0x8000;
     facing = angle + 0x8000;
-    func_ov021_020ab0ac(&desc);
+    ZeroBytes0x40(&desc);
     desc.count = 3;
     desc.position = unit->position;
     index = facing >> 4;
@@ -75,7 +75,7 @@ void SpawnTiltedProjectile(SpawnUnit *unit)
     }
     index = tilt >> 4;
     MTX_RotZ33_(&rot, data_02053580[index], data_02053580[(0x400 - index) & 0xfff]);
-    func_01ff9404(&desc.direction, &rot, &desc.direction);
+    MTX_MultVec33(&desc.direction, &rot, &desc.direction);
     desc.unk_2c = 0;
     desc.paramA = unit->paramA;
     desc.paramB = unit->paramB;
@@ -83,6 +83,6 @@ void SpawnTiltedProjectile(SpawnUnit *unit)
     desc.kind = unit->kind;
     desc.subKind = unit->subKind;
     desc.power = unit->power;
-    unit->spawnResult = func_ov021_020ab0b8(unit, &desc);
+    unit->spawnResult = TryConsumeLimitedUse(unit, &desc);
     unit->cooldown = 0;
 }

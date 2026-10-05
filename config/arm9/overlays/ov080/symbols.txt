@@ -1,6 +1,6 @@
 CountValidSlots kind:function(thumb,size=0x50) addr:0x020c4280
 func_ov080_020c42d0 kind:function(thumb,size=0x490) addr:0x020c42d0
-func_ov080_020c4760 kind:function(thumb,size=0x390) addr:0x020c4760
+UpdateSaveSelectScreen kind:function(thumb,size=0x390) addr:0x020c4760
 DestroySaveSelectScreen kind:function(thumb,size=0xb4) addr:0x020c4af0
 BuildSlotSummary kind:function(thumb,size=0x134) addr:0x020c4ba4
 HandleSlotReadResult kind:function(thumb,size=0x50) addr:0x020c4cd8

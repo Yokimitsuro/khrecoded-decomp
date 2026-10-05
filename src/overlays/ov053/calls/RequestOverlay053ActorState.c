@@ -11,8 +11,8 @@ typedef struct Entity {
 } Entity;
 
 extern BOOL func_ov001_020645c8(u32 value);
-extern void func_ov052_020ce0e0(Entity *entity, void *blendTable, int state, int blendIndex, int frames);
-extern void func_ov052_020cde40(Entity *entity, int state, int frames);
+extern void ChangeActorState(Entity *entity, void *blendTable, int state, int blendIndex, int frames);
+extern void RequestActorMode(Entity *entity, int state, int frames);
 
 void RequestOverlay053ActorState(Entity *entity, int state, int frames)
 {
@@ -74,11 +74,11 @@ void RequestOverlay053ActorState(Entity *entity, int state, int frames)
             if (state == entity->currentState) {
                 return;
             }
-            func_ov052_020ce0e0(entity, defaultBlend, state, blendIndex, frames);
+            ChangeActorState(entity, defaultBlend, state, blendIndex, frames);
             return;
         }
     } else if (defaultBlend == entity->blendTable) {
         entity->currentState = -1;
     }
-    func_ov052_020cde40(entity, state, frames);
+    RequestActorMode(entity, state, frames);
 }

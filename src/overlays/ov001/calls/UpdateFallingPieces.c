@@ -22,8 +22,8 @@ typedef struct {
 } FallingContext;
 
 extern FallingContext *data_ov001_020a04f4;
-extern void func_ov001_0207e474(FallingContext *context, FallingPiece *piece);
-extern void func_ov001_0207e414(FallingPiece *piece);
+extern void SpawnFallingPiece(FallingContext *context, FallingPiece *piece);
+extern void UpdateFallingPiecePosition(FallingPiece *piece);
 extern void func_ov001_0207e2d0(void);
 
 extern void func_ov001_0206ad1c(void *arg);
@@ -38,7 +38,7 @@ s32 UpdateFallingPieces(void)
         context->spawnTimer--;
         if (context->spawnTimer < 0) {
             context->spawnTimer = 15;
-            func_ov001_0207e474(context, &context->pieces[context->spawnIndex]);
+            SpawnFallingPiece(context, &context->pieces[context->spawnIndex]);
             context->spawnIndex = (context->spawnIndex + 1) % 6;
         }
         func_ov001_0207e2d0();
@@ -46,7 +46,7 @@ s32 UpdateFallingPieces(void)
             piece = &context->pieces[i];
             if (piece->isVisible != 0) {
                 piece->height -= context->fallSpeed;
-                func_ov001_0207e414(piece);
+                UpdateFallingPiecePosition(piece);
                 func_ov001_0206ad1c(piece->sprite);
             }
         }

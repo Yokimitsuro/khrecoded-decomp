@@ -4,6 +4,10 @@
     .data       start:0x020be1e0 end:0x020be280 kind:data align:32
     .bss        start:0x020be280 end:0x020be2a0 kind:bss align:32
 
+src/overlays/ov040/calls/InitInstanceFromTemplate.c:
+    complete
+    .text       start:0x020bca90 end:0x020bcc44
+
 src/overlays/ov040/calls/EnterState13WithHalfRate.c:
     complete
     .text       start:0x020bd5c4 end:0x020bd5de
@@ -12,6 +16,14 @@ src/overlays/ov040/auto/func_ov040_020bd748.c:
     complete
     .text       start:0x020bd748 end:0x020bd74e
 
+src/overlays/ov040/calls/RunMenuStateMachine.c:
+    complete
+    .text       start:0x020bd938 end:0x020bd9b0
+
+src/overlays/ov040/calls/FindActorRewardValue.c:
+    complete
+    .text       start:0x020bda1c end:0x020bda8c
+
 src/overlays/ov040/calls/AdvanceLoopingAnimation.c:
     complete
     .text       start:0x020bdb2c end:0x020bdb70
@@ -19,6 +31,22 @@ src/overlays/ov040/calls/AdvanceLoopingAnimation.c:
 src/overlays/ov040/calls/func_ov040_020bdba4.c:
     complete
     .text       start:0x020bdba4 end:0x020bdbac
+
+src/overlays/ov040/calls/RewardFlagToItemCode.c:
+    complete
+    .text       start:0x020bdbac end:0x020bdc44
+
+src/overlays/ov040/calls/ApplyPendingFlagReward.c:
+    complete
+    .text       start:0x020bdcb4 end:0x020bddf8
+
+src/overlays/ov040/calls/UpdateRewardMenuClose.c:
+    complete
+    .text       start:0x020bddf8 end:0x020bde88
+
+src/overlays/ov040/calls/UpdateRewardMenuHighlights.c:
+    complete
+    .text       start:0x020bde88 end:0x020bdf9c
 
 src/overlays/ov040/calls/func_ov040_020be00c.c:
     complete

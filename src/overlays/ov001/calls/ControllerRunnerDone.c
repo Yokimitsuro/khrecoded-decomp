@@ -25,14 +25,14 @@ typedef struct ControlledActor {
 
 extern ControlledActor *GetStageActor(s16 actorId);
 extern void *GetStageObjectRecord(u32 id);
-extern int func_ov021_020b4bfc(ScriptRunner *runner, int slot);
+extern int SelectSequenceTrack(ScriptRunner *runner, int slot);
 
 s32 ControllerRunnerDone(ActorController *controller)
 {
     ControlledActor *actor = GetStageActor(controller->actorId);
 
     GetStageObjectRecord(actor->objectId);
-    if ((u16)func_ov021_020b4bfc(&actor->runner, 8) == 4) {
+    if ((u16)SelectSequenceTrack(&actor->runner, 8) == 4) {
         return 4;
     }
     if (actor->statusFlags & 1) {

@@ -32,9 +32,9 @@ typedef struct {
     void *messages;
 } SaveSelectScreen;
 
-extern void func_ov039_020bc16c(int bgId, int x, int y, int width, int height);
+extern void CallStateWidget(int bgId, int x, int y, int width, int height);
 extern void IndexedRecords_SetFlag2(void *panel, int index, BOOL visible);
-extern void func_ov027_020b95a0(void *panel, void *element, BOOL visible);
+extern void SetEntrySlotsVisible(void *panel, void *element, BOOL visible);
 extern const u16 *func_ov027_020ba2c8(void **messages, int id);
 extern void func_ov039_020be594(TextLayer *layer, int x, int y, int color, const u16 *text);
 extern void DrawTextAnchored(TextLayer *layer, int x, int y, int color, u32 flags, const u16 *text);
@@ -45,13 +45,13 @@ void HideSaveSlotsShowPrompt(SaveSelectScreen *screen)
     SaveSlot *slots = screen->slots;
     TextLayer *layer = &screen->textLayer;
 
-    func_ov039_020bc16c(slots[0].frames[0]->bgId, 3, 7, 0x1b, 10);
+    CallStateWidget(slots[0].frames[0]->bgId, 3, 7, 0x1b, 10);
     IndexedRecords_SetFlag2(panel, slots[0].emptyElement, FALSE);
     IndexedRecords_SetFlag2(panel, slots[0].filledElement, FALSE);
-    func_ov027_020b95a0(screen->panel, slots[0].cursorElement, FALSE);
+    SetEntrySlotsVisible(screen->panel, slots[0].cursorElement, FALSE);
     IndexedRecords_SetFlag2(panel, slots[1].emptyElement, FALSE);
     IndexedRecords_SetFlag2(panel, slots[1].filledElement, FALSE);
-    func_ov027_020b95a0(screen->panel, slots[1].cursorElement, FALSE);
+    SetEntrySlotsVisible(screen->panel, slots[1].cursorElement, FALSE);
     func_ov039_020be594(layer, 0x68, 0x18, 2, func_ov027_020ba2c8(&screen->messages, 0x15));
     DrawTextAnchored(layer, 0x34, 0x2b, 2, 0x10, func_ov027_020ba2c8(&screen->messages, 0xb));
     DrawTextAnchored(layer, 0x9c, 0x2b, 2, 0x10, func_ov027_020ba2c8(&screen->messages, 0xc));

@@ -61,7 +61,7 @@ typedef struct PlayerEntry {
 
 extern const VecFx32 data_0205344c;
 extern void func_ov001_02087988(u16 id, EventTargetInfo *info);
-extern void func_ov021_020ac118(void *obj);
+extern void ZeroBytes0x28(void *obj);
 extern void MI_CpuFill8(void *dest, u32 value, u32 size);
 extern PlayerEntry *GetBoundedEntryField(int player);
 extern VecFx32 *func_ov001_0206dc4c(int player);
@@ -89,7 +89,7 @@ BOOL RewardQueue_CanAddEventHit(RewardQueue *queue, u16 eventId, u16 subId) {
         return TRUE;
     }
     func_ov001_02087988(eventId, &info);
-    func_ov021_020ac118(&attack);
+    ZeroBytes0x28(&attack);
     attack.power = 0x1800;
     attack.attackType = 0;
     MI_CpuFill8(&hit, 0, sizeof(HitInfo));

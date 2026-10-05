@@ -47,7 +47,7 @@ typedef struct Vec2Fx32 {
 extern fx32 FX_Sqrt(fx32 value);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern s64 _ll_sdiv(s64 numerator, s64 denominator);
@@ -156,7 +156,7 @@ static inline VecFx32 RejectAlongEdge(const VecFx32 *vec, const CollisionEdge *e
 static inline VecFx32 CrossVec(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 cross;
-    func_01ff9ea8(a, b, &cross);
+    VEC_CrossProduct(a, b, &cross);
     return cross;
 }
 
@@ -171,7 +171,7 @@ static inline VecFx32 CrossConditional(const VecFx32 *a, const VecFx32 *b, BOOL 
 {
     VecFx32 cross;
     if (!vertical) {
-        func_01ff9ea8(a, b, &cross);
+        VEC_CrossProduct(a, b, &cross);
     } else {
         cross.x = -(fx32)(((fx64)a->z * b->y + 0x800) >> 12);
         cross.y = 0;

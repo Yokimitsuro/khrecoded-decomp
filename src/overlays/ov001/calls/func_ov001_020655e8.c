@@ -1,8 +1,8 @@
 extern int ScriptVm_ReadOperandInt();
-extern int func_ov001_02063ccc();
+extern int HandleFieldPanelCommand();
 
 int func_ov001_020655e8(int arg0) {
     ScriptVm_ReadOperandInt(arg0);
-    func_ov001_02063ccc();
+    HandleFieldPanelCommand();
     return 1;
 }

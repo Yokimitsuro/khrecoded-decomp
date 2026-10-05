@@ -40,9 +40,9 @@ typedef struct HitRequest {
 } HitRequest;
 
 extern void *GetBoundedEntryField(int index);
-extern void func_ov021_020ac118(void *obj);
-extern void func_ov056_020d4260(StatSource *source, ScaledStats *stats, s32 percent, u8 flags, fx32 scale);
-extern void func_ov021_020ac124(PathSegment *segment, s32 id, s32 count, s32 param, const VecFx32 *start, const VecFx32 *end);
+extern void ZeroBytes0x28(void *obj);
+extern void ComputeScaledStats(StatSource *source, ScaledStats *stats, s32 percent, u8 flags, fx32 scale);
+extern void InitPathSegment(PathSegment *segment, s32 id, s32 count, s32 param, const VecFx32 *start, const VecFx32 *end);
 extern void func_ov021_020ac35c(ScaledStats *stats, PathSegment *segment);
 extern int func_ov021_020a8cc0(HitRequest *request, int groupId);
 extern u32 SpawnSoundSlot(u32 owner, u32 kind, VecFx32 *position, u32 flags);
@@ -54,8 +54,8 @@ int ApplyScaledPathHit(s32 attacker, VecFx32 *position, HitRequest *request)
     PathSegment segment;
 
     GetBoundedEntryField(source->entryIndex);
-    func_ov021_020ac118(&stats);
-    func_ov056_020d4260(source, &stats, (u8)source->percent, (u8)source->flags, source->scale);
+    ZeroBytes0x28(&stats);
+    ComputeScaledStats(source, &stats, (u8)source->percent, (u8)source->flags, source->scale);
     switch (source->kind) {
     case 7:
     default:
@@ -68,7 +68,7 @@ int ApplyScaledPathHit(s32 attacker, VecFx32 *position, HitRequest *request)
         stats.element = 5;
         break;
     }
-    func_ov021_020ac124(&segment, attacker, -1, source->entryIndex, &source->origin, NULL);
+    InitPathSegment(&segment, attacker, -1, source->entryIndex, &source->origin, NULL);
     func_ov021_020ac35c(&stats, &segment);
     if (segment.result != (s32)0x80000000) {
         request->position = *position;

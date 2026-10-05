@@ -13,7 +13,7 @@ typedef struct StageEventRecord {
 } StageEventRecord;
 
 extern int data_ov001_0209f2e8;
-extern StageEventRecord *func_ov001_0209c114(u32 id);
+extern StageEventRecord *GetStageEventRecord(u32 id);
 extern int func_ov016_020a6df8(u32 group, u32 index, int arg);
 extern int func_ov001_0209591c(StageEventRecord *record, int arg);
 
@@ -22,7 +22,7 @@ int DispatchStageEventArg(u32 id, int arg)
     StageEventRecord *record;
 
     if (data_ov001_0209f2e8 != -1 && id != 0) {
-        record = func_ov001_0209c114(id);
+        record = GetStageEventRecord(id);
         if (record != NULL) {
             if (record->type == 99 && record->usesSlotTable) {
                 return func_ov016_020a6df8(record->slotGroup, record->slotIndex, arg);

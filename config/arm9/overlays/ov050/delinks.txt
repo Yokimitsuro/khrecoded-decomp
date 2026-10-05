@@ -6,6 +6,22 @@ src/overlays/ov050/calls/func_ov050_020c3520.c:
     complete
     .text       start:0x020c3520 end:0x020c3530
 
+src/overlays/ov050/calls/CameraCollision_ShouldBlockFacing.c:
+    complete
+    .text       start:0x020c3558 end:0x020c35cc
+
+src/overlays/ov050/calls/UpdatePathCameraCollision.c:
+    complete
+    .text       start:0x020c3600 end:0x020c38a8
+
+src/overlays/ov050/calls/TrackPlayerCameraDirection.c:
+    complete
+    .text       start:0x020c38a8 end:0x020c39fc
+
+src/overlays/ov050/calls/ClampCameraUpVector.c:
+    complete
+    .text       start:0x020c39fc end:0x020c3b30
+
 src/overlays/ov050/calls/StartCameraDriftFromParams.c:
     complete
     .text       start:0x020c3b30 end:0x020c3b64

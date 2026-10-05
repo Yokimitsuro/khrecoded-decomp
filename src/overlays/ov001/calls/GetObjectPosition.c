@@ -15,11 +15,11 @@ struct PositionedObject {
     VecFx32 position;
 };
 
-extern BOOL func_ov001_020872e0(PositionedObject *object, VecFx32 *out);
+extern BOOL IsNodeFlagBitClear(PositionedObject *object, VecFx32 *out);
 
 BOOL GetObjectPosition(PositionedObject *object, VecFx32 *out)
 {
-    if (func_ov001_020872e0(object, out)) {
+    if (IsNodeFlagBitClear(object, out)) {
         if (object->vtable->getPosition != NULL) {
             return object->vtable->getPosition(object, out);
         }

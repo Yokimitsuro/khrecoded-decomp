@@ -33,7 +33,7 @@ typedef struct {
 } Actor;
 
 extern u32 func_ov001_0208724c(u32 group, u32 index);
-extern BOOL func_ov016_020a6aa0(u32 unit);
+extern BOOL IsFieldUnitAction7(u32 unit);
 
 BOOL IsLockedOnActiveFieldUnit(Actor *actor)
 {
@@ -48,7 +48,7 @@ BOOL IsLockedOnActiveFieldUnit(Actor *actor)
         TargetInfo *info = &owner->info;
         if (info->kind == 4) {
             u32 unit = func_ov001_0208724c(info->group, info->index);
-            if (*(u8 *)(*(int *)(unit + 4) + 0x5a) == 9 && func_ov016_020a6aa0(unit)) {
+            if (*(u8 *)(*(int *)(unit + 4) + 0x5a) == 9 && IsFieldUnitAction7(unit)) {
                 result = TRUE;
             }
         }

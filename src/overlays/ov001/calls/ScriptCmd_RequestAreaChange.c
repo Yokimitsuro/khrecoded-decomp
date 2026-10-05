@@ -12,7 +12,7 @@ typedef struct ScriptContext {
 } ScriptContext;
 
 extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operand);
-extern void func_ov001_0206317c(int areaId, int roomId, int entranceId, int transitionFlags);
+extern void ConfigureFieldTracks(int areaId, int roomId, int entranceId, int transitionFlags);
 
 int ScriptCmd_RequestAreaChange(ScriptContext *context, ScriptOperand *operands)
 {
@@ -21,7 +21,7 @@ int ScriptCmd_RequestAreaChange(ScriptContext *context, ScriptOperand *operands)
 
     areaId = ScriptVm_ReadOperandInt(context, operands);
     entranceId = ScriptVm_ReadOperandInt(context, operands + 1);
-    func_ov001_0206317c(areaId, 0, entranceId, -1);
+    ConfigureFieldTracks(areaId, 0, entranceId, -1);
     context->waitArmed = 0;
     return 3;
 }

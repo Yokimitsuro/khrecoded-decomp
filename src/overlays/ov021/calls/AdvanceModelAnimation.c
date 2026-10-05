@@ -14,7 +14,7 @@ typedef struct AnimatedModel {
 extern fx32 func_0202f4cc(AnimatedModel *model, int channel);
 extern int *func_01ffb2f8(AnimatedModel *model, int channel, fx32 frame);
 extern void func_01ffb12c(AnimatedModel *model);
-extern void func_ov021_020ac834(AnimatedModel *model, void *joints, VecFx32 *out);
+extern void GetCurrentNodeOffset(AnimatedModel *model, void *joints, VecFx32 *out);
 
 void AdvanceModelAnimation(AnimatedModel *model, fx32 step, VecFx32 *out)
 {
@@ -36,6 +36,6 @@ void AdvanceModelAnimation(AnimatedModel *model, fx32 step, VecFx32 *out)
     model->drawFlags |= 3;
     func_01ffb12c(model);
     model->drawFlags &= ~3;
-    func_ov021_020ac834(model, model->joints, out);
+    GetCurrentNodeOffset(model, model->joints, out);
     model->frame = frame;
 }

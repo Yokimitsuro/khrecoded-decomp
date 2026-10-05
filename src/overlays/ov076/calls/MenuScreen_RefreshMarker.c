@@ -23,7 +23,7 @@ extern void func_ov076_020cb9c0(MenuScreen *screen);
 extern Widget *FindWidgetById(void *container, int elementId);
 extern void func_ov027_020b91e8(void *container, Widget *element, const s32 *position, int mode);
 extern void func_0204f218(void *scene, int handle, int paletteId);
-extern void func_ov027_020b95a0(void *container, Widget *element, BOOL visible);
+extern void SetEntrySlotsVisible(void *container, Widget *element, BOOL visible);
 
 void MenuScreen_RefreshMarker(MenuScreen *screen)
 {
@@ -36,6 +36,6 @@ void MenuScreen_RefreshMarker(MenuScreen *screen)
         position[1] = screen->marker->y << 12;
         func_ov027_020b91e8(screen->container, marker, position, 0);
         func_0204f218(screen->container, marker->handle, 0);
-        func_ov027_020b95a0(screen->container, marker, TRUE);
+        SetEntrySlotsVisible(screen->container, marker, TRUE);
     }
 }

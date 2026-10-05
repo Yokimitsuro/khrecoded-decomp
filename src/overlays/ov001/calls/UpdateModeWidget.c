@@ -14,7 +14,7 @@ extern int func_ov001_0207123c(void);
 extern int func_ov027_020b9e10(int layer, int index);
 extern void func_ov027_020b9e20(int layer, int index);
 extern void SampleTweenValue(void *tween, s32 *value);
-extern void func_ov001_020796f8(ModeState *state, int widget, s32 value);
+extern void DrawScaledWindowFrame(ModeState *state, int widget, s32 value);
 extern void FreeModeResources(ModeState *state);
 
 void UpdateModeWidget(ModeState *state) {
@@ -23,7 +23,7 @@ void UpdateModeWidget(ModeState *state) {
     int widget = func_ov027_020b9e10(layer, 0xb);
 
     SampleTweenValue(state->tween, &value);
-    func_ov001_020796f8(state, widget, value);
+    DrawScaledWindowFrame(state, widget, value);
     if (state->freePending) {
         if (*data_ov001_020a04e4 == 0) {
             state->active = 0;

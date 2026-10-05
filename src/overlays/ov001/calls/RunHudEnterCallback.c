@@ -12,15 +12,15 @@ typedef struct {
 
 extern HudGlobals data_ov001_020a04c4;
 
-extern void func_ov001_02072178(s32 value);
-extern void func_ov001_020720cc(s32 enable);
+extern void SetFieldCaptionText(s32 value);
+extern void UpdateFieldFlag18(s32 enable);
 extern void RefreshModeWindow(s32 value);
 extern void SetFieldMenuSuspended(s32 value, s32 flag);
 
 void RunHudEnterCallback(void) {
     if (data_ov001_020a04c4.context->enterCallback != NULL) {
-        func_ov001_02072178(-1);
-        func_ov001_020720cc(0);
+        SetFieldCaptionText(-1);
+        UpdateFieldFlag18(0);
         RefreshModeWindow(1);
         SetFieldMenuSuspended(1, 0);
         data_ov001_020a04c4.context->enterCallback();

@@ -19,6 +19,10 @@ src/overlays/ov033/calls/func_ov033_020ba9d8.c:
     complete
     .text       start:0x020ba9d8 end:0x020ba9ec
 
+src/overlays/ov033/calls/InstallResumeModeHandlers.c:
+    complete
+    .text       start:0x020ba9ec end:0x020baa60
+
 src/overlays/ov033/calls/func_ov033_020baa60.c:
     complete
     .text       start:0x020baa60 end:0x020baa6c

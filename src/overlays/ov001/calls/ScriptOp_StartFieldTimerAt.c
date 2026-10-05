@@ -14,7 +14,7 @@ typedef struct TimerTarget {
 } TimerTarget;
 
 extern int ScriptVm_ReadOperandInt(void *vm, void *operand);
-extern void func_ov001_02069370(int id, BOOL repeat, int unused, BOOL paused, BOOL silent, TimerTarget *target);
+extern void SetupEventTriggerNode(int id, BOOL repeat, int unused, BOOL paused, BOOL silent, TimerTarget *target);
 
 int ScriptOp_StartFieldTimerAt(void *vm, ScriptOperand *operands)
 {
@@ -33,6 +33,6 @@ int ScriptOp_StartFieldTimerAt(void *vm, ScriptOperand *operands)
     target.y = packed >> 16;
     target.z = ScriptVm_ReadOperandInt(vm, &operands[6]);
     target.range = ScriptVm_ReadOperandInt(vm, &operands[7]);
-    func_ov001_02069370(id, repeat != 0, 1, paused != 0, silent != 0, &target);
+    SetupEventTriggerNode(id, repeat != 0, 1, paused != 0, silent != 0, &target);
     return 1;
 }

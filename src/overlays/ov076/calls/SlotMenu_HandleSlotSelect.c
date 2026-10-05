@@ -46,18 +46,18 @@ extern ScreenPos data_ov076_020cd2f8;
 
 extern PadState *func_ov039_020bca20(void);
 extern void *func_ov039_020bc1dc(void);
-extern int func_ov076_020c44e0(SlotMenu *menu, int slot);
+extern int SlotMenu_CanCombineSlotPair(SlotMenu *menu, int slot);
 extern void func_ov076_020c5318(SlotMenu *menu, u16 slot, u16 column, int mode, ScreenPos *pos);
 extern BOOL func_ov076_020cbbc0(MenuPanel *panel, SlotMenu *owner, int (*getValue)(SlotMenu *), void (*onClose)(SlotMenu *), ScreenPos *pos, int style);
-extern int func_ov076_020c51b0(SlotMenu *menu);
-extern int func_ov076_020c51d0(SlotMenu *menu);
+extern int SlotMenu_IsThirdColumnMarked(SlotMenu *menu);
+extern int SlotMenu_IsSecondColumnMarked(SlotMenu *menu);
 extern void SlotMenu_OpenConfirmPrompt(SlotMenu *menu);
 extern void SlotMenu_EnterSlotView(SlotMenu *menu);
 extern void SlotMenu_OpenSlotMessage(SlotMenu *menu, int messageId);
 extern void SetNavigationElementsVisible(void *container, BOOL visible);
 extern void PlaySoundEffect(int seqArcNo, int index);
-extern void func_ov076_020c4464(SlotMenu *menu);
-extern void func_ov076_020c53e8(SlotMenu *menu);
+extern void SlotMenu_LoadCursorSlotRecord(SlotMenu *menu);
+extern void SlotMenu_UpdatePairedCategory(SlotMenu *menu);
 
 void SlotMenu_HandleSlotSelect(SlotMenu *menu)
 {
@@ -73,10 +73,10 @@ void SlotMenu_HandleSlotSelect(SlotMenu *menu)
     }
     if (menu->state == 1) {
     if (menu->column == 2) {
-        if (func_ov076_020c44e0(menu, slot)) {
+        if (SlotMenu_CanCombineSlotPair(menu, slot)) {
             func_ov076_020c5318(menu, menu->slotIndex, menu->column, 0, &data_ov076_020cd2d4);
             func_ov076_020c5318(menu, menu->slotIndex, menu->column, 0, &data_ov076_020cd2e0);
-            if (func_ov076_020cbbc0(&menu->panel, menu, func_ov076_020c51b0, SlotMenu_OpenConfirmPrompt, &data_ov076_020cd2d4, 2)) {
+            if (func_ov076_020cbbc0(&menu->panel, menu, SlotMenu_IsThirdColumnMarked, SlotMenu_OpenConfirmPrompt, &data_ov076_020cd2d4, 2)) {
                 menu->state = 2;
                 SetNavigationElementsVisible(func_ov039_020bc1dc(), FALSE);
                 menu->showTutorial = 1;
@@ -93,14 +93,14 @@ void SlotMenu_HandleSlotSelect(SlotMenu *menu)
         func_ov076_020c5318(menu, menu->slotIndex, menu->column, 0, &data_ov076_020cd2b0);
         func_ov076_020c5318(menu, menu->slotIndex, 0, 0, &data_ov076_020cd2ec);
         func_ov076_020c5318(menu, menu->slotIndex, 0, 0, &data_ov076_020cd2f8);
-        if (func_ov076_020cbbc0(&menu->panel, menu, func_ov076_020c51d0, SlotMenu_EnterSlotView, &data_ov076_020cd2b0, 1)) {
+        if (func_ov076_020cbbc0(&menu->panel, menu, SlotMenu_IsSecondColumnMarked, SlotMenu_EnterSlotView, &data_ov076_020cd2b0, 1)) {
             menu->state = 2;
             SetNavigationElementsVisible(func_ov039_020bc1dc(), FALSE);
             PlaySoundEffect(1, 1);
         } else {
             *(vu16 *)0x0400000a = (*(vu16 *)0x0400000a & 0x43) | 0x10;
-            func_ov076_020c4464(menu);
-            func_ov076_020c53e8(menu);
+            SlotMenu_LoadCursorSlotRecord(menu);
+            SlotMenu_UpdatePairedCategory(menu);
             *(vu32 *)0x04000000 = (*(vu32 *)0x04000000 & ~0x1f00) | 0x1f00;
         }
     }

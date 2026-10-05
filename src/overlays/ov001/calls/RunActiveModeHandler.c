@@ -13,7 +13,7 @@ typedef struct {
 extern ModeContext *data_ov001_020a04e4;
 extern ModeHandler gMessageWindowStateHandlers[];
 
-extern void func_ov001_0207a370(void);
+extern void HandleModeMenuInput(void);
 
 u32 RunActiveModeHandler(void)
 {
@@ -23,7 +23,7 @@ u32 RunActiveModeHandler(void)
     if (context->suspended != 0) {
         return 0;
     }
-    func_ov001_0207a370();
+    HandleModeMenuInput();
     handler = gMessageWindowStateHandlers[context->mode];
     if (handler != NULL) {
         handler(context->modeState);

@@ -7,15 +7,15 @@ typedef struct SlotMenu {
     s16 slotIndex;
 } SlotMenu;
 
-extern void func_ov076_020c8a00(SlotMenu *menu, int slot, int column);
-extern void func_ov076_020c6f80(SlotMenu *menu, int slot, int mode);
+extern void SlotMenu_UnequipSlotEntry(SlotMenu *menu, int slot, int column);
+extern void SlotMenu_ReloadSlot(SlotMenu *menu, int slot, int mode);
 extern void SlotMenu_LockTouchUntilCommit(SlotMenu *menu, BOOL unused);
 
 void SlotMenu_ClearSelectedSlot(SlotMenu *menu)
 {
     int slot = menu->slotIndex;
 
-    func_ov076_020c8a00(menu, slot, menu->column);
-    func_ov076_020c6f80(menu, slot, 0);
+    SlotMenu_UnequipSlotEntry(menu, slot, menu->column);
+    SlotMenu_ReloadSlot(menu, slot, 0);
     SlotMenu_LockTouchUntilCommit(menu, TRUE);
 }

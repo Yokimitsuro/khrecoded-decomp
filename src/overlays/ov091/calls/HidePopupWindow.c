@@ -8,13 +8,13 @@ typedef struct {
 extern PopupManager *data_ov091_020c375c;
 extern void SetSubBg2Visible(void *scene, BOOL visible);
 extern void SetPopupSlotVisible(int slotIndex, BOOL visible);
-extern void func_ov091_020c1b08(void *window);
+extern void ClosePopupText(void *window);
 extern void SetPopupState(void *machine, s32 state);
 
 void HidePopupWindow(void *popup)
 {
     SetSubBg2Visible(popup, FALSE);
     SetPopupSlotVisible(data_ov091_020c375c->frameSlot, FALSE);
-    func_ov091_020c1b08(popup);
+    ClosePopupText(popup);
     SetPopupState(popup, 0);
 }

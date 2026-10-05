@@ -21,7 +21,7 @@ typedef struct PanelGroupSet {
     PanelRecord records[1];
 } PanelGroupSet;
 
-extern int func_ov014_0206f740(u16 *list, int value, void *layout, int arg4, int arg5);
+extern int FindHitCellOam(u16 *list, int value, void *layout, int arg4, int arg5);
 
 int HitTestPanelGroup(PanelGroupSet *set, int index, int arg3, int arg4)
 {
@@ -31,5 +31,5 @@ int HitTestPanelGroup(PanelGroupSet *set, int index, int arg3, int arg4)
         return 0;
     }
     group = &set->groups[index];
-    return func_ov014_0206f740(group->list, set->records[group->recordIndex].value, group->layout, arg3, arg4);
+    return FindHitCellOam(group->list, set->records[group->recordIndex].value, group->layout, arg3, arg4);
 }

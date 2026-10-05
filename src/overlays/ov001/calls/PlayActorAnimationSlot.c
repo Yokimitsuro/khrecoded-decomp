@@ -20,7 +20,7 @@ typedef struct {
     u8 currentAnim;
 } StageActor;
 
-extern BOOL func_ov001_020919b8(StageActor *actor, u32 resourceIndex);
+extern BOOL ReloadActorAnimationSet(StageActor *actor, u32 resourceIndex);
 extern void BlendToAnimationTrack(void *state, int trackIndex, void *table, int blendIndex, int frameCount);
 
 void PlayActorAnimationSlot(StageActor *actor, int slot, u32 anim, int frames, BOOL loop) {
@@ -44,7 +44,7 @@ void PlayActorAnimationSlot(StageActor *actor, int slot, u32 anim, int frames, B
             if (actor->currentAnim == anim) {
                 return;
             }
-            if (!func_ov001_020919b8(actor, anim)) {
+            if (!ReloadActorAnimationSet(actor, anim)) {
                 return;
             }
             BlendToAnimationTrack(render->fade, slot, NULL, 0, 0);

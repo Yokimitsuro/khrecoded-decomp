@@ -8,13 +8,65 @@ src/overlays/ov087/calls/IsSessionFlagClear.c:
     complete
     .text       start:0x020c4280 end:0x020c42c0
 
+src/overlays/ov087/calls/UpdateEntryCountRecord.c:
+    complete
+    .text       start:0x020c42c0 end:0x020c433c
+
+src/overlays/ov087/calls/SetInfoWindowVisible.c:
+    complete
+    .text       start:0x020c433c end:0x020c43e4
+
+src/overlays/ov087/calls/MoveCursorToWidget.c:
+    complete
+    .text       start:0x020c43e4 end:0x020c44c4
+
+src/overlays/ov087/calls/HandleSlotInput.c:
+    complete
+    .text       start:0x020c462c end:0x020c4694
+
 src/overlays/ov087/calls/SwitchToSecondaryIfEntryRejected.c:
     complete
     .text       start:0x020c46a4 end:0x020c4700
 
+src/overlays/ov087/calls/InvokeSlotHandlers.c:
+    complete
+    .text       start:0x020c4700 end:0x020c4734
+
+src/overlays/ov087/calls/DrawPromptMessage.c:
+    complete
+    .text       start:0x020c4778 end:0x020c4880
+
+src/overlays/ov087/calls/ShowVariantMessageAndSetFlag.c:
+    complete
+    .text       start:0x020c49b0 end:0x020c4a1c
+
 src/overlays/ov087/calls/ShowPromptAndStoreEntryCount.c:
     complete
     .text       start:0x020c4a1c end:0x020c4a68
+
+src/overlays/ov087/calls/ShowChoiceWindows.c:
+    complete
+    .text       start:0x020c4b94 end:0x020c4c90
+
+src/overlays/ov087/calls/ShowConfirmWindows.c:
+    complete
+    .text       start:0x020c4c90 end:0x020c4d8c
+
+src/overlays/ov087/calls/FocusElementForState.c:
+    complete
+    .text       start:0x020c5880 end:0x020c5984
+
+src/overlays/ov087/calls/OpenTwoChoiceMenu.c:
+    complete
+    .text       start:0x020c5a94 end:0x020c5b40
+
+src/overlays/ov087/calls/OpenPromptMessage0F.c:
+    complete
+    .text       start:0x020c5b40 end:0x020c5bc0
+
+src/overlays/ov087/calls/OpenEntryPromptForMode.c:
+    complete
+    .text       start:0x020c5bc0 end:0x020c5c64
 
 src/overlays/ov087/calls/OpenPromptMessage0E.c:
     complete
@@ -36,6 +88,10 @@ src/overlays/ov087/calls/OpenPromptMessage10.c:
     complete
     .text       start:0x020c5d04 end:0x020c5d64
 
+src/overlays/ov087/calls/OpenSelectionPanel.c:
+    complete
+    .text       start:0x020c5d64 end:0x020c5e18
+
 src/overlays/ov087/calls/OpenPromptMessage11.c:
     complete
     .text       start:0x020c5e18 end:0x020c5e78
@@ -47,6 +103,38 @@ src/overlays/ov087/calls/OpenPromptMessage13.c:
 src/overlays/ov087/calls/OpenPromptMessage14.c:
     complete
     .text       start:0x020c5ec4 end:0x020c5f10
+
+src/overlays/ov087/calls/EnterPanelState_020c6138.c:
+    complete
+    .text       start:0x020c6138 end:0x020c61d0
+
+src/overlays/ov087/calls/PushPanelState.c:
+    complete
+    .text       start:0x020c61d0 end:0x020c6238
+
+src/overlays/ov087/calls/LoadPanelBackground.c:
+    complete
+    .text       start:0x020c65b0 end:0x020c665c
+
+src/overlays/ov087/calls/ConfirmPanelSelection.c:
+    complete
+    .text       start:0x020c6dec end:0x020c6ff8
+
+src/overlays/ov087/calls/PushEntryConfirmState.c:
+    complete
+    .text       start:0x020c6ff8 end:0x020c7060
+
+src/overlays/ov087/calls/ConfirmSelectedEntry.c:
+    complete
+    .text       start:0x020c7060 end:0x020c715c
+
+src/overlays/ov087/calls/DestroyPanelScene.c:
+    complete
+    .text       start:0x020c7414 end:0x020c7510
+
+src/overlays/ov087/calls/HandleConfirmForState.c:
+    complete
+    .text       start:0x020c7b04 end:0x020c7b84
 
 src/overlays/ov087/data/strings/Strings_ov087_020c7e9c.c:
     complete

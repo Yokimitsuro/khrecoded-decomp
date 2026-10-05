@@ -6,14 +6,14 @@ typedef struct SubModeState {
 
 extern SubModeState *data_ov021_020b56c0;
 
-extern void func_ov046_020c1614(void *arg);
+extern void Camera_GetViewState(void *arg);
 extern void GetPanelView(void *arg);
 
 void CopySubModeState(void *arg)
 {
     switch (data_ov021_020b56c0->mode) {
     case 0:
-        func_ov046_020c1614(arg);
+        Camera_GetViewState(arg);
         break;
     case 1:
         break;

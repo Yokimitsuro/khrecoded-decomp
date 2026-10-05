@@ -62,16 +62,16 @@ extern void ComputeGroupOrbitPosition(GroupObject *object, VecFx32 *target);
 extern void ComputeGroupAimDelta(GroupObject *object, GroupObject *leader, VecFx32 *delta);
 extern BOOL ComputePushTowardTarget(VecFx32 *target, VecFx32 *center, s32 *phase, VecFx32 *push);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern BOOL func_ov032_020bc770(VecFx32 *position, fx32 radius, VecFx32 *out);
+extern BOOL ProbeFlatGroundSquare(VecFx32 *position, fx32 radius, VecFx32 *out);
 extern void SpawnSoundSlot(int bank, int id, VecFx32 *position, int flags);
-extern HitResult *func_ov032_020bcac4(VecFx32 *position, int mask, fx32 radius, VecFx32 *velocity, VecFx32 *delta);
+extern HitResult *SweepSphereAgainstWorld(VecFx32 *position, int mask, fx32 radius, VecFx32 *velocity, VecFx32 *delta);
 extern void ResetGroupOrbitPhase(GroupObject *object);
 extern BOOL TurnTowardOpenDirection(GroupObject *object, VecFx32 *position, fx32 radius);
 extern void func_ov032_020bbca0(void *world, int groupIndex, int slotIndex, VecFx32 *out);
 extern BOOL UpdateHopWithSpeedRamp(void *world, int groupIndex, GroupMemberWork *work, VecFx32 *position, VecFx32 *velocity, fx32 radius, VecFx32 *delta, BOOL *landed);
-extern BOOL func_ov032_020bbf50(ObjectGroup *group);
+extern BOOL HasPendingNibbleChange(ObjectGroup *group);
 extern void PickJitteredPlayerOffset(GroupObject *object, VecFx32 *offset);
-extern void func_ov032_020bbce4(GroupObject *object, VecFx32 *delta);
+extern void MoveGroupObjectAndSyncActor(GroupObject *object, VecFx32 *delta);
 extern void func_ov032_020bbd80(GroupObject *object, VecFx32 *delta);
 
 void UpdateBouncingGroupMember(GroupObject *object)
@@ -113,7 +113,7 @@ void UpdateBouncingGroupMember(GroupObject *object)
         if (leader == NULL) {
             if (ComputePushTowardTarget(&target, &object->position, &work->phase, &delta)) {
                 VEC_Add(&object->position, &delta, &next);
-                if (func_ov032_020bc770(&next, 0xc00, &landing)) {
+                if (ProbeFlatGroundSquare(&next, 0xc00, &landing)) {
                     work->state = 0x14;
                     work->moveDelta.z = 0;
                     work->moveDelta.x = 0;
@@ -134,7 +134,7 @@ void UpdateBouncingGroupMember(GroupObject *object)
         break;
     case 0x14:
         if (leader == NULL) {
-            hit = func_ov032_020bcac4(&object->position, 7, 0xc00, &work->moveDelta, &delta);
+            hit = SweepSphereAgainstWorld(&object->position, 7, 0xc00, &work->moveDelta, &delta);
             work->moveDelta.y -= 0x11e;
             if (hit != NULL && hit->hitWall != 0) {
                 SpawnSoundSlot(0xf8, 6, &object->position, 0);
@@ -181,7 +181,7 @@ void UpdateBouncingGroupMember(GroupObject *object)
                 SpawnSoundSlot(0xf8, 5, &object->position, 0);
                 group->landSoundPlayed = 1;
             }
-            if (func_ov032_020bbf50(group)) {
+            if (HasPendingNibbleChange(group)) {
                 PickJitteredPlayerOffset(object, &work->offset);
                 work->phase = 0;
                 work->state = 0x17;
@@ -212,7 +212,7 @@ void UpdateBouncingGroupMember(GroupObject *object)
         }
         break;
     }
-    func_ov032_020bbce4(object, &delta);
+    MoveGroupObjectAndSyncActor(object, &delta);
     delta.y = 0;
     func_ov032_020bbd80(object, &delta);
 }

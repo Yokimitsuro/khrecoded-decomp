@@ -15,7 +15,7 @@ typedef struct ControlledActor {
 
 extern ControlledActor *GetStageActor(s16 actorId);
 extern u32 func_ov001_0209c5ac(u32 mask);
-extern u8 *func_ov001_0209c114(u32 id);
+extern u8 *GetStageEventRecord(u32 id);
 extern void func_ov001_0209473c(u8 *eventRecord);
 
 void UpdateActorStageEvent(ControllerOwner *owner)
@@ -25,7 +25,7 @@ void UpdateActorStageEvent(ControllerOwner *owner)
 
     if (actor != NULL && actor->controlData != NULL && func_ov001_0209c5ac(0x40000000) == 0 &&
         actor->controlMode == 1) {
-        eventRecord = func_ov001_0209c114(actor->controllerIndex);
+        eventRecord = GetStageEventRecord(actor->controllerIndex);
         if (eventRecord != NULL) {
             func_ov001_0209473c(eventRecord);
         }

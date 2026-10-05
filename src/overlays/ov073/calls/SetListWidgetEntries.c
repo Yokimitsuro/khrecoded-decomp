@@ -17,7 +17,7 @@ typedef struct ListWidget {
     u32 values[3];
 } ListWidget;
 
-extern void func_ov073_020c305c(ListWidget *list, int mode, u32 *values);
+extern void RefreshListRowStates(ListWidget *list, int mode, u32 *values);
 
 void SetListWidgetEntries(ListWidget *list, const u16 *ids)
 {
@@ -34,5 +34,5 @@ void SetListWidgetEntries(ListWidget *list, const u16 *ids)
     for (; i < 3; i++) {
         list->values[i] = 0;
     }
-    func_ov073_020c305c(list, 0, list->values);
+    RefreshListRowStates(list, 0, list->values);
 }

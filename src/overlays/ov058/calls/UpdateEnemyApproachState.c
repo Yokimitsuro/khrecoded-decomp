@@ -48,7 +48,7 @@ struct Enemy {
 
 extern const s16 data_02053580[];
 
-extern void func_ov058_020d8834(VecFx32 *out, int mode);
+extern void ComputeApproachTarget(VecFx32 *out, int mode);
 extern int func_ov058_020d895c(void);
 extern int GetSceneSlotAngle(int mode);
 extern int func_ov001_0206db8c(int index);
@@ -59,8 +59,8 @@ extern void func_ov052_020ceb80(Enemy *enemy, VecFx32 *target);
 extern void *GetActorRegistry(void);
 extern void Obj_PlaceInWorld(void *world, void *entity, void *position);
 extern void Obj_SetPosition(void *entity, const VecFx32 *position);
-extern void func_ov052_020d1310(Enemy *enemy, int paused);
-extern u16 func_ov052_020ceb9c(Enemy *enemy);
+extern void SetActorPaused(Enemy *enemy, int paused);
+extern u16 GetLinkedAngleOffset(Enemy *enemy);
 extern void func_01ffafb4(fx32 scale, const VecFx32 *src, VecFx32 *dst);
 
 void UpdateEnemyApproachState(Enemy *enemy)
@@ -73,7 +73,7 @@ void UpdateEnemyApproachState(Enemy *enemy)
     int angle;
     int index;
 
-    func_ov058_020d8834(&approach, enemy->mode);
+    ComputeApproachTarget(&approach, enemy->mode);
     target = approach;
     switch (func_ov058_020d895c()) {
     case 2:
@@ -133,10 +133,10 @@ void UpdateEnemyApproachState(Enemy *enemy)
     case 7:
         Obj_SetPosition(enemy->model, &target);
         ai->flags &= ~0x100000;
-        func_ov052_020d1310(enemy, 0);
+        SetActorPaused(enemy, 0);
         ai->mode = 0;
         ai->timer = 0;
-        angle = (u16)(func_ov052_020ceb9c(enemy) + 0x8000) >> 4;
+        angle = (u16)(GetLinkedAngleOffset(enemy) + 0x8000) >> 4;
         velocity.x = -data_02053580[angle];
         velocity.y = 0;
         velocity.z = -data_02053580[(0x400 - angle) & 0xfff];
@@ -161,7 +161,7 @@ void UpdateEnemyApproachState(Enemy *enemy)
             enemy->onTurn(enemy, angle);
         }
         if (enemy->animFrame >= 0x48000) {
-            func_ov052_020d1310(enemy, 1);
+            SetActorPaused(enemy, 1);
         }
         break;
     }

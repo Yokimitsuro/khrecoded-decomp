@@ -11,7 +11,7 @@ typedef struct TextWindowRequest {
     s32 unused;
 } TextWindowRequest;
 
-extern void func_ov036_020c28dc(TextWindowRequest *request);
+extern void QueueMessageWindowKind1(TextWindowRequest *request);
 
 BOOL OpenTextWindowVariant(const s32 *boxSize, const u16 *text, s32 optionA, s32 optionB)
 {
@@ -24,6 +24,6 @@ BOOL OpenTextWindowVariant(const s32 *boxSize, const u16 *text, s32 optionA, s32
     request.text = text;
     request.optionA = optionA;
     request.optionB = optionB;
-    func_ov036_020c28dc(&request);
+    QueueMessageWindowKind1(&request);
     return TRUE;
 }

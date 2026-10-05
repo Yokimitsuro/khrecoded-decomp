@@ -7,7 +7,7 @@ extern void func_ov002_02062ddc(void);
 extern void func_ov002_02062de0(void); /* LoadPanelOverlay14 */
 extern void func_ov002_02062dfc(void);
 extern void func_ov002_02062e18(void); /* UnloadPanelOverlay14 */
-extern void func_ov014_0206cfa0(void); /* UpdatePanelBanner */
+extern void UpdatePanelBanner(void); /* UpdatePanelBanner */
 extern void func_ov002_02062e48(void); /* LoadPanelOverlay13 */
 extern void PollPanelOverlay13(void); /* PollPanelOverlay13 */
 extern void func_ov002_02062e98(void); /* UnloadPanelOverlay13 */
@@ -33,7 +33,7 @@ void (*gPanelSceneStateHandlers[25])(void) = {
     func_ov002_02062de0, /* LoadPanelOverlay14 */
     func_ov002_02062dfc,
     func_ov002_02062e18, /* UnloadPanelOverlay14 */
-    func_ov014_0206cfa0, /* UpdatePanelBanner */
+    UpdatePanelBanner, /* UpdatePanelBanner */
     func_ov002_02062e48, /* LoadPanelOverlay13 */
     PollPanelOverlay13, /* PollPanelOverlay13 */
     func_ov002_02062e98, /* UnloadPanelOverlay13 */

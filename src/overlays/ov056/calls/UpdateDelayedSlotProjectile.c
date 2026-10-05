@@ -21,13 +21,13 @@ typedef struct EffectSlotOwner {
     int phase;
 } EffectSlotOwner;
 
-extern void func_ov021_020aeba4(EffectSlotOwner *group, s32 step);
+extern void UpdateSceneGroupEntries(EffectSlotOwner *group, s32 step);
 extern EntryInfo *GetBoundedEntryField(int index);
-extern void func_ov056_020d6920(EffectSlotOwner *unit, int slot, s32 kind, s32 subKind, s32 power);
+extern void FireAimedSlotProjectile(EffectSlotOwner *unit, int slot, s32 kind, s32 subKind, s32 power);
 
 void UpdateDelayedSlotProjectile(EffectSlotOwner *owner, s32 step)
 {
-    func_ov021_020aeba4(owner, step);
+    UpdateSceneGroupEntries(owner, step);
     owner->origin = GetBoundedEntryField(owner->entryIndex)->position;
     if (owner->phase != 0) {
         if (owner->phase != 1) {
@@ -36,7 +36,7 @@ void UpdateDelayedSlotProjectile(EffectSlotOwner *owner, s32 step)
         }
         owner->elapsed += step;
         if (owner->elapsed >= owner->fireTime) {
-            func_ov056_020d6920(owner, owner->slot, owner->kind, owner->subKind, owner->power);
+            FireAimedSlotProjectile(owner, owner->slot, owner->kind, owner->subKind, owner->power);
             owner->phase = 0;
         }
     }

@@ -38,11 +38,11 @@ typedef struct {
 extern StageActor *GetStageActor(int id);
 extern void *GetStageObjectHandle(u16 id);
 extern StageManager *func_ov001_0209c3e8(void);
-extern u32 func_ov001_0209d0a8(s32 seqArcId, s32 soundId, VecFx32 *position, u32 flags);
+extern u32 PlayStageSoundAt(s32 seqArcId, s32 soundId, VecFx32 *position, u32 flags);
 extern void func_ov001_02093358(GateRecord *record);
 extern BOOL func_ov001_02063a24(void);
 extern int func_ov001_02063a38(void);
-extern void func_ov001_02096950(GateRecord *record, fx32 delay);
+extern void ScheduleSpawnerNextTime(GateRecord *record, fx32 delay);
 
 int RunGateFadeSequence(GateRecord *record)
 {
@@ -56,7 +56,7 @@ int RunGateFadeSequence(GateRecord *record)
         switch (record->step) {
         case 0:
             if (actor != 0) {
-                func_ov001_0209d0a8(0, 0x2f, &actor->position, 0);
+                PlayStageSoundAt(0, 0x2f, &actor->position, 0);
             }
             manager->fade.from = 0;
             manager->fade.to = 0x10;
@@ -89,7 +89,7 @@ int RunGateFadeSequence(GateRecord *record)
             mode = 0;
         }
         if (mode == 6) {
-            func_ov001_02096950(record, 0x96000);
+            ScheduleSpawnerNextTime(record, 0x96000);
         }
         return 3;
     }

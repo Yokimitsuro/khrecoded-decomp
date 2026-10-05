@@ -13,12 +13,12 @@ typedef struct SceneGlobals {
 } SceneGlobals;
 
 extern SceneGlobals data_ov001_020a04c4;
-extern void func_ov001_020781a4(int page);
+extern void SetFieldMenuMode(int page);
 
 void SelectFieldMenuPage(int page)
 {
     if (data_ov001_020a04c4.scene->altMenu == 1 && (page == 0 || page == 7)) {
         page = 0xd;
     }
-    func_ov001_020781a4(page);
+    SetFieldMenuMode(page);
 }

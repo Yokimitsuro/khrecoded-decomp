@@ -49,9 +49,9 @@ extern const MtxFx33 data_02053458;
 extern s32 func_ov032_020bbc38(ChainWorld *world, s32 rowIndex);
 extern ChainWork *func_ov032_020bbc98(ChainObject *object);
 extern ChainObject *func_ov001_02086384(ChainWorld *world, int index);
-extern BOOL func_ov001_020872e0(ChainObject *object);
+extern BOOL IsNodeFlagBitClear(ChainObject *object);
 extern void func_ov032_020bc208(ChainObject *object, int behavior);
-extern void func_ov016_020a6b1c(ChainObject *object);
+extern void ResetUnitToBasePosition(ChainObject *object);
 extern void func_ov016_020a6974(ChainObject *object, void (*callback)(ChainObject *self));
 extern void SetFieldUnitPosition(ChainObject *object, const VecFx32 *position);
 extern void func_ov032_020bbd80(ChainObject *object, const VecFx32 *velocity);
@@ -88,7 +88,7 @@ void SpawnRowChainMembers(ChainWorld *world, s32 rowIndex, ChainObject *origin)
 
     for (i = 0; i < row->memberCount; i++) {
         next = func_ov001_02086384(world, row->firstMember + i);
-        if (!func_ov001_020872e0(next)) {
+        if (!IsNodeFlagBitClear(next)) {
             childWork = func_ov032_020bbc98(next);
             row->spawnedCount++;
             childWork->prevActor = prevActor;
@@ -98,7 +98,7 @@ void SpawnRowChainMembers(ChainWorld *world, s32 rowIndex, ChainObject *origin)
             childWork->velocity = data_0205344c;
             childWork->flags |= 0x2000;
             func_ov032_020bc208(next, row->behavior);
-            func_ov016_020a6b1c(next);
+            ResetUnitToBasePosition(next);
             func_ov016_020a6974(next, UnlinkGroupMember);
             if (row->mode != 3) {
                 SetFieldUnitPosition(next, &origin->position);

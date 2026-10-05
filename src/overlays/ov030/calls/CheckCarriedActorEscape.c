@@ -61,16 +61,16 @@ extern VecFx32 *func_ov052_020ceb74(EscapeActor *actor);
 extern SubModeView *func_ov021_020af614(void);
 extern ViewBounds *func_ov042_020bd5b0(void);
 extern BOOL func_ov001_020645c8(int flagId);
-extern void func_ov021_020ab85c(void *obj);
+extern void ClearFlagAndField0x144(void *obj);
 extern void ActorSlot_UnlinkByIndex(int index);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern int func_ov001_0206db8c(int index);
-extern fx32 func_ov021_020a7670(EscapeActor *actor, fx32 value);
+extern fx32 ScaleValueByPercentField(EscapeActor *actor, fx32 value);
 extern BOOL AddClampedHealth(EscapeActor *actor, int delta);
 extern MarkerConfig data_ov030_020bd024;
 extern void func_ov030_020bb488(MarkerConfig *config);
-extern void func_ov001_02078800(int id);
+extern void FieldMenu_FocusEntryById(int id);
 
 BOOL CheckCarriedActorEscape(EscapeActor *actor)
 {
@@ -98,7 +98,7 @@ BOOL CheckCarriedActorEscape(EscapeActor *actor)
         escaped = TRUE;
     }
     if (escaped) {
-        func_ov021_020ab85c(actor->hitState);
+        ClearFlagAndField0x144(actor->hitState);
         ActorSlot_UnlinkByIndex(actor->entryId);
         ResetAnimationTrackState(&request);
         request.id = actor->entryId;
@@ -109,7 +109,7 @@ BOOL CheckCarriedActorEscape(EscapeActor *actor)
         request.pos = spawnPos;
         request.pos.z += 0x1000;
         func_ov021_020a8cc0(&request, func_ov001_0206db8c(6));
-        damage = func_ov021_020a7670(actor, 0x14000);
+        damage = ScaleValueByPercentField(actor, 0x14000);
         if (damage < 0x1000) {
             damage = 0x1000;
         }
@@ -120,7 +120,7 @@ BOOL CheckCarriedActorEscape(EscapeActor *actor)
         func_ov030_020bb488(&gMarkerReset);
         actor->flags |= 0x20000;
         actor->flags |= 0x40000;
-        func_ov001_02078800(-1);
+        FieldMenu_FocusEntryById(-1);
         if (actor->onEscape != NULL) {
             actor->onEscape(actor, 0);
         }

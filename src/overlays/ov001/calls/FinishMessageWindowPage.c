@@ -13,7 +13,7 @@ typedef struct MessageWindow {
 extern int *data_ov001_020a04e4;
 extern void *GetSceneTagTracker(void);
 extern void PlaceWindowCornerTag(MessageWindow *window);
-extern void func_ov001_02079790(MessageWindow *window, u32 flag);
+extern void DrawGridMenuCells(MessageWindow *window, u32 flag);
 extern u64 OS_GetTick(void);
 
 void FinishMessageWindowPage(MessageWindow *window)
@@ -29,7 +29,7 @@ void FinishMessageWindowPage(MessageWindow *window)
         window->state = 6;
         return;
     }
-    func_ov001_02079790(window, 0);
+    DrawGridMenuCells(window, 0);
     window->state = 5;
     tick = OS_GetTick();
     window->waitTickLow = tick;

@@ -8,13 +8,13 @@ typedef struct SlotMenu {
     u8 unk_11F00;
 } SlotMenu;
 
-extern void func_ov076_020c6f80(SlotMenu *menu, int slot, int mode);
+extern void SlotMenu_ReloadSlot(SlotMenu *menu, int slot, int mode);
 extern void func_ov076_020c8404(SlotMenu *menu);
 
 void SlotMenu_CommitSlotEdit(SlotMenu *menu)
 {
     if (menu->state == 5) {
-        func_ov076_020c6f80(menu, menu->selectedSlot, 0);
+        SlotMenu_ReloadSlot(menu, menu->selectedSlot, 0);
         func_ov076_020c8404(menu);
     }
     menu->unk_11F00 = 0;

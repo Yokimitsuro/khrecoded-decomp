@@ -1,5 +1,5 @@
-extern void *func_ov015_02074ec8();
+extern void *WH_Finalize();
 
 void *func_ov015_02072fa8() {
-    return func_ov015_02074ec8();
+    return WH_Finalize();
 }

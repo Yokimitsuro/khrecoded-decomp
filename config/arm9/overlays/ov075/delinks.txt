@@ -4,6 +4,10 @@
     .data       start:0x020d1800 end:0x020d1900 kind:data align:32
     .bss        start:0x020d1900 end:0x020d1b20 kind:bss align:32
 
+src/overlays/ov075/calls/HasUnvisitedLink.c:
+    complete
+    .text       start:0x020c4280 end:0x020c42d4
+
 src/overlays/ov075/calls/GetDialogInputMode.c:
     complete
     .text       start:0x020c42d4 end:0x020c42f4
@@ -12,9 +16,25 @@ src/overlays/ov075/calls/ResetDirectionRepeat.c:
     complete
     .text       start:0x020c432c end:0x020c4344
 
+src/overlays/ov075/calls/IsMenuModeUnlocked.c:
+    complete
+    .text       start:0x020c4344 end:0x020c4390
+
 src/overlays/ov075/calls/SetMatrixDescription.c:
     complete
     .text       start:0x020c48e0 end:0x020c4908
+
+src/overlays/ov075/calls/EncodeTouchSlot.c:
+    complete
+    .text       start:0x020c4908 end:0x020c495c
+
+src/overlays/ov075/calls/GetSlotCellOffset.c:
+    complete
+    .text       start:0x020c495c end:0x020c49a8
+
+src/overlays/ov075/calls/CountUnlockedTiers.c:
+    complete
+    .text       start:0x020c49a8 end:0x020c49c8
 
 src/overlays/ov075/calls/HasPendingUnlocks.c:
     complete
@@ -24,13 +44,53 @@ src/overlays/ov075/calls/GetMatrixModeLabel.c:
     complete
     .text       start:0x020c577c end:0x020c5798
 
+src/overlays/ov075/calls/ApplyLevelBonus.c:
+    complete
+    .text       start:0x020c5bd0 end:0x020c5c24
+
+src/overlays/ov075/calls/RevertLevelBonus.c:
+    complete
+    .text       start:0x020c5c24 end:0x020c5c78
+
+src/overlays/ov075/calls/DrawNodeGroupRecords.c:
+    complete
+    .text       start:0x020c5c78 end:0x020c5cc8
+
+src/overlays/ov075/calls/ApplyLinkedGroupBonuses.c:
+    complete
+    .text       start:0x020c5cc8 end:0x020c5d30
+
+src/overlays/ov075/calls/TryCompleteGridGroup.c:
+    complete
+    .text       start:0x020c5fcc end:0x020c60a0
+
+src/overlays/ov075/calls/GetNodeGroupIfUnlocked.c:
+    complete
+    .text       start:0x020c60a0 end:0x020c6108
+
+src/overlays/ov075/calls/GetOptionChangeNotice.c:
+    complete
+    .text       start:0x020c6154 end:0x020c62a8
+
 src/overlays/ov075/calls/ResetMatrixDescription.c:
     complete
     .text       start:0x020c62a8 end:0x020c62e8
 
+src/overlays/ov075/calls/UpdateDirectionRepeat.c:
+    complete
+    .text       start:0x020c62e8 end:0x020c6378
+
+src/overlays/ov075/calls/CommitOptionChoice.c:
+    complete
+    .text       start:0x020c6378 end:0x020c64bc
+
 src/overlays/ov075/auto/func_ov075_020c7bdc.c:
     complete
     .text       start:0x020c7bdc end:0x020c7bf4
+
+src/overlays/ov075/calls/ScrollMatrixView.c:
+    complete
+    .text       start:0x020c7c00 end:0x020c7cfc
 
 src/overlays/ov075/calls/ScaleMatrixInput.c:
     complete
@@ -40,6 +100,14 @@ src/overlays/ov075/auto/func_ov075_020c7d14.c:
     complete
     .text       start:0x020c7d14 end:0x020c7d1c
 
+src/overlays/ov075/calls/ClearGlyphCell.c:
+    complete
+    .text       start:0x020c8890 end:0x020c8940
+
+src/overlays/ov075/calls/OpenMessageDialog.c:
+    complete
+    .text       start:0x020c8bc0 end:0x020c8d04
+
 src/overlays/ov075/calls/ShowDialogMessage.c:
     complete
     .text       start:0x020c8d04 end:0x020c8d2a
@@ -48,13 +116,81 @@ src/overlays/ov075/calls/ShowDialogMessageAt.c:
     complete
     .text       start:0x020c8d2c end:0x020c8d4e
 
+src/overlays/ov075/calls/OnMessageDialogClosed.c:
+    complete
+    .text       start:0x020c8d50 end:0x020c8e08
+
 src/overlays/ov075/calls/SetMatrixInputDisabled.c:
     complete
     .text       start:0x020c8e08 end:0x020c8e1c
 
+src/overlays/ov075/calls/ResolveGridEntry.c:
+    complete
+    .text       start:0x020c8e1c end:0x020c8ecc
+
+src/overlays/ov075/calls/FindNearestReachableNode.c:
+    complete
+    .text       start:0x020c8ecc end:0x020c910c
+
+src/overlays/ov075/calls/GetGridCellPosition.c:
+    complete
+    .text       start:0x020ca02c end:0x020ca078
+
 src/overlays/ov075/calls/DrawMatrixDescriptionText.c:
     complete
     .text       start:0x020caa50 end:0x020caa8c
+
+src/overlays/ov075/calls/IsMatrixInputReady.c:
+    complete
+    .text       start:0x020caa8c end:0x020caab8
+
+src/overlays/ov075/calls/TracePipePath.c:
+    complete
+    .text       start:0x020caab8 end:0x020cac54
+
+src/overlays/ov075/calls/ShowEntryHeaderMessage.c:
+    complete
+    .text       start:0x020cad34 end:0x020cae78
+
+src/overlays/ov075/calls/JumpCursorToEntry.c:
+    complete
+    .text       start:0x020cae78 end:0x020caf58
+
+src/overlays/ov075/calls/ToggleMatrixOverview.c:
+    complete
+    .text       start:0x020cb918 end:0x020cba38
+
+src/overlays/ov075/calls/HandleMatrixBackButton.c:
+    complete
+    .text       start:0x020cba38 end:0x020cbb54
+
+src/overlays/ov075/calls/TryOpenMatrixMenuThree.c:
+    complete
+    .text       start:0x020cbc5c end:0x020cbccc
+
+src/overlays/ov075/calls/TryOpenMatrixMenuTwo.c:
+    complete
+    .text       start:0x020cbccc end:0x020cbd3c
+
+src/overlays/ov075/calls/ToggleMatrixMapView.c:
+    complete
+    .text       start:0x020cbd3c end:0x020cbf5c
+
+src/overlays/ov075/calls/OpenDefaultRectDialog.c:
+    complete
+    .text       start:0x020cc240 end:0x020cc278
+
+src/overlays/ov075/calls/UpdateVolumeSlider.c:
+    complete
+    .text       start:0x020cc278 end:0x020cc3dc
+
+src/overlays/ov075/calls/UpdateFlagToggleGrid.c:
+    complete
+    .text       start:0x020cc3dc end:0x020cc570
+
+src/overlays/ov075/calls/OpenPreviewDialog.c:
+    complete
+    .text       start:0x020cc570 end:0x020cc5c8
 
 src/overlays/ov075/auto/func_ov075_020cc908.c:
     complete
@@ -72,9 +208,29 @@ src/overlays/ov075/auto/func_ov075_020cc934.c:
     complete
     .text       start:0x020cc934 end:0x020cc936
 
+src/overlays/ov075/calls/StepScrollTowardTarget.c:
+    complete
+    .text       start:0x020cc938 end:0x020cc9d0
+
+src/overlays/ov075/calls/GetModeLabelColor.c:
+    complete
+    .text       start:0x020cc9d0 end:0x020cca1c
+
+src/overlays/ov075/calls/ShowNextUnlockNotice.c:
+    complete
+    .text       start:0x020cca1c end:0x020cccf8
+
 src/overlays/ov075/calls/SetDescriptionText.c:
     complete
     .text       start:0x020cccf8 end:0x020ccd08
+
+src/overlays/ov075/calls/CompareItemSlots.c:
+    complete
+    .text       start:0x020ccd08 end:0x020ccd76
+
+src/overlays/ov075/calls/BuildRecordCountList.c:
+    complete
+    .text       start:0x020ccd78 end:0x020cd0c0
 
 src/overlays/ov075/calls/BuildCategoryList.c:
     complete
@@ -84,13 +240,53 @@ src/overlays/ov075/calls/BuildCategorySetList.c:
     complete
     .text       start:0x020cd390 end:0x020cd3a4
 
+src/overlays/ov075/calls/UpdateItemDescription.c:
+    complete
+    .text       start:0x020cd3a4 end:0x020cd470
+
+src/overlays/ov075/calls/InitImageQuad.c:
+    complete
+    .text       start:0x020cd548 end:0x020cd56a
+
+src/overlays/ov075/calls/InitCellImageQuad.c:
+    complete
+    .text       start:0x020cd56c end:0x020cd5ae
+
+src/overlays/ov075/calls/InitGridImageQuad.c:
+    complete
+    .text       start:0x020cd5b0 end:0x020cd602
+
+src/overlays/ov075/calls/DrawImageQuad.c:
+    complete
+    .text       start:0x020cda30 end:0x020cdbe0
+
+src/overlays/ov075/calls/BuildTabItemList.c:
+    complete
+    .text       start:0x020cde24 end:0x020cde6c
+
+src/overlays/ov075/calls/IsItemSlotAvailable.c:
+    complete
+    .text       start:0x020cdf30 end:0x020cdfa6
+
+src/overlays/ov075/calls/SelectItemTab.c:
+    complete
+    .text       start:0x020ce3ec end:0x020ce460
+
 src/overlays/ov075/calls/SetDialogInputDisabled.c:
     complete
     .text       start:0x020ce598 end:0x020ce5a6
 
+src/overlays/ov075/calls/DiscardSelectedItem.c:
+    complete
+    .text       start:0x020ce5a8 end:0x020ce5e4
+
 src/overlays/ov075/calls/AddToSelectionCounters.c:
     complete
     .text       start:0x020ce720 end:0x020ce750
+
+src/overlays/ov075/calls/ApplyLevelRankParam.c:
+    complete
+    .text       start:0x020ce750 end:0x020ce818
 
 src/overlays/ov075/calls/func_ov075_020ce818.c:
     complete
@@ -100,13 +296,65 @@ src/overlays/ov075/calls/func_ov075_020ce820.c:
     complete
     .text       start:0x020ce820 end:0x020ce834
 
+src/overlays/ov075/calls/ApplyDialogReward.c:
+    complete
+    .text       start:0x020ce834 end:0x020ce906
+
+src/overlays/ov075/calls/OpenItemPicker.c:
+    complete
+    .text       start:0x020ce9cc end:0x020cead0
+
+src/overlays/ov075/calls/ClearBg1AndRedraw.c:
+    complete
+    .text       start:0x020ceb08 end:0x020ceb80
+
 src/overlays/ov075/calls/CancelItemPicker.c:
     complete
     .text       start:0x020ceb80 end:0x020ceb98
 
+src/overlays/ov075/calls/ConfirmItemPicker.c:
+    complete
+    .text       start:0x020ceb98 end:0x020cec24
+
+src/overlays/ov075/calls/IsPartyLevelSufficient.c:
+    complete
+    .text       start:0x020cec54 end:0x020cecf0
+
+src/overlays/ov075/calls/IsRewardEntryLocked.c:
+    complete
+    .text       start:0x020ced48 end:0x020ceea4
+
 src/overlays/ov075/calls/GetDialogPixelBounds.c:
     complete
     .text       start:0x020cf018 end:0x020cf04c
+
+src/overlays/ov075/calls/UpdateYesNoDialogInput.c:
+    complete
+    .text       start:0x020cf04c end:0x020cf19c
+
+src/overlays/ov075/calls/MeasureTextLine.c:
+    complete
+    .text       start:0x020cf19c end:0x020cf204
+
+src/overlays/ov075/calls/OpenMessageWindow.c:
+    complete
+    .text       start:0x020cf274 end:0x020cf308
+
+src/overlays/ov075/calls/OpenDefaultDialog.c:
+    complete
+    .text       start:0x020cf450 end:0x020cf478
+
+src/overlays/ov075/calls/InitMessageWindow.c:
+    complete
+    .text       start:0x020cf478 end:0x020cf538
+
+src/overlays/ov075/calls/BeginPickerFadeOut.c:
+    complete
+    .text       start:0x020cf538 end:0x020cf578
+
+src/overlays/ov075/calls/UpdateMessageDialog.c:
+    complete
+    .text       start:0x020cf578 end:0x020cf936
 
 src/overlays/ov075/calls/IsDialogTransitionDone.c:
     complete
@@ -115,6 +363,10 @@ src/overlays/ov075/calls/IsDialogTransitionDone.c:
 src/overlays/ov075/calls/DestroyItemPicker.c:
     complete
     .text       start:0x020cffd8 end:0x020d0034
+
+src/overlays/ov075/calls/InitMenuModel.c:
+    complete
+    .text       start:0x020d0b94 end:0x020d0c38
 
 src/overlays/ov075/calls/DrawImageQuadIfVisible.c:
     complete
@@ -128,6 +380,10 @@ src/overlays/ov075/calls/DrawRotatedImageQuadIfVisible.c:
     complete
     .text       start:0x020d0da0 end:0x020d0df4
 
+src/overlays/ov075/calls/DrawCellQuadIfVisible.c:
+    complete
+    .text       start:0x020d0df4 end:0x020d0e50
+
 src/overlays/ov075/calls/DrawNodeAtInvertedY.c:
     complete
     .text       start:0x020d0e50 end:0x020d0e6c
@@ -140,9 +396,21 @@ src/overlays/ov075/calls/SetUnlockableElementsVisible.c:
     complete
     .text       start:0x020d0e84 end:0x020d0ebc
 
+src/overlays/ov075/calls/HitTestToggleButtons.c:
+    complete
+    .text       start:0x020d0ebc end:0x020d0f54
+
 src/overlays/ov075/auto/func_ov075_020d10fc.c:
     complete
     .text       start:0x020d10fc end:0x020d10fe
+
+src/overlays/ov075/calls/DrawMenuImageCentered.c:
+    complete
+    .text       start:0x020d1100 end:0x020d1284
+
+src/overlays/ov075/calls/DrawMenuImageModulated.c:
+    complete
+    .text       start:0x020d1284 end:0x020d1408
 
 src/overlays/ov075/data/strings/Strings_ov075_020d1568.c:
     complete

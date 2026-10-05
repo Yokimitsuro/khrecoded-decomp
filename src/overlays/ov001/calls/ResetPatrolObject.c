@@ -38,11 +38,11 @@ typedef struct {
 extern FieldState *data_ov001_020a0480;
 
 extern void FieldObject_AdvanceRandomVariant(PatrolObject *object);
-extern void func_ov001_02083e98(PatrolObject *object);
+extern void UpdatePatrolIdle(PatrolObject *object);
 extern u32 random_next_scaled(int range);
 extern signed char func_ov001_02068084(void);
 extern void ReleaseResourceAndDetach(void *resource);
-extern void func_ov001_0207f234(PatrolObject *object, void *owner);
+extern void ReleaseOwnerResource(PatrolObject *object, void *owner);
 
 void ResetPatrolObject(PatrolObject *object, void *owner) {
     VecFx32 direction;
@@ -51,7 +51,7 @@ void ResetPatrolObject(PatrolObject *object, void *owner) {
     if (object->state == 3) {
         FieldObject_AdvanceRandomVariant(object);
     }
-    object->update = func_ov001_02083e98;
+    object->update = UpdatePatrolIdle;
     object->timer = 0;
     object->counter = 0;
     object->state = 0;
@@ -67,5 +67,5 @@ void ResetPatrolObject(PatrolObject *object, void *owner) {
         ReleaseResourceAndDetach(object->resource);
     }
     data_ov001_020a0480->flags &= ~0x80000;
-    func_ov001_0207f234(object, owner);
+    ReleaseOwnerResource(object, owner);
 }

@@ -12,6 +12,26 @@ src/overlays/ov084/calls/TeardownSceneResources.c:
     complete
     .text       start:0x020bf9c4 end:0x020bfa06
 
+src/overlays/ov084/calls/RefreshSelectButtons.c:
+    complete
+    .text       start:0x020bfa08 end:0x020bfa64
+
+src/overlays/ov084/calls/DrawSelectMenuModel.c:
+    complete
+    .text       start:0x020bfafc end:0x020bfb84
+
+src/overlays/ov084/calls/UpdateSelectMenu.c:
+    complete
+    .text       start:0x020bfb84 end:0x020bfba6
+
+src/overlays/ov084/calls/SelectPrevOption.c:
+    complete
+    .text       start:0x020bfba8 end:0x020bfbe4
+
+src/overlays/ov084/calls/ResetMenuCursorWithSound.c:
+    complete
+    .text       start:0x020bfc48 end:0x020bfc60
+
 src/overlays/ov084/data/strings/Strings_ov084_020bfce4.c:
     complete
     .data       start:0x020bfce4 end:0x020bfd00

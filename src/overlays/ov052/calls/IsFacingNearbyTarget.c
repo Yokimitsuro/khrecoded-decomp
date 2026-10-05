@@ -12,7 +12,7 @@ typedef struct {
 } TargetRef;
 
 extern VecFx32 *func_ov052_020ceb74(int entity);
-extern u16 func_ov052_020ceb9c(int entity);
+extern u16 GetLinkedAngleOffset(int entity);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void func_01ffaff4(const VecFx32 *v, VecFx32 *out);
@@ -53,7 +53,7 @@ BOOL IsFacingNearbyTarget(int entity, TargetRef *target)
         dir.x = 0;
     }
     func_01ffaff4(&dir, &dir);
-    facing = func_ov052_020ceb9c(entity);
+    facing = GetLinkedAngleOffset(entity);
     diff = (u16)(facing - (u16)(FX_Atan2Idx(dir.x, dir.z) + 0x8000));
     if (diff < 0x1555 || diff > 0xeaab) {
         result = TRUE;

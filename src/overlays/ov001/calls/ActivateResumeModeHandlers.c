@@ -22,7 +22,7 @@ typedef struct {
 } Session;
 
 extern Session *data_ov001_020a0480;
-extern void func_ov033_020ba9ec(void *handlers);
+extern void InstallResumeModeHandlers(void *handlers);
 
 void ActivateResumeModeHandlers(void) {
     Session *session = data_ov001_020a0480;
@@ -35,5 +35,5 @@ void ActivateResumeModeHandlers(void) {
         state = session->defaultState;
     }
     mode->state = state;
-    func_ov033_020ba9ec(mode->handlers);
+    InstallResumeModeHandlers(mode->handlers);
 }

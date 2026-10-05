@@ -11,7 +11,7 @@ typedef struct MobiClipStream {
 
 extern u8 GetNestedModeByte(MobiClipStream *pStream);
 extern void TextWindow_ScrollUp(MobiClipStream *pStream, int nStep);
-extern void func_ov003_02064e2c(MobiClipStream *pStream);
+extern void updateMovieStreamLeadTime(MobiClipStream *pStream);
 
 int advanceMovieStreamWindow(MobiClipStream *pStream) {
     int nPosition;
@@ -23,6 +23,6 @@ int advanceMovieStreamWindow(MobiClipStream *pStream) {
         pStream->nWindowPosition -= nStep;
         TextWindow_ScrollUp(pStream, nStep);
     }
-    func_ov003_02064e2c(pStream);
+    updateMovieStreamLeadTime(pStream);
     return 1;
 }

@@ -4,9 +4,85 @@
     .data       start:0x020c2360 end:0x020c2400 kind:data align:32
     .bss        start:0x020c2400 end:0x020c2400 kind:bss align:32
 
+src/overlays/ov085/calls/GetItemMenuEntryInfo.c:
+    complete
+    .text       start:0x020bf720 end:0x020bf74c
+
+src/overlays/ov085/calls/GetItemMenuEntry.c:
+    complete
+    .text       start:0x020bf74c end:0x020bf774
+
 src/overlays/ov085/calls/ArrangeWidgetPair.c:
     complete
     .text       start:0x020c0b58 end:0x020c0bae
+
+src/overlays/ov085/calls/MoveTabCursor.c:
+    complete
+    .text       start:0x020c1184 end:0x020c1206
+
+src/overlays/ov085/calls/DrawItemNameWithRank.c:
+    complete
+    .text       start:0x020c1208 end:0x020c1324
+
+src/overlays/ov085/calls/GetItemSellPrice.c:
+    complete
+    .text       start:0x020c1324 end:0x020c1374
+
+src/overlays/ov085/calls/FormatItemValue.c:
+    complete
+    .text       start:0x020c1374 end:0x020c13ac
+
+src/overlays/ov085/calls/CanSelectItem.c:
+    complete
+    .text       start:0x020c13ac end:0x020c1440
+
+src/overlays/ov085/calls/FilterItemsForTab.c:
+    complete
+    .text       start:0x020c14e0 end:0x020c1570
+
+src/overlays/ov085/calls/IncreasePickerValue.c:
+    complete
+    .text       start:0x020c15a8 end:0x020c15dc
+
+src/overlays/ov085/calls/DecreasePickerValue.c:
+    complete
+    .text       start:0x020c15dc end:0x020c160e
+
+src/overlays/ov085/calls/StepPickerBack.c:
+    complete
+    .text       start:0x020c1610 end:0x020c165c
+
+src/overlays/ov085/calls/StepPickerForward.c:
+    complete
+    .text       start:0x020c165c end:0x020c16ac
+
+src/overlays/ov085/calls/ConfirmItemMenuChoice.c:
+    complete
+    .text       start:0x020c16ac end:0x020c17e4
+
+src/overlays/ov085/calls/CancelPicker.c:
+    complete
+    .text       start:0x020c17e4 end:0x020c1846
+
+src/overlays/ov085/calls/SelectPrevTab.c:
+    complete
+    .text       start:0x020c1848 end:0x020c18b4
+
+src/overlays/ov085/calls/SelectNextTab.c:
+    complete
+    .text       start:0x020c18b4 end:0x020c1924
+
+src/overlays/ov085/calls/CompareItemEntries.c:
+    complete
+    .text       start:0x020c1924 end:0x020c1992
+
+src/overlays/ov085/calls/BuildRecordCountList_020c1994.c:
+    complete
+    .text       start:0x020c1994 end:0x020c1cdc
+
+src/overlays/ov085/calls/RefreshEntryListIfUnlocked.c:
+    complete
+    .text       start:0x020c1f98 end:0x020c1fac
 
 src/overlays/ov085/calls/FilterEntriesByCategory.c:
     complete
@@ -15,6 +91,10 @@ src/overlays/ov085/calls/FilterEntriesByCategory.c:
 src/overlays/ov085/calls/FilterEntriesByCategorySet.c:
     complete
     .text       start:0x020c1fc0 end:0x020c1fd4
+
+src/overlays/ov085/calls/DrawIndexedImageQuad.c:
+    complete
+    .text       start:0x020c2160 end:0x020c22e4
 
 src/overlays/ov085/data/strings/Strings_ov085_020c23a4.c:
     complete

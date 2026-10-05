@@ -37,7 +37,7 @@ typedef struct ObjectGroup {
 extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
 extern ObjectGroup *func_ov032_020bbc80(GroupObject *object);
 extern GroupObject *func_ov001_02086384(void *world, int index);
-extern BOOL func_ov016_020a6a84(GroupObject *object);
+extern BOOL IsFieldUnitPhase6(GroupObject *object);
 
 void ResetGroupMemberPhases(GroupObject *object)
 {
@@ -48,7 +48,7 @@ void ResetGroupMemberPhases(GroupObject *object)
     for (i = 0; i < group->memberCount; i++) {
         GroupObject *member = func_ov001_02086384(object->world, group->firstMember + i);
         GroupMemberWork *work = func_ov032_020bbc98(member);
-        if (!func_ov016_020a6a84(member)) {
+        if (!IsFieldUnitPhase6(member)) {
             work->state = 0;
             work->unk_20 = 0;
             work->unk_18 = 0;

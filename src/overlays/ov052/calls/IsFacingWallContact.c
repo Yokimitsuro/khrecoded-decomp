@@ -20,7 +20,7 @@ typedef struct {
 
 extern void *GetWorldMeshNamedEntry(int index);
 extern BOOL func_ov001_020681e8(void *entry, u32 kind);
-extern u16 func_ov052_020ceb9c(int entity);
+extern u16 GetLinkedAngleOffset(int entity);
 extern int FX_Atan2Idx(int vertical, int horizontal);
 
 BOOL IsFacingWallContact(int entity)
@@ -54,7 +54,7 @@ BOOL IsFacingWallContact(int entity)
         if (skip) {
             continue;
         }
-        facing = (u16)(func_ov052_020ceb9c(entity) + 0x8000);
+        facing = (u16)(GetLinkedAngleOffset(entity) + 0x8000);
         diff = (u16)(facing - (u16)FX_Atan2Idx(-contacts->normals[i].x, -contacts->normals[i].z));
         if (diff <= 0x2100 || diff >= 0xdf00) {
             result = TRUE;

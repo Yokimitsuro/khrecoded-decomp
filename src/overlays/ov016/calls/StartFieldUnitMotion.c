@@ -16,13 +16,13 @@ typedef struct {
     u32 flags;
 } FieldUnit;
 
-extern int func_ov016_020a275c(FieldUnit *unit);
+extern int GetFieldUnitActionMotion(FieldUnit *unit);
 extern void InitAnimTrack(FieldUnit *obj, AnimTrack *track, int nodeIndex, fx32 speed, int animId);
 
 fx32 StartFieldUnitMotion(FieldUnit *unit, fx32 speed, int animId)
 {
     if (!(unit->flags & 0x8000)) {
-        InitAnimTrack(unit, &unit->motionTrack, func_ov016_020a275c(unit), speed, animId);
+        InitAnimTrack(unit, &unit->motionTrack, GetFieldUnitActionMotion(unit), speed, animId);
         unit->flags |= 0x8000;
     }
     return unit->motionTrack.maxFrame;

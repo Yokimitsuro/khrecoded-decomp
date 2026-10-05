@@ -3,9 +3,41 @@
     .data       start:0x020d3ee0 end:0x020d3f20 kind:data align:32
     .bss        start:0x020d3f20 end:0x020d3f40 kind:bss align:32
 
+src/overlays/ov055/calls/InitOverlay055Entity.c:
+    complete
+    .text       start:0x020d3754 end:0x020d3824
+
+src/overlays/ov055/calls/LoadEntityModelResources.c:
+    complete
+    .text       start:0x020d3824 end:0x020d38c0
+
+src/overlays/ov055/calls/SetupOverlay055Entity.c:
+    complete
+    .text       start:0x020d38c0 end:0x020d3a38
+
 src/overlays/ov055/calls/LoadSceneSoundArchives.c:
     complete
     .text       start:0x020d3a38 end:0x020d3a70
+
+src/overlays/ov055/calls/MapCodeToEntryIndex.c:
+    complete
+    .text       start:0x020d3a70 end:0x020d3ab4
+
+src/overlays/ov055/calls/DispatchPageHandler.c:
+    complete
+    .text       start:0x020d3ab4 end:0x020d3aec
+
+src/overlays/ov055/calls/ResumeEffectOwnerActor.c:
+    complete
+    .text       start:0x020d3b1c end:0x020d3c20
+
+src/overlays/ov055/calls/UpdateEffectOwnerMotion.c:
+    complete
+    .text       start:0x020d3c20 end:0x020d3dd4
+
+src/overlays/ov055/calls/CreatePageEffectTask.c:
+    complete
+    .text       start:0x020d3dfc end:0x020d3edc
 
 src/overlays/ov055/data/strings/Strings_ov055_020d3ee0.c:
     complete

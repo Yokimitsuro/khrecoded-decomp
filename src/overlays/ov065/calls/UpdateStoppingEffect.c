@@ -8,11 +8,11 @@ typedef struct {
     VecFx32 velocity;
 } MovingEffect;
 
-extern BOOL func_ov021_020ab4cc(void *context, MovingEffect *effect, int delta);
+extern BOOL UpdateEffectMovePhase(void *context, MovingEffect *effect, int delta);
 
 BOOL UpdateStoppingEffect(void *context, MovingEffect *effect, int delta)
 {
-    BOOL result = func_ov021_020ab4cc(context, effect, delta);
+    BOOL result = UpdateEffectMovePhase(context, effect, delta);
 
     if (effect->phase == 2) {
         effect->velocity.z = 0;

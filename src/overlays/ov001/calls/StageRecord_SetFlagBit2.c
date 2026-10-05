@@ -6,13 +6,13 @@ typedef struct StageRecord {
 } StageRecord;
 
 extern int data_ov001_0209f2e8;
-extern StageRecord *func_ov001_0209c114(u32 id);
+extern StageRecord *GetStageEventRecord(u32 id);
 
 void StageRecord_SetFlagBit2(u32 id)
 {
     StageRecord *record;
 
-    if (id != 0 && data_ov001_0209f2e8 != -1 && (record = func_ov001_0209c114(id)) != NULL) {
+    if (id != 0 && data_ov001_0209f2e8 != -1 && (record = GetStageEventRecord(id)) != NULL) {
         record->flags |= 4;
     }
 }

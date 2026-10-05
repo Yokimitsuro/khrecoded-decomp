@@ -11,7 +11,7 @@ typedef struct Actor {
 } Actor;
 
 extern BOOL func_ov001_020645c8(int id);
-extern void func_ov059_020cc970(Actor *actor, void *table, int action, int slot, int arg);
+extern void Actor_ChangeAnimation(Actor *actor, void *table, int action, int slot, int arg);
 extern void Actor_ChangeMotion(Actor *actor, int action, int arg);
 
 void Actor_SelectAction(Actor *actor, int action, int arg)
@@ -37,7 +37,7 @@ void Actor_SelectAction(Actor *actor, int action, int arg)
             if (action == actor->currentAction) {
                 return;
             }
-            func_ov059_020cc970(actor, table, action, slot, arg);
+            Actor_ChangeAnimation(actor, table, action, slot, arg);
             return;
         }
     } else if (table == actor->animationTable) {

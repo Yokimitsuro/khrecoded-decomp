@@ -4,7 +4,7 @@
 typedef BOOL (*TargetQuery)(int entity, VecFx32 *out);
 typedef void (*AngleCallback)(int entity, u16 angle);
 
-extern u16 func_ov052_020ceb9c(int entity);
+extern u16 GetLinkedAngleOffset(int entity);
 extern VecFx32 *func_ov052_020ceb74(int entity);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern unsigned short FX_Atan2Idx(int vertical_component, int horizontal_component);
@@ -16,7 +16,7 @@ void UpdateFacingTowardTarget(int entity, BOOL useEntry)
 {
     VecFx32 target;
     VecFx32 delta;
-    int angle = func_ov052_020ceb9c(entity);
+    int angle = GetLinkedAngleOffset(entity);
     BOOL found;
     if (*(TargetQuery *)(entity + 0x228) != NULL) {
         found = (*(TargetQuery *)(entity + 0x228))(entity, &target);

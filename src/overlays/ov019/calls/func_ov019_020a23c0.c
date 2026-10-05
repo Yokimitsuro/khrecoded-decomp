@@ -1,5 +1,5 @@
-extern int func_ov019_020a2270();
+extern int SettleLinkHeight();
 
 int func_ov019_020a23c0(int arg0) {
-    return func_ov019_020a2270(arg0, 0);
+    return SettleLinkHeight(arg0, 0);
 }

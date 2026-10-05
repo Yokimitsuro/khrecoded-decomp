@@ -25,7 +25,7 @@ typedef struct {
 
 extern const VecFx32 data_ov016_020a6e18;
 extern FieldActor *ActorRegistry_GetEntityByIndex(u32 actorId);
-extern void func_ov016_020a3c04(FieldObject *obj, u8 effectId);
+extern void InitializeFieldEffect(FieldObject *obj, u8 effectId);
 
 void AnimateLaunchedFieldObject(FieldObject *obj)
 {
@@ -38,7 +38,7 @@ void AnimateLaunchedFieldObject(FieldObject *obj)
     if (obj->timer > 0) {
         obj->timer -= 0x89;
         if (obj->timer < 0) {
-            func_ov016_020a3c04(obj, obj->effectId);
+            InitializeFieldEffect(obj, obj->effectId);
         }
     }
     if (obj->flags & 0x40000) {

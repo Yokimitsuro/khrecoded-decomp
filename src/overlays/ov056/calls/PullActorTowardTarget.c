@@ -35,8 +35,8 @@ extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern int FX_Mul(int left, int right);
-extern void func_ov001_020911bc(StageActor *actor);
-extern void func_ov001_020911d0(StageActor *actor);
+extern void ClearActorMotionState(StageActor *actor);
+extern void ClearActorMotionSpeed(StageActor *actor);
 extern void AddObjectOffsetVector(StageActor *actor, VecFx32 *offset);
 extern void func_ov001_0209590c(PullEvent *event, int status);
 
@@ -65,8 +65,8 @@ BOOL PullActorTowardTarget(PullEvent *event, PullWork *work)
                 work->speed = def->maxSpeed;
             }
             VEC_MultAdd(work->speed, &dir, &pos, &pos);
-            func_ov001_020911bc(actor);
-            func_ov001_020911d0(actor);
+            ClearActorMotionState(actor);
+            ClearActorMotionSpeed(actor);
             VEC_Subtract(&pos, func_ov001_02090f2c(actor), &dir);
             AddObjectOffsetVector(actor, &dir);
         } else {

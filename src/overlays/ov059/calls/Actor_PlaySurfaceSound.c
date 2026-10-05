@@ -35,7 +35,7 @@ typedef struct Actor {
 } Actor;
 
 extern VecFx32 *Actor_GetModelPosition(Actor *actor);
-extern int func_ov021_020a8fe8(int state, int surface);
+extern int LookupKindTableValue(int state, int surface);
 extern BOOL Actor_AnyAnimSlotBusy(Actor *actor);
 extern int SpawnSoundSlot(int sound, int variant, VecFx32 *pos, int flags);
 
@@ -63,7 +63,7 @@ int Actor_PlaySurfaceSound(Actor *actor, int sound, int variant) {
             }
         }
         if (surface >= 0) {
-            sound = func_ov021_020a8fe8(actor->state, surface);
+            sound = LookupKindTableValue(actor->state, surface);
         }
     }
     if (actor->state == 3 && variant == 0x1f && !Actor_AnyAnimSlotBusy(actor)) {

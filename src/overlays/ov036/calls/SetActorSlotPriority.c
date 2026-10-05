@@ -22,12 +22,12 @@ typedef struct ActorSlotContext {
 } ActorSlotContext;
 
 extern ActorSlotContext data_ov036_020c3940;
-extern int func_ov036_020bb7e0(int actorId);
+extern int FindOrAcquireOwnerSlot(int actorId);
 
 void SetActorSlotPriority(int actorId, s32 priority)
 {
     ActorSlotWork *work = data_ov036_020c3940.work;
-    ActorSlot *slot = &work->slots[func_ov036_020bb7e0(actorId)];
+    ActorSlot *slot = &work->slots[FindOrAcquireOwnerSlot(actorId)];
 
     slot->priority = priority;
     if (work->focusMode == 0 && work->focusActive == 0) {

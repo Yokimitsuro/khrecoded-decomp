@@ -3,6 +3,18 @@
     .data       start:0x020bc7a0 end:0x020bc820 kind:data align:32
     .bss        start:0x020bc820 end:0x020bc840 kind:bss align:32
 
+src/overlays/ov031/calls/InitMoviePlayerState.c:
+    complete
+    .text       start:0x020ba400 end:0x020ba4d4
+
+src/overlays/ov031/calls/RunStateMachine.c:
+    complete
+    .text       start:0x020ba4d4 end:0x020ba53c
+
+src/overlays/ov031/calls/FreeSceneRecords.c:
+    complete
+    .text       start:0x020ba53c end:0x020ba5f0
+
 src/overlays/ov031/calls/ShutdownActiveState.c:
     complete
     .text       start:0x020ba5f0 end:0x020ba634
@@ -23,9 +35,21 @@ src/overlays/ov031/calls/TryEnterState4.c:
     complete
     .text       start:0x020ba6c4 end:0x020ba6dc
 
+src/overlays/ov031/calls/TryEnterState5.c:
+    complete
+    .text       start:0x020ba6dc end:0x020ba74c
+
+src/overlays/ov031/calls/TryEnterState6.c:
+    complete
+    .text       start:0x020ba74c end:0x020ba7e4
+
 src/overlays/ov031/calls/TryEnterState7.c:
     complete
     .text       start:0x020ba7e4 end:0x020ba818
+
+src/overlays/ov031/calls/SelectNextState.c:
+    complete
+    .text       start:0x020ba818 end:0x020ba8b0
 
 src/overlays/ov031/calls/EnterState7Alt.c:
     complete
@@ -59,6 +83,10 @@ src/overlays/ov031/calls/TryEnterState17.c:
     complete
     .text       start:0x020baa2c end:0x020baa54
 
+src/overlays/ov031/calls/TryEnterState18.c:
+    complete
+    .text       start:0x020baa54 end:0x020bab04
+
 src/overlays/ov031/calls/LeaveState.c:
     complete
     .text       start:0x020bab20 end:0x020bab3e
@@ -67,13 +95,29 @@ src/overlays/ov031/calls/ApplyOverlayScaleMode_020bab40.c:
     complete
     .text       start:0x020bab40 end:0x020bab94
 
+src/overlays/ov031/calls/FindNearestStageEvent.c:
+    complete
+    .text       start:0x020bab94 end:0x020bac18
+
+src/overlays/ov031/calls/AdvanceGroupObjects.c:
+    complete
+    .text       start:0x020baf58 end:0x020bb030
+
 src/overlays/ov031/calls/CanLeaveActiveRecord.c:
     complete
     .text       start:0x020bb030 end:0x020bb074
 
+src/overlays/ov031/calls/DrawSceneGroups.c:
+    complete
+    .text       start:0x020bb2f4 end:0x020bb3ac
+
 src/overlays/ov031/calls/ResetSelectionSlots.c:
     complete
     .text       start:0x020bb3ac end:0x020bb3ea
+
+src/overlays/ov031/calls/InitMovieGraphics.c:
+    complete
+    .text       start:0x020bb3ec end:0x020bb494
 
 src/overlays/ov031/calls/func_ov031_020bb494.c:
     complete
@@ -103,6 +147,18 @@ src/overlays/ov031/calls/IsSupportedOwnerState.c:
     complete
     .text       start:0x020bb594 end:0x020bb5b8
 
+src/overlays/ov031/calls/MarkLinkedTargetFlag.c:
+    complete
+    .text       start:0x020bb5d8 end:0x020bb5f8
+
+src/overlays/ov031/calls/UpdateRecordActors.c:
+    complete
+    .text       start:0x020bbba8 end:0x020bbca4
+
+src/overlays/ov031/calls/RestoreActiveRecordItems.c:
+    complete
+    .text       start:0x020bbca4 end:0x020bbd08
+
 src/overlays/ov031/calls/RemoveGroupObjectsFromTree.c:
     complete
     .text       start:0x020bbe04 end:0x020bbe68
@@ -111,9 +167,17 @@ src/overlays/ov031/calls/FlagKind6Objects.c:
     complete
     .text       start:0x020bbe68 end:0x020bbe8a
 
+src/overlays/ov031/calls/ReleaseActiveRecordItems.c:
+    complete
+    .text       start:0x020bbe8c end:0x020bbec4
+
 src/overlays/ov031/calls/ResetField44.c:
     complete
     .text       start:0x020bbec4 end:0x020bbedc
+
+src/overlays/ov031/calls/DisableCategory6Objects.c:
+    complete
+    .text       start:0x020bbedc end:0x020bbf42
 
 src/overlays/ov031/calls/ResetSceneState.c:
     complete
@@ -155,6 +219,10 @@ src/overlays/ov031/calls/IsOffsetBeyondActiveRecord.c:
     complete
     .text       start:0x020bc5b4 end:0x020bc5ce
 
+src/overlays/ov031/calls/MakeCommandRecord.c:
+    complete
+    .text       start:0x020bc5d0 end:0x020bc5fe
+
 src/overlays/ov031/calls/LinkPendingNode.c:
     complete
     .text       start:0x020bc600 end:0x020bc638
@@ -166,6 +234,10 @@ src/overlays/ov031/calls/UnlinkPendingNode.c:
 src/overlays/ov031/calls/GetNegatedCombinedOffset.c:
     complete
     .text       start:0x020bc6ac end:0x020bc6d0
+
+src/overlays/ov031/calls/NotifyFlaggedActor.c:
+    complete
+    .text       start:0x020bc6d0 end:0x020bc720
 
 src/overlays/ov031/calls/SetFlagBit4.c:
     complete

@@ -101,7 +101,7 @@ extern void *func_ov001_0206db78(int player);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
 extern BOOL func_ov021_020a7524(void *unit);
 extern int func_ov021_020a7564(void *unit);
-extern u16 func_ov052_020ceb9c(Actor *actor);
+extern u16 GetLinkedAngleOffset(Actor *actor);
 extern void MTX_RotY33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
 extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
 extern void InitBoxShape(CollisionShape *shape, BoxStorage *storage, const VecFx32 *center, const VecFx32 *halfExtents, const MtxFx33 *rotation);
@@ -180,7 +180,7 @@ BOOL FindDashWallTarget(Actor *actor)
         int heading = func_ov021_020a7564(unit);
         facing.x = -data_02053580[heading >> 4];
         facing.z = -data_02053580[(0x400 - (heading >> 4)) & 0xfff];
-        angle = (u16)(func_ov052_020ceb9c(actor) - 0x8000);
+        angle = (u16)(GetLinkedAngleOffset(actor) - 0x8000);
         MTX_RotY33_(&rotation, -data_02053580[angle >> 4], -data_02053580[(0x400 - (angle >> 4)) & 0xfff]);
         center.x = 0;
         center.y = 0;

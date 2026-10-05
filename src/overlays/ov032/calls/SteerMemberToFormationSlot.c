@@ -30,7 +30,7 @@ typedef struct ObjectGroup {
 extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
 extern ObjectGroup *func_ov032_020bbc80(GroupObject *object);
 extern void *ActorRegistry_GetEntityByIndex(int actorId);
-extern int func_ov032_020bc6f8(GroupObject *object);
+extern int GetRemainingRowSpan(GroupObject *object);
 extern int ClampSymmetricValue(int value, int limit);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -55,7 +55,7 @@ BOOL SteerMemberToFormationSlot(GroupObject *object, u32 *step)
     int dist;
 
     ActorRegistry_GetEntityByIndex(object->actorId);
-    target = group->memberOffsets[func_ov032_020bc6f8(object)];
+    target = group->memberOffsets[GetRemainingRowSpan(object)];
     done = group->approachTimer >= 90 ? TRUE : FALSE;
     VEC_Add(&target, &group->center, &target);
     if (object->work->leaderLink == -1 && !done) {

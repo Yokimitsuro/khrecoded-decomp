@@ -15,7 +15,7 @@ typedef struct {
 extern BOOL IsModeSetOrFlag370aClear(void);
 extern BOOL IsHudFlag7Set(void);
 extern BOOL IsFieldFlag10Set(void);
-extern void *func_ov001_02075348(FieldMenu *menu, s32 index, s32 slot, s32 *outValue);
+extern void *CycleMenuEntry(FieldMenu *menu, s32 index, s32 slot, s32 *outValue);
 
 BOOL FieldMenu_TryEnterState3(FieldMenu *menu)
 {
@@ -28,6 +28,6 @@ BOOL FieldMenu_TryEnterState3(FieldMenu *menu)
     menu->state = 3;
     menu->idleCount = 0;
     menu->prevEntryIndex = menu->entryIndex;
-    func_ov001_02075348(menu, menu->entryIndex, 0, &menu->entryIndex);
+    CycleMenuEntry(menu, menu->entryIndex, 0, &menu->entryIndex);
     return TRUE;
 }

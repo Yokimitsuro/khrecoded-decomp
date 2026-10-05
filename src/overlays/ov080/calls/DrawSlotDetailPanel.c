@@ -51,7 +51,7 @@ typedef struct {
 
 extern void *func_ov039_020bc9b4(void);
 extern void Obj_SetField14(int *layer, void *font);
-extern void func_ov039_020bc16c(int bgId, int x, int y, int width, int height);
+extern void CallStateWidget(int bgId, int x, int y, int width, int height);
 extern void IndexedRecords_SetFlag2(void *panel, int index, BOOL visible);
 extern void IndexedRecord_SetPair(void *panel, int index, Position2D *position);
 extern void DrawTextAnchored(int *layer, int x, int y, int color, u32 flags, const u16 *text);
@@ -61,7 +61,7 @@ extern void func_ov039_020be594(int *layer, int x, int y, int color, const u16 *
 extern void func_ov027_020b8208(void *tracker, SlotFrame *frame, int x, int y);
 extern void func_ov027_020b8230(void *tracker, SlotFrame *frame);
 extern Position2D *func_ov027_020b91c8(void *panel, void *element);
-extern void func_ov027_020b95a0(void *panel, void *element, BOOL visible);
+extern void SetEntrySlotsVisible(void *panel, void *element, BOOL visible);
 extern void func_ov027_020b91e8(void *panel, void *element, Position2D *position, int mode);
 extern int func_ov039_020bc934(void);
 extern const u16 *func_ov027_020ba2c8(void **messages, int id);
@@ -96,14 +96,14 @@ void DrawSlotDetailPanel(SaveSelectScreen *screen, int slotIndex)
     positions[1].y = screen->origin.y + positions[0].y;
     positions[2].x = 0x80000;
     positions[2].y = positions[0].y + 0x48000;
-    func_ov039_020bc16c(slot->frames[0]->bgId, 3, 7, 0x1b, 10);
+    CallStateWidget(slot->frames[0]->bgId, 3, 7, 0x1b, 10);
 
     for (i = 0; i < 2; i++) {
         other = &screen->slots[i];
         if (i != slotIndex) {
             IndexedRecords_SetFlag2(panel, other->emptyElement, FALSE);
             IndexedRecords_SetFlag2(panel, other->filledElement, FALSE);
-            func_ov027_020b95a0(screen->panel, other->cursorElement, FALSE);
+            SetEntrySlotsVisible(screen->panel, other->cursorElement, FALSE);
         } else {
             switch (slot->status) {
             case 0:

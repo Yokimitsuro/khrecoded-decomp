@@ -7,7 +7,7 @@ typedef struct MovieScene {
 
 extern MovieScene *data_ov003_020658c0;
 extern void NNS_GfdDoVramTransfer(void);
-extern void func_ov003_02063a20(MovieScene *scene);
+extern void MovieScene_UpdateFade(MovieScene *scene);
 extern void SoundMgr_Update(void);
 
 void MovieScene_UpdateGlobals(void)
@@ -21,6 +21,6 @@ void MovieScene_UpdateGlobals(void)
         NNS_GfdDoVramTransfer();
         data_ov003_020658c0->queuePending = 0;
     }
-    func_ov003_02063a20(scene);
+    MovieScene_UpdateFade(scene);
     SoundMgr_Update();
 }

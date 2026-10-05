@@ -1,5 +1,5 @@
-extern int func_ov017_020a39a8();
+extern int DiscardMessageNodes();
 
 int func_ov017_020a2e84(int arg0) {
-    return func_ov017_020a39a8(arg0, 1);
+    return DiscardMessageNodes(arg0, 1);
 }

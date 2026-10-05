@@ -12,6 +12,30 @@ src/overlays/ov099/calls/RemapModelId.c:
     complete
     .text       start:0x020beb40 end:0x020becb4
 
+src/overlays/ov099/calls/UpdateModelViewerScreen.c:
+    complete
+    .text       start:0x020bee7c end:0x020beef4
+
+src/overlays/ov099/calls/HandleListCursorUp.c:
+    complete
+    .text       start:0x020beef4 end:0x020bef60
+
+src/overlays/ov099/calls/HandleListCursorDown.c:
+    complete
+    .text       start:0x020bef60 end:0x020befcc
+
+src/overlays/ov099/calls/HandleListPageDown.c:
+    complete
+    .text       start:0x020bf038 end:0x020bf0a4
+
+src/overlays/ov099/calls/CloseSubBgPanel.c:
+    complete
+    .text       start:0x020bf0fc end:0x020bf154
+
+src/overlays/ov099/calls/OpenSubBgPanel.c:
+    complete
+    .text       start:0x020bf154 end:0x020bf1b0
+
 src/overlays/ov099/calls/LoadMessageFiles.c:
     complete
     .text       start:0x020bf410 end:0x020bf454
@@ -20,13 +44,25 @@ src/overlays/ov099/calls/FreeLoadedFiles_020bf454.c:
     complete
     .text       start:0x020bf454 end:0x020bf47c
 
+src/overlays/ov099/calls/LoadViewerBackgrounds.c:
+    complete
+    .text       start:0x020bf47c end:0x020bf5c4
+
 src/overlays/ov099/calls/FreeResourceBlocks_020bf5c4.c:
     complete
     .text       start:0x020bf5c4 end:0x020bf5f4
 
+src/overlays/ov099/calls/FreeViewerResources.c:
+    complete
+    .text       start:0x020bf7bc end:0x020bf838
+
 src/overlays/ov099/calls/DrawShadowedAnchoredText_020c05a8.c:
     complete
     .text       start:0x020c05a8 end:0x020c060c
+
+src/overlays/ov099/calls/CreateViewerSlotObjs.c:
+    complete
+    .text       start:0x020c0668 end:0x020c07e8
 
 src/overlays/ov099/calls/ReleaseObjManagers.c:
     complete
@@ -35,6 +71,38 @@ src/overlays/ov099/calls/ReleaseObjManagers.c:
 src/overlays/ov099/calls/SetSlotObjVisible.c:
     complete
     .text       start:0x020c0840 end:0x020c087c
+
+src/overlays/ov099/calls/CreateSlotObj.c:
+    complete
+    .text       start:0x020c087c end:0x020c0984
+
+src/overlays/ov099/calls/SetSlotObjPosition.c:
+    complete
+    .text       start:0x020c0984 end:0x020c0a94
+
+src/overlays/ov099/calls/RefreshSlotObj.c:
+    complete
+    .text       start:0x020c0a94 end:0x020c0aec
+
+src/overlays/ov099/calls/GetSlotObjBounds.c:
+    complete
+    .text       start:0x020c0aec end:0x020c0b5c
+
+src/overlays/ov099/calls/StepListCursorUp.c:
+    complete
+    .text       start:0x020c0dc8 end:0x020c0f00
+
+src/overlays/ov099/calls/StepListCursorDown_020c0f00.c:
+    complete
+    .text       start:0x020c0f00 end:0x020c1034
+
+src/overlays/ov099/calls/MoveListCursorUp_020c1034.c:
+    complete
+    .text       start:0x020c1034 end:0x020c10f8
+
+src/overlays/ov099/calls/MoveListCursorDown.c:
+    complete
+    .text       start:0x020c10f8 end:0x020c11d4
 
 src/overlays/ov099/calls/IsEntryFlagSet_020c16ac.c:
     complete
@@ -48,13 +116,33 @@ src/overlays/ov099/calls/SyncEnemyEntryFlags.c:
     complete
     .text       start:0x020c16f0 end:0x020c1780
 
+src/overlays/ov099/calls/SetViewerMode.c:
+    complete
+    .text       start:0x020c1780 end:0x020c1798
+
 src/overlays/ov099/auto/func_ov099_020c17a4.c:
     complete
     .text       start:0x020c17a4 end:0x020c17a8
 
+src/overlays/ov099/calls/RunViewerIntroMode.c:
+    complete
+    .text       start:0x020c17a8 end:0x020c185c
+
+src/overlays/ov099/calls/ApplyQuaternionCorrectionToMatrix_020c185c.c:
+    complete
+    .text       start:0x020c185c end:0x020c1908
+
+src/overlays/ov099/calls/LoadViewerModelTable.c:
+    complete
+    .text       start:0x020c1ab8 end:0x020c1b28
+
 src/overlays/ov099/calls/FreeModelFiles.c:
     complete
     .text       start:0x020c1b28 end:0x020c1b44
+
+src/overlays/ov099/calls/InitModelCamera.c:
+    complete
+    .text       start:0x020c1b44 end:0x020c1b6c
 
 src/overlays/ov099/calls/ReleaseViewerModels.c:
     complete
@@ -67,6 +155,10 @@ src/overlays/ov099/calls/ResetModelViewer.c:
 src/overlays/ov099/calls/DestroyModelViewer.c:
     complete
     .text       start:0x020c21b8 end:0x020c21d8
+
+src/overlays/ov099/calls/DrawModelViewer.c:
+    complete
+    .text       start:0x020c21d8 end:0x020c2260
 
 src/overlays/ov099/calls/func_ov099_020c2260.c:
     complete

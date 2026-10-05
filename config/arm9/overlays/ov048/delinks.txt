@@ -6,6 +6,10 @@ src/overlays/ov048/calls/func_ov048_020c3520.c:
     complete
     .text       start:0x020c3520 end:0x020c3530
 
+src/overlays/ov048/calls/UpdateOrbitCameraInput.c:
+    complete
+    .text       start:0x020c3550 end:0x020c37ac
+
 src/overlays/ov048/calls/StartCameraDrift.c:
     complete
     .text       start:0x020c37bc end:0x020c380a

@@ -4,9 +4,33 @@
     .data       start:0x020c1de0 end:0x020c2540 kind:data align:32
     .bss        start:0x020c2540 end:0x020c2560 kind:bss align:32
 
+src/overlays/ov097/calls/InitMenuScene_020beb20.c:
+    complete
+    .text       start:0x020beb20 end:0x020bedc8
+
 src/overlays/ov097/calls/DestroyMenuScene_020bedc8.c:
     complete
     .text       start:0x020bedc8 end:0x020bee1c
+
+src/overlays/ov097/calls/UpdateMenuScene.c:
+    complete
+    .text       start:0x020bee1c end:0x020bef34
+
+src/overlays/ov097/calls/ScrollEntryCursorUp.c:
+    complete
+    .text       start:0x020bef34 end:0x020bf0d4
+
+src/overlays/ov097/calls/ScrollEntryCursorDown.c:
+    complete
+    .text       start:0x020bf0d4 end:0x020bf260
+
+src/overlays/ov097/calls/ScrollEntryListUp.c:
+    complete
+    .text       start:0x020bf260 end:0x020bf314
+
+src/overlays/ov097/calls/ScrollEntryListDown.c:
+    complete
+    .text       start:0x020bf314 end:0x020bf3c8
 
 src/overlays/ov097/calls/ToggleListMode.c:
     complete
@@ -16,25 +40,61 @@ src/overlays/ov097/calls/FreeMessageBuffers_020bf70c.c:
     complete
     .text       start:0x020bf70c end:0x020bf734
 
+src/overlays/ov097/calls/LoadMenuGraphics_020bf734.c:
+    complete
+    .text       start:0x020bf734 end:0x020bf84c
+
 src/overlays/ov097/calls/FreeGraphicsResources_020bf84c.c:
     complete
     .text       start:0x020bf84c end:0x020bf87c
+
+src/overlays/ov097/calls/LoadEntryBackground.c:
+    complete
+    .text       start:0x020bf87c end:0x020bf95c
+
+src/overlays/ov097/calls/ReleaseTextLayers_020bfae8.c:
+    complete
+    .text       start:0x020bfae8 end:0x020bfb58
 
 src/overlays/ov097/calls/DrawShadowedAnchoredText_020bfd88.c:
     complete
     .text       start:0x020bfd88 end:0x020bfdec
 
+src/overlays/ov097/calls/InitMenuPanels.c:
+    complete
+    .text       start:0x020bfdec end:0x020bff64
+
 src/overlays/ov097/calls/SetPanelSlotFlag.c:
     complete
     .text       start:0x020bffb4 end:0x020bfff0
+
+src/overlays/ov097/calls/BindPanelSlot.c:
+    complete
+    .text       start:0x020bfff0 end:0x020c011c
+
+src/overlays/ov097/calls/SetPanelSlotPosition.c:
+    complete
+    .text       start:0x020c011c end:0x020c022c
 
 src/overlays/ov097/calls/TickPanelSlotAnimation.c:
     complete
     .text       start:0x020c022c end:0x020c0284
 
+src/overlays/ov097/calls/GetPanelSlotRecordData.c:
+    complete
+    .text       start:0x020c0284 end:0x020c02f4
+
 src/overlays/ov097/calls/AlignUpTo4K_020c02f4.c:
     complete
     .text       start:0x020c02f4 end:0x020c0314
+
+src/overlays/ov097/calls/MoveListCursorUp.c:
+    complete
+    .text       start:0x020c057c end:0x020c06c8
+
+src/overlays/ov097/calls/StepListCursorDown.c:
+    complete
+    .text       start:0x020c06c8 end:0x020c0818
 
 src/overlays/ov097/calls/PageListUp.c:
     complete
@@ -44,13 +104,37 @@ src/overlays/ov097/calls/PageListDown.c:
     complete
     .text       start:0x020c0870 end:0x020c08d4
 
+src/overlays/ov097/calls/CreateEntryPopups.c:
+    complete
+    .text       start:0x020c0be0 end:0x020c0d40
+
 src/overlays/ov097/calls/ReleasePopupEntries.c:
     complete
     .text       start:0x020c0d40 end:0x020c0d90
 
+src/overlays/ov097/calls/DrawScrolledPopups.c:
+    complete
+    .text       start:0x020c0d90 end:0x020c0e7c
+
+src/overlays/ov097/calls/ApplyTouchRegionBounds.c:
+    complete
+    .text       start:0x020c0e7c end:0x020c0efc
+
+src/overlays/ov097/calls/UpdateScrollBarDrag_020c0f18.c:
+    complete
+    .text       start:0x020c0f18 end:0x020c1248
+
 src/overlays/ov097/calls/ResetScrollTrack.c:
     complete
     .text       start:0x020c1248 end:0x020c1270
+
+src/overlays/ov097/calls/JumpScrollTrack.c:
+    complete
+    .text       start:0x020c1270 end:0x020c1348
+
+src/overlays/ov097/calls/SetScrollTrackTarget.c:
+    complete
+    .text       start:0x020c1348 end:0x020c13c8
 
 src/overlays/ov097/calls/GetScrollTrackRow.c:
     complete
@@ -68,9 +152,17 @@ src/overlays/ov097/calls/SetEntryFlag_020c14c0.c:
     complete
     .text       start:0x020c14c0 end:0x020c14e0
 
+src/overlays/ov097/calls/SyncUnlockedEntryFlags.c:
+    complete
+    .text       start:0x020c14e0 end:0x020c1578
+
 src/overlays/ov097/auto/func_ov097_020c159c.c:
     complete
     .text       start:0x020c159c end:0x020c15a0
+
+src/overlays/ov097/calls/RebindSpriteToCell.c:
+    complete
+    .text       start:0x020c18b0 end:0x020c19cc
 
 src/overlays/ov097/auto/func_ov097_020c1a64.c:
     complete

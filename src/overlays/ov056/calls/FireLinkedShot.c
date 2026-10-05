@@ -61,12 +61,12 @@ typedef struct {
 } ShotProjectile;
 
 extern const VecFx32 data_0205344c;
-extern s32 func_ov052_020ceb9c(ShotActor *actor);
+extern s32 GetLinkedAngleOffset(ShotActor *actor);
 extern VecFx32 *func_ov052_020ceb74(ShotActor *actor);
-extern void func_ov021_020ab0ac(ShotDesc *desc);
+extern void ZeroBytes0x40(ShotDesc *desc);
 extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
-extern ShotProjectile *func_ov021_020ab0b8(void *owner, ShotDesc *desc);
+extern ShotProjectile *TryConsumeLimitedUse(void *owner, ShotDesc *desc);
 extern u32 SpawnSoundSlot(u32 owner, u32 kind, VecFx32 *position, u32 flags);
 
 BOOL FireLinkedShot(ShotActor *actor, void *arg, ShotPattern *pattern, ShotEvent *event)
@@ -78,9 +78,9 @@ BOOL FireLinkedShot(ShotActor *actor, void *arg, ShotPattern *pattern, ShotEvent
     ShotDesc desc;
     VecFx32 direction;
 
-    angle = (u16)(func_ov052_020ceb9c(actor) + 0x8000);
+    angle = (u16)(GetLinkedAngleOffset(actor) + 0x8000);
     shot = actor->shot;
-    func_ov021_020ab0ac(&desc);
+    ZeroBytes0x40(&desc);
     RotateOffsetAroundY(&desc.position, func_ov052_020ceb74(actor), angle, &aim->offset);
     RotateOffsetAroundY(&direction, &data_0205344c, angle, &aim->direction);
     desc.direction = direction;
@@ -100,7 +100,7 @@ BOOL FireLinkedShot(ShotActor *actor, void *arg, ShotPattern *pattern, ShotEvent
     desc.kind = shot->request->kind;
     desc.subKind = shot->request->subKind;
     desc.power = shot->request->power;
-    projectile = func_ov021_020ab0b8(shot->owner, &desc);
+    projectile = TryConsumeLimitedUse(shot->owner, &desc);
     if (projectile != NULL) {
         projectile->shot = shot;
     }

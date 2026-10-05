@@ -12,7 +12,7 @@ typedef struct FieldManagerHandle {
 
 extern FieldManagerHandle data_ov001_020a04c4;
 
-extern void func_ov001_0207001c(int slot, int iconId);
+extern void LoadSlotIconGraphics(int slot, int iconId);
 extern int func_ov001_0207162c(int a, int b, int c, int d);
 extern BOOL IsFieldFlag8Set(void);
 extern BOOL IsFieldFlag13OrSessionFlagSet(void);
@@ -24,7 +24,7 @@ void SetFieldSlotValue(int index, int value, int param, int extra)
         return;
     }
     data_ov001_020a04c4.manager->slotValues[index] = value;
-    func_ov001_0207001c(index, value);
+    LoadSlotIconGraphics(index, value);
     func_ov001_0207162c(index + 1, extra, param, extra);
     if (IsFieldFlag8Set() || IsFieldFlag13OrSessionFlagSet()) {
         func_ov001_02078710(index, value);

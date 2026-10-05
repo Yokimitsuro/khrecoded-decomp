@@ -4,6 +4,22 @@
     .data       start:0x020d8a60 end:0x020d8a80 kind:data align:32
     .bss        start:0x020d8a80 end:0x020d8a80 kind:bss align:32
 
+src/overlays/ov070/calls/GetOv070PaletteEntry.c:
+    complete
+    .text       start:0x020d8134 end:0x020d8158
+
+src/overlays/ov070/calls/StartOv070BossTurn.c:
+    complete
+    .text       start:0x020d8158 end:0x020d8230
+
+src/overlays/ov070/calls/StopOv070BossEffects.c:
+    complete
+    .text       start:0x020d8230 end:0x020d829a
+
+src/overlays/ov070/calls/CreateOv070BossObject.c:
+    complete
+    .text       start:0x020d88b4 end:0x020d8a24
+
 src/overlays/ov070/data/strings/Strings_ov070_020d8a60.c:
     complete
     .data       start:0x020d8a60 end:0x020d8a80

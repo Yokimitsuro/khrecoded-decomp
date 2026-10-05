@@ -1,6 +1,6 @@
-func_ov028_020ba400 kind:function(arm,size=0x1a4) addr:0x020ba400
-func_ov028_020ba5a4 kind:function(arm,size=0x88) addr:0x020ba5a4
-func_ov028_020ba62c kind:function(arm,size=0x70) addr:0x020ba62c
+InitFieldOverlayState kind:function(arm,size=0x1a4) addr:0x020ba400
+RunSceneStateMachine kind:function(arm,size=0x88) addr:0x020ba5a4
+ReleaseFieldContext kind:function(arm,size=0x70) addr:0x020ba62c
 func_ov028_020ba69c kind:function(arm,size=0x38) addr:0x020ba69c
 func_ov028_020ba6d4 kind:function(arm,size=0x4c) addr:0x020ba6d4
 func_ov028_020ba720 kind:function(arm,size=0x38) addr:0x020ba720
@@ -33,7 +33,7 @@ func_ov028_020bb0c4 kind:function(arm,size=0xb8) addr:0x020bb0c4
 IsSceneUnpaused kind:function(arm,size=0x20) addr:0x020bb17c
 func_ov028_020bb19c kind:function(arm,size=0x18) addr:0x020bb19c
 func_ov028_020bb1b4 kind:function(arm,size=0x6c) addr:0x020bb1b4
-func_ov028_020bb220 kind:function(arm,size=0xa8) addr:0x020bb220
+InstallSceneHandlers kind:function(arm,size=0xa8) addr:0x020bb220
 SetOrClearStatusBit2 kind:function(arm,size=0x44) addr:0x020bb2c8
 data_ov028_020bb320 kind:data(any) addr:0x020bb320
 data_ov028_020bb324 kind:data(any) addr:0x020bb324

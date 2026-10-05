@@ -16,7 +16,7 @@ typedef struct StatusPage {
 
 extern void SetStatusElementVisible(int elementId, BOOL visible);
 extern void IndexedRecords_SetFlag2(ResourceContainer *container, int cellIndex, BOOL visible);
-extern void func_ov073_020c1a20(StatusMenu *menu);
+extern void ShowSelectedRecordName(StatusMenu *menu);
 
 void HideStatusPageIcons(StatusMenu *menu, StatusPage *page)
 {
@@ -28,6 +28,6 @@ void HideStatusPageIcons(StatusMenu *menu, StatusPage *page)
         i++;
     } while (i < 6);
     if (menu->busy == 0) {
-        func_ov073_020c1a20(menu);
+        ShowSelectedRecordName(menu);
     }
 }

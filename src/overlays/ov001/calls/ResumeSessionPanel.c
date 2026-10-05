@@ -12,7 +12,7 @@ typedef struct Session {
 } Session;
 
 extern Session *data_ov001_020a0480;
-extern void func_ov037_020bacb8(void *widget);
+extern void InitCommHandlerTable(void *widget);
 
 void ResumeSessionPanel(void)
 {
@@ -21,5 +21,5 @@ void ResumeSessionPanel(void)
     if (panel->state == 3) {
         panel->state = 2;
     }
-    func_ov037_020bacb8(panel->widget);
+    InitCommHandlerTable(panel->widget);
 }

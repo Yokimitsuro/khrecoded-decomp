@@ -40,7 +40,7 @@ extern void func_01ffafb4(fx32 scale, const VecFx32 *src, VecFx32 *dst);
 extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern u32 SpawnSoundSlot(u32 owner, u32 kind, VecFx32 *position, u32 flags);
-extern HitResult func_ov021_020ab0e8(ProjectileOwner *owner, Projectile *proj, VecFx32 *pos, VecFx32 *vel);
+extern HitResult FindStrongestHit(ProjectileOwner *owner, Projectile *proj, VecFx32 *pos, VecFx32 *vel);
 extern s16 AdvanceOwnerAnimation(Projectile *proj, fx32 step);
 extern void AdvanceToSecondPhase(Projectile *proj);
 
@@ -56,7 +56,7 @@ BOOL UpdateFallingProjectile(ProjectileOwner *owner, Projectile *proj, fx32 step
     func_01ffafb4(FX_Mul(-owner->gravity, step), &data_ov056_020d7fa8, &fall);
     VEC_MultAdd(step, &proj->velocity, &fall, &delta);
     VEC_Add(&proj->velocity, &fall, &proj->velocity);
-    hit = func_ov021_020ab0e8(owner, proj, &pos, &delta);
+    hit = FindStrongestHit(owner, proj, &pos, &delta);
     if (hit.strength != 0) {
         proj->position = hit.position;
         SpawnSoundSlot(def->soundId, 1, &hit.position, 0);

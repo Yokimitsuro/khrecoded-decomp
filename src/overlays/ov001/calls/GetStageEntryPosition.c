@@ -6,11 +6,11 @@ typedef struct StageEntry {
     VecFx32 position;
 } StageEntry;
 
-extern StageEntry *func_ov001_02099270(u32 id);
+extern StageEntry *CacheStageEntryValue(u32 id);
 
 void GetStageEntryPosition(u32 id, VecFx32 *outPosition)
 {
-    StageEntry *entry = func_ov001_02099270(id);
+    StageEntry *entry = CacheStageEntryValue(id);
 
     if (entry != NULL) {
         *outPosition = entry->position;

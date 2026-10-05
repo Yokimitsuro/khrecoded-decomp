@@ -29,7 +29,7 @@ extern SlotEntry *GetRecordSlotPair1Entry(s32 index);
 extern void *NNSi_FndAllocFromDefaultHeap(u32 size);
 extern int Utf16Length(u16 *text);
 extern u16 *Utf16CopyPadded(u16 *destination, u16 *source, int unitCount);
-extern u32 func_ov001_02073634(u32 messageId);
+extern u32 MakePrimaryVramKey_02073634(u32 messageId);
 extern void LoadPackedFileView(MessageSet *messages, u32 fileId, int compressed);
 
 void LoadModeNameAndMessages(ModeState *state)
@@ -44,5 +44,5 @@ void LoadModeNameAndMessages(ModeState *state)
         state->name = NNSi_FndAllocFromDefaultHeap(length * 2);
         Utf16CopyPadded(state->name, entry->name, length);
     }
-    LoadPackedFileView(&state->messages, func_ov001_02073634(8), 0);
+    LoadPackedFileView(&state->messages, MakePrimaryVramKey_02073634(8), 0);
 }

@@ -1,19 +1,19 @@
 #include "nitro/types.h"
 
-extern void func_ov085_020c165c(void);
-extern void func_ov085_020c16ac(void);
-extern void func_ov085_020c17e4(void);
-extern void func_ov085_020c1848(void);
-extern void func_ov085_020c18b4(void);
+extern void StepPickerForward(void);
+extern void ConfirmItemMenuChoice(void);
+extern void CancelPicker(void);
+extern void SelectPrevTab(void);
+extern void SelectNextTab(void);
 
 void (*gOv085StateHandlers[9])(void) = {
-    func_ov085_020c165c,
-    func_ov085_020c16ac,
-    func_ov085_020c17e4,
+    StepPickerForward,
+    ConfirmItemMenuChoice,
+    CancelPicker,
     NULL,
     NULL,
-    func_ov085_020c1848,
-    func_ov085_020c18b4,
+    SelectPrevTab,
+    SelectNextTab,
     NULL,
-    func_ov085_020c17e4,
+    CancelPicker,
 };

@@ -11,7 +11,7 @@ typedef struct StageActor {
 } StageActor;
 
 extern StageActor *GetStageActor(s16 groupId);
-extern void func_ov021_020b4bbc(void *component, void *arg);
+extern void RunOverrideTrack(void *component, void *arg);
 
 void ForwardToGroupActorComponent(ActorGroupOwner *owner, void *arg)
 {
@@ -20,7 +20,7 @@ void ForwardToGroupActorComponent(ActorGroupOwner *owner, void *arg)
     if (owner != NULL && owner->groupId != 0) {
         actor = GetStageActor(owner->groupId);
         if (actor != NULL) {
-            func_ov021_020b4bbc(actor->component, arg);
+            RunOverrideTrack(actor->component, arg);
         }
     }
 }

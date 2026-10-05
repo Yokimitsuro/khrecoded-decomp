@@ -35,7 +35,7 @@ typedef struct {
 extern FieldUnit *func_ov001_02086384(FieldContext *context, int index);
 extern void SpawnSoundSlot(int bank, int soundId, VecFx32 *position, int flags);
 extern void ApplyModeToGroupFollowers(FieldContext *context, int index, int mode, BOOL hide, BOOL restore);
-extern void func_ov032_020bbf68(FieldContext *context, int index);
+extern void BeginRowNibbleChange(FieldContext *context, int index);
 
 void UpdateFieldObjectModeTransition(FieldContext *context, int index)
 {
@@ -65,7 +65,7 @@ void UpdateFieldObjectModeTransition(FieldContext *context, int index)
             object->fade = fade;
         }
         if (object->nextMode == 3) {
-            func_ov032_020bbf68(context, index);
+            BeginRowNibbleChange(context, index);
         }
         object->mode = object->nextMode;
         object->modeChanged = 0;

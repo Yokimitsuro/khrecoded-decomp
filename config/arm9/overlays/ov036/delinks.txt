@@ -4,17 +4,77 @@
     .data       start:0x020c36e0 end:0x020c3940 kind:data align:32
     .bss        start:0x020c3940 end:0x020ca220 kind:bss align:32
 
+src/overlays/ov036/calls/InvokeOptionalCallback_020ba400.c:
+    complete
+    .text       start:0x020ba400 end:0x020ba418
+
+src/overlays/ov036/calls/RunPanelStateMachine.c:
+    complete
+    .text       start:0x020ba640 end:0x020ba6c4
+
 src/overlays/ov036/calls/RunPanelScriptFrame.c:
     complete
     .text       start:0x020ba990 end:0x020ba9f0
+
+src/overlays/ov036/calls/RunPanelSubScriptFrame.c:
+    complete
+    .text       start:0x020ba9f0 end:0x020baa58
 
 src/overlays/ov036/calls/UpdatePendingSlotScene.c:
     complete
     .text       start:0x020bafc8 end:0x020bb004
 
+src/overlays/ov036/calls/ScreenToTouchVector.c:
+    complete
+    .text       start:0x020bb004 end:0x020bb0a0
+
+src/overlays/ov036/calls/StepSceneModelMove.c:
+    complete
+    .text       start:0x020bb0a0 end:0x020bb150
+
+src/overlays/ov036/calls/DrawPanelSceneFrame.c:
+    complete
+    .text       start:0x020bb150 end:0x020bb2a4
+
+src/overlays/ov036/calls/ResetSlotScene.c:
+    complete
+    .text       start:0x020bb448 end:0x020bb564
+
+src/overlays/ov036/calls/FindOrAcquireOwnerSlot.c:
+    complete
+    .text       start:0x020bb7e0 end:0x020bb8ec
+
+src/overlays/ov036/calls/AdvanceSlotTransition.c:
+    complete
+    .text       start:0x020bb900 end:0x020bb9bc
+
+src/overlays/ov036/calls/LoadScreenLayerImage.c:
+    complete
+    .text       start:0x020bb9bc end:0x020bbb84
+
+src/overlays/ov036/calls/ClearScreenLayerGraphics.c:
+    complete
+    .text       start:0x020bbb84 end:0x020bbc84
+
+src/overlays/ov036/calls/FindOrAcquireModelSlot.c:
+    complete
+    .text       start:0x020bc158 end:0x020bc1d0
+
+src/overlays/ov036/calls/InitPanelDisplay.c:
+    complete
+    .text       start:0x020bc1d0 end:0x020bc3a4
+
 src/overlays/ov036/calls/func_ov036_020bc3a4.c:
     complete
     .text       start:0x020bc3a4 end:0x020bc3c8
+
+src/overlays/ov036/calls/IsSceneReady.c:
+    complete
+    .text       start:0x020bc3c8 end:0x020bc3f4
+
+src/overlays/ov036/calls/SetSceneFlag4000.c:
+    complete
+    .text       start:0x020bc418 end:0x020bc434
 
 src/overlays/ov036/calls/IsPxiFifoTagSet_020bc434.c:
     complete
@@ -32,21 +92,97 @@ src/overlays/ov036/auto/func_ov036_020bc4c0.c:
     complete
     .text       start:0x020bc4c0 end:0x020bc4c8
 
+src/overlays/ov036/calls/InitPanelCallbackTable.c:
+    complete
+    .text       start:0x020bc4c8 end:0x020bc53c
+
+src/overlays/ov036/calls/EnterPanelModeThree.c:
+    complete
+    .text       start:0x020bc53c end:0x020bc5e0
+
+src/overlays/ov036/calls/IsSceneFlag10Clear.c:
+    complete
+    .text       start:0x020bc5e0 end:0x020bc600
+
+src/overlays/ov036/calls/SnapshotActorSlotPositions.c:
+    complete
+    .text       start:0x020bc600 end:0x020bc668
+
+src/overlays/ov036/calls/HasSceneActiveMenu.c:
+    complete
+    .text       start:0x020bc668 end:0x020bc688
+
+src/overlays/ov036/calls/SlideActorSlotsOffscreen.c:
+    complete
+    .text       start:0x020bc83c end:0x020bc8c8
+
 src/overlays/ov036/calls/func_ov036_020bc8c8.c:
     complete
     .text       start:0x020bc8c8 end:0x020bc8d4
+
+src/overlays/ov036/calls/LoadTextureInChunks.c:
+    complete
+    .text       start:0x020bc8d4 end:0x020bc998
+
+src/overlays/ov036/calls/SwapActorSlotResource.c:
+    complete
+    .text       start:0x020bc998 end:0x020bca90
+
+src/overlays/ov036/calls/SetSlotSharedRecord.c:
+    complete
+    .text       start:0x020bca90 end:0x020bcbd4
+
+src/overlays/ov036/calls/MoveActorSlotX.c:
+    complete
+    .text       start:0x020bcbd4 end:0x020bcd28
+
+src/overlays/ov036/calls/MoveActorSlotY.c:
+    complete
+    .text       start:0x020bcd28 end:0x020bce40
 
 src/overlays/ov036/calls/ToggleActorSlotFlip.c:
     complete
     .text       start:0x020bce40 end:0x020bce7c
 
+src/overlays/ov036/calls/StartActorFocusTransition.c:
+    complete
+    .text       start:0x020bcee8 end:0x020bcf90
+
 src/overlays/ov036/calls/SetActorSlotPriority.c:
     complete
     .text       start:0x020bcf90 end:0x020bcfec
 
+src/overlays/ov036/calls/StartActorSlotAlphaFade.c:
+    complete
+    .text       start:0x020bcfec end:0x020bd090
+
 src/overlays/ov036/calls/GetActorSlotPosition.c:
     complete
     .text       start:0x020bd0fc end:0x020bd150
+
+src/overlays/ov036/calls/AttachPendingSceneModel.c:
+    complete
+    .text       start:0x020bd150 end:0x020bd1c0
+
+src/overlays/ov036/calls/LoadSceneModelSlot.c:
+    complete
+    .text       start:0x020bd1c0 end:0x020bd2e8
+
+src/overlays/ov036/calls/MoveSceneModelSlot.c:
+    complete
+    .text       start:0x020bd2e8 end:0x020bd38c
+
+src/overlays/ov036/calls/SetSceneModelBlendIndex.c:
+    complete
+    .text       start:0x020bd38c end:0x020bd434
+
+src/overlays/ov036/calls/ReleaseModelSlot.c:
+    complete
+    .text       start:0x020bd434 end:0x020bd4bc
+
+src/overlays/ov036/calls/GetSceneWorkValue10d8.c:
+    complete
+    .text       start:0x020bd4bc end:0x020bd4d4
 
 src/overlays/ov036/calls/SetScreenLayerImage.c:
     complete
@@ -60,6 +196,30 @@ src/overlays/ov036/calls/IsScreenLayerLoaded.c:
     complete
     .text       start:0x020bd560 end:0x020bd590
 
+src/overlays/ov036/calls/StartScreenLayerScroll.c:
+    complete
+    .text       start:0x020bd590 end:0x020bd5fc
+
+src/overlays/ov036/calls/StartScreenBrightnessFade.c:
+    complete
+    .text       start:0x020bd5fc end:0x020bd6dc
+
+src/overlays/ov036/calls/StartScreenBrightnessFade_020bd6dc.c:
+    complete
+    .text       start:0x020bd6dc end:0x020bd750
+
+src/overlays/ov036/calls/GetPanelFlag40.c:
+    complete
+    .text       start:0x020bd8c8 end:0x020bd8e8
+
+src/overlays/ov036/calls/ToggleSceneBlendAndClearColor.c:
+    complete
+    .text       start:0x020bd8e8 end:0x020bd9a0
+
+src/overlays/ov036/calls/SetSceneCursor.c:
+    complete
+    .text       start:0x020bd9a0 end:0x020bd9c4
+
 src/overlays/ov036/calls/SetPanelCursorOverride.c:
     complete
     .text       start:0x020bd9c4 end:0x020bda00
@@ -68,6 +228,14 @@ src/overlays/ov036/calls/GetPanelCursorOverride.c:
     complete
     .text       start:0x020bda28 end:0x020bda7c
 
+src/overlays/ov036/calls/Utf8ToUcs2Bounded.c:
+    complete
+    .text       start:0x020bda7c end:0x020bdb20
+
+src/overlays/ov036/calls/ScriptVm_ReadTableOffsetPtr.c:
+    complete
+    .text       start:0x020bdb20 end:0x020bdb3e
+
 src/overlays/ov036/calls/MeasureScriptTextBox.c:
     complete
     .text       start:0x020bdb40 end:0x020bdb7c
@@ -75,6 +243,14 @@ src/overlays/ov036/calls/MeasureScriptTextBox.c:
 src/overlays/ov036/calls/MeasureScriptOperandText.c:
     complete
     .text       start:0x020bdb7c end:0x020bdbb8
+
+src/overlays/ov036/calls/ComputePageScrollOffset.c:
+    complete
+    .text       start:0x020bdbb8 end:0x020bdc22
+
+src/overlays/ov036/calls/AccumulateTextBoxScroll.c:
+    complete
+    .text       start:0x020bdc24 end:0x020bdcb8
 
 src/overlays/ov036/calls/ScriptCmd_ResetAndDispatch.c:
     complete
@@ -103,6 +279,22 @@ src/overlays/ov036/calls/func_ov036_020bddb4.c:
 src/overlays/ov036/calls/GetActorBalloonAnchor.c:
     complete
     .text       start:0x020bddc8 end:0x020bde06
+
+src/overlays/ov036/calls/GetScreenQuadrantFlags.c:
+    complete
+    .text       start:0x020bde08 end:0x020bde26
+
+src/overlays/ov036/calls/ScriptCmd_OpenActorTextWindow.c:
+    complete
+    .text       start:0x020bde28 end:0x020bdeec
+
+src/overlays/ov036/calls/ScriptCmd_OpenTextWindowAtCursor.c:
+    complete
+    .text       start:0x020bdeec end:0x020bdfa8
+
+src/overlays/ov036/calls/ScriptCmd_OpenWindowAtPoint.c:
+    complete
+    .text       start:0x020bdfa8 end:0x020be050
 
 src/overlays/ov036/calls/ScriptCmd_WaitWindowChoice.c:
     complete
@@ -152,6 +344,10 @@ src/overlays/ov036/calls/func_ov036_020be1c0.c:
     complete
     .text       start:0x020be1c0 end:0x020be1fe
 
+src/overlays/ov036/calls/ScriptCmd_ShowJoinedMessage.c:
+    complete
+    .text       start:0x020be200 end:0x020be284
+
 src/overlays/ov036/calls/ScriptCmd_ShowMessageWindow_020be284.c:
     complete
     .text       start:0x020be284 end:0x020be2e0
@@ -184,6 +380,10 @@ src/overlays/ov036/calls/func_ov036_020be57c.c:
     complete
     .text       start:0x020be57c end:0x020be584
 
+src/overlays/ov036/calls/ScriptCmd_PlaceEntityAndMove.c:
+    complete
+    .text       start:0x020be584 end:0x020be5f4
+
 src/overlays/ov036/calls/ScriptCmd_SetEntityMotion.c:
     complete
     .text       start:0x020be5f4 end:0x020be628
@@ -195,6 +395,10 @@ src/overlays/ov036/calls/func_ov036_020be628.c:
 src/overlays/ov036/calls/ScriptCmd_StartBrightnessFade.c:
     complete
     .text       start:0x020be64c end:0x020be67a
+
+src/overlays/ov036/calls/ScriptCmd_OpenFormattedTextWindow.c:
+    complete
+    .text       start:0x020be6bc end:0x020be78c
 
 src/overlays/ov036/auto/func_ov036_020be78c.c:
     complete
@@ -216,21 +420,73 @@ src/overlays/ov036/calls/ScriptCmd_SetCursorOverride.c:
     complete
     .text       start:0x020be7f4 end:0x020be858
 
+src/overlays/ov036/calls/PushTextWindowHistory.c:
+    complete
+    .text       start:0x020be948 end:0x020be9c0
+
+src/overlays/ov036/calls/UpdateTextWindows.c:
+    complete
+    .text       start:0x020be9c0 end:0x020beaa0
+
+src/overlays/ov036/calls/LoadTextWindowBackground.c:
+    complete
+    .text       start:0x020beaa0 end:0x020beb3c
+
+src/overlays/ov036/calls/DrawNextTextGlyph.c:
+    complete
+    .text       start:0x020bf110 end:0x020bf314
+
+src/overlays/ov036/calls/MeasureTextWindowTiles.c:
+    complete
+    .text       start:0x020bf314 end:0x020bf3f8
+
+src/overlays/ov036/calls/RedrawScrolledTextLayer.c:
+    complete
+    .text       start:0x020bf3f8 end:0x020bf498
+
 src/overlays/ov036/calls/SetRecordEntryEnabled.c:
     complete
     .text       start:0x020bf51c end:0x020bf550
+
+src/overlays/ov036/calls/InitRecordEntryAt.c:
+    complete
+    .text       start:0x020bf550 end:0x020bf620
 
 src/overlays/ov036/auto/func_ov036_020bf6dc.c:
     complete
     .text       start:0x020bf6dc end:0x020bf6e0
 
+src/overlays/ov036/calls/LoadTextWindowFrame.c:
+    complete
+    .text       start:0x020bfb2c end:0x020bfe38
+
+src/overlays/ov036/calls/UpdateTextWindowTyping.c:
+    complete
+    .text       start:0x020c0d54 end:0x020c0e30
+
 src/overlays/ov036/auto/func_ov036_020c0e30.c:
     complete
     .text       start:0x020c0e30 end:0x020c0e34
 
+src/overlays/ov036/calls/AdvanceTextWindowPage.c:
+    complete
+    .text       start:0x020c0e34 end:0x020c1188
+
+src/overlays/ov036/calls/CloseTextWindowEntry.c:
+    complete
+    .text       start:0x020c1254 end:0x020c1308
+
+src/overlays/ov036/calls/QueueMessageWindow.c:
+    complete
+    .text       start:0x020c2630 end:0x020c2788
+
 src/overlays/ov036/calls/SetDisplayLayersVisible.c:
     complete
     .text       start:0x020c2788 end:0x020c27c0
+
+src/overlays/ov036/calls/IsPackedBitSet.c:
+    complete
+    .text       start:0x020c27c0 end:0x020c27dc
 
 src/overlays/ov036/calls/func_ov036_020c27dc.c:
     complete
@@ -240,6 +496,10 @@ src/overlays/ov036/calls/func_ov036_020c27ec.c:
     complete
     .text       start:0x020c27ec end:0x020c27fc
 
+src/overlays/ov036/calls/SetTimerDuration.c:
+    complete
+    .text       start:0x020c27fc end:0x020c280c
+
 src/overlays/ov036/auto/func_ov036_020c280c.c:
     complete
     .text       start:0x020c280c end:0x020c2814
@@ -248,6 +508,34 @@ src/overlays/ov036/calls/func_ov036_020c2884.c:
     complete
     .text       start:0x020c2884 end:0x020c2890
 
+src/overlays/ov036/calls/QueueTypedMessageWindow.c:
+    complete
+    .text       start:0x020c28b0 end:0x020c28dc
+
+src/overlays/ov036/calls/QueueMessageWindowKind1.c:
+    complete
+    .text       start:0x020c28dc end:0x020c28f8
+
+src/overlays/ov036/calls/QueueMessageWindowKind2.c:
+    complete
+    .text       start:0x020c28f8 end:0x020c2914
+
+src/overlays/ov036/calls/QueueMessageWindowKind3.c:
+    complete
+    .text       start:0x020c2914 end:0x020c2930
+
+src/overlays/ov036/calls/CloseAllTextWindows.c:
+    complete
+    .text       start:0x020c2930 end:0x020c2a18
+
+src/overlays/ov036/calls/ApplyTextWindowBgOffsets.c:
+    complete
+    .text       start:0x020c2a18 end:0x020c2aa4
+
+src/overlays/ov036/calls/AdvanceFinishedTextWindows.c:
+    complete
+    .text       start:0x020c2abc end:0x020c2b9c
+
 src/overlays/ov036/calls/DestroyPxiChannelState.c:
     complete
     .text       start:0x020c2ddc end:0x020c2e10
@@ -255,6 +543,14 @@ src/overlays/ov036/calls/DestroyPxiChannelState.c:
 src/overlays/ov036/auto/func_ov036_020c2e10.c:
     complete
     .text       start:0x020c2e10 end:0x020c2e18
+
+src/overlays/ov036/calls/SetupOverlayVramBanks.c:
+    complete
+    .text       start:0x020c2e18 end:0x020c2ea4
+
+src/overlays/ov036/calls/ConfigureOverlay036BackgroundControls.c:
+    complete
+    .text       start:0x020c2ea4 end:0x020c2f24
 
 src/overlays/ov036/auto/func_ov036_020c2f24.c:
     complete
@@ -288,9 +584,17 @@ src/overlays/ov036/calls/func_ov036_020c30f8.c:
     complete
     .text       start:0x020c30f8 end:0x020c3104
 
+src/overlays/ov036/calls/UploadAndFreeBgGraphics.c:
+    complete
+    .text       start:0x020c31e8 end:0x020c32bc
+
 libs/nitro/fs/calls/func_ov036_020c32e4.c:
     complete
     .text       start:0x020c32e4 end:0x020c32f4
+
+src/overlays/ov036/calls/CloseOverlayPanel.c:
+    complete
+    .text       start:0x020c32f4 end:0x020c3368
 
 src/overlays/ov036/calls/func_ov036_020c3368.c:
     complete

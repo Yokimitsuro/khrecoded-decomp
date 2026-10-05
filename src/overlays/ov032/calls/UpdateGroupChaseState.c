@@ -51,13 +51,13 @@ extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
 extern GroupObject *func_ov001_02086384(void *world, int index);
 extern s32 func_ov032_020bbc2c(void *world, int groupIndex);
 extern void PickJitteredPlayerOffset(GroupObject *object, VecFx32 *out);
-extern void func_ov032_020bd268(GroupObject *object);
+extern void ApplyGroupScale(GroupObject *object);
 extern void SpawnSoundSlot(int bank, int soundId, VecFx32 *position, int flags);
 extern VecFx32 *func_ov001_0206dc4c(int index);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern BOOL ComputePushTowardTarget(const VecFx32 *target, const VecFx32 *center, fx32 *speed, VecFx32 *push);
-extern void func_ov032_020bbf68(void *world, int groupIndex);
-extern void func_ov032_020bbce4(GroupObject *object, const VecFx32 *delta);
+extern void BeginRowNibbleChange(void *world, int groupIndex);
+extern void MoveGroupObjectAndSyncActor(GroupObject *object, const VecFx32 *delta);
 
 void UpdateGroupChaseState(GroupObject *object)
 {
@@ -93,7 +93,7 @@ void UpdateGroupChaseState(GroupObject *object)
                 group->isFalling = 0;
                 group->isAnchored = 1;
                 group->isChasing = 1;
-                func_ov032_020bd268(object);
+                ApplyGroupScale(object);
                 SpawnSoundSlot(0xf8, 4, &object->position, 0);
             }
         }
@@ -108,7 +108,7 @@ void UpdateGroupChaseState(GroupObject *object)
                     group->settleTimer += 0x89;
                 }
             } else {
-                func_ov032_020bbf68(object->world, work->groupIndex);
+                BeginRowNibbleChange(object->world, work->groupIndex);
                 group->isFinished = 1;
                 group->isIdleLong = 0;
             }
@@ -116,5 +116,5 @@ void UpdateGroupChaseState(GroupObject *object)
         break;
     }
     }
-    func_ov032_020bbce4(object, &delta);
+    MoveGroupObjectAndSyncActor(object, &delta);
 }

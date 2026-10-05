@@ -11,7 +11,7 @@ typedef struct EffectOwner {
     EffectSlot slots[6];
 } EffectOwner;
 
-extern BOOL func_ov001_02088c64(EffectOwner *owner, EffectSlot *slot, int a, int b, int c, int d, int e);
+extern BOOL SetupStreamSlot(EffectOwner *owner, EffectSlot *slot, int a, int b, int c, int d, int e);
 
 void AssignFreeEffectSlot(EffectOwner *owner, int a, int b, int c, int d, int e)
 {
@@ -19,7 +19,7 @@ void AssignFreeEffectSlot(EffectOwner *owner, int a, int b, int c, int d, int e)
     EffectSlot *slots = owner->slots;
 
     for (; i < 6; i++) {
-        if (slots[i].id == -1 && func_ov001_02088c64(owner, &slots[i], a, b, c, d, e)) {
+        if (slots[i].id == -1 && SetupStreamSlot(owner, &slots[i], a, b, c, d, e)) {
             return;
         }
     }

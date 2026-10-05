@@ -1,6 +1,6 @@
-extern int func_ov001_02069498();
+extern int LoadOffsetTableFile();
 
 int func_ov001_02065454(int arg0) {
-    func_ov001_02069498(arg0);
+    LoadOffsetTableFile(arg0);
     return 1;
 }

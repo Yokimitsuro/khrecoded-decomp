@@ -8,7 +8,7 @@ typedef struct {
 } Heap;
 
 extern Heap *NNSi_FndGetCurrentRootHeap(void);
-extern void func_ov000_02061818(Heap *heap);
+extern void ReleaseHeapExtensions(Heap *heap);
 extern void ZeroHalfThenFree(u32 value);
 extern u16 GetLanguageIndex(void);
 extern void WriteGlobalPackedBits(int opcode, int channel, u16 value);
@@ -19,7 +19,7 @@ void TeardownCurrentHeap(void)
     Heap *heap = NNSi_FndGetCurrentRootHeap();
     u16 value;
 
-    func_ov000_02061818(heap);
+    ReleaseHeapExtensions(heap);
     ZeroHalfThenFree(heap->slotA);
     ZeroHalfThenFree(heap->slotB);
     ZeroHalfThenFree(heap->slotC);

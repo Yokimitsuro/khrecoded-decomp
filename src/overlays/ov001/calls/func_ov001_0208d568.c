@@ -1,6 +1,6 @@
-extern int func_ov001_0208b8cc();
+extern int RestoreSavedCameraState();
 
 int func_ov001_0208d568(int arg0) {
-    func_ov001_0208b8cc(arg0);
+    RestoreSavedCameraState(arg0);
     return 1;
 }

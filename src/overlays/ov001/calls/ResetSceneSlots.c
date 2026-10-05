@@ -24,7 +24,7 @@ typedef struct SceneSlots {
 } SceneSlots;
 
 extern SceneSlots *data_ov001_020a048c;
-extern void func_ov001_020672a0(SceneSlot *slot, void *item, SceneSlots *scene);
+extern void LoadNextSceneSlotResources(SceneSlot *slot, void *item, SceneSlots *scene);
 
 void ResetSceneSlots(void)
 {
@@ -40,6 +40,6 @@ void ResetSceneSlots(void)
         slot->resource = 0;
         slot->size = 0;
         slot->extra = 0;
-        func_ov001_020672a0(slot, data_ov001_020a048c->table->items[scene->selected], scene);
+        LoadNextSceneSlotResources(slot, data_ov001_020a048c->table->items[scene->selected], scene);
     }
 }

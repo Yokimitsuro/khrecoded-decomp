@@ -24,8 +24,8 @@ typedef struct ListWidget {
     int pageIndex;
 } ListWidget;
 
-extern void func_ov073_020c3d80(ListWidget *list);
-extern void func_ov073_020c3e44(ListWidget *list);
+extern void AdvanceListToNextSlot(ListWidget *list);
+extern void RewindListToPreviousSlot(ListWidget *list);
 
 void ScrollListWidgetTo(ListWidget *list, int target)
 {
@@ -34,11 +34,11 @@ void ScrollListWidgetTo(ListWidget *list, int target)
     if (list->busy == 0) {
         if (target >= current) {
             for (; current < target; current++) {
-                func_ov073_020c3d80(list);
+                AdvanceListToNextSlot(list);
             }
         } else {
             for (; target < current; target++) {
-                func_ov073_020c3e44(list);
+                RewindListToPreviousSlot(list);
             }
         }
     }

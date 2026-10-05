@@ -25,7 +25,7 @@ extern void Actor_ConsumeKnockback(Actor *actor, VecFx32 *out);
 extern VecFx32 *Actor_GetModelPosition(Actor *actor);
 extern void func_ov059_020c8580(Actor *actor, VecFx32 *motion);
 extern void func_02038e80(ActorBody *body, int arg);
-extern void func_ov059_020c8a2c(Actor *actor);
+extern void Actor_SyncAnimationSpeed(Actor *actor);
 
 void Actor_ApplyFrameMotion(Actor *actor) {
     VecFx32 motion;
@@ -63,5 +63,5 @@ void Actor_ApplyFrameMotion(Actor *actor) {
         func_02038e80(body, 1);
     }
     actor->statusFlags &= ~(u64)1;
-    func_ov059_020c8a2c(actor);
+    Actor_SyncAnimationSpeed(actor);
 }

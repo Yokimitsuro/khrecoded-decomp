@@ -1,14 +1,14 @@
 #include "nitro/types.h"
 
-extern void func_ov010_020a0540(void); /* ScriptCmd_CreateShapedObjectClass */
-extern void func_ov010_020a05cc(void); /* ScriptCmd_CreateObjectWithAngle */
+extern void ScriptCmd_CreateShapedObjectClass(void); /* ScriptCmd_CreateShapedObjectClass */
+extern void ScriptCmd_CreateObjectWithAngle(void); /* ScriptCmd_CreateObjectWithAngle */
 extern void ScriptCmd_SpawnObjectIntoSlot(void); /* ScriptCmd_SpawnObjectIntoSlot */
 extern void ScriptCmd_CreateObjectAtOrigin(void); /* ScriptCmd_CreateObjectAtOrigin */
 
 void (*gOv010ScriptObjectCreationHandlers[8])(void) = {
-    func_ov010_020a0540, /* ScriptCmd_CreateShapedObjectClass */
+    ScriptCmd_CreateShapedObjectClass, /* ScriptCmd_CreateShapedObjectClass */
     NULL,
-    func_ov010_020a05cc, /* ScriptCmd_CreateObjectWithAngle */
+    ScriptCmd_CreateObjectWithAngle, /* ScriptCmd_CreateObjectWithAngle */
     NULL,
     ScriptCmd_SpawnObjectIntoSlot, /* ScriptCmd_SpawnObjectIntoSlot */
     NULL,

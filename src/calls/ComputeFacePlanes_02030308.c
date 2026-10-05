@@ -14,7 +14,7 @@ typedef struct Plane {
 } Plane;
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *in, VecFx32 *out);
 extern void NormalizeVecFx32ToFx16(const VecFx32 *input, VecFx16 *output);
 extern fx32 VEC_DotProductFx16(const VecFx32 *v, const VecFx16 *m);
@@ -31,7 +31,7 @@ void ComputeFacePlanes_02030308(void *unused, u8 *face)
 
     VEC_Subtract((VecFx32 *)((u8 *)vertexBase + 0xc), vertexBase, &edge1);
     VEC_Subtract((VecFx32 *)((u8 *)vertexBase + 0x18), vertexBase, &edge2);
-    func_01ff9ea8(&edge1, &edge2, &crossNormal);
+    VEC_CrossProduct(&edge1, &edge2, &crossNormal);
     VEC_Normalize(&crossNormal, &crossNormal);
     NormalizeVecFx32ToFx16(&crossNormal, (VecFx16 *)(face + 0x14));
     *(fx32 *)(face + 0x1c) = VEC_DotProductFx16(vertexBase, (VecFx16 *)(face + 0x14));

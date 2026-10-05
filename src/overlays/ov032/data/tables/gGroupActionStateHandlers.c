@@ -1,11 +1,11 @@
 #include "nitro/types.h"
 
-extern void func_ov032_020ba8c0(void); /* SetSlotDisplayStyle */
-extern void func_ov032_020ba92c(void); /* LoadShadowAndFlagScene */
+extern void SetSlotDisplayStyle(void); /* SetSlotDisplayStyle */
+extern void LoadShadowAndFlagScene(void); /* LoadShadowAndFlagScene */
 extern void AcknowledgeGroupTransition(void); /* AcknowledgeGroupTransition */
 extern void func_ov032_020ba98c(void);
-extern void func_ov032_020ba9a4(void); /* FinishMovieMenuLoad */
-extern void func_ov032_020baa28(void); /* ResumeSceneAndAdvance */
+extern void FinishMovieMenuLoad(void); /* FinishMovieMenuLoad */
+extern void ResumeSceneAndAdvance(void); /* ResumeSceneAndAdvance */
 extern void CompleteGroupTransition(void); /* CompleteGroupTransition */
 extern void func_ov032_020bab24(void);
 extern void func_ov032_020bb034(void); /* AdvanceToRoutedSlot */
@@ -20,12 +20,12 @@ extern void func_ov032_020bb2a4(void);
 extern void ClearGroupTransitionFlags(void); /* ClearGroupTransitionFlags */
 
 void (*gGroupActionStateHandlers[18])(void) = {
-    func_ov032_020ba8c0, /* SetSlotDisplayStyle */
-    func_ov032_020ba92c, /* LoadShadowAndFlagScene */
+    SetSlotDisplayStyle, /* SetSlotDisplayStyle */
+    LoadShadowAndFlagScene, /* LoadShadowAndFlagScene */
     AcknowledgeGroupTransition, /* AcknowledgeGroupTransition */
     func_ov032_020ba98c,
-    func_ov032_020ba9a4, /* FinishMovieMenuLoad */
-    func_ov032_020baa28, /* ResumeSceneAndAdvance */
+    FinishMovieMenuLoad, /* FinishMovieMenuLoad */
+    ResumeSceneAndAdvance, /* ResumeSceneAndAdvance */
     CompleteGroupTransition, /* CompleteGroupTransition */
     func_ov032_020bab24,
     func_ov032_020bb034, /* AdvanceToRoutedSlot */

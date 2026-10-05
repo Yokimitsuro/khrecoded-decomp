@@ -26,7 +26,7 @@ typedef struct {
 
 extern ScrollTextGlobals data_ov004_020645a0;
 
-extern void func_ov004_02062768(void);
+extern void UpdateScrollTextCrossfade(void);
 extern void func_ov004_020625fc(int screen);
 
 void UpdateScrollTextScreens(void)
@@ -34,7 +34,7 @@ void UpdateScrollTextScreens(void)
     switch (data_ov004_020645a0.work->screens[0].state) {
     case 3:
     case 4:
-        func_ov004_02062768();
+        UpdateScrollTextCrossfade();
         return;
     }
     func_ov004_020625fc(0);

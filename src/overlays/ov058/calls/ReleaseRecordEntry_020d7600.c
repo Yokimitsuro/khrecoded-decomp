@@ -7,11 +7,11 @@ typedef struct {
 } SharedRecordState;
 
 extern void ReleaseResourceAndDetach(u8 *object);
-extern void func_ov021_020a90a4(SharedRecordState *obj);
+extern void ReleaseSharedRecordState(SharedRecordState *obj);
 
 // Releases an object and its embedded record state
 void ReleaseRecordEntry_020d7600(u8 *object)
 {
     ReleaseResourceAndDetach(object);
-    func_ov021_020a90a4((SharedRecordState *)(object + 0x104));
+    ReleaseSharedRecordState((SharedRecordState *)(object + 0x104));
 }

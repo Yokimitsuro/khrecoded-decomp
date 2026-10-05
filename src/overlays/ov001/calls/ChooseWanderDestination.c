@@ -26,10 +26,10 @@ typedef struct {
 } StageEventRecord;
 
 extern int GetStageRowIndex(WanderEntry *entry);
-extern void func_ov001_02091840(WanderActor *actor);
-extern int func_ov001_02096a2c(WanderEntry *target, int mode);
+extern void ApplyActorScaleFactors(WanderActor *actor);
+extern int FindNearestCommandEntry(WanderEntry *target, int mode);
 extern u32 random_next_scaled(u32 range);
-extern StageEventRecord *func_ov001_0209c114(u32 id);
+extern StageEventRecord *GetStageEventRecord(u32 id);
 extern WanderActor *GetStageActor(int id);
 extern void RandomHorizontalVector(fx32 length, VecFx32 *out);
 
@@ -40,16 +40,16 @@ void ChooseWanderDestination(WanderEntry *entry, WanderActor *actor, VecFx32 *de
     int nearest;
     VecFx32 offset;
 
-    func_ov001_02091840(actor);
+    ApplyActorScaleFactors(actor);
     if (entry->kind != 5) {
         return;
     }
     if (actor->moveMode == 1) {
         if (entry->timer % 0x1e000 == 0) {
-            nearest = func_ov001_02096a2c(entry, 0);
+            nearest = FindNearestCommandEntry(entry, 0);
             entry->retargeted = 1;
             if (nearest != 0 && row != nearest && random_next_scaled(100) < 50) {
-                other = GetStageActor(func_ov001_0209c114(nearest)->actorId);
+                other = GetStageActor(GetStageEventRecord(nearest)->actorId);
                 destination->x = other->position.x;
                 destination->z = other->position.z;
             } else {

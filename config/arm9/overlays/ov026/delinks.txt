@@ -8,6 +8,10 @@ src/overlays/ov026/calls/RunOverlayDisplayUpdate.c:
     complete
     .text       start:0x020b5820 end:0x020b5868
 
+src/overlays/ov026/calls/BeginOverlayDisplaySession.c:
+    complete
+    .text       start:0x020b5868 end:0x020b58e8
+
 src/overlays/ov026/calls/func_ov026_020b58e8.c:
     complete
     .text       start:0x020b58e8 end:0x020b58f8
@@ -16,9 +20,17 @@ src/overlays/ov026/calls/EndOverlayDisplaySession.c:
     complete
     .text       start:0x020b58f8 end:0x020b592c
 
+src/overlays/ov026/calls/InitializeOverlayDisplaySession.c:
+    complete
+    .text       start:0x020b592c end:0x020b59e0
+
 src/overlays/ov026/calls/RestoreOverlayDisplayState.c:
     complete
     .text       start:0x020b59e0 end:0x020b5a38
+
+src/overlays/ov026/calls/UpdateOverlayDisplaySession.c:
+    complete
+    .text       start:0x020b5a38 end:0x020b5aa4
 
 src/overlays/ov026/calls/ShouldRestorePositiveBrightness.c:
     complete

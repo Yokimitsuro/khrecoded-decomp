@@ -57,11 +57,11 @@ extern const VecFx32 data_0205344c;
 
 extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
 extern GroupObject *func_ov001_02086384(FieldContext *context, int index);
-extern BOOL func_ov016_020a6a84(GroupObject *object);
+extern BOOL IsFieldUnitPhase6(GroupObject *object);
 extern void func_ov032_020bbd80(GroupObject *object, const VecFx32 *dir);
-extern void func_ov032_020bd974(GroupObject *object);
-extern void func_ov032_020bde18(GroupObject *object);
-extern void func_ov032_020be674(GroupObject *object);
+extern void ScatterGroupAroundLeader(GroupObject *object);
+extern void ScatterGroupMembers(GroupObject *object);
+extern void ResetGroupMemberFlags(GroupObject *object);
 extern void ResetGroupMemberPhases(GroupObject *object);
 extern void InitGroupMode4(GroupObject *object);
 extern void ScatterGroupMembers_020befdc(GroupObject *object);
@@ -76,7 +76,7 @@ void SetGroupFormation(GroupObject *object, u32 formation)
     for (i = 0; i < group->memberCount; i++) {
         GroupObject *member = func_ov001_02086384(world, group->firstMember + i);
         GroupMemberWork *memberWork = func_ov032_020bbc98(member);
-        if (!func_ov016_020a6a84(member)) {
+        if (!IsFieldUnitPhase6(member)) {
             memberWork->hopping = 0;
             memberWork->rising = 0;
             memberWork->unk_14 = 0;
@@ -89,13 +89,13 @@ void SetGroupFormation(GroupObject *object, u32 formation)
     }
     switch (formation) {
     case 0:
-        func_ov032_020bd974(object);
+        ScatterGroupAroundLeader(object);
         break;
     case 1:
-        func_ov032_020bde18(object);
+        ScatterGroupMembers(object);
         break;
     case 2:
-        func_ov032_020be674(object);
+        ResetGroupMemberFlags(object);
         break;
     case 4:
         InitGroupMode4(object);

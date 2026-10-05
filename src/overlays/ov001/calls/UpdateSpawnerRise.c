@@ -21,9 +21,9 @@ struct Spawner {
     fx32 elapsed;
 };
 
-extern void func_ov001_02085054(void *owner, Spawner *spawner);
+extern void AdvanceSpawnerTimer(void *owner, Spawner *spawner);
 extern fx32 EaseProgress(fx32 value, fx32 range, int mode);
-extern void func_ov001_020850e4(Spawner *spawner);
+extern void StepFallingObject(Spawner *spawner);
 extern void func_ov001_02085348(Spawner *spawner, BOOL falling);
 
 int UpdateSpawnerRise(Spawner *spawner)
@@ -31,12 +31,12 @@ int UpdateSpawnerRise(Spawner *spawner)
     fx32 height;
     fx32 ratio;
 
-    func_ov001_02085054(spawner->owner, spawner);
+    AdvanceSpawnerTimer(spawner->owner, spawner);
     spawner->velocityY -= 0x52;
     height = spawner->elapsed += 0x1000;
     if (height >= 0x3c000) {
         spawner->finished = 1;
-        spawner->update = func_ov001_020850e4;
+        spawner->update = StepFallingObject;
         height = spawner->endHeight;
     } else {
         ratio = EaseProgress(height, 0x3c000, 1);

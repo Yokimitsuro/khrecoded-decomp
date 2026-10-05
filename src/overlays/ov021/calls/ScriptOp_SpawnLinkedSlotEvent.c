@@ -69,11 +69,11 @@ typedef struct {
 extern FieldContext data_ov021_020b56c4;
 
 extern TaggedValue *ResolveTaggedValueRef(void *context, TaggedValue *value);
-extern u16 func_ov021_020b0528(void *context, u32 mode, void *operands, VecFx32 *out, const char **outName);
+extern u16 ResolveOffsetPosition(void *context, u32 mode, void *operands, VecFx32 *out, const char **outName);
 extern StageLink *FindStageLink(u32 id);
-extern StageEvent *func_ov001_0209c114(u32 id);
+extern StageEvent *GetStageEventRecord(u32 id);
 extern void ResetActorMotion(StageEvent *record, BOOL keepSpeed);
-extern void func_ov001_02094f88(StageEvent *record, int groupArg, int scale, int arg);
+extern void SpawnStageGroup(StageEvent *record, int groupArg, int scale, int arg);
 extern u16 GetStageRowIndex(StageEvent *record);
 extern StageActor *GetStageActor(int id);
 extern void WarpWalkerTo(StageActor *actor, const VecFx32 *position);
@@ -125,7 +125,7 @@ s32 ScriptOp_SpawnLinkedSlotEvent(void *context, SlotSpawnCommand *cmd)
     FieldPlayer *player = data_ov021_020b56c4.player;
     const char *nodeName;
     VecFx32 position;
-    u16 flags = func_ov021_020b0528(context, cmd->mode, cmd->position, &position, &nodeName);
+    u16 flags = ResolveOffsetPosition(context, cmd->mode, cmd->position, &position, &nodeName);
     StageLink *link;
     u16 count;
     s32 slot;
@@ -163,7 +163,7 @@ s32 ScriptOp_SpawnLinkedSlotEvent(void *context, SlotSpawnCommand *cmd)
     if (entry == NULL) {
         return 0;
     }
-    record = func_ov001_0209c114((u16)((u16)(player->eventBase - 1 + slot) + 1));
+    record = GetStageEventRecord((u16)((u16)(player->eventBase - 1 + slot) + 1));
     if (record == NULL) {
         return 0;
     }
@@ -174,7 +174,7 @@ s32 ScriptOp_SpawnLinkedSlotEvent(void *context, SlotSpawnCommand *cmd)
         return 0;
     }
     ResetActorMotion(record, FALSE);
-    func_ov001_02094f88(record, entry->groupArg, 0x1000, 0);
+    SpawnStageGroup(record, entry->groupArg, 0x1000, 0);
     if (eventRecord != NULL) {
         record->row = GetStageRowIndex(eventRecord);
     }

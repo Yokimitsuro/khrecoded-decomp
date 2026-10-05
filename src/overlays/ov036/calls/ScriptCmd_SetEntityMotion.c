@@ -12,7 +12,7 @@ typedef struct ScriptContext {
 } ScriptContext;
 
 extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operand);
-extern void func_ov036_020bd38c(int entityId, int motionIndex);
+extern void SetSceneModelBlendIndex(int entityId, int motionIndex);
 
 int ScriptCmd_SetEntityMotion(ScriptContext *context, ScriptOperand *operands)
 {
@@ -22,6 +22,6 @@ int ScriptCmd_SetEntityMotion(ScriptContext *context, ScriptOperand *operands)
     if (context->isSkipping != 0) {
         return 1;
     }
-    func_ov036_020bd38c(entityId, motionIndex);
+    SetSceneModelBlendIndex(entityId, motionIndex);
     return 1;
 }

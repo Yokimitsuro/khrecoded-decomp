@@ -3,6 +3,22 @@
     .data       start:0x020d8a40 end:0x020d8a80 kind:data align:32
     .bss        start:0x020d8a80 end:0x020d8a80 kind:bss align:32
 
+src/overlays/ov069/calls/StartOv069BossIntro.c:
+    complete
+    .text       start:0x020d8140 end:0x020d81dc
+
+src/overlays/ov069/calls/AimOv069BossAtHit.c:
+    complete
+    .text       start:0x020d81dc end:0x020d829c
+
+src/overlays/ov069/calls/EndOv069BossIntro.c:
+    complete
+    .text       start:0x020d8844 end:0x020d88c4
+
+src/overlays/ov069/calls/CreateOv069BossObject.c:
+    complete
+    .text       start:0x020d88c4 end:0x020d8a30
+
 src/overlays/ov069/data/strings/Strings_ov069_020d8a40.c:
     complete
     .data       start:0x020d8a40 end:0x020d8a50

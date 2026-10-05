@@ -6,9 +6,9 @@ typedef struct StageSlots {
 } StageSlots;
 
 extern StageSlots *data_ov001_020a0528;
-extern int func_ov001_0208f1d0(void *slot, int entry);
+extern int HandlePool_ReleaseHandle(void *slot, int entry);
 
 int ReleaseStageSlotEntry(int index, int slot)
 {
-    return func_ov001_0208f1d0(data_ov001_020a0528->slots[index], slot);
+    return HandlePool_ReleaseHandle(data_ov001_020a0528->slots[index], slot);
 }

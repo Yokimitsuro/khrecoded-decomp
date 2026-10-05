@@ -28,7 +28,7 @@ typedef struct {
 } HopState;
 
 extern BOOL UpdateLedgeClimb(FieldContext *context, int index, HopState *state, VecFx32 *position, VecFx32 *velocity, int collisionArg, VecFx32 *outMove, BOOL *outStopped);
-extern BOOL func_ov032_020bcc64(FieldContext *context, int index, HopState *state, VecFx32 *position, VecFx32 *velocity, int collisionArg, VecFx32 *outMove, BOOL *outStopped);
+extern BOOL UpdateHopMovement(FieldContext *context, int index, HopState *state, VecFx32 *position, VecFx32 *velocity, int collisionArg, VecFx32 *outMove, BOOL *outStopped);
 
 BOOL UpdateHopWithSpeedRamp(FieldContext *context, int index, HopState *state, VecFx32 *position, VecFx32 *velocity, int collisionArg, VecFx32 *outMove, BOOL *outStopped)
 {
@@ -39,7 +39,7 @@ BOOL UpdateHopWithSpeedRamp(FieldContext *context, int index, HopState *state, V
     if (state->ledgeFound) {
         landed = UpdateLedgeClimb(context, index, state, position, velocity, collisionArg, outMove, outStopped);
     } else {
-        landed = func_ov032_020bcc64(context, index, state, position, velocity, collisionArg, outMove, outStopped);
+        landed = UpdateHopMovement(context, index, state, position, velocity, collisionArg, outMove, outStopped);
     }
     speed = state->speed + 0x52;
     state->speed = speed;

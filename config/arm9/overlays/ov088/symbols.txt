@@ -1,7 +1,7 @@
 ConfigureOverlay088Display kind:function(arm,size=0x4c) addr:0x020beac0
-func_ov088_020beb0c kind:function(arm,size=0xdc) addr:0x020beb0c
+LoadOverlay088Graphics kind:function(arm,size=0xdc) addr:0x020beb0c
 func_ov088_020bebe8 kind:function(arm,size=0x14) addr:0x020bebe8
-func_ov088_020bebfc kind:function(arm,size=0x118) addr:0x020bebfc
+ApplyOverlay088GridStates kind:function(arm,size=0x118) addr:0x020bebfc
 ClearOverlay088Grid kind:function(arm,size=0x18) addr:0x020bed14
 func_ov088_020bed2c kind:function(arm,size=0xc4) addr:0x020bed2c
 func_ov088_020bedf0 kind:function(arm,size=0x1c) addr:0x020bedf0

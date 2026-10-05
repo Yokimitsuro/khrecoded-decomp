@@ -12,7 +12,7 @@ typedef struct FieldActor {
     int partyIndex;
 } FieldActor;
 
-extern void func_ov001_02089140(VecFx32 *out, void *anchor);
+extern void ActorAnim_AdvanceAndGetRootDelta(VecFx32 *out, void *anchor);
 extern int func_ov001_02063a38(void);
 extern PartyEntry *GetBoundedEntryField(int index);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -24,7 +24,7 @@ void AlignPartyLeaderToActor(FieldActor *actor)
     VecFx32 anchor;
     PartyEntry *entry;
 
-    func_ov001_02089140(&anchor, actor->anchor);
+    ActorAnim_AdvanceAndGetRootDelta(&anchor, actor->anchor);
     position = anchor;
     if (func_ov001_02063a38() == 7) {
         return;

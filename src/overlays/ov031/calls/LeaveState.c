@@ -5,13 +5,13 @@ extern void DrawVisibleSceneSlots(void);
 extern void RunFlaggedEventCallbacks(void);
 extern void func_ov001_020876d4(void);
 extern void func_ov021_020af528(u32 a);
-extern void func_ov031_020bb2f4(void);
+extern void DrawSceneGroups(void);
 
 void LeaveState(void)
 {
     func_ov021_020af528(1);
     DrawVisibleSceneSlots();
-    func_ov031_020bb2f4();
+    DrawSceneGroups();
     RunFlaggedEventCallbacks();
     func_02035de4();
     func_ov001_020876d4();

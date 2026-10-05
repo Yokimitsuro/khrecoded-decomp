@@ -1,17 +1,17 @@
 #include "nitro/types.h"
 
 extern void ScriptCmd_CreateObjectInSlot(void); /* ScriptCmd_CreateObjectInSlot */
-extern void func_ov008_020a056c(void); /* ScriptCmd_CreateDelayedGimmick */
+extern void ScriptCmd_CreateDelayedGimmick(void); /* ScriptCmd_CreateDelayedGimmick */
 extern void ScriptCmd_CreateObjectWithParamInSlot(void); /* ScriptCmd_CreateObjectWithParamInSlot */
-extern void func_ov008_020a0688(void); /* ScriptCmd_CreateChildSpawner */
+extern void ScriptCmd_CreateChildSpawner(void); /* ScriptCmd_CreateChildSpawner */
 
 void (*gOv008ScriptObjectCreationHandlers[8])(void) = {
     ScriptCmd_CreateObjectInSlot, /* ScriptCmd_CreateObjectInSlot */
     NULL,
-    func_ov008_020a056c, /* ScriptCmd_CreateDelayedGimmick */
+    ScriptCmd_CreateDelayedGimmick, /* ScriptCmd_CreateDelayedGimmick */
     NULL,
     ScriptCmd_CreateObjectWithParamInSlot, /* ScriptCmd_CreateObjectWithParamInSlot */
     NULL,
-    func_ov008_020a0688, /* ScriptCmd_CreateChildSpawner */
+    ScriptCmd_CreateChildSpawner, /* ScriptCmd_CreateChildSpawner */
     NULL,
 };

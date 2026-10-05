@@ -13,7 +13,7 @@ typedef struct FieldState {
 } FieldState;
 
 extern FieldState *data_ov001_020a0480;
-extern void func_ov001_0206d84c(void);
+extern void DestroyPartyState(void);
 
 void FlushPendingFieldUpdate(void)
 {
@@ -21,7 +21,7 @@ void FlushPendingFieldUpdate(void)
     FieldFlags *flags = &field->flags;
 
     if (flags->updatePending) {
-        func_ov001_0206d84c();
+        DestroyPartyState();
         flags->updatePending = FALSE;
     }
 }

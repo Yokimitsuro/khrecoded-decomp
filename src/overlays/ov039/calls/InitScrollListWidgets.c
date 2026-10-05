@@ -15,7 +15,7 @@ typedef struct {
 } ScrollList;
 
 extern void *FindWidgetById(void *root, int id);
-extern void func_ov039_020bdf30(ScrollList *list, void *root, int layout);
+extern void SetupScrollList(ScrollList *list, void *root, int layout);
 
 void InitScrollListWidgets(ScrollList *list, void *root, int arrowId, s16 rowId, u8 rowCount,
                                     int layout, int rowHeight, int userA, int userB)
@@ -34,5 +34,5 @@ void InitScrollListWidgets(ScrollList *list, void *root, int arrowId, s16 rowId,
     list->rowCount = rowCount;
     list->userA = userA;
     list->userB = userB;
-    func_ov039_020bdf30(list, root, layout);
+    SetupScrollList(list, root, layout);
 }

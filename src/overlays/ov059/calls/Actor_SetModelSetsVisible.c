@@ -12,14 +12,14 @@ typedef struct {
     ModelSet modelSets[2];
 } Actor;
 
-extern void func_ov021_020a9d08(u32 *flags, s32 enable);
+extern void SetBit1WhenBit0Set(u32 *flags, s32 enable);
 
 void Actor_SetModelSetsVisible(Actor *actor, BOOL enable)
 {
     int i;
 
     for (i = 0; i < 2; i++) {
-        func_ov021_020a9d08(&actor->modelSets[i].flags, enable);
+        SetBit1WhenBit0Set(&actor->modelSets[i].flags, enable);
     }
     if (!enable) {
         actor->flags &= ~0x40ULL;

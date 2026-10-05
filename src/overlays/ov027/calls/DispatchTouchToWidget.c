@@ -16,7 +16,7 @@ typedef struct WidgetRoot {
 } WidgetRoot;
 
 extern Widget *NNS_FndGetNextListObject(void *list, Widget *obj);
-extern BOOL func_ov027_020b871c(WidgetRoot *root, int x, int y, Widget *widget);
+extern BOOL HitTestWidget(WidgetRoot *root, int x, int y, Widget *widget);
 
 BOOL DispatchTouchToWidget(WidgetRoot *root, TouchPoint *point)
 {
@@ -25,7 +25,7 @@ BOOL DispatchTouchToWidget(WidgetRoot *root, TouchPoint *point)
 
     for (widget = NNS_FndGetNextListObject(root->widgetList, NULL); widget != NULL;
          widget = NNS_FndGetNextListObject(root->widgetList, widget)) {
-        if (func_ov027_020b871c(root, point->x, point->y, widget)) {
+        if (HitTestWidget(root, point->x, point->y, widget)) {
             widget->onTouch(widget);
             handled = TRUE;
             break;

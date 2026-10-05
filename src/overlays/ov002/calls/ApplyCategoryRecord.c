@@ -13,8 +13,8 @@ typedef struct RecordC {
 } RecordC;
 
 extern s32 data_ov002_0206aebc[];
-extern void func_ov002_020687a4(RecordSet *set, s32 *recordIds, int count);
-extern void func_ov002_02069308(RecordSet *set, int fieldIndex, int matchIndex);
+extern void ApplyRecordsToPackedFields(RecordSet *set, s32 *recordIds, int count);
+extern void ClearPackedField(RecordSet *set, int fieldIndex, int matchIndex);
 extern BOOL IsRecordSlotAcquired(s32 slot);
 extern int AcquireRecordSlot(int slot, int param);
 extern void ReleaseRecordSlot(s32 slot);
@@ -37,15 +37,15 @@ BOOL ApplyCategoryRecord(RecordSet *set, int category, int offset)
             return TRUE;
         }
         recordId = recordId + offset;
-        func_ov002_020687a4(set, &recordId, 1);
+        ApplyRecordsToPackedFields(set, &recordId, 1);
         if (set->hasExtra && ((category >= 1 && category < 6) || category == 0x11)) {
             recordId = 0;
-            func_ov002_020687a4(set, &recordId, 1);
+            ApplyRecordsToPackedFields(set, &recordId, 1);
         }
         return TRUE;
     }
     for (i = 3; i < 0x16; i++) {
-        func_ov002_02069308(set, i, -1);
+        ClearPackedField(set, i, -1);
     }
     acquired = IsRecordSlotAcquired(10);
     if (!acquired) {
@@ -57,7 +57,7 @@ BOOL ApplyCategoryRecord(RecordSet *set, int category, int offset)
     ids = GetRecordTableCEntry(offset)->recordIds;
     for (i = 3; i < 0x14; i++) {
         if (i != 0x12 && (recordId = ids[i]) != -1) {
-            func_ov002_020687a4(set, &recordId, 1);
+            ApplyRecordsToPackedFields(set, &recordId, 1);
         }
     }
     if (!acquired) {

@@ -20,7 +20,7 @@ typedef struct SlotMenu {
 
 extern SaveData *data_0205fe0c;
 
-extern BOOL func_ov076_020c44e0(SlotMenu *menu, int slot);
+extern BOOL SlotMenu_CanCombineSlotPair(SlotMenu *menu, int slot);
 extern void *func_ov027_020ba2c8(MessageTable *table, int index);
 extern void func_ov076_020c8198(SlotMenu *menu, void *message);
 
@@ -31,7 +31,7 @@ void SlotMenu_ShowSlotHint(SlotMenu *menu)
     int messageId;
 
     if (column == 2) {
-        BOOL filled = func_ov076_020c44e0(menu, slot);
+        BOOL filled = SlotMenu_CanCombineSlotPair(menu, slot);
 
         messageId = 0x5b;
         if (!filled) {

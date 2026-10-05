@@ -1,6 +1,6 @@
 extern int data_ov039_020bea20;
 extern void *NNS_FndGetNextListObject(void *list, void *obj);
-extern void func_ov039_020bc72c(void *entry);
+extern void RemoveListEntry(void *entry);
 
 void DestroyAllListEntries(void)
 {
@@ -12,7 +12,7 @@ void DestroyAllListEntries(void)
     }
     do {
         next = NNS_FndGetNextListObject((void *)(data_ov039_020bea20 + 0xca74), entry);
-        func_ov039_020bc72c(entry);
+        RemoveListEntry(entry);
         entry = next;
     } while (next != 0);
 }

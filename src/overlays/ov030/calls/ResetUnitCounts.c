@@ -5,9 +5,9 @@ typedef struct {
     u8 active;
 } UnitState;
 
-extern void func_ov021_020aeb8c(UnitState *unit);
+extern void ResetCountsAndSlots(UnitState *unit);
 
 void ResetUnitCounts(UnitState *unit) {
     unit->active = 0;
-    func_ov021_020aeb8c(unit);
+    ResetCountsAndSlots(unit);
 }

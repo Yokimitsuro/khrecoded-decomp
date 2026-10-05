@@ -8,6 +8,10 @@ src/overlays/ov025/calls/ApplySubBgScroll.c:
     complete
     .text       start:0x020b5820 end:0x020b584c
 
+src/overlays/ov025/calls/DrawRemainingCountText.c:
+    complete
+    .text       start:0x020b5878 end:0x020b58f8
+
 src/overlays/ov025/calls/RefreshRemainingCount.c:
     complete
     .text       start:0x020b58f8 end:0x020b5928
@@ -28,21 +32,77 @@ src/overlays/ov025/calls/DrawMenuEntryWidget.c:
     complete
     .text       start:0x020b59f8 end:0x020b5a2c
 
+src/overlays/ov025/calls/SetupSubBgLayers.c:
+    complete
+    .text       start:0x020b5a2c end:0x020b5ab4
+
 src/overlays/ov025/calls/HandleDefaultMenuAction.c:
     complete
     .text       start:0x020b5ab4 end:0x020b5aec
+
+src/overlays/ov025/calls/InitMenuScreen.c:
+    complete
+    .text       start:0x020b5aec end:0x020b5c98
+
+src/overlays/ov025/calls/SetupMenuTextLayers.c:
+    complete
+    .text       start:0x020b5c98 end:0x020b5e44
+
+src/overlays/ov025/calls/ShutdownMenuScreen.c:
+    complete
+    .text       start:0x020b5eac end:0x020b5f28
 
 src/overlays/ov025/calls/ResetMenuLayerTransforms.c:
     complete
     .text       start:0x020b61b4 end:0x020b6214
 
+src/overlays/ov025/calls/SetAlternateMenuWidgets.c:
+    complete
+    .text       start:0x020b6214 end:0x020b6290
+
+src/overlays/ov025/calls/LookupChannelEntry.c:
+    complete
+    .text       start:0x020b6290 end:0x020b62ac
+
+src/overlays/ov025/calls/LookupChannelEntry_020b62ac.c:
+    complete
+    .text       start:0x020b62ac end:0x020b62c8
+
+src/overlays/ov025/calls/LookupChannelEntry_020b62c8.c:
+    complete
+    .text       start:0x020b62c8 end:0x020b62e4
+
 src/overlays/ov025/calls/DrawNumberInPanelSlot.c:
     complete
     .text       start:0x020b62e4 end:0x020b6330
 
+src/overlays/ov025/calls/ActivatePanelEntity.c:
+    complete
+    .text       start:0x020b6348 end:0x020b636c
+
+src/overlays/ov025/calls/RefreshSlotRowColors.c:
+    complete
+    .text       start:0x020b636c end:0x020b63f0
+
+src/overlays/ov025/calls/RebuildSlotChain.c:
+    complete
+    .text       start:0x020b63f0 end:0x020b6502
+
 src/overlays/ov025/calls/GetTileMapEntry.c:
     complete
     .text       start:0x020b6504 end:0x020b6538
+
+src/overlays/ov025/calls/DrawSlotTileBlock.c:
+    complete
+    .text       start:0x020b6538 end:0x020b65e2
+
+src/overlays/ov025/calls/SetupSlotListView.c:
+    complete
+    .text       start:0x020b6ad8 end:0x020b6c2a
+
+src/overlays/ov025/calls/ApplyTagAndMarkEntryReady.c:
+    complete
+    .text       start:0x020b6c2c end:0x020b6c4a
 
 src/overlays/ov025/calls/LoadPanelResource.c:
     complete
@@ -64,13 +124,65 @@ src/overlays/ov025/calls/IsGreaterThan.c:
     complete
     .text       start:0x020b6d74 end:0x020b6d80
 
+src/overlays/ov025/calls/IsLessOrEqual.c:
+    complete
+    .text       start:0x020b6d80 end:0x020b6d8c
+
+src/overlays/ov025/calls/IsLessThan.c:
+    complete
+    .text       start:0x020b6d8c end:0x020b6d98
+
+src/overlays/ov025/calls/FindVerticalNeighbor.c:
+    complete
+    .text       start:0x020b6d98 end:0x020b6e12
+
+src/overlays/ov025/calls/HandleListInput.c:
+    complete
+    .text       start:0x020b6f98 end:0x020b7088
+
+src/overlays/ov025/calls/InitSlotListView.c:
+    complete
+    .text       start:0x020b7088 end:0x020b71f8
+
+src/overlays/ov025/calls/CloseSlotListView.c:
+    complete
+    .text       start:0x020b71f8 end:0x020b7288
+
+src/overlays/ov025/calls/UpdateListScrollAnimation.c:
+    complete
+    .text       start:0x020b7288 end:0x020b7308
+
+src/overlays/ov025/calls/ScrollListDownOneRow.c:
+    complete
+    .text       start:0x020b7308 end:0x020b73cc
+
+src/overlays/ov025/calls/ScrollListUpOneRow.c:
+    complete
+    .text       start:0x020b73cc end:0x020b7488
+
 src/overlays/ov025/calls/ScrollListToRow.c:
     complete
     .text       start:0x020b7488 end:0x020b74da
 
+src/overlays/ov025/calls/CountActiveSlots.c:
+    complete
+    .text       start:0x020b74f8 end:0x020b750e
+
+src/overlays/ov025/calls/ResetListToFirstEntry.c:
+    complete
+    .text       start:0x020b7510 end:0x020b7598
+
 src/overlays/ov025/calls/ApplyModeAndNotify.c:
     complete
     .text       start:0x020b7598 end:0x020b75d0
+
+src/overlays/ov025/calls/DispatchDrawCommand.c:
+    complete
+    .text       start:0x020b75d0 end:0x020b75fe
+
+src/overlays/ov025/calls/NegateFieldValue.c:
+    complete
+    .text       start:0x020b7600 end:0x020b7608
 
 src/overlays/ov025/calls/GetSlotEntryValue_020b7608.c:
     complete
@@ -79,6 +191,14 @@ src/overlays/ov025/calls/GetSlotEntryValue_020b7608.c:
 src/overlays/ov025/calls/GetAvailableMenuEntryIndex.c:
     complete
     .text       start:0x020b765c end:0x020b7676
+
+src/overlays/ov025/calls/ClearEntityCounters.c:
+    complete
+    .text       start:0x020b7678 end:0x020b768c
+
+src/overlays/ov025/calls/ResetFieldsToDefault.c:
+    complete
+    .text       start:0x020b768c end:0x020b769e
 
 src/overlays/ov025/data/strings/Strings_ov025_020b775c.c:
     complete

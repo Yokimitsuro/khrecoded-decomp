@@ -18,7 +18,7 @@ typedef struct {
 extern s16 data_02053580[];
 extern BOOL IsPlayerEntryFlagSet(int player, u32 id);
 extern VecFx32 *func_ov052_020ceb74(AttackActor *actor);
-extern u16 func_ov052_020ceb9c(AttackActor *actor);
+extern u16 GetLinkedAngleOffset(AttackActor *actor);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
@@ -45,7 +45,7 @@ BOOL TryFlagTargetBehind(AttackActor *actor, AttackTarget *target)
     forward.x = forward.y = forward.z = dir.y = 0;
     if (dir.x != 0 || dir.y != 0 || dir.z != 0) {
         VEC_Normalize(&dir, &dir);
-        index = func_ov052_020ceb9c(actor) >> 4;
+        index = GetLinkedAngleOffset(actor) >> 4;
         forward.x = -data_02053580[index];
         forward.z = -data_02053580[(0x400 - index) & 0xfff];
         if (VEC_DotProduct(&dir, &forward) > 0) {

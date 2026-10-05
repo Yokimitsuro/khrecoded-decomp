@@ -30,8 +30,8 @@ struct ActionActor {
 extern void *func_ov001_0206db78(int pool);
 extern BOOL func_ov001_02072040(void);
 extern BOOL func_ov001_0206e2b0(void);
-extern BOOL func_ov021_020a753c(void *holder, u16 mask);
-extern BOOL func_ov021_020a754c(void *holder, u16 mask);
+extern BOOL HasFlagsAt0xc(void *holder, u16 mask);
+extern BOOL HasFlagsAt0xe(void *holder, u16 mask);
 extern BOOL IsPlayerEntryFlagSet(int player, u32 id);
 extern int GetPlayerEntryCount(int player, u32 id);
 
@@ -55,12 +55,12 @@ BOOL TryStartSpecialAction(ActionActor *actor)
     }
     result = actor->tryAction(actor);
     if (!result) {
-        if (!func_ov001_0206e2b0() && func_ov021_020a753c(self, 2) && IsPlayerEntryFlagSet(actor->pool, 0xd)
+        if (!func_ov001_0206e2b0() && HasFlagsAt0xc(self, 2) && IsPlayerEntryFlagSet(actor->pool, 0xd)
             && air->useCount < GetPlayerEntryCount(actor->pool, 0xd)) {
             actor->onEvent(actor, 0x13);
             result = TRUE;
         }
-        if (!result && air->busy == 0 && func_ov021_020a754c(self, 0x800) && IsPlayerEntryFlagSet(actor->pool, 0xe)
+        if (!result && air->busy == 0 && HasFlagsAt0xe(self, 0x800) && IsPlayerEntryFlagSet(actor->pool, 0xe)
             && (actor->stateFlags & 0x8000) == 0) {
             actor->onEvent(actor, 0x11);
             result = TRUE;

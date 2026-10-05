@@ -32,7 +32,7 @@ typedef struct {
 
 extern const VecFx32 data_0205344c;
 extern FieldUnit *func_ov001_0208724c(int group, int index);
-extern BOOL func_ov016_020a6af4(FieldUnit *unit);
+extern BOOL IsFieldUnitAction5Mode1(FieldUnit *unit);
 extern FieldActor *ActorRegistry_GetEntityByIndex(u32 actorId);
 
 VecFx32 GetCarrierVelocity(FieldObject *obj)
@@ -49,7 +49,7 @@ VecFx32 GetCarrierVelocity(FieldObject *obj)
         } else {
             busy = FALSE;
         }
-        if (!busy && !func_ov016_020a6af4(carrier)) {
+        if (!busy && !IsFieldUnitAction5Mode1(carrier)) {
             velocity = ActorRegistry_GetEntityByIndex(carrier->actorId)->delta;
             if (velocity.x != 0 || velocity.y != 0 || velocity.z != 0) {
                 obj->flags &= ~0x800;

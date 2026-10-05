@@ -12,6 +12,10 @@ src/overlays/ov064/calls/UpdateRisingFinisherAction.c:
     complete
     .text       start:0x020d81bc end:0x020d8254
 
+src/overlays/ov064/calls/CreateMarkedSceneTask.c:
+    complete
+    .text       start:0x020d8708 end:0x020d8844
+
 src/overlays/ov064/data/strings/Strings_ov064_020d8880.c:
     complete
     .data       start:0x020d8880 end:0x020d88a0

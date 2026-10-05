@@ -42,7 +42,7 @@ extern EntryInfo *GetBoundedEntryField(int index);
 extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
-extern HitResult func_ov021_020ab0e8(ProjectileOwner *owner, Projectile *proj, VecFx32 *pos, VecFx32 *vel);
+extern HitResult FindStrongestHit(ProjectileOwner *owner, Projectile *proj, VecFx32 *pos, VecFx32 *vel);
 extern s16 AdvanceOwnerAnimation(Projectile *proj, fx32 step);
 
 BOOL UpdateSweepProjectile(ProjectileOwner *owner, Projectile *proj, fx32 step)
@@ -70,7 +70,7 @@ BOOL UpdateSweepProjectile(ProjectileOwner *owner, Projectile *proj, fx32 step)
         pos = proj->position;
         VEC_Normalize(&proj->velocity, &dir);
     }
-    hit = func_ov021_020ab0e8(owner, proj, &pos, &dir);
+    hit = FindStrongestHit(owner, proj, &pos, &dir);
     proj->timer += step;
     if (proj->timer >= def->lifetime && proj->phase == 0) {
         proj->timer = 0;

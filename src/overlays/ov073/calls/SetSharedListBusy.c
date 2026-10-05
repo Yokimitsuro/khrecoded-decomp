@@ -13,7 +13,7 @@ extern MenuSharedState *func_ov039_020bc650(void);
 extern BOOL func_ov039_020bc0f4(void);
 extern void SetListWidgetBusy(void *list, BOOL busy);
 extern void *FindWidgetById(ResourceContainer *container, int id);
-extern void func_ov027_020b95a0(ResourceContainer *container, void *element, BOOL visible);
+extern void SetEntrySlotsVisible(ResourceContainer *container, void *element, BOOL visible);
 
 void SetSharedListBusy(BOOL busy)
 {
@@ -28,6 +28,6 @@ void SetSharedListBusy(BOOL busy)
         } else {
             visible = FALSE;
         }
-        func_ov027_020b95a0(state->container, FindWidgetById(state->container, 0xe), visible);
+        SetEntrySlotsVisible(state->container, FindWidgetById(state->container, 0xe), visible);
     }
 }

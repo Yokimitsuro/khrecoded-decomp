@@ -2,14 +2,74 @@
     .ctor       start:0x020be5c4 end:0x020be5c4 kind:rodata align:4
     .bss        start:0x020be5e0 end:0x020be600 kind:bss align:32
 
+src/overlays/ov042/calls/CommitCameraProjection.c:
+    complete
+    .text       start:0x020bd040 end:0x020bd070
+
 src/overlays/ov042/calls/func_ov042_020bd110.c:
     complete
     .text       start:0x020bd110 end:0x020bd11c
+
+src/overlays/ov042/calls/TranslateCameraTarget.c:
+    complete
+    .text       start:0x020bd198 end:0x020bd1e0
+
+src/overlays/ov042/calls/PushFromCameraTarget.c:
+    complete
+    .text       start:0x020bd1e0 end:0x020bd20c
+
+src/overlays/ov042/calls/TranslateCameraGoal.c:
+    complete
+    .text       start:0x020bd20c end:0x020bd254
+
+src/overlays/ov042/calls/SetCameraGoalTarget.c:
+    complete
+    .text       start:0x020bd254 end:0x020bd2b0
+
+src/overlays/ov042/calls/OffsetCameraColliders.c:
+    complete
+    .text       start:0x020bd2c0 end:0x020bd344
+
+src/overlays/ov042/calls/MoveCameraAlongAxis.c:
+    complete
+    .text       start:0x020bd354 end:0x020bd39c
+
+src/overlays/ov042/calls/GetOrbitOffsetDegrees.c:
+    complete
+    .text       start:0x020bd494 end:0x020bd4cc
+
+src/overlays/ov042/calls/InitCameraState.c:
+    complete
+    .text       start:0x020bd4dc end:0x020bd5a4
 
 src/overlays/ov042/calls/func_ov042_020bd5a4.c:
     complete
     .text       start:0x020bd5a4 end:0x020bd5b0
 
+src/overlays/ov042/calls/SetCameraMode.c:
+    complete
+    .text       start:0x020bd680 end:0x020bd70c
+
+src/overlays/ov042/calls/StartCameraParticle.c:
+    complete
+    .text       start:0x020bd71c end:0x020bd76c
+
+src/overlays/ov042/calls/IsHitEntryAccepted.c:
+    complete
+    .text       start:0x020bdb28 end:0x020bdb4a
+
+src/overlays/ov042/calls/IsTargetFacing.c:
+    complete
+    .text       start:0x020bdb4c end:0x020bdb6a
+
 src/overlays/ov042/auto/func_ov042_020bde3c.c:
     complete
     .text       start:0x020bde3c end:0x020bde3e
+
+src/overlays/ov042/calls/ApplyCameraConfig.c:
+    complete
+    .text       start:0x020be4cc end:0x020be568
+
+src/overlays/ov042/calls/AimCameraAlongDirection.c:
+    complete
+    .text       start:0x020be568 end:0x020be5c4

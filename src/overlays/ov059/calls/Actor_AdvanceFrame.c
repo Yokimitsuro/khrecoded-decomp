@@ -47,7 +47,7 @@ extern void StopSoundSeqHandle(u32 handle);
 extern fx32 GetField28(void);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern fx32 FX_Mul(fx32 a, fx32 b);
-extern void func_ov021_020a8198(void *owner, int id);
+extern void ResetIfIdMatches(void *owner, int id);
 extern fx32 func_ov031_020bc060(void);
 extern fx32 GetSeekStep(void);
 extern u16 AdvanceAnimationTracks(void *state, fx32 delta);
@@ -58,7 +58,7 @@ extern void func_ov021_020aafe4(void *entry, fx32 value);
 extern void func_ov021_020a8b08(int playerIndex, fx32 delta);
 extern int func_ov001_0206db8c(int index);
 extern BOOL IsGroupMemberActive(int groupId, int index);
-extern void func_ov021_020a7fc4(void *table, int groupId, s32 time);
+extern void PlayCueGroupSounds(void *table, int groupId, s32 time);
 
 void Actor_AdvanceFrame(Actor *actor, fx32 delta)
 {
@@ -74,7 +74,7 @@ void Actor_AdvanceFrame(Actor *actor, fx32 delta)
     if (actor->action == 1) {
         speed = FX_Mul(delta, FX_Div(GetField28(), 0x333));
         if (actor->actionDone) {
-            func_ov021_020a8198(actor->cueTable, 1);
+            ResetIfIdMatches(actor->cueTable, 1);
         }
     } else {
         speed = delta;
@@ -133,5 +133,5 @@ void Actor_AdvanceFrame(Actor *actor, fx32 delta)
     if (actor->guardStock >= 0 && !IsGroupMemberActive(func_ov001_0206db8c(0), actor->guardStock)) {
         actor->guardStock = -1;
     }
-    func_ov021_020a7fc4(actor->cueTable, actor->action, actor->actionFrame);
+    PlayCueGroupSounds(actor->cueTable, actor->action, actor->actionFrame);
 }

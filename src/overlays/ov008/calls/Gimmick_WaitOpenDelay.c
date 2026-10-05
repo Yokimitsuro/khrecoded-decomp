@@ -26,7 +26,7 @@ typedef struct Gimmick {
     int unk_68;
 } Gimmick;
 
-extern int func_ov008_020a0e10(Gimmick *gimmick);
+extern int Gimmick_WaitOpenAnimEnd(Gimmick *gimmick);
 extern void ActorSlot_SetFlag8ByIndex(int index, BOOL enable);
 extern void selectJointAnimationBlend(void *animationState, u16 trackIndex, void *blendTable, s16 blendIndex);
 
@@ -41,7 +41,7 @@ int Gimmick_WaitOpenDelay(Gimmick *gimmick)
 {
     gimmick->timer += 0x1000;
     if (gimmick->timer >= gimmick->duration) {
-        gimmick->update = func_ov008_020a0e10;
+        gimmick->update = Gimmick_WaitOpenAnimEnd;
         gimmick->phase = 1;
         gimmick->unk_68 = 0;
         ActorSlot_SetFlag8ByIndex(gimmick->slotIndex, TRUE);

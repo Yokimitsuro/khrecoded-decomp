@@ -10,12 +10,12 @@ typedef struct FieldObject {
     fx32 stackHeight;
 } FieldObject;
 
-extern FieldObject *func_ov017_020a51a8(FieldObject *object);
-extern FieldObject *func_ov017_020a5168(FieldObject *object);
+extern FieldObject *FindInactiveOwnerAncestor(FieldObject *object);
+extern FieldObject *FindInactiveAncestor(FieldObject *object);
 
 void PropagateStackHeight(FieldObject *object)
 {
-    FieldObject *base = func_ov017_020a51a8(object);
+    FieldObject *base = FindInactiveOwnerAncestor(object);
     FieldObject *child;
 
     object->flags |= 2;
@@ -24,7 +24,7 @@ void PropagateStackHeight(FieldObject *object)
     } else {
         object->stackHeight = base->position.y;
     }
-    child = func_ov017_020a5168(object);
+    child = FindInactiveAncestor(object);
     if (child != NULL) {
         PropagateStackHeight(child);
     }

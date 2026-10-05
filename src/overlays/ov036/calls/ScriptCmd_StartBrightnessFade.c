@@ -7,7 +7,7 @@ typedef struct ScriptOperand {
 } ScriptOperand;
 
 extern int ScriptVm_ReadOperandInt(void *context, ScriptOperand *operand);
-extern void func_ov036_020bd6dc(u32 screen, int level, int duration);
+extern void StartScreenBrightnessFade_020bd6dc(u32 screen, int level, int duration);
 
 int ScriptCmd_StartBrightnessFade(void *context, ScriptOperand *operands)
 {
@@ -15,6 +15,6 @@ int ScriptCmd_StartBrightnessFade(void *context, ScriptOperand *operands)
     int duration = ScriptVm_ReadOperandInt(context, &operands[1]);
     int screen = ScriptVm_ReadOperandInt(context, &operands[2]);
 
-    func_ov036_020bd6dc(screen, level, duration);
+    StartScreenBrightnessFade_020bd6dc(screen, level, duration);
     return 1;
 }

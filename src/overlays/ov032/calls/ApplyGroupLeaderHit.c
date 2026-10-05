@@ -77,15 +77,15 @@ typedef struct PartySlot {
 
 extern ObjectGroup *func_ov032_020bbc80(GroupObject *object);
 extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
-extern BOOL func_ov032_020bf0a8(GroupWorld *world, int groupIndex);
-extern PartySlot *func_ov001_0209c1fc(u32 slot);
+extern BOOL IsRowSettledInMode5(GroupWorld *world, int groupIndex);
+extern PartySlot *GetStagePartySlot(u32 slot);
 extern s32 ForwardToActiveServiceInstance(u32 attackerId, AttackInfo *attack, u32 flags);
 extern void EnterFieldUnitPhase5(GroupObject *object, BOOL doReset);
 extern int Fx32ToIntTruncate(int value);
 extern void SpawnSoundSlot(int bank, int id, VecFx32 *position, int flags);
 extern void func_ov001_02088204(u32 slotIndex, u8 kind, u8 subKind, s32 hitPoints, s32 maxHitPoints, const VecFx32 *position);
 extern void HitAllGroupMembersExcept(GroupWorld *world, int groupIndex, GroupObject *object);
-extern void func_ov001_02063a80(int index, int amount);
+extern void AddSessionCounter(int index, int amount);
 extern void HandleEnemyDefeat(s32 group, s32 index, VecFx32 *position, BOOL notify, int level);
 
 void ApplyGroupLeaderHit(GroupObject *object, AttackInfo *attack)
@@ -100,8 +100,8 @@ void ApplyGroupLeaderHit(GroupObject *object, AttackInfo *attack)
         defeated = FALSE;
         if (attack != NULL) {
             if ((group->stunTimer == 0 || object->hitLevel == 0) &&
-                !func_ov032_020bf0a8(object->world, work->groupIndex)) {
-                group->hitPoints -= ForwardToActiveServiceInstance(func_ov001_0209c1fc(work->groupIndex)->attackerId, attack, 0);
+                !IsRowSettledInMode5(object->world, work->groupIndex)) {
+                group->hitPoints -= ForwardToActiveServiceInstance(GetStagePartySlot(work->groupIndex)->attackerId, attack, 0);
                 if (group->hitPoints < 0x1000) {
                     object->hitLevel = 0;
                     group->hitPoints = 0;
@@ -123,7 +123,7 @@ void ApplyGroupLeaderHit(GroupObject *object, AttackInfo *attack)
                 if (sound != -1) {
                     SpawnSoundSlot(0xf8, sound, &object->position, 0);
                 }
-            } else if (func_ov032_020bf0a8(object->world, work->groupIndex)) {
+            } else if (IsRowSettledInMode5(object->world, work->groupIndex)) {
                 attack->blocked = 1;
             }
         }
@@ -131,12 +131,12 @@ void ApplyGroupLeaderHit(GroupObject *object, AttackInfo *attack)
             func_ov001_02088204(work->groupIndex, object->world->kind, object->actorId, 0, group->maxHitPoints << 3,
                                 &object->position);
             HitAllGroupMembersExcept(object->world, work->groupIndex, object);
-            func_ov001_02063a80(0x1b, 1);
-            func_ov001_02063a80(0x13, 1);
+            AddSessionCounter(0x1b, 1);
+            AddSessionCounter(0x13, 1);
             HandleEnemyDefeat(-1, -1, &object->position, FALSE, -1);
         }
     } else {
-        if (func_ov032_020bf0a8(object->world, work->groupIndex)) {
+        if (IsRowSettledInMode5(object->world, work->groupIndex)) {
             return;
         }
         if (!group->state.bits.dirty) {

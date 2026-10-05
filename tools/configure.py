@@ -56,6 +56,15 @@ ABSOLUTE_SYMBOLS = {
     # Camera vectors live inside the main-module BSS rather than a compiled
     # translation unit, but recovered C references the structure by name.
     "NNS_G3dGlb_camPos": 0x0205AB3C,
+    # Geometry state also lives in the resident BSS.  Some recovered render
+    # helpers address the material cache directly.
+    "NNS_G3dGlb_prmMatColor0": 0x0205A9A4,
+    # CodeWarrior emits these helper names itself for float expressions, so
+    # identifier rewriting cannot retarget them to the EU raw symbol names.
+    "_fgr": 0x02023828,
+    "_ffix": 0x020241C0,
+    "_fflt": 0x02023AAC,
+    "_fadd": 0x020245FC,
 }
 
 

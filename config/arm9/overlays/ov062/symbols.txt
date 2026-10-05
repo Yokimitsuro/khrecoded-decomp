@@ -4,7 +4,7 @@ func_ov062_020d8180 kind:function(thumb,size=0x84) addr:0x020d8180
 AdvanceGroupUnitPhase kind:function(thumb,size=0x6e) addr:0x020d8204
 FireGroupShot kind:function(thumb,size=0xe0) addr:0x020d8274
 UpdateFinishingAttackAction kind:function(thumb,size=0xa8) addr:0x020d8354
-func_ov062_020d83fc kind:function(thumb,size=0x13c) addr:0x020d83fc
+CreateBossBattleObject kind:function(thumb,size=0x13c) addr:0x020d83fc
 sOv062_CmEB_020d8540 kind:data(any) addr:0x020d8540
 sOv062_BaEfFnEbP2_020d8548 kind:data(any) addr:0x020d8548
 sOv062_BaChFormatSCiBZ_020d8558 kind:data(any) addr:0x020d8558

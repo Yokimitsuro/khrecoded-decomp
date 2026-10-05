@@ -1,13 +1,13 @@
 #include "nitro/types.h"
 
 extern u32 ResetSceneSlots(void);
-extern u32 func_ov001_02086d28(void);
+extern u32 StepResourceSlotLoading(void);
 
 u32 TryEnterState4(void)
 {
     u32 result;
 
-    result = func_ov001_02086d28();
+    result = StepResourceSlotLoading();
     if (result == 0) {
         return 0xffffffff;
     }

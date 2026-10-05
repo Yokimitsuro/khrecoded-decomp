@@ -10,12 +10,12 @@ typedef struct CameraManager CameraManager;
 
 extern CameraManager *data_ov046_020c3500;
 extern void GetSegmentState(CameraManager *camera, CameraView *view);
-extern void func_ov046_020c1058(s32 mode, CameraView *view);
+extern void Camera_SetViewMode(s32 mode, CameraView *view);
 
 void Camera_ChangeModeFromCurrentView(s32 mode)
 {
     CameraView view;
 
     GetSegmentState(data_ov046_020c3500, &view);
-    func_ov046_020c1058(mode, &view);
+    Camera_SetViewMode(mode, &view);
 }

@@ -16,7 +16,7 @@ typedef struct CollisionPolygon {
 } CollisionPolygon;
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *source, VecFx32 *dest);
 
 void ComputePolygonEdgeFrames(CollisionPolygon *polygon)
@@ -37,13 +37,13 @@ void ComputePolygonEdgeFrames(CollisionPolygon *polygon)
         VEC_Normalize(&edgeCopy, &edgeDir);
         polygon->vertices[i].edgeDir = edgeDir;
     }
-    func_01ff9ea8(&polygon->vertices[1].edgeDir, &polygon->vertices[0].edgeDir, &cross);
+    VEC_CrossProduct(&polygon->vertices[1].edgeDir, &polygon->vertices[0].edgeDir, &cross);
     crossCopy = cross;
     VEC_Normalize(&crossCopy, &normal);
     polygon->normal = normal;
     for (i = 0; i < count; i++) {
         PolygonVertex *vertex = &polygon->vertices[i];
-        func_01ff9ea8(&polygon->normal, &vertex->edgeDir, &edgeNormal);
+        VEC_CrossProduct(&polygon->normal, &vertex->edgeDir, &edgeNormal);
         vertex->edgeNormal = edgeNormal;
     }
 }

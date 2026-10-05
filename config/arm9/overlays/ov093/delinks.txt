@@ -8,6 +8,26 @@ src/overlays/ov093/calls/CeilFx32.c:
     complete
     .text       start:0x020beb20 end:0x020beb40
 
+src/overlays/ov093/calls/InitEntryGridScene.c:
+    complete
+    .text       start:0x020beb40 end:0x020bed58
+
+src/overlays/ov093/calls/UpdateSceneFrame.c:
+    complete
+    .text       start:0x020bedd0 end:0x020bee5c
+
+src/overlays/ov093/calls/FinishGridPageScroll.c:
+    complete
+    .text       start:0x020bee5c end:0x020bf048
+
+src/overlays/ov093/calls/FinishGridPageScrollDual.c:
+    complete
+    .text       start:0x020bf048 end:0x020bf238
+
+src/overlays/ov093/calls/MoveGridCursorLeft.c:
+    complete
+    .text       start:0x020bf238 end:0x020bf3f8
+
 src/overlays/ov093/calls/ToggleSceneOption.c:
     complete
     .text       start:0x020bf63c end:0x020bf69c
@@ -20,25 +40,85 @@ src/overlays/ov093/calls/FreeResourceBlocks.c:
     complete
     .text       start:0x020bfab4 end:0x020bfae4
 
+src/overlays/ov093/calls/ReleaseSceneResources.c:
+    complete
+    .text       start:0x020bfd10 end:0x020bfd80
+
+src/overlays/ov093/calls/RedrawEntryPanelText.c:
+    complete
+    .text       start:0x020bfd80 end:0x020c0060
+
 src/overlays/ov093/calls/DrawShadowedAnchoredText_020c0060.c:
     complete
     .text       start:0x020c0060 end:0x020c00c4
+
+src/overlays/ov093/calls/InitEntrySlotSprites.c:
+    complete
+    .text       start:0x020c0120 end:0x020c02e0
 
 src/overlays/ov093/calls/ReleaseSceneObjManagers.c:
     complete
     .text       start:0x020c02e0 end:0x020c0310
 
+src/overlays/ov093/calls/SetSlotAnimFlag.c:
+    complete
+    .text       start:0x020c0330 end:0x020c0368
+
+src/overlays/ov093/calls/CreateSlotAnim.c:
+    complete
+    .text       start:0x020c0368 end:0x020c0478
+
+src/overlays/ov093/calls/SetSlotPosition.c:
+    complete
+    .text       start:0x020c0478 end:0x020c0584
+
 src/overlays/ov093/calls/RestartSlotAnim.c:
     complete
     .text       start:0x020c0584 end:0x020c05d8
+
+src/overlays/ov093/calls/RefreshEntryListSlots.c:
+    complete
+    .text       start:0x020c05d8 end:0x020c06a0
+
+src/overlays/ov093/calls/GetSlotAnimResource.c:
+    complete
+    .text       start:0x020c06a0 end:0x020c070c
+
+src/overlays/ov093/calls/ScrollBarStepUp.c:
+    complete
+    .text       start:0x020c0978 end:0x020c0abc
+
+src/overlays/ov093/calls/ScrollBarStepDown.c:
+    complete
+    .text       start:0x020c0abc end:0x020c0c0c
 
 src/overlays/ov093/calls/ConsumeScrollBarStep.c:
     complete
     .text       start:0x020c0c0c end:0x020c0c68
 
+src/overlays/ov093/calls/AdvanceScrollBarStep.c:
+    complete
+    .text       start:0x020c0c68 end:0x020c0cd0
+
+src/overlays/ov093/calls/UpdateDragAreaBounds.c:
+    complete
+    .text       start:0x020c1cc8 end:0x020c1d44
+
+src/overlays/ov093/calls/UpdateScrollBarDrag.c:
+    complete
+    .text       start:0x020c1d68 end:0x020c2078
+
 src/overlays/ov093/calls/ResetSmoothValue.c:
     complete
     .text       start:0x020c2078 end:0x020c20a0
+
+src/overlays/ov093/calls/SetSmoothValueImmediate.c:
+    complete
+    .text       start:0x020c20a0 end:0x020c2178
+
+src/overlays/ov093/calls/SetSmoothValueTarget.c:
+    complete
+    .text       start:0x020c2178 end:0x020c21f8
 
 src/overlays/ov093/calls/GetSmoothValueInt.c:
     complete
@@ -72,6 +152,18 @@ src/overlays/ov093/calls/WaitForBrightnessReset.c:
     complete
     .text       start:0x020c2378 end:0x020c23c8
 
+src/overlays/ov093/calls/RunEntryUnlockSequence.c:
+    complete
+    .text       start:0x020c23c8 end:0x020c2630
+
+src/overlays/ov093/calls/RunUnlockSequence.c:
+    complete
+    .text       start:0x020c2870 end:0x020c2970
+
+src/overlays/ov093/calls/RunPrizeMessageSequence.c:
+    complete
+    .text       start:0x020c2970 end:0x020c2b20
+
 src/overlays/ov093/auto/func_ov093_020c2b20.c:
     complete
     .text       start:0x020c2b20 end:0x020c2b24
@@ -80,9 +172,41 @@ src/overlays/ov093/calls/ShutdownPopupSystem.c:
     complete
     .text       start:0x020c2d64 end:0x020c2da0
 
+src/overlays/ov093/calls/UpdatePopupManager_020c2da0.c:
+    complete
+    .text       start:0x020c2da0 end:0x020c2e24
+
+src/overlays/ov093/calls/DrawPopupText_020c2e24.c:
+    complete
+    .text       start:0x020c2e24 end:0x020c2f3c
+
+src/overlays/ov093/calls/MeasurePopupTiles.c:
+    complete
+    .text       start:0x020c2fa8 end:0x020c30ac
+
+src/overlays/ov093/calls/SetPopupPosition.c:
+    complete
+    .text       start:0x020c30ac end:0x020c319c
+
 src/overlays/ov093/auto/func_ov093_020c31f4.c:
     complete
     .text       start:0x020c31f4 end:0x020c31f8
+
+src/overlays/ov093/calls/StartNextPopup.c:
+    complete
+    .text       start:0x020c31f8 end:0x020c326c
+
+src/overlays/ov093/calls/FadeInPopup.c:
+    complete
+    .text       start:0x020c338c end:0x020c3438
+
+src/overlays/ov093/calls/OpenPopupWindow_020c3438.c:
+    complete
+    .text       start:0x020c3438 end:0x020c34c4
+
+src/overlays/ov093/calls/FadeOutPopup.c:
+    complete
+    .text       start:0x020c353c end:0x020c35ec
 
 src/overlays/ov093/calls/ClosePopupPanel.c:
     complete

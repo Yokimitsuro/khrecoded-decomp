@@ -13,7 +13,7 @@ typedef struct EventTrigger {
 
 extern int func_ov001_02067ed4(void);
 extern s32 func_ov001_02087890(s32 mode);
-extern BOOL func_ov001_0208784c(u16 eventIndex);
+extern BOOL StageEvents_CheckEvent(u16 eventIndex);
 extern BOOL func_ov001_02069464(EventTrigger *trigger);
 
 int EventTrigger_Evaluate(EventTrigger *trigger)
@@ -29,7 +29,7 @@ int EventTrigger_Evaluate(EventTrigger *trigger)
         }
         break;
     case 1:
-        if (func_ov001_0208784c(trigger->eventIndex)) {
+        if (StageEvents_CheckEvent(trigger->eventIndex)) {
             trigger->fired = 1;
         }
         break;

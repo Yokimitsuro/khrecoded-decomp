@@ -11,7 +11,7 @@ typedef struct ListMenu {
 
 extern ListMenu *data_ov001_020a04f4;
 extern int HandleFallingPieceInput(ListMenu *menu, u32 keys);
-extern int func_ov001_0207e764(ListMenu *menu, u32 keys);
+extern int HandleDirectionalPrompt(ListMenu *menu, u32 keys);
 extern BOOL PlaySoundEffect(int seqArcNo, int index);
 
 int HandleListMenuConfirm(u32 keys) {
@@ -28,7 +28,7 @@ int HandleListMenuConfirm(u32 keys) {
         break;
     case 2:
     case 3:
-        result = func_ov001_0207e764(menu, keys);
+        result = HandleDirectionalPrompt(menu, keys);
         break;
     }
     if (result != 5 && result != 4) {

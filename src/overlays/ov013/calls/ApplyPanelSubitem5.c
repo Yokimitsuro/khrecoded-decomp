@@ -27,10 +27,10 @@ typedef struct PanelState {
 
 extern PanelState *data_ov013_02074ce0;
 extern PanelObject *FindWidgetById(void *panel, int id);
-extern void func_ov027_020b951c(void *panel, PanelObject *object, s32 useAlt);
+extern void ApplySelectedSubitemValues(void *panel, PanelObject *object, s32 useAlt);
 
 void ApplyPanelSubitem5(void)
 {
     u8 *panel = data_ov013_02074ce0->panel;
-    func_ov027_020b951c(panel, FindWidgetById(panel, 5), 0);
+    ApplySelectedSubitemValues(panel, FindWidgetById(panel, 5), 0);
 }

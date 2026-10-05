@@ -7,7 +7,7 @@ typedef struct {
 
 extern BOOL StepFieldObjectAnim(FieldUnit *unit);
 extern void func_ov016_020a2c64(FieldUnit *unit);
-extern void func_ov016_020a29c4(FieldUnit *unit);
+extern void EnterFieldUnitPhase6(FieldUnit *unit);
 
 BOOL UpdateFieldUnitAnimPhase(FieldUnit *unit)
 {
@@ -16,7 +16,7 @@ BOOL UpdateFieldUnitAnimPhase(FieldUnit *unit)
     }
     func_ov016_020a2c64(unit);
     if (!(unit->flags & 0x60)) {
-        func_ov016_020a29c4(unit);
+        EnterFieldUnitPhase6(unit);
     }
     return FALSE;
 }

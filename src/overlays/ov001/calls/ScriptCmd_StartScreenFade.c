@@ -12,9 +12,9 @@ typedef struct ScriptContext {
 } ScriptContext;
 
 extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operand);
-extern void func_ov001_0206a834(int enable);
+extern void SetScreenFlag200(int enable);
 extern void func_ov001_0206a72c(int mode);
-extern void func_ov001_0206a7c0(int mode);
+extern void BeginScreenFadeOut(int mode);
 
 int ScriptCmd_StartScreenFade(ScriptContext *context, ScriptOperand *operands)
 {
@@ -24,13 +24,13 @@ int ScriptCmd_StartScreenFade(ScriptContext *context, ScriptOperand *operands)
     if (context->isSkipping != 0) {
         return 1;
     }
-    func_ov001_0206a834(1);
+    SetScreenFlag200(1);
     switch (direction) {
     case 0:
         func_ov001_0206a72c(0);
         break;
     case 1:
-        func_ov001_0206a7c0(0);
+        BeginScreenFadeOut(0);
         break;
     }
     return 0;

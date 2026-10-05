@@ -37,8 +37,8 @@ typedef struct {
 extern ScriptGlobals data_ov021_020b56c4;
 extern TaggedValue *ResolveTaggedValueRef(ScriptContext *context, TaggedValue *value);
 extern s32 TaggedValueToInt(TaggedValue *value);
-extern StageObject *func_ov001_0209c114(u32 id);
-extern void func_ov001_020978b8(StageObject *object, u32 key, AttachPoint *out);
+extern StageObject *GetStageEventRecord(u32 id);
+extern void FindStageAttachPoint(StageObject *object, u32 key, AttachPoint *out);
 
 int ScriptOp_GetAttachPointScale(ScriptContext *context, TaggedValue *args)
 {
@@ -52,8 +52,8 @@ int ScriptOp_GetAttachPointScale(ScriptContext *context, TaggedValue *args)
     }
     context->resultType = 0x10;
     context->result = 0x1000;
-    if (actor->eventId != 0 && (object = func_ov001_0209c114(actor->eventId)) != NULL) {
-        func_ov001_020978b8(object, TaggedValueToInt(key), &point);
+    if (actor->eventId != 0 && (object = GetStageEventRecord(actor->eventId)) != NULL) {
+        FindStageAttachPoint(object, TaggedValueToInt(key), &point);
         context->result = point.scale.x;
     }
     return 0;

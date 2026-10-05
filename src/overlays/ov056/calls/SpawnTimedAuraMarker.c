@@ -41,7 +41,7 @@ typedef struct {
     s8 handle;
 } AuraMarker;
 
-extern s32 func_ov052_020ceb9c(AuraActor *actor);
+extern s32 GetLinkedAngleOffset(AuraActor *actor);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern s8 func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 
@@ -52,7 +52,7 @@ void SpawnTimedAuraMarker(AuraMarker *marker, AuraActor *actor, s32 frame)
     if (marker->handle != -1 || actor->busy != 0 || frame >= marker->endFrame || frame < marker->startFrame) {
         return;
     }
-    func_ov052_020ceb9c(actor);
+    GetLinkedAngleOffset(actor);
     ResetAnimationTrackState(&request);
     request.id = actor->markerId;
     request.mode = 1;

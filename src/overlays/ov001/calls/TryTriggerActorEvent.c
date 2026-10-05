@@ -15,8 +15,8 @@ typedef struct EventTrigger {
 
 extern EventActor *GetStageActor(int id);
 extern u32 func_ov001_0209c5ac(u32 mask);
-extern s32 *func_ov001_0209c114(u32 id);
-extern BOOL func_ov001_0209624c(s32 *type);
+extern s32 *GetStageEventRecord(u32 id);
+extern BOOL IsCommandType8(s32 *type);
 extern void func_ov001_02093f14(s32 *record);
 
 void TryTriggerActorEvent(EventTrigger *trigger, BOOL busy)
@@ -33,8 +33,8 @@ void TryTriggerActorEvent(EventTrigger *trigger, BOOL busy)
     if (actor->eventMode != 1) {
         return;
     }
-    record = func_ov001_0209c114(actor->eventId);
-    if (record == NULL || func_ov001_0209624c(record)) {
+    record = GetStageEventRecord(actor->eventId);
+    if (record == NULL || IsCommandType8(record)) {
         return;
     }
     func_ov001_02093f14(record);

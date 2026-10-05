@@ -16,7 +16,7 @@ extern NNSG3dRenderState *NNS_G3dRS;
 
 extern void ModelAnimation_GetJointSRTResult(void *model, void *record, u32 packed,
                           u32 coordinate, u32 *result, u32 *scratch);
-extern void func_01ffd6ac(void *model, void *record, u32 packed,
+extern void GetJointSRTAnimResult(void *model, void *record, u32 packed,
                           u32 coordinate, u32 *result, u32 *scratch);
 
 void func_01ffd934(u32 *result, u32 *input, s32 index)
@@ -48,7 +48,7 @@ void func_01ffd934(u32 *result, u32 *input, s32 index)
         ModelAnimation_GetJointSRTResult(model, model + offset, packed, coordinate,
                       result, scratch);
     } else {
-        func_01ffd6ac(model, model + offset, packed, coordinate,
+        GetJointSRTAnimResult(model, model + offset, packed, coordinate,
                       result, scratch);
     }
 

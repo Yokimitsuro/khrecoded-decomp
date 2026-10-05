@@ -27,7 +27,7 @@ typedef struct PanelState {
 
 extern PanelState *data_ov013_02074ce0;
 extern PanelObject *FindWidgetById(void *panel, int id);
-extern void func_ov027_020b9704(void *panel, PanelObject *object);
+extern void SetFocusedWidget(void *panel, PanelObject *object);
 extern BOOL PlaySoundEffect(int seqArcNo, int index);
 
 void SelectPanelResultMode1(void)
@@ -35,6 +35,6 @@ void SelectPanelResultMode1(void)
     PanelObject *object;
     data_ov013_02074ce0->resultMode = 1;
     object = FindWidgetById(data_ov013_02074ce0->panel, 9);
-    func_ov027_020b9704(data_ov013_02074ce0->panel, object);
+    SetFocusedWidget(data_ov013_02074ce0->panel, object);
     PlaySoundEffect(2, 1);
 }

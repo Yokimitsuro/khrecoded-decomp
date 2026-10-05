@@ -25,7 +25,7 @@ extern SelectionRecord *GetOverlaySelectionRecord(u32 index);
 extern int CheckStatusAndThreshold(void);
 extern int ComputeScaledPercentPlusOne(void);
 extern u32 func_0202a9e4(u32 range);
-extern void func_ov001_0206838c(int level, RewardItem *reward);
+extern void RollLevelBonus(int level, RewardItem *reward);
 extern void func_ov001_020683e0(RewardItem *reward);
 extern u32 func_ov001_020664f0(int kind, u32 reward, u32 owner, int flags);
 extern void SetGlobalPackedBit(int bit);
@@ -68,7 +68,7 @@ void RollEnemyDrop(int level, int recordId, u32 owner, BOOL reduced)
         reward.id = data_ov001_0209da7a[func_0202a9e4(13)];
     }
     if (reward.bonus == 0xff) {
-        func_ov001_0206838c(level, &reward);
+        RollLevelBonus(level, &reward);
     }
     if (IsEquipmentId(reward.id)) {
         func_ov001_020683e0(&reward);

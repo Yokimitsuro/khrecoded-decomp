@@ -14,15 +14,15 @@ typedef struct {
 
 extern FieldManagerHandle data_ov001_020a04c4;
 
-extern void func_ov001_02075008(u16 tickerMode, u32 tickerValue);
-extern void func_ov001_0206ff10(int messageId);
+extern void RestartRequestQueue(u16 tickerMode, u32 tickerValue);
+extern void DrawFieldMessageById(int messageId);
 
 void ShowFieldMessageLine(u16 tickerMode, u32 tickerValue, int messageId, BOOL resetTicker)
 {
     if (data_ov001_020a04c4.manager->isPaused != 1 && tickerValue != 0) {
         if (resetTicker) {
-            func_ov001_02075008(tickerMode, tickerValue);
+            RestartRequestQueue(tickerMode, tickerValue);
         }
-        func_ov001_0206ff10(messageId);
+        DrawFieldMessageById(messageId);
     }
 }

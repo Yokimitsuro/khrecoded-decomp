@@ -7,9 +7,9 @@ extern void func_ov036_020bdd50(void);
 extern void func_ov036_020bdd74(void); /* ScriptCmd_EnterPhase */
 extern void func_ov036_020bdd84(void);
 extern void func_ov036_020bddb4(void); /* IsSceneState0 */
-extern void func_ov036_020bde28(void); /* ScriptCmd_OpenActorTextWindow */
-extern void func_ov036_020bdeec(void); /* ScriptCmd_OpenTextWindowAtCursor */
-extern void func_ov036_020bdfa8(void); /* ScriptCmd_OpenWindowAtPoint */
+extern void ScriptCmd_OpenActorTextWindow(void); /* ScriptCmd_OpenActorTextWindow */
+extern void ScriptCmd_OpenTextWindowAtCursor(void); /* ScriptCmd_OpenTextWindowAtCursor */
+extern void ScriptCmd_OpenWindowAtPoint(void); /* ScriptCmd_OpenWindowAtPoint */
 extern void ScriptCmd_WaitWindowChoice(void); /* ScriptCmd_WaitWindowChoice */
 extern void func_ov036_020be098(void); /* FS_UnloadOverlayImage */
 extern void func_ov036_020be0a4(void); /* DefaultStepDone */
@@ -22,7 +22,7 @@ extern void func_ov036_020be14c(void);
 extern void func_ov036_020be170(void);
 extern void func_ov036_020be1b0(void); /* ScriptCmd_EnterPhase */
 extern void func_ov036_020be1c0(void);
-extern void func_ov036_020be200(void); /* ScriptCmd_ShowJoinedMessage */
+extern void ScriptCmd_ShowJoinedMessage(void); /* ScriptCmd_ShowJoinedMessage */
 extern void ScriptCmd_ShowMessageWindow_020be284(void); /* ScriptCmd_ShowMessageWindow */
 extern void func_ov036_020be344(void);
 extern void func_ov036_020be3cc(void);
@@ -30,12 +30,12 @@ extern void ScriptCmd_WaitWindowAnswer(void); /* ScriptCmd_WaitWindowAnswer */
 extern void func_ov036_020be4ec(void);
 extern void ScriptCmd_ResetAndDispatch_020be55c(void); /* ScriptCmd_ResetAndDispatch */
 extern void func_ov036_020be57c(void); /* PXI_Init */
-extern void func_ov036_020be584(void); /* ScriptCmd_PlaceEntityAndMove */
+extern void ScriptCmd_PlaceEntityAndMove(void); /* ScriptCmd_PlaceEntityAndMove */
 extern void ScriptCmd_SetEntityMotion(void); /* ScriptCmd_SetEntityMotion */
 extern void func_ov036_020be628(void);
 extern void ScriptCmd_StartBrightnessFade(void); /* ScriptCmd_StartBrightnessFade */
 extern void func_ov036_020be67c(void);
-extern void func_ov036_020be6bc(void); /* ScriptCmd_OpenFormattedTextWindow */
+extern void ScriptCmd_OpenFormattedTextWindow(void); /* ScriptCmd_OpenFormattedTextWindow */
 extern void func_ov036_020be78c(void); /* FSi_CloseFileCommand */
 extern void IsResourceReadyOrInitialize_020be790(void); /* IsResourceReadyOrInitialize */
 extern void ScriptCmd_StartMosaicTransition(void); /* ScriptCmd_StartMosaicTransition */
@@ -53,11 +53,11 @@ void (*gTextScriptCommandHandlers[64])(void) = {
     NULL,
     func_ov036_020bdd84,
     func_ov036_020bddb4, /* IsSceneState0 */
-    func_ov036_020bde28, /* ScriptCmd_OpenActorTextWindow */
+    ScriptCmd_OpenActorTextWindow, /* ScriptCmd_OpenActorTextWindow */
     NULL,
-    func_ov036_020bdeec, /* ScriptCmd_OpenTextWindowAtCursor */
+    ScriptCmd_OpenTextWindowAtCursor, /* ScriptCmd_OpenTextWindowAtCursor */
     NULL,
-    func_ov036_020bdfa8, /* ScriptCmd_OpenWindowAtPoint */
+    ScriptCmd_OpenWindowAtPoint, /* ScriptCmd_OpenWindowAtPoint */
     NULL,
     ScriptCmd_WaitWindowChoice, /* ScriptCmd_WaitWindowChoice */
     NULL,
@@ -77,7 +77,7 @@ void (*gTextScriptCommandHandlers[64])(void) = {
     NULL,
     func_ov036_020be1c0,
     NULL,
-    func_ov036_020be200, /* ScriptCmd_ShowJoinedMessage */
+    ScriptCmd_ShowJoinedMessage, /* ScriptCmd_ShowJoinedMessage */
     NULL,
     ScriptCmd_ShowMessageWindow_020be284, /* ScriptCmd_ShowMessageWindow */
     NULL,
@@ -89,7 +89,7 @@ void (*gTextScriptCommandHandlers[64])(void) = {
     NULL,
     ScriptCmd_ResetAndDispatch_020be55c, /* ScriptCmd_ResetAndDispatch */
     func_ov036_020be57c, /* PXI_Init */
-    func_ov036_020be584, /* ScriptCmd_PlaceEntityAndMove */
+    ScriptCmd_PlaceEntityAndMove, /* ScriptCmd_PlaceEntityAndMove */
     NULL,
     ScriptCmd_SetEntityMotion, /* ScriptCmd_SetEntityMotion */
     NULL,
@@ -99,7 +99,7 @@ void (*gTextScriptCommandHandlers[64])(void) = {
     NULL,
     func_ov036_020be67c,
     NULL,
-    func_ov036_020be6bc, /* ScriptCmd_OpenFormattedTextWindow */
+    ScriptCmd_OpenFormattedTextWindow, /* ScriptCmd_OpenFormattedTextWindow */
     NULL,
     func_ov036_020be78c, /* FSi_CloseFileCommand */
     IsResourceReadyOrInitialize_020be790, /* IsResourceReadyOrInitialize */

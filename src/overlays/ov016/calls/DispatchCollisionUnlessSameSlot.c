@@ -14,12 +14,12 @@ typedef struct SlotRecord {
 } SlotRecord;
 
 extern SlotRecord *func_ov032_020bbc80(FieldObject *object);
-extern int func_ov016_020a5150(FieldObject *object, void *other, void *context);
+extern int DispatchActorCollision(FieldObject *object, void *other, void *context);
 
 int DispatchCollisionUnlessSameSlot(FieldObject *object, void *other, void *context)
 {
     if (object->stateLevel >= 5 && object->slotIndex == func_ov032_020bbc80(object)->slotIndex) {
         return 0;
     }
-    return func_ov016_020a5150(object, other, context);
+    return DispatchActorCollision(object, other, context);
 }

@@ -23,7 +23,7 @@ typedef struct ModelOwner {
 
 extern AttachedMatrix *GetAttachedObject(ModelOwner *owner);
 extern AttachedMatrix *GetObjectAttachment(AttachedMatrix *object);
-extern BOOL func_ov001_0208f2dc(u8 *node, Matrix43 *posMtx, u32 nodeId, BOOL applyCorrection);
+extern BOOL RestoreNodeMatrixWithRotationCorrection(u8 *node, Matrix43 *posMtx, u32 nodeId, BOOL applyCorrection);
 
 void GetNodeMatrix(ModelOwner *owner, u32 nodeId, Matrix43 *out)
 {
@@ -40,5 +40,5 @@ void GetNodeMatrix(ModelOwner *owner, u32 nodeId, Matrix43 *out)
             return;
         }
     }
-    func_ov001_0208f2dc(part->node, out, nodeId, TRUE);
+    RestoreNodeMatrixWithRotationCorrection(part->node, out, nodeId, TRUE);
 }

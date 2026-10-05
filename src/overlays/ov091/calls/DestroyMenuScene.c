@@ -6,7 +6,7 @@ typedef struct {
 } MenuScene;
 
 extern void func_ov091_020c27ec(void *task);
-extern void func_ov091_020bfa4c(MenuScene *scene);
+extern void ReleaseListRecords(MenuScene *scene);
 extern void ReleaseListPanels(MenuScene *scene);
 extern void ReleaseTextLayers(MenuScene *scene);
 extern void FreeGraphicsResources(MenuScene *scene);
@@ -17,7 +17,7 @@ extern void SetStateFlagBits(u8 clearMask, u8 setBits);
 void DestroyMenuScene(MenuScene *scene)
 {
     func_ov091_020c27ec(scene->task);
-    func_ov091_020bfa4c(scene);
+    ReleaseListRecords(scene);
     ReleaseListPanels(scene);
     ReleaseTextLayers(scene);
     FreeGraphicsResources(scene);

@@ -43,8 +43,8 @@ extern void SetFieldUnitPosition(FieldObject *object, VecFx32 *position);
 extern void func_ov001_0208645c(FieldObject *object, int mode);
 extern void StartFieldUnitMotion(FieldObject *object, fx32 speed, u16 angle);
 extern void SpawnSoundSlot(int bank, int id, VecFx32 *position, int flags);
-extern void func_ov016_020a29c4(FieldObject *object);
-extern void func_ov016_020a351c(FieldObject *object, int arg);
+extern void EnterFieldUnitPhase6(FieldObject *object);
+extern void MoveFieldObjectWithCollision(FieldObject *object, int arg);
 
 int UpdateSlidingFieldObject(FieldObject *object)
 {
@@ -94,7 +94,7 @@ int UpdateSlidingFieldObject(FieldObject *object)
                 SpawnSoundSlot(0, 0x3e, &object->position, 0);
                 object->state = 2;
             } else {
-                func_ov016_020a29c4(object);
+                EnterFieldUnitPhase6(object);
             }
         }
         object->velocity = velocity;
@@ -119,6 +119,6 @@ int UpdateSlidingFieldObject(FieldObject *object)
         }
         break;
     }
-    func_ov016_020a351c(object, 1);
+    MoveFieldObjectWithCollision(object, 1);
     return 0;
 }

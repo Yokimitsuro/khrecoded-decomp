@@ -16,12 +16,12 @@ typedef struct FieldMenuHandle {
 } FieldMenuHandle;
 
 extern FieldMenuHandle data_ov001_020a04d0;
-extern FieldMenuEntry *func_ov001_020754d8(FieldMenu *menu, int listKind, int entryId, s32 *outIndex);
+extern FieldMenuEntry *FindFieldMenuEntryById(FieldMenu *menu, int listKind, int entryId, s32 *outIndex);
 extern BOOL IsFieldFlag13OrSessionFlagSet(void);
 
 void SetMenuEntryHighlight(int listKind, int entryId, BOOL highlighted)
 {
-    FieldMenuEntry *entry = func_ov001_020754d8(data_ov001_020a04d0.menu, listKind, entryId, NULL);
+    FieldMenuEntry *entry = FindFieldMenuEntryById(data_ov001_020a04d0.menu, listKind, entryId, NULL);
 
     if (entry == NULL) {
         return;

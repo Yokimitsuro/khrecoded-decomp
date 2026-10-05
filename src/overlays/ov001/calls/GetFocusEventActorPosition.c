@@ -19,7 +19,7 @@ typedef struct StageManager {
 extern StageManager *data_ov001_020a0528;
 
 extern StageActor *GetStageActor(int id);
-extern StageEventRecord *func_ov001_0209c114(u32 id);
+extern StageEventRecord *GetStageEventRecord(u32 id);
 
 BOOL GetFocusEventActorPosition(VecFx32 *out)
 {
@@ -29,7 +29,7 @@ BOOL GetFocusEventActorPosition(VecFx32 *out)
     if (data_ov001_020a0528->focusEventId == 0) {
         return FALSE;
     }
-    record = func_ov001_0209c114(data_ov001_020a0528->focusEventId);
+    record = GetStageEventRecord(data_ov001_020a0528->focusEventId);
     if (record == NULL) {
         return FALSE;
     }

@@ -8,9 +8,17 @@ src/overlays/ov008/calls/ScriptCmd_CreateObjectInSlot.c:
     complete
     .text       start:0x020a0540 end:0x020a056a
 
+src/overlays/ov008/calls/ScriptCmd_CreateDelayedGimmick.c:
+    complete
+    .text       start:0x020a056c end:0x020a0650
+
 src/overlays/ov008/calls/ScriptCmd_CreateObjectWithParamInSlot.c:
     complete
     .text       start:0x020a0650 end:0x020a0688
+
+src/overlays/ov008/calls/ScriptCmd_CreateChildSpawner.c:
+    complete
+    .text       start:0x020a0688 end:0x020a06fa
 
 src/overlays/ov008/calls/SetFieldObjectPosition.c:
     complete
@@ -24,13 +32,29 @@ src/overlays/ov008/auto/func_ov008_020a0978.c:
     complete
     .text       start:0x020a0978 end:0x020a097c
 
+src/overlays/ov008/calls/UpdateChildSpawnerStage.c:
+    complete
+    .text       start:0x020a097c end:0x020a0a28
+
+src/overlays/ov008/calls/DrawChildSpawner.c:
+    complete
+    .text       start:0x020a0a28 end:0x020a0ad2
+
 src/overlays/ov008/calls/ReleaseChildObjects.c:
     complete
     .text       start:0x020a0ad4 end:0x020a0b36
 
+src/overlays/ov008/calls/CreateChildSpawnerObject.c:
+    complete
+    .text       start:0x020a0be0 end:0x020a0c48
+
 src/overlays/ov008/calls/GetAttachPointOffset.c:
     complete
     .text       start:0x020a0c48 end:0x020a0c84
+
+src/overlays/ov008/calls/RespawnDelayedGimmick.c:
+    complete
+    .text       start:0x020a0c84 end:0x020a0d70
 
 src/overlays/ov008/auto/func_ov008_020a0d70.c:
     complete
@@ -48,9 +72,21 @@ src/overlays/ov008/calls/Gimmick_WaitOpenDelay.c:
     complete
     .text       start:0x020a0dac end:0x020a0e10
 
+src/overlays/ov008/calls/Gimmick_WaitOpenAnimEnd.c:
+    complete
+    .text       start:0x020a0e10 end:0x020a0e88
+
+src/overlays/ov008/calls/IsOwnerStatusActive.c:
+    complete
+    .text       start:0x020a10d0 end:0x020a10e4
+
 src/overlays/ov008/calls/ApplyScaledVelocityToPlayer.c:
     complete
     .text       start:0x020a10e4 end:0x020a1128
+
+src/overlays/ov008/calls/CreateDelayedGimmickObject.c:
+    complete
+    .text       start:0x020a11c0 end:0x020a122c
 
 src/overlays/ov008/calls/SlotTable_Init.c:
     complete
@@ -59,6 +95,10 @@ src/overlays/ov008/calls/SlotTable_Init.c:
 src/overlays/ov008/calls/SlotTable_GetEntry.c:
     complete
     .text       start:0x020a127c end:0x020a129e
+
+src/overlays/ov008/calls/SlotTable_FindNearestFree.c:
+    complete
+    .text       start:0x020a12a0 end:0x020a132c
 
 src/overlays/ov008/calls/ClaimSlot.c:
     complete

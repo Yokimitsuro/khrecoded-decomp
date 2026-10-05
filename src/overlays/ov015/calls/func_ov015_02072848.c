@@ -1,5 +1,5 @@
-extern void *func_ov015_020707f0();
+extern void *SelectPrevPanelPage();
 
 void *func_ov015_02072848() {
-    return func_ov015_020707f0();
+    return SelectPrevPanelPage();
 }

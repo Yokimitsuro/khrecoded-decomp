@@ -71,7 +71,7 @@ extern CollisionShape InitCylinderShape(CylinderStorage *storage, const VecFx32 
 extern void OffsetBoxByDelta(const Box *src, Box *dst, const VecFx32 *delta);
 extern void CollisionQuery_Init(CollisionQuery *query, u16 id, void *actor, u8 kind, u8 unk3C, u8 unk3D, void *shape, QueryWorkspace *workspace, void *filter);
 extern void *SweepWorldCollision(CollisionQuery *query);
-extern void func_ov021_020a94d0(void);
+extern void CanStartTargetAction(void);
 extern void func_ov058_020d50cc(Enemy *enemy);
 
 void CheckEnemyContactAbove(Enemy *enemy)
@@ -108,7 +108,7 @@ void CheckEnemyContactAbove(Enemy *enemy)
     sweptCopy = swept;
     CollisionQuery_Init(&query, 0, enemy->model, 8, 1, 1, &sweptCopy, &workspace, NULL);
     sweep = query;
-    callback.func = func_ov021_020a94d0;
+    callback.func = CanStartTargetAction;
     callback.arg = NULL;
     sweep.callback = callback;
     if (SweepWorldCollision(&sweep) != NULL && (count = workspace.count) > 0) {

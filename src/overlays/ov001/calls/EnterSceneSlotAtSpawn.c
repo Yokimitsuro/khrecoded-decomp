@@ -22,7 +22,7 @@ typedef struct SceneArgs {
 extern const SceneSpawnTable data_ov001_0209d8c8;
 extern SceneArgs data_02060850;
 
-extern void func_ov001_0206317c(int sceneId, int roomId, int mode, int param);
+extern void ConfigureFieldTracks(int sceneId, int roomId, int mode, int param);
 
 void EnterSceneSlotAtSpawn(int slot, BOOL alternate)
 {
@@ -37,7 +37,7 @@ void EnterSceneSlotAtSpawn(int slot, BOOL alternate)
         spawnX = 0xe;
         spawnY = 0x16;
     }
-    func_ov001_0206317c(sceneId, roomId, 1, 3);
+    ConfigureFieldTracks(sceneId, roomId, 1, 3);
     data_02060850.spawnX = spawnX;
     data_02060850.spawnY = spawnY;
 }

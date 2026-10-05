@@ -33,7 +33,7 @@ typedef struct {
 extern ScriptGlobals data_ov021_020b56c4;
 extern fx32 Anim_GetFrame(AnimTrackSet *tracks, u16 index);
 extern fx32 func_0202f4cc(AnimTrackSet *tracks, u16 index);
-extern fx32 func_ov001_02091840(PlayerActor *actor);
+extern fx32 ApplyActorScaleFactors(PlayerActor *actor);
 
 int ScriptOp_IsPlayerAnimDone(ScriptContext *context)
 {
@@ -53,7 +53,7 @@ int ScriptOp_IsPlayerAnimDone(ScriptContext *context)
     if (model->tracks.frames[0] < 0) {
         context->result = 1;
     }
-    if (frame >= length - func_ov001_02091840(player)) {
+    if (frame >= length - ApplyActorScaleFactors(player)) {
         context->result = 1;
     }
     return 0;

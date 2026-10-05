@@ -19,8 +19,8 @@ typedef struct GroupMember {
 } GroupMember;
 
 extern GroupMember *GetStageActor(s16 groupId);
-extern void func_ov001_020911bc(GroupMember *member);
-extern void func_ov021_020b4b9c(AnimController *controller);
+extern void ClearActorMotionState(GroupMember *member);
+extern void CopySourceWords(AnimController *controller);
 extern void ClearWalkerStepState(GroupMember *member);
 extern void func_ov001_02091ae8(GroupMember *member, u32 slotKey, u32 slotSubKey, int reserved);
 extern u32 func_ov001_020925e4(GroupActor *actor, u32 state);
@@ -32,8 +32,8 @@ void ResetGroupLeaderAndSetState(GroupActor *actor)
     if (leader != NULL) {
         actor->groupFlagA = 0;
         actor->groupFlagB = 0;
-        func_ov001_020911bc(leader);
-        func_ov021_020b4b9c(&leader->animController);
+        ClearActorMotionState(leader);
+        CopySourceWords(&leader->animController);
         ClearWalkerStepState(leader);
         func_ov001_02091ae8(leader, 0xffff, 0xffff, 0);
         func_ov001_020925e4(actor, 11);

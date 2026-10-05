@@ -6,9 +6,9 @@ typedef struct StageSlots {
 } StageSlots;
 
 extern StageSlots *data_ov001_020a0528;
-extern int func_ov001_0208f0e4(void *slot);
+extern int AllocPoolNode(void *slot);
 
 int ReleaseStageSlot(int index)
 {
-    return func_ov001_0208f0e4(data_ov001_020a0528->slots[index]);
+    return AllocPoolNode(data_ov001_020a0528->slots[index]);
 }

@@ -9,7 +9,7 @@ typedef struct EventPlacement {
 } EventPlacement;
 
 extern int data_ov001_0209f2e8;
-extern u8 *func_ov001_0209c114(u32 id);
+extern u8 *GetStageEventRecord(u32 id);
 extern void MI_CpuFill8(void *dest, u8 value, u32 size);
 extern int func_ov001_02096644(u8 *record, int arg, EventPlacement *placement);
 
@@ -19,7 +19,7 @@ int QueryStageEventPlacement(u32 id, int arg, VecFx32 *position, u16 *direction)
     int result;
 
     if (data_ov001_0209f2e8 != -1) {
-        record = func_ov001_0209c114(id);
+        record = GetStageEventRecord(id);
         MI_CpuFill8(&placement, 0, sizeof(EventPlacement));
         if (record != NULL) {
             result = func_ov001_02096644(record, arg, &placement);

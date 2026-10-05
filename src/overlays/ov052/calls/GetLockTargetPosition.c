@@ -29,7 +29,7 @@ typedef struct {
 } Actor;
 
 extern u32 func_ov001_0207f060(u32 group, u32 index);
-extern int func_ov001_0207fa3c(u32 task, VecFx32 *out, TargetInfo *info);
+extern int ForwardIfWorkMode12(u32 task, VecFx32 *out, TargetInfo *info);
 extern u32 func_ov001_0208724c(u32 group, u32 index);
 extern unsigned int func_ov001_020863f4(u32 entry, VecFx32 *out);
 
@@ -51,7 +51,7 @@ BOOL GetLockTargetPosition(Actor *actor, VecFx32 *out)
     info = &lock->target->owner->info;
     switch (info->kind) {
     case 2:
-        if (func_ov001_0207fa3c(func_ov001_0207f060(info->group, info->index), &position, info)) {
+        if (ForwardIfWorkMode12(func_ov001_0207f060(info->group, info->index), &position, info)) {
             result = TRUE;
         }
         break;

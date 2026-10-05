@@ -46,7 +46,7 @@ extern void GX_LoadBGPltt(const void *src, u32 offset, u32 size);
 extern void GX_LoadBG3Char(const void *src, u32 offset, u32 size);
 extern void GX_LoadBG3Scr(const void *src, u32 offset, u32 size);
 extern void NNS_G2dBGSetupEx(int bg, NNSG2dScreenData *screen, NNSG2dCharacterData *character, NNSG2dPaletteData *palette, int a, int b, int c, int d);
-extern void func_ov036_020bd8e8(void);
+extern void ToggleSceneBlendAndClearColor(void);
 extern void G2x_SetBlendBrightness_(u32 regAddr, int plane, int brightness);
 extern void GXx_SetMasterBrightness_(u32 reg, int value);
 extern u32 GetMainBg3Priority(void);
@@ -132,7 +132,7 @@ void UpdatePanelScreenSetup(void)
             NNS_G2dBGSetupEx(3, panel->graphics.screen, panel->graphics.character, panel->graphics.palette, 0, 0, 0x1f, 0);
         }
         if (func_ov001_02063a38() == 8) {
-            func_ov036_020bd8e8();
+            ToggleSceneBlendAndClearColor();
         } else {
             SetBlendBrightness(GetVisiblePlane(), -8);
         }

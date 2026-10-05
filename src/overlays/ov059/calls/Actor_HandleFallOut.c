@@ -39,8 +39,8 @@ extern fx32 IsStatePhase4(void);
 extern RespawnPoint *func_ov021_020af614(void);
 extern int FX_Mul(int left, int right);
 extern void Obj_SetPosition(void *entity, const VecFx32 *position);
-extern void func_ov059_020cb988(Actor *actor);
-extern void func_ov001_02078800(int id);
+extern void Actor_ExitCommandMode(Actor *actor);
+extern void FieldMenu_FocusEntryById(int id);
 
 void Actor_HandleFallOut(Actor *actor) {
     int damage;
@@ -64,10 +64,10 @@ void Actor_HandleFallOut(Actor *actor) {
             actor->setState(actor, 3);
         }
         actor->moveVelocity = data_0205344c;
-        func_ov059_020cb988(actor);
+        Actor_ExitCommandMode(actor);
         if (actor->mode != 1) {
             actor->mode = 0;
         }
     }
-    func_ov001_02078800(-1);
+    FieldMenu_FocusEntryById(-1);
 }

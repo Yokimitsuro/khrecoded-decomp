@@ -26,7 +26,7 @@ typedef struct Actor {
 
 extern void NNS_G3dRenderObjResetCallBack(RenderObj *renderObj);
 extern void NNS_G3dRenderObjSetCallBack(RenderObj *renderObj, SbcCallback callback, u8 *unused, u8 cmd, int timing);
-extern void func_ov001_020897f8(struct NNSG3dRS_ *rs);
+extern void CopySessionResourceBuffer(struct NNSG3dRS_ *rs);
 extern void PXI_Init_0202f5d0(struct NNSG3dRS_ *rs);
 
 void Actor_InstallModelCallback(Actor *actor)
@@ -35,7 +35,7 @@ void Actor_InstallModelCallback(Actor *actor)
 
     NNS_G3dRenderObjResetCallBack(renderObj);
     if (actor->useAltCallback == 0) {
-        NNS_G3dRenderObjSetCallBack(renderObj, func_ov001_020897f8, NULL, 6, 3);
+        NNS_G3dRenderObjSetCallBack(renderObj, CopySessionResourceBuffer, NULL, 6, 3);
         return;
     }
     NNS_G3dRenderObjSetCallBack(renderObj, PXI_Init_0202f5d0, NULL, 6, 3);

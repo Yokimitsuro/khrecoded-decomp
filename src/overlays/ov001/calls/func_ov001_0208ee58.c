@@ -1,8 +1,8 @@
 extern int ScriptVm_ReadOperandInt();
-extern int func_ov001_0208c164();
+extern int FrameCameraOnActor();
 
 int func_ov001_0208ee58(int arg0) {
     ScriptVm_ReadOperandInt(arg0);
-    func_ov001_0208c164();
+    FrameCameraOnActor();
     return 1;
 }

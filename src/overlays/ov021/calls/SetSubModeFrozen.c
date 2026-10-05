@@ -7,7 +7,7 @@ typedef struct SubModeState {
 extern SubModeState *data_ov021_020b56c0;
 
 extern void Camera_SetFrozen(BOOL frozen);
-extern void func_ov043_020bcb34(BOOL frozen);
+extern void SetCameraFlag4(BOOL frozen);
 extern void SetPanelFlagBit1(BOOL frozen);
 
 void SetSubModeFrozen(BOOL frozen)
@@ -19,7 +19,7 @@ void SetSubModeFrozen(BOOL frozen)
     case 1:
         break;
     case 2:
-        func_ov043_020bcb34(frozen);
+        SetCameraFlag4(frozen);
         break;
     case 3:
         SetPanelFlagBit1(frozen);

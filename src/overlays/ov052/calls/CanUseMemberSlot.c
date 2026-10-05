@@ -12,7 +12,7 @@ typedef struct {
 
 extern unsigned int GetMemberValue(int *container, int index);
 extern Member *GetMemberByIndex(int *container, int index);
-extern BOOL func_ov021_020ae748(MemberInfo *counter);
+extern BOOL IsCountBelowLimit(MemberInfo *counter);
 
 BOOL CanUseMemberSlot(int entity, int index)
 {
@@ -26,7 +26,7 @@ BOOL CanUseMemberSlot(int entity, int index)
         break;
     case 2:
         member = GetMemberByIndex((int *)(entity + 0x1070), index);
-        result = func_ov021_020ae748(member->info);
+        result = IsCountBelowLimit(member->info);
         if (result && member->info->kind == 3 && *(int *)(entity + 0x1078) != 0) {
             result = FALSE;
         }

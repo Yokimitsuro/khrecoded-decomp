@@ -23,7 +23,7 @@ typedef struct EffectActor {
     ActorBody body;
 } EffectActor;
 
-extern EffectSlot *func_ov001_0209c224(u32 id);
+extern EffectSlot *GetStageEntrySlot(u32 id);
 extern BOOL func_0204dc50(u32 handle);
 extern void Handle_WritePayloadIfLive(u32 handle, VecFx32 *position);
 extern void func_ov001_02091ae8(EffectActor *actor, u16 groupId, u16 effectId, int mode);
@@ -38,7 +38,7 @@ void UpdateActorAttachedEffects(EffectActor *actor)
         EffectSlot *slot;
 
         if (entry->slotId != 0) {
-            slot = func_ov001_0209c224(entry->slotId);
+            slot = GetStageEntrySlot(entry->slotId);
             if (slot != NULL) {
                 if (func_0204dc50(slot->handle)) {
                     if (entry->flags & 4) {

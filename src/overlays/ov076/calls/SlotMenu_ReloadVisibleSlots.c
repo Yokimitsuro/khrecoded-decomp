@@ -11,7 +11,7 @@ typedef struct SlotMenu {
 } SlotMenu;
 
 extern SaveData *data_0205fe0c;
-extern void func_ov076_020c6f80(SlotMenu *menu, int slot, int mode);
+extern void SlotMenu_ReloadSlot(SlotMenu *menu, int slot, int mode);
 
 void SlotMenu_ReloadVisibleSlots(SlotMenu *menu)
 {
@@ -27,6 +27,6 @@ void SlotMenu_ReloadVisibleSlots(SlotMenu *menu)
         slot = 0;
     }
     for (; slot <= last; slot++) {
-        func_ov076_020c6f80(menu, slot, 0);
+        SlotMenu_ReloadSlot(menu, slot, 0);
     }
 }

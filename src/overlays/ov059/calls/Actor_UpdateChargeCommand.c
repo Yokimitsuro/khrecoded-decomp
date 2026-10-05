@@ -28,13 +28,13 @@ struct Actor {
 };
 
 extern void func_ov059_020c9a74(Actor *actor, BOOL start);
-extern int func_ov001_02077f80(void);
-extern BOOL func_ov021_020a754c(InputRecord *input, u16 mask);
-extern BOOL func_ov021_020a753c(InputRecord *input, u16 mask);
+extern int GetSelectedMenuEntryValue(void);
+extern BOOL HasFlagsAt0xe(InputRecord *input, u16 mask);
+extern BOOL HasFlagsAt0xc(InputRecord *input, u16 mask);
 extern BOOL func_0204dc50(u32 handle);
 extern u32 SpawnSoundSlot(u32 owner, u32 kind, VecFx32 *position, u32 flags);
 extern VecFx32 *Actor_GetModelPosition(Actor *actor);
-extern void func_ov059_020c7a90(Actor *actor);
+extern void Actor_TrySpawnIdleEffect(Actor *actor);
 extern void Actor_ConsumeCommand(Actor *actor);
 extern void func_ov001_0206e6f4(int arg);
 
@@ -47,7 +47,7 @@ void Actor_UpdateChargeCommand(Actor *actor, InputRecord *input)
         func_ov059_020c9a74(actor, FALSE);
         return;
     }
-    if (func_ov001_02077f80() == -1) {
+    if (GetSelectedMenuEntryValue() == -1) {
         func_ov059_020c9a74(actor, start);
         return;
     }
@@ -62,7 +62,7 @@ void Actor_UpdateChargeCommand(Actor *actor, InputRecord *input)
         threshold = 0;
         break;
     }
-    if (func_ov021_020a754c(input, 0x400) && !func_ov021_020a754c(input, 1)) {
+    if (HasFlagsAt0xe(input, 0x400) && !HasFlagsAt0xe(input, 1)) {
         switch (actor->commandKinds[actor->commandIndex]) {
         case 0:
         case 1:
@@ -78,12 +78,12 @@ void Actor_UpdateChargeCommand(Actor *actor, InputRecord *input)
                 actor->chargePhase = 3;
                 if (actor->chargeSound == 0 || !func_0204dc50(actor->chargeSound)) {
                     actor->chargeSound = SpawnSoundSlot(0xca, 0, Actor_GetModelPosition(actor), 0);
-                    func_ov059_020c7a90(actor);
+                    Actor_TrySpawnIdleEffect(actor);
                 }
             } else {
                 actor->chargePhase = 4;
-                if (func_ov021_020a753c(input, 0x400)) {
-                    func_ov059_020c7a90(actor);
+                if (HasFlagsAt0xc(input, 0x400)) {
+                    Actor_TrySpawnIdleEffect(actor);
                 }
             }
             actor->changeState(actor, 12);

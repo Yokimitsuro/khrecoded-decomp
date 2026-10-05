@@ -29,7 +29,7 @@ extern void ModelAnimation_BlendJointRotation(MtxFx33 *rotation, fx32 animationF
 extern void ModelAnimation_BlendJointScale(fx32 *scaleAndInverse, fx32 animationFrame,
                                                     const u32 *trackDescriptor,
                                                     const NNSG3dResJntAnm *jointAnimation);
-extern BOOL func_01ffd56c(MtxFx33 *rotation, const void *compactRotations,
+extern BOOL DecodeCompressedRotationITCM(MtxFx33 *rotation, const void *compactRotations,
                                                   const void *fullRotations, u32 rotationIndex);
 extern void ModelAnimation_ApplyDefaultJointPosition(NNSG3dJntAnmResult *result);
 extern void NNSi_G3dGetMdlRot(NNSG3dJntAnmResult *result);
@@ -85,7 +85,7 @@ void ModelAnimation_GetJointSRTResult(const NNSG3dResJntAnm *jointAnimation, u32
             ModelAnimation_BlendJointRotation(&result->rotation, animationFrame, trackData, jointAnimation);
             trackData += 2;
         } else {
-            if (func_01ffd56c(&result->rotation,
+            if (DecodeCompressedRotationITCM(&result->rotation,
                                                      (const u8 *)jointAnimation + jointAnimation->compactRotationOffset,
                                                      (const u8 *)jointAnimation + jointAnimation->fullRotationOffset,
                                                      *trackData)) {

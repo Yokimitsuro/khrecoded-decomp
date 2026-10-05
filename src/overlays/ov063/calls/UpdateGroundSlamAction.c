@@ -108,10 +108,10 @@ struct Actor {
     void (*setMode)(Actor *actor, int mode);
 };
 
-extern void func_ov052_020ce9f4(Actor *actor, VecFx32 *out);
+extern void ComputeRootMotionDelta(Actor *actor, VecFx32 *out);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
-extern void func_ov021_020ab0ac(ShotDesc *desc);
+extern void ZeroBytes0x40(ShotDesc *desc);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
@@ -121,10 +121,10 @@ extern void *ActorRegistry_GetEntityByIndex(u16 actorId);
 extern void CollisionQuery_Init(CollisionQuery *query, u16 id, void *actor, u8 kind, u8 unk3C, u8 unk3D, void *shape, QueryWorkspace *workspace, void *filter);
 extern void *SweepWorldCollision(CollisionQuery *query);
 extern void func_ov021_020a9288(void);
-extern void *func_ov021_020ab0b8(void *owner, ShotDesc *desc);
+extern void *TryConsumeLimitedUse(void *owner, ShotDesc *desc);
 extern u32 SpawnSoundSlot(u32 owner, u32 kind, VecFx32 *position, u32 flags);
-extern void func_ov021_020af564(int a, int b);
-extern void func_ov001_020734f8(void);
+extern void ForwardSubModePairA(int a, int b);
+extern void ResetGaugeDisplay(void);
 extern void SetManagerEnabled(u32 enabled);
 
 void UpdateGroundSlamAction(Actor *actor)
@@ -154,7 +154,7 @@ void UpdateGroundSlamAction(Actor *actor)
     void *target;
 
     if (actor->finished == 0 && actor->frame < 0x42000) {
-        func_ov052_020ce9f4(actor, &delta);
+        ComputeRootMotionDelta(actor, &delta);
         actor->posY = delta.y;
         actor->posX += delta.x;
         actor->posZ += delta.z;
@@ -189,7 +189,7 @@ void UpdateGroundSlamAction(Actor *actor)
         actor->onLand(actor, 0x34000);
     }
     if (fire) {
-        func_ov021_020ab0ac(&desc);
+        ZeroBytes0x40(&desc);
         if (actor->getFootPosition != NULL) {
             found = actor->getFootPosition(actor, &pos);
         } else {
@@ -231,9 +231,9 @@ void UpdateGroundSlamAction(Actor *actor)
         desc.stats[0] = 0x1400;
         desc.count = 1;
         desc.pad_3c = 0;
-        func_ov021_020ab0b8(task->shotOwner, &desc);
+        TryConsumeLimitedUse(task->shotOwner, &desc);
         SpawnSoundSlot(task->soundId, 1, &desc.position, 0);
-        func_ov021_020af564(3, 0);
+        ForwardSubModePairA(3, 0);
         ResetAnimationTrackState(&request);
         request.id = actor->player;
         request.hidden = 0;
@@ -243,7 +243,7 @@ void UpdateGroundSlamAction(Actor *actor)
     if (actor->finished == 0) {
         return;
     }
-    func_ov001_020734f8();
+    ResetGaugeDisplay();
     SetManagerEnabled(0);
     if (grounded) {
         actor->setMode(actor, 5);

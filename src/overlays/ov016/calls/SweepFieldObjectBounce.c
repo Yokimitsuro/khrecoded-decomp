@@ -37,9 +37,9 @@ extern void *ActorRegistry_GetEntityByIndex(u32 actorId);
 extern void func_0203ad28(SweepShape *shape, ShapeExtent *extent, VecFx32 *center, fx32 radius);
 extern void CollisionQuery_Init(SweepQuery *query, u16 id, void *actor, u8 kind, u8 unk3C, u8 unk3D, SweepShape *shape, QueryWorkspace *workspace, s32 unk44);
 extern void *SweepWorldCollision(SweepQuery *query);
-extern void func_ov016_020a3db0(void);
+extern void HandleFieldObjectHit(void);
 extern void func_ov016_020a2c64(FieldObject *obj);
-extern void func_ov016_020a29c4(FieldObject *obj);
+extern void EnterFieldUnitPhase6(FieldObject *obj);
 
 int SweepFieldObjectBounce(FieldObject *obj)
 {
@@ -73,12 +73,12 @@ int SweepFieldObjectBounce(FieldObject *obj)
         func_0203ad28(&shape, &extent, &center, radius);
         CollisionQuery_Init(&query, 0, actor, 8, 0, 0, &shape, &workspace, 0);
         query.context = obj;
-        query.callback = func_ov016_020a3db0;
+        query.callback = HandleFieldObjectHit;
         SweepWorldCollision(&query);
     }
     func_ov016_020a2c64(obj);
     if (!(obj->flags & 0x8020)) {
-        func_ov016_020a29c4(obj);
+        EnterFieldUnitPhase6(obj);
     }
     return 0;
 }

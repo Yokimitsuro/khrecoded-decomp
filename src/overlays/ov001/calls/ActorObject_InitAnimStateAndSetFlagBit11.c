@@ -6,10 +6,10 @@ typedef struct Actor {
     u32 flags;
 } Actor;
 
-extern void func_ov001_02089088(void *animState);
+extern void BindActorAnimation(void *animState);
 
 void ActorObject_InitAnimStateAndSetFlagBit11(Actor *actor)
 {
-    func_ov001_02089088(actor->animState);
+    BindActorAnimation(actor->animState);
     actor->flags = actor->flags | 0x800;
 }

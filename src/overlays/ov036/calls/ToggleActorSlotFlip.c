@@ -17,12 +17,12 @@ typedef struct SlotSceneHolder {
 } SlotSceneHolder;
 
 extern SlotSceneHolder data_ov036_020c3940;
-extern int func_ov036_020bb7e0(int ownerId);
+extern int FindOrAcquireOwnerSlot(int ownerId);
 
 void ToggleActorSlotFlip(int ownerId)
 {
     SlotScene *scene = data_ov036_020c3940.scene;
-    SlotEntry *slot = &scene->slots[func_ov036_020bb7e0(ownerId)];
+    SlotEntry *slot = &scene->slots[FindOrAcquireOwnerSlot(ownerId)];
 
     slot->flipFlags = slot->flipFlags == 0 ? 0x8000 : 0;
 }

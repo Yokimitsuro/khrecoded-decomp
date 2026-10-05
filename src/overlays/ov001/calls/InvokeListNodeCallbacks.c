@@ -3,7 +3,7 @@
 typedef void (*Callback)(void *node);
 
 extern u32 data_ov001_020a04f8;
-extern void func_ov001_020871b8(void);
+extern void ResourceCache_Shutdown(void);
 
 void InvokeListNodeCallbacks(void)
 {
@@ -16,5 +16,5 @@ void InvokeListNodeCallbacks(void)
             (*callback)(node);
         }
     }
-    func_ov001_020871b8();
+    ResourceCache_Shutdown();
 }

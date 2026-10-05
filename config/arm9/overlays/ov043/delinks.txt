@@ -2,6 +2,10 @@
     .ctor       start:0x020bd2dc end:0x020bd2dc kind:rodata align:4
     .bss        start:0x020bd2e0 end:0x020bd300 kind:bss align:32
 
+src/overlays/ov043/calls/CommitCameraWithCache.c:
+    complete
+    .text       start:0x020bc840 end:0x020bc874
+
 src/overlays/ov043/calls/UpdateCameraBasisAndCommit.c:
     complete
     .text       start:0x020bc874 end:0x020bc8d4
@@ -14,17 +18,65 @@ src/overlays/ov043/calls/func_ov043_020bc8dc.c:
     complete
     .text       start:0x020bc8dc end:0x020bc8ec
 
+src/overlays/ov043/calls/SetCameraModeValue.c:
+    complete
+    .text       start:0x020bc8ec end:0x020bc900
+
 src/overlays/ov043/auto/func_ov043_020bc900.c:
     complete
     .text       start:0x020bc900 end:0x020bc902
+
+src/overlays/ov043/calls/TranslateCameraTarget_020bc92c.c:
+    complete
+    .text       start:0x020bc92c end:0x020bc994
+
+src/overlays/ov043/calls/MoveCameraTargetTo.c:
+    complete
+    .text       start:0x020bc994 end:0x020bc9d4
+
+src/overlays/ov043/calls/TranslateCameraGoal_020bc9d4.c:
+    complete
+    .text       start:0x020bc9d4 end:0x020bca3c
 
 src/overlays/ov043/calls/GetCameraToTargetDistance.c:
     complete
     .text       start:0x020bca50 end:0x020bca70
 
+src/overlays/ov043/calls/ResetCameraUp.c:
+    complete
+    .text       start:0x020bca70 end:0x020bcabc
+
+src/overlays/ov043/calls/RotateCameraUp.c:
+    complete
+    .text       start:0x020bcabc end:0x020bcaec
+
+src/overlays/ov043/calls/GetCameraYaw.c:
+    complete
+    .text       start:0x020bcaec end:0x020bcb34
+
+src/overlays/ov043/calls/SetCameraFlag4.c:
+    complete
+    .text       start:0x020bcb34 end:0x020bcb58
+
+src/overlays/ov043/calls/StartCameraParticle_020bcb58.c:
+    complete
+    .text       start:0x020bcb58 end:0x020bcbd0
+
+src/overlays/ov043/calls/ResetCameraDefault.c:
+    complete
+    .text       start:0x020bcbd0 end:0x020bcbec
+
+src/overlays/ov043/calls/InitCameraState_020bcbec.c:
+    complete
+    .text       start:0x020bcbec end:0x020bcce0
+
 src/overlays/ov043/auto/func_ov043_020bcce0.c:
     complete
     .text       start:0x020bcce0 end:0x020bcce4
+
+src/overlays/ov043/calls/EaseCameraVectors.c:
+    complete
+    .text       start:0x020bcf64 end:0x020bd0a4
 
 src/overlays/ov043/auto/func_ov043_020bd0a4.c:
     complete
@@ -33,3 +85,11 @@ src/overlays/ov043/auto/func_ov043_020bd0a4.c:
 src/overlays/ov043/auto/func_ov043_020bd0a8.c:
     complete
     .text       start:0x020bd0a8 end:0x020bd0ac
+
+src/overlays/ov043/calls/IsShapeInViewDepth.c:
+    complete
+    .text       start:0x020bd20c end:0x020bd2a4
+
+src/overlays/ov043/calls/IsPointInViewDepth.c:
+    complete
+    .text       start:0x020bd2a4 end:0x020bd2dc

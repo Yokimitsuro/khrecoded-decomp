@@ -23,8 +23,8 @@ struct Actor {
     void (*setMode)(Actor *actor, int mode);
 };
 
-extern void func_ov052_020ce9f4(Actor *actor, VecFx32 *out);
-extern void func_ov001_020734f8(void);
+extern void ComputeRootMotionDelta(Actor *actor, VecFx32 *out);
+extern void ResetGaugeDisplay(void);
 extern void SetManagerEnabled(u32 enabled);
 
 void UpdateRisingFinisherAction(Actor *actor)
@@ -33,7 +33,7 @@ void UpdateRisingFinisherAction(Actor *actor)
     ActionTask *task = actor->task;
     VecFx32 delta;
 
-    func_ov052_020ce9f4(actor, &delta);
+    ComputeRootMotionDelta(actor, &delta);
     actor->posY = delta.y;
     actor->posX += delta.x;
     actor->posZ += delta.z;
@@ -43,7 +43,7 @@ void UpdateRisingFinisherAction(Actor *actor)
     if (actor->finished == 0) {
         return;
     }
-    func_ov001_020734f8();
+    ResetGaugeDisplay();
     SetManagerEnabled(0);
     if (grounded) {
         actor->setMode(actor, 5);

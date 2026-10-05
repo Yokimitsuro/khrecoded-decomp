@@ -24,8 +24,8 @@ typedef struct RecordB {
 } RecordB;
 
 extern void MI_CpuFill8(void *dest, int value, u32 size);
-extern s32 func_ov002_02069504(void *fields, int fieldIndex, BOOL raw);
-extern int func_ov002_02069dd8(int index, int offset);
+extern s32 GetPackedFieldValue(void *fields, int fieldIndex, BOOL raw);
+extern int LookupTableOffset(int index, int offset);
 extern RecordB *GetRecordTableBEntry(s32 index);
 
 void CollectRecordItemsBySlot(void *fields, s32 *itemIds)
@@ -38,11 +38,11 @@ void CollectRecordItemsBySlot(void *fields, s32 *itemIds)
     MI_CpuFill8(itemIds, 0xff, 0x40);
     for (field = 0; field < 0x16; field++) {
         slot = 0;
-        value = func_ov002_02069504(fields, field, FALSE);
+        value = GetPackedFieldValue(fields, field, FALSE);
         if (value < 0) {
             continue;
         }
-        record = GetRecordTableBEntry(func_ov002_02069dd8(field, value));
+        record = GetRecordTableBEntry(LookupTableOffset(field, value));
         for (; slot < 0x10; slot++) {
             switch (slot) {
             case 0: if (!record->slot0) continue; break;

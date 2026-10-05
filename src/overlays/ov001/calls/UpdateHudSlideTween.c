@@ -38,7 +38,7 @@ typedef struct Hud {
 
 extern void SampleTweenValue(Tween *tween, s32 *outValue);
 extern void PlaySoundChecked(void *ptr, int arg);
-extern void func_ov001_02072178(s32 value);
+extern void SetFieldCaptionText(s32 value);
 
 void UpdateHudSlideTween(Hud *hud)
 {
@@ -60,6 +60,6 @@ void UpdateHudSlideTween(Hud *hud)
     }
     slide->state = 0;
     if (hud->modeFlags.restoreOnClose == 1) {
-        func_ov001_02072178(-1);
+        SetFieldCaptionText(-1);
     }
 }

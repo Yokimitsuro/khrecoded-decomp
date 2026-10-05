@@ -28,9 +28,9 @@ typedef struct {
 extern void *func_ov001_02086384(FieldContext *context, int index);
 extern HopState *func_ov032_020bbc98(void *object);
 extern void func_ov032_020bbc5c(FieldObject *object, HopState *state);
-extern void func_ov032_020bc60c(FieldContext *context, int index);
-extern void func_ov032_020bbfa4(FieldContext *context, int index);
-extern void func_ov032_020bd460(FieldContext *context, int index);
+extern void TickRowCycleTimer(FieldContext *context, int index);
+extern void TickRowNibbleTimer(FieldContext *context, int index);
+extern void AdvanceRowCounter(FieldContext *context, int index);
 
 void TickFieldObjectCounters(FieldContext *context, int index)
 {
@@ -49,7 +49,7 @@ void TickFieldObjectCounters(FieldContext *context, int index)
     if (object->lockCount != 0) {
         object->lockCount--;
     }
-    func_ov032_020bc60c(context, index);
-    func_ov032_020bbfa4(context, index);
-    func_ov032_020bd460(context, index);
+    TickRowCycleTimer(context, index);
+    TickRowNibbleTimer(context, index);
+    AdvanceRowCounter(context, index);
 }

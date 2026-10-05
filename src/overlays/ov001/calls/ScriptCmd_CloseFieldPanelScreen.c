@@ -7,7 +7,7 @@ typedef struct ScriptOperand {
 } ScriptOperand;
 
 extern int ScriptVm_ReadOperandInt(void *context, ScriptOperand *operand);
-extern BOOL func_ov045_020c0728(void);
+extern BOOL IsCounterNegative(void);
 extern void func_ov001_02071b7c(void);
 extern void func_ov001_02071aa8(void);
 extern void *func_ov001_02071d64(void);
@@ -16,7 +16,7 @@ extern void *func_ov001_02071de8(void);
 
 int ScriptCmd_CloseFieldPanelScreen(void *context, ScriptOperand *operands)
 {
-    if (func_ov045_020c0728()) {
+    if (IsCounterNegative()) {
         switch (ScriptVm_ReadOperandInt(context, operands)) {
         case 0:
             func_ov001_02071b7c();

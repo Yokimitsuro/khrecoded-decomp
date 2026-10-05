@@ -64,16 +64,16 @@ extern VecFx32 *func_ov001_02090f2c(StageActor *actor);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *axb);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *axb);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern void func_01ffafb4(fx32 scale, const VecFx32 *src, VecFx32 *dst);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern int FX_Mul(int left, int right);
 extern void func_0202fbbc(VecFx32 *in, QuatFx32 *rotation, VecFx32 *out);
-extern void func_ov056_020d5368(VecFx32 *out, const VecFx32 *start, const VecFx32 *end, const VecFx32 *startTangent, const VecFx32 *endTangent, fx32 t);
-extern void func_ov001_020911bc(StageActor *actor);
-extern void func_ov001_020911d0(StageActor *actor);
+extern void HermiteInterpolateVec(VecFx32 *out, const VecFx32 *start, const VecFx32 *end, const VecFx32 *startTangent, const VecFx32 *endTangent, fx32 t);
+extern void ClearActorMotionState(StageActor *actor);
+extern void ClearActorMotionSpeed(StageActor *actor);
 extern void AddObjectOffsetVector(StageActor *actor, VecFx32 *offset);
 extern void func_ov001_02090f64(StageActor *actor, int degrees);
 extern void func_ov001_0209590c(CircleEvent *event, int status);
@@ -109,10 +109,10 @@ BOOL CircleActorAroundUnit(CircleEvent *event, CircleWork *work)
             dir.y = 0;
             dir.z = 0x1000;
         }
-        func_01ff9ea8(&data_ov056_020d7f78, &dir, &side);
+        VEC_CrossProduct(&data_ov056_020d7f78, &dir, &side);
         VEC_Normalize(&side, &side);
         VEC_MultAdd(radius, &side, &unit->position, &work->target);
-        func_01ff9ea8(&side, &data_ov056_020d7f78, &dir);
+        VEC_CrossProduct(&side, &data_ov056_020d7f78, &dir);
         func_01ffafb4(owner->tangentScale, &dir, &work->tangent);
         work->velocity.z = 0;
         work->velocity.y = 0;
@@ -123,10 +123,10 @@ BOOL CircleActorAroundUnit(CircleEvent *event, CircleWork *work)
         if (work->elapsed + step <= unit->def->duration) {
             t = FX_Div(step, unit->def->duration - work->elapsed);
             pos = *func_ov001_02090f2c(actor);
-            func_ov056_020d5368(&next, &pos, &work->target, &work->velocity, &work->tangent, t);
+            HermiteInterpolateVec(&next, &pos, &work->target, &work->velocity, &work->tangent, t);
             VEC_Subtract(&next, &pos, &work->velocity);
-            func_ov001_020911bc(actor);
-            func_ov001_020911d0(actor);
+            ClearActorMotionState(actor);
+            ClearActorMotionSpeed(actor);
             AddObjectOffsetVector(actor, &work->velocity);
             work->elapsed += step;
             break;
@@ -137,8 +137,8 @@ BOOL CircleActorAroundUnit(CircleEvent *event, CircleWork *work)
         delta = *func_ov001_02090f2c(actor);
         func_0202fbbc(&work->offset, &params->spin, &work->offset);
         VEC_Add(&unit->position, &work->offset, &delta);
-        func_ov001_020911bc(actor);
-        func_ov001_020911d0(actor);
+        ClearActorMotionState(actor);
+        ClearActorMotionSpeed(actor);
         VEC_Subtract(&delta, func_ov001_02090f2c(actor), &delta);
         AddObjectOffsetVector(actor, &delta);
         func_ov001_02090f64(actor, params->facingOffset + (fx32)(((s64)actor->facing * 0x1680000 + 0x80000) >> 20));

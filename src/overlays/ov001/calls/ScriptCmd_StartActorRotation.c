@@ -22,7 +22,7 @@ typedef struct ScriptContext {
 extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operand);
 extern void *ByteCode_ResolveOperand(ScriptContext *context, ScriptOperand *operand);
 extern int ScriptCmd_ReturnValue(ScriptContext *context, int value);
-extern void func_ov001_0208a4e0(ActorObject *actor, const char *name, const VecFx32 *target, int duration, int extra);
+extern void StartActorMotionTo(ActorObject *actor, const char *name, const VecFx32 *target, int duration, int extra);
 
 int ScriptCmd_StartActorRotation(ScriptContext *context, ScriptOperand *operands)
 {
@@ -39,6 +39,6 @@ int ScriptCmd_StartActorRotation(ScriptContext *context, ScriptOperand *operands
     angles.x = degX * 0xb6;
     angles.y = degY * 0xb6;
     angles.z = degZ * 0xb6;
-    func_ov001_0208a4e0(context->scene->actorObjects[index], name, &angles, duration, extra);
+    StartActorMotionTo(context->scene->actorObjects[index], name, &angles, duration, extra);
     return 1;
 }

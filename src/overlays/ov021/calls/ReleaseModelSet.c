@@ -16,7 +16,7 @@ typedef struct ModelSet {
     SubModel *sub;
 } ModelSet;
 
-extern void func_ov021_020a90a4(void *record);
+extern void ReleaseSharedRecordState(void *record);
 extern void FreeSlotTable(void *table);
 extern void ReleaseResourceAndDetach(void *resource);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
@@ -30,7 +30,7 @@ void ReleaseModelSet(ModelSet *set)
         return;
     }
     for (i = 0; i < 6; i++) {
-        func_ov021_020a90a4(set->records[i]);
+        ReleaseSharedRecordState(set->records[i]);
     }
     FreeSlotTable(set->slots);
     ReleaseResourceAndDetach(set->resource);

@@ -3,9 +3,21 @@
     .data       start:0x020d2b80 end:0x020d2c40 kind:data align:32
     .bss        start:0x020d2c40 end:0x020d2c60 kind:bss align:32
 
+src/overlays/ov053/calls/LoadOverlay053EntityModel.c:
+    complete
+    .text       start:0x020d22fc end:0x020d23f8
+
+src/overlays/ov053/calls/LoadOverlay053EntityResources.c:
+    complete
+    .text       start:0x020d2434 end:0x020d2648
+
 src/overlays/ov053/calls/ShutdownOverlay053.c:
     complete
     .text       start:0x020d2648 end:0x020d267c
+
+src/overlays/ov053/calls/UpdateModelBlinkEffect.c:
+    complete
+    .text       start:0x020d267c end:0x020d27e4
 
 src/overlays/ov053/calls/RequestOverlay053ActorState.c:
     complete
@@ -14,6 +26,14 @@ src/overlays/ov053/calls/RequestOverlay053ActorState.c:
 src/overlays/ov053/calls/SetEntityModeHideSubModels.c:
     complete
     .text       start:0x020d2904 end:0x020d296c
+
+src/overlays/ov053/calls/StartAreaMusic.c:
+    complete
+    .text       start:0x020d296c end:0x020d2a60
+
+src/overlays/ov053/calls/MapKindToSlotIndex.c:
+    complete
+    .text       start:0x020d2a60 end:0x020d2b3e
 
 src/overlays/ov053/data/strings/Strings_ov053_020d2b80.c:
     complete

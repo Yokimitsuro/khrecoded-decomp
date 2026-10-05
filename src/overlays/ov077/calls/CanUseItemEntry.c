@@ -28,7 +28,7 @@ extern FieldContext *data_ov001_020a0480;
 extern SaveState *data_0205fe0c;
 extern s8 func_ov001_02068084(void);
 extern BOOL func_ov077_020c7a68(void);
-extern BOOL func_ov077_020c7a98(void);
+extern BOOL IsPartyLevelSufficient_020c7a98(void);
 extern BOOL func_ov077_020c7b34(void);
 extern BOOL func_ov077_020c7b70(void);
 
@@ -72,14 +72,14 @@ BOOL CanUseItemEntry(ItemSlotEntry *entry)
             } else if (func_ov077_020c7b70()) {
                 usable = FALSE;
             } else {
-                usable = !func_ov077_020c7a98();
+                usable = !IsPartyLevelSufficient_020c7a98();
             }
             break;
         case 0xbd:
             if (IsItemUseRestricted()) {
                 usable = FALSE;
             }
-            if (func_ov077_020c7a98() && func_ov077_020c7a68() && func_ov077_020c7b34()) {
+            if (IsPartyLevelSufficient_020c7a98() && func_ov077_020c7a68() && func_ov077_020c7b34()) {
                 usable = FALSE;
             }
             break;

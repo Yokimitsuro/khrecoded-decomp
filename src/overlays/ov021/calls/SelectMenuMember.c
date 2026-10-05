@@ -25,8 +25,8 @@ struct MemberList {
 
 extern int FindCurrentMemberIndex(MemberList *list);
 extern u8 *GetBoundedEntryField(int player);
-extern void func_ov021_020a7fc0(void *obj, u32 value);
-extern void func_ov001_02063a80(int index, int amount);
+extern void SetFieldAt0x30(void *obj, u32 value);
+extern void AddSessionCounter(int index, int amount);
 extern s32 func_ov001_02063a38(void);
 extern u32 ReadSessionPackedBits(int bitOffset, u32 bitCount);
 extern void WriteSessionPackedBits(int bitOffset, u32 bitCount, u32 value);
@@ -34,7 +34,7 @@ extern void func_ov001_0206df78(void);
 extern s32 func_ov001_02078494(void);
 extern void func_ov001_02078360(int a, int b);
 extern void func_ov001_02078000(int listKind, int entryId);
-extern BOOL func_ov001_02077d64(void);
+extern BOOL FieldMenu_TryOpenByMode(void);
 
 s32 SelectMenuMember(MemberList *list, int index, MenuCommand *command)
 {
@@ -49,7 +49,7 @@ s32 SelectMenuMember(MemberList *list, int index, MenuCommand *command)
         u8 *entry = GetBoundedEntryField(list->player);
         list->current = list->members[index];
         if (list->current != NULL) {
-            func_ov021_020a7fc0(entry + 0xb2c, list->current->label);
+            SetFieldAt0x30(entry + 0xb2c, list->current->label);
         }
     } else {
         index = FindCurrentMemberIndex(list);
@@ -75,7 +75,7 @@ s32 SelectMenuMember(MemberList *list, int index, MenuCommand *command)
         case 0xa1:
         case 0xa2:
         case 0xb1:
-            func_ov001_02063a80(5, 1);
+            AddSessionCounter(5, 1);
             break;
         }
         if (func_ov001_02063a38() != 4) {
@@ -94,7 +94,7 @@ s32 SelectMenuMember(MemberList *list, int index, MenuCommand *command)
         break;
     }
     if (counter >= 0) {
-        func_ov001_02063a80(counter, 1);
+        AddSessionCounter(counter, 1);
     }
     result = list->current->handler(list, list->current, command);
     if (member->category != 1 && member->category != 4 && command->id != 0x1c) {
@@ -102,7 +102,7 @@ s32 SelectMenuMember(MemberList *list, int index, MenuCommand *command)
             func_ov001_02078360(0, 1);
         }
         func_ov001_02078000(func_ov001_02078494(), index);
-        func_ov001_02077d64();
+        FieldMenu_TryOpenByMode();
     }
     return result;
 }

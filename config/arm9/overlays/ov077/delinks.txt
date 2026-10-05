@@ -4,9 +4,21 @@
     .data       start:0x020ca2a0 end:0x020ca3a0 kind:data align:32
     .bss        start:0x020ca3a0 end:0x020ca3c0 kind:bss align:32
 
+src/overlays/ov077/calls/TrackMaxParamValue.c:
+    complete
+    .text       start:0x020c4280 end:0x020c42a4
+
+src/overlays/ov077/calls/ShowSlotItemHeader.c:
+    complete
+    .text       start:0x020c439c end:0x020c4418
+
 src/overlays/ov077/calls/HandleItemTabTouch.c:
     complete
     .text       start:0x020c4418 end:0x020c4534
+
+src/overlays/ov077/calls/MoveSlotCursor.c:
+    complete
+    .text       start:0x020c4534 end:0x020c45b8
 
 src/overlays/ov077/calls/OpenHelpMessageOrActivate.c:
     complete
@@ -16,6 +28,22 @@ src/overlays/ov077/auto/func_ov077_020c4bcc.c:
     complete
     .text       start:0x020c4bcc end:0x020c4bce
 
+src/overlays/ov077/calls/SetModeTwoAndRefresh.c:
+    complete
+    .text       start:0x020c4bd0 end:0x020c4c00
+
+src/overlays/ov077/calls/UpdateItemScreenDisplay.c:
+    complete
+    .text       start:0x020c4c00 end:0x020c4d98
+
+src/overlays/ov077/calls/SetupItemScreenBackgrounds.c:
+    complete
+    .text       start:0x020c4df4 end:0x020c50b4
+
+src/overlays/ov077/calls/InitScreenSpriteSlots.c:
+    complete
+    .text       start:0x020c50b4 end:0x020c5290
+
 src/overlays/ov077/calls/ReleaseScreenSprites.c:
     complete
     .text       start:0x020c5290 end:0x020c52c0
@@ -24,9 +52,33 @@ src/overlays/ov077/calls/UpdateItemCountDigits.c:
     complete
     .text       start:0x020c52c0 end:0x020c53c0
 
+src/overlays/ov077/calls/PlaceSlotSprite.c:
+    complete
+    .text       start:0x020c5504 end:0x020c5530
+
+src/overlays/ov077/calls/SyncScreenSpriteSlots.c:
+    complete
+    .text       start:0x020c5530 end:0x020c5638
+
+src/overlays/ov077/calls/SetPanelShifted.c:
+    complete
+    .text       start:0x020c5638 end:0x020c5668
+
 src/overlays/ov077/calls/DrawPartySlotIcons.c:
     complete
     .text       start:0x020c5714 end:0x020c5814
+
+src/overlays/ov077/calls/ShowSlotHeaderMessage.c:
+    complete
+    .text       start:0x020c5900 end:0x020c5950
+
+src/overlays/ov077/calls/SelectChooserValueByIndex.c:
+    complete
+    .text       start:0x020c5950 end:0x020c5964
+
+src/overlays/ov077/calls/BeginSlotItemSelection.c:
+    complete
+    .text       start:0x020c5ce8 end:0x020c5db8
 
 src/overlays/ov077/calls/UsePartySlotItem.c:
     complete
@@ -35,6 +87,14 @@ src/overlays/ov077/calls/UsePartySlotItem.c:
 src/overlays/ov077/calls/func_ov077_020c5f7c.c:
     complete
     .text       start:0x020c5f7c end:0x020c5f84
+
+src/overlays/ov077/calls/ItemList_CompareStock_020c5f84.c:
+    complete
+    .text       start:0x020c5f84 end:0x020c5ff2
+
+src/overlays/ov077/calls/InitItemListEntries.c:
+    complete
+    .text       start:0x020c5ff4 end:0x020c633c
 
 src/overlays/ov077/calls/BuildItemListForType.c:
     complete
@@ -48,6 +108,10 @@ src/overlays/ov077/calls/BuildItemListForCategories.c:
     complete
     .text       start:0x020c660c end:0x020c6620
 
+src/overlays/ov077/calls/ItemList_UpdateHeaderText_020c6620.c:
+    complete
+    .text       start:0x020c6620 end:0x020c66ec
+
 src/overlays/ov077/calls/InitImageQuad_020c67c4.c:
     complete
     .text       start:0x020c67c4 end:0x020c67e6
@@ -56,9 +120,21 @@ src/overlays/ov077/calls/InitGridImageQuad_020c67e8.c:
     complete
     .text       start:0x020c67e8 end:0x020c683a
 
+src/overlays/ov077/calls/DrawSpriteRegionQuad.c:
+    complete
+    .text       start:0x020c6aac end:0x020c6c68
+
 src/overlays/ov077/calls/MenuPanel_ApplyCategoryFilter_020c6c68.c:
     complete
     .text       start:0x020c6c68 end:0x020c6cb0
+
+src/overlays/ov077/calls/IsItemSlotAvailable_020c6d74.c:
+    complete
+    .text       start:0x020c6d74 end:0x020c6dea
+
+src/overlays/ov077/calls/MenuPanel_SetFilterMode_020c7230.c:
+    complete
+    .text       start:0x020c7230 end:0x020c72a4
 
 src/overlays/ov077/calls/SetDialogInputDisabled_020c73dc.c:
     complete
@@ -80,29 +156,73 @@ src/overlays/ov077/calls/func_ov077_020c7664.c:
     complete
     .text       start:0x020c7664 end:0x020c7678
 
+src/overlays/ov077/calls/ItemList_ReturnCursorItem_020c774c.c:
+    complete
+    .text       start:0x020c774c end:0x020c7810
+
+src/overlays/ov077/calls/OpenItemConfirmWindow.c:
+    complete
+    .text       start:0x020c7810 end:0x020c7914
+
 src/overlays/ov077/calls/CancelAndCloseMenu.c:
     complete
     .text       start:0x020c79c4 end:0x020c79dc
+
+src/overlays/ov077/calls/MenuPanel_ConfirmSelection_020c79dc.c:
+    complete
+    .text       start:0x020c79dc end:0x020c7a68
+
+src/overlays/ov077/calls/IsPartyLevelSufficient_020c7a98.c:
+    complete
+    .text       start:0x020c7a98 end:0x020c7b34
 
 src/overlays/ov077/calls/CanUseItemEntry.c:
     complete
     .text       start:0x020c7b8c end:0x020c7ce8
 
+src/overlays/ov077/calls/HandleYesNoWindowInput.c:
+    complete
+    .text       start:0x020c7e90 end:0x020c7fe0
+
+src/overlays/ov077/calls/MeasureTextLine_020c8120.c:
+    complete
+    .text       start:0x020c8120 end:0x020c8188
+
+src/overlays/ov077/calls/OpenMessageWindow_020c81f8.c:
+    complete
+    .text       start:0x020c81f8 end:0x020c828c
+
 src/overlays/ov077/calls/InitDefaultMessageWindow.c:
     complete
     .text       start:0x020c83d4 end:0x020c83fc
+
+src/overlays/ov077/calls/InitMessageWindow_020c83fc.c:
+    complete
+    .text       start:0x020c83fc end:0x020c84bc
 
 src/overlays/ov077/calls/MessageWindow_BeginClosing_020c84bc.c:
     complete
     .text       start:0x020c84bc end:0x020c84fc
 
+src/overlays/ov077/calls/MessageWindow_Update_020c84fc.c:
+    complete
+    .text       start:0x020c84fc end:0x020c88ba
+
 src/overlays/ov077/calls/MenuScreen_RefreshMarker_020c8b90.c:
     complete
     .text       start:0x020c8b90 end:0x020c8be4
 
+src/overlays/ov077/calls/IsMessageWindowActive.c:
+    complete
+    .text       start:0x020c8be4 end:0x020c8bf4
+
 src/overlays/ov077/calls/ReleaseScreenResources.c:
     complete
     .text       start:0x020c90dc end:0x020c9138
+
+src/overlays/ov077/calls/InitSceneModel.c:
+    complete
+    .text       start:0x020c9c98 end:0x020c9d3c
 
 src/overlays/ov077/calls/SetContainerElementVisible_020c9d3c.c:
     complete

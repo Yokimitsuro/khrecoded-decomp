@@ -31,7 +31,7 @@ typedef struct {
 } FieldContext;
 
 extern GroupObject *func_ov001_02086384(FieldContext *context, int index);
-extern BOOL func_ov001_020872e0(GroupObject *object);
+extern BOOL IsNodeFlagBitClear(GroupObject *object);
 extern void func_ov032_020bc208(GroupObject *object, int mode);
 
 void ApplyModeToGroupFollowers(FieldContext *context, int index, int mode, BOOL hide, BOOL restore)
@@ -42,7 +42,7 @@ void ApplyModeToGroupFollowers(FieldContext *context, int index, int mode, BOOL 
     for (i = 0; i < object->memberCount; i++) {
         GroupObject *member = func_ov001_02086384(context, object->firstMember + i);
         if (object->leaderIndex != member->objectIndex) {
-            if (func_ov001_020872e0(member)) {
+            if (IsNodeFlagBitClear(member)) {
                 func_ov032_020bc208(member, mode);
             }
             if (hide) {

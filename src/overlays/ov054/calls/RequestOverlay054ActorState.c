@@ -7,8 +7,8 @@ typedef struct Entity {
     u8 blendTable[4];
 } Entity;
 
-extern void func_ov052_020ce0e0(Entity *entity, void *blendTable, int state, int blendIndex, int frames);
-extern void func_ov052_020cde40(Entity *entity, int state, int frames);
+extern void ChangeActorState(Entity *entity, void *blendTable, int state, int blendIndex, int frames);
+extern void RequestActorMode(Entity *entity, int state, int frames);
 
 void RequestOverlay054ActorState(Entity *entity, int state, int frames)
 {
@@ -63,8 +63,8 @@ void RequestOverlay054ActorState(Entity *entity, int state, int frames)
         if (state == entity->currentState) {
             return;
         }
-        func_ov052_020ce0e0(entity, entity->blendTable, state, blendIndex, frames);
+        ChangeActorState(entity, entity->blendTable, state, blendIndex, frames);
         return;
     }
-    func_ov052_020cde40(entity, state, frames);
+    RequestActorMode(entity, state, frames);
 }

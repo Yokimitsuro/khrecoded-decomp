@@ -25,7 +25,7 @@ extern ScriptOwner *data_ov021_020b56c4;
 extern TaggedValue *ResolveTaggedValueRef(ScriptContext *context, TaggedValue *value);
 extern fx32 TaggedValueToFixed(TaggedValue *value);
 extern SlotTable *GetStageMotionRecord(u32 id);
-extern int func_ov008_020a12a0(SlotTable *table, fx32 height, int heightSign, int distanceSign);
+extern int SlotTable_FindNearestFree(SlotTable *table, fx32 height, int heightSign, int distanceSign);
 
 int ScriptOp_FindNearestFreeSlot(ScriptContext *context, TaggedValue *args)
 {
@@ -40,6 +40,6 @@ int ScriptOp_FindNearestFreeSlot(ScriptContext *context, TaggedValue *args)
         return 0;
     }
     context->resultType = 1;
-    context->result = func_ov008_020a12a0(table, TaggedValueToFixed(height), -1, 1);
+    context->result = SlotTable_FindNearestFree(table, TaggedValueToFixed(height), -1, 1);
     return 0;
 }

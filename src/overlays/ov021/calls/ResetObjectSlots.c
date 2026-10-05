@@ -12,7 +12,7 @@ typedef struct {
     int activeSlots;
 } ScriptObject;
 
-extern void func_ov021_020addec(void *owner, ScriptObject *object);
+extern void StopEntrySounds(void *owner, ScriptObject *object);
 
 void ResetObjectSlots(void *owner, ScriptObject *object) {
     int i;
@@ -21,5 +21,5 @@ void ResetObjectSlots(void *owner, ScriptObject *object) {
         object->slots[i].value = 0;
     }
     object->activeSlots = 0;
-    func_ov021_020addec(owner, object);
+    StopEntrySounds(owner, object);
 }

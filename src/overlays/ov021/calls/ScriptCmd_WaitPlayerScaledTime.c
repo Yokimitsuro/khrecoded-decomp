@@ -23,7 +23,7 @@ typedef struct {
 extern ScriptGlobals data_ov021_020b56c4;
 extern TaggedValue *ResolveTaggedValueRef(ScriptContext *context, TaggedValue *value);
 extern fx32 TaggedValueToFixed(TaggedValue *value);
-extern fx32 func_ov001_02091840(PlayerActor *actor);
+extern fx32 ApplyActorScaleFactors(PlayerActor *actor);
 
 int ScriptCmd_WaitPlayerScaledTime(ScriptContext *context, TaggedValue *args)
 {
@@ -38,7 +38,7 @@ int ScriptCmd_WaitPlayerScaledTime(ScriptContext *context, TaggedValue *args)
         if (context->timer == 0) {
             context->timer = TaggedValueToFixed(duration);
         } else {
-            context->timer -= func_ov001_02091840(player);
+            context->timer -= ApplyActorScaleFactors(player);
             if (context->timer <= 0) {
                 result = 0;
                 context->timer = 0;

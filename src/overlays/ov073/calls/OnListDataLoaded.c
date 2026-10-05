@@ -6,11 +6,11 @@ typedef struct ListView {
 } ListView;
 
 extern void *func_ov027_020ba1f8(void *request);
-extern void func_ov073_020c3550(ListView *list, void *data, void *workBuffer);
+extern void LoadListViewGraphics(ListView *list, void *data, void *workBuffer);
 extern void func_ov027_020ba200(void *request, BOOL freeData);
 
 void OnListDataLoaded(void *request, ListView *list)
 {
-    func_ov073_020c3550(list, func_ov027_020ba1f8(request), list->workBuffer);
+    LoadListViewGraphics(list, func_ov027_020ba1f8(request), list->workBuffer);
     func_ov027_020ba200(request, TRUE);
 }

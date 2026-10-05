@@ -11,7 +11,7 @@ typedef struct ModelSlotList {
 } ModelSlotList;
 
 extern void ReleaseResourceAndDetach(u8 *object);
-extern void func_ov021_020a90a4(void *state);
+extern void ReleaseSharedRecordState(void *state);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
 void FreeModelSlots(ModelSlotList *list)
@@ -20,7 +20,7 @@ void FreeModelSlots(ModelSlotList *list)
     for (i = 0; i < list->count; i++) {
         ModelSlot *slot = &list->slots[i];
         ReleaseResourceAndDetach((u8 *)slot);
-        func_ov021_020a90a4(slot->recordState);
+        ReleaseSharedRecordState(slot->recordState);
     }
     if (list->slots != NULL) {
         NNSi_FndFreeFromDefaultHeap(list->slots);

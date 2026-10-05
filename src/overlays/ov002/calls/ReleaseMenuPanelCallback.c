@@ -7,9 +7,9 @@ typedef struct MenuContext {
 
 extern MenuContext *data_ov002_0206c464;
 extern void func_ov027_020b90b8(void *panel, void (*callback)(void));
-extern void func_ov002_02065c54(void);
+extern void OnPopupElementTouched(void);
 
 void ReleaseMenuPanelCallback(void)
 {
-    func_ov027_020b90b8(data_ov002_0206c464->panel, func_ov002_02065c54);
+    func_ov027_020b90b8(data_ov002_0206c464->panel, OnPopupElementTouched);
 }

@@ -1,6 +1,6 @@
 typedef void code();
 extern unsigned int GetBoundedEntryField();
-extern unsigned int func_ov021_020a7fc0();
+extern unsigned int SetFieldAt0x30();
 
 void DeactivateCurrentMember(int container)
 
@@ -14,7 +14,7 @@ void DeactivateCurrentMember(int container)
       (*callback)(container,*(int *)(container + 8));
     }
     owner = GetBoundedEntryField(*(unsigned int *)(container + 0x14));
-    func_ov021_020a7fc0(owner + 0xb2c,0xffffffff);
+    SetFieldAt0x30(owner + 0xb2c,0xffffffff);
     *(unsigned int *)(container + 8) = 0;
   }
   return;

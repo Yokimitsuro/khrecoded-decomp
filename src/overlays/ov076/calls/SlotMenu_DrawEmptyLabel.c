@@ -8,7 +8,7 @@ typedef struct SlotMenu {
     u8 thirdLabelTemplate[0x780];
 } SlotMenu;
 
-extern void func_ov076_020c7b64(SlotMenu *menu, int slot, int part, u8 *buffer);
+extern void SlotMenu_UploadLabel(SlotMenu *menu, int slot, int part, u8 *buffer);
 
 void SlotMenu_DrawEmptyLabel(SlotMenu *menu, int slot, int part)
 {
@@ -23,5 +23,5 @@ void SlotMenu_DrawEmptyLabel(SlotMenu *menu, int slot, int part)
     } else {
         buffer = menu->labelTemplate;
     }
-    func_ov076_020c7b64(menu, slot, part, buffer);
+    SlotMenu_UploadLabel(menu, slot, part, buffer);
 }

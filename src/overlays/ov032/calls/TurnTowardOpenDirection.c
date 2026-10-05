@@ -13,7 +13,7 @@ typedef struct {
 
 extern MoverState *func_ov032_020bbc98(void *mover);
 extern unsigned int func_0202a9e4(unsigned int range);
-extern int func_ov032_020bcb94(void *object, int radius, const VecFx32 *origin, fx32 height, int startDirection, u32 blockedMask);
+extern int FindFarthestOpenDirection(void *object, int radius, const VecFx32 *origin, fx32 height, int startDirection, u32 blockedMask);
 
 BOOL TurnTowardOpenDirection(Mover *mover, const VecFx32 *origin, fx32 height)
 {
@@ -21,7 +21,7 @@ BOOL TurnTowardOpenDirection(Mover *mover, const VecFx32 *origin, fx32 height)
     int roll = func_0202a9e4(16);
     int current = state->direction;
     int start = (current + roll) % 16;
-    int found = func_ov032_020bcb94(mover->object, state->radius, origin, height, start,
+    int found = FindFarthestOpenDirection(mover->object, state->radius, origin, height, start,
                                                    (1 << current) | (1 << ((current + 8) % 16)));
     if (found != -1) {
         state->direction = found;

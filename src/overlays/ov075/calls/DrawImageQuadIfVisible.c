@@ -19,7 +19,7 @@ typedef struct {
     u16 color;
 } ImageQuad;
 
-extern void func_ov075_020cd548(ImageQuad *quad, const MenuImage *image, s16 x, s16 y, fx32 depth, u16 color);
+extern void InitImageQuad(ImageQuad *quad, const MenuImage *image, s16 x, s16 y, fx32 depth, u16 color);
 extern void func_ov075_020cd874(ImageQuad *quad, BOOL highlighted);
 
 void DrawImageQuadIfVisible(const MenuImage *image, int x, int y, int depth, u16 color, BOOL highlighted)
@@ -27,7 +27,7 @@ void DrawImageQuadIfVisible(const MenuImage *image, int x, int y, int depth, u16
     ImageQuad quad;
 
     if (x + image->width > 0 && x < 256 && y + image->height > 0 && y < 192) {
-        func_ov075_020cd548(&quad, image, x, y, depth << 12, color);
+        InitImageQuad(&quad, image, x, y, depth << 12, color);
         func_ov075_020cd874(&quad, highlighted);
     }
 }

@@ -12,14 +12,14 @@ typedef struct StageEventRecord {
 } StageEventRecord;
 
 extern int data_ov001_0209f2e8;
-extern StageEventRecord *func_ov001_0209c114(u32 id);
+extern StageEventRecord *GetStageEventRecord(u32 id);
 
 int IsStageEventReady(u32 id)
 {
     StageEventRecord *record;
 
     if (data_ov001_0209f2e8 != -1) {
-        record = func_ov001_0209c114(id);
+        record = GetStageEventRecord(id);
         if (record != NULL) {
             if (record->type == 99) {
                 return record->value;

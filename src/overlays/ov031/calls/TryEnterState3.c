@@ -6,14 +6,14 @@ typedef struct {
 } OverlayState;
 
 extern OverlayState *data_ov031_020bc820;
-extern u32 func_ov001_0207ed54(void);
+extern u32 AreAllListNodesReady(void);
 extern u32 func_ov001_020871a0(void);
 
 u32 TryEnterState3(void)
 {
     u32 result;
 
-    result = func_ov001_0207ed54();
+    result = AreAllListNodesReady();
     if (result == 0) {
         return 0xffffffff;
     }

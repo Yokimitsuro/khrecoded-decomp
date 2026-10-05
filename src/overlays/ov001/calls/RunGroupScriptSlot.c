@@ -10,7 +10,7 @@ typedef struct GroupMember {
     ScriptRunner runner;
 } GroupMember;
 
-extern int func_ov021_020b4bfc(ScriptRunner *runner, int slot);
+extern int SelectSequenceTrack(ScriptRunner *runner, int slot);
 extern GroupMember *GetLinkedStageActor(GroupMember *member);
 
 u16 RunGroupScriptSlot(GroupMember *leader, int slot)
@@ -19,7 +19,7 @@ u16 RunGroupScriptSlot(GroupMember *leader, int slot)
     u16 leaderResult = 0;
 
     while (member != NULL) {
-        u16 result = func_ov021_020b4bfc(&member->runner, slot);
+        u16 result = SelectSequenceTrack(&member->runner, slot);
         if (member == leader) {
             leaderResult = result;
         }

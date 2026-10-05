@@ -45,17 +45,17 @@ typedef struct {
 
 extern SpawnedUnit *AllocEntity(s32 ownerId, s32 entityId, u32 size, u32 kind);
 extern void CopyWordArray24(Spawner *spawner, SpawnParams *params);
-extern void func_ov021_020aecc4(SpawnedUnit *unit, SpawnParams *params, UnitParams *out);
+extern void InitializeUnitParameters(SpawnedUnit *unit, SpawnParams *params, UnitParams *out);
 extern s32 func_ov001_0206dba0(s32 arg);
-extern void func_ov021_020ab030(SpawnedUnit *unit, u32 first, u32 second, UnitParams *params, s32 x, s32 y);
+extern void SetupOwnerAndEntries(SpawnedUnit *unit, u32 first, u32 second, UnitParams *params, s32 x, s32 y);
 extern int FX_Mul(int left, int right);
 extern fx32 FX_Sqrt(fx32 value);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern void UpdateDelayedSlotProjectile(void);
 extern void func_ov056_020d6afc(void);
-extern void func_ov021_020ae75c(void);
+extern void UpdateUnitAttackSweep(void);
 extern void UpdateFallingProjectile(void);
-extern void func_ov021_020aee34(SpawnedUnit *unit, u32 baseId, u32 kind);
+extern void LoadUnitSharedRecords(SpawnedUnit *unit, u32 baseId, u32 kind);
 
 SpawnedUnit *SpawnArcUnitFromSpawner(Spawner *spawner, u16 value, u32 kind)
 {
@@ -70,7 +70,7 @@ SpawnedUnit *SpawnArcUnitFromSpawner(Spawner *spawner, u16 value, u32 kind)
     unit->team = spawner->team;
     unit->value = value;
     CopyWordArray24(spawner, &spawn);
-    func_ov021_020aecc4(unit, &spawn, &params);
+    InitializeUnitParameters(unit, &spawn, &params);
     params.mode = 0x20;
     params.flags = 0;
     params.layer = 2;
@@ -81,15 +81,15 @@ SpawnedUnit *SpawnArcUnitFromSpawner(Spawner *spawner, u16 value, u32 kind)
     unit->launchSpeed = speed;
     unit->airTime = FX_Div(speed << 1, gravity);
     unit->lifetime = spawn.lifetime;
-    func_ov021_020ab030(unit,
+    SetupOwnerAndEntries(unit,
         (spawner->baseId & 0x1ff) | ((((func_ov001_0206dba0(0) + 0x8000) & 0xfffffc) << 7) | 0x80000000),
         ((spawner->baseId + 2) & 0x1ff) | ((((func_ov001_0206dba0(0) + 0x8000) & 0xfffffc) << 7) | 0x80000000),
         &params, 1, spawner->team);
     unit->updateCallback = UpdateDelayedSlotProjectile;
     unit->drawCallback = func_ov056_020d6afc;
-    unit->attackCallback = func_ov021_020ae75c;
+    unit->attackCallback = UpdateUnitAttackSweep;
     unit->hitCallback = UpdateFallingProjectile;
-    func_ov021_020aee34(unit, spawner->baseId, kind);
+    LoadUnitSharedRecords(unit, spawner->baseId, kind);
     unit->state = 0;
     return unit;
 }

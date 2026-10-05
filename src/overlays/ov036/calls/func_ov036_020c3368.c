@@ -1,5 +1,5 @@
-extern void *func_ov036_020c2930();
+extern void *CloseAllTextWindows();
 
 void *func_ov036_020c3368() {
-    return func_ov036_020c2930();
+    return CloseAllTextWindows();
 }

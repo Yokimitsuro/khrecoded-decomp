@@ -18,7 +18,7 @@ typedef struct Actor {
     s32 angle;
 } Actor;
 
-extern void func_ov001_02089cd4(Actor *actor, int mode);
+extern void ActorObject_Reset(Actor *actor, int mode);
 
 void Actor_AttachSource(Actor *actor, int mode, ActorSource *source)
 {
@@ -27,7 +27,7 @@ void Actor_AttachSource(Actor *actor, int mode, ActorSource *source)
     if (actor->flags != 0) {
         return;
     }
-    func_ov001_02089cd4(actor, mode);
+    ActorObject_Reset(actor, mode);
     if (source == NULL) {
         actor->flags |= 0x4000;
         actor->source = NULL;

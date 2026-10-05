@@ -13,7 +13,7 @@ typedef struct Block {
 
 extern void *ActorRegistry_GetEntityByIndex(u32 id);
 extern void Obj_SetPosition(void *entity, const VecFx32 *position);
-extern void func_ov001_0208085c(void *shape, const VecFx32 *position, int kind, fx32 sizeX, fx32 sizeY,
+extern void BuildCollisionShape(void *shape, const VecFx32 *position, int kind, fx32 sizeX, fx32 sizeY,
                                          fx32 sizeZ, s32 angle, BOOL allocate, int mode);
 
 void ApplyBlockLift(Block *block, fx32 lift)
@@ -24,5 +24,5 @@ void ApplyBlockLift(Block *block, fx32 lift)
     }
     block->position.y += lift;
     Obj_SetPosition(ActorRegistry_GetEntityByIndex(block->entityId), &block->position);
-    func_ov001_0208085c(block->shape, &block->position, 3, 0x1800, 0x1800, 0x1800, 0, 0, -1);
+    BuildCollisionShape(block->shape, &block->position, 3, 0x1800, 0x1800, 0x1800, 0, 0, -1);
 }

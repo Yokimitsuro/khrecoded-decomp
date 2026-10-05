@@ -1,5 +1,5 @@
 ScriptCmd_CreateObjectInSlot_020a0540 kind:function(thumb,size=0x2a) addr:0x020a0540
-func_ov009_020a056c kind:function(thumb,size=0x74) addr:0x020a056c
+ScriptCmd_CreateObjectAtPosition kind:function(thumb,size=0x74) addr:0x020a056c
 ScriptCmd_SetObjectElementFlag kind:function(thumb,size=0x36) addr:0x020a05e0
 ScriptCmd_SetObjectElementState kind:function(thumb,size=0x3c) addr:0x020a0618
 func_ov009_020a0654 kind:function(arm,size=0x144) addr:0x020a0654
@@ -11,14 +11,14 @@ FieldObject_SetLiftedPosition kind:function(thumb,size=0x4e) addr:0x020a0914
 GetIndirectFieldAt0x50 kind:function(thumb,size=0x6) addr:0x020a0964
 func_ov009_020a096c kind:function(thumb,size=0x4) addr:0x020a096c
 ScriptCmd_SpawnModeTwo kind:function(thumb,size=0xc) addr:0x020a0970
-func_ov009_020a097c kind:function(thumb,size=0x24) addr:0x020a097c
-func_ov009_020a09a0 kind:function(thumb,size=0xf4) addr:0x020a09a0
+IsNearFirstEntity kind:function(thumb,size=0x24) addr:0x020a097c
+FieldObject_UpdateFall kind:function(thumb,size=0xf4) addr:0x020a09a0
 IsKind4WithState0Or3 kind:function(thumb,size=0x1a) addr:0x020a0a94
 func_ov009_020a0ab0 kind:function(thumb,size=0x28) addr:0x020a0ab0
 func_ov009_020a0ad8 kind:function(thumb,size=0xa) addr:0x020a0ad8
 func_ov009_020a0ae4 kind:function(thumb,size=0xa) addr:0x020a0ae4
 func_ov009_020a0af0 kind:function(thumb,size=0xac) addr:0x020a0af0
-func_ov009_020a0b9c kind:function(thumb,size=0x76) addr:0x020a0b9c
+FieldObject_CreateAtPosition_020a0b9c kind:function(thumb,size=0x76) addr:0x020a0b9c
 SetFlagBit0x10At0x4e kind:function(thumb,size=0x28) addr:0x020a0c14
 func_ov009_020a0c3c kind:function(thumb,size=0x8) addr:0x020a0c3c
 gOv009ScriptObjectHandlers kind:data(any) addr:0x020a0c60

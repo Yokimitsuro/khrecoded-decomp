@@ -25,7 +25,7 @@ typedef struct {
     s32 angle;
 } QuadRotation;
 
-extern void func_ov075_020cd548(ImageQuad *quad, const MenuImage *image, s16 x, s16 y, fx32 depth, u16 color);
+extern void InitImageQuad(ImageQuad *quad, const MenuImage *image, s16 x, s16 y, fx32 depth, u16 color);
 extern void func_ov075_020cdbe0(ImageQuad *quad, BOOL highlighted, const QuadRotation *rotation);
 
 void DrawRotatedImageQuadIfVisible(const MenuImage *image, int x, int y, int depth, u16 color, BOOL highlighted,
@@ -34,7 +34,7 @@ void DrawRotatedImageQuadIfVisible(const MenuImage *image, int x, int y, int dep
     ImageQuad quad;
 
     if (x + image->width > 0 && x < 256 && y + image->height > 0 && y < 192) {
-        func_ov075_020cd548(&quad, image, x, y, depth << 12, color);
+        InitImageQuad(&quad, image, x, y, depth << 12, color);
         func_ov075_020cdbe0(&quad, highlighted, rotation);
     }
 }

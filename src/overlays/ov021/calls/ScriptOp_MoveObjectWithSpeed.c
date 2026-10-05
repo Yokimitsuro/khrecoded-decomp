@@ -3,10 +3,10 @@ extern int data_ov021_020b56c4[];
 extern unsigned int VEC_Mag();
 extern unsigned int FX_Div();
 extern unsigned int VEC_Subtract();
-extern unsigned int func_ov001_020910ec();
+extern unsigned int BeginWalkerMove();
 extern unsigned int ResolveTaggedValueRef();
 extern unsigned int TaggedValueToFixed();
-extern unsigned int func_ov021_020b03e8();
+extern unsigned int ResolveVectorOperand();
 
 unsigned int ScriptOp_MoveObjectWithSpeed(unsigned int context,int operands)
 
@@ -21,12 +21,12 @@ unsigned int ScriptOp_MoveObjectWithSpeed(unsigned int context,int operands)
   object = activeObject_020b56ac;
   speed = TaggedValueToFixed(speed);
   duration = 0xffffffff;
-  func_ov021_020b03e8(context,operands,position);
+  ResolveVectorOperand(context,operands,position);
   if (speed != 0) {
     VEC_Subtract(position,object + 0x2c0,delta);
     duration = VEC_Mag(delta);
     duration = FX_Div(duration,speed);
   }
-  func_ov001_020910ec(object,position,duration,0);
+  BeginWalkerMove(object,position,duration,0);
   return 0;
 }

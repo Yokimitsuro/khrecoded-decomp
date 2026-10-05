@@ -23,11 +23,11 @@ typedef struct {
     AiState ai;
 } Enemy;
 
-extern void func_ov058_020d4520(AiState *ai);
+extern void InitRecordEntry(AiState *ai);
 extern int func_ov001_0206db8c(int index);
 extern void StopAndClearSoundEmitter(s32 groupId, s32 emitterIndex);
 extern void FinishEnemyRecovery(Enemy *enemy);
-extern void func_ov052_020ce7c0(Enemy *enemy, int mode, int enabled);
+extern void SetEntityModeEnabled(Enemy *enemy, int mode, int enabled);
 
 void SetEnemyModeEnabled(Enemy *enemy, int mode, int enabled)
 {
@@ -39,7 +39,7 @@ void SetEnemyModeEnabled(Enemy *enemy, int mode, int enabled)
     case 0:
         if (enabled != 0) {
             saved = ai->savedValue;
-            func_ov058_020d4520(ai);
+            InitRecordEntry(ai);
             ai->savedValue = saved;
         }
         break;
@@ -72,5 +72,5 @@ void SetEnemyModeEnabled(Enemy *enemy, int mode, int enabled)
         }
         break;
     }
-    func_ov052_020ce7c0(enemy, mode, enabled);
+    SetEntityModeEnabled(enemy, mode, enabled);
 }

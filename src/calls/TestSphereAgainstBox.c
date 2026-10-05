@@ -22,7 +22,7 @@ typedef struct SphereContact {
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 FX_Sqrt(fx32 value);
-extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *m, VecFx32 *dst);
+extern void MTX_MultVec33(const VecFx32 *vec, const MtxFx33 *m, VecFx32 *dst);
 extern fx32 PXI_Init_0203f23c(fx32 value);
 extern s32 Sign(s32 value);
 extern fx32 Vec_DotSelf(const VecFx32 *v);
@@ -97,7 +97,7 @@ BOOL TestSphereAgainstBox(CollisionSphere **sphereRef, OrientedBox **boxRef, Sph
         if (flags & 1) {
             NegateVecFx32(&contact->normal);
         }
-        func_01ff9404(&contact->normal, &box->axes, &contact->normal);
+        MTX_MultVec33(&contact->normal, &box->axes, &contact->normal);
     }
     return TRUE;
 }

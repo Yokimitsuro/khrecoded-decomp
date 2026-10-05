@@ -1,14 +1,14 @@
 func_ov084_020bf720 kind:function(thumb,size=0x29c) addr:0x020bf720
 func_ov084_020bf9bc kind:function(thumb,size=0x8) addr:0x020bf9bc
 TeardownSceneResources kind:function(thumb,size=0x42) addr:0x020bf9c4
-func_ov084_020bfa08 kind:function(thumb,size=0x5c) addr:0x020bfa08
+RefreshSelectButtons kind:function(thumb,size=0x5c) addr:0x020bfa08
 func_ov084_020bfa64 kind:function(thumb,size=0x96) addr:0x020bfa64
-func_ov084_020bfafc kind:function(thumb,size=0x88) addr:0x020bfafc
-func_ov084_020bfb84 kind:function(thumb,size=0x22) addr:0x020bfb84
-func_ov084_020bfba8 kind:function(thumb,size=0x3c) addr:0x020bfba8
+DrawSelectMenuModel kind:function(thumb,size=0x88) addr:0x020bfafc
+UpdateSelectMenu kind:function(thumb,size=0x22) addr:0x020bfb84
+SelectPrevOption kind:function(thumb,size=0x3c) addr:0x020bfba8
 func_ov084_020bfbe4 kind:function(thumb,size=0x44) addr:0x020bfbe4
 func_ov084_020bfc28 kind:function(thumb,size=0x1e) addr:0x020bfc28
-func_ov084_020bfc48 kind:function(thumb,size=0x18) addr:0x020bfc48
+ResetMenuCursorWithSound kind:function(thumb,size=0x18) addr:0x020bfc48
 data_ov084_020bfc60 kind:data(any) addr:0x020bfc60
 data_ov084_020bfc70 kind:data(any) addr:0x020bfc70
 data_ov084_020bfca0 kind:data(any) addr:0x020bfca0 ambiguous

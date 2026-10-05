@@ -11,6 +11,10 @@ src/overlays/ov007/calls/ScriptCmd_ShowActorEmote.c:
     complete
     .text       start:0x020a059c end:0x020a05d6
 
+src/overlays/ov007/calls/ScriptCmd_SetActorWander.c:
+    complete
+    .text       start:0x020a05d8 end:0x020a066e
+
 src/overlays/ov007/calls/func_ov007_020a0670.c:
     complete
     .text       start:0x020a0670 end:0x020a067e
@@ -27,6 +31,10 @@ src/overlays/ov007/calls/ScriptCmd_PlayValueSequence.c:
     complete
     .text       start:0x020a06d4 end:0x020a0732
 
+src/overlays/ov007/calls/ScriptCmd_SetActorPath.c:
+    complete
+    .text       start:0x020a0734 end:0x020a07aa
+
 src/overlays/ov007/calls/ScriptCmd_CreateFieldTask.c:
     complete
     .text       start:0x020a07ac end:0x020a080e
@@ -34,6 +42,10 @@ src/overlays/ov007/calls/ScriptCmd_CreateFieldTask.c:
 src/overlays/ov007/calls/ScriptCmd_SetActorTarget.c:
     complete
     .text       start:0x020a0810 end:0x020a0862
+
+src/overlays/ov007/calls/ScriptCmd_ApplyOperandPair.c:
+    complete
+    .text       start:0x020a0864 end:0x020a0892
 
 src/overlays/ov007/calls/func_ov007_020a0894.c:
     complete
@@ -47,13 +59,33 @@ src/overlays/ov007/calls/DampBounceVelocity.c:
     complete
     .text       start:0x020a0adc end:0x020a0b1c
 
+src/overlays/ov007/calls/StepBounceBody.c:
+    complete
+    .text       start:0x020a0b1c end:0x020a0ba4
+
+src/overlays/ov007/calls/StartLaunchMotion.c:
+    complete
+    .text       start:0x020a0e78 end:0x020a0eec
+
+src/overlays/ov007/calls/RespawnWanderActor.c:
+    complete
+    .text       start:0x020a0eec end:0x020a100a
+
 src/overlays/ov007/calls/GetRaisedOwnerPosition.c:
     complete
     .text       start:0x020a1018 end:0x020a1044
 
+src/overlays/ov007/calls/DrawWanderMotionModels.c:
+    complete
+    .text       start:0x020a15c8 end:0x020a1740
+
 src/overlays/ov007/calls/FreeEntryArray.c:
     complete
     .text       start:0x020a1740 end:0x020a1798
+
+src/overlays/ov007/calls/CreateEmoteFieldObject.c:
+    complete
+    .text       start:0x020a185c end:0x020a18e0
 
 src/overlays/ov007/calls/SetPathTable.c:
     complete

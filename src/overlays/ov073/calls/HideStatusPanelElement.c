@@ -12,9 +12,9 @@ typedef struct StatusPanel {
     void *element;
 } StatusPanel;
 
-extern void func_ov027_020b95a0(ResourceContainer *container, void *element, BOOL visible);
+extern void SetEntrySlotsVisible(ResourceContainer *container, void *element, BOOL visible);
 
 void HideStatusPanelElement(StatusMenu *menu, StatusPanel *panel)
 {
-    func_ov027_020b95a0(menu->container, panel->element, FALSE);
+    SetEntrySlotsVisible(menu->container, panel->element, FALSE);
 }

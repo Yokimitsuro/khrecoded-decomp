@@ -1,5 +1,5 @@
-extern int func_ov001_0208b984();
+extern int IsTransitionStateDone();
 int func_ov001_0208d574(void) {
-    if (func_ov001_0208b984() != 0) return 1;
+    if (IsTransitionStateDone() != 0) return 1;
     return 0;
 }

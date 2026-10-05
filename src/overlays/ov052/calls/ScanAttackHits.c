@@ -112,22 +112,22 @@ struct Actor {
     u32 hitFlags;
 };
 
-extern u16 func_ov052_020ceb9c(Actor *actor);
-extern void func_ov021_020ac0d8(HitQuery *query);
+extern u16 GetLinkedAngleOffset(Actor *actor);
+extern void InitRecord60(HitQuery *query);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
-extern void func_ov021_020aa5d8(AttackShape *shape, VecFx32 *vec, fx32 *single, fx32 *balance, int rawScale);
+extern void ScaleMaskedChannels(AttackShape *shape, VecFx32 *vec, fx32 *single, fx32 *balance, int rawScale);
 extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
 extern CollisionShape func_0203ad28(Sphere *storage, const VecFx32 *center, fx32 radius);
 extern void OffsetBoxByDelta(const Box *src, Box *dst, const VecFx32 *delta);
-extern void func_ov021_020ac118(HitResult *result);
+extern void ZeroBytes0x28(HitResult *result);
 extern void func_ov052_020d1880(HitResult *out, Actor *actor, AttackData *attack, SlotEntry *entry);
-extern void func_ov021_020ac170(HitScan *scan);
-extern BOOL func_ov021_020ac184(int player, HitQuery *query, HitResult *result, HitScan *scan);
-extern BOOL func_ov021_020aa67c(MotionHandle *handle);
+extern void ZeroAndSetField0xd4(HitScan *scan);
+extern BOOL StepHitScan(int player, HitQuery *query, HitResult *result, HitScan *scan);
+extern BOOL HasSlotAAndBit2Set(MotionHandle *handle);
 extern BOOL IsFacingWallContact(Actor *actor);
 extern BOOL IsFacingNearbyTarget(Actor *actor, HitScan *scan);
-extern void func_ov052_020cfda4(Actor *actor);
-extern void func_ov052_020d14b4(Actor *actor, HitScan *scan, SlotEntry *entry, VecFx32 *target);
+extern void MarkStateThreeFlag(Actor *actor);
+extern void SpawnHitSparkMarker(Actor *actor, HitScan *scan, SlotEntry *entry, VecFx32 *target);
 
 BOOL ScanAttackHits(Actor *actor, AttackData *attack, int arg, SlotEntry *entry)
 {
@@ -151,8 +151,8 @@ BOOL ScanAttackHits(Actor *actor, AttackData *attack, int arg, SlotEntry *entry)
     if (attack->startFrame > actor->frame || attack->endFrame <= actor->frame) {
         return FALSE;
     }
-    angle = func_ov052_020ceb9c(actor);
-    func_ov021_020ac0d8(&query);
+    angle = GetLinkedAngleOffset(actor);
+    InitRecord60(&query);
     if (!entry->useEntryPos) {
         query.scale = shape->scale;
         query.arg = arg;
@@ -163,20 +163,20 @@ BOOL ScanAttackHits(Actor *actor, AttackData *attack, int arg, SlotEntry *entry)
         radius = shape->radius;
         offset = shape->offset;
         angle = (u16)(angle - 0x8000);
-        func_ov021_020aa5d8(shape, &offset, &radius, &query.scale, owner->scale);
+        ScaleMaskedChannels(shape, &offset, &radius, &query.scale, owner->scale);
         RotateOffsetAroundY(&pos, func_ov052_020ceb74(actor), angle, &offset);
     } else {
         query.scale = 0x1000;
         query.arg = arg;
         query.angle = angle;
-        func_ov021_020aa5d8(shape, &offset, &radius, &query.scale, owner->scale);
+        ScaleMaskedChannels(shape, &offset, &radius, &query.scale, owner->scale);
         pos = entry->pos;
     }
     swept.shape = func_0203ad28(&sphere, &pos, radius);
     swept.delta = query.delta;
     OffsetBoxByDelta(&swept.shape.bounds, &swept.sweptBounds, &swept.delta);
     query.shape = swept;
-    func_ov021_020ac118(&hit);
+    ZeroBytes0x28(&hit);
     func_ov052_020d1880(&hit, actor, attack, entry);
     power = attack->power;
     hit.stun = attack->stun;
@@ -185,8 +185,8 @@ BOOL ScanAttackHits(Actor *actor, AttackData *attack, int arg, SlotEntry *entry)
     hit.power = power;
     hit.basePower = power;
     cur = &scan;
-    func_ov021_020ac170(cur);
-    while (func_ov021_020ac184(actor->player, &query, &hit, cur)) {
+    ZeroAndSetField0xd4(cur);
+    while (StepHitScan(actor->player, &query, &hit, cur)) {
         struck = FALSE;
         switch (cur->kind) {
         case 2:
@@ -215,7 +215,7 @@ BOOL ScanAttackHits(Actor *actor, AttackData *attack, int arg, SlotEntry *entry)
                 }
                 struck = TRUE;
             } else {
-                if (entry->hit || !func_ov021_020aa67c(&actor->motion)) {
+                if (entry->hit || !HasSlotAAndBit2Set(&actor->motion)) {
                     break;
                 }
                 triggered = IsFacingNearbyTarget(actor, cur);
@@ -223,11 +223,11 @@ BOOL ScanAttackHits(Actor *actor, AttackData *attack, int arg, SlotEntry *entry)
                     struck = TRUE;
                 }
             }
-            func_ov052_020cfda4(actor);
+            MarkStateThreeFlag(actor);
             break;
         case 1:
             if (cur->flags & 1) {
-                if (entry->hit || !func_ov021_020aa67c(&actor->motion) || !(actor->controlFlags & 2) || cur->side != 1) {
+                if (entry->hit || !HasSlotAAndBit2Set(&actor->motion) || !(actor->controlFlags & 2) || cur->side != 1) {
                     break;
                 }
                 triggered = IsFacingWallContact(actor);
@@ -243,12 +243,12 @@ BOOL ScanAttackHits(Actor *actor, AttackData *attack, int arg, SlotEntry *entry)
         if (struck) {
             entry->struck = 1;
             if (!entry->noSpark) {
-                func_ov052_020d14b4(actor, cur, entry, &pos);
+                SpawnHitSparkMarker(actor, cur, entry, &pos);
             }
             if (entry->onHit != NULL) {
                 entry->onHit(actor, cur, entry);
             }
-            func_ov052_020cfda4(actor);
+            MarkStateThreeFlag(actor);
         }
         if (scan.state == 3 && entry->shown && !hit.guarded) {
             scan.state = 5;
@@ -258,7 +258,7 @@ BOOL ScanAttackHits(Actor *actor, AttackData *attack, int arg, SlotEntry *entry)
         if (actor->setState(actor, 0xe) == 0xe) {
             result = TRUE;
         }
-        func_ov052_020cfda4(actor);
+        MarkStateThreeFlag(actor);
     }
     return result;
 }

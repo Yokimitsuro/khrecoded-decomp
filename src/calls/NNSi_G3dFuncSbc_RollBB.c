@@ -46,7 +46,7 @@ extern void MTX_Copy43To44_(const MtxFx43 *src, MtxFx44 *dst);
 extern void MTX_Concat44(const MtxFx44 *a, const MtxFx44 *b, MtxFx44 *ab);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
-extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *axb);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *axb);
 extern void MIi_CpuSend32(const void *src, volatile void *dest, u32 size);
 
 void NNSi_G3dFuncSbc_RollBB(NNSG3dRS *rs, u32 opt)
@@ -123,7 +123,7 @@ void NNSi_G3dFuncSbc_RollBB(NNSG3dRS *rs, u32 opt)
 
         VEC_Normalize((VecFx32 *)&mtx->_00, (VecFx32 *)&mtx->_00);
         VEC_Normalize((VecFx32 *)&mtx->_10, (VecFx32 *)&mtx->_10);
-        func_01ff9ea8((VecFx32 *)&mtx->_00, (VecFx32 *)&mtx->_10, (VecFx32 *)&mtx->_20);
+        VEC_CrossProduct((VecFx32 *)&mtx->_00, (VecFx32 *)&mtx->_10, (VecFx32 *)&mtx->_20);
 
         if (NNS_G3dGlb.flag & NNS_G3D_GLB_FLAG_FLUSH_WVP) {
             reg_G3X_GXFIFO = 0x00171012;

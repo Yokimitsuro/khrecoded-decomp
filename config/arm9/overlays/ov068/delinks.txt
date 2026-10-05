@@ -4,6 +4,22 @@
     .data       start:0x020d86a0 end:0x020d86e0 kind:data align:32
     .bss        start:0x020d86e0 end:0x020d86e0 kind:bss align:32
 
+src/overlays/ov068/calls/StartOv068BossIntro.c:
+    complete
+    .text       start:0x020d8140 end:0x020d81c0
+
+src/overlays/ov068/calls/RunOv068BossState.c:
+    complete
+    .text       start:0x020d81c0 end:0x020d84d4
+
+src/overlays/ov068/calls/EndOv068BossIntro.c:
+    complete
+    .text       start:0x020d84d4 end:0x020d853c
+
+src/overlays/ov068/calls/CreateOv068BossObject.c:
+    complete
+    .text       start:0x020d853c end:0x020d8674
+
 src/overlays/ov068/data/strings/Strings_ov068_020d86a0.c:
     complete
     .data       start:0x020d86a0 end:0x020d86b0

@@ -23,8 +23,8 @@ struct Actor {
 };
 
 extern void *func_ov001_0206db78(u8 index);
-extern void func_ov059_020c897c(VecFx32 *out, Actor *actor);
-extern BOOL func_ov021_020a754c(void *holder, u16 mask);
+extern void Actor_GetRotatedJointPosition(VecFx32 *out, Actor *actor);
+extern BOOL HasFlagsAt0xe(void *holder, u16 mask);
 extern void func_ov059_020c9a74(Actor *actor, int arg);
 extern void func_ov059_020c9d34(Actor *actor);
 extern void Actor_ConsumeCommand(Actor *actor);
@@ -33,9 +33,9 @@ void Actor_UpdateCommandInput(Actor *actor) {
     void *input = func_ov001_0206db78(actor->playerIndex);
     VecFx32 pos;
 
-    func_ov059_020c897c(&pos, actor);
+    Actor_GetRotatedJointPosition(&pos, actor);
     actor->jointPosition = pos;
-    if (actor->commandActive && (!func_ov021_020a754c(input, 0x400) || func_ov021_020a754c(input, 1))) {
+    if (actor->commandActive && (!HasFlagsAt0xe(input, 0x400) || HasFlagsAt0xe(input, 1))) {
         func_ov059_020c9a74(actor, 0);
     }
     if (actor->commandActive) {

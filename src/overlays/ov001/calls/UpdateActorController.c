@@ -16,7 +16,7 @@ typedef struct ControlledActor {
 extern ControlledActor *GetStageActor(s16 actorId);
 extern u32 func_ov001_0209c5ac(u32 mask);
 extern void *GetStageController(u16 index);
-extern void func_ov001_02098124(void *controller);
+extern void UpdateActorController_02098124(void *controller);
 
 void UpdateActorController(ControllerOwner *owner)
 {
@@ -27,7 +27,7 @@ void UpdateActorController(ControllerOwner *owner)
         actor->controlMode == 2) {
         controller = GetStageController(actor->controllerIndex);
         if (controller != NULL) {
-            func_ov001_02098124(controller);
+            UpdateActorController_02098124(controller);
         }
     }
 }

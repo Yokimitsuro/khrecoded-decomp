@@ -2,3 +2,19 @@
     .ctor       start:0x020d8558 end:0x020d8558 kind:rodata align:4
     .data       start:0x020d8560 end:0x020d85a0 kind:data align:32
     .bss        start:0x020d85a0 end:0x020d85a0 kind:bss align:32
+
+src/overlays/ov067/calls/StartOv067BossIntro.c:
+    complete
+    .text       start:0x020d8140 end:0x020d81ac
+
+src/overlays/ov067/calls/RunOv067BossIntroState.c:
+    complete
+    .text       start:0x020d81ac end:0x020d8378
+
+src/overlays/ov067/calls/EndOv067BossIntro.c:
+    complete
+    .text       start:0x020d8378 end:0x020d83e4
+
+src/overlays/ov067/calls/CreateOv067BossObject.c:
+    complete
+    .text       start:0x020d83e4 end:0x020d8558

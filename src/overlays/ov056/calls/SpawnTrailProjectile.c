@@ -59,8 +59,8 @@ typedef struct {
 extern s16 data_02053580[];
 extern EntryInfo *GetBoundedEntryField(int index);
 extern VecFx32 func_ov021_020aed44(SpawnUnit *unit, void *arg);
-extern void func_ov021_020ab0ac(SpawnDesc *desc);
-extern SpawnedProjectile *func_ov021_020ab0b8(SpawnUnit *unit, SpawnDesc *desc);
+extern void ZeroBytes0x40(SpawnDesc *desc);
+extern SpawnedProjectile *TryConsumeLimitedUse(SpawnUnit *unit, SpawnDesc *desc);
 
 void SpawnTrailProjectile(SpawnUnit *unit, void *arg, SpawnRequest *request)
 {
@@ -77,7 +77,7 @@ void SpawnTrailProjectile(SpawnUnit *unit, void *arg, SpawnRequest *request)
     angle = info->facing - 0x8000;
     facing = (u16)(angle + 0x8000);
     origin = func_ov021_020aed44(unit, arg);
-    func_ov021_020ab0ac(&desc);
+    ZeroBytes0x40(&desc);
     desc.position = origin;
     index = facing >> 4;
     desc.direction.x = data_02053580[index];
@@ -90,7 +90,7 @@ void SpawnTrailProjectile(SpawnUnit *unit, void *arg, SpawnRequest *request)
     desc.kind = request->kind;
     desc.subKind = request->subKind;
     desc.power = request->power;
-    projectile = func_ov021_020ab0b8(unit, &desc);
+    projectile = TryConsumeLimitedUse(unit, &desc);
     if (projectile != NULL) {
         TrailState *trail = projectile->trail;
         int i;

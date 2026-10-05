@@ -19,7 +19,7 @@ typedef struct FieldObjectSpawn {
 
 extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operand);
 extern fx32 ScriptVm_ReadOperandFx32(ScriptContext *context, ScriptOperand *operand);
-extern void *func_ov001_02080d0c(u16 slotIndex, FieldObjectSpawn *spawn);
+extern void *CreateFieldObjectClassFromDesc(u16 slotIndex, FieldObjectSpawn *spawn);
 extern void func_ov001_0207ee2c(int index, void *object);
 
 BOOL ScriptCmd_SpawnFieldObjectInSlot(ScriptContext *context, ScriptOperand *operands)
@@ -35,6 +35,6 @@ BOOL ScriptCmd_SpawnFieldObjectInSlot(ScriptContext *context, ScriptOperand *ope
     spawn.position.x = ScriptVm_ReadOperandFx32(context, &operands[6]);
     spawn.position.y = ScriptVm_ReadOperandFx32(context, &operands[7]);
     spawn.position.z = ScriptVm_ReadOperandFx32(context, &operands[8]);
-    func_ov001_0207ee2c(index, func_ov001_02080d0c(slotIndex, &spawn));
+    func_ov001_0207ee2c(index, CreateFieldObjectClassFromDesc(slotIndex, &spawn));
     return TRUE;
 }

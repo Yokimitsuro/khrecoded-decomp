@@ -1,6 +1,6 @@
 extern unsigned int data_ov021_020b56c4[];
 #define activeObject_020b56ac data_ov021_020b56c4[2]
-extern unsigned int func_ov001_020911b4();
+extern unsigned int SetActorMotionFlag();
 extern unsigned int ResolveTaggedValueRef();
 extern unsigned int TaggedValueToFixed();
 
@@ -13,6 +13,6 @@ unsigned int ScriptOp_SetActiveObjectValue(unsigned int context, unsigned int op
   value = ResolveTaggedValueRef(context,operands);
   object = activeObject_020b56ac;
   value = TaggedValueToFixed(value);
-  func_ov001_020911b4(object,value);
+  SetActorMotionFlag(object,value);
   return 0;
 }

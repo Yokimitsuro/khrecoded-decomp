@@ -4,6 +4,10 @@
     .data       start:0x020c5cc0 end:0x020c5da0 kind:data align:32
     .bss        start:0x020c5da0 end:0x020c5dc0 kind:bss align:32
 
+src/overlays/ov081/calls/InitOv081Screen.c:
+    complete
+    .text       start:0x020c4c50 end:0x020c4dd4
+
 src/overlays/ov081/calls/AdvanceListAndRedraw.c:
     complete
     .text       start:0x020c4dd4 end:0x020c4e08
@@ -11,6 +15,14 @@ src/overlays/ov081/calls/AdvanceListAndRedraw.c:
 src/overlays/ov081/calls/func_ov081_020c4e08.c:
     complete
     .text       start:0x020c4e08 end:0x020c4e1a
+
+src/overlays/ov081/calls/UpdateScrollArrows.c:
+    complete
+    .text       start:0x020c4e1c end:0x020c4eb8
+
+src/overlays/ov081/calls/BuildVisibleEntryIndex.c:
+    complete
+    .text       start:0x020c4eb8 end:0x020c5180
 
 src/overlays/ov081/calls/LoadBitIndexTable.c:
     complete
@@ -28,6 +40,10 @@ src/overlays/ov081/calls/FreeEntryLists.c:
     complete
     .text       start:0x020c525c end:0x020c529c
 
+src/overlays/ov081/calls/SetupOv081Backgrounds.c:
+    complete
+    .text       start:0x020c529c end:0x020c544c
+
 src/overlays/ov081/calls/func_ov081_020c544c.c:
     complete
     .text       start:0x020c544c end:0x020c5458
@@ -40,6 +56,10 @@ src/overlays/ov081/calls/func_ov081_020c5478.c:
     complete
     .text       start:0x020c5478 end:0x020c5480
 
+src/overlays/ov081/calls/CountUnlockedListEntries.c:
+    complete
+    .text       start:0x020c5480 end:0x020c5530
+
 src/overlays/ov081/calls/ApplyTextColorTag.c:
     complete
     .text       start:0x020c5530 end:0x020c5550
@@ -51,6 +71,26 @@ src/overlays/ov081/calls/func_ov081_020c5660.c:
 src/overlays/ov081/calls/DrawListPageCounter.c:
     complete
     .text       start:0x020c5674 end:0x020c56c8
+
+src/overlays/ov081/calls/DrawListTitle.c:
+    complete
+    .text       start:0x020c56c8 end:0x020c573c
+
+src/overlays/ov081/calls/DrawListPageIndicator.c:
+    complete
+    .text       start:0x020c57b0 end:0x020c58a0
+
+src/overlays/ov081/calls/MarkUnlockedListEntriesSeen.c:
+    complete
+    .text       start:0x020c58a0 end:0x020c5984
+
+src/overlays/ov081/calls/AreSlotEntriesAllSeen.c:
+    complete
+    .text       start:0x020c5984 end:0x020c5a78
+
+src/overlays/ov081/calls/SkipToUnlockedListEntry.c:
+    complete
+    .text       start:0x020c5a94 end:0x020c5b4c
 
 src/overlays/ov081/calls/ScrollListBackward.c:
     complete

@@ -138,7 +138,7 @@ extern ArcEntry *GetBoundedEntryField(int index);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *axb);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *axb);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
@@ -152,13 +152,13 @@ extern void *ActorRegistry_GetEntityByIndex(u16 actorId);
 extern void CollisionQuery_Init(CollisionQuery *query, u16 id, void *actor, u8 kind, u8 unk3C, u8 unk3D, void *shape, QueryWorkspace *workspace, void *filter);
 extern Contact *SweepWorldCollision(CollisionQuery *query);
 extern VecFx32 GetShapeCenter(const CollisionShape *shape);
-extern void func_ov021_020ac170(HitScan *scan);
+extern void ZeroAndSetField0xd4(HitScan *scan);
 extern void func_ov021_020ac168(HitResult *result);
-extern HitResult func_ov021_020ab0e8(ArcOwner *owner, ArcUnit *unit, VecFx32 *position, VecFx32 *move);
+extern HitResult FindStrongestHit(ArcOwner *owner, ArcUnit *unit, VecFx32 *position, VecFx32 *move);
 extern int AdvanceOwnerAnimation(ArcUnit *unit, fx32 step);
 extern void AdvanceToSecondPhase(ArcUnit *unit);
-extern void func_ov056_020d5f70(void);
-extern void func_ov021_020a9250(void);
+extern void IsScenePhaseInterruptible(void);
+extern void AreZoneMeshesClear(void);
 
 BOOL UpdateHomingArcProjectile(ArcOwner *owner, ArcUnit *unit, fx32 step)
 {
@@ -225,7 +225,7 @@ BOOL UpdateHomingArcProjectile(ArcOwner *owner, ArcUnit *unit, fx32 step)
             maxAngle = FX_Mul(0x8000, def->turnRate);
             VEC_Normalize(&toTarget, &toTarget);
             VEC_Normalize(&unit->velocity, &dir);
-            func_01ff9ea8(&dir, &toTarget, &axis);
+            VEC_CrossProduct(&dir, &toTarget, &axis);
             dot = VEC_DotProduct(&dir, &toTarget);
             if (dot < -0x1000) {
                 dot = -0x1000;
@@ -277,10 +277,10 @@ BOOL UpdateHomingArcProjectile(ArcOwner *owner, ArcUnit *unit, fx32 step)
     CollisionQuery_Init(&hitQuery, 0, ActorRegistry_GetEntityByIndex(owner->entryIndex), 0xb, 1, 1, &sweptCopy, &workspace, NULL);
     sweep = hitQuery;
     kind = 0;
-    filterCallback.func = func_ov056_020d5f70;
+    filterCallback.func = IsScenePhaseInterruptible;
     filterCallback.arg = NULL;
     sweep.filter = filterCallback;
-    contactCallback.func = func_ov021_020a9250;
+    contactCallback.func = AreZoneMeshesClear;
     contactCallback.arg = NULL;
     sweep.callback = contactCallback;
     contact = SweepWorldCollision(&sweep);
@@ -297,7 +297,7 @@ BOOL UpdateHomingArcProjectile(ArcOwner *owner, ArcUnit *unit, fx32 step)
             kind = 1;
         }
         if (kind != 0) {
-            func_ov021_020ac170(&hit);
+            ZeroAndSetField0xd4(&hit);
             func_ov021_020ac168(&hit.result);
             hit.result.strength = 1;
             hit.result.side = kind;
@@ -312,7 +312,7 @@ BOOL UpdateHomingArcProjectile(ArcOwner *owner, ArcUnit *unit, fx32 step)
             AdvanceToSecondPhase(unit);
         }
     }
-    strongest = func_ov021_020ab0e8(owner, unit, &pos, &move);
+    strongest = FindStrongestHit(owner, unit, &pos, &move);
     VEC_Add(&pos, &move, &pos);
     unit->position = pos;
     if (unit->status == 1) {

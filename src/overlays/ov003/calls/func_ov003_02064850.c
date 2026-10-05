@@ -1,5 +1,5 @@
-extern int func_ov003_02064724();
+extern int MovieScene_IsFlag8b9Clear();
 int func_ov003_02064850(void) {
-    if (func_ov003_02064724() != 0) return 1;
+    if (MovieScene_IsFlag8b9Clear() != 0) return 1;
     return 0;
 }

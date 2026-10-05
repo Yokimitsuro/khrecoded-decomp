@@ -21,13 +21,13 @@ typedef struct ConfigMenu {
     ConfigPage pages[3];
 } ConfigMenu;
 
-extern void func_ov079_020c489c(ConfigMenu *menu);
+extern void ConfigMenu_UpdateTags(ConfigMenu *menu);
 extern void func_ov079_020c4948(ConfigMenu *menu);
 
 void ConfigMenu_Refresh(ConfigMenu *menu)
 {
     if (menu->dirty || menu->pageChanged) {
-        func_ov079_020c489c(menu);
+        ConfigMenu_UpdateTags(menu);
         func_ov079_020c4948(menu);
         if (menu->dirty) {
             menu->dirty--;
