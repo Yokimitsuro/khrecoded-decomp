@@ -4,7 +4,7 @@ typedef struct PMSleepCallbackInfo PMSleepCallbackInfo;
 
 extern void SND_Init(void);
 extern void BeginSleep(void *arg);
-extern void *func_0201d30c(void);
+extern void *PXI_Init_0201d30c(void);
 extern void PM_PrependPreSleepCallback(PMSleepCallbackInfo *info);
 extern void PM_AppendPostSleepCallback(PMSleepCallbackInfo *info);
 extern void SndCapture_Reset(void);
@@ -21,7 +21,7 @@ void NNS_SndInit(void)
     SND_Init();
     sSndGlobalState.preSleepCallback = BeginSleep;
     sSndGlobalState.preSleepArg = NULL;
-    sSndGlobalState.postSleepCallback = func_0201d30c;
+    sSndGlobalState.postSleepCallback = PXI_Init_0201d30c;
     sSndGlobalState.postSleepArg = NULL;
     PM_PrependPreSleepCallback((PMSleepCallbackInfo *)&sSndGlobalState.preSleepCallback);
     PM_AppendPostSleepCallback((PMSleepCallbackInfo *)&sSndGlobalState.postSleepCallback);
