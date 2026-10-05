@@ -196,6 +196,14 @@ src/overlays/ov091/calls/SetSubBg2Visible.c:
     complete
     .text       start:0x020c273c end:0x020c2774
 
+src/overlays/ov091/auto/func_ov091_020c2774.c:
+    complete
+    .text       start:0x020c2774 end:0x020c2784
+
+src/overlays/ov091/auto/func_ov091_020c2798.c:
+    complete
+    .text       start:0x020c2798 end:0x020c27a4
+
 src/overlays/ov091/calls/SetPopupState.c:
     complete
     .text       start:0x020c27a4 end:0x020c27b4

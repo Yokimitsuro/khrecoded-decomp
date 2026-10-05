@@ -1304,6 +1304,26 @@ src/overlays/ov001/calls/IsActorNearLeader.c:
     complete
     .text       start:0x0206b8d4 end:0x0206b930
 
+src/overlays/ov001/auto/func_ov001_0206b930.c:
+    complete
+    .text       start:0x0206b930 end:0x0206b938
+
+src/overlays/ov001/auto/func_ov001_0206b938.c:
+    complete
+    .text       start:0x0206b938 end:0x0206b940
+
+src/overlays/ov001/auto/func_ov001_0206b940.c:
+    complete
+    .text       start:0x0206b940 end:0x0206b948
+
+src/overlays/ov001/auto/func_ov001_0206b948.c:
+    complete
+    .text       start:0x0206b948 end:0x0206b952
+
+src/overlays/ov001/auto/func_ov001_0206b954.c:
+    complete
+    .text       start:0x0206b954 end:0x0206b95c
+
 src/overlays/ov001/calls/ResolveWaitTarget.c:
     complete
     .text       start:0x0206b95c end:0x0206b9ba
@@ -2836,6 +2856,10 @@ src/overlays/ov001/calls/SetObjectAnimTrack.c:
     complete
     .text       start:0x0207f8f8 end:0x0207f91c
 
+src/overlays/ov001/auto/func_ov001_0207f91c.c:
+    complete
+    .text       start:0x0207f91c end:0x0207f924
+
 src/overlays/ov001/calls/FieldObject_SetProbeSphere.c:
     complete
     .text       start:0x0207f924 end:0x0207f9c0
@@ -3515,6 +3539,10 @@ src/overlays/ov001/calls/CreateEntryPool.c:
 src/overlays/ov001/calls/DestroyEntryPool.c:
     complete
     .text       start:0x020862c0 end:0x0208632e
+
+src/overlays/ov001/auto/func_ov001_02086384.c:
+    complete
+    .text       start:0x02086384 end:0x0208638e
 
 src/overlays/ov001/calls/FieldObject_ApplyActorSlotIndex.c:
     complete

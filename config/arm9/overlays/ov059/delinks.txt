@@ -104,6 +104,10 @@ src/overlays/ov059/calls/Actor_FreeAttachedModels.c:
     complete
     .text       start:0x020c8b70 end:0x020c8b9a
 
+src/overlays/ov059/auto/func_ov059_020c8b9c.c:
+    complete
+    .text       start:0x020c8b9c end:0x020c8ba8
+
 src/overlays/ov059/calls/Actor_SetJointBlendMode.c:
     complete
     .text       start:0x020c8fbc end:0x020c9068
@@ -347,6 +351,10 @@ src/overlays/ov059/calls/MarkList_AddAtObject.c:
 src/overlays/ov059/calls/SlotEntry_AdvanceAnim.c:
     complete
     .text       start:0x020cebf4 end:0x020cec4e
+
+src/overlays/ov059/auto/func_ov059_020cec50.c:
+    complete
+    .text       start:0x020cec50 end:0x020cec5a
 
 src/overlays/ov059/calls/Body_ReflectVelocity.c:
     complete

@@ -340,6 +340,10 @@ src/overlays/ov016/calls/SetFieldObjectHidden.c:
     complete
     .text       start:0x020a6988 end:0x020a6a0e
 
+src/overlays/ov016/auto/func_ov016_020a6a10.c:
+    complete
+    .text       start:0x020a6a10 end:0x020a6a1a
+
 src/overlays/ov016/calls/IsFieldUnitPhase6.c:
     complete
     .text       start:0x020a6a84 end:0x020a6a98

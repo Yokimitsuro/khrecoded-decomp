@@ -216,6 +216,14 @@ src/overlays/ov093/calls/SetBgSubLayerVisible.c:
     complete
     .text       start:0x020c3b7c end:0x020c3bb4
 
+src/overlays/ov093/auto/func_ov093_020c3bb4.c:
+    complete
+    .text       start:0x020c3bb4 end:0x020c3bc4
+
+src/overlays/ov093/auto/func_ov093_020c3bd8.c:
+    complete
+    .text       start:0x020c3bd8 end:0x020c3be4
+
 src/overlays/ov093/calls/StateMachine_SetState.c:
     complete
     .text       start:0x020c3be4 end:0x020c3bf4

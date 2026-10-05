@@ -64,6 +64,10 @@ src/overlays/ov020/calls/FindLivePrevBlock.c:
     complete
     .text       start:0x020a2814 end:0x020a2850
 
+src/overlays/ov020/auto/func_ov020_020a2850.c:
+    complete
+    .text       start:0x020a2850 end:0x020a285c
+
 src/overlays/ov020/calls/FindLiveNextBlock.c:
     complete
     .text       start:0x020a285c end:0x020a2898
@@ -119,6 +123,14 @@ src/overlays/ov020/calls/SpawnStackedBlock.c:
 src/overlays/ov020/calls/ApplyBlockLift.c:
     complete
     .text       start:0x020a33b8 end:0x020a3428
+
+src/overlays/ov020/auto/func_ov020_020a34a4.c:
+    complete
+    .text       start:0x020a34a4 end:0x020a34b0
+
+src/overlays/ov020/auto/func_ov020_020a34b0.c:
+    complete
+    .text       start:0x020a34b0 end:0x020a34bc
 
 src/overlays/ov020/calls/LoadPanelStackPhase.c:
     complete

@@ -304,6 +304,14 @@ src/overlays/ov017/calls/FindKind4FieldObject.c:
     complete
     .text       start:0x020a4224 end:0x020a424c
 
+src/overlays/ov017/auto/func_ov017_020a424c.c:
+    complete
+    .text       start:0x020a424c end:0x020a4254
+
+src/overlays/ov017/auto/func_ov017_020a4254.c:
+    complete
+    .text       start:0x020a4254 end:0x020a425c
+
 src/overlays/ov017/calls/RefreshListHeadAndDispatch.c:
     complete
     .text       start:0x020a425c end:0x020a4274
@@ -487,6 +495,14 @@ src/overlays/ov017/calls/CreateKind7EntryPool.c:
 src/overlays/ov017/calls/SpawnKind7Entry.c:
     complete
     .text       start:0x020a5bec end:0x020a5d6c
+
+src/overlays/ov017/auto/func_ov017_020a5df0.c:
+    complete
+    .text       start:0x020a5df0 end:0x020a5dfa
+
+src/overlays/ov017/auto/func_ov017_020a5dfc.c:
+    complete
+    .text       start:0x020a5dfc end:0x020a5e06
 
 src/overlays/ov017/calls/func_ov017_020a5e08.c:
     complete
