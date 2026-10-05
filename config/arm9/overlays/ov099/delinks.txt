@@ -11,3 +11,47 @@ src/overlays/ov099/auto/func_ov099_020c17a4.c:
 src/overlays/ov099/calls/func_ov099_020c2260.c:
     complete
     .text       start:0x020c2260 end:0x020c226c
+
+src/overlays/ov099/data/strings/Strings_ov099_020c22e0.c:
+    complete
+    .data       start:0x020c22e0 end:0x020c2328
+
+src/overlays/ov099/data/strings/Strings_ov099_020c2328.c:
+    complete
+    .data       start:0x020c2328 end:0x020c2344
+
+src/overlays/ov099/data/strings/Strings_ov099_020c2360.c:
+    complete
+    .data       start:0x020c2360 end:0x020c2368
+
+src/overlays/ov099/data/strings/Strings_ov099_020c2774.c:
+    complete
+    .data       start:0x020c2774 end:0x020c279c
+
+src/overlays/ov099/data/strings/Strings_ov099_020c288c.c:
+    complete
+    .data       start:0x020c288c end:0x020c28a4
+
+src/overlays/ov099/data/strings/Strings_ov099_020c28a4.c:
+    complete
+    .data       start:0x020c28a4 end:0x020c28c0
+
+src/overlays/ov099/data/strings/Strings_ov099_020c28c0.c:
+    complete
+    .data       start:0x020c28c0 end:0x020c28c8
+
+src/overlays/ov099/data/strings/Strings_ov099_020c28c8.c:
+    complete
+    .data       start:0x020c28c8 end:0x020c28d0
+
+src/overlays/ov099/data/strings/Strings_ov099_020c28d0.c:
+    complete
+    .data       start:0x020c28d0 end:0x020c28e4
+
+src/overlays/ov099/data/strings/Strings_ov099_020c28e4.c:
+    complete
+    .data       start:0x020c28e4 end:0x020c28ec
+
+src/overlays/ov099/data/strings/Strings_ov099_020c28ec.c:
+    complete
+    .data       start:0x020c28ec end:0x020c2900

@@ -751,3 +751,255 @@ src/overlays/ov001/calls/func_ov001_0209b66c.c:
 src/overlays/ov001/calls/func_ov001_0209c3e8.c:
     complete
     .text       start:0x0209c3e8 end:0x0209c3f4
+
+src/overlays/ov001/data/strings/Strings_ov001_0209e61c.c:
+    complete
+    .rodata     start:0x0209e61c end:0x0209e62c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209e6d4.c:
+    complete
+    .data       start:0x0209e6d4 end:0x0209e6e4
+
+src/overlays/ov001/data/strings/Strings_ov001_0209e6e4.c:
+    complete
+    .data       start:0x0209e6e4 end:0x0209e6f0
+
+src/overlays/ov001/data/strings/Strings_ov001_0209e6f4.c:
+    complete
+    .data       start:0x0209e6f4 end:0x0209e6f8
+
+src/overlays/ov001/data/strings/Strings_ov001_0209e6f8.c:
+    complete
+    .data       start:0x0209e6f8 end:0x0209e6fc
+
+src/overlays/ov001/data/strings/Strings_ov001_0209e6fc.c:
+    complete
+    .data       start:0x0209e6fc end:0x0209e710
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea10.c:
+    complete
+    .data       start:0x0209ea10 end:0x0209ea1c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea34.c:
+    complete
+    .data       start:0x0209ea34 end:0x0209ea3c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea3c.c:
+    complete
+    .data       start:0x0209ea3c end:0x0209ea44
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea44.c:
+    complete
+    .data       start:0x0209ea44 end:0x0209ea4c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea4c.c:
+    complete
+    .data       start:0x0209ea4c end:0x0209ea54
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea54.c:
+    complete
+    .data       start:0x0209ea54 end:0x0209ea5c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea5c.c:
+    complete
+    .data       start:0x0209ea5c end:0x0209ea64
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea64.c:
+    complete
+    .data       start:0x0209ea64 end:0x0209ea6c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea6c.c:
+    complete
+    .data       start:0x0209ea6c end:0x0209ea74
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea74.c:
+    complete
+    .data       start:0x0209ea74 end:0x0209ea7c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea7c.c:
+    complete
+    .data       start:0x0209ea7c end:0x0209ea90
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea90.c:
+    complete
+    .data       start:0x0209ea90 end:0x0209ea98
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ea98.c:
+    complete
+    .data       start:0x0209ea98 end:0x0209eaac
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eaac.c:
+    complete
+    .data       start:0x0209eaac end:0x0209eab8
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eab8.c:
+    complete
+    .data       start:0x0209eab8 end:0x0209eacc
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eacc.c:
+    complete
+    .data       start:0x0209eacc end:0x0209ead0
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eb00.c:
+    complete
+    .data       start:0x0209eb00 end:0x0209eb04
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eb20.c:
+    complete
+    .data       start:0x0209eb20 end:0x0209eb2c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eb2c.c:
+    complete
+    .data       start:0x0209eb2c end:0x0209eb38
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eb4c.c:
+    complete
+    .data       start:0x0209eb4c end:0x0209eb5c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eb70.c:
+    complete
+    .data       start:0x0209eb70 end:0x0209eb84
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eb84.c:
+    complete
+    .data       start:0x0209eb84 end:0x0209eb94
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eb94.c:
+    complete
+    .data       start:0x0209eb94 end:0x0209eba0
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eba0.c:
+    complete
+    .data       start:0x0209eba0 end:0x0209ebac
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ebac.c:
+    complete
+    .data       start:0x0209ebac end:0x0209ebb8
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ebb8.c:
+    complete
+    .data       start:0x0209ebb8 end:0x0209ebd4
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ebd4.c:
+    complete
+    .data       start:0x0209ebd4 end:0x0209ebe4
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ebe4.c:
+    complete
+    .data       start:0x0209ebe4 end:0x0209ebf4
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ebf4.c:
+    complete
+    .data       start:0x0209ebf4 end:0x0209ec04
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ec04.c:
+    complete
+    .data       start:0x0209ec04 end:0x0209ec14
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ec14.c:
+    complete
+    .data       start:0x0209ec14 end:0x0209ec24
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ed2c.c:
+    complete
+    .data       start:0x0209ed2c end:0x0209ed44
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ed44.c:
+    complete
+    .data       start:0x0209ed44 end:0x0209ed5c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ed5c.c:
+    complete
+    .data       start:0x0209ed5c end:0x0209ed74
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ed74.c:
+    complete
+    .data       start:0x0209ed74 end:0x0209ed8c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209ed90.c:
+    complete
+    .data       start:0x0209ed90 end:0x0209edb4
+
+src/overlays/ov001/data/strings/Strings_ov001_0209edb4.c:
+    complete
+    .data       start:0x0209edb4 end:0x0209edc8
+
+src/overlays/ov001/data/strings/Strings_ov001_0209edc8.c:
+    complete
+    .data       start:0x0209edc8 end:0x0209edd8
+
+src/overlays/ov001/data/strings/Strings_ov001_0209edd8.c:
+    complete
+    .data       start:0x0209edd8 end:0x0209ede4
+
+src/overlays/ov001/data/strings/Strings_ov001_0209eff4.c:
+    complete
+    .data       start:0x0209eff4 end:0x0209f004
+
+src/overlays/ov001/data/strings/Strings_ov001_0209f004.c:
+    complete
+    .data       start:0x0209f004 end:0x0209f00c
+
+src/overlays/ov001/data/strings/Strings_ov001_0209f00c.c:
+    complete
+    .data       start:0x0209f00c end:0x0209f010
+
+src/overlays/ov001/data/strings/Strings_ov001_0209f038.c:
+    complete
+    .data       start:0x0209f038 end:0x0209f040
+
+src/overlays/ov001/data/strings/Strings_ov001_0209f040.c:
+    complete
+    .data       start:0x0209f040 end:0x0209f048
+
+src/overlays/ov001/data/strings/Strings_ov001_0209f180.c:
+    complete
+    .data       start:0x0209f180 end:0x0209f194
+
+src/overlays/ov001/data/strings/Strings_ov001_0209f300.c:
+    complete
+    .data       start:0x0209f300 end:0x0209f310
+
+src/overlays/ov001/data/strings/Strings_ov001_0209f314.c:
+    complete
+    .data       start:0x0209f314 end:0x0209f324
+
+src/overlays/ov001/data/strings/Strings_ov001_0209f338.c:
+    complete
+    .data       start:0x0209f338 end:0x0209f344
+
+src/overlays/ov001/data/strings/Strings_ov001_020a0294.c:
+    complete
+    .data       start:0x020a0294 end:0x020a0298
+
+src/overlays/ov001/data/strings/Strings_ov001_020a03f4.c:
+    complete
+    .data       start:0x020a03f4 end:0x020a0404
+
+src/overlays/ov001/data/strings/Strings_ov001_020a0404.c:
+    complete
+    .data       start:0x020a0404 end:0x020a0414
+
+src/overlays/ov001/data/strings/Strings_ov001_020a0414.c:
+    complete
+    .data       start:0x020a0414 end:0x020a0424
+
+src/overlays/ov001/data/strings/Strings_ov001_020a0424.c:
+    complete
+    .data       start:0x020a0424 end:0x020a0434
+
+src/overlays/ov001/data/strings/Strings_ov001_020a0434.c:
+    complete
+    .data       start:0x020a0434 end:0x020a0438
+
+src/overlays/ov001/data/strings/Strings_ov001_020a0438.c:
+    complete
+    .data       start:0x020a0438 end:0x020a043c
+
+src/overlays/ov001/data/strings/Strings_ov001_020a043c.c:
+    complete
+    .data       start:0x020a043c end:0x020a0458
+
+src/overlays/ov001/data/strings/Strings_ov001_020a045c.c:
+    complete
+    .data       start:0x020a045c end:0x020a0480

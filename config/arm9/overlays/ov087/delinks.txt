@@ -11,3 +11,7 @@ src/overlays/ov087/auto/func_ov087_020c5cb0.c:
 src/overlays/ov087/auto/func_ov087_020c5cb4.c:
     complete
     .text       start:0x020c5cb4 end:0x020c5cb8
+
+src/overlays/ov087/data/strings/Strings_ov087_020c7e9c.c:
+    complete
+    .data       start:0x020c7e9c end:0x020c7ec0

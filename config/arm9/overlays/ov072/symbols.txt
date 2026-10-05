@@ -14,5 +14,5 @@ func_ov072_020d9acc kind:function(thumb,size=0x110) addr:0x020d9acc
 data_ov072_020d9bdc kind:data(any) addr:0x020d9bdc
 data_ov072_020d9be8 kind:data(any) addr:0x020d9be8
 data_ov072_020d9bfc kind:data(any) addr:0x020d9bfc
-data_ov072_020d9c20 kind:data(any) addr:0x020d9c20
-data_ov072_020d9c30 kind:data(any) addr:0x020d9c30
+sOv072_BaEfFnDtP2_020d9c20 kind:data(any) addr:0x020d9c20
+sOv072_CmDT_020d9c30 kind:data(any) addr:0x020d9c30

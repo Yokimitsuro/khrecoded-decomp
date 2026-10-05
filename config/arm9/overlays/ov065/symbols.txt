@@ -5,6 +5,6 @@ func_ov065_020d82b4 kind:function(thumb,size=0x1a) addr:0x020d82b4
 func_ov065_020d82d0 kind:function(thumb,size=0x98) addr:0x020d82d0
 func_ov065_020d8368 kind:function(thumb,size=0xb8) addr:0x020d8368
 func_ov065_020d8420 kind:function(thumb,size=0x1d0) addr:0x020d8420
-data_ov065_020d8600 kind:data(any) addr:0x020d8600
-data_ov065_020d8608 kind:data(any) addr:0x020d8608
-data_ov065_020d8618 kind:data(any) addr:0x020d8618
+sOv065_CmMR_020d8600 kind:data(any) addr:0x020d8600
+sOv065_BaEfFnMrP2_020d8608 kind:data(any) addr:0x020d8608
+sOv065_BaChFormatSCiBZ_020d8618 kind:data(any) addr:0x020d8618

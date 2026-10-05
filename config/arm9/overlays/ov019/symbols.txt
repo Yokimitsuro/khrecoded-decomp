@@ -35,4 +35,4 @@ func_ov019_020a3628 kind:function(thumb,size=0x38) addr:0x020a3628
 func_ov019_020a3660 kind:function(thumb,size=0x1c) addr:0x020a3660
 data_ov019_020a367c kind:data(any) addr:0x020a367c
 data_ov019_020a36a0 kind:data(any) addr:0x020a36a0
-data_ov019_020a36b0 kind:data(any) addr:0x020a36b0
+sOv019_BaEfDbhit_020a36b0 kind:data(any) addr:0x020a36b0

@@ -59,3 +59,35 @@ src/overlays/ov013/auto/func_ov013_020749ec.c:
 src/overlays/ov013/auto/func_ov013_020749f0.c:
     complete
     .text       start:0x020749f0 end:0x020749f4
+
+src/overlays/ov013/data/strings/Strings_ov013_02074b58.c:
+    complete
+    .data       start:0x02074b58 end:0x02074b6c
+
+src/overlays/ov013/data/strings/Strings_ov013_02074b6c.c:
+    complete
+    .data       start:0x02074b6c end:0x02074b80
+
+src/overlays/ov013/data/strings/Strings_ov013_02074b80.c:
+    complete
+    .data       start:0x02074b80 end:0x02074b94
+
+src/overlays/ov013/data/strings/Strings_ov013_02074b94.c:
+    complete
+    .data       start:0x02074b94 end:0x02074ba8
+
+src/overlays/ov013/data/strings/Strings_ov013_02074ba8.c:
+    complete
+    .data       start:0x02074ba8 end:0x02074bbc
+
+src/overlays/ov013/data/strings/Strings_ov013_02074c4c.c:
+    complete
+    .data       start:0x02074c4c end:0x02074c58
+
+src/overlays/ov013/data/strings/Strings_ov013_02074c58.c:
+    complete
+    .data       start:0x02074c58 end:0x02074c64
+
+src/overlays/ov013/data/strings/Strings_ov013_02074c64.c:
+    complete
+    .data       start:0x02074c64 end:0x02074c70

@@ -7,3 +7,19 @@
 src/overlays/ov095/auto/func_ov095_020c1234.c:
     complete
     .text       start:0x020c1234 end:0x020c1238
+
+src/overlays/ov095/data/strings/Strings_ov095_020c17f0.c:
+    complete
+    .data       start:0x020c17f0 end:0x020c1838
+
+src/overlays/ov095/data/strings/Strings_ov095_020c1838.c:
+    complete
+    .data       start:0x020c1838 end:0x020c1854
+
+src/overlays/ov095/data/strings/Strings_ov095_020c1854.c:
+    complete
+    .data       start:0x020c1854 end:0x020c1870
+
+src/overlays/ov095/data/strings/Strings_ov095_020c28a8.c:
+    complete
+    .data       start:0x020c28a8 end:0x020c28cc

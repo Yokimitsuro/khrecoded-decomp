@@ -107,3 +107,31 @@ src/overlays/ov039/calls/func_ov039_020bd674.c:
 src/overlays/ov039/calls/func_ov039_020bd694.c:
     complete
     .text       start:0x020bd694 end:0x020bd6b4
+
+src/overlays/ov039/data/strings/Strings_ov039_020be81c.c:
+    complete
+    .data       start:0x020be81c end:0x020be838
+
+src/overlays/ov039/data/strings/Strings_ov039_020be838.c:
+    complete
+    .data       start:0x020be838 end:0x020be860
+
+src/overlays/ov039/data/strings/Strings_ov039_020be860.c:
+    complete
+    .data       start:0x020be860 end:0x020be878
+
+src/overlays/ov039/data/strings/Strings_ov039_020be878.c:
+    complete
+    .data       start:0x020be878 end:0x020be890
+
+src/overlays/ov039/data/strings/Strings_ov039_020be890.c:
+    complete
+    .data       start:0x020be890 end:0x020be8c4
+
+src/overlays/ov039/data/strings/Strings_ov039_020be8ec.c:
+    complete
+    .data       start:0x020be8ec end:0x020be8f0
+
+src/overlays/ov039/data/strings/Strings_ov039_020be94c.c:
+    complete
+    .data       start:0x020be94c end:0x020be950

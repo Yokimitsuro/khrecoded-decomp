@@ -42,13 +42,13 @@ data_ov103_020c04c0 kind:data(any) addr:0x020c04c0
 data_ov103_020c04c8 kind:data(any) addr:0x020c04c8
 data_ov103_020c04d4 kind:data(any) addr:0x020c04d4
 data_ov103_020c0500 kind:data(any) addr:0x020c0500
-data_ov103_020c052c kind:data(any) addr:0x020c052c
-data_ov103_020c0544 kind:data(any) addr:0x020c0544
+sOv103_UiReportTheaterP2f_020c052c kind:data(any) addr:0x020c052c
+sOv103_UiReportLanguageTheaterP2f_020c0544 kind:data(any) addr:0x020c0544
 data_ov103_020c055c kind:data(any) addr:0x020c055c
-data_ov103_020c056c kind:data(any) addr:0x020c056c ambiguous
-data_ov103_020c057c kind:data(any) addr:0x020c057c
-data_ov103_020c05a0 kind:data(any) addr:0x020c05a0
+sOv103_TheaterSZ_020c056c kind:data(any) addr:0x020c056c ambiguous
+sOv103_UiReportTextLanguageTheaterTimeSZ_020c057c kind:data(any) addr:0x020c057c
+sOv103_UiReportTextLanguageTheaterMovieSZ_020c05a0 kind:data(any) addr:0x020c05a0
 data_ov103_020c05c4 kind:data(any) addr:0x020c05c4 ambiguous
 data_ov103_020c0608 kind:data(any) addr:0x020c0608
-data_ov103_020c06f8 kind:data(any) addr:0x020c06f8
+sOv103_TextFontEu10Nftr_020c06f8 kind:data(any) addr:0x020c06f8
 data_ov103_020c0720 kind:bss addr:0x020c0720

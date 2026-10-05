@@ -7,3 +7,7 @@
 src/overlays/ov084/calls/func_ov084_020bf9bc.c:
     complete
     .text       start:0x020bf9bc end:0x020bf9c4
+
+src/overlays/ov084/data/strings/Strings_ov084_020bfce4.c:
+    complete
+    .data       start:0x020bfce4 end:0x020bfd00

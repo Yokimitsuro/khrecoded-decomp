@@ -103,13 +103,13 @@ data_ov093_020c3de4 kind:data(any) addr:0x020c3de4
 data_ov093_020c3e74 kind:data(any) addr:0x020c3e74
 data_ov093_020c3ea0 kind:data(any) addr:0x020c3ea0
 data_ov093_020c3eac kind:data(any) addr:0x020c3eac
-data_ov093_020c3ebc kind:data(any) addr:0x020c3ebc
-data_ov093_020c3ed4 kind:data(any) addr:0x020c3ed4
-data_ov093_020c3eec kind:data(any) addr:0x020c3eec
-data_ov093_020c3f08 kind:data(any) addr:0x020c3f08
-data_ov093_020c3f24 kind:data(any) addr:0x020c3f24
-data_ov093_020c3f48 kind:data(any) addr:0x020c3f48
-data_ov093_020c3f6c kind:data(any) addr:0x020c3f6c
+sOv093_UiReportTrophyP2f_020c3ebc kind:data(any) addr:0x020c3ebc
+sOv093_UiReportLanguageTrophyP2f_020c3ed4 kind:data(any) addr:0x020c3ed4
+sOv093_UiReportLanguageTrophyObjP2f_020c3eec kind:data(any) addr:0x020c3eec
+sOv093_UiReportTextLanguageTrophySZ_020c3f08 kind:data(any) addr:0x020c3f08
+sOv093_UiReportTextLanguageTrophyNameSZ_020c3f24 kind:data(any) addr:0x020c3f24
+sOv093_UiReportTextLanguageTrophyDetailSZ_020c3f48 kind:data(any) addr:0x020c3f48
+sOv093_UiReportTextLanguageTrophyAchievementSZ_020c3f6c kind:data(any) addr:0x020c3f6c
 data_ov093_020c3f94 kind:data(any) addr:0x020c3f94
 data_ov093_020c3fd4 kind:data(any) addr:0x020c3fd4
 data_ov093_020c4014 kind:data(any) addr:0x020c4014 ambiguous
@@ -121,8 +121,8 @@ data_ov093_020c4160 kind:data(any) addr:0x020c4160 ambiguous
 data_ov093_020c4294 kind:data(any) addr:0x020c4294
 data_ov093_020c45dc kind:data(any) addr:0x020c45dc
 data_ov093_020c4c60 kind:data(any) addr:0x020c4c60 ambiguous
-data_ov093_020c4d54 kind:data(any) addr:0x020c4d54
-data_ov093_020c4d60 kind:data(any) addr:0x020c4d60
+sOv093_VblankFunc_020c4d54 kind:data(any) addr:0x020c4d54
+sOv093_TextFontEu10Nftr_020c4d60 kind:data(any) addr:0x020c4d60
 data_ov093_020c4d78 kind:data(any) addr:0x020c4d78
 data_ov093_020c4d80 kind:data(any) addr:0x020c4d80
 data_ov093_020c4d88 kind:data(any) addr:0x020c4d88

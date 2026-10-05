@@ -2,3 +2,31 @@
     .ctor       start:0x020d2b68 end:0x020d2b68 kind:rodata align:4
     .data       start:0x020d2b80 end:0x020d2c40 kind:data align:32
     .bss        start:0x020d2c40 end:0x020d2c60 kind:bss align:32
+
+src/overlays/ov053/data/strings/Strings_ov053_020d2b80.c:
+    complete
+    .data       start:0x020d2b80 end:0x020d2b94
+
+src/overlays/ov053/data/strings/Strings_ov053_020d2b94.c:
+    complete
+    .data       start:0x020d2b94 end:0x020d2ba4
+
+src/overlays/ov053/data/strings/Strings_ov053_020d2ba4.c:
+    complete
+    .data       start:0x020d2ba4 end:0x020d2bc8
+
+src/overlays/ov053/data/strings/Strings_ov053_020d2bc8.c:
+    complete
+    .data       start:0x020d2bc8 end:0x020d2bdc
+
+src/overlays/ov053/data/strings/Strings_ov053_020d2bdc.c:
+    complete
+    .data       start:0x020d2bdc end:0x020d2c00
+
+src/overlays/ov053/data/strings/Strings_ov053_020d2c00.c:
+    complete
+    .data       start:0x020d2c00 end:0x020d2c14
+
+src/overlays/ov053/data/strings/Strings_ov053_020d2c14.c:
+    complete
+    .data       start:0x020d2c14 end:0x020d2c40

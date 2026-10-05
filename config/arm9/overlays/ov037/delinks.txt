@@ -15,3 +15,23 @@ src/overlays/ov037/calls/func_ov037_020bab98.c:
 src/overlays/ov037/calls/ContinueScene_GetResult.c:
     complete
     .text       start:0x020baca4 end:0x020bacb8
+
+src/overlays/ov037/data/strings/Strings_ov037_020bb704.c:
+    complete
+    .data       start:0x020bb704 end:0x020bb714
+
+src/overlays/ov037/data/strings/Strings_ov037_020bb714.c:
+    complete
+    .data       start:0x020bb714 end:0x020bb724
+
+src/overlays/ov037/data/strings/Strings_ov037_020bb724.c:
+    complete
+    .data       start:0x020bb724 end:0x020bb748
+
+src/overlays/ov037/data/strings/Strings_ov037_020bb748.c:
+    complete
+    .data       start:0x020bb748 end:0x020bb770
+
+src/overlays/ov037/data/strings/Strings_ov037_020bb770.c:
+    complete
+    .data       start:0x020bb770 end:0x020bb780

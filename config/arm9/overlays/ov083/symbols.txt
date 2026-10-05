@@ -14,6 +14,6 @@ data_ov083_020bf66c kind:data(any) addr:0x020bf66c
 data_ov083_020bf67c kind:data(any) addr:0x020bf67c
 data_ov083_020bf68c kind:data(any) addr:0x020bf68c
 data_ov083_020bf6a0 kind:data(any) addr:0x020bf6a0 ambiguous
-data_ov083_020bf6e0 kind:data(any) addr:0x020bf6e0
+sOv083_UiMenuStrLanguageShopSZ_020bf6e0 kind:data(any) addr:0x020bf6e0
 data_ov083_020bf6f8 kind:data(any) addr:0x020bf6f8
 data_ov083_020bf700 kind:data(any) addr:0x020bf700

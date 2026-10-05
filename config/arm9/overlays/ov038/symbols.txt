@@ -51,9 +51,9 @@ data_ov038_020bbda0 kind:data(any) addr:0x020bbda0
 data_ov038_020bbda4 kind:data(any) addr:0x020bbda4
 data_ov038_020bbdb8 kind:data(any) addr:0x020bbdb8
 data_ov038_020bbdd0 kind:data(any) addr:0x020bbdd0
-data_ov038_020bbddc kind:data(any) addr:0x020bbddc
-data_ov038_020bbdec kind:data(any) addr:0x020bbdec
-data_ov038_020bbe00 kind:data(any) addr:0x020bbe00
+sOv038_ClearClearP2f_020bbddc kind:data(any) addr:0x020bbddc
+sOv038_ClearLanguageClearP2f_020bbdec kind:data(any) addr:0x020bbdec
+sOv038_ClearLanguageClearObjP2f_020bbe00 kind:data(any) addr:0x020bbe00
 data_ov038_020bbe18 kind:data(any) addr:0x020bbe18
 data_ov038_020bbe6c kind:data(any) addr:0x020bbe6c
 data_ov038_020bbefc kind:data(any) addr:0x020bbefc

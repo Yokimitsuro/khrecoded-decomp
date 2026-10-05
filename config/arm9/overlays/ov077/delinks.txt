@@ -23,3 +23,31 @@ src/overlays/ov077/calls/func_ov077_020c7664.c:
 src/overlays/ov077/auto/func_ov077_020c9f7c.c:
     complete
     .text       start:0x020c9f7c end:0x020c9f7e
+
+src/overlays/ov077/data/strings/Strings_ov077_020ca2f0.c:
+    complete
+    .data       start:0x020ca2f0 end:0x020ca304
+
+src/overlays/ov077/data/strings/Strings_ov077_020ca304.c:
+    complete
+    .data       start:0x020ca304 end:0x020ca318
+
+src/overlays/ov077/data/strings/Strings_ov077_020ca318.c:
+    complete
+    .data       start:0x020ca318 end:0x020ca324
+
+src/overlays/ov077/data/strings/Strings_ov077_020ca32c.c:
+    complete
+    .data       start:0x020ca32c end:0x020ca348
+
+src/overlays/ov077/data/strings/Strings_ov077_020ca348.c:
+    complete
+    .data       start:0x020ca348 end:0x020ca35c
+
+src/overlays/ov077/data/strings/Strings_ov077_020ca35c.c:
+    complete
+    .data       start:0x020ca35c end:0x020ca370
+
+src/overlays/ov077/data/strings/Strings_ov077_020ca370.c:
+    complete
+    .data       start:0x020ca370 end:0x020ca3a0

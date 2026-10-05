@@ -3,6 +3,6 @@ func_ov066_020d81e8 kind:function(thumb,size=0x2a) addr:0x020d81e8
 func_ov066_020d8214 kind:function(thumb,size=0x15c) addr:0x020d8214
 func_ov066_020d8370 kind:function(thumb,size=0x1f8) addr:0x020d8370
 func_ov066_020d8568 kind:function(thumb,size=0x20c) addr:0x020d8568
-data_ov066_020d8780 kind:data(any) addr:0x020d8780
-data_ov066_020d8788 kind:data(any) addr:0x020d8788
-data_ov066_020d8798 kind:data(any) addr:0x020d8798
+sOv066_CmBZ_020d8780 kind:data(any) addr:0x020d8780
+sOv066_BaEfFnBzP2_020d8788 kind:data(any) addr:0x020d8788
+sOv066_BaChFormatSCiBZ_020d8798 kind:data(any) addr:0x020d8798

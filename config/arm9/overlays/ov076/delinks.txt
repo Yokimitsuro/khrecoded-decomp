@@ -35,3 +35,39 @@ src/overlays/ov076/calls/func_ov076_020ca630.c:
 src/overlays/ov076/auto/func_ov076_020ccf30.c:
     complete
     .text       start:0x020ccf30 end:0x020ccf32
+
+src/overlays/ov076/data/strings/Strings_ov076_020cd28c.c:
+    complete
+    .data       start:0x020cd28c end:0x020cd298
+
+src/overlays/ov076/data/strings/Strings_ov076_020cd298.c:
+    complete
+    .data       start:0x020cd298 end:0x020cd2a4
+
+src/overlays/ov076/data/strings/Strings_ov076_020cd348.c:
+    complete
+    .data       start:0x020cd348 end:0x020cd35c
+
+src/overlays/ov076/data/strings/Strings_ov076_020cd35c.c:
+    complete
+    .data       start:0x020cd35c end:0x020cd370
+
+src/overlays/ov076/data/strings/Strings_ov076_020cd37c.c:
+    complete
+    .data       start:0x020cd37c end:0x020cd388
+
+src/overlays/ov076/data/strings/Strings_ov076_020cd390.c:
+    complete
+    .data       start:0x020cd390 end:0x020cd3ac
+
+src/overlays/ov076/data/strings/Strings_ov076_020cd3ac.c:
+    complete
+    .data       start:0x020cd3ac end:0x020cd3c0
+
+src/overlays/ov076/data/strings/Strings_ov076_020cd3c0.c:
+    complete
+    .data       start:0x020cd3c0 end:0x020cd3d4
+
+src/overlays/ov076/data/strings/Strings_ov076_020cd3d4.c:
+    complete
+    .data       start:0x020cd3d4 end:0x020cd400

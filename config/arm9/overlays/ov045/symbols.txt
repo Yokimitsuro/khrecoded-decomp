@@ -42,10 +42,10 @@ data_ov045_020c07b4 kind:data(any) addr:0x020c07b4
 data_ov045_020c07c8 kind:data(any) addr:0x020c07c8
 data_ov045_020c07dc kind:data(any) addr:0x020c07dc
 data_ov045_020c0820 kind:data(any) addr:0x020c0820 ambiguous
-data_ov045_020c0834 kind:data(any) addr:0x020c0834
-data_ov045_020c0844 kind:data(any) addr:0x020c0844
-data_ov045_020c0858 kind:data(any) addr:0x020c0858
-data_ov045_020c0868 kind:data(any) addr:0x020c0868
-data_ov045_020c087c kind:data(any) addr:0x020c087c
+sOv045_UiBtlGwP2_020c0834 kind:data(any) addr:0x020c0834
+sOv045_UiBtlBtluiP2_020c0844 kind:data(any) addr:0x020c0844
+sOv045_UiBtlGwLanguageP2_020c0858 kind:data(any) addr:0x020c0858
+sOv045_UiBtlBtlLanguageP2_020c0868 kind:data(any) addr:0x020c0868
+sOv045_UiBtlWresP2_020c087c kind:data(any) addr:0x020c087c
 data_ov045_020c088c kind:data(any) addr:0x020c088c
 data_ov045_020c08a0 kind:bss addr:0x020c08a0

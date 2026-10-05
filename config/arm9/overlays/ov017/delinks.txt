@@ -59,3 +59,7 @@ src/overlays/ov017/calls/func_ov017_020a5e08.c:
 src/overlays/ov017/calls/func_ov017_020a5e10.c:
     complete
     .text       start:0x020a5e10 end:0x020a5e18
+
+src/overlays/ov017/data/strings/Strings_ov017_020a5f38.c:
+    complete
+    .data       start:0x020a5f38 end:0x020a5f60

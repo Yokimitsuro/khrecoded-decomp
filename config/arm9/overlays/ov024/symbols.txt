@@ -35,11 +35,11 @@ data_ov024_020b73a8 kind:data(any) addr:0x020b73a8
 data_ov024_020b73d4 kind:data(any) addr:0x020b73d4
 data_ov024_020b741c kind:data(any) addr:0x020b741c
 data_ov024_020b74a0 kind:data(any) addr:0x020b74a0
-data_ov024_020b74b4 kind:data(any) addr:0x020b74b4
-data_ov024_020b74cc kind:data(any) addr:0x020b74cc
-data_ov024_020b74e4 kind:data(any) addr:0x020b74e4
-data_ov024_020b74f4 kind:data(any) addr:0x020b74f4
-data_ov024_020b7508 kind:data(any) addr:0x020b7508
-data_ov024_020b751c kind:data(any) addr:0x020b751c
+sOv024_TextFontEu10Nftr_020b74b4 kind:data(any) addr:0x020b74b4
+sOv024_TextFontEu10sNftr_020b74cc kind:data(any) addr:0x020b74cc
+sOv024_UiBtlStrLanguageP2_020b74e4 kind:data(any) addr:0x020b74e4
+sOv024_UiBtlBtluiP2_020b74f4 kind:data(any) addr:0x020b74f4
+sOv024_UiBtlBtlLanguageP2_020b7508 kind:data(any) addr:0x020b7508
+sOv024_SYSMAPTASK_020b751c kind:data(any) addr:0x020b751c
 data_ov024_020b7540 kind:bss addr:0x020b7540
 data_ov024_020b754c kind:bss addr:0x020b754c

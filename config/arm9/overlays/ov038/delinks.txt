@@ -23,3 +23,7 @@ src/overlays/ov038/auto/func_ov038_020ba780.c:
 src/overlays/ov038/calls/func_ov038_020bbcb0.c:
     complete
     .text       start:0x020bbcb0 end:0x020bbcbc
+
+src/overlays/ov038/data/strings/Strings_ov038_020bbddc.c:
+    complete
+    .data       start:0x020bbddc end:0x020bbe18

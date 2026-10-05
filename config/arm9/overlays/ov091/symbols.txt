@@ -86,15 +86,15 @@ data_ov091_020c2a10 kind:data(any) addr:0x020c2a10
 data_ov091_020c2a40 kind:data(any) addr:0x020c2a40
 data_ov091_020c2a44 kind:data(any) addr:0x020c2a44
 data_ov091_020c2a50 kind:data(any) addr:0x020c2a50
-data_ov091_020c2a7c kind:data(any) addr:0x020c2a7c
-data_ov091_020c2a90 kind:data(any) addr:0x020c2a90
-data_ov091_020c2aa4 kind:data(any) addr:0x020c2aa4
-data_ov091_020c2abc kind:data(any) addr:0x020c2abc
+sOv091_UiReportTopP2f_020c2a7c kind:data(any) addr:0x020c2a7c
+sOv091_UiReportLanguageTopP2f_020c2a90 kind:data(any) addr:0x020c2a90
+sOv091_UiReportLanguageTopObjP2f_020c2aa4 kind:data(any) addr:0x020c2aa4
+sOv091_UiReportTextLanguageTopSZ_020c2abc kind:data(any) addr:0x020c2abc
 data_ov091_020c2ad8 kind:data(any) addr:0x020c2ad8
 data_ov091_020c2b18 kind:data(any) addr:0x020c2b18 ambiguous
 data_ov091_020c2b5c kind:data(any) addr:0x020c2b5c
 data_ov091_020c2bd4 kind:data(any) addr:0x020c2bd4
-data_ov091_020c2c64 kind:data(any) addr:0x020c2c64
+sOv091_TextFontEu10Nftr_020c2c64 kind:data(any) addr:0x020c2c64
 data_ov091_020c2c7c kind:data(any) addr:0x020c2c7c
 data_ov091_020c2c88 kind:data(any) addr:0x020c2c88
 data_ov091_020c2c94 kind:data(any) addr:0x020c2c94

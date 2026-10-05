@@ -53,7 +53,7 @@ func_ov101_020c17e0 kind:function(arm,size=0x4) addr:0x020c17e0
 func_ov101_020c17e4 kind:function(arm,size=0x19c) addr:0x020c17e4
 func_ov101_020c1980 kind:function(arm,size=0x4) addr:0x020c1980
 data_ov101_020c1984 kind:data(any) addr:0x020c1984
-data_ov101_020c19a0 kind:data(any) addr:0x020c19a0
+sOv101_Ev2dChtexP2_020c19a0 kind:data(any) addr:0x020c19a0
 data_ov101_020c19b0 kind:data(any) addr:0x020c19b0
 data_ov101_020c19c0 kind:data(any) addr:0x020c19c0
 data_ov101_020c19d0 kind:data(any) addr:0x020c19d0
@@ -61,8 +61,8 @@ data_ov101_020c19e4 kind:data(any) addr:0x020c19e4
 data_ov101_020c19fc kind:data(any) addr:0x020c19fc
 data_ov101_020c1a18 kind:data(any) addr:0x020c1a18
 data_ov101_020c1a34 kind:data(any) addr:0x020c1a34
-data_ov101_020c1a54 kind:data(any) addr:0x020c1a54
-data_ov101_020c1a74 kind:data(any) addr:0x020c1a74
+sOv101_UiReportTextLanguageCharacterSZ_020c1a54 kind:data(any) addr:0x020c1a54
+sOv101_UiReportTextLanguageCharacterDetailSZ_020c1a74 kind:data(any) addr:0x020c1a74
 data_ov101_020c1a9c kind:data(any) addr:0x020c1a9c ambiguous
 data_ov101_020c1ae0 kind:data(any) addr:0x020c1ae0
 data_ov101_020c1b0c kind:data(any) addr:0x020c1b0c
@@ -73,8 +73,8 @@ data_ov101_020c1c60 kind:data(any) addr:0x020c1c60 ambiguous
 data_ov101_020c1d98 kind:data(any) addr:0x020c1d98
 data_ov101_020c1e61 kind:data(any) addr:0x020c1e61 ambiguous
 data_ov101_020c1ea0 kind:data(any) addr:0x020c1ea0 ambiguous
-data_ov101_020c1f78 kind:data(any) addr:0x020c1f78
-data_ov101_020c1f84 kind:data(any) addr:0x020c1f84
+sOv101_VblankFunc_020c1f78 kind:data(any) addr:0x020c1f78
+sOv101_TextFontEu10Nftr_020c1f84 kind:data(any) addr:0x020c1f84
 data_ov101_020c1f9c kind:data(any) addr:0x020c1f9c
 data_ov101_020c2360 kind:data(any) addr:0x020c2360 ambiguous
 data_ov101_020c2368 kind:data(any) addr:0x020c2368 ambiguous

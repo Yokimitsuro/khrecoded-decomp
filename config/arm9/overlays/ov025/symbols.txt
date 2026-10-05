@@ -70,5 +70,5 @@ data_ov025_020b76e0 kind:data(any) addr:0x020b76e0
 data_ov025_020b76f4 kind:data(any) addr:0x020b76f4
 data_ov025_020b7740 kind:data(any) addr:0x020b7740
 data_ov025_020b7748 kind:data(any) addr:0x020b7748 ambiguous
-data_ov025_020b775c kind:data(any) addr:0x020b775c
+sOv025_Ocuitask_020b775c kind:data(any) addr:0x020b775c
 data_ov025_020b7780 kind:bss addr:0x020b7780

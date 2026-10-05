@@ -20,10 +20,10 @@ data_ov078_020c4fb0 kind:data(any) addr:0x020c4fb0
 data_ov078_020c4fe0 kind:data(any) addr:0x020c4fe0 ambiguous
 data_ov078_020c5024 kind:data(any) addr:0x020c5024
 data_ov078_020c5124 kind:data(any) addr:0x020c5124
-data_ov078_020c5168 kind:data(any) addr:0x020c5168
-data_ov078_020c517c kind:data(any) addr:0x020c517c
-data_ov078_020c5190 kind:data(any) addr:0x020c5190
-data_ov078_020c51a0 kind:data(any) addr:0x020c51a0
+sOv078_UiMenuQuestP2_020c5168 kind:data(any) addr:0x020c5168
+sOv078_UiMenuLanguageQuestP2_020c517c kind:data(any) addr:0x020c517c
+sOv078_UiBtlStrLanguageP2_020c5190 kind:data(any) addr:0x020c5190
+sOv078_UiMenuStrLanguageQstSZ_020c51a0 kind:data(any) addr:0x020c51a0
 data_ov078_020c51b8 kind:data(any) addr:0x020c51b8
 data_ov078_020c51bc kind:data(any) addr:0x020c51bc
 data_ov078_020c51c8 kind:data(any) addr:0x020c51c8

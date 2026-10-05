@@ -62,32 +62,32 @@ data_ov099_020c2274 kind:data(any) addr:0x020c2274
 data_ov099_020c22a0 kind:data(any) addr:0x020c22a0
 data_ov099_020c22a8 kind:data(any) addr:0x020c22a8
 data_ov099_020c22b4 kind:data(any) addr:0x020c22b4
-data_ov099_020c22e0 kind:data(any) addr:0x020c22e0
-data_ov099_020c22f4 kind:data(any) addr:0x020c22f4
-data_ov099_020c230c kind:data(any) addr:0x020c230c
-data_ov099_020c2328 kind:data(any) addr:0x020c2328
+sOv099_UiReportEnemyP2f_020c22e0 kind:data(any) addr:0x020c22e0
+sOv099_UiReportLanguageEnemyP2f_020c22f4 kind:data(any) addr:0x020c22f4
+sOv099_UiReportLanguageEnemyObjP2f_020c230c kind:data(any) addr:0x020c230c
+sOv099_UiReportTextLanguageEnemySZ_020c2328 kind:data(any) addr:0x020c2328
 data_ov099_020c2344 kind:data(any) addr:0x020c2344
-data_ov099_020c2360 kind:data(any) addr:0x020c2360 ambiguous
+sOv099_LSZ_020c2360 kind:data(any) addr:0x020c2360 ambiguous
 data_ov099_020c2368 kind:data(any) addr:0x020c2368 ambiguous
 data_ov099_020c2380 kind:data(any) addr:0x020c2380 ambiguous
 data_ov099_020c23ac kind:data(any) addr:0x020c23ac
 data_ov099_020c243c kind:data(any) addr:0x020c243c
 data_ov099_020c257c kind:data(any) addr:0x020c257c
-data_ov099_020c2774 kind:data(any) addr:0x020c2774
-data_ov099_020c2784 kind:data(any) addr:0x020c2784
+sOv099_UiBtlStrLanguageP2_020c2774 kind:data(any) addr:0x020c2774
+sOv099_TextFontEu10Nftr_020c2784 kind:data(any) addr:0x020c2784
 data_ov099_020c279c kind:data(any) addr:0x020c279c
 data_ov099_020c27a4 kind:data(any) addr:0x020c27a4
 data_ov099_020c27c8 kind:data(any) addr:0x020c27c8
 data_ov099_020c27ec kind:data(any) addr:0x020c27ec
-data_ov099_020c288c kind:data(any) addr:0x020c288c
-data_ov099_020c28a4 kind:data(any) addr:0x020c28a4
-data_ov099_020c28b0 kind:data(any) addr:0x020c28b0
-data_ov099_020c28c0 kind:data(any) addr:0x020c28c0
-data_ov099_020c28c8 kind:data(any) addr:0x020c28c8
-data_ov099_020c28d0 kind:data(any) addr:0x020c28d0
-data_ov099_020c28d8 kind:data(any) addr:0x020c28d8
-data_ov099_020c28e4 kind:data(any) addr:0x020c28e4
-data_ov099_020c28ec kind:data(any) addr:0x020c28ec
-data_ov099_020c28f4 kind:data(any) addr:0x020c28f4
+sOv099_UiReportEnmmdlP2_020c288c kind:data(any) addr:0x020c288c
+sOv099_Bip01Head_020c28a4 kind:data(any) addr:0x020c28a4
+sOv099_Bip01Spine1_020c28b0 kind:data(any) addr:0x020c28b0
+sOv099_LLink_020c28c0 kind:data(any) addr:0x020c28c0
+sOv099_RLink_020c28c8 kind:data(any) addr:0x020c28c8
+sOv099_Sword_020c28d0 kind:data(any) addr:0x020c28d0
+sOv099_WeaponTg00_020c28d8 kind:data(any) addr:0x020c28d8
+sOv099_RoHL_020c28e4 kind:data(any) addr:0x020c28e4
+sOv099_RoHR_020c28ec kind:data(any) addr:0x020c28ec
+sOv099_Root_020c28f4 kind:data(any) addr:0x020c28f4
 data_ov099_020c2900 kind:bss addr:0x020c2900
 data_ov099_020c2904 kind:bss addr:0x020c2904

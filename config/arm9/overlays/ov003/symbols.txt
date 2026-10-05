@@ -48,9 +48,9 @@ data_ov003_020650c4 kind:data(any) addr:0x020650c4
 data_ov003_020650e0 kind:data(any) addr:0x020650e0 ambiguous
 data_ov003_020650f4 kind:data(any) addr:0x020650f4
 data_ov003_02065134 kind:data(any) addr:0x02065134
-data_ov003_02065854 kind:data(any) addr:0x02065854
-data_ov003_02065868 kind:data(any) addr:0x02065868
-data_ov003_02065874 kind:data(any) addr:0x02065874
+sOv003_FontEu10allNftr_02065854 kind:data(any) addr:0x02065854
+sOv003_OpOpP2_02065868 kind:data(any) addr:0x02065868
+sOv003_OpScrZ_02065874 kind:data(any) addr:0x02065874
 data_ov003_02065880 kind:data(any) addr:0x02065880
 data_ov003_020658c0 kind:bss addr:0x020658c0
 data_ov003_020658c4 kind:bss addr:0x020658c4

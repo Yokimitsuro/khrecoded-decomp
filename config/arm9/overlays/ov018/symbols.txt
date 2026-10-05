@@ -36,4 +36,4 @@ func_ov018_020a3804 kind:function(thumb,size=0x14) addr:0x020a3804
 func_ov018_020a3818 kind:function(thumb,size=0x12) addr:0x020a3818
 func_ov018_020a382c kind:function(thumb,size=0x14) addr:0x020a382c
 data_ov018_020a3860 kind:data(any) addr:0x020a3860
-data_ov018_020a3870 kind:data(any) addr:0x020a3870
+sOv018_BaEfDbhit_020a3870 kind:data(any) addr:0x020a3870

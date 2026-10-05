@@ -43,8 +43,8 @@ data_ov085_020c2334 kind:data(any) addr:0x020c2334
 data_ov085_020c2360 kind:data(any) addr:0x020c2360 ambiguous
 data_ov085_020c2368 kind:data(any) addr:0x020c2368 ambiguous
 data_ov085_020c2380 kind:data(any) addr:0x020c2380 ambiguous
-data_ov085_020c23a4 kind:data(any) addr:0x020c23a4
+sOv085_UiMenuStrLanguageShopSZ_020c23a4 kind:data(any) addr:0x020c23a4
 data_ov085_020c23bc kind:data(any) addr:0x020c23bc
-data_ov085_020c23c4 kind:data(any) addr:0x020c23c4
-data_ov085_020c23c8 kind:data(any) addr:0x020c23c8
-data_ov085_020c23d8 kind:data(any) addr:0x020c23d8
+sOv085_X_020c23c4 kind:data(any) addr:0x020c23c4
+sOv085_UiMenuTipsP2_020c23c8 kind:data(any) addr:0x020c23c8
+sOv085_UiMenuLanguageTipsP2_020c23d8 kind:data(any) addr:0x020c23d8

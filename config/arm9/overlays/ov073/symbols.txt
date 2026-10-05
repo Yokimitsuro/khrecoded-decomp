@@ -103,10 +103,10 @@ data_ov073_020c4120 kind:data(any) addr:0x020c4120
 data_ov073_020c4130 kind:data(any) addr:0x020c4130
 data_ov073_020c4160 kind:data(any) addr:0x020c4160 ambiguous
 data_ov073_020c41a0 kind:data(any) addr:0x020c41a0
-data_ov073_020c41a8 kind:data(any) addr:0x020c41a8
-data_ov073_020c41b8 kind:data(any) addr:0x020c41b8
+sOv073_OCBGOFSFUNC_020c41a8 kind:data(any) addr:0x020c41a8
+sOv073_UiMenuStrLanguageStatusSZ_020c41b8 kind:data(any) addr:0x020c41b8
 data_ov073_020c41d4 kind:data(any) addr:0x020c41d4
-data_ov073_020c41dc kind:data(any) addr:0x020c41dc
+sOv073_UiBtlBtlLanguageP2_020c41dc kind:data(any) addr:0x020c41dc
 data_ov073_020c41ec kind:data(any) addr:0x020c41ec
 data_ov073_020c41f4 kind:data(any) addr:0x020c41f4
 data_ov073_020c4208 kind:data(any) addr:0x020c4208

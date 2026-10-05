@@ -7,5 +7,5 @@ func_ov063_020d81c4 kind:function(thumb,size=0x78) addr:0x020d81c4
 func_ov063_020d823c kind:function(thumb,size=0x7c) addr:0x020d823c
 func_ov063_020d82b8 kind:function(thumb,size=0x304) addr:0x020d82b8
 func_ov063_020d85bc kind:function(thumb,size=0x144) addr:0x020d85bc
-data_ov063_020d8720 kind:data(any) addr:0x020d8720
-data_ov063_020d8728 kind:data(any) addr:0x020d8728
+sOv063_CmHo_020d8720 kind:data(any) addr:0x020d8720
+sOv063_BaEfFnHlP2_020d8728 kind:data(any) addr:0x020d8728

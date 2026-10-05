@@ -74,8 +74,8 @@ data_ov086_020c23c0 kind:data(any) addr:0x020c23c0
 data_ov086_020c2b18 kind:data(any) addr:0x020c2b18 ambiguous
 data_ov086_020c2cc5 kind:data(any) addr:0x020c2cc5 ambiguous
 data_ov086_020c2d41 kind:data(any) addr:0x020c2d41 ambiguous
-data_ov086_020c2fe4 kind:data(any) addr:0x020c2fe4
+sOv086_Empty_020c2fe4 kind:data(any) addr:0x020c2fe4
 data_ov086_020c2fe8 kind:data(any) addr:0x020c2fe8
 data_ov086_020c2ff0 kind:data(any) addr:0x020c2ff0
-data_ov086_020c2ff8 kind:data(any) addr:0x020c2ff8
+sOv086_UiMenuStrLanguageWsbSZ_020c2ff8 kind:data(any) addr:0x020c2ff8
 data_ov086_020c3020 kind:bss addr:0x020c3020

@@ -61,11 +61,11 @@ data_ov095_020c1788 kind:data(any) addr:0x020c1788
 data_ov095_020c1794 kind:data(any) addr:0x020c1794
 data_ov095_020c17a8 kind:data(any) addr:0x020c17a8
 data_ov095_020c17cc kind:data(any) addr:0x020c17cc
-data_ov095_020c17f0 kind:data(any) addr:0x020c17f0
-data_ov095_020c1804 kind:data(any) addr:0x020c1804
-data_ov095_020c181c kind:data(any) addr:0x020c181c
-data_ov095_020c1838 kind:data(any) addr:0x020c1838
-data_ov095_020c1854 kind:data(any) addr:0x020c1854
+sOv095_UiReportItemP2f_020c17f0 kind:data(any) addr:0x020c17f0
+sOv095_UiReportLanguageItemP2f_020c1804 kind:data(any) addr:0x020c1804
+sOv095_UiReportLanguageItemImdP2f_020c181c kind:data(any) addr:0x020c181c
+sOv095_UiMenuStrLanguageMatrixSZ_020c1838 kind:data(any) addr:0x020c1838
+sOv095_UiReportTextLanguageItemSZ_020c1854 kind:data(any) addr:0x020c1854
 data_ov095_020c1870 kind:data(any) addr:0x020c1870
 data_ov095_020c18b4 kind:data(any) addr:0x020c18b4
 data_ov095_020c19b8 kind:data(any) addr:0x020c19b8
@@ -78,7 +78,7 @@ data_ov095_020c2130 kind:data(any) addr:0x020c2130
 data_ov095_020c2360 kind:data(any) addr:0x020c2360 ambiguous
 data_ov095_020c2368 kind:data(any) addr:0x020c2368 ambiguous
 data_ov095_020c2380 kind:data(any) addr:0x020c2380 ambiguous
-data_ov095_020c28a8 kind:data(any) addr:0x020c28a8
-data_ov095_020c28b4 kind:data(any) addr:0x020c28b4
+sOv095_VblankFunc_020c28a8 kind:data(any) addr:0x020c28a8
+sOv095_TextFontEu10Nftr_020c28b4 kind:data(any) addr:0x020c28b4
 data_ov095_020c28cc kind:data(any) addr:0x020c28cc
 data_ov095_020c28e0 kind:bss addr:0x020c28e0

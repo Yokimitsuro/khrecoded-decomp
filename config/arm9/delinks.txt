@@ -6340,3 +6340,79 @@ libs/nns/snd/data/sStrmChannel.c:
 libs/nns/snd/data/sndarc_stream_adpcm_tables.c:
     complete
     .rodata     start:0x02053130 end:0x020531f4
+
+src/data/strings/Strings_main_02055f38.c:
+    complete
+    .data       start:0x02055f38 end:0x02055f54
+
+src/data/strings/Strings_main_02055f54.c:
+    complete
+    .data       start:0x02055f54 end:0x02055f7c
+
+src/data/strings/Strings_main_02055f7c.c:
+    complete
+    .data       start:0x02055f7c end:0x02055f94
+
+src/data/strings/Strings_main_02055f94.c:
+    complete
+    .data       start:0x02055f94 end:0x02055fac
+
+src/data/strings/Strings_main_02055fdc.c:
+    complete
+    .data       start:0x02055fdc end:0x02055fe0
+
+src/data/strings/Strings_main_02055fe0.c:
+    complete
+    .data       start:0x02055fe0 end:0x02055fe4
+
+src/data/strings/Strings_main_02055fe4.c:
+    complete
+    .data       start:0x02055fe4 end:0x02055fe8
+
+src/data/strings/Strings_main_02055fe8.c:
+    complete
+    .data       start:0x02055fe8 end:0x02055fec
+
+src/data/strings/Strings_main_02055fec.c:
+    complete
+    .data       start:0x02055fec end:0x02055ff0
+
+src/data/strings/Strings_main_02055ff0.c:
+    complete
+    .data       start:0x02055ff0 end:0x02055ff4
+
+src/data/strings/Strings_main_02055ff4.c:
+    complete
+    .data       start:0x02055ff4 end:0x02055ff8
+
+src/data/strings/Strings_main_02056134.c:
+    complete
+    .data       start:0x02056134 end:0x02056148
+
+src/data/strings/Strings_main_02056148.c:
+    complete
+    .data       start:0x02056148 end:0x0205614c
+
+src/data/strings/Strings_main_0205614c.c:
+    complete
+    .data       start:0x0205614c end:0x02056150
+
+src/data/strings/Strings_main_02056150.c:
+    complete
+    .data       start:0x02056150 end:0x0205615c
+
+src/data/strings/Strings_main_0205616c.c:
+    complete
+    .data       start:0x0205616c end:0x02056188
+
+src/data/strings/Strings_main_02056188.c:
+    complete
+    .data       start:0x02056188 end:0x02056198
+
+src/data/strings/Strings_main_02056198.c:
+    complete
+    .data       start:0x02056198 end:0x020561a4
+
+src/data/strings/Strings_main_020561a4.c:
+    complete
+    .data       start:0x020561a4 end:0x020561ac

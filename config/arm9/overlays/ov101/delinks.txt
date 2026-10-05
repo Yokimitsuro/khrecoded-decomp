@@ -11,3 +11,15 @@ src/overlays/ov101/auto/func_ov101_020c17e0.c:
 src/overlays/ov101/auto/func_ov101_020c1980.c:
     complete
     .text       start:0x020c1980 end:0x020c1984
+
+src/overlays/ov101/data/strings/Strings_ov101_020c19a0.c:
+    complete
+    .data       start:0x020c19a0 end:0x020c19b0
+
+src/overlays/ov101/data/strings/Strings_ov101_020c1a54.c:
+    complete
+    .data       start:0x020c1a54 end:0x020c1a9c
+
+src/overlays/ov101/data/strings/Strings_ov101_020c1f78.c:
+    complete
+    .data       start:0x020c1f78 end:0x020c1f9c

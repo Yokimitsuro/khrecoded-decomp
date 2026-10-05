@@ -107,3 +107,39 @@ src/overlays/ov002/calls/func_ov002_02066c58.c:
 src/overlays/ov002/calls/func_ov002_02066c68.c:
     complete
     .text       start:0x02066c68 end:0x02066c78
+
+src/overlays/ov002/data/strings/Strings_ov002_0206c290.c:
+    complete
+    .data       start:0x0206c290 end:0x0206c2a0
+
+src/overlays/ov002/data/strings/Strings_ov002_0206c2a0.c:
+    complete
+    .data       start:0x0206c2a0 end:0x0206c2c4
+
+src/overlays/ov002/data/strings/Strings_ov002_0206c2d8.c:
+    complete
+    .data       start:0x0206c2d8 end:0x0206c2ec
+
+src/overlays/ov002/data/strings/Strings_ov002_0206c35c.c:
+    complete
+    .data       start:0x0206c35c end:0x0206c364
+
+src/overlays/ov002/data/strings/Strings_ov002_0206c374.c:
+    complete
+    .data       start:0x0206c374 end:0x0206c388
+
+src/overlays/ov002/data/strings/Strings_ov002_0206c388.c:
+    complete
+    .data       start:0x0206c388 end:0x0206c39c
+
+src/overlays/ov002/data/strings/Strings_ov002_0206c39c.c:
+    complete
+    .data       start:0x0206c39c end:0x0206c3c8
+
+src/overlays/ov002/data/strings/Strings_ov002_0206c410.c:
+    complete
+    .data       start:0x0206c410 end:0x0206c41c
+
+src/overlays/ov002/data/strings/Strings_ov002_0206c438.c:
+    complete
+    .data       start:0x0206c438 end:0x0206c460

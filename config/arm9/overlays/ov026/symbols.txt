@@ -9,6 +9,6 @@ func_ov026_020b5aa4 kind:function(arm,size=0xc) addr:0x020b5aa4
 data_ov026_020b5ab0 kind:data(any) addr:0x020b5ab0
 data_ov026_020b5ae0 kind:data(any) addr:0x020b5ae0
 data_ov026_020b5af4 kind:data(any) addr:0x020b5af4
-data_ov026_020b5af8 kind:data(any) addr:0x020b5af8
-data_ov026_020b5b08 kind:data(any) addr:0x020b5b08
+sOv026_UiBtlNlUiZ_020b5af8 kind:data(any) addr:0x020b5af8
+sOv026_UiBtlNlPobjZ_020b5b08 kind:data(any) addr:0x020b5b08
 data_ov026_020b5b20 kind:bss addr:0x020b5b20

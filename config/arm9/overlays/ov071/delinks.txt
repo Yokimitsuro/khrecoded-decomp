@@ -3,3 +3,11 @@
     .ctor       start:0x020d96bc end:0x020d96bc kind:rodata align:4
     .data       start:0x020d96c0 end:0x020d96e0 kind:data align:32
     .bss        start:0x020d96e0 end:0x020d96e0 kind:bss align:32
+
+src/overlays/ov071/data/strings/Strings_ov071_020d96c0.c:
+    complete
+    .data       start:0x020d96c0 end:0x020d96d0
+
+src/overlays/ov071/data/strings/Strings_ov071_020d96d0.c:
+    complete
+    .data       start:0x020d96d0 end:0x020d96e0

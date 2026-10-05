@@ -8,5 +8,5 @@ func_ov064_020d8708 kind:function(thumb,size=0x13c) addr:0x020d8708
 data_ov064_020d8844 kind:data(any) addr:0x020d8844
 data_ov064_020d8850 kind:data(any) addr:0x020d8850
 data_ov064_020d885c kind:data(any) addr:0x020d885c
-data_ov064_020d8880 kind:data(any) addr:0x020d8880
-data_ov064_020d8888 kind:data(any) addr:0x020d8888
+sOv064_CmMF_020d8880 kind:data(any) addr:0x020d8880
+sOv064_BaEfFnMfP2_020d8888 kind:data(any) addr:0x020d8888

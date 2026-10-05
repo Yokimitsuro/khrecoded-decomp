@@ -10,4 +10,4 @@ func_ov070_020d88b4 kind:function(thumb,size=0x170) addr:0x020d88b4
 data_ov070_020d8a24 kind:data(any) addr:0x020d8a24
 data_ov070_020d8a30 kind:data(any) addr:0x020d8a30
 data_ov070_020d8a3c kind:data(any) addr:0x020d8a3c
-data_ov070_020d8a60 kind:data(any) addr:0x020d8a60
+sOv070_BaEfFnDfP2_020d8a60 kind:data(any) addr:0x020d8a60

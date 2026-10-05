@@ -47,8 +47,8 @@ data_ov023_020b6ef4 kind:data(any) addr:0x020b6ef4
 data_ov023_020b6efc kind:data(any) addr:0x020b6efc
 data_ov023_020b6f0c kind:data(any) addr:0x020b6f0c
 data_ov023_020b6f2c kind:data(any) addr:0x020b6f2c
-data_ov023_020b6f40 kind:data(any) addr:0x020b6f40
-data_ov023_020b6f50 kind:data(any) addr:0x020b6f50
+sOv023_UiBtlMapLanguageP2_020b6f40 kind:data(any) addr:0x020b6f40
+sOv023_UiBtlMapchrP2_020b6f50 kind:data(any) addr:0x020b6f50
 data_ov023_020b6f80 kind:bss addr:0x020b6f80
 data_ov023_020b6f84 kind:bss addr:0x020b6f84
 data_ov023_020b6f88 kind:bss addr:0x020b6f88

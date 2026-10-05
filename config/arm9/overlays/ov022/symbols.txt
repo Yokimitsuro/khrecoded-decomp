@@ -139,9 +139,9 @@ data_ov022_020b7c64 kind:data(any) addr:0x020b7c64
 data_ov022_020b7c78 kind:data(any) addr:0x020b7c78
 data_ov022_020b7c90 kind:data(any) addr:0x020b7c90
 data_ov022_020b7cac kind:data(any) addr:0x020b7cac
-data_ov022_020b7cec kind:data(any) addr:0x020b7cec
+sOv022_FontEu10allNftr_020b7cec kind:data(any) addr:0x020b7cec
 data_ov022_020b7d00 kind:data(any) addr:0x020b7d00
-data_ov022_020b7d30 kind:data(any) addr:0x020b7d30
+sOv022_MobiclipIntr_020b7d30 kind:data(any) addr:0x020b7d30
 data_ov022_020b7d48 kind:data(any) addr:0x020b7d48
 data_ov022_020b7d6c kind:data(any) addr:0x020b7d6c
 data_ov022_020b7da0 kind:bss addr:0x020b7da0

@@ -175,3 +175,39 @@ src/overlays/ov015/calls/MI_CpuClear32_0x800.c:
 src/overlays/ov015/calls/G2S_ClearBG2Screen.c:
     complete
     .text       start:0x02079870 end:0x02079880
+
+src/overlays/ov015/data/strings/Strings_ov015_0207e730.c:
+    complete
+    .data       start:0x0207e730 end:0x0207e744
+
+src/overlays/ov015/data/strings/Strings_ov015_0207e744.c:
+    complete
+    .data       start:0x0207e744 end:0x0207e758
+
+src/overlays/ov015/data/strings/Strings_ov015_0207e758.c:
+    complete
+    .data       start:0x0207e758 end:0x0207e76c
+
+src/overlays/ov015/data/strings/Strings_ov015_0207e76c.c:
+    complete
+    .data       start:0x0207e76c end:0x0207e780
+
+src/overlays/ov015/data/strings/Strings_ov015_0207e7e0.c:
+    complete
+    .data       start:0x0207e7e0 end:0x0207e7ec
+
+src/overlays/ov015/data/strings/Strings_ov015_0207e7ec.c:
+    complete
+    .data       start:0x0207e7ec end:0x0207e7f8
+
+src/overlays/ov015/data/strings/Strings_ov015_0207e7f8.c:
+    complete
+    .data       start:0x0207e7f8 end:0x0207e804
+
+src/overlays/ov015/data/strings/Strings_ov015_0207e8ac.c:
+    complete
+    .data       start:0x0207e8ac end:0x0207e8c8
+
+src/overlays/ov015/data/strings/Strings_ov015_0207e8c8.c:
+    complete
+    .data       start:0x0207e8c8 end:0x0207e8d8

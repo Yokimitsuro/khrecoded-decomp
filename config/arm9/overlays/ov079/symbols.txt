@@ -15,4 +15,4 @@ func_ov079_020c4bc0 kind:function(thumb,size=0x4c) addr:0x020c4bc0
 func_ov079_020c4c0c kind:function(thumb,size=0x24) addr:0x020c4c0c
 data_ov079_020c4c30 kind:data(any) addr:0x020c4c30
 data_ov079_020c4c60 kind:data(any) addr:0x020c4c60 ambiguous
-data_ov079_020c4ca4 kind:data(any) addr:0x020c4ca4
+sOv079_UiMenuStrLanguageConfigSZ_020c4ca4 kind:data(any) addr:0x020c4ca4

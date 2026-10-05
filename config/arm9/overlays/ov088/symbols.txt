@@ -12,4 +12,4 @@ data_ov088_020bee5c kind:data(any) addr:0x020bee5c
 data_ov088_020bee6c kind:data(any) addr:0x020bee6c
 data_ov088_020bee80 kind:data(any) addr:0x020bee80 ambiguous
 data_ov088_020beec0 kind:data(any) addr:0x020beec0
-data_ov088_020bef08 kind:data(any) addr:0x020bef08
+sOv088_UiMenuStrLanguageCdSZ_020bef08 kind:data(any) addr:0x020bef08

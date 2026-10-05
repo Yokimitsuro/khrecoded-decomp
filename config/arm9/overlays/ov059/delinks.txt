@@ -15,3 +15,47 @@ src/overlays/ov059/calls/func_ov059_020cd3d8.c:
 src/overlays/ov059/auto/func_ov059_020cfe0c.c:
     complete
     .text       start:0x020cfe0c end:0x020cfe0e
+
+src/overlays/ov059/data/strings/Strings_ov059_020cfe40.c:
+    complete
+    .rodata     start:0x020cfe40 end:0x020cfe50
+
+src/overlays/ov059/data/strings/Strings_ov059_020cfe50.c:
+    complete
+    .rodata     start:0x020cfe50 end:0x020cfe60
+
+src/overlays/ov059/data/strings/Strings_ov059_020cfe60.c:
+    complete
+    .rodata     start:0x020cfe60 end:0x020cfe70
+
+src/overlays/ov059/data/strings/Strings_ov059_020cfe70.c:
+    complete
+    .rodata     start:0x020cfe70 end:0x020cfe80
+
+src/overlays/ov059/data/strings/Strings_ov059_020cff00.c:
+    complete
+    .data       start:0x020cff00 end:0x020cff08
+
+src/overlays/ov059/data/strings/Strings_ov059_020cff08.c:
+    complete
+    .data       start:0x020cff08 end:0x020cff10
+
+src/overlays/ov059/data/strings/Strings_ov059_020cff1c.c:
+    complete
+    .data       start:0x020cff1c end:0x020cff2c
+
+src/overlays/ov059/data/strings/Strings_ov059_020cff2c.c:
+    complete
+    .data       start:0x020cff2c end:0x020cff5c
+
+src/overlays/ov059/data/strings/Strings_ov059_020cff5c.c:
+    complete
+    .data       start:0x020cff5c end:0x020cff70
+
+src/overlays/ov059/data/strings/Strings_ov059_020cff70.c:
+    complete
+    .data       start:0x020cff70 end:0x020cff84
+
+src/overlays/ov059/data/strings/Strings_ov059_020cff84.c:
+    complete
+    .data       start:0x020cff84 end:0x020cffc0

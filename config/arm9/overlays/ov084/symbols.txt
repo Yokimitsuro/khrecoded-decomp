@@ -12,4 +12,4 @@ func_ov084_020bfc48 kind:function(thumb,size=0x18) addr:0x020bfc48
 data_ov084_020bfc60 kind:data(any) addr:0x020bfc60
 data_ov084_020bfc70 kind:data(any) addr:0x020bfc70
 data_ov084_020bfca0 kind:data(any) addr:0x020bfca0 ambiguous
-data_ov084_020bfce4 kind:data(any) addr:0x020bfce4
+sOv084_UiMenuStrLanguageShopSZ_020bfce4 kind:data(any) addr:0x020bfce4
