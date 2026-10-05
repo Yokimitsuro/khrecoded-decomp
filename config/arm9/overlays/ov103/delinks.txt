@@ -4,6 +4,14 @@
     .data       start:0x020c04c0 end:0x020c0720 kind:data align:32
     .bss        start:0x020c0720 end:0x020c0740 kind:bss align:32
 
+src/overlays/ov103/calls/InitMenuScene_020beb40.c:
+    complete
+    .text       start:0x020beb40 end:0x020beb84
+
+src/overlays/ov103/calls/DestroyMenuScene_020beb84.c:
+    complete
+    .text       start:0x020beb84 end:0x020bebb8
+
 src/overlays/ov103/calls/RunSceneStateHandler.c:
     complete
     .text       start:0x020bebb8 end:0x020bebe4
@@ -12,6 +20,14 @@ src/overlays/ov103/calls/FreeArchiveFiles.c:
     complete
     .text       start:0x020bef58 end:0x020bef80
 
+src/overlays/ov103/calls/FreeGraphicsResources_020bf094.c:
+    complete
+    .text       start:0x020bf094 end:0x020bf0c4
+
+src/overlays/ov103/calls/DrawShadowedAnchoredText_020bf584.c:
+    complete
+    .text       start:0x020bf584 end:0x020bf5e8
+
 src/overlays/ov103/calls/ReleaseSlotPool_020bf66c.c:
     complete
     .text       start:0x020bf66c end:0x020bf688
@@ -19,6 +35,10 @@ src/overlays/ov103/calls/ReleaseSlotPool_020bf66c.c:
 src/overlays/ov103/calls/InitSlotPool_020bf688.c:
     complete
     .text       start:0x020bf688 end:0x020bf698
+
+src/overlays/ov103/calls/SetSlotEntryVisible.c:
+    complete
+    .text       start:0x020bf698 end:0x020bf6d0
 
 src/overlays/ov103/calls/IsEntryFlagSet_020c01a0.c:
     complete

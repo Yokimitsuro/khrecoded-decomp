@@ -23,7 +23,7 @@ extern BOOL func_ov001_02087674(FieldObject *obj, HitParams *params);
 extern BOOL PushFieldObject(FieldObject *obj, HitParams *params);
 extern void func_ov016_020a3c04(FieldObject *obj, u8 effectId);
 extern void ApplyGroupLeaderHit(FieldObject *obj, int arg);
-extern void func_ov016_020a6d60(FieldObject *obj, BOOL hasEffect);
+extern void EnterFieldUnitPhase5(FieldObject *obj, BOOL hasEffect);
 
 int HandleFieldObjectHit_020a50a4(FieldObject *obj, HitParams *params)
 {
@@ -54,7 +54,7 @@ int HandleFieldObjectHit_020a50a4(FieldObject *obj, HitParams *params)
         if (obj->currentWeight > 0) {
             return 0;
         }
-        func_ov016_020a6d60(obj, params->effectId != 0xff);
+        EnterFieldUnitPhase5(obj, params->effectId != 0xff);
     }
     return 0;
 }

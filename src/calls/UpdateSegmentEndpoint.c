@@ -10,7 +10,7 @@ typedef struct CollisionSegment {
 } CollisionSegment;
 
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 
 void UpdateSegmentEndpoint(CollisionSegment *segment)
 {
@@ -23,5 +23,5 @@ void UpdateSegmentEndpoint(CollisionSegment *segment)
     } else {
         VEC_Normalize(&segment->direction, &segment->direction);
     }
-    func_01ffa09c(segment->length, &segment->direction, &segment->start, &segment->end);
+    VEC_MultAdd(segment->length, &segment->direction, &segment->start, &segment->end);
 }

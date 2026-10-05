@@ -57,7 +57,7 @@ typedef struct CollisionLine {
 extern const VecFx32 data_0205344c;
 extern fx32 FX_Div(fx32 numerator, fx32 denominator);
 extern fx32 FX_Sqrt(fx32 value);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
@@ -136,7 +136,7 @@ BOOL SweepSegmentAgainstCylinder(SegmentShapeRef *segmentRef, CylinderShapeRef *
                 s32 sign = SignOf(VEC_DotProduct(&slide, &delta));
                 VecFx32 offset = ScaleAxisByDot(&delta, &normal);
                 VecFx32 along = func_02048b44(&slide, sign * FX_Sqrt(IntMax(SquareFx32_02048b88(cylinder->radius) - Vec_DotSelf_02048bc0(&offset), 0)));
-                func_01ff9e0c(&offset, &along, &axis);
+                VEC_Add(&offset, &along, &axis);
                 if (IsVecZero(&axis)) {
                     axis = GetPerpendicularVector(&cylinder->direction);
                 }

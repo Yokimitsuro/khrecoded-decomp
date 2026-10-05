@@ -14,13 +14,13 @@ typedef struct {
 
 extern FieldManagerHandle data_ov001_020a04c4;
 
-extern void func_ov001_020750c8(void);
-extern void func_ov001_020701fc(void);
+extern void ReleasePendingSceneTags(void);
+extern void ClearFieldStatusRow(void);
 
 void HideFieldMessageLine(void)
 {
     if (data_ov001_020a04c4.manager->isPaused != 1) {
-        func_ov001_020750c8();
-        func_ov001_020701fc();
+        ReleasePendingSceneTags();
+        ClearFieldStatusRow();
     }
 }

@@ -25,7 +25,7 @@ typedef struct {
 extern SaveData *data_0205fe0c;
 extern SaveSelectScreen *data_ov080_020c5e20;
 extern void func_ov027_020b833c(void *tracker);
-extern void func_ov027_020b902c(void *container);
+extern void DestroyAllContainerElements(void *container);
 extern void ReleaseIfMarked(void *owner);
 extern void FreePointerIfSet(void **ptr);
 extern BOOL DestroyFndObjectList(TextLayer *layer);
@@ -42,7 +42,7 @@ extern void LoadSelectionPackedValues(void);
 void DestroySaveSelectScreen(SaveSelectScreen *screen)
 {
     func_ov027_020b833c(screen->tagTracker);
-    func_ov027_020b902c(screen->panel);
+    DestroyAllContainerElements(screen->panel);
     ReleaseIfMarked(screen->panel);
     FreePointerIfSet(&screen->buffer);
     DestroyFndObjectList(&screen->layers[0]);

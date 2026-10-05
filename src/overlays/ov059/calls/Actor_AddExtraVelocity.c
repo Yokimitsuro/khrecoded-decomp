@@ -6,9 +6,9 @@ typedef struct Actor {
     VecFx32 extraVelocity;
 } Actor;
 
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 void Actor_AddExtraVelocity(Actor *actor, const VecFx32 *delta)
 {
-    func_01ff9e0c(delta, &actor->extraVelocity, &actor->extraVelocity);
+    VEC_Add(delta, &actor->extraVelocity, &actor->extraVelocity);
 }

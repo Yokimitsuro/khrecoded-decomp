@@ -60,8 +60,8 @@ extern ScriptGlobals gScriptState;
 
 extern int func_ov001_02063838(void);
 extern ActorNode *func_ov001_0207f0b4(void);
-extern void func_ov001_020814f8(ActorNode *node);
-extern void func_ov001_0207a820(void);
+extern void FieldObject_StopActorAnimation(ActorNode *node);
+extern void CloseActiveMode(void);
 extern void func_ov036_020c3368(void);
 extern void HideAllOamEntries(int value);
 extern void func_ov001_02063c78(int value);
@@ -88,10 +88,10 @@ void ScriptVm_FinishSkip(ScriptVm *vm)
         if (func_ov001_02063838()) {
             for (node = func_ov001_0207f0b4(); node != NULL; node = node->next) {
                 if (node->info->kind == 1) {
-                    func_ov001_020814f8(node);
+                    FieldObject_StopActorAnimation(node);
                 }
             }
-            func_ov001_0207a820();
+            CloseActiveMode();
         } else {
             func_ov036_020c3368();
             HideAllOamEntries(1);

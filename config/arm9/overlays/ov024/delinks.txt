@@ -20,13 +20,29 @@ src/overlays/ov024/calls/GenerateRandomLinks.c:
     complete
     .text       start:0x020b6100 end:0x020b61a6
 
+src/overlays/ov024/calls/FillRandomEmptySlots.c:
+    complete
+    .text       start:0x020b61a8 end:0x020b620c
+
 src/overlays/ov024/calls/PlaceBoardBonuses.c:
     complete
     .text       start:0x020b620c end:0x020b63e4
 
+src/overlays/ov024/calls/PickRandomSetBit.c:
+    complete
+    .text       start:0x020b6574 end:0x020b65c2
+
+src/overlays/ov024/calls/TeardownContextState.c:
+    complete
+    .text       start:0x020b6750 end:0x020b6798
+
 src/overlays/ov024/calls/CreateDefaultObjectSlot.c:
     complete
     .text       start:0x020b6798 end:0x020b67b4
+
+src/overlays/ov024/calls/ApplyDirectionOffset.c:
+    complete
+    .text       start:0x020b7248 end:0x020b72a8
 
 src/overlays/ov024/calls/func_ov024_020b72fc.c:
     complete

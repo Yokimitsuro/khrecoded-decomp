@@ -3,7 +3,7 @@
 
 extern const VecFx32 data_0205344c;
 extern BOOL AreVecsWithinRange16(const VecFx32 *a, const VecFx32 *b);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
@@ -20,7 +20,7 @@ BOOL HasVelocityDeviated(VecFx32 *velocity, VecFx32 *original)
     fx32 originalMag;
 
     if (!AreVecsWithinRange16(velocity, &data_0205344c)) {
-        func_01ff9e3c(velocity, original, &difference);
+        VEC_Subtract(velocity, original, &difference);
         delta = difference;
         if (!AreVecsWithinRange16(&delta, &data_0205344c)) {
             VEC_Normalize(&delta, &deltaUnit);

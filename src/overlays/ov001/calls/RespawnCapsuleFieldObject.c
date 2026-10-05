@@ -78,13 +78,13 @@ extern BOOL func_ov001_020807b4(void *entry, u8 group, u8 index, u32 slot, Shape
 extern void ApplyRecordTableEntry2(int index, int a1, int a2, int a3);
 extern FieldActor *ActorRegistry_GetEntityByIndex(u32 actorId);
 extern void Obj_SetPosition(FieldActor *entity, const VecFx32 *position);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(VecFx32 *in, VecFx32 *out);
 extern void InitCapsuleShape(ShapeBase *shape, void *capsule, const VecFx32 *start, const VecFx32 *end, const VecFx32 *axis, fx32 length, fx32 radius);
 extern void OffsetBoxByDelta(const void *src, void *dst, const VecFx32 *delta);
 extern void SetActorExtraPosition(int index, void *owner, int a2);
 extern void NNS_G3dMdlSetMdlAlphaAll(void *model, int alpha);
-extern void func_ov001_020809f8(void *anim, int blendIndex, int frame);
+extern void RebindAnimTracks(void *anim, int blendIndex, int frame);
 extern void Flags16_ClearBit1(void *anim);
 extern BOOL IsObjectFlagClear(FieldObject *object);
 extern void ActorSlot_SetFlag8ByIndex(int index, BOOL enable);
@@ -127,7 +127,7 @@ void RespawnCapsuleFieldObject(FieldObject *object)
     bottom.z = object->position.z;
     bottomCopy = bottom;
     capsule = object->body->shape.base.data;
-    func_01ff9e3c(&topCopy, &bottomCopy, &diff);
+    VEC_Subtract(&topCopy, &bottomCopy, &diff);
     axis = diff;
     InitCapsuleShape(&base, capsule, &bottomCopy, &topCopy, &axis, func_01ffaff4(&axis, &axis), 0xccd);
     shape.base = base;
@@ -142,7 +142,7 @@ void RespawnCapsuleFieldObject(FieldObject *object)
     object->alpha = 0;
     object->timer78 = 0;
     NNS_G3dMdlSetMdlAlphaAll(actor->model, object->alpha);
-    func_ov001_020809f8(&actor->animFlags, object->blendIndex, 0);
+    RebindAnimTracks(&actor->animFlags, object->blendIndex, 0);
     Flags16_ClearBit1(&actor->animFlags);
     if (IsObjectFlagClear(object)) {
         ActorSlot_SetFlag8ByIndex(object->actorId, 1);

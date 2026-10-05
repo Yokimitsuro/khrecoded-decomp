@@ -1,8 +1,8 @@
 extern int ScriptVm_ReadOperandInt();
-extern int func_ov001_02064328();
+extern int SaveCurrentSpawnPoint();
 
 int func_ov001_02065a28(int arg0) {
     ScriptVm_ReadOperandInt(arg0);
-    func_ov001_02064328();
+    SaveCurrentSpawnPoint();
     return 1;
 }

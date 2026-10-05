@@ -7,7 +7,7 @@ typedef struct {
 } WanderObject;
 
 extern void *func_ov001_0206dc4c(int index);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern u32 random_next_scaled(u32 upperBound);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void func_01ffaff4(VecFx32 *in, VecFx32 *out);
@@ -18,7 +18,7 @@ void PickJitteredPlayerOffset(WanderObject *object, VecFx32 *out)
     VecFx32 diff;
     u32 range;
 
-    func_01ff9e3c(func_ov001_0206dc4c(0), &object->position, &diff);
+    VEC_Subtract(func_ov001_0206dc4c(0), &object->position, &diff);
     range = 0x3666;
     diff.x += random_next_scaled(range) - (range >> 1);
     diff.z += random_next_scaled(range) - (range >> 1);

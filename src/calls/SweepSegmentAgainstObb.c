@@ -30,7 +30,7 @@ typedef struct SweepResult {
     u8 pad_33;
 } SweepResult;
 
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void InitHitQuery(SweepResult *result);
 extern BOOL SweepIntervalOnAxis(fx32 extent, fx32 distance, const VecFx32 *axis, u8 feature, const VecFx32 *velocity, SweepResult *result, s64 *outTime);
@@ -48,7 +48,7 @@ static inline SweepResult MakeSweepResult(void)
 static inline VecFx32 VecSub(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 diff;
-    func_01ff9e3c(a, b, &diff);
+    VEC_Subtract(a, b, &diff);
     return diff;
 }
 

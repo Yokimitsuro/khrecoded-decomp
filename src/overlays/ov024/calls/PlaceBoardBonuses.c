@@ -31,7 +31,7 @@ typedef struct GameSession {
 
 extern GameSession *data_0205fe0c;
 extern u32 func_0202a9e4(u32 range);
-extern int func_ov024_020b6574(u32 mask);
+extern int PickRandomSetBit(u32 mask);
 extern s64 OS_GetTick(void);
 extern s64 GetCardThreadStartTick(void);
 
@@ -52,7 +52,7 @@ void PlaceBoardBonuses(Ov024Board *board)
         for (i = 0; i < 6; i++) {
             slot = (start + i) % 6;
             if (board->slotValues[slot] >= 0 && board->slotItems[slot] == 0) {
-                board->slotItems[slot] = func_ov024_020b6574(board->itemPool) + 1;
+                board->slotItems[slot] = PickRandomSetBit(board->itemPool) + 1;
                 board->itemMask |= (u8)(1 << slot);
                 break;
             }

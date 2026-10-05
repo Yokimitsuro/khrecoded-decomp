@@ -16,7 +16,7 @@ typedef struct CameraAnim {
 } CameraAnim;
 
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void CamAnim_Update(CameraAnim *anim);
 
 void CamAnim_EvalDelta(CameraAnim *anim, CameraPose *delta)
@@ -26,9 +26,9 @@ void CamAnim_EvalDelta(CameraAnim *anim, CameraPose *delta)
 
     MI_CpuCopy8(pose, &previous, sizeof(CameraPose));
     CamAnim_Update(anim);
-    func_01ff9e3c(&pose->target, &previous.target, &delta->target);
-    func_01ff9e3c(&pose->position, &previous.position, &delta->position);
-    func_01ff9e3c(&pose->up, &previous.up, &delta->up);
+    VEC_Subtract(&pose->target, &previous.target, &delta->target);
+    VEC_Subtract(&pose->position, &previous.position, &delta->position);
+    VEC_Subtract(&pose->up, &previous.up, &delta->up);
     delta->fovySin = anim->pose.fovySin - previous.fovySin;
     delta->fovyCos = pose->fovyCos - previous.fovyCos;
 }

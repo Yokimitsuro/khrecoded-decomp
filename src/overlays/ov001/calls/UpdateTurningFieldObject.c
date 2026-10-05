@@ -36,9 +36,9 @@ extern BOOL FieldObject_GetSavedValue(TurnObject *object);
 extern BOOL func_ov001_02063838(void);
 extern BOOL func_ov001_02064490(void);
 extern BOOL IsLeadActorWithinRadius(TurnObject *object);
-extern void func_ov001_0206ca68(int channel, int mode, int value);
+extern void ConfigureChannelSlot(int channel, int mode, int value);
 extern TurnActor *ActorRegistry_GetEntityByIndex(u32 id);
-extern void func_ov001_020809f8(void *anim, int blendIndex, int frame);
+extern void RebindAnimTracks(void *anim, int blendIndex, int frame);
 extern fx32 func_0202f4cc(void *anim, int track);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern BOOL BuildSlotMask(void *anim, fx32 frame);
@@ -60,11 +60,11 @@ int UpdateTurningFieldObject(TurnObject *object)
     if (object->cooldown == 0 && !data_ov001_020a0480->locked && object->state != 1
         && !func_ov001_02064490() && !data_ov001_020a0480->busy
         && IsLeadActorWithinRadius(object)) {
-        func_ov001_0206ca68(0, 1, 0);
+        ConfigureChannelSlot(0, 1, 0);
     }
     if (object->state == 0 && object->animIndex > 0) {
         actor = ActorRegistry_GetEntityByIndex(object->actorId);
-        func_ov001_020809f8(&actor->animFlags, object->animIndex, 0);
+        RebindAnimTracks(&actor->animFlags, object->animIndex, 0);
         delta = object->targetAngle - actor->angle;
         if (delta > 0x8000) {
             delta -= 0x10000;
@@ -82,7 +82,7 @@ int UpdateTurningFieldObject(TurnObject *object)
             object->turnAngle = object->targetAngle << 12;
             object->animIndex = -1;
             object->state = 0;
-            func_ov001_020809f8(&actor->animFlags, 0, 0);
+            RebindAnimTracks(&actor->animFlags, 0, 0);
         }
         angle = (u32)(object->turnAngle << 4) >> 16;
         if (!(actor->flags & 0x20)) {

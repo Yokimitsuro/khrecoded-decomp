@@ -24,7 +24,7 @@ typedef struct EffectSource {
 
 extern void *GetBoundedEntryField(int index);
 extern HitResult func_ov021_020ab0e8(EffectSource *attacker, HitUnit *unit, VecFx32 *position, VecFx32 *offset);
-extern s16 func_ov021_020ab43c(HitUnit *owner, fx32 step);
+extern s16 AdvanceOwnerAnimation(HitUnit *owner, fx32 step);
 
 BOOL AdvanceLinkedHitUnit(EffectSource *source, HitUnit *unit, fx32 step)
 {
@@ -40,7 +40,7 @@ BOOL AdvanceLinkedHitUnit(EffectSource *source, HitUnit *unit, fx32 step)
         func_ov021_020ab0e8(source, unit, &position, &offset);
     }
     if (unit->phase == 1) {
-        u16 finished = func_ov021_020ab43c(unit, step);
+        u16 finished = AdvanceOwnerAnimation(unit, step);
         if (finished) {
             unit->phase = -1;
         }

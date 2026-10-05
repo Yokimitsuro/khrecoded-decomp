@@ -58,8 +58,8 @@ typedef struct CollHitRecord {
     s32 nearestDistance;
 } CollHitRecord;
 
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern CollShape func_0203ade0(void *storage, const VecFx32 *start, const VecFx32 *end, const VecFx32 *axis, fx32 length);
 extern CollShape func_0203ad28(void *storage, const VecFx32 *center, fx32 radius);
@@ -77,10 +77,10 @@ void InitMoverCast(CollMover *mover, const MoverCastParams *params)
         const VecFx32 *start;
         fx32 length;
 
-        func_01ff9e0c(params->start, params->delta, &sum);
+        VEC_Add(params->start, params->delta, &sum);
         end = sum;
         start = params->start;
-        func_01ff9e3c(&end, start, &diff);
+        VEC_Subtract(&end, start, &diff);
         axis = diff;
         length = func_01ffaff4(&axis, &axis);
         shape = func_0203ade0(mover->shapeData, start, &end, &axis, length);

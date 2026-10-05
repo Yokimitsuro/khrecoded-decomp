@@ -1,5 +1,5 @@
-extern int func_ov001_020688a0();
+extern int FindPairByValue();
 int func_ov001_0206888c(void) {
-    if (func_ov001_020688a0() != 0) return 1;
+    if (FindPairByValue() != 0) return 1;
     return 0;
 }

@@ -25,7 +25,7 @@ typedef struct {
 
 extern void func_ov058_020d4520(AiState *ai);
 extern int func_ov001_0206db8c(int index);
-extern void func_ov021_020a8e34(s32 groupId, s32 emitterIndex);
+extern void StopAndClearSoundEmitter(s32 groupId, s32 emitterIndex);
 extern void FinishEnemyRecovery(Enemy *enemy);
 extern void func_ov052_020ce7c0(Enemy *enemy, int mode, int enabled);
 
@@ -56,7 +56,7 @@ void SetEnemyModeEnabled(Enemy *enemy, int mode, int enabled)
         } else {
             emitter = ai->soundEmitter;
             if (emitter >= 0) {
-                func_ov021_020a8e34(func_ov001_0206db8c(8), emitter);
+                StopAndClearSoundEmitter(func_ov001_0206db8c(8), emitter);
                 ai->soundEmitter = -1;
             }
             if ((enemy->stateFlags & 0x80000000) == 0) {

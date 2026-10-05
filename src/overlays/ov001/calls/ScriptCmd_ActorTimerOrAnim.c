@@ -21,7 +21,7 @@ typedef struct ScriptContext {
 extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operand);
 extern int ScriptCmd_ReturnValue(ScriptContext *context, int value);
 extern int ByteCode_ResolveOperand(ScriptContext *context, ScriptOperand *operand);
-extern void func_ov001_0208a394(void *actor, int value);
+extern void InitActorDialogTimer(void *actor, int value);
 extern void StartActorAnimState(void *actor, int state, int value);
 
 BOOL ScriptCmd_ActorTimerOrAnim(ScriptContext *context, ScriptOperand *operands)
@@ -36,7 +36,7 @@ BOOL ScriptCmd_ActorTimerOrAnim(ScriptContext *context, ScriptOperand *operands)
     index = ScriptCmd_ReturnValue(context, handle);
     switch (operands[1].type) {
     case 1:
-        func_ov001_0208a394(context->actorTable->actors[index], ScriptVm_ReadOperandInt(context, &operands[1]));
+        InitActorDialogTimer(context->actorTable->actors[index], ScriptVm_ReadOperandInt(context, &operands[1]));
         break;
     case 2:
         state = ByteCode_ResolveOperand(context, &operands[1]);

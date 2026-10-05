@@ -12,7 +12,7 @@ typedef struct GroupObject {
 
 extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
 extern void *func_ov032_020bbc80(GroupObject *object);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 
 void ComputeGroupAimDelta(GroupObject *object, GroupObject *target, VecFx32 *out)
@@ -26,7 +26,7 @@ void ComputeGroupAimDelta(GroupObject *object, GroupObject *target, VecFx32 *out
     if (target != NULL) {
         VecFx32 aim = target->position;
         aim.y += 0x1800;
-        func_01ff9e3c(&aim, &object->position, out);
+        VEC_Subtract(&aim, &object->position, out);
         if (out->x != 0 || out->y != 0 || out->z != 0) {
             VEC_Mag(out);
             out->x = out->x * 0x55 / 100;

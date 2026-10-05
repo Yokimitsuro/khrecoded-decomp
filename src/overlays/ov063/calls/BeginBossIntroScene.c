@@ -26,7 +26,7 @@ typedef struct {
 
 extern Actor *GetBoundedEntryField(int index);
 extern void UpdateFacingTowardTarget(Actor *actor, BOOL useEntry);
-extern void func_ov046_020c2f64(void *path);
+extern void CameraPath_Start(void *path);
 
 s32 BeginBossIntroScene(SceneOwner *owner, SceneTask *task, u32 *errorCode)
 {
@@ -42,7 +42,7 @@ s32 BeginBossIntroScene(SceneOwner *owner, SceneTask *task, u32 *errorCode)
         actor->playMotion(actor, motion, -1);
     }
     actor->flags |= 0x40;
-    func_ov046_020c2f64(task->cameraPath);
+    CameraPath_Start(task->cameraPath);
     *errorCode = 0x18;
     return task->result;
 }

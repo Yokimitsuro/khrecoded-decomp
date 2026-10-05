@@ -37,11 +37,11 @@ typedef struct {
 extern const s16 data_02053580[];
 extern void MTX_RotZ33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
 extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *dst);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern HitResult func_ov021_020ab0e8(ProjectileOwner *owner, Projectile *proj, VecFx32 *pos, VecFx32 *vel);
-extern s16 func_ov021_020ab43c(Projectile *proj, fx32 step);
-extern void func_ov021_020ab610(Projectile *proj);
+extern s16 AdvanceOwnerAnimation(Projectile *proj, fx32 step);
+extern void AdvanceToSecondPhase(Projectile *proj);
 
 BOOL UpdateSpiralProjectile(ProjectileOwner *owner, Projectile *proj, fx32 step)
 {
@@ -68,12 +68,12 @@ BOOL UpdateSpiralProjectile(ProjectileOwner *owner, Projectile *proj, fx32 step)
         MTX_RotZ33_(&rot, data_02053580[index], data_02053580[(0x400 - index) & 0xfff]);
         func_01ff9404(&proj->velocity, &rot, &proj->velocity);
     }
-    func_01ff9e0c(&pos, &vel, &pos);
+    VEC_Add(&pos, &vel, &pos);
     proj->position = pos;
     func_ov021_020ab0e8(owner, proj, &pos, &vel);
     if (proj->phase == 1) {
         finished = FALSE;
-        func_ov021_020ab43c(proj, step);
+        AdvanceOwnerAnimation(proj, step);
         if (def->lifetime >= 0 && proj->timer >= def->lifetime) {
             finished = TRUE;
         }
@@ -81,7 +81,7 @@ BOOL UpdateSpiralProjectile(ProjectileOwner *owner, Projectile *proj, fx32 step)
             finished = TRUE;
         }
         if (finished) {
-            func_ov021_020ab610(proj);
+            AdvanceToSecondPhase(proj);
         }
     }
     if (proj->phase == -1) {

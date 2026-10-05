@@ -63,7 +63,7 @@ extern void func_ov032_020bd974(GroupObject *object);
 extern void func_ov032_020bde18(GroupObject *object);
 extern void func_ov032_020be674(GroupObject *object);
 extern void ResetGroupMemberPhases(GroupObject *object);
-extern void func_ov032_020bf21c(GroupObject *object);
+extern void InitGroupMode4(GroupObject *object);
 extern void ScatterGroupMembers_020befdc(GroupObject *object);
 
 void SetGroupFormation(GroupObject *object, u32 formation)
@@ -98,7 +98,7 @@ void SetGroupFormation(GroupObject *object, u32 formation)
         func_ov032_020be674(object);
         break;
     case 4:
-        func_ov032_020bf21c(object);
+        InitGroupMode4(object);
         break;
     case 3:
         ResetGroupMemberPhases(object);

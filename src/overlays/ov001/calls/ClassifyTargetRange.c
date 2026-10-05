@@ -20,7 +20,7 @@ extern VecFx32 *func_ov001_0206dc4c(int index);
 extern u16 GetBiasAdjustedField(int index);
 extern int func_ov021_020af414(void);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 
@@ -38,7 +38,7 @@ void ClassifyTargetRange(int index, VecFx32 *target, RangeResult *result, int ta
     result->tag = tag;
     origin = func_ov001_0206dc4c(index);
     distance = VEC_Distance(target, origin);
-    func_01ff9e3c(target, origin, &direction);
+    VEC_Subtract(target, origin, &direction);
     if (direction.x != 0 || direction.y != 0 || direction.z != 0) {
         VEC_Normalize(&direction, &direction);
     }

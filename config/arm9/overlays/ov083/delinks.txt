@@ -4,6 +4,18 @@
     .data       start:0x020bf6a0 end:0x020bf720 kind:data align:32
     .bss        start:0x020bf720 end:0x020bf720 kind:bss align:32
 
+src/overlays/ov083/calls/ReleaseScreenResources_020bf310.c:
+    complete
+    .text       start:0x020bf310 end:0x020bf356
+
+src/overlays/ov083/calls/DrawTableString.c:
+    complete
+    .text       start:0x020bf55c end:0x020bf58a
+
+src/overlays/ov083/calls/DrawFormattedText.c:
+    complete
+    .text       start:0x020bf58c end:0x020bf5cc
+
 src/overlays/ov083/data/strings/Strings_ov083_020bf6e0.c:
     complete
     .data       start:0x020bf6e0 end:0x020bf6f8

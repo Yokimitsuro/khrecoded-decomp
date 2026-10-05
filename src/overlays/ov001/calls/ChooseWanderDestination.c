@@ -30,8 +30,8 @@ extern void func_ov001_02091840(WanderActor *actor);
 extern int func_ov001_02096a2c(WanderEntry *target, int mode);
 extern u32 random_next_scaled(u32 range);
 extern StageEventRecord *func_ov001_0209c114(u32 id);
-extern WanderActor *func_ov001_0209c068(int id);
-extern void func_ov001_0209265c(fx32 length, VecFx32 *out);
+extern WanderActor *GetStageActor(int id);
+extern void RandomHorizontalVector(fx32 length, VecFx32 *out);
 
 void ChooseWanderDestination(WanderEntry *entry, WanderActor *actor, VecFx32 *destination)
 {
@@ -49,11 +49,11 @@ void ChooseWanderDestination(WanderEntry *entry, WanderActor *actor, VecFx32 *de
             nearest = func_ov001_02096a2c(entry, 0);
             entry->retargeted = 1;
             if (nearest != 0 && row != nearest && random_next_scaled(100) < 50) {
-                other = func_ov001_0209c068(func_ov001_0209c114(nearest)->actorId);
+                other = GetStageActor(func_ov001_0209c114(nearest)->actorId);
                 destination->x = other->position.x;
                 destination->z = other->position.z;
             } else {
-                func_ov001_0209265c(0x2000, &offset);
+                RandomHorizontalVector(0x2000, &offset);
                 destination->x = actor->position.x + offset.x;
                 destination->z = actor->position.z + offset.z;
             }
@@ -65,7 +65,7 @@ void ChooseWanderDestination(WanderEntry *entry, WanderActor *actor, VecFx32 *de
         if (entry->actorId == 0) {
             goto store;
         }
-        other = func_ov001_0209c068((s16)entry->actorId);
+        other = GetStageActor((s16)entry->actorId);
         if (other == 0) {
             goto store;
         }

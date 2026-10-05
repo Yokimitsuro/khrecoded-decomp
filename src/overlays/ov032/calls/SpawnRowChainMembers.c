@@ -53,7 +53,7 @@ extern BOOL func_ov001_020872e0(ChainObject *object);
 extern void func_ov032_020bc208(ChainObject *object, int behavior);
 extern void func_ov016_020a6b1c(ChainObject *object);
 extern void func_ov016_020a6974(ChainObject *object, void (*callback)(ChainObject *self));
-extern void func_ov016_020a6ce4(ChainObject *object, const VecFx32 *position);
+extern void SetFieldUnitPosition(ChainObject *object, const VecFx32 *position);
 extern void func_ov032_020bbd80(ChainObject *object, const VecFx32 *velocity);
 extern void UnlinkGroupMember(ChainObject *self);
 
@@ -101,9 +101,9 @@ void SpawnRowChainMembers(ChainWorld *world, s32 rowIndex, ChainObject *origin)
             func_ov016_020a6b1c(next);
             func_ov016_020a6974(next, UnlinkGroupMember);
             if (row->mode != 3) {
-                func_ov016_020a6ce4(next, &origin->position);
+                SetFieldUnitPosition(next, &origin->position);
             } else {
-                func_ov016_020a6ce4(next, &tail->position);
+                SetFieldUnitPosition(next, &tail->position);
             }
             func_ov032_020bbd80(next, &data_0205344c);
             work->nextActor = next->actorId;

@@ -6,7 +6,7 @@ typedef struct {
 } OverlayState;
 
 extern OverlayState *data_ov031_020bc820;
-extern void func_ov001_02066810(void);
+extern void StartIdleSceneObjects(void);
 extern void func_ov001_02087650(u32 a);
 
 u32 EnterState15(void)
@@ -16,7 +16,7 @@ u32 EnterState15(void)
     state = data_ov031_020bc820;
     data_ov031_020bc820->flags = data_ov031_020bc820->flags | 0x20;
     if ((state->flags & 0x10) == 0) {
-        func_ov001_02066810();
+        StartIdleSceneObjects();
         func_ov001_02087650(1);
     }
     return 0xf;

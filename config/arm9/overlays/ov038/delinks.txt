@@ -4,9 +4,25 @@
     .data       start:0x020bbda0 end:0x020bd160 kind:data align:32
     .bss        start:0x020bd160 end:0x020bd180 kind:bss align:32
 
+src/overlays/ov038/calls/RunOv038SoundCtxStates.c:
+    complete
+    .text       start:0x020ba488 end:0x020ba4e8
+
+src/overlays/ov038/calls/TryMarkSoundCtxActive.c:
+    complete
+    .text       start:0x020ba518 end:0x020ba54c
+
+src/overlays/ov038/calls/EnableOv038SoundCtx.c:
+    complete
+    .text       start:0x020ba54c end:0x020ba588
+
 src/overlays/ov038/calls/MarkSoundCtxRepeatIfReady.c:
     complete
     .text       start:0x020ba5ac end:0x020ba5d4
+
+src/overlays/ov038/calls/DisableOv038Sound.c:
+    complete
+    .text       start:0x020ba5d4 end:0x020ba614
 
 src/overlays/ov038/auto/func_ov038_020ba614.c:
     complete
@@ -44,6 +60,30 @@ src/overlays/ov038/calls/StopOv038SoundStream.c:
     complete
     .text       start:0x020bac44 end:0x020bac5c
 
+src/overlays/ov038/calls/LoadOv038MsgContainers.c:
+    complete
+    .text       start:0x020bae00 end:0x020bae4c
+
+src/overlays/ov038/calls/FreeOv038ContextBuffers.c:
+    complete
+    .text       start:0x020bae4c end:0x020bae7c
+
+src/overlays/ov038/calls/FreeOv038ContextSlots.c:
+    complete
+    .text       start:0x020baf9c end:0x020bafd4
+
+src/overlays/ov038/calls/ReleaseOv038SlotPools.c:
+    complete
+    .text       start:0x020bb0e0 end:0x020bb124
+
+src/overlays/ov038/calls/InitOv038SlotPools.c:
+    complete
+    .text       start:0x020bb124 end:0x020bb15c
+
+src/overlays/ov038/calls/SetOv038PoolRecordFlags.c:
+    complete
+    .text       start:0x020bb34c end:0x020bb37c
+
 src/overlays/ov038/calls/ResetOv038ExitState.c:
     complete
     .text       start:0x020bb658 end:0x020bb67c
@@ -51,6 +91,10 @@ src/overlays/ov038/calls/ResetOv038ExitState.c:
 src/overlays/ov038/calls/func_ov038_020bbcb0.c:
     complete
     .text       start:0x020bbcb0 end:0x020bbcbc
+
+src/overlays/ov038/calls/ReleaseOv038Context.c:
+    complete
+    .text       start:0x020bbcd8 end:0x020bbd08
 
 src/overlays/ov038/data/strings/Strings_ov038_020bbddc.c:
     complete

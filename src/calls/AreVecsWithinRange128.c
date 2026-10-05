@@ -1,7 +1,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 
-void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 BOOL AreVecsWithinRange128(const VecFx32 *a, const VecFx32 *b)
 {
@@ -11,7 +11,7 @@ BOOL AreVecsWithinRange128(const VecFx32 *a, const VecFx32 *b)
     BOOL nearXy;
 
     /* Strict per-axis distance below 0x80 */
-    func_01ff9e3c(a, b, &temp);
+    VEC_Subtract(a, b, &temp);
     delta = temp;
     result = FALSE;
     nearXy = FALSE;

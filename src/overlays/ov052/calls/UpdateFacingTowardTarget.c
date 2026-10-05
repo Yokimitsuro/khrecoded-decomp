@@ -6,7 +6,7 @@ typedef void (*AngleCallback)(int entity, u16 angle);
 
 extern u16 func_ov052_020ceb9c(int entity);
 extern VecFx32 *func_ov052_020ceb74(int entity);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern unsigned short FX_Atan2Idx(int vertical_component, int horizontal_component);
 extern u32 func_ov001_0206db78(u32 index);
 extern BOOL func_ov021_020a7524(u32 entry);
@@ -24,7 +24,7 @@ void UpdateFacingTowardTarget(int entity, BOOL useEntry)
         found = FALSE;
     }
     if (found) {
-        func_01ff9e3c(&target, func_ov052_020ceb74(entity), &delta);
+        VEC_Subtract(&target, func_ov052_020ceb74(entity), &delta);
         angle = (u16)(FX_Atan2Idx(delta.x, delta.z) + 0x8000);
     } else if (useEntry) {
         u32 entry = func_ov001_0206db78(*(u8 *)(entity + 0x9b4));

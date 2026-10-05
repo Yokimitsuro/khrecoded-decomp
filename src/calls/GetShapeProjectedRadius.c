@@ -21,7 +21,7 @@ typedef struct CollisionShape {
     s32 kind;
 } CollisionShape;
 
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern fx32 GetObbProjectedRadius(const void *box, const VecFx32 *axis);
 extern fx32 GetCapsuleProjectedExtent(const void *capsule, const VecFx32 *axis);
@@ -30,7 +30,7 @@ extern fx32 GetMaxProjectedSpread(void *shape, const VecFx32 *axis);
 static inline VecFx32 SegmentDelta(const CollisionCapsule *segment)
 {
     VecFx32 delta;
-    func_01ff9e3c(&segment->end, &segment->start, &delta);
+    VEC_Subtract(&segment->end, &segment->start, &delta);
     return delta;
 }
 

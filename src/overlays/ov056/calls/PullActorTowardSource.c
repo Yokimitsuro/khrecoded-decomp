@@ -20,12 +20,12 @@ typedef struct PullEvent {
 
 typedef struct StageActor StageActor;
 
-extern StageActor *func_ov001_0209c068(int id);
+extern StageActor *GetStageActor(int id);
 extern VecFx32 *func_ov001_02090f2c(StageActor *actor);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern int FX_Mul(int left, int right);
 extern void func_ov001_020911bc(StageActor *actor);
 extern void func_ov001_020911d0(StageActor *actor);
@@ -49,10 +49,10 @@ BOOL PullActorTowardSource(PullEvent *event, PullWork *work)
         break;
     case 1:
         source = work->source;
-        actor = func_ov001_0209c068(event->actorId);
+        actor = GetStageActor(event->actorId);
         step = FX_Mul(0xb2, source->strength);
         pos = *func_ov001_02090f2c(actor);
-        func_01ff9e3c(&source->position, &pos, &dir);
+        VEC_Subtract(&source->position, &pos, &dir);
         if (VEC_DotProduct(&dir, &dir) > FX_Mul(0xccd, 0xccd)) {
             VEC_Normalize(&dir, &dir);
             speed = work->speed + step;
@@ -60,10 +60,10 @@ BOOL PullActorTowardSource(PullEvent *event, PullWork *work)
                 speed = 0xc00;
             }
             work->speed = speed;
-            func_01ffa09c(speed, &dir, &pos, &pos);
+            VEC_MultAdd(speed, &dir, &pos, &pos);
             func_ov001_020911bc(actor);
             func_ov001_020911d0(actor);
-            func_01ff9e3c(&pos, func_ov001_02090f2c(actor), &dir);
+            VEC_Subtract(&pos, func_ov001_02090f2c(actor), &dir);
             AddObjectOffsetVector(actor, &dir);
         }
         return TRUE;

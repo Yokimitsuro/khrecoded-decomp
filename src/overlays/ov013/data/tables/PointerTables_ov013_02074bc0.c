@@ -3,7 +3,7 @@
 extern void func_ov013_02071a90(void); /* PXI_Init */
 extern void func_ov013_02071a9c(void); /* ResetPanelStepAndNotify */
 extern void func_ov013_02071b6c(void);
-extern void func_ov013_02072228(void); /* ApplyPanelSubitem5 */
+extern void ApplyPanelSubitem5(void); /* ApplyPanelSubitem5 */
 extern void func_ov013_0207225c(void);
 extern void func_ov013_020724c0(void); /* UpdatePanelResultState */
 extern void func_ov013_02072674(void); /* ResetPanelLayoutClearFlag */
@@ -14,7 +14,7 @@ extern void func_ov013_020727b4(void);
 extern void func_ov013_020729e4(void); /* UpdatePanelResultPrompt */
 extern void func_ov013_02072ae8(void); /* ResetPanelLayout */
 extern void func_ov013_02073234(void);
-extern void func_ov013_0207324c(void); /* PollPanelSaveStep */
+extern void PollPanelSaveStep(void); /* PollPanelSaveStep */
 extern void func_ov013_020732a4(void);
 extern void func_ov013_020732a8(void); /* CloseRecordPanelMenu */
 extern void func_ov013_020733f0(void); /* UpdatePanelMenuState */
@@ -23,7 +23,7 @@ extern void func_ov013_020735d0(void); /* ClosePanelMenu */
 extern void func_ov013_0207370c(void); /* UpdatePanelBrowseState */
 extern void ClearPanelListCallback(void); /* ClearPanelListCallback */
 extern void func_ov013_0207390c(void);
-extern void func_ov013_02073944(void); /* AdvancePanelCloseStep */
+extern void AdvancePanelCloseStep(void); /* AdvancePanelCloseStep */
 extern void func_ov013_020739a0(void);
 extern void func_ov013_020739a4(void);
 extern void func_ov013_020739bc(void);
@@ -40,7 +40,7 @@ void (*gPanelMenuStateHandlers[34])(void) = {
     func_ov013_02071a90, /* PXI_Init */
     func_ov013_02071a9c, /* ResetPanelStepAndNotify */
     func_ov013_02071b6c,
-    func_ov013_02072228, /* ApplyPanelSubitem5 */
+    ApplyPanelSubitem5, /* ApplyPanelSubitem5 */
     func_ov013_0207225c,
     func_ov013_020724c0, /* UpdatePanelResultState */
     func_ov013_02072674, /* ResetPanelLayoutClearFlag */
@@ -51,7 +51,7 @@ void (*gPanelMenuStateHandlers[34])(void) = {
     func_ov013_020729e4, /* UpdatePanelResultPrompt */
     func_ov013_02072ae8, /* ResetPanelLayout */
     func_ov013_02073234,
-    func_ov013_0207324c, /* PollPanelSaveStep */
+    PollPanelSaveStep, /* PollPanelSaveStep */
     func_ov013_020732a4,
     func_ov013_020732a8, /* CloseRecordPanelMenu */
     func_ov013_020733f0, /* UpdatePanelMenuState */
@@ -60,7 +60,7 @@ void (*gPanelMenuStateHandlers[34])(void) = {
     func_ov013_0207370c, /* UpdatePanelBrowseState */
     ClearPanelListCallback, /* ClearPanelListCallback */
     func_ov013_0207390c,
-    func_ov013_02073944, /* AdvancePanelCloseStep */
+    AdvancePanelCloseStep, /* AdvancePanelCloseStep */
     func_ov013_020739a0,
     func_ov013_020739a4,
     func_ov013_020739bc,

@@ -18,20 +18,20 @@ typedef struct CollisionShape {
     s32 kind;
 } CollisionShape;
 
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 static inline VecFx32 SubtractVec(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 out;
-    func_01ff9e3c(a, b, &out);
+    VEC_Subtract(a, b, &out);
     return out;
 }
 
 static inline VecFx32 AddVec(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 out;
-    func_01ff9e0c(a, b, &out);
+    VEC_Add(a, b, &out);
     return out;
 }
 
@@ -43,8 +43,8 @@ void SetShapePosition(CollisionShape *shape, const VecFx32 *position)
 
     delta = SubtractVec(position, shape->data);
     *shape->data = *position;
-    func_01ff9e0c(&shape->boundsMax, &delta, &shape->boundsMax);
-    func_01ff9e0c(&shape->boundsMin, &delta, &shape->boundsMin);
+    VEC_Add(&shape->boundsMax, &delta, &shape->boundsMax);
+    VEC_Add(&shape->boundsMin, &delta, &shape->boundsMin);
     switch (shape->kind) {
     case 0:
     case 1:

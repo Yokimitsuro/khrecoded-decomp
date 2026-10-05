@@ -1,4 +1,4 @@
-func_ov011_020a0540 kind:function(thumb,size=0x3e) addr:0x020a0540
+ScriptCmd_ShuffleEntryPositions kind:function(thumb,size=0x3e) addr:0x020a0540
 ScriptCmd_SpawnActorInSlot kind:function(thumb,size=0x2a) addr:0x020a0580
 ScriptCmd_SpawnFieldObject_020a05ac kind:function(thumb,size=0xe2) addr:0x020a05ac
 func_ov011_020a0690 kind:function(thumb,size=0x34) addr:0x020a0690

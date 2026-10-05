@@ -12,6 +12,10 @@ src/overlays/ov034/calls/ClearResultsWidgetOnLayer.c:
     complete
     .text       start:0x020bb090 end:0x020bb0b4
 
+src/overlays/ov034/calls/AdvanceResultsTransition.c:
+    complete
+    .text       start:0x020bb254 end:0x020bb294
+
 src/overlays/ov034/calls/SetResultsMode.c:
     complete
     .text       start:0x020bb294 end:0x020bb2b0
@@ -28,9 +32,17 @@ src/overlays/ov034/calls/IsResultsShopEntryUnlocked.c:
     complete
     .text       start:0x020bdb90 end:0x020bdbf0
 
+src/overlays/ov034/calls/StartResultsScreen.c:
+    complete
+    .text       start:0x020bdbf0 end:0x020bdc38
+
 src/overlays/ov034/calls/PollResultsScreen.c:
     complete
     .text       start:0x020bdc38 end:0x020bdc5c
+
+src/overlays/ov034/calls/FinishResultsScreen.c:
+    complete
+    .text       start:0x020bdc5c end:0x020bdcac
 
 src/overlays/ov034/auto/func_ov034_020bdcac.c:
     complete
@@ -63,6 +75,14 @@ src/overlays/ov034/calls/MobiClip_SrcClose_020bde8c.c:
 src/overlays/ov034/auto/func_ov034_020bdea4.c:
     complete
     .text       start:0x020bdea4 end:0x020bdea8
+
+src/overlays/ov034/calls/ClassifyResultsShopEntry.c:
+    complete
+    .text       start:0x020be518 end:0x020be568
+
+src/overlays/ov034/calls/InitResultsMovieSourceOps.c:
+    complete
+    .text       start:0x020be568 end:0x020be5a8
 
 src/overlays/ov034/auto/func_ov034_020be734.c:
     complete

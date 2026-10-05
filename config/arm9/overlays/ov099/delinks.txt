@@ -12,9 +12,29 @@ src/overlays/ov099/calls/RemapModelId.c:
     complete
     .text       start:0x020beb40 end:0x020becb4
 
+src/overlays/ov099/calls/LoadMessageFiles.c:
+    complete
+    .text       start:0x020bf410 end:0x020bf454
+
 src/overlays/ov099/calls/FreeLoadedFiles_020bf454.c:
     complete
     .text       start:0x020bf454 end:0x020bf47c
+
+src/overlays/ov099/calls/FreeResourceBlocks_020bf5c4.c:
+    complete
+    .text       start:0x020bf5c4 end:0x020bf5f4
+
+src/overlays/ov099/calls/DrawShadowedAnchoredText_020c05a8.c:
+    complete
+    .text       start:0x020c05a8 end:0x020c060c
+
+src/overlays/ov099/calls/ReleaseObjManagers.c:
+    complete
+    .text       start:0x020c07e8 end:0x020c081c
+
+src/overlays/ov099/calls/SetSlotObjVisible.c:
+    complete
+    .text       start:0x020c0840 end:0x020c087c
 
 src/overlays/ov099/calls/IsEntryFlagSet_020c16ac.c:
     complete
@@ -35,6 +55,14 @@ src/overlays/ov099/auto/func_ov099_020c17a4.c:
 src/overlays/ov099/calls/FreeModelFiles.c:
     complete
     .text       start:0x020c1b28 end:0x020c1b44
+
+src/overlays/ov099/calls/ReleaseViewerModels.c:
+    complete
+    .text       start:0x020c1d20 end:0x020c1d7c
+
+src/overlays/ov099/calls/ResetModelViewer.c:
+    complete
+    .text       start:0x020c216c end:0x020c21b8
 
 src/overlays/ov099/calls/DestroyModelViewer.c:
     complete

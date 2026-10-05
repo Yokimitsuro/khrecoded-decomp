@@ -10,9 +10,9 @@ typedef struct {
     EffectPool effectPool;
 } EffectOwner;
 
-extern void func_ov056_020d7e54(EffectPool *pool);
+extern void FreeModelSlots(EffectPool *pool);
 
 void ReleaseEffectPool(EffectOwner *owner)
 {
-    func_ov056_020d7e54(&owner->effectPool);
+    FreeModelSlots(&owner->effectPool);
 }

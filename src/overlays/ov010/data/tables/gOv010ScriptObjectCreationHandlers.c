@@ -3,7 +3,7 @@
 extern void func_ov010_020a0540(void); /* ScriptCmd_CreateShapedObjectClass */
 extern void func_ov010_020a05cc(void); /* ScriptCmd_CreateObjectWithAngle */
 extern void ScriptCmd_SpawnObjectIntoSlot(void); /* ScriptCmd_SpawnObjectIntoSlot */
-extern void func_ov010_020a0680(void); /* ScriptCmd_CreateObjectAtOrigin */
+extern void ScriptCmd_CreateObjectAtOrigin(void); /* ScriptCmd_CreateObjectAtOrigin */
 
 void (*gOv010ScriptObjectCreationHandlers[8])(void) = {
     func_ov010_020a0540, /* ScriptCmd_CreateShapedObjectClass */
@@ -12,6 +12,6 @@ void (*gOv010ScriptObjectCreationHandlers[8])(void) = {
     NULL,
     ScriptCmd_SpawnObjectIntoSlot, /* ScriptCmd_SpawnObjectIntoSlot */
     NULL,
-    func_ov010_020a0680, /* ScriptCmd_CreateObjectAtOrigin */
+    ScriptCmd_CreateObjectAtOrigin, /* ScriptCmd_CreateObjectAtOrigin */
     NULL,
 };

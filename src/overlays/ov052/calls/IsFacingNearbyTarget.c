@@ -13,7 +13,7 @@ typedef struct {
 
 extern VecFx32 *func_ov052_020ceb74(int entity);
 extern u16 func_ov052_020ceb9c(int entity);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void func_01ffaff4(const VecFx32 *v, VecFx32 *out);
 extern u16 FX_Atan2Idx(int vertical, int horizontal);
@@ -34,12 +34,12 @@ BOOL IsFacingNearbyTarget(int entity, TargetRef *target)
     }
     targetPos = &target->object->position;
     selfPos = func_ov052_020ceb74(entity);
-    func_01ff9e3c(targetPos, selfPos, &dir);
+    VEC_Subtract(targetPos, selfPos, &dir);
     dir.y = 0;
     if (VEC_Mag(&dir) >= 0x1b33) {
         return result;
     }
-    func_01ff9e3c(targetPos, selfPos, &dir);
+    VEC_Subtract(targetPos, selfPos, &dir);
     if (dir.y >= 0x1000) {
         return result;
     }

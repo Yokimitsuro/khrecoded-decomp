@@ -153,6 +153,14 @@ libs/nitro/fx/auto/FX_DivAsync.c:
     complete
     .text       start:0x01ff9de4 end:0x01ff9e0c
 
+src/calls/VEC_Add.c:
+    complete
+    .text       start:0x01ff9e0c end:0x01ff9e3c
+
+src/calls/VEC_Subtract.c:
+    complete
+    .text       start:0x01ff9e3c end:0x01ff9e6c
+
 libs/nitro/fx/auto/VEC_DotProduct.c:
     complete
     .text       start:0x01ff9e6c end:0x01ff9ea8
@@ -160,6 +168,10 @@ libs/nitro/fx/auto/VEC_DotProduct.c:
 libs/nitro/fx/auto/VEC_Mag.c:
     complete
     .text       start:0x01ff9f28 end:0x01ff9f88
+
+src/calls/VEC_MultAdd.c:
+    complete
+    .text       start:0x01ffa09c end:0x01ffa0f4
 
 libs/nitro/fx/auto/VEC_Distance.c:
     complete
@@ -197,9 +209,25 @@ libs/nns/g3d/calls/texmtxCalc_flag_.c:
     complete
     .text       start:0x01ffa884 end:0x01ffa98c
 
+src/calls/BuildTextureTranslationMatrixITCM.c:
+    complete
+    .text       start:0x01ffaac4 end:0x01ffab10
+
+src/calls/BuildTextureVerticalScaleMatrix.c:
+    complete
+    .text       start:0x01ffac9c end:0x01ffacdc
+
 src/calls/func_01ffb2f8.c:
     complete
     .text       start:0x01ffb2f8 end:0x01ffb328
+
+src/calls/QueryModelCollision.c:
+    complete
+    .text       start:0x01ffce24 end:0x01ffce6c
+
+src/calls/QueryModelMotionCollision.c:
+    complete
+    .text       start:0x01ffce6c end:0x01ffceb4
 
 libs/nitro/nns/calls/func_01ffcedc.c:
     complete
@@ -208,6 +236,10 @@ libs/nitro/nns/calls/func_01ffcedc.c:
 libs/nitro/nns/calls/func_01ffd934.c:
     complete
     .text       start:0x01ffd934 end:0x01ffda04
+
+src/calls/updateHintVec.c:
+    complete
+    .text       start:0x01ffe158 end:0x01ffe1bc
 
 src/calls/func_01ffe394.c:
     complete

@@ -13,7 +13,7 @@ typedef struct CollisionHit {
     u8 kind;
 } CollisionHit;
 
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern fx32 FX_Sqrt(fx32 value);
 extern void DivideVecByLength(VecFx32 *vec, fx32 length);
@@ -48,7 +48,7 @@ BOOL TestSphereAgainstPoint(const VecFx32 *point, const CollisionSphere *sphere,
     fx32 distSq;
     fx32 distance;
 
-    func_01ff9e3c(point, &sphere->center, &diff);
+    VEC_Subtract(point, &sphere->center, &diff);
     offset = diff;
     distSq = VecLengthSquared(&diff, &check);
     if (distSq <= (fx32)(((fx64)sphere->radius * sphere->radius + 0x800) >> 12)) {

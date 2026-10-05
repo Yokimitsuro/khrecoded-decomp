@@ -26,14 +26,14 @@ typedef struct PushEvent {
 
 extern const VecFx32 data_0205344c;
 extern fx32 Surface_GetKindValue(Surface *surface);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_ov001_0209265c(int seed, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void RandomHorizontalVector(int seed, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern BOOL func_ov001_02063a24(void);
 extern int func_ov001_02063a38(void);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern void func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 
 #define FX_MUL(a, b) ((fx32)(((fx64)(a) * (b) + 0x800) >> 12))
 
@@ -98,10 +98,10 @@ BOOL ComputeActorPushOut(PushEvent *event, PushActor *actor, Surface *other, Vec
         }
         position->y = lifted + diff;
     }
-    func_01ff9e3c(position, target, &delta);
+    VEC_Subtract(position, target, &delta);
     if ((delta.x < 0 ? -delta.x : delta.x) < 0x80 && (delta.z < 0 ? -delta.z : delta.z) < 0x80) {
         fx32 savedY = delta.y;
-        func_ov001_0209265c(0x29, &delta);
+        RandomHorizontalVector(0x29, &delta);
         delta.y = savedY;
     }
     distance = VEC_Mag(&delta);
@@ -126,8 +126,8 @@ BOOL ComputeActorPushOut(PushEvent *event, PushActor *actor, Surface *other, Vec
     if (GetSessionMode() == 4) {
         direction.y = 0;
     }
-    func_01ffa09c(selfScale, &direction, &data_0205344c, outSelf);
-    func_01ffa09c(-otherScale, &direction, &data_0205344c, outOther);
+    VEC_MultAdd(selfScale, &direction, &data_0205344c, outSelf);
+    VEC_MultAdd(-otherScale, &direction, &data_0205344c, outOther);
     return TRUE;
 }
 

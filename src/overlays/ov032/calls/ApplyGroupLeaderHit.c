@@ -80,7 +80,7 @@ extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
 extern BOOL func_ov032_020bf0a8(GroupWorld *world, int groupIndex);
 extern PartySlot *func_ov001_0209c1fc(u32 slot);
 extern s32 ForwardToActiveServiceInstance(u32 attackerId, AttackInfo *attack, u32 flags);
-extern void func_ov016_020a6d60(GroupObject *object, BOOL doReset);
+extern void EnterFieldUnitPhase5(GroupObject *object, BOOL doReset);
 extern int Fx32ToIntTruncate(int value);
 extern void SpawnSoundSlot(int bank, int id, VecFx32 *position, int flags);
 extern void func_ov001_02088204(u32 slotIndex, u8 kind, u8 subKind, s32 hitPoints, s32 maxHitPoints, const VecFx32 *position);
@@ -106,7 +106,7 @@ void ApplyGroupLeaderHit(GroupObject *object, AttackInfo *attack)
                     object->hitLevel = 0;
                     group->hitPoints = 0;
                     defeated = TRUE;
-                    func_ov016_020a6d60(object, TRUE);
+                    EnterFieldUnitPhase5(object, TRUE);
                 }
                 object->hitLevel = Fx32ToIntTruncate(group->hitPoints);
                 if (group->state.bits.lockTimer == 0) {

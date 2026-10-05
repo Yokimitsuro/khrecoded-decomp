@@ -4,6 +4,14 @@
     .data       start:0x020bb6c0 end:0x020bb780 kind:data align:32
     .bss        start:0x020bb780 end:0x020bb7a0 kind:bss align:32
 
+src/overlays/ov037/calls/ShutdownCommChannelAndAudio.c:
+    complete
+    .text       start:0x020ba504 end:0x020ba564
+
+src/overlays/ov037/calls/ResetCommSlotWhenIdle.c:
+    complete
+    .text       start:0x020ba8c8 end:0x020ba904
+
 src/overlays/ov037/calls/StoreCommResultSlot.c:
     complete
     .text       start:0x020ba904 end:0x020ba92c
@@ -27,6 +35,10 @@ src/overlays/ov037/calls/ReleasePxiChannel.c:
 src/overlays/ov037/calls/ContinueScene_GetResult.c:
     complete
     .text       start:0x020baca4 end:0x020bacb8
+
+src/overlays/ov037/calls/ResetCameraProjectionOverrides.c:
+    complete
+    .text       start:0x020bb0a8 end:0x020bb0e8
 
 src/overlays/ov037/data/strings/Strings_ov037_020bb704.c:
     complete

@@ -16,7 +16,7 @@ typedef struct CollisionObject {
 extern const VecFx32 data_0205344c;
 extern BOOL InitCollisionObject(CollisionObject *object, u16 groupMask, s32 ownerId);
 extern void *NNSi_FndAllocFromDefaultHeap(u32 size);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern CollisionShape InitCapsuleShape(void *storage, const VecFx32 *start, const VecFx32 *end, const VecFx32 *axis, fx32 length, fx32 radius);
 
@@ -35,7 +35,7 @@ BOOL InitCapsuleCollisionObject(CollisionObject *object, u16 groupMask, s32 owne
     offset.z = 0;
     top = offset;
     storage = NNSi_FndAllocFromDefaultHeap(0x2c);
-    func_01ff9e3c(&top, &data_0205344c, &delta);
+    VEC_Subtract(&top, &data_0205344c, &delta);
     axis = delta;
     length = func_01ffaff4(&axis, &axis);
     shape = InitCapsuleShape(storage, &data_0205344c, &top, &axis, length, radius);

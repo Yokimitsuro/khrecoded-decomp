@@ -35,8 +35,8 @@ typedef struct Vec2Fx32 {
 } Vec2Fx32;
 
 extern fx32 FX_Sqrt(fx32 value);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern fx32 func_01ffaff4(VecFx32 *src, VecFx32 *dst);
 extern int PXI_Init_0203f23c(int value);
@@ -71,7 +71,7 @@ BOOL TestSphereAgainstCylinder(SphereShapeRef *sphereRef, CylinderShapeRef *cyli
         return FALSE;
     }
     toCenter = AddVecFx32Into(&cylinder->start, &VecFx32ScaledCopy(&axis, dotCenter - dotStart));
-    func_01ff9e3c(&toCenter, &sphere->center, &toCenter);
+    VEC_Subtract(&toCenter, &sphere->center, &toCenter);
     sqDistance = Vec_DotSelf(&toCenter);
     if ((dotCenter > dotStart) != (dotCenter > dotEnd)) {
         fx32 radiusSum = sphere->radius + cylinder->radius;
@@ -142,9 +142,9 @@ BOOL TestSphereAgainstCylinder(SphereShapeRef *sphereRef, CylinderShapeRef *cyli
                             NormalizeXy(&edge);
                             hit->normal = VecFx32ScaledCopy(&NormalizeVectorInto(&toCenter), -edge.x);
                             if (distEnd < distStart) {
-                                func_01ff9e0c(&hit->normal, &VecFx32ScaledCopy(&axis, edge.y), &hit->normal);
+                                VEC_Add(&hit->normal, &VecFx32ScaledCopy(&axis, edge.y), &hit->normal);
                             } else {
-                                func_01ff9e0c(&hit->normal, &VecFx32ScaledCopy(&axis, -edge.y), &hit->normal);
+                                VEC_Add(&hit->normal, &VecFx32ScaledCopy(&axis, -edge.y), &hit->normal);
                             }
                         } else {
                             return TRUE;

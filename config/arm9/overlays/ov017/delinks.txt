@@ -8,6 +8,14 @@ src/overlays/ov017/calls/ScriptCmd_CreateSlotObjectKind4.c:
     complete
     .text       start:0x020a1e00 end:0x020a1e2e
 
+src/overlays/ov017/calls/ScriptCmd_SetEntryFlag.c:
+    complete
+    .text       start:0x020a1efc end:0x020a1f36
+
+src/overlays/ov017/calls/ScriptCmd_QueueEntryValueMessage.c:
+    complete
+    .text       start:0x020a1f38 end:0x020a1f88
+
 src/overlays/ov017/auto/func_ov017_020a2234.c:
     complete
     .text       start:0x020a2234 end:0x020a2238
@@ -15,6 +23,18 @@ src/overlays/ov017/auto/func_ov017_020a2234.c:
 src/overlays/ov017/calls/ScriptCmd_ResetEntry.c:
     complete
     .text       start:0x020a2238 end:0x020a2264
+
+src/overlays/ov017/calls/ScriptCmd_QueueEntryMessage.c:
+    complete
+    .text       start:0x020a2264 end:0x020a22a6
+
+src/overlays/ov017/calls/ScriptCmd_CreateSlotObjectKind8.c:
+    complete
+    .text       start:0x020a2340 end:0x020a236e
+
+src/overlays/ov017/calls/ScriptCmd_CreateSlotObjectKind7.c:
+    complete
+    .text       start:0x020a2430 end:0x020a245e
 
 src/overlays/ov017/calls/ScriptCmd_InitPool0.c:
     complete
@@ -35,6 +55,10 @@ src/overlays/ov017/calls/ScriptCmd_InitPool3.c:
 src/overlays/ov017/calls/ScriptCmd_InitPool4.c:
     complete
     .text       start:0x020a25d4 end:0x020a25ec
+
+src/overlays/ov017/calls/ScriptCmd_QueueEntryMessageRange.c:
+    complete
+    .text       start:0x020a25ec end:0x020a2646
 
 src/overlays/ov017/calls/ScriptCmd_SetManagerValue.c:
     complete
@@ -91,6 +115,10 @@ src/overlays/ov017/calls/IsFacingContact.c:
 src/overlays/ov017/calls/ResetFallTarget.c:
     complete
     .text       start:0x020a48dc end:0x020a48ea
+
+src/overlays/ov017/calls/AppendFieldLinkedEntry.c:
+    complete
+    .text       start:0x020a4f40 end:0x020a4f98
 
 src/overlays/ov017/calls/func_ov017_020a4f98.c:
     complete

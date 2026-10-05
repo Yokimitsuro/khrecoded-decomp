@@ -34,8 +34,8 @@ typedef struct ActorNode {
 
 extern ActorNode *ActorRegistry_GetEntityByIndex(u32 actorId);
 extern fx32 func_ov031_020bc720(void);
-extern int func_ov001_02087ca0(u32 id);
-extern int func_ov001_02087c14(u32 id, int arg, VecFx32 *position, u16 *direction);
+extern int IsStageEventReady(u32 id);
+extern int QueryStageEventPlacement(u32 id, int arg, VecFx32 *position, u16 *direction);
 
 BOOL IsTargetInVerticalRange(TargetRef *ref) {
     switch (ref->type) {
@@ -51,9 +51,9 @@ BOOL IsTargetInVerticalRange(TargetRef *ref) {
         break;
     }
     case 2:
-        if (func_ov001_02087ca0(ref->u.event.eventId)) {
+        if (IsStageEventReady(ref->u.event.eventId)) {
             VecFx32 pos;
-            func_ov001_02087c14(ref->u.event.eventId, ref->u.event.subId, &pos, NULL);
+            QueryStageEventPlacement(ref->u.event.eventId, ref->u.event.subId, &pos, NULL);
             if (pos.z <= 0x3000 && pos.z > -func_ov031_020bc720() - 0xc00) {
                 return TRUE;
             }

@@ -19,13 +19,13 @@ typedef struct { u32 words[10]; } CapsuleData;
 typedef struct { u32 words[11]; } CylinderData;
 typedef struct { u32 words[52]; } PolygonData;
 
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SetShapePosition(CollisionShape *shape, const VecFx32 *position);
 
 static inline VecFx32 AddVec(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 out;
-    func_01ff9e0c(a, b, &out);
+    VEC_Add(a, b, &out);
     return out;
 }
 

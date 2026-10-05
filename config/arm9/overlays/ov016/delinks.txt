@@ -12,6 +12,22 @@ src/overlays/ov016/calls/ScriptVm_ConsumeOperandFx32.c:
     complete
     .text       start:0x020a1e14 end:0x020a1e28
 
+src/overlays/ov016/calls/ScriptCmd_LoadOverlayKind9.c:
+    complete
+    .text       start:0x020a1e28 end:0x020a1e84
+
+src/overlays/ov016/calls/ScriptCmd_ApplyEntityColorParams.c:
+    complete
+    .text       start:0x020a2044 end:0x020a2082
+
+src/overlays/ov016/calls/ScriptCmd_ApplyEntityColorVecParams.c:
+    complete
+    .text       start:0x020a20e0 end:0x020a2128
+
+src/overlays/ov016/calls/ScriptCmd_SetGroupFlag21.c:
+    complete
+    .text       start:0x020a2208 end:0x020a2244
+
 src/overlays/ov016/calls/func_ov016_020a2284.c:
     complete
     .text       start:0x020a2284 end:0x020a228e
@@ -19,6 +35,10 @@ src/overlays/ov016/calls/func_ov016_020a2284.c:
 src/overlays/ov016/calls/InstallFieldObjectHitCallbacks.c:
     complete
     .text       start:0x020a25e4 end:0x020a2688
+
+src/overlays/ov016/calls/CreateFieldModelObject.c:
+    complete
+    .text       start:0x020a2708 end:0x020a273e
 
 src/overlays/ov016/calls/ReleaseHandleIfSet.c:
     complete
@@ -63,6 +83,10 @@ src/overlays/ov016/calls/StepFieldObjectAnim.c:
 src/overlays/ov016/calls/PlaceFieldObjectAtPosition.c:
     complete
     .text       start:0x020a2b48 end:0x020a2b58
+
+src/overlays/ov016/calls/StartFieldUnitMotion.c:
+    complete
+    .text       start:0x020a2b58 end:0x020a2b96
 
 src/overlays/ov016/calls/SteerFieldObjectToTarget.c:
     complete
@@ -144,6 +168,10 @@ src/overlays/ov016/calls/StackLinkedFieldObjects.c:
     complete
     .text       start:0x020a4c74 end:0x020a4cea
 
+src/overlays/ov016/calls/StackFieldObjectChain.c:
+    complete
+    .text       start:0x020a4cec end:0x020a4d2e
+
 src/overlays/ov016/calls/LowerFieldObjectStep.c:
     complete
     .text       start:0x020a4d30 end:0x020a4df8
@@ -155,6 +183,14 @@ src/overlays/ov016/calls/FreeHeapRecord.c:
 src/overlays/ov016/calls/HandleFieldObjectHit_020a50a4.c:
     complete
     .text       start:0x020a50a4 end:0x020a5150
+
+src/overlays/ov016/calls/DispatchCollisionUnlessSameSlot.c:
+    complete
+    .text       start:0x020a52d8 end:0x020a5312
+
+src/overlays/ov016/calls/UpdateFieldUnitAnimPhase.c:
+    complete
+    .text       start:0x020a5808 end:0x020a584c
 
 src/overlays/ov016/calls/DispatchFieldObjectPhase.c:
     complete
@@ -188,6 +224,10 @@ src/overlays/ov016/calls/SyncFieldObjectAnimation.c:
     complete
     .text       start:0x020a6084 end:0x020a60fa
 
+src/overlays/ov016/calls/InitScriptEntityParams.c:
+    complete
+    .text       start:0x020a62fc end:0x020a6358
+
 src/overlays/ov016/calls/SetFieldObjectHidden.c:
     complete
     .text       start:0x020a6988 end:0x020a6a0e
@@ -195,6 +235,14 @@ src/overlays/ov016/calls/SetFieldObjectHidden.c:
 src/overlays/ov016/calls/func_ov016_020a6a98.c:
     complete
     .text       start:0x020a6a98 end:0x020a6aa0
+
+src/overlays/ov016/calls/SetFieldUnitPosition.c:
+    complete
+    .text       start:0x020a6ce4 end:0x020a6d1a
+
+src/overlays/ov016/calls/EnterFieldUnitPhase5.c:
+    complete
+    .text       start:0x020a6d60 end:0x020a6dac
 
 src/overlays/ov016/data/strings/Strings_ov016_020a6ec8.c:
     complete

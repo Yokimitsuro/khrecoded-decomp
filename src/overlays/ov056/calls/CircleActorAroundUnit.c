@@ -59,14 +59,14 @@ typedef struct StageActor {
 
 extern const VecFx32 data_ov056_020d7f78;
 
-extern StageActor *func_ov001_0209c068(int id);
+extern StageActor *GetStageActor(int id);
 extern VecFx32 *func_ov001_02090f2c(StageActor *actor);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *axb);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern void func_01ffafb4(fx32 scale, const VecFx32 *src, VecFx32 *dst);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern int FX_Mul(int left, int right);
@@ -83,7 +83,7 @@ BOOL CircleActorAroundUnit(CircleEvent *event, CircleWork *work)
     CircleOwner *owner = work->owner;
     CircleUnit *unit = work->unit;
     CircleParams *params = unit->params;
-    StageActor *actor = func_ov001_0209c068(event->actorId);
+    StageActor *actor = GetStageActor(event->actorId);
     fx32 step = params->step;
     fx32 radius;
     fx32 radiusSq;
@@ -103,7 +103,7 @@ BOOL CircleActorAroundUnit(CircleEvent *event, CircleWork *work)
     case 1:
         radius = unit->def->radius;
         radiusSq = FX_Mul(radius, radius);
-        func_01ff9e3c(func_ov001_02090f2c(actor), &unit->position, &dir);
+        VEC_Subtract(func_ov001_02090f2c(actor), &unit->position, &dir);
         if (VEC_DotProduct(&dir, &dir) < radiusSq) {
             dir.x = 0;
             dir.y = 0;
@@ -111,7 +111,7 @@ BOOL CircleActorAroundUnit(CircleEvent *event, CircleWork *work)
         }
         func_01ff9ea8(&data_ov056_020d7f78, &dir, &side);
         VEC_Normalize(&side, &side);
-        func_01ffa09c(radius, &side, &unit->position, &work->target);
+        VEC_MultAdd(radius, &side, &unit->position, &work->target);
         func_01ff9ea8(&side, &data_ov056_020d7f78, &dir);
         func_01ffafb4(owner->tangentScale, &dir, &work->tangent);
         work->velocity.z = 0;
@@ -124,22 +124,22 @@ BOOL CircleActorAroundUnit(CircleEvent *event, CircleWork *work)
             t = FX_Div(step, unit->def->duration - work->elapsed);
             pos = *func_ov001_02090f2c(actor);
             func_ov056_020d5368(&next, &pos, &work->target, &work->velocity, &work->tangent, t);
-            func_01ff9e3c(&next, &pos, &work->velocity);
+            VEC_Subtract(&next, &pos, &work->velocity);
             func_ov001_020911bc(actor);
             func_ov001_020911d0(actor);
             AddObjectOffsetVector(actor, &work->velocity);
             work->elapsed += step;
             break;
         }
-        func_01ff9e3c(func_ov001_02090f2c(actor), &unit->position, &work->offset);
+        VEC_Subtract(func_ov001_02090f2c(actor), &unit->position, &work->offset);
         work->state = 3;
     case 3:
         delta = *func_ov001_02090f2c(actor);
         func_0202fbbc(&work->offset, &params->spin, &work->offset);
-        func_01ff9e0c(&unit->position, &work->offset, &delta);
+        VEC_Add(&unit->position, &work->offset, &delta);
         func_ov001_020911bc(actor);
         func_ov001_020911d0(actor);
-        func_01ff9e3c(&delta, func_ov001_02090f2c(actor), &delta);
+        VEC_Subtract(&delta, func_ov001_02090f2c(actor), &delta);
         AddObjectOffsetVector(actor, &delta);
         func_ov001_02090f64(actor, params->facingOffset + (fx32)(((s64)actor->facing * 0x1680000 + 0x80000) >> 20));
         break;

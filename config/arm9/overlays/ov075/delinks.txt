@@ -24,6 +24,10 @@ src/overlays/ov075/calls/GetMatrixModeLabel.c:
     complete
     .text       start:0x020c577c end:0x020c5798
 
+src/overlays/ov075/calls/ResetMatrixDescription.c:
+    complete
+    .text       start:0x020c62a8 end:0x020c62e8
+
 src/overlays/ov075/auto/func_ov075_020c7bdc.c:
     complete
     .text       start:0x020c7bdc end:0x020c7bf4
@@ -47,6 +51,10 @@ src/overlays/ov075/calls/ShowDialogMessageAt.c:
 src/overlays/ov075/calls/SetMatrixInputDisabled.c:
     complete
     .text       start:0x020c8e08 end:0x020c8e1c
+
+src/overlays/ov075/calls/DrawMatrixDescriptionText.c:
+    complete
+    .text       start:0x020caa50 end:0x020caa8c
 
 src/overlays/ov075/auto/func_ov075_020cc908.c:
     complete
@@ -80,6 +88,10 @@ src/overlays/ov075/calls/SetDialogInputDisabled.c:
     complete
     .text       start:0x020ce598 end:0x020ce5a6
 
+src/overlays/ov075/calls/AddToSelectionCounters.c:
+    complete
+    .text       start:0x020ce720 end:0x020ce750
+
 src/overlays/ov075/calls/func_ov075_020ce818.c:
     complete
     .text       start:0x020ce818 end:0x020ce820
@@ -92,9 +104,29 @@ src/overlays/ov075/calls/CancelItemPicker.c:
     complete
     .text       start:0x020ceb80 end:0x020ceb98
 
+src/overlays/ov075/calls/GetDialogPixelBounds.c:
+    complete
+    .text       start:0x020cf018 end:0x020cf04c
+
 src/overlays/ov075/calls/IsDialogTransitionDone.c:
     complete
     .text       start:0x020cfc0c end:0x020cfc1c
+
+src/overlays/ov075/calls/DestroyItemPicker.c:
+    complete
+    .text       start:0x020cffd8 end:0x020d0034
+
+src/overlays/ov075/calls/DrawImageQuadIfVisible.c:
+    complete
+    .text       start:0x020d0cf8 end:0x020d0d4a
+
+src/overlays/ov075/calls/DrawImageQuadWithIdIfVisible.c:
+    complete
+    .text       start:0x020d0d4c end:0x020d0d9e
+
+src/overlays/ov075/calls/DrawRotatedImageQuadIfVisible.c:
+    complete
+    .text       start:0x020d0da0 end:0x020d0df4
 
 src/overlays/ov075/calls/DrawNodeAtInvertedY.c:
     complete
@@ -103,6 +135,10 @@ src/overlays/ov075/calls/DrawNodeAtInvertedY.c:
 src/overlays/ov075/calls/SetLayoutElementVisible.c:
     complete
     .text       start:0x020d0e6c end:0x020d0e82
+
+src/overlays/ov075/calls/SetUnlockableElementsVisible.c:
+    complete
+    .text       start:0x020d0e84 end:0x020d0ebc
 
 src/overlays/ov075/auto/func_ov075_020d10fc.c:
     complete

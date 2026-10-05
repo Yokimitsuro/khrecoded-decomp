@@ -19,7 +19,7 @@ typedef struct ArithmeticNode {
     u16 operand;
 } ArithmeticNode;
 
-extern void func_ov001_02069d34(ArithmeticNode *node);
+extern void RunSessionFieldOp(ArithmeticNode *node);
 
 void InitArithmeticNode(ArithmeticNode *node, const ArithmeticParams *params)
 {
@@ -28,5 +28,5 @@ void InitArithmeticNode(ArithmeticNode *node, const ArithmeticParams *params)
     node->slotB = params->slotB;
     node->operation = params->operation;
     node->operand = params->operand;
-    node->evaluate = func_ov001_02069d34;
+    node->evaluate = RunSessionFieldOp;
 }

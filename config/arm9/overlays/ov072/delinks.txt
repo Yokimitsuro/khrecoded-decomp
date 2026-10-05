@@ -16,6 +16,18 @@ src/overlays/ov072/calls/SetObjectTimeScale.c:
     complete
     .text       start:0x020d8250 end:0x020d8254
 
+src/overlays/ov072/calls/IsEventActionAllowed.c:
+    complete
+    .text       start:0x020d849c end:0x020d84d0
+
+src/overlays/ov072/calls/SnapContactNormalUp.c:
+    complete
+    .text       start:0x020d84d0 end:0x020d8504
+
+src/overlays/ov072/calls/FlattenContactNormal.c:
+    complete
+    .text       start:0x020d8504 end:0x020d8548
+
 src/overlays/ov072/data/strings/Strings_ov072_020d9c20.c:
     complete
     .data       start:0x020d9c20 end:0x020d9c30

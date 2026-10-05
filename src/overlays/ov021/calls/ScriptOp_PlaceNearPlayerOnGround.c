@@ -50,7 +50,7 @@ extern fx32 Surface_GetKindValue(void *surface);
 extern fx32 FX_Mul(fx32 a, fx32 b);
 extern void MI_CpuFill8(void *dest, u32 value, u32 size);
 extern void func_ov001_02091c5c(PlayerActor *actor, VecFx32 *out);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern CollisionResult *QueryWorldMotionCollision(CollisionQuery *query);
 extern CollisionResult *ResetAndQueryWorldCollision(CollisionQuery *query);
 extern void AddScaledVector(fx32 scale, const VecFx32 *scaledVector, const VecFx32 *baseVector, VecFx32 *resultVector);
@@ -72,7 +72,7 @@ s32 ScriptOp_PlaceNearPlayerOnGround(ScriptObject *obj, ScriptCommand *cmd)
         CollisionResult *result;
         start = base;
         start.y += 0x800;
-        func_01ffa09c(TaggedValueToFixed(distance), &data_ov021_020b5124[i], &data_0205344c, &motion);
+        VEC_MultAdd(TaggedValueToFixed(distance), &data_ov021_020b5124[i], &data_0205344c, &motion);
         MI_CpuFill8(&query, 0, 0x60);
         query.motion = &motion;
         query.start = &start;
@@ -80,7 +80,7 @@ s32 ScriptOp_PlaceNearPlayerOnGround(ScriptObject *obj, ScriptCommand *cmd)
         query.mask = 0x7f;
         query.ignore = player->collider;
         if (QueryWorldMotionCollision(&query) == NULL) {
-            func_01ffa09c(TaggedValueToFixed(distance), &data_ov021_020b5124[i], &base, &start);
+            VEC_MultAdd(TaggedValueToFixed(distance), &data_ov021_020b5124[i], &base, &start);
             start.y += 0xa000;
             motion.x = 0;
             motion.y = -0x14000;

@@ -35,7 +35,7 @@ typedef struct {
     ScreenFade fade;
 } StageManager;
 
-extern StageActor *func_ov001_0209c068(int id);
+extern StageActor *GetStageActor(int id);
 extern void *GetStageObjectHandle(u16 id);
 extern StageManager *func_ov001_0209c3e8(void);
 extern u32 func_ov001_0209d0a8(s32 seqArcId, s32 soundId, VecFx32 *position, u32 flags);
@@ -46,7 +46,7 @@ extern void func_ov001_02096950(GateRecord *record, fx32 delay);
 
 int RunGateFadeSequence(GateRecord *record)
 {
-    StageActor *actor = func_ov001_0209c068(record->actorId);
+    StageActor *actor = GetStageActor(record->actorId);
     StageManager *manager;
     int mode;
 

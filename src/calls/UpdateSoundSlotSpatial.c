@@ -2,7 +2,7 @@
 #include "nitro/fx_types.h"
 
 extern u8 *gSoundWork;
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *vec);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern fx32 FX_Div(fx32 numerator, fx32 denominator);
@@ -21,7 +21,7 @@ void UpdateSoundSlotSpatial(int slot)
         volume = 0;
     } else {
         pan = 0;
-        func_01ff9e3c((VecFx32 *)(slot + 8), (VecFx32 *)(base + 0xb4500), &delta);
+        VEC_Subtract((VecFx32 *)(slot + 8), (VecFx32 *)(base + 0xb4500), &delta);
         distance = VEC_Mag(&delta);
         if ((*(u16 *)(slot + 0x14) & 2) == 0) {
             fx32 nearDist = *(fx32 *)(base + 0xb4720);

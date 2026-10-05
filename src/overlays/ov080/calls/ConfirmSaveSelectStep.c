@@ -48,10 +48,10 @@ extern u32 func_0202a9e4(u32 range);
 extern void SetGlobalPackedBit(int bitIndex);
 extern void func_02052528(FadeRecord *record, int value0, int value1, int value2, int value3);
 extern void func_02052570(FadeRecord *record);
-extern void *func_ov027_020b90c4(void *root, int id);
+extern void *FindWidgetById(void *root, int id);
 extern void func_ov027_020b95a0(void *panel, void *element, BOOL visible);
-extern void func_ov039_020bc074(BOOL enabled);
-extern void func_ov039_020bc0a4(BOOL enabled);
+extern void SetPrimaryElementEnabled(BOOL enabled);
+extern void SetSecondaryElementEnabled(BOOL enabled);
 extern BOOL PrepareAndStartStream(int streamIndex, int streamId);
 extern void StopSoundStreamAtIndex(int handleIndex, int fadeFrame);
 
@@ -103,13 +103,13 @@ void ConfirmSaveSelectStep(SaveSelectScreen *screen)
                 func_02052570(&screen->fade);
             }
             if (screen->step != 7) {
-                func_ov039_020bc0a4(FALSE);
-                func_ov027_020b95a0(screen->panel, func_ov027_020b90c4(screen->panel, 8), TRUE);
+                SetSecondaryElementEnabled(FALSE);
+                func_ov027_020b95a0(screen->panel, FindWidgetById(screen->panel, 8), TRUE);
                 PlaySoundEffect(0, 1);
                 IncrementBusyCounter();
             } else {
-                func_ov039_020bc074(FALSE);
-                func_ov039_020bc0a4(FALSE);
+                SetPrimaryElementEnabled(FALSE);
+                SetSecondaryElementEnabled(FALSE);
                 PrepareAndStartStream(1, 3);
                 StopSoundStreamAtIndex(0, 0x1e);
             }

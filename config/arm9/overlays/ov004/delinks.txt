@@ -12,6 +12,10 @@ src/overlays/ov004/calls/FrameTimer_GetElapsed.c:
     complete
     .text       start:0x02061400 end:0x0206142c
 
+src/overlays/ov004/calls/FrameTimer_Interpolate.c:
+    complete
+    .text       start:0x0206142c end:0x0206146c
+
 src/overlays/ov004/calls/FrameTimer_IsExpired.c:
     complete
     .text       start:0x0206146c end:0x0206148c
@@ -23,6 +27,10 @@ src/overlays/ov004/calls/FrameTimer_GetDuration.c:
 src/overlays/ov004/calls/RoundFx32ToInt.c:
     complete
     .text       start:0x020614a4 end:0x020614b8
+
+src/overlays/ov004/calls/ResetScrollTextScript.c:
+    complete
+    .text       start:0x02062034 end:0x02062090
 
 src/overlays/ov004/auto/func_ov004_0206223c.c:
     complete
@@ -40,9 +48,17 @@ src/overlays/ov004/auto/func_ov004_0206252c.c:
     complete
     .text       start:0x0206252c end:0x02062530
 
+src/overlays/ov004/calls/UpdateScrollTextScreens.c:
+    complete
+    .text       start:0x02062990 end:0x020629d0
+
 src/overlays/ov004/auto/func_ov004_02062d78.c:
     complete
     .text       start:0x02062d78 end:0x02062dc0
+
+src/overlays/ov004/calls/end_key_share_and_register_result.c:
+    complete
+    .text       start:0x02063558 end:0x02063598
 
 src/overlays/ov004/data/strings/Strings_ov004_02064544.c:
     complete

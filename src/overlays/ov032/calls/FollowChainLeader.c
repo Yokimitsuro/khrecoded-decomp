@@ -27,12 +27,12 @@ extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
 extern ObjectGroup *func_ov032_020bbc80(GroupObject *object);
 extern GroupObject *func_ov001_02086384(void *world, int index);
 extern void SampleGroupTrailPosition(void *context, GroupObject *object, VecFx32 *goal, u8 *blocked);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void func_01ffaff4(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
-extern BOOL func_ov032_020bc8f4(VecFx32 *position, VecFx32 *velocity, VecFx32 *out, fx32 radius);
+extern BOOL SnapPositionToGround(VecFx32 *position, VecFx32 *velocity, VecFx32 *out, fx32 radius);
 extern void func_ov032_020bbd80(GroupObject *object, VecFx32 *delta);
 
 static inline VecFx32 ScaleToLength(VecFx32 vec, fx32 length)
@@ -45,7 +45,7 @@ static inline VecFx32 ScaleToLength(VecFx32 vec, fx32 length)
 static inline VecFx32 AddVectors(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 sum;
-    func_01ff9e0c(a, b, &sum);
+    VEC_Add(a, b, &sum);
     return sum;
 }
 
@@ -78,20 +78,20 @@ void FollowChainLeader(void *context, GroupObject *object, int speed)
         prev = func_ov001_02086384(object->world, work->leaderLink);
     }
     SampleGroupTrailPosition(context, object, &goal, &blocked);
-    func_01ff9e3c(&object->position, leaderPos, &toLeader);
-    func_01ff9e3c(&object->position, &prev->position, &delta);
+    VEC_Subtract(&object->position, leaderPos, &toLeader);
+    VEC_Subtract(&object->position, &prev->position, &delta);
     if (VEC_Mag(&delta) < 0x1800) {
         near = TRUE;
     }
     if (delta.x != 0 || delta.y != 0 || delta.z != 0) {
         delta.y -= 200;
         offset = ScaleToLength(delta, 0x1800);
-        func_01ff9e0c(&prev->position, &offset, &target);
+        VEC_Add(&prev->position, &offset, &target);
     } else {
         target = object->position;
         return;
     }
-    func_01ff9e3c(&target, &object->position, &delta);
+    VEC_Subtract(&target, &object->position, &delta);
     if (delta.x != 0 || delta.y != 0 || delta.z != 0) {
         if (speed != 0) {
             dist = VEC_Mag(&delta);
@@ -111,9 +111,9 @@ void FollowChainLeader(void *context, GroupObject *object, int speed)
         work->moveDelta = delta;
     }
     if (!blocked) {
-        func_ov032_020bc8f4(&object->position, &work->moveDelta, &work->moveDelta, 0x1800);
+        SnapPositionToGround(&object->position, &work->moveDelta, &work->moveDelta, 0x1800);
     }
     next = AddVectors(&object->position, &work->moveDelta);
-    func_01ff9e3c(&prev->position, &next, &delta);
+    VEC_Subtract(&prev->position, &next, &delta);
     func_ov032_020bbd80(object, &delta);
 }

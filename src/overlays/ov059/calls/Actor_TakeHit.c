@@ -28,7 +28,7 @@ extern void func_ov021_020a78d0(Actor *actor, HitInfo *hit);
 extern int func_ov021_020a768c(Actor *actor, HitInfo *hit, BOOL critical);
 extern BOOL AddClampedHealth(Actor *actor, int delta);
 extern void TryApplyStatusEffect(Actor *actor, HitInfo *hit);
-extern void func_ov059_020cd244(Actor *actor);
+extern void Actor_MarkGuardBreakInState3(Actor *actor);
 extern u32 random_next_scaled(u32 upperBound);
 extern VecFx32 func_ov021_020af8f4(fx32 radians);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
@@ -76,7 +76,7 @@ BOOL Actor_TakeHit(Actor *actor, HitInfo *hit)
         actor->drift.z = 0;
         actor->drift.y = 0;
         actor->drift.x = 0;
-        func_ov059_020cd244(actor);
+        Actor_MarkGuardBreakInState3(actor);
         sign = random_next_scaled(2) != 0 ? 1 : -1;
         orbit = func_ov021_020af8f4(random_next_scaled(0x6488));
         offset = orbit;

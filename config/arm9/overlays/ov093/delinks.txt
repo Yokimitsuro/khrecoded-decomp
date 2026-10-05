@@ -8,9 +8,33 @@ src/overlays/ov093/calls/CeilFx32.c:
     complete
     .text       start:0x020beb20 end:0x020beb40
 
+src/overlays/ov093/calls/ToggleSceneOption.c:
+    complete
+    .text       start:0x020bf63c end:0x020bf69c
+
 src/overlays/ov093/calls/FreeLoadedFiles.c:
     complete
     .text       start:0x020bf8e0 end:0x020bf904
+
+src/overlays/ov093/calls/FreeResourceBlocks.c:
+    complete
+    .text       start:0x020bfab4 end:0x020bfae4
+
+src/overlays/ov093/calls/DrawShadowedAnchoredText_020c0060.c:
+    complete
+    .text       start:0x020c0060 end:0x020c00c4
+
+src/overlays/ov093/calls/ReleaseSceneObjManagers.c:
+    complete
+    .text       start:0x020c02e0 end:0x020c0310
+
+src/overlays/ov093/calls/RestartSlotAnim.c:
+    complete
+    .text       start:0x020c0584 end:0x020c05d8
+
+src/overlays/ov093/calls/ConsumeScrollBarStep.c:
+    complete
+    .text       start:0x020c0c0c end:0x020c0c68
 
 src/overlays/ov093/calls/ResetSmoothValue.c:
     complete
@@ -19,6 +43,14 @@ src/overlays/ov093/calls/ResetSmoothValue.c:
 src/overlays/ov093/calls/GetSmoothValueInt.c:
     complete
     .text       start:0x020c21f8 end:0x020c2218
+
+src/overlays/ov093/calls/StepSmoothValue.c:
+    complete
+    .text       start:0x020c2218 end:0x020c2274
+
+src/overlays/ov093/calls/IsEntryFlagSet_020c22c4.c:
+    complete
+    .text       start:0x020c22c4 end:0x020c22f4
 
 src/overlays/ov093/calls/SetEntryFlag_020c22f4.c:
     complete
@@ -36,13 +68,29 @@ src/overlays/ov093/auto/func_ov093_020c2374.c:
     complete
     .text       start:0x020c2374 end:0x020c2378
 
+src/overlays/ov093/calls/WaitForBrightnessReset.c:
+    complete
+    .text       start:0x020c2378 end:0x020c23c8
+
 src/overlays/ov093/auto/func_ov093_020c2b20.c:
     complete
     .text       start:0x020c2b20 end:0x020c2b24
 
+src/overlays/ov093/calls/ShutdownPopupSystem.c:
+    complete
+    .text       start:0x020c2d64 end:0x020c2da0
+
 src/overlays/ov093/auto/func_ov093_020c31f4.c:
     complete
     .text       start:0x020c31f4 end:0x020c31f8
+
+src/overlays/ov093/calls/ClosePopupPanel.c:
+    complete
+    .text       start:0x020c35ec end:0x020c3630
+
+src/overlays/ov093/calls/SetBgSubLayerVisible.c:
+    complete
+    .text       start:0x020c3b7c end:0x020c3bb4
 
 src/overlays/ov093/calls/StateMachine_SetState.c:
     complete

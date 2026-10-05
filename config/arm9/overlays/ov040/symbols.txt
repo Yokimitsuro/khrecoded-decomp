@@ -37,7 +37,7 @@ func_ov040_020bda8c kind:function(thumb,size=0x1a) addr:0x020bda8c
 func_ov040_020bdaa8 kind:function(thumb,size=0x10) addr:0x020bdaa8
 func_ov040_020bdab8 kind:function(thumb,size=0x10) addr:0x020bdab8
 func_ov040_020bdac8 kind:function(thumb,size=0x64) addr:0x020bdac8
-func_ov040_020bdb2c kind:function(thumb,size=0x44) addr:0x020bdb2c
+AdvanceLoopingAnimation kind:function(thumb,size=0x44) addr:0x020bdb2c
 func_ov040_020bdb70 kind:function(thumb,size=0x34) addr:0x020bdb70
 func_ov040_020bdba4 kind:function(thumb,size=0x8) addr:0x020bdba4
 func_ov040_020bdbac kind:function(thumb,size=0x98) addr:0x020bdbac
@@ -50,8 +50,8 @@ func_ov040_020be00c kind:function(thumb,size=0x1c) addr:0x020be00c
 func_ov040_020be028 kind:function(thumb,size=0x14) addr:0x020be028
 func_ov040_020be03c kind:function(thumb,size=0x10) addr:0x020be03c
 GrantRewardItem kind:function(thumb,size=0x98) addr:0x020be04c
-func_ov040_020be0e4 kind:function(thumb,size=0x34) addr:0x020be0e4
-func_ov040_020be118 kind:function(thumb,size=0x40) addr:0x020be118
+IsRewardSlotUnclaimed kind:function(thumb,size=0x34) addr:0x020be0e4
+ShowRewardPopupForItem kind:function(thumb,size=0x40) addr:0x020be118
 ApplyHealReward kind:function(thumb,size=0x68) addr:0x020be158
 data_ov040_020be1c0 kind:data(any) addr:0x020be1c0
 data_ov040_020be1c4 kind:data(any) addr:0x020be1c4

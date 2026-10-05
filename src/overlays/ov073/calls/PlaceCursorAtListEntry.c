@@ -5,9 +5,9 @@ typedef struct ListView {
     void *cursorCell;
 } ListView;
 
-extern void func_ov073_020c3700(ListView *list, int entryIndex, void *cell);
+extern void PlaceCellAtListEntry_020c3700(ListView *list, int entryIndex, void *cell);
 
 void PlaceCursorAtListEntry(ListView *list, int entryIndex)
 {
-    func_ov073_020c3700(list, entryIndex, list->cursorCell);
+    PlaceCellAtListEntry_020c3700(list, entryIndex, list->cursorCell);
 }

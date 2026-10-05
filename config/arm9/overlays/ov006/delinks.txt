@@ -8,9 +8,21 @@ src/overlays/ov006/calls/ResolveSegmentNodes.c:
     complete
     .text       start:0x020a123c end:0x020a126a
 
+src/overlays/ov006/calls/GetGridCellIndex.c:
+    complete
+    .text       start:0x020a12f4 end:0x020a1338
+
 src/overlays/ov006/calls/GetGridCellCenter.c:
     complete
     .text       start:0x020a1390 end:0x020a13bc
+
+src/overlays/ov006/calls/AnimSequence_Init.c:
+    complete
+    .text       start:0x020a14e8 end:0x020a152e
+
+src/overlays/ov006/calls/InitPathCursor.c:
+    complete
+    .text       start:0x020a1530 end:0x020a156c
 
 src/overlays/ov006/calls/AddTouchPoint.c:
     complete

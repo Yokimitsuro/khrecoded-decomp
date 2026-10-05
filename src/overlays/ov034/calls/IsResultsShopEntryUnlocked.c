@@ -25,7 +25,7 @@ typedef struct ShopEntry {
 extern ResultsScreen data_ov034_020c0fa0;
 extern ShopEntry data_ov034_020bed6c[];
 extern void func_ov034_020be438(int index);
-extern int func_ov034_020be518(int index);
+extern int ClassifyResultsShopEntry(int index);
 
 BOOL IsResultsShopEntryUnlocked(int index)
 {
@@ -34,7 +34,7 @@ BOOL IsResultsShopEntryUnlocked(int index)
 
     func_ov034_020be438(index);
     entry = &data_ov034_020bed6c[data_ov034_020c0fa0.work->shopBase + index];
-    if (func_ov034_020be518(index) != 0 ||
+    if (ClassifyResultsShopEntry(index) != 0 ||
         ((rank = entry->requiredRank) >= 0 && rank <= data_ov034_020c0fa0.params->unlockedRank) ||
         (rank < 0 && data_ov034_020c0fa0.params->unlockedRank == data_ov034_020c0fa0.params->maxRank)) {
         return TRUE;

@@ -8,12 +8,12 @@ typedef struct {
     u32 ownsBuffer : 1;
 } BufferHolder;
 
-extern void func_ov001_0209cf90(void *block);
+extern void FreeFromStageHeap(void *block);
 
 void FreeOwnedBuffer(BufferHolder *holder)
 {
     if (holder->ownsBuffer && holder->buffer != NULL) {
-        func_ov001_0209cf90(holder->buffer);
+        FreeFromStageHeap(holder->buffer);
     }
     holder->buffer = NULL;
 }

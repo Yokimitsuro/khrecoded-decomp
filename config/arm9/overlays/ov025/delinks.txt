@@ -8,9 +8,53 @@ src/overlays/ov025/calls/ApplySubBgScroll.c:
     complete
     .text       start:0x020b5820 end:0x020b584c
 
+src/overlays/ov025/calls/RefreshRemainingCount.c:
+    complete
+    .text       start:0x020b58f8 end:0x020b5928
+
+src/overlays/ov025/calls/LoadSubBgGraphics.c:
+    complete
+    .text       start:0x020b5928 end:0x020b5974
+
 src/overlays/ov025/calls/LoadMenuWidgetResource.c:
     complete
     .text       start:0x020b5974 end:0x020b599c
+
+src/overlays/ov025/calls/DrawMenuWidgetGraphic.c:
+    complete
+    .text       start:0x020b599c end:0x020b59f8
+
+src/overlays/ov025/calls/DrawMenuEntryWidget.c:
+    complete
+    .text       start:0x020b59f8 end:0x020b5a2c
+
+src/overlays/ov025/calls/HandleDefaultMenuAction.c:
+    complete
+    .text       start:0x020b5ab4 end:0x020b5aec
+
+src/overlays/ov025/calls/ResetMenuLayerTransforms.c:
+    complete
+    .text       start:0x020b61b4 end:0x020b6214
+
+src/overlays/ov025/calls/DrawNumberInPanelSlot.c:
+    complete
+    .text       start:0x020b62e4 end:0x020b6330
+
+src/overlays/ov025/calls/GetTileMapEntry.c:
+    complete
+    .text       start:0x020b6504 end:0x020b6538
+
+src/overlays/ov025/calls/LoadPanelResource.c:
+    complete
+    .text       start:0x020b6c4c end:0x020b6c88
+
+src/overlays/ov025/calls/PlaceCellAtListEntry.c:
+    complete
+    .text       start:0x020b6c88 end:0x020b6cbe
+
+src/overlays/ov025/calls/TrySelectListEntry.c:
+    complete
+    .text       start:0x020b6d30 end:0x020b6d68
 
 src/overlays/ov025/calls/IsGreaterOrEqual.c:
     complete
@@ -19,6 +63,18 @@ src/overlays/ov025/calls/IsGreaterOrEqual.c:
 src/overlays/ov025/calls/IsGreaterThan.c:
     complete
     .text       start:0x020b6d74 end:0x020b6d80
+
+src/overlays/ov025/calls/ScrollListToRow.c:
+    complete
+    .text       start:0x020b7488 end:0x020b74da
+
+src/overlays/ov025/calls/ApplyModeAndNotify.c:
+    complete
+    .text       start:0x020b7598 end:0x020b75d0
+
+src/overlays/ov025/calls/GetSlotEntryValue_020b7608.c:
+    complete
+    .text       start:0x020b7608 end:0x020b7650
 
 src/overlays/ov025/calls/GetAvailableMenuEntryIndex.c:
     complete

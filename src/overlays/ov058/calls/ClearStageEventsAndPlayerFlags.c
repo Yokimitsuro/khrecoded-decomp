@@ -13,7 +13,7 @@ typedef struct {
 
 extern s32 ForwardToActiveServiceWithResult(void);
 extern s32 func_ov001_0208796c(s32 startIndex);
-extern int func_ov001_02087ca0(u32 id);
+extern int IsStageEventReady(u32 id);
 extern void StageRecord_ClearStateIfMatches(u32 id, u32 state);
 extern PlayerEntry *GetBoundedEntryField(int index);
 extern BOOL Camera_ReturnFromPathView(void);
@@ -24,7 +24,7 @@ void ClearStageEventsAndPlayerFlags(SceneControl *control)
     int i;
 
     for (record = ForwardToActiveServiceWithResult(); record != 0; record = func_ov001_0208796c(record)) {
-        if (func_ov001_02087ca0(record)) {
+        if (IsStageEventReady(record)) {
             StageRecord_ClearStateIfMatches(record, 9);
         }
     }

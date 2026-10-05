@@ -39,8 +39,8 @@ extern const s16 data_02053580[];
 extern FieldActor *ActorRegistry_GetEntityByIndex(int actorId);
 extern fx32 FX_Div(fx32 numerator, fx32 denominator);
 extern int FX_Mul(int left, int right);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void OffsetBoxByDelta(CollisionBox *src, CollisionBox *dst, VecFx32 *delta);
 extern void Obj_SetPosition(FieldActor *actor, VecFx32 *position);
 extern void func_ov016_020a4a84(FieldObject *object);
@@ -89,11 +89,11 @@ void SwayAndDropFieldObject(FieldObject *object)
             object->landed = 1;
             break;
         }
-        func_01ff9e3c(&target, &object->position, &delta);
+        VEC_Subtract(&target, &object->position, &delta);
         actor->velocity = delta;
         OffsetBoxByDelta(&actor->baseBox, &actor->sweptBox, &actor->velocity);
         Obj_SetPosition(actor, &target);
-        func_01ff9e0c(&object->position, &actor->velocity, &object->position);
+        VEC_Add(&object->position, &actor->velocity, &object->position);
         func_ov016_020a2578(object);
     }
 }

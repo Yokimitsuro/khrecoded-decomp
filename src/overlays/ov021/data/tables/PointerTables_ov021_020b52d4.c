@@ -1,7 +1,7 @@
 #include "nitro/types.h"
 
-extern void func_ov021_020b133c(void); /* ScriptOp_GetPlayerHorizontalOffset */
-extern void func_ov021_020b12d8(void); /* ScriptOp_GetPlayerHorizontalDrift */
+extern void ScriptOp_GetPlayerHorizontalOffset(void); /* ScriptOp_GetPlayerHorizontalOffset */
+extern void ScriptOp_GetPlayerHorizontalDrift(void); /* ScriptOp_GetPlayerHorizontalDrift */
 extern void func_ov021_020b12b8(void);
 extern void ScriptOp_GetObjectVectorMagnitude(void); /* ScriptOp_GetObjectVectorMagnitude */
 extern void func_ov021_020b1260(void); /* ScriptOp_IsStageEntryKind24 */
@@ -19,28 +19,28 @@ extern void func_ov021_020b10c0(void);
 extern void func_ov021_020b10b0(void);
 extern void func_ov021_020b1090(void); /* ReadContextFlagBit9 */
 extern void ScriptOp_GetPlayerStateBit0(void); /* ScriptOp_GetPlayerStateBit0 */
-extern void func_ov021_020b1014(void); /* ScriptOp_GetAttachPointScale */
+extern void ScriptOp_GetAttachPointScale(void); /* ScriptOp_GetAttachPointScale */
 extern void ScriptOp_GetOwnerIntegerField(void); /* ScriptOp_GetOwnerIntegerField */
 extern void func_ov021_020b0fd4(void);
-extern void func_ov021_020b0f94(void); /* ScriptOp_GetPlayerAngleDegrees */
+extern void ScriptOp_GetPlayerAngleDegrees(void); /* ScriptOp_GetPlayerAngleDegrees */
 extern void func_ov021_020b0f0c(void); /* ScriptCmd_CheckTargetLineOfSight */
 extern void func_ov021_020b0edc(void);
-extern void func_ov021_020b0e80(void); /* SampleGridCellValue */
+extern void SampleGridCellValue(void); /* SampleGridCellValue */
 extern void func_ov021_020b0e40(void); /* ScriptOp_GetObjectTypeId */
 extern void func_ov021_020b0e24(void);
 extern void func_ov021_020b0df0(void);
 extern void func_ov021_020b0dd4(void);
 extern void func_ov021_020b0d8c(void);
-extern void func_ov021_020b0d44(void); /* ScriptOp_FindNearestFreeSlot */
+extern void ScriptOp_FindNearestFreeSlot(void); /* ScriptOp_FindNearestFreeSlot */
 extern void func_ov021_020b0cfc(void);
 extern void ScriptOp_GetActiveObjectValue(void); /* ScriptOp_GetActiveObjectValue */
 extern void func_ov021_020b0cb8(void); /* ReadContextFlagBit10 */
 extern void ScriptOp_GetFirstSharedValue(void); /* ScriptOp_GetFirstSharedValue */
 extern void ScriptOp_GetSecondSharedValue(void); /* ScriptOp_GetSecondSharedValue */
 extern void func_ov021_020b0c60(void); /* ReadContextFlagBit11 */
-extern void func_ov021_020b0c08(void); /* ScriptOp_IsPlayerAnimDone */
+extern void ScriptOp_IsPlayerAnimDone(void); /* ScriptOp_IsPlayerAnimDone */
 extern void func_ov021_020b0bec(void);
-extern void func_ov021_020b0b8c(void); /* ScriptOp_GetEventActorValue */
+extern void ScriptOp_GetEventActorValue(void); /* ScriptOp_GetEventActorValue */
 extern void func_ov021_020b0b74(void);
 extern void func_ov021_020b0b40(void); /* ScriptOp_GetEventFlagPairBits */
 extern void func_ov021_020b0b20(void); /* ReadContextFlagBit13 */
@@ -49,27 +49,27 @@ extern void func_ov021_020b0af0(void);
 extern void func_ov021_020b0ad4(void);
 extern void ScriptOp_GetPlayerHiddenFlag(void); /* ScriptOp_GetPlayerHiddenFlag */
 extern void func_ov021_020b0a68(void);
-extern void func_ov021_020b2000(void); /* SetScriptContextVector */
-extern void func_ov021_020b1fb0(void); /* AddScriptContextVector */
+extern void SetScriptContextVector(void); /* SetScriptContextVector */
+extern void AddScriptContextVector(void); /* AddScriptContextVector */
 extern void func_ov021_020b1f98(void); /* SubmitActorRender */
 extern void func_ov021_020b1f54(void);
 extern void PickSpawnPointNearPlayer(void); /* PickSpawnPointNearPlayer */
 extern void ScriptOp_GetObjectPosition(void); /* ScriptOp_GetObjectPosition */
 extern void func_ov021_020b1d98(void); /* ScriptOp_DropToGround */
-extern void func_ov021_020b1d34(void); /* ScriptOp_MoveAlongPlayerFacing */
+extern void ScriptOp_MoveAlongPlayerFacing(void); /* ScriptOp_MoveAlongPlayerFacing */
 extern void func_ov021_020b1ccc(void); /* ScriptOp_MoveAgainstPlayerFacing */
-extern void func_ov021_020b1c70(void); /* ScriptOp_StepTowardPlayer */
+extern void ScriptOp_StepTowardPlayer(void); /* ScriptOp_StepTowardPlayer */
 extern void ScriptOp_GetCameraTarget(void); /* ScriptOp_GetCameraTarget */
 extern void func_ov021_020b1c04(void);
-extern void func_ov021_020b1bd4(void); /* ScriptOp_GetObjectPositionById */
+extern void ScriptOp_GetObjectPositionById(void); /* ScriptOp_GetObjectPositionById */
 extern void ScriptOp_GetStageAnchorB(void); /* ScriptOp_GetStageAnchorB */
 extern void ScriptOp_GetStageAnchorA(void); /* ScriptOp_GetStageAnchorA */
 extern void func_ov021_020b1b74(void); /* LoadSavedPosition */
-extern void func_ov021_020b1b1c(void); /* ScriptOp_GetGridCellPosition */
+extern void ScriptOp_GetGridCellPosition(void); /* ScriptOp_GetGridCellPosition */
 extern void func_ov021_020b1af4(void);
 extern void func_ov021_020b1a9c(void);
-extern void func_ov021_020b1a50(void); /* ScriptOp_GetSlotPosition */
-extern void func_ov021_020b19f0(void); /* ScriptOp_ProjectObjectMovement */
+extern void ScriptOp_GetSlotPosition(void); /* ScriptOp_GetSlotPosition */
+extern void ScriptOp_ProjectObjectMovement(void); /* ScriptOp_ProjectObjectMovement */
 extern void LoadStageEntryPosition(void); /* LoadStageEntryPosition */
 extern void ScriptOp_PlaceAroundPlayer(void); /* ScriptOp_PlaceAroundPlayer */
 extern void ScriptOp_PlaceNearPlayerOnGround(void); /* ScriptOp_PlaceNearPlayerOnGround */
@@ -81,8 +81,8 @@ extern void func_ov021_020b1394(void); /* ScriptOp_FindNearbyOpenCell */
 
 void (*gScriptQueryHandlers[173])(void) = {
     NULL,
-    func_ov021_020b133c, /* ScriptOp_GetPlayerHorizontalOffset */
-    func_ov021_020b12d8, /* ScriptOp_GetPlayerHorizontalDrift */
+    ScriptOp_GetPlayerHorizontalOffset, /* ScriptOp_GetPlayerHorizontalOffset */
+    ScriptOp_GetPlayerHorizontalDrift, /* ScriptOp_GetPlayerHorizontalDrift */
     func_ov021_020b12b8,
     ScriptOp_GetObjectVectorMagnitude, /* ScriptOp_GetObjectVectorMagnitude */
     func_ov021_020b1260, /* ScriptOp_IsStageEntryKind24 */
@@ -108,7 +108,7 @@ void (*gScriptQueryHandlers[173])(void) = {
     ScriptOp_GetPlayerStateBit0, /* ScriptOp_GetPlayerStateBit0 */
     NULL,
     NULL,
-    func_ov021_020b1014, /* ScriptOp_GetAttachPointScale */
+    ScriptOp_GetAttachPointScale, /* ScriptOp_GetAttachPointScale */
     NULL,
     NULL,
     NULL,
@@ -168,7 +168,7 @@ void (*gScriptQueryHandlers[173])(void) = {
     NULL,
     NULL,
     NULL,
-    func_ov021_020b0f94, /* ScriptOp_GetPlayerAngleDegrees */
+    ScriptOp_GetPlayerAngleDegrees, /* ScriptOp_GetPlayerAngleDegrees */
     NULL,
     NULL,
     NULL,
@@ -181,7 +181,7 @@ void (*gScriptQueryHandlers[173])(void) = {
     NULL,
     NULL,
     func_ov021_020b0edc,
-    func_ov021_020b0e80, /* SampleGridCellValue */
+    SampleGridCellValue, /* SampleGridCellValue */
     NULL,
     NULL,
     NULL,
@@ -198,7 +198,7 @@ void (*gScriptQueryHandlers[173])(void) = {
     func_ov021_020b0dd4,
     NULL,
     func_ov021_020b0d8c,
-    func_ov021_020b0d44, /* ScriptOp_FindNearestFreeSlot */
+    ScriptOp_FindNearestFreeSlot, /* ScriptOp_FindNearestFreeSlot */
     func_ov021_020b0cfc,
     NULL,
     NULL,
@@ -214,7 +214,7 @@ void (*gScriptQueryHandlers[173])(void) = {
     ScriptOp_GetSecondSharedValue, /* ScriptOp_GetSecondSharedValue */
     NULL,
     func_ov021_020b0c60, /* ReadContextFlagBit11 */
-    func_ov021_020b0c08, /* ScriptOp_IsPlayerAnimDone */
+    ScriptOp_IsPlayerAnimDone, /* ScriptOp_IsPlayerAnimDone */
     NULL,
     NULL,
     NULL,
@@ -225,7 +225,7 @@ void (*gScriptQueryHandlers[173])(void) = {
     NULL,
     NULL,
     NULL,
-    func_ov021_020b0b8c, /* ScriptOp_GetEventActorValue */
+    ScriptOp_GetEventActorValue, /* ScriptOp_GetEventActorValue */
     NULL,
     func_ov021_020b0b74,
     NULL,
@@ -257,30 +257,30 @@ void (*gScriptQueryHandlers[173])(void) = {
 
 void (*gScriptVectorHandlers[33])(void) = {
     NULL,
-    func_ov021_020b2000, /* SetScriptContextVector */
-    func_ov021_020b1fb0, /* AddScriptContextVector */
+    SetScriptContextVector, /* SetScriptContextVector */
+    AddScriptContextVector, /* AddScriptContextVector */
     func_ov021_020b1f98, /* SubmitActorRender */
     func_ov021_020b1f54,
     PickSpawnPointNearPlayer, /* PickSpawnPointNearPlayer */
     ScriptOp_GetObjectPosition, /* ScriptOp_GetObjectPosition */
     func_ov021_020b1d98, /* ScriptOp_DropToGround */
-    func_ov021_020b1d34, /* ScriptOp_MoveAlongPlayerFacing */
+    ScriptOp_MoveAlongPlayerFacing, /* ScriptOp_MoveAlongPlayerFacing */
     func_ov021_020b1ccc, /* ScriptOp_MoveAgainstPlayerFacing */
-    func_ov021_020b1c70, /* ScriptOp_StepTowardPlayer */
+    ScriptOp_StepTowardPlayer, /* ScriptOp_StepTowardPlayer */
     ScriptOp_GetCameraTarget, /* ScriptOp_GetCameraTarget */
     func_ov021_020b1c04,
-    func_ov021_020b1bd4, /* ScriptOp_GetObjectPositionById */
+    ScriptOp_GetObjectPositionById, /* ScriptOp_GetObjectPositionById */
     ScriptOp_GetStageAnchorB, /* ScriptOp_GetStageAnchorB */
     ScriptOp_GetStageAnchorA, /* ScriptOp_GetStageAnchorA */
     func_ov021_020b1b74, /* LoadSavedPosition */
     NULL,
     NULL,
     NULL,
-    func_ov021_020b1b1c, /* ScriptOp_GetGridCellPosition */
+    ScriptOp_GetGridCellPosition, /* ScriptOp_GetGridCellPosition */
     func_ov021_020b1af4,
     func_ov021_020b1a9c,
-    func_ov021_020b1a50, /* ScriptOp_GetSlotPosition */
-    func_ov021_020b19f0, /* ScriptOp_ProjectObjectMovement */
+    ScriptOp_GetSlotPosition, /* ScriptOp_GetSlotPosition */
+    ScriptOp_ProjectObjectMovement, /* ScriptOp_ProjectObjectMovement */
     LoadStageEntryPosition, /* LoadStageEntryPosition */
     ScriptOp_PlaceAroundPlayer, /* ScriptOp_PlaceAroundPlayer */
     ScriptOp_PlaceNearPlayerOnGround, /* ScriptOp_PlaceNearPlayerOnGround */

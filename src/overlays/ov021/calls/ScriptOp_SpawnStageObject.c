@@ -59,7 +59,7 @@ extern void func_01ff88c4(void *dest, u32 value, u32 size);
 extern u16 GetLargeRecordIndex(FieldPlayer *player);
 extern int func_ov001_02096b08(void *eventRecord, SpawnParams *params, VecFx32 *position);
 extern StageLink *GetStageController(void);
-extern StageActor *func_ov001_0209c068(int id);
+extern StageActor *GetStageActor(int id);
 extern void func_ov001_02098124(StageLink *controller);
 
 s32 ScriptOp_SpawnStageObject(void *context, SpawnCommand *cmd)
@@ -104,8 +104,8 @@ s32 ScriptOp_SpawnStageObject(void *context, SpawnCommand *cmd)
         return 0;
     }
     if (link != NULL && (flags & 8) && link->actorId != 0 && controller->actorId != 0) {
-        StageActor *source = func_ov001_0209c068((s16)link->actorId);
-        StageActor *target = func_ov001_0209c068((s16)controller->actorId);
+        StageActor *source = GetStageActor((s16)link->actorId);
+        StageActor *target = GetStageActor((s16)controller->actorId);
         if (source != NULL && target != NULL) {
             target->attachState[0] = source->attachState[0];
             target->attachState[1] = source->attachState[1];

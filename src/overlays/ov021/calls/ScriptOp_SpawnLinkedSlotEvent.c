@@ -70,13 +70,13 @@ extern FieldContext data_ov021_020b56c4;
 
 extern TaggedValue *ResolveTaggedValueRef(void *context, TaggedValue *value);
 extern u16 func_ov021_020b0528(void *context, u32 mode, void *operands, VecFx32 *out, const char **outName);
-extern StageLink *func_ov001_020995ac(u32 id);
+extern StageLink *FindStageLink(u32 id);
 extern StageEvent *func_ov001_0209c114(u32 id);
 extern void ResetActorMotion(StageEvent *record, BOOL keepSpeed);
 extern void func_ov001_02094f88(StageEvent *record, int groupArg, int scale, int arg);
 extern u16 GetStageRowIndex(StageEvent *record);
-extern StageActor *func_ov001_0209c068(int id);
-extern void func_ov001_02090f34(StageActor *actor, const VecFx32 *position);
+extern StageActor *GetStageActor(int id);
+extern void WarpWalkerTo(StageActor *actor, const VecFx32 *position);
 extern void AttachActorToStageNode(StageActor *actor, int stageActorId, const char *nodeName, int align);
 extern void func_ov001_0209473c(StageEvent *record);
 
@@ -140,7 +140,7 @@ s32 ScriptOp_SpawnLinkedSlotEvent(void *context, SlotSpawnCommand *cmd)
     if (player->eventBase == 0) {
         return 0;
     }
-    link = func_ov001_020995ac(eventRecord->kind);
+    link = FindStageLink(eventRecord->kind);
     if (link == NULL) {
         return 0;
     }
@@ -178,7 +178,7 @@ s32 ScriptOp_SpawnLinkedSlotEvent(void *context, SlotSpawnCommand *cmd)
     if (eventRecord != NULL) {
         record->row = GetStageRowIndex(eventRecord);
     }
-    actor = func_ov001_0209c068((s16)record->actorId);
+    actor = GetStageActor((s16)record->actorId);
     if (actor != NULL) {
         u16 nodeActor = 0;
         if (eventRecord != NULL) {
@@ -187,7 +187,7 @@ s32 ScriptOp_SpawnLinkedSlotEvent(void *context, SlotSpawnCommand *cmd)
         if (controller != NULL) {
             nodeActor = controller->actorId;
         }
-        func_ov001_02090f34(actor, &position);
+        WarpWalkerTo(actor, &position);
         actor->spawnArg = argRef->value;
         if (flags & 0x18) {
             AttachActorToStageNode(actor, nodeActor, nodeName, (flags & 0x10) ? TRUE : FALSE);

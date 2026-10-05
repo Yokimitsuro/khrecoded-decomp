@@ -20,7 +20,7 @@ typedef struct SphereContact {
     u8 onEdge;
 } SphereContact;
 
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 FX_Sqrt(fx32 value);
 extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *m, VecFx32 *dst);
 extern fx32 PXI_Init_0203f23c(fx32 value);
@@ -44,7 +44,7 @@ BOOL TestSphereAgainstBox(CollisionSphere **sphereRef, OrientedBox **boxRef, Sph
     fx32 absZ;
     BOOL onEdge;
 
-    func_01ff9e3c(&sphere->center, &box->center, &local);
+    VEC_Subtract(&sphere->center, &box->center, &local);
     TransformVectorByBasis(&local, &box->axes, &local);
     if (PXI_Init_0203f23c(local.x) > box->halfExtents.x) {
         excess.x = local.x - box->halfExtents.x * Sign(local.x);

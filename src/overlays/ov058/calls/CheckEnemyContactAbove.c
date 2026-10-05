@@ -65,7 +65,7 @@ typedef struct {
 } Enemy;
 
 extern VecFx32 *func_ov052_020ceb74(Enemy *enemy);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern CollisionShape InitCylinderShape(CylinderStorage *storage, const VecFx32 *start, const VecFx32 *end, const VecFx32 *axis, fx32 length, fx32 radius);
 extern void OffsetBoxByDelta(const Box *src, Box *dst, const VecFx32 *delta);
@@ -99,7 +99,7 @@ void CheckEnemyContactAbove(Enemy *enemy)
     delta.x = 0;
     delta.y = 0x2000;
     delta.z = 0;
-    func_01ff9e3c(&end, &start, &diff);
+    VEC_Subtract(&end, &start, &diff);
     axis = diff;
     shapeResult = InitCylinderShape(&cylinder, &start, &end, &axis, func_01ffaff4(&axis, &axis), 0x5cd);
     swept.shape = shapeResult;

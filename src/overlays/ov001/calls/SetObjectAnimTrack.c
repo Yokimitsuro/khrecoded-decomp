@@ -14,12 +14,12 @@ typedef struct FieldObject {
     s8 animTrack;
 } FieldObject;
 
-extern void func_ov001_020809f8(s16 *anim, int blendIndex, int frame);
+extern void RebindAnimTracks(s16 *anim, int blendIndex, int frame);
 
 void SetObjectAnimTrack(FieldObject *object, s8 track)
 {
     object->animTrack = track;
     if (object->flags & 4) {
-        func_ov001_020809f8(&object->model->anim, object->animTrack, 0);
+        RebindAnimTracks(&object->model->anim, object->animTrack, 0);
     }
 }

@@ -97,7 +97,7 @@ extern BOOL IsFacingContactNormal(SurfaceRef *ref, const VecFx32 *normal);
 extern void InitSegmentFromEndpoints(CollSegment *segment);
 extern BOOL TestSweepAgainstTarget(CollSweep *sweep, SurfaceRef *ref, ContactPlane *contact);
 extern s32 ContainsMatchingEntry(SurfaceRef *ref, u32 kind);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern fx32 FX_Sqrt(u32 value);
 /* Explicit _ll_mul call keeps the runtime helper bound. */
@@ -156,7 +156,7 @@ static inline BOOL ShouldAlignToModeNormal(void)
 static inline VecFx32 VecMultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add)
 {
     VecFx32 result;
-    func_01ffa09c(scale, v, add, &result);
+    VEC_MultAdd(scale, v, add, &result);
     return result;
 }
 

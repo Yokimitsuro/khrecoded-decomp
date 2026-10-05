@@ -81,7 +81,7 @@ extern const VecFx32 data_0205344c;
 extern s32 func_ov052_020ceb9c(ShotActor *actor);
 extern VecFx32 *func_ov052_020ceb74(ShotActor *actor);
 extern void func_ov021_020ab0ac(ShotDesc *desc);
-extern void func_ov021_020a9180(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
+extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern ShotProjectile *func_ov021_020ab0b8(void *owner, ShotDesc *desc);
 extern void ResetAnimationTrackState(MarkerRequest *request);
@@ -100,7 +100,7 @@ BOOL FireMarkedGroupShot(ShotActor *actor, void *arg, ShotPattern *pattern)
 
     angle = (u16)(func_ov052_020ceb9c(actor) + 0x8000);
     shot = actor->shot;
-    func_ov021_020a9180(&origin, func_ov052_020ceb74(actor), angle, &aim->offset);
+    RotateOffsetAroundY(&origin, func_ov052_020ceb74(actor), angle, &aim->offset);
     if (shot->markerSlot == -1) {
         ResetAnimationTrackState(&request);
         request.id = actor->player;
@@ -114,7 +114,7 @@ BOOL FireMarkedGroupShot(ShotActor *actor, void *arg, ShotPattern *pattern)
     }
     func_ov021_020ab0ac(&desc);
     desc.position = shot->markerPos;
-    func_ov021_020a9180(&direction, &data_0205344c, shot->markerAngle, &aim->direction);
+    RotateOffsetAroundY(&direction, &data_0205344c, shot->markerAngle, &aim->direction);
     desc.direction = direction;
     func_01ffaff4(&desc.direction, &desc.direction);
     desc.flags = 2;

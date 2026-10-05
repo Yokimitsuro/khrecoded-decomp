@@ -54,7 +54,7 @@ extern void PickJitteredPlayerOffset(GroupObject *object, VecFx32 *out);
 extern void func_ov032_020bd268(GroupObject *object);
 extern void SpawnSoundSlot(int bank, int soundId, VecFx32 *position, int flags);
 extern VecFx32 *func_ov001_0206dc4c(int index);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern BOOL ComputePushTowardTarget(const VecFx32 *target, const VecFx32 *center, fx32 *speed, VecFx32 *push);
 extern void func_ov032_020bbf68(void *world, int groupIndex);
 extern void func_ov032_020bbce4(GroupObject *object, const VecFx32 *delta);
@@ -100,7 +100,7 @@ void UpdateGroupChaseState(GroupObject *object)
         break;
     case 0x1c: {
         BOOL reached;
-        func_01ff9e0c(func_ov001_0206dc4c(0), &work->targetOffset, &target);
+        VEC_Add(func_ov001_0206dc4c(0), &work->targetOffset, &target);
         reached = ComputePushTowardTarget(&target, &object->position, &work->phase, &delta);
         if (object->work->leaderLink == -1) {
             if (group->settleTimer < 4) {

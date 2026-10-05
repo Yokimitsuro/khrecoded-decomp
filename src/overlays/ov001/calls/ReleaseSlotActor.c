@@ -11,13 +11,13 @@ typedef struct ActorSlot {
     u16 actorId;
 } ActorSlot;
 
-extern StageActor *func_ov001_0209c068(int id);
+extern StageActor *GetStageActor(int id);
 extern int ReleaseStageSlotEntry(int index, int slot);
 
 void ReleaseSlotActor(ActorSlot *slot)
 {
     if (slot->actorId != 0) {
-        func_ov001_0209c068((s16)slot->actorId);
+        GetStageActor((s16)slot->actorId);
         ReleaseStageSlotEntry(3, slot->actorId);
         slot->actorId = 0;
         slot->isActive = FALSE;

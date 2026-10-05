@@ -1,6 +1,6 @@
-extern int func_ov001_02086e18();
+extern int ResourceCache_FreeAll();
 
 int func_ov016_020a2284(int arg0) {
-    func_ov001_02086e18(arg0);
+    ResourceCache_FreeAll(arg0);
     return 1;
 }

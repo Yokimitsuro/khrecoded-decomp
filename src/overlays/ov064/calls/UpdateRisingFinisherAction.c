@@ -25,7 +25,7 @@ struct Actor {
 
 extern void func_ov052_020ce9f4(Actor *actor, VecFx32 *out);
 extern void func_ov001_020734f8(void);
-extern void func_ov001_0206e160(u32 enabled);
+extern void SetManagerEnabled(u32 enabled);
 
 void UpdateRisingFinisherAction(Actor *actor)
 {
@@ -44,7 +44,7 @@ void UpdateRisingFinisherAction(Actor *actor)
         return;
     }
     func_ov001_020734f8();
-    func_ov001_0206e160(0);
+    SetManagerEnabled(0);
     if (grounded) {
         actor->setMode(actor, 5);
     } else {

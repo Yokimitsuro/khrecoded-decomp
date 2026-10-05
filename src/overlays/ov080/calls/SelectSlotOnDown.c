@@ -17,13 +17,13 @@ typedef struct {
 
 extern u16 data_02060500;
 extern BOOL PlaySoundEffect(int seqArcNo, int index);
-extern void func_ov080_020c58e4(SaveSlot *slot);
+extern void LoadSlotIntoGame(SaveSlot *slot);
 
 void SelectSlotOnDown(SaveSelectScreen *screen)
 {
     if (screen->step == 0 && (data_02060500 & 0x80)) {
         screen->slotIndex ^= 1;
-        func_ov080_020c58e4(&screen->slots[screen->slotIndex]);
+        LoadSlotIntoGame(&screen->slots[screen->slotIndex]);
         screen->needsRedraw = 1;
         PlaySoundEffect(0, 0);
     }

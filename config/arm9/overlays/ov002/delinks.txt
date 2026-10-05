@@ -36,6 +36,10 @@ src/overlays/ov002/calls/func_ov002_02062d94.c:
     complete
     .text       start:0x02062d94 end:0x02062da0
 
+src/overlays/ov002/calls/ClosePanelAndQueueScene.c:
+    complete
+    .text       start:0x02062da0 end:0x02062dd8
+
 src/overlays/ov002/auto/func_ov002_02062dd8.c:
     complete
     .text       start:0x02062dd8 end:0x02062ddc
@@ -43,6 +47,10 @@ src/overlays/ov002/auto/func_ov002_02062dd8.c:
 src/overlays/ov002/auto/func_ov002_02062ddc.c:
     complete
     .text       start:0x02062ddc end:0x02062de0
+
+src/overlays/ov002/calls/PollPanelOverlay13.c:
+    complete
+    .text       start:0x02062e64 end:0x02062e98
 
 src/overlays/ov002/auto/func_ov002_02062ec8.c:
     complete
@@ -55,6 +63,10 @@ src/overlays/ov002/calls/func_ov002_02062ecc.c:
 src/overlays/ov002/auto/func_ov002_02062edc.c:
     complete
     .text       start:0x02062edc end:0x02062ee0
+
+src/overlays/ov002/calls/PollPanelOverlay15.c:
+    complete
+    .text       start:0x02062efc end:0x02062f30
 
 src/overlays/ov002/auto/func_ov002_02062f80.c:
     complete
@@ -71,6 +83,10 @@ src/overlays/ov002/calls/UpdateListCursorPad.c:
 src/overlays/ov002/calls/UpdateListCursorKeys.c:
     complete
     .text       start:0x02062fa0 end:0x02062fb4
+
+src/overlays/ov002/calls/InitScrollList.c:
+    complete
+    .text       start:0x0206314c end:0x02063188
 
 src/overlays/ov002/calls/ScrollListPad.c:
     complete
@@ -148,17 +164,53 @@ src/overlays/ov002/auto/func_ov002_02065c50.c:
     complete
     .text       start:0x02065c50 end:0x02065c54
 
+src/overlays/ov002/calls/UpdateMenuSelectionSound.c:
+    complete
+    .text       start:0x02065d54 end:0x02065d90
+
+src/overlays/ov002/calls/SelectMenuEntry3.c:
+    complete
+    .text       start:0x02065e68 end:0x02065ec4
+
+src/overlays/ov002/calls/UnmapCharHighByte.c:
+    complete
+    .text       start:0x02065f7c end:0x02065fc8
+
 src/overlays/ov002/calls/RemapCharHighByte.c:
     complete
     .text       start:0x02065fc8 end:0x02065ff4
+
+src/overlays/ov002/calls/CopyWideStringLowercase.c:
+    complete
+    .text       start:0x02066324 end:0x02066374
 
 src/overlays/ov002/calls/GetWideStringLength.c:
     complete
     .text       start:0x02066374 end:0x02066394
 
+src/overlays/ov002/calls/CopyWideString.c:
+    complete
+    .text       start:0x02066394 end:0x020663d0
+
+src/overlays/ov002/calls/CopyWideStringBounded.c:
+    complete
+    .text       start:0x020663d0 end:0x02066430
+
+src/overlays/ov002/calls/CopyWideStringCapitalized.c:
+    complete
+    .text       start:0x02066430 end:0x02066484
+
+src/overlays/ov002/calls/CopyWideStringWithNewline.c:
+    complete
+    .text       start:0x02066484 end:0x020664e4
+
 src/overlays/ov002/calls/func_ov002_0206655c.c:
     complete
     .text       start:0x0206655c end:0x0206656c
+
+src/overlays/ov002/calls/GetMenuRectSize.c:
+    complete
+    .text       start:0x02066a90 end:0x02066ad0
 
 src/overlays/ov002/calls/func_ov002_02066c58.c:
     complete
@@ -167,6 +219,10 @@ src/overlays/ov002/calls/func_ov002_02066c58.c:
 src/overlays/ov002/calls/func_ov002_02066c68.c:
     complete
     .text       start:0x02066c68 end:0x02066c78
+
+src/overlays/ov002/calls/CountSetFlagsInRange.c:
+    complete
+    .text       start:0x02066f7c end:0x02066fb0
 
 src/overlays/ov002/calls/GetContextSlotCount.c:
     complete
@@ -180,9 +236,17 @@ src/overlays/ov002/calls/WriteGlobalPackedFlag.c:
     complete
     .text       start:0x020679dc end:0x020679fc
 
+src/overlays/ov002/calls/ApplyGroupElements.c:
+    complete
+    .text       start:0x020682c4 end:0x02068310
+
 src/overlays/ov002/calls/ApplyCategoryRecord.c:
     complete
     .text       start:0x02069190 end:0x02069308
+
+src/overlays/ov002/calls/CopyRecordTableBField.c:
+    complete
+    .text       start:0x02069d04 end:0x02069d5c
 
 src/overlays/ov002/calls/FillCategoryRecords.c:
     complete

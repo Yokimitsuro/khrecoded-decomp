@@ -113,7 +113,7 @@ extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern void func_ov021_020ab0ac(ShotDesc *desc);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern CollisionShape InitCylinderShape(CylinderStorage *storage, const VecFx32 *start, const VecFx32 *end, const VecFx32 *axis, fx32 length, fx32 radius);
 extern void OffsetBoxByDelta(const Box *src, Box *dst, const VecFx32 *delta);
@@ -125,7 +125,7 @@ extern void *func_ov021_020ab0b8(void *owner, ShotDesc *desc);
 extern u32 SpawnSoundSlot(u32 owner, u32 kind, VecFx32 *position, u32 flags);
 extern void func_ov021_020af564(int a, int b);
 extern void func_ov001_020734f8(void);
-extern void func_ov001_0206e160(u32 enabled);
+extern void SetManagerEnabled(u32 enabled);
 
 void UpdateGroundSlamAction(Actor *actor)
 {
@@ -205,7 +205,7 @@ void UpdateGroundSlamAction(Actor *actor)
         dropDelta.x = 0;
         dropDelta.y = -0x14000;
         dropDelta.z = 0;
-        func_01ff9e3c(&end, &start, &cylinderDiff);
+        VEC_Subtract(&end, &start, &cylinderDiff);
         cylinderAxis = cylinderDiff;
         cylinderShape = InitCylinderShape(&cylinder, &start, &end, &cylinderAxis, func_01ffaff4(&cylinderAxis, &cylinderAxis), 0x19a);
         swept.shape = cylinderShape;
@@ -244,7 +244,7 @@ void UpdateGroundSlamAction(Actor *actor)
         return;
     }
     func_ov001_020734f8();
-    func_ov001_0206e160(0);
+    SetManagerEnabled(0);
     if (grounded) {
         actor->setMode(actor, 5);
     } else {

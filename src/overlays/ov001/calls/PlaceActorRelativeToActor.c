@@ -27,10 +27,10 @@ extern ActorNode *ActorRegistry_GetEntityByIndex(u16 actorId);
 extern void MTX_Identity43_(MtxFx43 *matrix);
 extern void MTX_RotY43_(MtxFx43 *matrix, fx32 sine, fx32 cosine);
 extern void MTX_MultVec43(const VecFx32 *vector, const MtxFx43 *matrix, VecFx32 *result);
-extern void func_01ff9e0c(const VecFx32 *left, const VecFx32 *right, VecFx32 *result);
+extern void VEC_Add(const VecFx32 *left, const VecFx32 *right, VecFx32 *result);
 extern void ApplyRecordTableEntry5(u16 actorId, int mode, VecFx32 *position);
 extern void ActorSlot_SetFlag8ByIndex(u16 actorId, int flag);
-extern void func_ov001_0208c2ec(void *scriptContext, int mode, VecFx32 *position, int actorId);
+extern void ScriptActor_DispatchAndMarkFlag(void *scriptContext, int mode, VecFx32 *position, int actorId);
 extern s16 data_02053580[];
 
 int PlaceActorRelativeToActor(void *scriptContext, ScriptOperand *operands) {
@@ -62,7 +62,7 @@ int PlaceActorRelativeToActor(void *scriptContext, ScriptOperand *operands) {
     MTX_RotY43_(&matrix, data_02053580[angle], data_02053580[(0x400 - angle) & 0xfff]);
     MTX_MultVec43(&offset, &matrix, &offset);
     offset.x = -offset.x;
-    func_01ff9e0c(&position, &offset, &position);
+    VEC_Add(&position, &offset, &position);
     ApplyRecordTableEntry5(actorId, 0, &position);
     node = ActorRegistry_GetEntityByIndex(actorId);
     if ((node->flags & 0x20) == 0) {
@@ -70,6 +70,6 @@ int PlaceActorRelativeToActor(void *scriptContext, ScriptOperand *operands) {
         node->stateFlags |= 0x20;
     }
     ActorSlot_SetFlag8ByIndex(actorId, 1);
-    func_ov001_0208c2ec(scriptContext, 0, &position, actorId);
+    ScriptActor_DispatchAndMarkFlag(scriptContext, 0, &position, actorId);
     return 1;
 }

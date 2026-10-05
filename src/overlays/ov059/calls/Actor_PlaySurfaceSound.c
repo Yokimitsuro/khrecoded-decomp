@@ -36,7 +36,7 @@ typedef struct Actor {
 
 extern VecFx32 *Actor_GetModelPosition(Actor *actor);
 extern int func_ov021_020a8fe8(int state, int surface);
-extern BOOL func_ov059_020cd144(Actor *actor);
+extern BOOL Actor_AnyAnimSlotBusy(Actor *actor);
 extern int SpawnSoundSlot(int sound, int variant, VecFx32 *pos, int flags);
 
 int Actor_PlaySurfaceSound(Actor *actor, int sound, int variant) {
@@ -66,7 +66,7 @@ int Actor_PlaySurfaceSound(Actor *actor, int sound, int variant) {
             sound = func_ov021_020a8fe8(actor->state, surface);
         }
     }
-    if (actor->state == 3 && variant == 0x1f && !func_ov059_020cd144(actor)) {
+    if (actor->state == 3 && variant == 0x1f && !Actor_AnyAnimSlotBusy(actor)) {
         sound = -1;
         variant = -1;
     }

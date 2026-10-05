@@ -41,8 +41,8 @@ extern void func_ov032_020bd1bc(Quaternion *out, const VecFx32 *axis, int angle)
 extern void MultiplyFixedPointQuaternions(Quaternion *result, const Quaternion *left, const Quaternion *right);
 extern void QuaternionToRotationMatrix(MtxFx33 *matrix, const Quaternion *quat);
 extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *dst);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 static inline BOOL IsZeroVec(const VecFx32 *v)
 {
@@ -71,8 +71,8 @@ void RollGroupAndSteerMember(GroupObject *object, const VecFx32 *delta)
     }
     QuaternionToRotationMatrix(&rotation, &group->orientation);
     func_01ff9404(&group->memberOffsets[slot], &rotation, &target);
-    func_01ff9e0c(&target, &group->center, &target);
-    func_01ff9e3c(&target, &object->position, &diff);
+    VEC_Add(&target, &group->center, &target);
+    VEC_Subtract(&target, &object->position, &diff);
     if (!IsZeroVec(&diff)) {
         work->moveDelta.x = diff.x * 17 / 100;
         work->moveDelta.z = diff.z * 17 / 100;

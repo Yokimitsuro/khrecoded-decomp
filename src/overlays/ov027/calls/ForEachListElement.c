@@ -8,7 +8,7 @@ struct NNSFndList {
 };
 
 extern void *NNS_FndGetNextListObject(void *list, void *obj);
-extern void func_ov027_020b8ae8(void *owner, void *element);
+extern void StepWidgetMoveTween(void *owner, void *element);
 
 struct Owner {
     u8 pad_0000[0x6434];
@@ -21,6 +21,6 @@ void ForEachListElement(struct Owner *owner) {
     for (element = NNS_FndGetNextListObject(&owner->elementList, 0);
          element != 0;
          element = NNS_FndGetNextListObject(&owner->elementList, element)) {
-        func_ov027_020b8ae8(owner, element);
+        StepWidgetMoveTween(owner, element);
     }
 }

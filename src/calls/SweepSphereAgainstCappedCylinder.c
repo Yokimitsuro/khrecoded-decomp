@@ -32,7 +32,7 @@ typedef struct SweepResult {
 } SweepResult;
 
 extern fx32 FX_Div(fx32 numerator, fx32 denominator);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
@@ -57,7 +57,7 @@ static inline SweepResult MakeSweepResult(void)
 static inline VecFx32 VecSub(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 diff;
-    func_01ff9e3c(a, b, &diff);
+    VEC_Subtract(a, b, &diff);
     return diff;
 }
 
@@ -92,7 +92,7 @@ static inline VecFx32 RejectFromAxis(const VecFx32 *v, const VecFx32 *axis)
     scaledAxis = *axis;
     ScaleVecFx32InPlace(&scaledAxis, dot);
     projection = scaledAxis;
-    func_01ff9e3c(v, &projection, &rejection);
+    VEC_Subtract(v, &projection, &rejection);
     return rejection;
 }
 

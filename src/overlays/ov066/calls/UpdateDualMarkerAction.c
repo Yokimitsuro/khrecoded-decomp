@@ -59,7 +59,7 @@ extern void func_ov052_020d1a88(SlotEntry *entry, void *source, int mirrored, An
 extern int func_ov052_020d014c(Actor *actor, AnimEntry *target, SlotEntry *entry);
 extern BOOL func_ov052_020d02b4(Actor *actor, AnimEntry *data, int which);
 extern void func_ov001_020734f8(void);
-extern void func_ov001_0206e160(u32 enabled);
+extern void SetManagerEnabled(u32 enabled);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern void func_ov021_020af564(int a, int b);
@@ -109,7 +109,7 @@ void UpdateDualMarkerAction(Actor *actor)
     }
     flags = actor->stateFlags & 4;
     func_ov001_020734f8();
-    func_ov001_0206e160(0);
+    SetManagerEnabled(0);
     if (flags) {
         actor->setState(actor, 5);
     } else {

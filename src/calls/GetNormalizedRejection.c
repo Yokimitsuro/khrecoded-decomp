@@ -2,7 +2,7 @@
 #include "nitro/fx_types.h"
 
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *source, VecFx32 *dest);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
 extern BOOL AreVecsWithinRange16(const VecFx32 *a, const VecFx32 *b);
@@ -44,7 +44,7 @@ VecFx32 GetNormalizedRejection(const VecFx32 *vec, const VecFx32 *axis, fx32 *ou
     projected = *axis;
     ScaleVecFx32InPlace(&projected, dot);
     subtrahend = projected;
-    func_01ff9e3c(vec, &subtrahend, &diff);
+    VEC_Subtract(vec, &subtrahend, &diff);
     rejection = diff;
     if (IsVecNearZero(&diff, &check)) {
         return UnitPerpendicular(vec);

@@ -42,8 +42,8 @@ struct TimedUnit {
 
 extern const VecFx32 data_ov056_020d7fc0;
 extern EntryInfo *GetBoundedEntryField(int index);
-extern void func_ov021_020a9180(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
-extern BOOL func_ov021_020aebf4(TimedUnit *unit, s32 step);
+extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
+extern BOOL StepEffectAnimation(TimedUnit *unit, s32 step);
 extern void SpawnOffsetProjectile(TimedUnit *unit, u32 kind, u32 subKind, s32 power);
 
 void UpdateTimedUnitEntries(TimedUnit *unit, s32 step)
@@ -60,14 +60,14 @@ void UpdateTimedUnitEntries(TimedUnit *unit, s32 step)
             info = GetBoundedEntryField(unit->entryIndex);
             pos = data_ov056_020d7fc0;
             angle = info->facing - 0x8000;
-            func_ov021_020a9180(&pos, &info->position, angle + 0x8000, &pos);
+            RotateOffsetAroundY(&pos, &info->position, angle + 0x8000, &pos);
             entry->position = pos;
             if (unit->handlers[entry->phase](unit, entry, step)) {
                 unit->activeCount--;
             }
         }
     }
-    func_ov021_020aebf4(unit, step);
+    StepEffectAnimation(unit, step);
     if (unit->armed != 0) {
         unit->timer += step;
         if (unit->timer >= unit->lifetime) {

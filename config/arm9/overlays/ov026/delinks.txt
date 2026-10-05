@@ -4,9 +4,21 @@
     .data       start:0x020b5ae0 end:0x020b5b20 kind:data align:32
     .bss        start:0x020b5b20 end:0x020b5b40 kind:bss align:32
 
+src/overlays/ov026/calls/RunOverlayDisplayUpdate.c:
+    complete
+    .text       start:0x020b5820 end:0x020b5868
+
 src/overlays/ov026/calls/func_ov026_020b58e8.c:
     complete
     .text       start:0x020b58e8 end:0x020b58f8
+
+src/overlays/ov026/calls/EndOverlayDisplaySession.c:
+    complete
+    .text       start:0x020b58f8 end:0x020b592c
+
+src/overlays/ov026/calls/RestoreOverlayDisplayState.c:
+    complete
+    .text       start:0x020b59e0 end:0x020b5a38
 
 src/overlays/ov026/calls/ShouldRestorePositiveBrightness.c:
     complete

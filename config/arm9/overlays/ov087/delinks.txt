@@ -4,6 +4,22 @@
     .data       start:0x020c7da0 end:0x020c7ec0 kind:data align:32
     .bss        start:0x020c7ec0 end:0x020c7ec0 kind:bss align:32
 
+src/overlays/ov087/calls/IsSessionFlagClear.c:
+    complete
+    .text       start:0x020c4280 end:0x020c42c0
+
+src/overlays/ov087/calls/SwitchToSecondaryIfEntryRejected.c:
+    complete
+    .text       start:0x020c46a4 end:0x020c4700
+
+src/overlays/ov087/calls/ShowPromptAndStoreEntryCount.c:
+    complete
+    .text       start:0x020c4a1c end:0x020c4a68
+
+src/overlays/ov087/calls/OpenPromptMessage0E.c:
+    complete
+    .text       start:0x020c5c64 end:0x020c5cb0
+
 src/overlays/ov087/auto/func_ov087_020c5cb0.c:
     complete
     .text       start:0x020c5cb0 end:0x020c5cb4
@@ -11,6 +27,26 @@ src/overlays/ov087/auto/func_ov087_020c5cb0.c:
 src/overlays/ov087/auto/func_ov087_020c5cb4.c:
     complete
     .text       start:0x020c5cb4 end:0x020c5cb8
+
+src/overlays/ov087/calls/OpenPromptMessage12.c:
+    complete
+    .text       start:0x020c5cb8 end:0x020c5d04
+
+src/overlays/ov087/calls/OpenPromptMessage10.c:
+    complete
+    .text       start:0x020c5d04 end:0x020c5d64
+
+src/overlays/ov087/calls/OpenPromptMessage11.c:
+    complete
+    .text       start:0x020c5e18 end:0x020c5e78
+
+src/overlays/ov087/calls/OpenPromptMessage13.c:
+    complete
+    .text       start:0x020c5e78 end:0x020c5ec4
+
+src/overlays/ov087/calls/OpenPromptMessage14.c:
+    complete
+    .text       start:0x020c5ec4 end:0x020c5f10
 
 src/overlays/ov087/data/strings/Strings_ov087_020c7e9c.c:
     complete

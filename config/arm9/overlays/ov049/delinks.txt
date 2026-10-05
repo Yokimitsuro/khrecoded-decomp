@@ -3,9 +3,29 @@
     .data       start:0x020c4700 end:0x020c4720 kind:data align:32
     .bss        start:0x020c4720 end:0x020c4720 kind:bss align:32
 
+src/overlays/ov049/calls/InitSpinCameraOrbit.c:
+    complete
+    .text       start:0x020c3520 end:0x020c355c
+
+src/overlays/ov049/calls/InitFastSpinCameraOrbit.c:
+    complete
+    .text       start:0x020c355c end:0x020c359c
+
+src/overlays/ov049/calls/InitRandomCameraSwing.c:
+    complete
+    .text       start:0x020c35d4 end:0x020c3602
+
+src/overlays/ov049/calls/InitRandomCameraSway.c:
+    complete
+    .text       start:0x020c3604 end:0x020c3634
+
 src/overlays/ov049/calls/func_ov049_020c4240.c:
     complete
     .text       start:0x020c4240 end:0x020c4248
+
+src/overlays/ov049/calls/CopyAnimTransform.c:
+    complete
+    .text       start:0x020c4248 end:0x020c427e
 
 src/overlays/ov049/data/tables/gCameraMotionInitializers.c:
     complete

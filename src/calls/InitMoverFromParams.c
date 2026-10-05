@@ -94,7 +94,7 @@ typedef struct CollHitRecord {
     ContactList *contacts;
 } CollHitRecord;
 
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern void MI_CpuFill8(void *dest, u8 data, u32 size);
 extern VecFx32 data_0205344c;
@@ -144,7 +144,7 @@ void InitMoverFromParams(Mover *mover, const MoverParams *params)
         mover->direction = data_0205344c;
     } else {
         VecFx32 *points = params->sweep->shape.points;
-        func_01ff9e3c(&points[1], &points[0], &delta);
+        VEC_Subtract(&points[1], &points[0], &delta);
         mover->direction = delta;
     }
     func_01ffaff4(&mover->direction, &unit);

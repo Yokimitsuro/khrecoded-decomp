@@ -17,7 +17,7 @@ extern s32 func_ov059_020c98a0(Actor *actor);
 extern BOOL func_ov021_020a753c(void *holder, u16 mask);
 extern BOOL func_ov021_020a7524(void *target);
 extern BOOL func_ov059_020cb930(Actor *actor);
-extern BOOL func_ov059_020cd174(Actor *actor);
+extern BOOL Actor_AnyAnimSlotBit0Set(Actor *actor);
 extern BOOL func_ov001_020645c8(u32 value);
 extern BOOL IsPlayerEntryFlagSet(int player, u32 id);
 extern void Actor_UpdateChargeCommand(Actor *actor, void *input);
@@ -38,7 +38,7 @@ int Actor_SelectInputState(Actor *actor) {
                 if (actor->state == 5) {
                     return 5;
                 }
-            } else if (func_ov059_020cd174(actor) && !func_ov001_020645c8(0x3520)
+            } else if (Actor_AnyAnimSlotBit0Set(actor) && !func_ov001_020645c8(0x3520)
                        && IsPlayerEntryFlagSet(actor->playerIndex, 11)) {
                 actor->setState(actor, 6);
                 if (actor->state == 6) {

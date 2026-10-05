@@ -36,7 +36,7 @@ extern s16 data_02053580[];
 
 extern void NNSi_G3dAnmCalcNsBca(JointAnimResult *result, void *anmObj, u32 index);
 extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *out);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern fx32 FX_Mul(fx32 a, fx32 b);
 extern void AdvanceAnimFrame(CameraAnim *anim);
@@ -68,7 +68,7 @@ void CamAnim_ApplyPose(CameraAnim *anim)
         anim->position.z = 0;
         func_01ff9404(&up, &eye.rot, &anim->up);
         func_01ff9404(&anim->position, &eye.rot, &anim->position);
-        func_01ff9e0c(&anim->position, &anim->target, &anim->position);
+        VEC_Add(&anim->position, &anim->target, &anim->position);
     } else {
         scaleY = eye.scale.y;
         scaleZ = eye.scale.z;
@@ -77,8 +77,8 @@ void CamAnim_ApplyPose(CameraAnim *anim)
         anim->position.x = scaleX;
         func_01ff9404(&up, &eye.rot, &anim->up);
     }
-    func_01ff9e0c(&anim->position, &anim->offset, &anim->position);
-    func_01ff9e0c(&anim->target, &anim->offset, &anim->target);
+    VEC_Add(&anim->position, &anim->offset, &anim->position);
+    VEC_Add(&anim->target, &anim->offset, &anim->target);
     angle = FX_Mul(FX_Div(roll.trans.x, 0x2000), 0xc00);
     index = (u16)((angle * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4;
     anim->nearClip = roll.trans.y;

@@ -27,9 +27,9 @@ extern void func_ov001_020893bc(PartyActor *actor);
 extern void func_ov001_02089bfc(PartyActor *actor);
 extern void func_ov001_02089230(PartyActor *actor, VecFx32 *out);
 extern void func_ov001_02089ad0(PartyActor *actor);
-extern void func_ov001_020899d4(PartyActor *actor);
-extern void func_ov001_020891dc(PartyActor *actor);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Actor_StepPeriodicAnimEvent(PartyActor *actor);
+extern void AlignPartyLeaderToActor(PartyActor *actor);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void func_02038e80(MotionLink *link, int mode);
 extern void Obj_SetPosition(MotionBody *body, const VecFx32 *position);
@@ -64,7 +64,7 @@ void UpdatePartyActorMotion(PartyActor *actor)
     func_ov001_02089bfc(actor);
     if (actor->flags & 0x40) {
         func_ov001_02089230(actor, &drift);
-        func_01ff9e0c(&drift, &actor->move, &drift);
+        VEC_Add(&drift, &actor->move, &drift);
         if (VEC_Mag(&drift) <= 0x10) {
             drift.z = 0;
             drift.y = 0;
@@ -82,17 +82,17 @@ void UpdatePartyActorMotion(PartyActor *actor)
     } else if (VEC_Mag(&actor->move) != 0 || VEC_Mag(&drift) != 0) {
         position = actor->link->body->position;
         if (VEC_Mag(&drift) != 0) {
-            func_01ff9e0c(&position, &drift, &position);
+            VEC_Add(&position, &drift, &position);
         } else {
-            func_01ff9e0c(&position, &actor->move, &position);
+            VEC_Add(&position, &actor->move, &position);
         }
         Obj_SetPosition(actor->link->body, &position);
     }
     if (actor->flags & 0x80) {
-        func_ov001_020899d4(actor);
+        Actor_StepPeriodicAnimEvent(actor);
     }
     if (actor->flags & 0x800) {
-        func_ov001_020891dc(actor);
+        AlignPartyLeaderToActor(actor);
     }
     SetGroundVelocity(actor->link, &data_0205344c);
 }

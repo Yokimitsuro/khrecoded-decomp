@@ -80,14 +80,14 @@ extern void *func_ov001_0206db78(int index);
 extern BOOL func_ov021_020aa588(AnimClip *clip, s32 frame, int arg);
 extern BOOL func_ov052_020d0544(DragActor *actor);
 extern BOOL func_ov021_020a7524(void *entry);
-extern fx32 func_ov052_020d0ea0(DragMotion *motion);
-extern void func_ov052_020cebdc(DragActor *actor, VecFx32 *dir);
+extern fx32 ApproachTargetValue(DragMotion *motion);
+extern void ComputeFacingAndDirection(DragActor *actor, VecFx32 *dir);
 extern u16 func_ov021_020a7564(void *entry);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern fx32 FX_Mul(fx32 a, fx32 b);
-extern GroupMember *func_ov021_020a8f0c(int groupId, int member);
+extern GroupMember *GetGroupMemberData(int groupId, int member);
 extern u16 FX_Atan2Idx(fx32 y, fx32 x);
 extern void func_ov052_020d1a18(ClipEventContext *ctx, AnimClip *clip, int arg, int entryId);
 extern void func_ov030_020bbd70(void);
@@ -122,14 +122,14 @@ void UpdateDraggedActorMotion(DragActor *actor)
     dir.y = 0;
     dir.x = 0;
     if (func_ov021_020a7524(entry)) {
-        speed = func_ov052_020d0ea0(motion);
-        func_ov052_020cebdc(actor, &dir);
+        speed = ApproachTargetValue(motion);
+        ComputeFacingAndDirection(actor, &dir);
         angle = func_ov021_020a7564(entry);
         index = angle >> 4;
         dir.x = -data_02053580[index];
         dir.z = -data_02053580[(0x400 - index) & 0xfff];
         func_01ffaff4(&motion->velocity, &facing);
-        func_01ff9e0c(&dir, &facing, &dir);
+        VEC_Add(&dir, &facing, &dir);
         func_01ffaff4(&dir, &dir);
     } else {
         dir = motion->velocity;
@@ -142,13 +142,13 @@ void UpdateDraggedActorMotion(DragActor *actor)
     actor->offset.x += dir.x;
     actor->offset.z += dir.z;
     if (actor->height <= 0x3000) {
-        member = func_ov021_020a8f0c(*anim->groupId, anim->memberIndex);
+        member = GetGroupMemberData(*anim->groupId, anim->memberIndex);
         if (actor->getPosition != NULL) {
             pos = actor->getPosition(actor);
         } else {
             pos = &actor->pos;
         }
-        func_01ff9e3c(pos, &member->pos, &diff);
+        VEC_Subtract(pos, &member->pos, &diff);
         func_01ffaff4(&diff, &diff);
         member->yaw = FX_Atan2Idx(-diff.x, diff.y);
         member->flags |= 0x20;

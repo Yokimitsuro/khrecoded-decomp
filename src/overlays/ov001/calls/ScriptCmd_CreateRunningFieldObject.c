@@ -12,7 +12,7 @@ typedef struct ScriptContext ScriptContext;
 extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operand);
 extern fx32 ScriptVm_ReadOperandFx32(ScriptContext *context, ScriptOperand *operand);
 extern void *func_ov001_0207f050(int index);
-extern void *func_ov001_02081e74(void *objectClass, u16 slotIndex, u16 saveBitOffset, u8 saveBitCount,
+extern void *FieldObject_CreateAtPosition(void *objectClass, u16 slotIndex, u16 saveBitOffset, u8 saveBitCount,
                                                     const VecFx32 *position, int mode, int isRunning, int param);
 
 BOOL ScriptCmd_CreateRunningFieldObject(ScriptContext *context, ScriptOperand *operands)
@@ -31,7 +31,7 @@ BOOL ScriptCmd_CreateRunningFieldObject(ScriptContext *context, ScriptOperand *o
     mode = ScriptVm_ReadOperandInt(context, &operands[6]);
     isRunning = ScriptVm_ReadOperandInt(context, &operands[7]);
     param = ScriptVm_ReadOperandInt(context, &operands[8]);
-    func_ov001_02081e74(func_ov001_0207f050(classIndex), slotIndex, saveBits & 0xFFFF,
+    FieldObject_CreateAtPosition(func_ov001_0207f050(classIndex), slotIndex, saveBits & 0xFFFF,
                                           (u16)(saveBits >> 16), &position, mode, isRunning, param);
     return TRUE;
 }

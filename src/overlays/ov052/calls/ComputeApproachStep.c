@@ -80,7 +80,7 @@ extern u16 func_ov021_020a7564(void *unit);
 extern u16 FX_Atan2Idx(fx32 y, fx32 x);
 extern VecFx32 *func_ov001_0206c3f4(WaitTarget *wait);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern u16 func_ov052_020ceb9c(Actor *actor);
 extern BOOL func_ov001_02087988(u32 id, EventTargetInfo *out);
@@ -90,7 +90,7 @@ extern void MTX_RotY33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
 extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *m, VecFx32 *dst);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern fx32 FX_Mul(fx32 a, fx32 b);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 VecFx32 ComputeApproachStep(Actor *actor, VecFx32 *input, MotionState *motion, BOOL adjust)
 {
@@ -135,7 +135,7 @@ VecFx32 ComputeApproachStep(Actor *actor, VecFx32 *input, MotionState *motion, B
     }
     targetPos = func_ov001_0206c3f4(&actor->wait);
     selfPos = func_ov052_020ceb74(actor);
-    func_01ff9e3c(targetPos, selfPos, &dir);
+    VEC_Subtract(targetPos, selfPos, &dir);
     dir.y = 0;
     distance = func_01ffaff4(&dir, &dir);
     if (actor->power <= 0x2000) {
@@ -191,7 +191,7 @@ VecFx32 ComputeApproachStep(Actor *actor, VecFx32 *input, MotionState *motion, B
             }
             if (adjust && !motion->noPull) {
                 func_01ffafb4(FX_Mul(FX32_ONE, 0x100), &dir, &dir);
-                func_01ff9e0c(&dir, &move, &move);
+                VEC_Add(&dir, &move, &move);
             }
             scaled = FX_Mul(reach, FX32_ONE);
             result = move;
@@ -201,7 +201,7 @@ VecFx32 ComputeApproachStep(Actor *actor, VecFx32 *input, MotionState *motion, B
             }
         } else if (adjust && !motion->noPull) {
             func_01ffafb4(FX_Mul(FX32_ONE, 0x100), &dir, &dir);
-            func_01ff9e0c(&dir, &move, &move);
+            VEC_Add(&dir, &move, &move);
             result = move;
         }
     }

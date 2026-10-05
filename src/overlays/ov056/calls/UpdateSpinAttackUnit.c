@@ -61,8 +61,8 @@ extern const VecFx32 data_ov056_020d7f90;
 extern int FX_Mul(int left, int right);
 extern void QuatFromAxisAngle(QuatFx32 *out, const VecFx32 *axis, fx32 angle);
 extern void func_ov021_020ab310(SpinUnit *unit, int blend);
-extern int func_ov021_020ab43c(SpinUnit *unit, fx32 step);
-extern void func_ov056_020d5328(VecFx32 *center, fx32 radius, SpinOwner *owner, void *extra);
+extern int AdvanceOwnerAnimation(SpinUnit *unit, fx32 step);
+extern void ApplyAreaHitInRadius(VecFx32 *center, fx32 radius, SpinOwner *owner, void *extra);
 
 BOOL UpdateSpinAttackUnit(SpinOwner *owner, SpinUnit *unit, fx32 step)
 {
@@ -121,7 +121,7 @@ BOOL UpdateSpinAttackUnit(SpinOwner *owner, SpinUnit *unit, fx32 step)
         break;
     case 3:
         if (params->timer < def->hitDuration) {
-            func_ov056_020d5328(&unit->position, def->hitRadius, owner, unit);
+            ApplyAreaHitInRadius(&unit->position, def->hitRadius, owner, unit);
             params->timer += step;
         } else {
             params->state.phase = 0;
@@ -132,7 +132,7 @@ BOOL UpdateSpinAttackUnit(SpinOwner *owner, SpinUnit *unit, fx32 step)
         break;
     }
 
-    if (unit->status == 1 && (u16)func_ov021_020ab43c(unit, step) != 0) {
+    if (unit->status == 1 && (u16)AdvanceOwnerAnimation(unit, step) != 0) {
         switch (params->state.mode) {
         case 0:
             unit->status = -1;

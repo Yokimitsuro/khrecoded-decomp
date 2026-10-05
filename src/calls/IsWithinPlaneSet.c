@@ -17,7 +17,7 @@ typedef struct CollisionShape {
 extern VecFx32 *func_ov021_020af5d4(void);
 extern VecFx32 *func_ov021_020af71c(void);
 extern VecFx32 GetShapeCenter(const CollisionShape *shape);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int MSL_AbsA(int value);
 extern void ApplyScalarToVec3(VecFx32 *vec, int (*transform)(int));
@@ -26,7 +26,7 @@ extern fx32 GetShapeProjectedRadius(const CollisionShape *shape, const VecFx32 *
 static inline VecFx32 SubtractVec(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 result;
-    func_01ff9e3c(a, b, &result);
+    VEC_Subtract(a, b, &result);
     return result;
 }
 

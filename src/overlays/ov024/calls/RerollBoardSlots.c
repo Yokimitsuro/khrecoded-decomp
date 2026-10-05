@@ -36,7 +36,7 @@ typedef struct Ov024State {
 
 extern Ov024State data_ov024_020b7540;
 extern u32 func_0202a9e4(u16 range);
-extern void func_ov024_020b61a8(Ov024Board *board, int count);
+extern void FillRandomEmptySlots(Ov024Board *board, int count);
 extern void PlaceBoardBonuses(Ov024Board *board);
 extern void GenerateRandomLinks(Ov024Board *board);
 
@@ -62,7 +62,7 @@ void RerollBoardSlots(Ov024Board *board) {
     board->counter60 = 0;
     fillCount = board->fillMin + func_0202a9e4((u16)(board->fillMax - board->fillMin + 1));
     board->bonusCount = board->bonusMin + func_0202a9e4((u16)(board->bonusMax - board->bonusMin + 1));
-    func_ov024_020b61a8(data_ov024_020b7540.board, fillCount);
+    FillRandomEmptySlots(data_ov024_020b7540.board, fillCount);
 
     if (board->slotValues[2] < 0 && board->slotValues[3] < 0) {
         board->slotValues[2] = board->slotValues[4];

@@ -4,13 +4,49 @@
     .data       start:0x020c1de0 end:0x020c2540 kind:data align:32
     .bss        start:0x020c2540 end:0x020c2560 kind:bss align:32
 
+src/overlays/ov097/calls/DestroyMenuScene_020bedc8.c:
+    complete
+    .text       start:0x020bedc8 end:0x020bee1c
+
+src/overlays/ov097/calls/ToggleListMode.c:
+    complete
+    .text       start:0x020bf420 end:0x020bf46c
+
 src/overlays/ov097/calls/FreeMessageBuffers_020bf70c.c:
     complete
     .text       start:0x020bf70c end:0x020bf734
 
+src/overlays/ov097/calls/FreeGraphicsResources_020bf84c.c:
+    complete
+    .text       start:0x020bf84c end:0x020bf87c
+
+src/overlays/ov097/calls/DrawShadowedAnchoredText_020bfd88.c:
+    complete
+    .text       start:0x020bfd88 end:0x020bfdec
+
+src/overlays/ov097/calls/SetPanelSlotFlag.c:
+    complete
+    .text       start:0x020bffb4 end:0x020bfff0
+
+src/overlays/ov097/calls/TickPanelSlotAnimation.c:
+    complete
+    .text       start:0x020c022c end:0x020c0284
+
 src/overlays/ov097/calls/AlignUpTo4K_020c02f4.c:
     complete
     .text       start:0x020c02f4 end:0x020c0314
+
+src/overlays/ov097/calls/PageListUp.c:
+    complete
+    .text       start:0x020c0818 end:0x020c0870
+
+src/overlays/ov097/calls/PageListDown.c:
+    complete
+    .text       start:0x020c0870 end:0x020c08d4
+
+src/overlays/ov097/calls/ReleasePopupEntries.c:
+    complete
+    .text       start:0x020c0d40 end:0x020c0d90
 
 src/overlays/ov097/calls/ResetScrollTrack.c:
     complete
@@ -19,6 +55,10 @@ src/overlays/ov097/calls/ResetScrollTrack.c:
 src/overlays/ov097/calls/GetScrollTrackRow.c:
     complete
     .text       start:0x020c13c8 end:0x020c13e8
+
+src/overlays/ov097/calls/EaseScrollTrack.c:
+    complete
+    .text       start:0x020c13e8 end:0x020c1444
 
 src/overlays/ov097/calls/IsEntryFlagSet_020c1494.c:
     complete

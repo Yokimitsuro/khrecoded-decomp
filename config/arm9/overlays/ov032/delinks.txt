@@ -8,17 +8,33 @@ src/overlays/ov032/calls/AcknowledgeGroupTransition.c:
     complete
     .text       start:0x020ba960 end:0x020ba98c
 
+src/overlays/ov032/calls/CompleteGroupTransition.c:
+    complete
+    .text       start:0x020baaf0 end:0x020bab24
+
 src/overlays/ov032/calls/InitializeGroupAction.c:
     complete
     .text       start:0x020bb14c end:0x020bb170
+
+src/overlays/ov032/calls/FinishGroupTransition.c:
+    complete
+    .text       start:0x020bb170 end:0x020bb1cc
 
 src/overlays/ov032/calls/EnterState12WithHalfRate_020bb1cc.c:
     complete
     .text       start:0x020bb1cc end:0x020bb1e6
 
+src/overlays/ov032/calls/CommitGroupActionState.c:
+    complete
+    .text       start:0x020bb1e8 end:0x020bb218
+
 src/overlays/ov032/calls/EnterGroupActionState.c:
     complete
     .text       start:0x020bb218 end:0x020bb240
+
+src/overlays/ov032/calls/TryOpenGroupAction.c:
+    complete
+    .text       start:0x020bb240 end:0x020bb27c
 
 src/overlays/ov032/calls/FinishGroupActionState.c:
     complete
@@ -48,6 +64,10 @@ src/overlays/ov032/calls/UploadGroupPaletteSegment.c:
     complete
     .text       start:0x020bb8f4 end:0x020bb914
 
+src/overlays/ov032/calls/SetTilePixel4bpp.c:
+    complete
+    .text       start:0x020bb96c end:0x020bb9ac
+
 src/overlays/ov032/calls/DrawTileColumnPattern.c:
     complete
     .text       start:0x020bb9ac end:0x020bb9d8
@@ -60,6 +80,10 @@ src/overlays/ov032/calls/ReleaseGroupResourceBuffers.c:
     complete
     .text       start:0x020bbb44 end:0x020bbb6c
 
+src/overlays/ov032/calls/UpdateGroupMenuCounter.c:
+    complete
+    .text       start:0x020bbb6c end:0x020bbb9c
+
 src/overlays/ov032/calls/SetGroupMenuPercent.c:
     complete
     .text       start:0x020bbb9c end:0x020bbbc8
@@ -67,6 +91,10 @@ src/overlays/ov032/calls/SetGroupMenuPercent.c:
 src/overlays/ov032/calls/UploadGroupMenuTiles.c:
     complete
     .text       start:0x020bbbc8 end:0x020bbbf4
+
+src/overlays/ov032/calls/PickWeightedIndex.c:
+    complete
+    .text       start:0x020bbea4 end:0x020bbeec
 
 src/overlays/ov032/calls/SetGroupFormation.c:
     complete
@@ -84,6 +112,14 @@ src/overlays/ov032/calls/UpdateFieldObjectModeTransition.c:
     complete
     .text       start:0x020bc518 end:0x020bc60c
 
+src/overlays/ov032/calls/ScaleVectorXZ.c:
+    complete
+    .text       start:0x020bc6bc end:0x020bc6f6
+
+src/overlays/ov032/calls/ProbeGroundBelow.c:
+    complete
+    .text       start:0x020bc71c end:0x020bc770
+
 src/overlays/ov032/calls/ResetGroupOrbitPhase.c:
     complete
     .text       start:0x020bc7f4 end:0x020bc814
@@ -92,9 +128,17 @@ src/overlays/ov032/calls/ComputeGroupOrbitPosition.c:
     complete
     .text       start:0x020bc814 end:0x020bc8f4
 
+src/overlays/ov032/calls/SnapPositionToGround.c:
+    complete
+    .text       start:0x020bc8f4 end:0x020bc944
+
 src/overlays/ov032/calls/ComputePushTowardTarget.c:
     complete
     .text       start:0x020bc944 end:0x020bc9f0
+
+src/overlays/ov032/calls/AdvanceGroupSettleCounter.c:
+    complete
+    .text       start:0x020bca74 end:0x020bcaae
 
 src/overlays/ov032/calls/UpdateLedgeClimb.c:
     complete
@@ -183,6 +227,10 @@ src/overlays/ov032/calls/ScatterGroupMembers_020befdc.c:
 src/overlays/ov032/calls/UpdateGroupChaseState.c:
     complete
     .text       start:0x020bf0d8 end:0x020bf21c
+
+src/overlays/ov032/calls/InitGroupMode4.c:
+    complete
+    .text       start:0x020bf21c end:0x020bf24e
 
 src/overlays/ov032/calls/TickFieldObjectCounters.c:
     complete

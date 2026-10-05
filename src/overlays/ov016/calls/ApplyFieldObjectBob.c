@@ -11,7 +11,7 @@ typedef struct {
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern void ScaleVecFx32InPlace(VecFx32 *v, fx32 scale);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 
 void ApplyFieldObjectBob(FieldObject *obj, VecFx32 *position, fx32 *drop)
 {
@@ -33,7 +33,7 @@ void ApplyFieldObjectBob(FieldObject *obj, VecFx32 *position, fx32 *drop)
         scaled = direction;
         ScaleVecFx32InPlace(&scaled, scale);
         offset = scaled;
-        func_01ff9e0c(position, &offset, position);
+        VEC_Add(position, &offset, position);
         if (*drop < 0) {
             *drop -= offset.y;
         }

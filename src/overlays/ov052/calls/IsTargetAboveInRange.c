@@ -17,7 +17,7 @@ struct Entity {
 
 extern VecFx32 *func_ov001_0206c3f4(void *target);
 extern VecFx32 *func_ov052_020ceb74(Entity *entity);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 
 BOOL IsTargetAboveInRange(Entity *entity)
@@ -47,7 +47,7 @@ BOOL IsTargetAboveInRange(Entity *entity)
         VecFx32 *selfPos = func_ov052_020ceb74(entity);
         VecFx32 delta;
 
-        func_01ff9e3c(targetPos, selfPos, &delta);
+        VEC_Subtract(targetPos, selfPos, &delta);
         delta.y = 0;
         if (targetPos->y - selfPos->y >= 0x2000 && VEC_Mag(&delta) <= 0x6000) {
             inRange = TRUE;

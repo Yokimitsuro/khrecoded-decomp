@@ -3,9 +3,17 @@
     .data       start:0x020bab80 end:0x020babc0 kind:data align:32
     .bss        start:0x020babc0 end:0x020babe0 kind:bss align:32
 
+src/overlays/ov029/calls/ShutdownOv029SoundCtx.c:
+    complete
+    .text       start:0x020ba54c end:0x020ba588
+
 src/overlays/ov029/calls/MarkSoundCtxActive.c:
     complete
     .text       start:0x020ba5c0 end:0x020ba5e8
+
+src/overlays/ov029/calls/HandleOverlayExitFlag.c:
+    complete
+    .text       start:0x020ba728 end:0x020ba788
 
 src/overlays/ov029/calls/func_ov029_020ba9d0.c:
     complete

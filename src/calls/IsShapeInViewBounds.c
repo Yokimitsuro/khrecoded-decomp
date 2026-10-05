@@ -9,14 +9,14 @@ extern const VecFx32 *func_ov042_020bd2b0(void);
 extern const fx32 *func_ov042_020bd5b0(void);
 extern VecFx32 GetShapeCenter(const CollisionShape *shape);
 extern fx32 GetShapeProjectedRadius(const CollisionShape *shape, const VecFx32 *axis);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void func_01ff913c(const MtxFx43 *src, MtxFx33 *dst);
 
 static inline VecFx32 SubtractVec(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 out;
-    func_01ff9e3c(a, b, &out);
+    VEC_Subtract(a, b, &out);
     return out;
 }
 

@@ -5,7 +5,7 @@ extern void GX_SetBankForSubBG(u32 mask);
 extern void GX_SetBankForSubOBJExtPltt(u32 mask);
 extern void GX_SetBankForSubOBJ(u32 mask);
 extern void ResetDisplayHardware(void);
-extern void func_ov001_0206ec3c(void);
+extern void SetFieldVisiblePlanes(void);
 extern void func_ov001_0206ec80(void);
 
 void InitSubScreenVramBanks(void)
@@ -16,5 +16,5 @@ void InitSubScreenVramBanks(void)
     GX_SetBankForSubOBJ(0x100);
     GX_SetBankForSubOBJExtPltt(0);
     func_ov001_0206ec80();
-    func_ov001_0206ec3c();
+    SetFieldVisiblePlanes();
 }

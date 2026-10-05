@@ -47,7 +47,7 @@ struct Enemy {
 };
 
 extern int func_ov001_0206db8c(int index);
-extern void func_ov021_020a8e34(s32 groupId, s32 emitterIndex);
+extern void StopAndClearSoundEmitter(s32 groupId, s32 emitterIndex);
 extern void ResetAnimationTrackState(EffectParams *params);
 extern s16 func_ov021_020a8cc0(EffectParams *params, int group);
 extern u16 func_ov052_020ceb9c(Enemy *enemy);
@@ -63,7 +63,7 @@ void UpdateEnemyDownState(Enemy *enemy)
         return;
     }
     if (enemy->animId != 0xd) {
-        func_ov021_020a8e34(func_ov001_0206db8c(8), ai->soundEmitter);
+        StopAndClearSoundEmitter(func_ov001_0206db8c(8), ai->soundEmitter);
         ai->soundEmitter = -1;
         ResetAnimationTrackState(&params);
         params.kind = enemy->effectKind;

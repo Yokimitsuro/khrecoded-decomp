@@ -3,6 +3,14 @@
     .data       start:0x020a1c20 end:0x020a1c80 kind:data align:32
     .bss        start:0x020a1c80 end:0x020a1c80 kind:bss align:32
 
+src/overlays/ov007/calls/ScriptCmd_CreateEntryObjectInSlot.c:
+    complete
+    .text       start:0x020a0540 end:0x020a059a
+
+src/overlays/ov007/calls/ScriptCmd_ShowActorEmote.c:
+    complete
+    .text       start:0x020a059c end:0x020a05d6
+
 src/overlays/ov007/calls/func_ov007_020a0670.c:
     complete
     .text       start:0x020a0670 end:0x020a067e
@@ -15,13 +23,41 @@ src/overlays/ov007/calls/ScriptCmd_ForceRequest.c:
     complete
     .text       start:0x020a06b0 end:0x020a06d4
 
+src/overlays/ov007/calls/ScriptCmd_PlayValueSequence.c:
+    complete
+    .text       start:0x020a06d4 end:0x020a0732
+
+src/overlays/ov007/calls/ScriptCmd_CreateFieldTask.c:
+    complete
+    .text       start:0x020a07ac end:0x020a080e
+
+src/overlays/ov007/calls/ScriptCmd_SetActorTarget.c:
+    complete
+    .text       start:0x020a0810 end:0x020a0862
+
 src/overlays/ov007/calls/func_ov007_020a0894.c:
     complete
     .text       start:0x020a0894 end:0x020a08a2
 
+src/overlays/ov007/calls/CanTouchedObjectAct.c:
+    complete
+    .text       start:0x020a08c8 end:0x020a0928
+
+src/overlays/ov007/calls/DampBounceVelocity.c:
+    complete
+    .text       start:0x020a0adc end:0x020a0b1c
+
 src/overlays/ov007/calls/GetRaisedOwnerPosition.c:
     complete
     .text       start:0x020a1018 end:0x020a1044
+
+src/overlays/ov007/calls/FreeEntryArray.c:
+    complete
+    .text       start:0x020a1740 end:0x020a1798
+
+src/overlays/ov007/calls/SetPathTable.c:
+    complete
+    .text       start:0x020a1af4 end:0x020a1b26
 
 src/overlays/ov007/calls/ResetSlotFlags.c:
     complete

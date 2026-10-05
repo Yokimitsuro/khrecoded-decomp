@@ -42,8 +42,8 @@ typedef struct FieldObject {
 } FieldObject;
 
 extern void FieldGroup_ShufflePositions(ObjectClass *objectClass);
-extern u32 func_ov001_0207ee3c(int index);
-extern u32 func_ov001_0207ee70(int index);
+extern u32 ObjectManager_GetFirstEntryParam(int index);
+extern u32 ObjectManager_GetSecondEntryParam(int index);
 extern void *SND_RegisterSeq(int a, int b);
 extern void *func_0202c4a0(u32 fileId, u32 mode);
 extern void func_0202edb0(void *animState, void *record, void *block, int count);
@@ -54,7 +54,7 @@ extern void func_ov001_020807b4(void *model, int slotX, int slotY, int actorId, 
 extern void ApplyRecordTableEntry2(int index, int a1, int a2, int a3);
 extern ActorBody *ActorRegistry_GetEntityByIndex(int actorId);
 extern void Obj_SetPosition(ActorBody *actor, const VecFx32 *position);
-extern void func_ov001_020809f8(u16 *anim, int blendIndex, int frame);
+extern void RebindAnimTracks(u16 *anim, int blendIndex, int frame);
 extern void Flags16_ClearBit1(u16 *anim);
 extern BOOL IsObjectFlagClear(FieldObject *object);
 extern void ActorSlot_SetFlag8ByIndex(int index, BOOL enable);
@@ -80,8 +80,8 @@ void FieldObject_LoadAndPlace(FieldObject *object)
         void *block;
         objectClass->loaded = 1;
         FieldGroup_ShufflePositions(objectClass);
-        record = SND_RegisterSeq(func_ov001_0207ee3c(0xcb), 3);
-        block = func_0202c4a0(func_ov001_0207ee70(0xcb), 3);
+        record = SND_RegisterSeq(ObjectManager_GetFirstEntryParam(0xcb), 3);
+        block = func_0202c4a0(ObjectManager_GetSecondEntryParam(0xcb), 3);
         func_0202edb0(objectClass->animState, record, block, 3);
         NNSi_FndFreeFromDefaultHeap(block);
         selectJointAnimationBlend(objectClass->animState, 0, objectClass->blendTable, 0);
@@ -94,7 +94,7 @@ void FieldObject_LoadAndPlace(FieldObject *object)
     actor = ActorRegistry_GetEntityByIndex(object->actorId);
     Obj_SetPosition(actor, &object->position);
     Actor_InitRotation(actor, object->rotation);
-    func_ov001_020809f8(&actor->animFlags, object->animTrack, 0);
+    RebindAnimTracks(&actor->animFlags, object->animTrack, 0);
     Flags16_ClearBit1(&actor->animFlags);
     if (IsObjectFlagClear(object)) {
         ActorSlot_SetFlag8ByIndex(object->actorId, TRUE);

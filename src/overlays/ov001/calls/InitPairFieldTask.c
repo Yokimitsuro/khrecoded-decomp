@@ -23,7 +23,7 @@ typedef struct FieldTaskParams {
     int param;
 } FieldTaskParams;
 
-extern void func_ov001_02069e1c(FieldTask *task);
+extern void EventTrigger_EvaluateCallback(FieldTask *task);
 extern void func_ov001_02069e74(FieldTask *task);
 
 void InitPairFieldTask(FieldTask *task, const FieldTaskParams *params)
@@ -33,7 +33,7 @@ void InitPairFieldTask(FieldTask *task, const FieldTaskParams *params)
     task->id = params->id;
     task->kind = params->kind;
     task->param = params->param;
-    task->update = func_ov001_02069e1c;
+    task->update = EventTrigger_EvaluateCallback;
     task->unk_04 = 0;
     task->draw = func_ov001_02069e74;
 }

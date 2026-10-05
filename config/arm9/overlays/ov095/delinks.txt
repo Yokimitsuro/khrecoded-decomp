@@ -4,6 +4,30 @@
     .data       start:0x020c1780 end:0x020c28e0 kind:data align:32
     .bss        start:0x020c28e0 end:0x020c2900 kind:bss align:32
 
+src/overlays/ov095/calls/ShowPreviousEntry.c:
+    complete
+    .text       start:0x020bef74 end:0x020befa4
+
+src/overlays/ov095/calls/ShowNextEntry.c:
+    complete
+    .text       start:0x020befa4 end:0x020befd4
+
+src/overlays/ov095/calls/CloseEntryDetail.c:
+    complete
+    .text       start:0x020bf02c end:0x020bf064
+
+src/overlays/ov095/calls/OpenEntryDetail.c:
+    complete
+    .text       start:0x020bf064 end:0x020bf0a4
+
+src/overlays/ov095/calls/FreeEntryBuffers.c:
+    complete
+    .text       start:0x020bf814 end:0x020bf844
+
+src/overlays/ov095/calls/DrawShadowedAnchoredText_020c0000.c:
+    complete
+    .text       start:0x020c0000 end:0x020c0064
+
 src/overlays/ov095/calls/ReleaseSlotPool.c:
     complete
     .text       start:0x020c01cc end:0x020c01e8
@@ -11,6 +35,14 @@ src/overlays/ov095/calls/ReleaseSlotPool.c:
 src/overlays/ov095/calls/InitSlotPool.c:
     complete
     .text       start:0x020c01e8 end:0x020c01f8
+
+src/overlays/ov095/calls/SetGridEntryVisible.c:
+    complete
+    .text       start:0x020c01f8 end:0x020c0234
+
+src/overlays/ov095/calls/GetGridEntrySpriteData.c:
+    complete
+    .text       start:0x020c0420 end:0x020c047c
 
 src/overlays/ov095/calls/GetGridEntry.c:
     complete
@@ -35,6 +67,10 @@ src/overlays/ov095/auto/func_ov095_020c1234.c:
 src/overlays/ov095/calls/EnterPanelState2.c:
     complete
     .text       start:0x020c1238 end:0x020c1254
+
+src/overlays/ov095/calls/IsEntryFlagSet_020c1340.c:
+    complete
+    .text       start:0x020c1340 end:0x020c1374
 
 src/overlays/ov095/calls/SetEntryFlag_020c1374.c:
     complete

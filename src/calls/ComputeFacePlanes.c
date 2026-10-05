@@ -16,7 +16,7 @@ typedef struct Face {
     VecFx32 vertices[4];
 } Face;
 
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(VecFx32 *in, VecFx32 *out);
 extern void NormalizeVecFx32ToFx16(const VecFx32 *input, VecFx16 *output);
@@ -32,8 +32,8 @@ void ComputeFacePlanes(void *unused, Face *face)
     VecFx32 edge2;
     VecFx32 rawNormal;
 
-    func_01ff9e3c(v0 + 1, v0, &edge1);
-    func_01ff9e3c(v0 + 2, v0, &edge2);
+    VEC_Subtract(v0 + 1, v0, &edge1);
+    VEC_Subtract(v0 + 2, v0, &edge2);
     func_01ff9ea8(&edge1, &edge2, &rawNormal);
     VEC_Normalize(&rawNormal, &rawNormal);
     NormalizeVecFx32ToFx16(&rawNormal, &face->facePlane.normal);

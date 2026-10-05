@@ -20,7 +20,7 @@ typedef struct Actor {
 } Actor;
 
 extern const VecFx32 data_0205344c;
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void Actor_ConsumeKnockback(Actor *actor, VecFx32 *out);
 extern VecFx32 *Actor_GetModelPosition(Actor *actor);
 extern void func_ov059_020c8580(Actor *actor, VecFx32 *motion);
@@ -34,13 +34,13 @@ void Actor_ApplyFrameMotion(Actor *actor) {
     BOOL apply;
     ActorBody *body;
 
-    func_01ff9e0c(&actor->rootMotion, &actor->moveVelocity, &delta);
+    VEC_Add(&actor->rootMotion, &actor->moveVelocity, &delta);
     motion = delta;
     actor->rootMotion = data_0205344c;
     if (!(actor->statusFlags & 0x20) && !(actor->statusFlags & 0x800)) {
         Actor_ConsumeKnockback(actor, &push);
         if (push.x != 0 || push.y != 0 || push.z != 0) {
-            func_01ff9e0c(&motion, &push, &motion);
+            VEC_Add(&motion, &push, &motion);
         }
     }
     apply = FALSE;

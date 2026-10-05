@@ -21,7 +21,7 @@ extern int MSL_AbsD(int value);
 extern void ApplyScalarToVec3(VecFx32 *vec, int (*transform)(int));
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
 extern void NegateVecFx32(VecFx32 *vec);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 static inline VecFx32 AbsVec(VecFx32 vec)
 {
@@ -52,11 +52,11 @@ void GetShapeBounds(const CollisionShape *shape, ShapeBounds *bounds)
     } else {
         bounds->max = ScaledVec(AbsVec(data->axes[0]), data->halfExtent.x);
         extentY = ScaledVec(AbsVec(data->axes[1]), data->halfExtent.y);
-        func_01ff9e0c(&bounds->max, &extentY, &bounds->max);
+        VEC_Add(&bounds->max, &extentY, &bounds->max);
         extentZ = ScaledVec(AbsVec(data->axes[2]), data->halfExtent.z);
-        func_01ff9e0c(&bounds->max, &extentZ, &bounds->max);
+        VEC_Add(&bounds->max, &extentZ, &bounds->max);
     }
     bounds->min = NegatedVec(bounds->max);
-    func_01ff9e0c(&bounds->max, &data->center, &bounds->max);
-    func_01ff9e0c(&bounds->min, &data->center, &bounds->min);
+    VEC_Add(&bounds->max, &data->center, &bounds->max);
+    VEC_Add(&bounds->min, &data->center, &bounds->min);
 }

@@ -23,11 +23,11 @@ typedef struct RewardSource {
 } RewardSource;
 
 extern int func_ov018_020a37e4(u32 kind);
-extern int func_ov001_02087d18(u16 id);
+extern int StageRecord_GetLinkedEntryValue(u16 id);
 extern void func_ov001_02087988(u16 id, EventTargetInfo *info);
 extern void func_ov001_02063a80(int counter, int value);
 extern void SpawnRewardOrbs(u16 *amounts, VecFx32 *pos, u32 arg);
-extern void func_ov059_020cf0c4(VecFx32 *out, RewardSource *src);
+extern void TargetKey_GetPosition(VecFx32 *out, RewardSource *src);
 
 void SpawnSourceRewardOrbs(RewardSource *src, int multiplier, int counter) {
     EventTargetInfo info;
@@ -38,7 +38,7 @@ void SpawnSourceRewardOrbs(RewardSource *src, int multiplier, int counter) {
         amount = func_ov018_020a37e4(src->id.kind);
         break;
     case 2:
-        amount = func_ov001_02087d18(src->id.eventId);
+        amount = StageRecord_GetLinkedEntryValue(src->id.eventId);
         func_ov001_02087988(src->id.eventId, &info);
         if (info.isPartner) {
             func_ov001_02063a80(counter, amount);
@@ -53,7 +53,7 @@ void SpawnSourceRewardOrbs(RewardSource *src, int multiplier, int counter) {
         u16 amounts[6] = {0, 0, 0, 0, 0, 0};
         VecFx32 pos;
         amounts[2] = amount / 10;
-        func_ov059_020cf0c4(&pos, src);
+        TargetKey_GetPosition(&pos, src);
         SpawnRewardOrbs(amounts, &pos, 0);
     }
 }

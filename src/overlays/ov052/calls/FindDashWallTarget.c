@@ -103,18 +103,18 @@ extern BOOL func_ov021_020a7524(void *unit);
 extern int func_ov021_020a7564(void *unit);
 extern u16 func_ov052_020ceb9c(Actor *actor);
 extern void MTX_RotY33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
-extern void func_ov021_020a9180(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
+extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
 extern void InitBoxShape(CollisionShape *shape, BoxStorage *storage, const VecFx32 *center, const VecFx32 *halfExtents, const MtxFx33 *rotation);
 extern void OffsetBoxByDelta(const Box *src, Box *dst, const VecFx32 *delta);
 extern void CollisionQuery_Init(CollisionQuery *query, u16 id, void *actor, u8 kind, u8 unk3C, u8 unk3D, void *shape, QueryWorkspace *workspace, void *filter);
 extern CollisionHit *SweepWorldCollision(CollisionQuery *query);
-extern void func_ov021_020a9494(void);
+extern void AnyLinkedObjectHasStateSeven(void);
 extern void *GetWorldMeshNamedEntry(int index);
 extern BOOL func_ov001_020681e8(void *entry, u32 kind);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern u16 FX_Atan2Idx(fx32 y, fx32 x);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern CollisionShape func_0203ade0(SegmentStorage *storage, const VecFx32 *start, const VecFx32 *end, const VecFx32 *axis, fx32 length);
 
@@ -185,11 +185,11 @@ BOOL FindDashWallTarget(Actor *actor)
         center.x = 0;
         center.y = 0;
         center.z = 0x800;
-        func_ov021_020a9180(&center, actor->getOrigin != NULL ? actor->getOrigin(actor) : &actor->origin, angle, &center);
+        RotateOffsetAroundY(&center, actor->getOrigin != NULL ? actor->getOrigin(actor) : &actor->origin, angle, &center);
         delta.x = 0;
         delta.y = 0;
         delta.z = 0xb33;
-        func_ov021_020a9180(&delta, &data_0205344c, angle, &delta);
+        RotateOffsetAroundY(&delta, &data_0205344c, angle, &delta);
         halfExtents.x = 0x900;
         halfExtents.y = 0x666;
         halfExtents.z = 0x333;
@@ -199,7 +199,7 @@ BOOL FindDashWallTarget(Actor *actor)
         shapeCopy = swept;
         CollisionQuery_Init(&query, 0, actor->object, 2, 1, 1, &shapeCopy, &workspace, NULL);
         sweep = query;
-        callback.func = func_ov021_020a9494;
+        callback.func = AnyLinkedObjectHasStateSeven;
         callback.arg = actor->object;
         sweep.callback = callback;
         hit = SweepWorldCollision(&sweep);
@@ -232,7 +232,7 @@ BOOL FindDashWallTarget(Actor *actor)
                                 top = maxY;
                             }
                             wallPos.y = top - 0x1b33;
-                            func_01ff9e3c(&pos, &wallPos, &offset);
+                            VEC_Subtract(&pos, &wallPos, &offset);
                             if (VEC_DotProduct(&normal, &offset) > 0x800 && VEC_DotProduct(&facing, &offset) < -0x800) {
                                 if (wallPos.y > pos.y) {
                                     wallPos.y = pos.y;
@@ -250,14 +250,14 @@ BOOL FindDashWallTarget(Actor *actor)
         }
         dash->angle = FX_Atan2Idx(normal.x, normal.z);
         normal.y = 0;
-        func_01ffa09c(0x59a, &normal, &wallPos, &wallPos);
+        VEC_MultAdd(0x59a, &normal, &wallPos, &wallPos);
         dash->hit = *hit;
         base = pos;
         start = base;
         end = base;
         end.y = pos.y + 0xc00;
         start.y = -0x14000;
-        func_01ff9e3c(&start, &end, &diff);
+        VEC_Subtract(&start, &end, &diff);
         axis = diff;
         segmentResult = func_0203ade0(&segment, &end, &start, &axis, func_01ffaff4(&axis, &axis));
         segmentShape = segmentResult;

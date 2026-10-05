@@ -12,7 +12,7 @@ extern fx32 FX_Mul(fx32 left, fx32 right);
 extern fx32 FX_Sqrt(fx32 value);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 
 void ComputeArcTrajectory(ArcTrajectory *arc, const VecFx32 *start, const VecFx32 *target, fx32 height, fx32 duration)
 {
@@ -59,7 +59,7 @@ void ComputeArcTrajectory(ArcTrajectory *arc, const VecFx32 *start, const VecFx3
     direction.y = 0;
     direction.z = dz;
     func_01ffaff4(&direction, &direction);
-    func_01ffa09c(apexDistance, &direction, start, &apex);
+    VEC_MultAdd(apexDistance, &direction, start, &apex);
     apex.y = peakY;
     apexTime = FX_Mul(duration, FX_Div(apexDistance, distance));
     {

@@ -61,7 +61,7 @@ extern VecFx32 *func_ov001_0206dc4c(int index);
 extern void ComputeGroupOrbitPosition(GroupObject *object, VecFx32 *target);
 extern void ComputeGroupAimDelta(GroupObject *object, GroupObject *leader, VecFx32 *delta);
 extern BOOL ComputePushTowardTarget(VecFx32 *target, VecFx32 *center, s32 *phase, VecFx32 *push);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern BOOL func_ov032_020bc770(VecFx32 *position, fx32 radius, VecFx32 *out);
 extern void SpawnSoundSlot(int bank, int id, VecFx32 *position, int flags);
 extern HitResult *func_ov032_020bcac4(VecFx32 *position, int mask, fx32 radius, VecFx32 *velocity, VecFx32 *delta);
@@ -112,7 +112,7 @@ void UpdateBouncingGroupMember(GroupObject *object)
         ComputeGroupOrbitPosition(object, &target);
         if (leader == NULL) {
             if (ComputePushTowardTarget(&target, &object->position, &work->phase, &delta)) {
-                func_01ff9e0c(&object->position, &delta, &next);
+                VEC_Add(&object->position, &delta, &next);
                 if (func_ov032_020bc770(&next, 0xc00, &landing)) {
                     work->state = 0x14;
                     work->moveDelta.z = 0;
@@ -199,7 +199,7 @@ void UpdateBouncingGroupMember(GroupObject *object)
         }
         break;
     case 0x17:
-        func_01ff9e0c(func_ov001_0206dc4c(0), &work->offset, &goal);
+        VEC_Add(func_ov001_0206dc4c(0), &work->offset, &goal);
         reached = ComputePushTowardTarget(&goal, &object->position, &work->phase, &delta);
         if (object->work->leaderLink == -1) {
             if (group->settleTimer < 4) {

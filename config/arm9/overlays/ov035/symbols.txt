@@ -1,6 +1,6 @@
 func_ov035_020ba400 kind:function(thumb,size=0x78) addr:0x020ba400
 func_ov035_020ba478 kind:function(thumb,size=0xe8) addr:0x020ba478
-func_ov035_020ba560 kind:function(thumb,size=0x34) addr:0x020ba560
+TeardownMovieContext kind:function(thumb,size=0x34) addr:0x020ba560
 func_ov035_020ba594 kind:function(thumb,size=0x44) addr:0x020ba594
 func_ov035_020ba5d8 kind:function(thumb,size=0xa) addr:0x020ba5d8
 func_ov035_020ba5e4 kind:function(thumb,size=0x2c) addr:0x020ba5e4
@@ -70,7 +70,7 @@ func_ov035_020bb7a8 kind:function(thumb,size=0x20) addr:0x020bb7a8
 func_ov035_020bb7c8 kind:function(thumb,size=0x30) addr:0x020bb7c8
 QueueColorUpload kind:function(thumb,size=0x24) addr:0x020bb7f8
 func_ov035_020bb81c kind:function(thumb,size=0x88) addr:0x020bb81c
-func_ov035_020bb8a4 kind:function(thumb,size=0x40) addr:0x020bb8a4
+SetTilePixel4bpp_020bb8a4 kind:function(thumb,size=0x40) addr:0x020bb8a4
 func_ov035_020bb8e4 kind:function(thumb,size=0x2c) addr:0x020bb8e4
 func_ov035_020bb910 kind:function(thumb,size=0x7c) addr:0x020bb910
 func_ov035_020bb98c kind:function(thumb,size=0x2e0) addr:0x020bb98c

@@ -53,11 +53,11 @@ extern fx32 GetSeekStep(void);
 extern u16 AdvanceAnimationTracks(void *state, fx32 delta);
 extern fx32 Anim_GetFrame(void *anim, int channel);
 extern u16 GetLinkedAngleOffset_020cd104(Actor *actor);
-extern void func_ov021_020a9ac4(void *object, fx32 delta);
+extern void AdvanceObjectAnimationTracks(void *object, fx32 delta);
 extern void func_ov021_020aafe4(void *entry, fx32 value);
 extern void func_ov021_020a8b08(int playerIndex, fx32 delta);
 extern int func_ov001_0206db8c(int index);
-extern BOOL func_ov021_020a8d3c(int groupId, int index);
+extern BOOL IsGroupMemberActive(int groupId, int index);
 extern void func_ov021_020a7fc4(void *table, int groupId, s32 time);
 
 void Actor_AdvanceFrame(Actor *actor, fx32 delta)
@@ -119,7 +119,7 @@ void Actor_AdvanceFrame(Actor *actor, fx32 delta)
         actor->actionDone = TRUE;
     }
     for (i = 0; i < 2; i++) {
-        func_ov021_020a9ac4(actor->trackers[i], speed);
+        AdvanceObjectAnimationTracks(actor->trackers[i], speed);
     }
     func_ov021_020aafe4(actor->motion, delta);
     if (actor->onAngle != NULL) {
@@ -130,7 +130,7 @@ void Actor_AdvanceFrame(Actor *actor, fx32 delta)
     if (actor->onAngle != NULL) {
         actor->onAngle(actor, angle);
     }
-    if (actor->guardStock >= 0 && !func_ov021_020a8d3c(func_ov001_0206db8c(0), actor->guardStock)) {
+    if (actor->guardStock >= 0 && !IsGroupMemberActive(func_ov001_0206db8c(0), actor->guardStock)) {
         actor->guardStock = -1;
     }
     func_ov021_020a7fc4(actor->cueTable, actor->action, actor->actionFrame);

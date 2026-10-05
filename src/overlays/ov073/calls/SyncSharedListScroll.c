@@ -8,7 +8,7 @@ typedef struct MenuSharedState {
 
 extern MenuSharedState *func_ov039_020bc650(void);
 extern int GetPlayerLevelTier(void);
-extern void func_ov073_020c3f00(void *list, int value);
+extern void ScrollListWidgetTo(void *list, int value);
 
 void SyncSharedListScroll(void)
 {
@@ -16,6 +16,6 @@ void SyncSharedListScroll(void)
     void *list = state->list;
 
     if (state->selectedIndex == 4) {
-        func_ov073_020c3f00(list, GetPlayerLevelTier());
+        ScrollListWidgetTo(list, GetPlayerLevelTier());
     }
 }

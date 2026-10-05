@@ -7,7 +7,7 @@ typedef struct {
     u8 timer;
 } IdleToggleState;
 
-extern BOOL func_ov001_020728e4(void);
+extern BOOL IsFieldFlag13OrSessionFlagSet(void);
 extern signed char func_ov001_02068084(void);
 extern BOOL func_ov001_020645c8(u32 id);
 extern BOOL IsHudFlag7Set(void);
@@ -19,7 +19,7 @@ extern BOOL func_ov001_0207b360(u32 arg);
 extern s32 func_ov001_02063a38(void);
 
 void UpdateIdleTimerToggle(IdleToggleState *state) {
-    if (func_ov001_020728e4()) {
+    if (IsFieldFlag13OrSessionFlagSet()) {
         return;
     }
     if (func_ov001_02068084() == 5 && func_ov001_020645c8(0x3520)) {

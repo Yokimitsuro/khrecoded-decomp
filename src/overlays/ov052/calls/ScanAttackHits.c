@@ -116,7 +116,7 @@ extern u16 func_ov052_020ceb9c(Actor *actor);
 extern void func_ov021_020ac0d8(HitQuery *query);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
 extern void func_ov021_020aa5d8(AttackShape *shape, VecFx32 *vec, fx32 *single, fx32 *balance, int rawScale);
-extern void func_ov021_020a9180(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
+extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
 extern CollisionShape func_0203ad28(Sphere *storage, const VecFx32 *center, fx32 radius);
 extern void OffsetBoxByDelta(const Box *src, Box *dst, const VecFx32 *delta);
 extern void func_ov021_020ac118(HitResult *result);
@@ -164,7 +164,7 @@ BOOL ScanAttackHits(Actor *actor, AttackData *attack, int arg, SlotEntry *entry)
         offset = shape->offset;
         angle = (u16)(angle - 0x8000);
         func_ov021_020aa5d8(shape, &offset, &radius, &query.scale, owner->scale);
-        func_ov021_020a9180(&pos, func_ov052_020ceb74(actor), angle, &offset);
+        RotateOffsetAroundY(&pos, func_ov052_020ceb74(actor), angle, &offset);
     } else {
         query.scale = 0x1000;
         query.arg = arg;

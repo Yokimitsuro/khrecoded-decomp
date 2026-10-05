@@ -7,11 +7,11 @@ typedef struct ScriptOperand {
 } ScriptOperand;
 
 extern int ScriptVm_ReadOperandInt(void *context, ScriptOperand *operand);
-extern BOOL func_ov036_020bd560(int screen);
+extern BOOL IsScreenLayerLoaded(int screen);
 
 BOOL ScriptCmd_WaitScreenLayerIdle_020be118(void *context, ScriptOperand *operands)
 {
-    if (!func_ov036_020bd560(ScriptVm_ReadOperandInt(context, operands))) {
+    if (!IsScreenLayerLoaded(ScriptVm_ReadOperandInt(context, operands))) {
         return TRUE;
     }
     return FALSE;

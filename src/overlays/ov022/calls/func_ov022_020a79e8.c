@@ -1,5 +1,5 @@
-extern void func_ov022_020a78e8();
+extern void CommitMovieStateText();
 int func_ov022_020a79e8(void) {
-    func_ov022_020a78e8();
+    CommitMovieStateText();
     return 0;
 }

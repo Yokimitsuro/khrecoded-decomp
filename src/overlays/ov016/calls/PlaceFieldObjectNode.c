@@ -29,7 +29,7 @@ typedef struct {
     int frame;
 } NodePose;
 
-extern void func_ov001_020809f8(SceneNode *node, int blendIndex, int frame);
+extern void RebindAnimTracks(SceneNode *node, int blendIndex, int frame);
 extern void func_01ffb12c(SceneNode *node);
 
 void PlaceFieldObjectNode(FieldObject *obj, NodePose *pose, VecFx32 *position)
@@ -42,6 +42,6 @@ void PlaceFieldObjectNode(FieldObject *obj, NodePose *pose, VecFx32 *position)
     node->scaleX = node->scaleY;
     node->animId = pose->animId;
     node->flags |= 0x20;
-    func_ov001_020809f8(node, 0, pose->frame);
+    RebindAnimTracks(node, 0, pose->frame);
     func_01ffb12c(node);
 }

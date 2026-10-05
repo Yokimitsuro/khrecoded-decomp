@@ -62,7 +62,7 @@ extern const ShapeSweepFn gCollisionSweepDispatch[][6];
 
 extern BOOL func_01ffb328(const MeshFace *face, const CollBox *box);
 extern void func_01ffb3a0(const MeshFace *face, FaceGeometry *geometry, BOOL transformed);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 
 fx32 TestMoverAgainstFace(const MeshFace *face, CollMover *mover, CollHit *hit, const CollBox *box)
@@ -98,7 +98,7 @@ fx32 TestMoverAgainstFace(const MeshFace *face, CollMover *mover, CollHit *hit, 
                 }
             } else {
                 const VecFx32 *segment = mover->sweep.shape.data;
-                func_01ff9e3c(&segment[1], &segment[0], &difference);
+                VEC_Subtract(&segment[1], &segment[0], &difference);
                 direction = difference;
                 if (VEC_DotProduct(&direction, &hit->normal) > 0) {
                     return -FX32_ONE;

@@ -40,7 +40,7 @@ extern void *GetActorRegistry(void);
 extern int _s32_div_f(int numerator, int denominator);
 extern void Obj_SetPosition(ActorNode *node, const VecFx32 *position);
 extern int ProjectPositionDownward(void *model, void *key, VecFx32 *out);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int CollModel_GetEntryField14(void *model, void *key);
 extern void func_ov001_0208a480(Actor *actor);
 extern void ActorObject_SynchronizeConvertedParameter(Actor *actor, int angle);
@@ -80,7 +80,7 @@ int ScriptCmd_PlaceActor_0208e114(ScriptContext *context, ScriptOperand *operand
     } else {
         key = ByteCode_ResolveOperand(context, &operands[1]);
         if (ProjectPositionDownward(GetActorRegistry(), key, &ground)) {
-            func_01ff9e0c(&ground, &offset, &ground);
+            VEC_Add(&ground, &offset, &ground);
             Obj_SetPosition(node, &ground);
             angle = CollModel_GetEntryField14(GetActorRegistry(), key);
         } else {

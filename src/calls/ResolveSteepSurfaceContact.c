@@ -81,7 +81,7 @@ extern s32 func_ov001_02063a38(void);
 extern StageEntry *GetBoundedEntryField(int index);
 extern BOOL AreWallNormalsEnclosing(Actor *actor, s32 limit);
 extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern fx32 FX_Sqrt(u32 value);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
@@ -126,7 +126,7 @@ static inline VecFx32 VecCross(const VecFx32 *a, const VecFx32 *b)
 static inline VecFx32 VecAdd(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 result;
-    func_01ff9e0c(a, b, &result);
+    VEC_Add(a, b, &result);
     return result;
 }
 

@@ -7,6 +7,10 @@ src/overlays/ov028/calls/EnterState12WithHalfRate.c:
     complete
     .text       start:0x020bac0c end:0x020bac30
 
+src/overlays/ov028/calls/EnterOverlayTransition.c:
+    complete
+    .text       start:0x020bac98 end:0x020bacd0
+
 src/overlays/ov028/calls/func_ov028_020bafe8.c:
     complete
     .text       start:0x020bafe8 end:0x020bb00c
@@ -22,6 +26,10 @@ src/overlays/ov028/calls/ReleaseHandle_020bb0a4.c:
 src/overlays/ov028/calls/IsSceneUnpaused.c:
     complete
     .text       start:0x020bb17c end:0x020bb19c
+
+src/overlays/ov028/calls/SetOrClearStatusBit2.c:
+    complete
+    .text       start:0x020bb2c8 end:0x020bb30c
 
 src/overlays/ov028/data/tables/gSceneStateHandlers.c:
     complete

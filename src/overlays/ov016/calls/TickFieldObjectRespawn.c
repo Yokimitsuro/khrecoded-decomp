@@ -23,7 +23,7 @@ typedef struct {
 
 extern void DispatchFieldObjectPhase(FieldObject *obj);
 extern void func_ov016_020a6b1c(FieldObject *obj);
-extern void func_ov016_020a6ce4(FieldObject *obj, const VecFx32 *position);
+extern void SetFieldUnitPosition(FieldObject *obj, const VecFx32 *position);
 
 void TickFieldObjectRespawn(FieldObject *obj)
 {
@@ -58,7 +58,7 @@ void TickFieldObjectRespawn(FieldObject *obj)
             obj->anchorX = anchorX;
             obj->anchorSpeed = anchorSpeed;
             obj->flags |= 4;
-            func_ov016_020a6ce4(obj, &position);
+            SetFieldUnitPosition(obj, &position);
         }
     }
 }

@@ -29,7 +29,7 @@ typedef struct CollisionHit {
 } CollisionHit;
 
 extern fx32 func_01ffaff4(VecFx32 *src, VecFx32 *dst);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int FX_Mul(int left, int right);
 extern BOOL TestSphereAgainstPoint(const VecFx32 *point, const CollisionSphere *sphere, CollisionHit *hit, u32 flags);
@@ -82,7 +82,7 @@ BOOL TestSphereAgainstSegment(SphereShapeRef *sphereRef, SegmentShapeRef *segmen
     if (!(flags & 1)) {
         if (along <= length) {
             hit->depth = sphere->radius - perpendicular;
-            func_01ff9e3c(&delta, &VecFx32ScaledCopy(&direction, cosine), &delta);
+            VEC_Subtract(&delta, &VecFx32ScaledCopy(&direction, cosine), &delta);
             if (IsNearOrigin(&delta)) {
                 hit->normal = ComputeNormalizedCrossInto(&direction);
             } else {

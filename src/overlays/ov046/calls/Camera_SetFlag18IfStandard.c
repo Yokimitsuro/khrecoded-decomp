@@ -6,13 +6,13 @@ typedef struct CameraManager {
 } CameraManager;
 
 extern CameraManager *data_ov046_020c3500;
-extern void func_ov046_020c2aa4(BOOL enable);
+extern void Camera_SetStateFlag18(BOOL enable);
 
 void Camera_SetFlag18IfStandard(BOOL enable)
 {
     switch (data_ov046_020c3500->type) {
     case 0:
-        func_ov046_020c2aa4(enable);
+        Camera_SetStateFlag18(enable);
         break;
     case 1:
     case 2:

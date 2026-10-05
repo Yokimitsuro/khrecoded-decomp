@@ -7,7 +7,7 @@ typedef struct MenuSharedState {
 } MenuSharedState;
 
 extern MenuSharedState *func_ov039_020bc650(void);
-extern void func_ov073_020c3f54(void *list, u8 mode);
+extern void SetListWidgetMode(void *list, u8 mode);
 
 void SetSharedListMode(int mode)
 {
@@ -15,6 +15,6 @@ void SetSharedListMode(int mode)
     void *list = state->list;
 
     if (state->selectedIndex == 4) {
-        func_ov073_020c3f54(list, mode);
+        SetListWidgetMode(list, mode);
     }
 }

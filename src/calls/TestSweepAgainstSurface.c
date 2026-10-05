@@ -48,7 +48,7 @@ extern ShapeTestFn gCollisionTestDispatch[][6];
 extern ShapeSweepFn gCollisionSweepDispatch[][6];
 
 extern BOOL TestSweepAgainstFaceBounds(const CollTarget *target, const CollSweep *sweep, s32 mode, CollHit *hit);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 static inline BOOL BoxesOverlap(const CollBox *a, const CollBox *b)
 {
@@ -76,7 +76,7 @@ BOOL TestSweepAgainstSurface(const CollSweep *sweep, const CollTargetRef *ref, C
                         state = 1;
                     }
                 } else {
-                    func_01ff9e3c(&sweep->delta, &target->sweep.delta, &difference);
+                    VEC_Subtract(&sweep->delta, &target->sweep.delta, &difference);
                     relative = difference;
                     if (relative.x == 0 && relative.y == 0 && relative.z == 0) {
                         state = 2;

@@ -32,7 +32,7 @@ struct RewardEffect {
 
 extern EntryInfo *GetBoundedEntryField(int index);
 extern void AwardPartyGaugePoints(s32 ownerId, s32 points);
-extern BOOL func_ov021_020aebf4(RewardEffect *effect, s32 step);
+extern BOOL StepEffectAnimation(RewardEffect *effect, s32 step);
 
 void UpdateGaugeRewardEffect(RewardEffect *effect, s32 step)
 {
@@ -58,7 +58,7 @@ void UpdateGaugeRewardEffect(RewardEffect *effect, s32 step)
             }
             AwardPartyGaugePoints(effect->ownerId, points >> 12);
         }
-        if (func_ov021_020aebf4(effect, step)) {
+        if (StepEffectAnimation(effect, step)) {
             effect->timer = 0;
             effect->state = 3;
         }

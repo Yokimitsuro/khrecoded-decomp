@@ -36,15 +36,15 @@ extern s16 *ResolveTaggedValueRef(ScriptObject *obj, s16 *value);
 extern s32 TaggedValueToFixed(s16 *tagged);
 extern s32 TaggedValueToInt(s16 *tagged);
 extern void func_ov001_02091c5c(PlayerActor *actor, VecFx32 *out);
-extern u32 func_ov001_02099240(u32 id);
+extern u32 GetStageEntryParam(u32 id);
 extern fx32 Surface_GetKindValue(void *surface);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern void GetStageEntryPosition(u32 id, VecFx32 *outPosition);
 extern void MTX_Identity33_(MtxFx33 *mtx);
 extern void MTX_RotY33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
 extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *m, VecFx32 *dst);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern BOOL func_ov021_020afd48(VecFx32 *from, VecFx32 *to, VecFx32 *hitNormal, VecFx32 *hitPoint, int mode);
 
 s32 ScriptOp_PlaceAroundPlayer(ScriptObject *obj, PlaceCommand *cmd)
@@ -69,12 +69,12 @@ s32 ScriptOp_PlaceAroundPlayer(ScriptObject *obj, PlaceCommand *cmd)
     degrees = TaggedValueToFixed(angleRef);
     flags = TaggedValueToInt(flagsRef);
     angle = (u16)(((s64)degrees * 0xb60b60b60bLL + 0x80000000000LL) >> 44);
-    minDistance = func_ov001_02099240(player->stageEntry) + Surface_GetKindValue(player->surface);
+    minDistance = GetStageEntryParam(player->stageEntry) + Surface_GetKindValue(player->surface);
     if (distance < minDistance) {
         distance = minDistance;
     }
     if (flags & 1) {
-        func_01ff9e3c(&player->position, &base, &direction);
+        VEC_Subtract(&player->position, &base, &direction);
         direction.y = 0;
         func_01ffaff4(&direction, &direction);
     } else {
@@ -87,7 +87,7 @@ s32 ScriptOp_PlaceAroundPlayer(ScriptObject *obj, PlaceCommand *cmd)
         MTX_Identity33_(&rotation);
         MTX_RotY33_(&rotation, data_02053580[angle >> 4], data_02053580[(0x400 - (angle >> 4)) & 0xfff]);
         func_01ff9404(&direction, &rotation, &direction);
-        func_01ffa09c(distance, &direction, &base, &obj->position);
+        VEC_MultAdd(distance, &direction, &base, &obj->position);
         if (func_ov021_020afd48(&player->position, &obj->position, &hitNormal, &hitPoint, 1)) {
             if (flags & 2) {
                 obj->position = player->position;

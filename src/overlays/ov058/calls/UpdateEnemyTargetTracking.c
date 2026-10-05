@@ -100,11 +100,11 @@ extern Enemy *data_ov058_020d8a40;
 extern void func_ov058_020d546c(Enemy *enemy);
 extern VecFx32 *func_ov052_020ceb74(Enemy *enemy);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
-extern BOOL func_ov001_0206c3a4(TargetInfo *target);
+extern BOOL IsWaitTargetReady(TargetInfo *target);
 extern BOOL ReadActiveMenuState(TargetInfo *out);
-extern BOOL func_ov001_0206c348(TargetInfo *target, u8 team, u32 kinds);
+extern BOOL FindNearestTarget(TargetInfo *target, u8 team, u32 kinds);
 extern VecFx32 *func_ov001_0206c3f4(TargetInfo *target);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern CollisionShape func_0203ade0(SegmentStorage *storage, const VecFx32 *start, const VecFx32 *end, const VecFx32 *axis, fx32 length);
 extern void CollisionQuery_Init(CollisionQuery *query, u16 id, void *actor, u8 kind, u8 unk3C, u8 unk3D, void *shape, QueryWorkspace *workspace, void *filter);
@@ -177,7 +177,7 @@ void UpdateEnemyTargetTracking(Enemy *enemy, AttackResult *result)
     if (busy) {
         return;
     }
-    if (!func_ov001_0206c3a4(target)) {
+    if (!IsWaitTargetReady(target)) {
         if (ReadActiveMenuState(&info)) {
             if ((info.kind == 1 && ai->targetKind == 5) || (info.kind == 3 && ai->targetKind == 6)) {
                 *target = info;
@@ -192,7 +192,7 @@ void UpdateEnemyTargetTracking(Enemy *enemy, AttackResult *result)
         if (ai->targetKind == 5) {
             kinds = 2;
         }
-        if (!func_ov001_0206c348(&enemy->target, enemy->team, kinds)) {
+        if (!FindNearestTarget(&enemy->target, enemy->team, kinds)) {
             func_ov058_020d546c(enemy);
             return;
         }
@@ -201,7 +201,7 @@ void UpdateEnemyTargetTracking(Enemy *enemy, AttackResult *result)
     origin = enemy->getOrigin != NULL ? enemy->getOrigin(enemy) : &enemy->origin;
     start = *origin;
     end = *targetPos;
-    func_01ff9e3c(&end, &start, &diff);
+    VEC_Subtract(&end, &start, &diff);
     axis = diff;
     segmentResult = func_0203ade0(&segment, &start, &end, &axis, func_01ffaff4(&axis, &axis));
     segmentShape = segmentResult;
@@ -212,8 +212,8 @@ void UpdateEnemyTargetTracking(Enemy *enemy, AttackResult *result)
         if (VEC_Distance(&segmentShape.data[1], origin) < 0x16cd) {
             result->flags |= 2;
         } else {
-            func_01ff9e3c(targetPos, origin, &toTarget);
-            func_01ff9e3c(func_ov052_020ceb74(data_ov058_020d8a40), origin, &toPlayer);
+            VEC_Subtract(targetPos, origin, &toTarget);
+            VEC_Subtract(func_ov052_020ceb74(data_ov058_020d8a40), origin, &toPlayer);
             toPlayer.y = 0;
             toTarget.y = 0;
             cross = (fx32)(((s64)toTarget.x * toPlayer.z + 0x800) >> 12) - (fx32)(((s64)toTarget.z * toPlayer.x + 0x800) >> 12);

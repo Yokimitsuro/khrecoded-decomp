@@ -44,7 +44,7 @@ typedef struct {
     MarkerOwner *owner;
 } MarkerContext;
 
-extern GroupMember *func_ov021_020a8f0c(int groupId, int index);
+extern GroupMember *GetGroupMemberData(int groupId, int index);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern int nextRandom12(void);
@@ -60,7 +60,7 @@ void SpawnGroupHitMarker(SceneActor *actor, HitEvent *event, MarkerContext *cont
     if ((event->flags & 1) || (event->flags & 0x20) || event->kind == 1 || owner->groupId == NULL) {
         return;
     }
-    member = func_ov021_020a8f0c(*owner->groupId, 0);
+    member = GetGroupMemberData(*owner->groupId, 0);
     ResetAnimationTrackState(&request);
     request.id = actor->markerId;
     request.unk_25 = 0;

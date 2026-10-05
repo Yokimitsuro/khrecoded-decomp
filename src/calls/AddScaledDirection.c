@@ -1,13 +1,13 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 
-void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 
 VecFx32 AddScaledDirection(fx32 scale, const VecFx32 *direction, const VecFx32 *origin, BOOL verticalOnly)
 {
     if (!verticalOnly) {
         VecFx32 result;
-        func_01ffa09c(scale, direction, origin, &result);
+        VEC_MultAdd(scale, direction, origin, &result);
         return result;
     } else {
         /* Only the vertical component is applied */

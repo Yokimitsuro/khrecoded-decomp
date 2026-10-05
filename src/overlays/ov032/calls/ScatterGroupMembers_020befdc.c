@@ -29,7 +29,7 @@ extern void *NNSi_FndAllocFromDefaultHeap(u32 size);
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
 extern u32 random_next_scaled(u32 upperBound);
 extern BOOL func_ov032_020beed8(int index, VecFx32 *out);
-extern void func_ov016_020a6ce4(GroupObject *object, const VecFx32 *position);
+extern void SetFieldUnitPosition(GroupObject *object, const VecFx32 *position);
 
 void ScatterGroupMembers_020befdc(GroupObject *object)
 {
@@ -59,7 +59,7 @@ void ScatterGroupMembers_020befdc(GroupObject *object)
         work->state = 0;
         group->unk_38 = 0;
         count--;
-        func_ov016_020a6ce4(member, &spots[spot]);
+        SetFieldUnitPosition(member, &spots[spot]);
     }
     NNSi_FndFreeFromDefaultHeap(spots);
     group->flags = (group->flags | 4) & ~1;

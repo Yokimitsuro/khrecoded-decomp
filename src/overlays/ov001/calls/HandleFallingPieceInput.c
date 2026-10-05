@@ -24,7 +24,7 @@ typedef struct {
     u32 targetCount;
 } FallingContext;
 
-extern void func_ov001_0207e0e0(int phase);
+extern void LoadMenuPhaseGraphics(int phase);
 extern void func_ov001_0207e118(int hitCount);
 
 int HandleFallingPieceInput(FallingContext *context, u32 keys)
@@ -58,7 +58,7 @@ int HandleFallingPieceInput(FallingContext *context, u32 keys)
         context->hitCount++;
         func_ov001_0207e118(context->hitCount);
         if (context->hitCount == context->targetCount) {
-            func_ov001_0207e0e0(0);
+            LoadMenuPhaseGraphics(0);
             result = 1;
             for (i = 0; i < 6; i++) {
                 piece = &context->pieces[i];
@@ -66,7 +66,7 @@ int HandleFallingPieceInput(FallingContext *context, u32 keys)
                 context->spawnTimer = 0x7fffffff;
             }
         } else {
-            func_ov001_0207e0e0(1);
+            LoadMenuPhaseGraphics(1);
             context->fallSpeed += 0x4cd;
             if (piece->isMirrored != 0) {
                 result = 2;
@@ -75,7 +75,7 @@ int HandleFallingPieceInput(FallingContext *context, u32 keys)
             }
         }
     } else {
-        func_ov001_0207e0e0(2);
+        LoadMenuPhaseGraphics(2);
         result = 4;
     }
     return result;

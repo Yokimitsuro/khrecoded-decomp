@@ -1,4 +1,4 @@
-func_ov088_020beac0 kind:function(arm,size=0x4c) addr:0x020beac0
+ConfigureOverlay088Display kind:function(arm,size=0x4c) addr:0x020beac0
 func_ov088_020beb0c kind:function(arm,size=0xdc) addr:0x020beb0c
 func_ov088_020bebe8 kind:function(arm,size=0x14) addr:0x020bebe8
 func_ov088_020bebfc kind:function(arm,size=0x118) addr:0x020bebfc

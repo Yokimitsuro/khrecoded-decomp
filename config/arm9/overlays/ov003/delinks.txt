@@ -3,6 +3,14 @@
     .data       start:0x020650c0 end:0x020658c0 kind:data align:32
     .bss        start:0x020658c0 end:0x020658e0 kind:bss align:32
 
+src/overlays/ov003/calls/MovieScene_UpdateGlobals.c:
+    complete
+    .text       start:0x02063a9c end:0x02063ae0
+
+src/overlays/ov003/calls/MovieScene_BeginFade.c:
+    complete
+    .text       start:0x02063fa8 end:0x02063fe4
+
 src/overlays/ov003/calls/MovieScene_IsAnyStateTwo.c:
     complete
     .text       start:0x02063fe4 end:0x02064008
@@ -10,6 +18,10 @@ src/overlays/ov003/calls/MovieScene_IsAnyStateTwo.c:
 src/overlays/ov003/calls/MovieScene_IsFadeDone.c:
     complete
     .text       start:0x02064008 end:0x02064028
+
+src/overlays/ov003/calls/MovieScene_LoadSlotBuffer.c:
+    complete
+    .text       start:0x02064110 end:0x02064154
 
 src/overlays/ov003/auto/func_ov003_020642fc.c:
     complete
@@ -47,6 +59,10 @@ src/overlays/ov003/calls/func_ov003_02064850.c:
     complete
     .text       start:0x02064850 end:0x02064862
 
+src/overlays/ov003/calls/openVideoStreamFromHeader.c:
+    complete
+    .text       start:0x02064934 end:0x02064974
+
 src/overlays/ov003/calls/func_ov003_02064974.c:
     complete
     .text       start:0x02064974 end:0x02064980
@@ -54,6 +70,14 @@ src/overlays/ov003/calls/func_ov003_02064974.c:
 src/overlays/ov003/calls/SubtitleText_BeginDraw.c:
     complete
     .text       start:0x02064980 end:0x020649a0
+
+src/overlays/ov003/calls/advanceMovieStreamWindow.c:
+    complete
+    .text       start:0x020649a8 end:0x020649fc
+
+src/overlays/ov003/calls/IsMovieStreamReady.c:
+    complete
+    .text       start:0x02064fd8 end:0x02065028
 
 src/overlays/ov003/calls/SubtitleText_FlushUpload.c:
     complete

@@ -1,10 +1,10 @@
 func_ov083_020beac0 kind:function(thumb,size=0x47c) addr:0x020beac0
 func_ov083_020bef3c kind:function(thumb,size=0x3d4) addr:0x020bef3c
-func_ov083_020bf310 kind:function(thumb,size=0x46) addr:0x020bf310
+ReleaseScreenResources_020bf310 kind:function(thumb,size=0x46) addr:0x020bf310
 func_ov083_020bf358 kind:function(thumb,size=0x4e) addr:0x020bf358
 func_ov083_020bf3a8 kind:function(thumb,size=0x1b4) addr:0x020bf3a8
-func_ov083_020bf55c kind:function(thumb,size=0x2e) addr:0x020bf55c
-func_ov083_020bf58c kind:function(thumb,size=0x40) addr:0x020bf58c
+DrawTableString kind:function(thumb,size=0x2e) addr:0x020bf55c
+DrawFormattedText kind:function(thumb,size=0x40) addr:0x020bf58c
 func_ov083_020bf5cc kind:function(thumb,size=0x20) addr:0x020bf5cc
 func_ov083_020bf5ec kind:function(thumb,size=0x2e) addr:0x020bf5ec
 func_ov083_020bf61c kind:function(thumb,size=0x18) addr:0x020bf61c

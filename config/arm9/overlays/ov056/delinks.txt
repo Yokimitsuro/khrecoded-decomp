@@ -36,6 +36,10 @@ src/overlays/ov056/calls/ReleaseEffectPool_020d450c.c:
     complete
     .text       start:0x020d450c end:0x020d451c
 
+src/overlays/ov056/calls/SpawnEffectOnEvent.c:
+    complete
+    .text       start:0x020d451c end:0x020d4554
+
 src/overlays/ov056/calls/SpawnRecordedProjectile.c:
     complete
     .text       start:0x020d4708 end:0x020d4800
@@ -43,6 +47,14 @@ src/overlays/ov056/calls/SpawnRecordedProjectile.c:
 src/overlays/ov056/calls/UpdateSweepProjectile.c:
     complete
     .text       start:0x020d4800 end:0x020d48f8
+
+src/overlays/ov056/calls/UpdateActiveEntries.c:
+    complete
+    .text       start:0x020d4a60 end:0x020d4aa0
+
+src/overlays/ov056/calls/SpawnHitEffectOnEvent.c:
+    complete
+    .text       start:0x020d4ab0 end:0x020d4b08
 
 src/overlays/ov056/calls/StartGaugeRewardEffect.c:
     complete
@@ -64,9 +76,17 @@ src/overlays/ov056/calls/InvokeRecordFilter.c:
     complete
     .text       start:0x020d5140 end:0x020d5152
 
+src/overlays/ov056/calls/VisitRecordInRadius.c:
+    complete
+    .text       start:0x020d5154 end:0x020d5182
+
 src/overlays/ov056/calls/ForEachRecordInRadius.c:
     complete
     .text       start:0x020d5184 end:0x020d51ac
+
+src/overlays/ov056/calls/ApplyAreaHitInRadius.c:
+    complete
+    .text       start:0x020d5328 end:0x020d5368
 
 src/overlays/ov056/calls/UpdateSpinAttackUnit.c:
     complete
@@ -91,6 +111,10 @@ src/overlays/ov056/calls/SpawnIndexedProjectile.c:
 src/overlays/ov056/calls/UpdateHomingArcProjectile.c:
     complete
     .text       start:0x020d5f9c end:0x020d63dc
+
+src/overlays/ov056/calls/PlayTrackOnHitEvent.c:
+    complete
+    .text       start:0x020d63dc end:0x020d641c
 
 src/overlays/ov056/calls/FreeSlotBuffers_020d641c.c:
     complete
@@ -167,3 +191,39 @@ src/overlays/ov056/calls/StopSlotsAndClearActive.c:
 src/overlays/ov056/calls/AdvanceLinkedHitUnit.c:
     complete
     .text       start:0x020d7c6c end:0x020d7ce4
+
+src/overlays/ov056/calls/ReleaseSourceByKind.c:
+    complete
+    .text       start:0x020d7d40 end:0x020d7d74
+
+src/overlays/ov056/calls/DispatchSourceKindHandler.c:
+    complete
+    .text       start:0x020d7d74 end:0x020d7da4
+
+src/overlays/ov056/calls/DispatchModeHandler.c:
+    complete
+    .text       start:0x020d7da4 end:0x020d7dd4
+
+src/overlays/ov056/calls/DispatchSourceKindEvent.c:
+    complete
+    .text       start:0x020d7dd4 end:0x020d7e08
+
+src/overlays/ov056/calls/AllocModelSlots.c:
+    complete
+    .text       start:0x020d7e08 end:0x020d7e52
+
+src/overlays/ov056/calls/FreeModelSlots.c:
+    complete
+    .text       start:0x020d7e54 end:0x020d7e94
+
+src/overlays/ov056/calls/AdvanceModelSlotAnimations.c:
+    complete
+    .text       start:0x020d7e94 end:0x020d7edc
+
+src/overlays/ov056/calls/StartFreeModelSlot.c:
+    complete
+    .text       start:0x020d7edc end:0x020d7f38
+
+src/overlays/ov056/calls/DrawModelSlots.c:
+    complete
+    .text       start:0x020d7f38 end:0x020d7f6a

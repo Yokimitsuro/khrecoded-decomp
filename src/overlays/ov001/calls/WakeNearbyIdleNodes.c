@@ -24,7 +24,7 @@ extern SceneNodeList *data_ov001_020a0484;
 extern BOOL func_ov001_020642d0(void);
 extern VecFx32 *func_ov001_0206dc4c(int target);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
-extern void func_ov001_0206604c(SceneNode *node, int target);
+extern void SetNodeStateRandomDir(SceneNode *node, int target);
 
 void WakeNearbyIdleNodes(int target)
 {
@@ -43,7 +43,7 @@ void WakeNearbyIdleNodes(int target)
                 }
             }
             if (inRange) {
-                func_ov001_0206604c(node, target);
+                SetNodeStateRandomDir(node, target);
             }
         }
     }

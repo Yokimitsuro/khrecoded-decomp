@@ -17,12 +17,12 @@ struct Panel {
 };
 
 extern void func_ov001_02085f04(Panel *panel);
-extern void func_ov001_02085f08(Panel *panel);
+extern void SelectPanelItemEntry(Panel *panel);
 
 void SetupPanelHandlers(Panel *panel)
 {
     panel->owner->scrollSpeed = 0x1800;
     panel->update = func_ov001_02085f04;
-    panel->draw = func_ov001_02085f08;
+    panel->draw = SelectPanelItemEntry;
     panel->state = 0;
 }

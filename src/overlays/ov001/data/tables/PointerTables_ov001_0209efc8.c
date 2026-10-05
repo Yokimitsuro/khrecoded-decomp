@@ -2,7 +2,7 @@
 
 extern void func_ov001_0207bab4(void);
 extern void func_ov001_0207bef4(void);
-extern void func_ov001_0207c19c(void); /* DrawCounterHudParts */
+extern void DrawCounterHudParts(void); /* DrawCounterHudParts */
 extern void func_ov001_0207c1d0(void); /* RefreshCounterDigits */
 extern void func_ov001_0207c2b0(void);
 extern void func_ov001_0207cbd8(void); /* RunLogoFadeSequence */
@@ -14,7 +14,7 @@ void (*gCounterHudStateHandlers[6])(void) = {
     NULL,
     func_ov001_0207bab4,
     func_ov001_0207bef4,
-    func_ov001_0207c19c, /* DrawCounterHudParts */
+    DrawCounterHudParts, /* DrawCounterHudParts */
     func_ov001_0207c1d0, /* RefreshCounterDigits */
     func_ov001_0207c2b0,
 };

@@ -13,7 +13,7 @@ typedef struct {
     VecFx32 velocity;
 } FieldObject;
 
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern fx32 FX_Sqrt(fx32 value);
@@ -42,7 +42,7 @@ BOOL PushFieldObject(FieldObject *obj, const VecFx32 *push)
         impulse = *push;
         velocity.y = 0;
         impulse.y = 0;
-        func_01ff9e0c(&velocity, &impulse, &sum);
+        VEC_Add(&velocity, &impulse, &sum);
         if (sum.x != 0 || sum.y != 0 || sum.z != 0) {
             VEC_Normalize(&sum, &direction);
             impulseSq = VEC_DotProduct(&impulse, &impulse);

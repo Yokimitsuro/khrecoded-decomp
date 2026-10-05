@@ -12,6 +12,10 @@ src/overlays/ov039/calls/SetMenuButtonsEnabled.c:
     complete
     .text       start:0x020baea4 end:0x020baf3c
 
+src/overlays/ov039/calls/InitThenDispatchTwoHandlers.c:
+    complete
+    .text       start:0x020bb328 end:0x020bb35c
+
 src/overlays/ov039/calls/UpdateExitSequence.c:
     complete
     .text       start:0x020bb35c end:0x020bb42c
@@ -28,6 +32,10 @@ src/overlays/ov039/calls/ClearWidgetOnScreenLayer.c:
     complete
     .text       start:0x020bb750 end:0x020bb774
 
+src/overlays/ov039/calls/FreeSlotPair.c:
+    complete
+    .text       start:0x020bb844 end:0x020bb8a8
+
 src/overlays/ov039/calls/StartSubScene.c:
     complete
     .text       start:0x020bbf98 end:0x020bc038
@@ -35,6 +43,14 @@ src/overlays/ov039/calls/StartSubScene.c:
 src/overlays/ov039/calls/RuntimeState_SetCondition.c:
     complete
     .text       start:0x020bc05c end:0x020bc074
+
+src/overlays/ov039/calls/SetPrimaryElementEnabled.c:
+    complete
+    .text       start:0x020bc074 end:0x020bc0a4
+
+src/overlays/ov039/calls/SetSecondaryElementEnabled.c:
+    complete
+    .text       start:0x020bc0a4 end:0x020bc0f4
 
 src/overlays/ov039/calls/SetScreenLayerDirty.c:
     complete
@@ -60,9 +76,37 @@ src/overlays/ov039/calls/SetStateFlagBits.c:
     complete
     .text       start:0x020bc6a8 end:0x020bc6d0
 
+src/overlays/ov039/calls/AllocateListEntry.c:
+    complete
+    .text       start:0x020bc6d0 end:0x020bc72c
+
+src/overlays/ov039/calls/DestroyAllListEntries.c:
+    complete
+    .text       start:0x020bc7a8 end:0x020bc800
+
 src/overlays/ov039/calls/RuntimeState_SetFlags.c:
     complete
     .text       start:0x020bc800 end:0x020bc818
+
+src/overlays/ov039/calls/SetSelectionIfChanged_020bc94c.c:
+    complete
+    .text       start:0x020bc94c end:0x020bc99c
+
+src/overlays/ov039/calls/IsStatePhase4.c:
+    complete
+    .text       start:0x020bca50 end:0x020bca80
+
+src/overlays/ov039/calls/IsStatePhaseActive.c:
+    complete
+    .text       start:0x020bca80 end:0x020bcac0
+
+src/overlays/ov039/calls/IsStatePhase3.c:
+    complete
+    .text       start:0x020bcac0 end:0x020bcaf0
+
+src/overlays/ov039/calls/IsStatePhaseIdle.c:
+    complete
+    .text       start:0x020bcaf0 end:0x020bcb20
 
 src/overlays/ov039/calls/RuntimeState_SetObjectId.c:
     complete
@@ -76,13 +120,33 @@ src/overlays/ov039/calls/func_ov039_020bcdd8.c:
     complete
     .text       start:0x020bcdd8 end:0x020bcdf0
 
+src/overlays/ov039/calls/UnloadAllSubOverlays.c:
+    complete
+    .text       start:0x020bcdf0 end:0x020bce54
+
+src/overlays/ov039/calls/LoadPrimarySubOverlay.c:
+    complete
+    .text       start:0x020bce54 end:0x020bce8c
+
+src/overlays/ov039/calls/UnloadPrimarySubOverlay.c:
+    complete
+    .text       start:0x020bce8c end:0x020bced0
+
 src/overlays/ov039/calls/func_ov039_020bced0.c:
     complete
     .text       start:0x020bced0 end:0x020bcf10
 
+src/overlays/ov039/calls/LoadSecondarySubOverlay.c:
+    complete
+    .text       start:0x020bcf70 end:0x020bcfa8
+
 src/overlays/ov039/calls/func_ov039_020bcfec.c:
     complete
     .text       start:0x020bcfec end:0x020bd02c
+
+src/overlays/ov039/calls/CloseSecondarySubOverlay.c:
+    complete
+    .text       start:0x020bd02c end:0x020bd074
 
 src/overlays/ov039/calls/func_ov039_020bd0a4.c:
     complete

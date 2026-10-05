@@ -32,8 +32,8 @@ extern FieldContext data_ov021_020b56c4;
 extern const s16 data_02053580[];
 
 extern u16 *GetStageObjectHandle(u32 id);
-extern SpawnArea *func_ov001_0209c334(u32 index);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern SpawnArea *GetLargeTableEntry(u32 index);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern s32 func_ov001_02063a38(void);
@@ -41,7 +41,7 @@ extern u32 random_next_scaled(u32 upperBound);
 extern u16 FX_Atan2Idx(int y, int x);
 extern int nextRandom12(void);
 extern fx32 FX_Mul(fx32 a, fx32 b);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 
 s32 PickSpawnPointNearPlayer(SpawnTarget *target)
 {
@@ -59,8 +59,8 @@ s32 PickSpawnPointNearPlayer(SpawnTarget *target)
     if (player == NULL) {
         return 0;
     }
-    area = func_ov001_0209c334(*GetStageObjectHandle(stage->stageObjectId));
-    func_01ff9e3c(&player->position, &area->center, &offset);
+    area = GetLargeTableEntry(*GetStageObjectHandle(stage->stageObjectId));
+    VEC_Subtract(&player->position, &area->center, &offset);
     distance = VEC_Mag(&offset);
     if (func_ov001_02063a38() != 4) {
         int angle;
@@ -78,7 +78,7 @@ s32 PickSpawnPointNearPlayer(SpawnTarget *target)
         direction.x = data_02053580[index];
         direction.y = 0;
         direction.z = data_02053580[(0x400 - index) & 0xfff];
-        func_01ffa09c((area->radius >> 1) + FX_Mul(area->radius >> 1, nextRandom12()), &direction, &area->center, &target->position);
+        VEC_MultAdd((area->radius >> 1) + FX_Mul(area->radius >> 1, nextRandom12()), &direction, &area->center, &target->position);
     } else {
         target->position = area->center;
         target->position.z = 0;

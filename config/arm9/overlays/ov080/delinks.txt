@@ -28,6 +28,10 @@ src/overlays/ov080/calls/HideSaveSlotsShowPrompt.c:
     complete
     .text       start:0x020c54d8 end:0x020c55a4
 
+src/overlays/ov080/calls/LoadSlotIntoGame.c:
+    complete
+    .text       start:0x020c58e4 end:0x020c5944
+
 src/overlays/ov080/calls/SelectSlotOnUp.c:
     complete
     .text       start:0x020c5944 end:0x020c5988
@@ -51,6 +55,10 @@ src/overlays/ov080/calls/ConfirmSaveSelectStep.c:
 src/overlays/ov080/calls/CancelSaveSelectStep.c:
     complete
     .text       start:0x020c5c28 end:0x020c5cd4
+
+src/overlays/ov080/calls/ConfirmSelectedSlot.c:
+    complete
+    .text       start:0x020c5cd4 end:0x020c5d28
 
 src/overlays/ov080/auto/func_ov080_020c5d28.c:
     complete

@@ -1,14 +1,14 @@
 #include "nitro/types.h"
 
 extern s32 data_ov001_0209f2e8;
-extern s32 func_ov001_0209c968(void);
+extern s32 FindFirstActiveStageEvent(void);
 
 s32 ForwardToActiveServiceWithResult(void)
 {
     s32 result;
 
     if (data_ov001_0209f2e8 != -1) {
-        result = func_ov001_0209c968();
+        result = FindFirstActiveStageEvent();
         return result;
     }
     return 0;

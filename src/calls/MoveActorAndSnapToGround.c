@@ -156,8 +156,8 @@ typedef struct CollQuery {
 } CollQuery;
 
 extern void *GetActorRegistry(void);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern fx32 FX_Sqrt(u32 value);
@@ -274,7 +274,7 @@ static inline VecFx32 MakeVec(fx32 x, fx32 y, fx32 z)
 static inline VecFx32 VecAdd(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 result;
-    func_01ff9e0c(a, b, &result);
+    VEC_Add(a, b, &result);
     return result;
 }
 
@@ -286,7 +286,7 @@ static inline VecFx32 VecRejectAxis(const VecFx32 *v, const VecFx32 *axis, fx32 
     scaled = *axis;
     ScaleVecFx32InPlace(&scaled, dot);
     projection = scaled;
-    func_01ff9e3c(v, &projection, &result);
+    VEC_Subtract(v, &projection, &result);
     return result;
 }
 
@@ -329,7 +329,7 @@ static inline CollShape MakeCapsuleShape(Capsule *capsule, const VecFx32 *start,
     CollShape shape;
     VecFx32 offset;
     VecFx32 direction;
-    func_01ff9e3c(end, start, &offset);
+    VEC_Subtract(end, start, &offset);
     direction = offset;
     InitCapsuleShape(&shape, capsule, start, end, &direction, func_01ffaff4(&direction, &direction), radius);
     return shape;
@@ -449,7 +449,7 @@ void MoveActorAndSnapToGround(VecFx32 *pos, VecFx32 *vel, CollActor *actor, u32 
             *vel = VecRejectAxis(vel, gravity, axisDot);
         }
         appliedVel = *vel;
-        func_01ff9e0c(pos, vel, pos);
+        VEC_Add(pos, vel, pos);
         if (actor->flags & 4) {
             actor->lastPos = *pos;
             actor->lastHit = *hit;
@@ -467,7 +467,7 @@ void MoveActorAndSnapToGround(VecFx32 *pos, VecFx32 *vel, CollActor *actor, u32 
         RefreshActorMeshCache(world, actor, &query, &sweep, vel);
     } else {
         *vel = sweep.delta;
-        func_01ff9e0c(pos, vel, pos);
+        VEC_Add(pos, vel, pos);
         appliedVel = *vel;
     }
 

@@ -7,12 +7,12 @@ typedef struct StageOwner {
     u16 linkedActorId;
 } StageOwner;
 
-extern StageActor *func_ov001_0209c068(int id);
+extern StageActor *GetStageActor(int id);
 
 StageActor *GetLinkedStageActor(StageOwner *owner)
 {
     if (owner->linkedActorId == 0) {
         return NULL;
     }
-    return func_ov001_0209c068((s16)owner->linkedActorId);
+    return GetStageActor((s16)owner->linkedActorId);
 }

@@ -54,7 +54,7 @@ typedef struct {
 } RewardEffect;
 
 extern EntryInfo *GetBoundedEntryField(int index);
-extern void func_ov021_020aef84(RewardModel *model, void *blendTable, int blendIndex);
+extern void RebindAnimTracks_020aef84(RewardModel *model, void *blendTable, int blendIndex);
 
 void StartGaugeRewardEffect(RewardEffect *effect, void *arg, RewardRequest *request)
 {
@@ -70,7 +70,7 @@ void StartGaugeRewardEffect(RewardEffect *effect, void *arg, RewardRequest *requ
     angle = info->facing - 0x8000;
     pos = info->position;
     pos.y += 0x119a;
-    func_ov021_020aef84(&effect->model, effect->tracks, 0);
+    RebindAnimTracks_020aef84(&effect->model, effect->tracks, 0);
     effect->model.position = pos;
     effect->model.rotY = angle + 0x8000;
     effect->model.flags |= 0x20;

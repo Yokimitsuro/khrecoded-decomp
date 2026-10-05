@@ -58,11 +58,11 @@ typedef struct Projectile {
 extern const VecFx32 data_0205344c;
 extern const s16 data_02053580[];
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern CollisionShape func_0203ade0(ShapeStorage *storage, const VecFx32 *start, const VecFx32 *end, const VecFx32 *axis, fx32 length);
 extern void CollisionQuery_Init(CollisionQuery *query, u16 id, void *actor, u8 kind, u8 unk3C, u8 unk3D, void *shape, QueryWorkspace *workspace, void *filter);
 extern void NegateVecFx32(VecFx32 *vec);
@@ -81,7 +81,7 @@ static inline void BuildSegmentShape(CollisionShape *shape, ShapeStorage *storag
     VecFx32 axis;
     VecFx32 delta;
     fx32 length;
-    func_01ff9e3c(top, position, &delta);
+    VEC_Subtract(top, position, &delta);
     axis = delta;
     length = func_01ffaff4(&axis, &axis);
     *shape = func_0203ade0(storage, position, top, &axis, length);
@@ -99,7 +99,7 @@ static inline VecFx32 MakeVec(fx32 x, fx32 y, fx32 z)
 static inline VecFx32 AddVec(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 result;
-    func_01ff9e0c(a, b, &result);
+    VEC_Add(a, b, &result);
     return result;
 }
 
@@ -167,7 +167,7 @@ void BounceProjectileOffWall(ContactRef *contact, const VecFx32 *normal, Project
     }
     if (bounce) {
         fx32 dot = VEC_DotProduct(&projectile->drift, normal);
-        func_01ffa09c(-(dot + FX_Mul(dot, 0xccd)), normal, &projectile->drift, &projectile->drift);
+        VEC_MultAdd(-(dot + FX_Mul(dot, 0xccd)), normal, &projectile->drift, &projectile->drift);
     }
 }
 

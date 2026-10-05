@@ -3,7 +3,7 @@
 extern void func_ov001_02093604(void); /* FSi_CloseFileCommand */
 extern void func_ov001_02093608(void); /* StartGroupStageScript */
 extern void func_ov001_02093688(void); /* UpdateProximityTrigger */
-extern void func_ov001_020938a4(void); /* RunLeaderScriptSlotCommand */
+extern void RunLeaderScriptSlotCommand(void); /* RunLeaderScriptSlotCommand */
 extern void func_ov001_020938fc(void); /* WaitStageActorScript */
 extern void func_ov001_02093998(void); /* StartStageActorScript */
 extern void func_ov001_02093a2c(void); /* FinishStageEventStep */
@@ -17,7 +17,7 @@ void (*gStageScriptStateHandlers[12])(void) = {
     func_ov001_02093604, /* FSi_CloseFileCommand */
     func_ov001_02093608, /* StartGroupStageScript */
     func_ov001_02093688, /* UpdateProximityTrigger */
-    func_ov001_020938a4, /* RunLeaderScriptSlotCommand */
+    RunLeaderScriptSlotCommand, /* RunLeaderScriptSlotCommand */
     func_ov001_020938fc, /* WaitStageActorScript */
     func_ov001_02093998, /* StartStageActorScript */
     func_ov001_02093a2c, /* FinishStageEventStep */

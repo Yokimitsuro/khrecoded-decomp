@@ -8,6 +8,10 @@ src/overlays/ov010/calls/ScriptCmd_SpawnObjectIntoSlot.c:
     complete
     .text       start:0x020a0654 end:0x020a067e
 
+src/overlays/ov010/calls/ScriptCmd_CreateObjectAtOrigin.c:
+    complete
+    .text       start:0x020a0680 end:0x020a06ba
+
 src/overlays/ov010/auto/func_ov010_020a07b4.c:
     complete
     .text       start:0x020a07b4 end:0x020a07b6
@@ -15,6 +19,14 @@ src/overlays/ov010/auto/func_ov010_020a07b4.c:
 src/overlays/ov010/auto/func_ov010_020a0830.c:
     complete
     .text       start:0x020a0830 end:0x020a0834
+
+src/overlays/ov010/calls/Actor_UpdateQuadTreeLink.c:
+    complete
+    .text       start:0x020a0834 end:0x020a086a
+
+src/overlays/ov010/calls/Actor_CheckProximityTrigger.c:
+    complete
+    .text       start:0x020a086c end:0x020a08a4
 
 src/overlays/ov010/auto/func_ov010_020a0a84.c:
     complete
@@ -31,6 +43,18 @@ src/overlays/ov010/auto/func_ov010_020a0a98.c:
 src/overlays/ov010/auto/func_ov010_020a0bf0.c:
     complete
     .text       start:0x020a0bf0 end:0x020a0bf4
+
+src/overlays/ov010/calls/FieldObject_CreateAtOrigin.c:
+    complete
+    .text       start:0x020a0c98 end:0x020a0cf8
+
+src/overlays/ov010/calls/AnimSequence_Init_020a1ac8.c:
+    complete
+    .text       start:0x020a1ac8 end:0x020a1b0e
+
+src/overlays/ov010/calls/AnimSequence_Reset.c:
+    complete
+    .text       start:0x020a1b10 end:0x020a1b4c
 
 src/overlays/ov010/calls/AnimSequence_AddClip.c:
     complete

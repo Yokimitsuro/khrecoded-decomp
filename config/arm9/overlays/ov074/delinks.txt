@@ -4,6 +4,22 @@
     .data       start:0x020c59a0 end:0x020c5a60 kind:data align:32
     .bss        start:0x020c5a60 end:0x020c5a60 kind:bss align:32
 
+src/overlays/ov074/calls/CaptureSelectedJointMtx.c:
+    complete
+    .text       start:0x020c50d0 end:0x020c5128
+
+src/overlays/ov074/calls/SelectPreviousRootMenuItem.c:
+    complete
+    .text       start:0x020c5510 end:0x020c5570
+
+src/overlays/ov074/calls/ToggleRootMenuOptionLeft.c:
+    complete
+    .text       start:0x020c55dc end:0x020c5614
+
+src/overlays/ov074/calls/ToggleRootMenuOptionRight.c:
+    complete
+    .text       start:0x020c5614 end:0x020c564c
+
 src/overlays/ov074/data/strings/Strings_ov074_020c5940.c:
     complete
     .rodata     start:0x020c5940 end:0x020c5950

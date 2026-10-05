@@ -6,11 +6,11 @@ typedef struct SlotMenu {
 
 extern void func_ov076_020c6328(SlotMenu *menu, int windowType, int arg2, int arg3, int messageId);
 extern void *func_ov039_020bc1dc(void);
-extern void func_ov076_020ccd50(void *container, BOOL visible);
+extern void SetNavigationElementsVisible(void *container, BOOL visible);
 
 void SlotMenu_ShowPointLimitWarning(SlotMenu *menu)
 {
     func_ov076_020c6328(menu, 1, 0, 9, 0x5d);
     menu->state = 9;
-    func_ov076_020ccd50(func_ov039_020bc1dc(), FALSE);
+    SetNavigationElementsVisible(func_ov039_020bc1dc(), FALSE);
 }

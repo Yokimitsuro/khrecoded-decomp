@@ -37,13 +37,13 @@ typedef struct {
 
 typedef struct StageActor StageActor;
 
-extern StageActor *func_ov001_0209c068(int id);
+extern StageActor *GetStageActor(int id);
 extern VecFx32 *func_ov001_02090f2c(StageActor *actor);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern void MultiplyFixedPointQuaternions(QuatFx32 *dst, QuatFx32 *a, QuatFx32 *b);
 extern void func_0202fbbc(VecFx32 *in, QuatFx32 *rotation, VecFx32 *out);
 extern void func_ov001_020911bc(StageActor *actor);
@@ -69,23 +69,23 @@ BOOL OrbitActorAroundUnit(OrbitEvent *event, OrbitWork *work)
     case 1:
         unit = work->unit;
         def = unit->def;
-        actor = func_ov001_0209c068(event->actorId);
+        actor = GetStageActor(event->actorId);
         center = unit->position;
         pos = *func_ov001_02090f2c(actor);
-        func_01ff9e3c(&pos, &center, &dir);
+        VEC_Subtract(&pos, &center, &dir);
         MultiplyFixedPointQuaternions(&work->rotation, &work->rotation, &def->spin);
         func_0202fbbc(&dir, &work->rotation, &dir);
-        func_01ff9e0c(&center, &dir, &pos);
+        VEC_Add(&center, &dir, &pos);
         pos.y += def->height;
         dir.y = 0;
         if (VEC_DotProduct(&dir, &dir) > def->minDistanceSq) {
             VEC_Normalize(&dir, &dir);
             work->speed += def->accel;
-            func_01ffa09c(-work->speed, &dir, &pos, &pos);
+            VEC_MultAdd(-work->speed, &dir, &pos, &pos);
         }
         func_ov001_020911bc(actor);
         func_ov001_020911d0(actor);
-        func_01ff9e3c(&pos, func_ov001_02090f2c(actor), &dir);
+        VEC_Subtract(&pos, func_ov001_02090f2c(actor), &dir);
         AddObjectOffsetVector(actor, &dir);
         return TRUE;
     }

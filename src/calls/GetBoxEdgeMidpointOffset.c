@@ -9,7 +9,7 @@ typedef struct CollisionBox {
 } CollisionBox;
 
 void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
-void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 
 void GetBoxEdgeMidpointOffset(const CollisionBox *box, s32 axisA, s32 axisB, s32 edge, VecFx32 *out)
 {
@@ -18,5 +18,5 @@ void GetBoxEdgeMidpointOffset(const CollisionBox *box, s32 axisA, s32 axisB, s32
     VecFx32 direction = box->axes[axisA];
     ScaleVecFx32InPlace(&direction, scale);
     *out = direction;
-    func_01ffa09c(box->halfExtents[axisB] * ((edge & 2) ? 1 : -1), &box->axes[axisB], out, out);
+    VEC_MultAdd(box->halfExtents[axisB] * ((edge & 2) ? 1 : -1), &box->axes[axisB], out, out);
 }

@@ -15,7 +15,7 @@ func_ov028_020bab94 kind:function(arm,size=0x78) addr:0x020bab94
 EnterState12WithHalfRate kind:function(arm,size=0x24) addr:0x020bac0c
 func_ov028_020bac30 kind:function(arm,size=0x2c) addr:0x020bac30
 func_ov028_020bac5c kind:function(arm,size=0x3c) addr:0x020bac5c
-func_ov028_020bac98 kind:function(arm,size=0x38) addr:0x020bac98
+EnterOverlayTransition kind:function(arm,size=0x38) addr:0x020bac98
 func_ov028_020bacd0 kind:function(arm,size=0x4c) addr:0x020bacd0
 func_ov028_020bad1c kind:function(arm,size=0x34) addr:0x020bad1c
 func_ov028_020bad50 kind:function(arm,size=0xf0) addr:0x020bad50
@@ -34,7 +34,7 @@ IsSceneUnpaused kind:function(arm,size=0x20) addr:0x020bb17c
 func_ov028_020bb19c kind:function(arm,size=0x18) addr:0x020bb19c
 func_ov028_020bb1b4 kind:function(arm,size=0x6c) addr:0x020bb1b4
 func_ov028_020bb220 kind:function(arm,size=0xa8) addr:0x020bb220
-func_ov028_020bb2c8 kind:function(arm,size=0x44) addr:0x020bb2c8
+SetOrClearStatusBit2 kind:function(arm,size=0x44) addr:0x020bb2c8
 data_ov028_020bb320 kind:data(any) addr:0x020bb320
 data_ov028_020bb324 kind:data(any) addr:0x020bb324
 gSceneStateHandlers kind:data(any) addr:0x020bb338

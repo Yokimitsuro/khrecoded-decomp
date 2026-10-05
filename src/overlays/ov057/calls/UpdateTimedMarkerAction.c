@@ -57,8 +57,8 @@ extern int func_ov052_020d014c(Actor *actor, AnimEntry *target, SlotEntry *entry
 extern BOOL func_ov052_020d02b4(Actor *actor, AnimEntry *data, int which);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
-extern BOOL func_ov021_020a8d3c(int groupId);
-extern void func_ov021_020a8e34(int groupId, int index);
+extern BOOL IsGroupMemberActive(int groupId);
+extern void StopAndClearSoundEmitter(int groupId, int index);
 extern u16 func_ov052_020ceb9c(Actor *actor);
 
 void UpdateTimedMarkerAction(Actor *actor)
@@ -73,8 +73,8 @@ void UpdateTimedMarkerAction(Actor *actor)
     func_ov052_020d1a88(&slot, entry, 0, record, actor->player);
     groupId = *record->groupId;
     if (actor->frame >= record->endFrame) {
-        if (record->markerSlot != -1 && func_ov021_020a8d3c(groupId)) {
-            func_ov021_020a8e34(groupId, record->markerSlot);
+        if (record->markerSlot != -1 && IsGroupMemberActive(groupId)) {
+            StopAndClearSoundEmitter(groupId, record->markerSlot);
             record->markerSlot = -1;
         }
     } else if (actor->frame >= record->startFrame && record->markerSlot == -1) {

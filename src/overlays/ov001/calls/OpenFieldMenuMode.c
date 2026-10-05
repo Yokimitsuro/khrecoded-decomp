@@ -19,7 +19,7 @@ extern FieldState *data_ov001_020a0480;
 
 extern void func_ov001_0206e53c(int value);
 extern void func_ov001_0206e444(int value);
-extern void func_ov001_0206c2f8(int value);
+extern void SetMenuHighlight(int value);
 
 void OpenFieldMenuMode(u32 kind) {
     FieldState *field = data_ov001_020a0480;
@@ -67,5 +67,5 @@ void OpenFieldMenuMode(u32 kind) {
     field->menuRequested = 1;
     func_ov001_0206e53c(1);
     func_ov001_0206e444(1);
-    func_ov001_0206c2f8(1);
+    SetMenuHighlight(1);
 }

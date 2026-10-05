@@ -12,7 +12,7 @@ typedef struct {
     u32 flags;
 } FieldObject;
 
-extern void func_ov001_02087280(FieldObject *obj, int active);
+extern void CacheEntry_SetActive(FieldObject *obj, int active);
 extern void func_ov016_020a229c(FieldObject *obj, int visible);
 extern int ActorSlot_GetByIndex(u32 actorId);
 extern void ActorSlot_SetFlag8ByIndex(u32 actorId, int set);
@@ -20,7 +20,7 @@ extern void ActorSlot_SetFlag8ByIndex(u32 actorId, int set);
 void SetFieldObjectVisible(FieldObject *obj, int visible)
 {
     if (obj->state == 6 && visible) {
-        func_ov001_02087280(obj, 0);
+        CacheEntry_SetActive(obj, 0);
         return;
     }
     if (!visible) {

@@ -1,6 +1,6 @@
 func_ov084_020bf720 kind:function(thumb,size=0x29c) addr:0x020bf720
 func_ov084_020bf9bc kind:function(thumb,size=0x8) addr:0x020bf9bc
-func_ov084_020bf9c4 kind:function(thumb,size=0x42) addr:0x020bf9c4
+TeardownSceneResources kind:function(thumb,size=0x42) addr:0x020bf9c4
 func_ov084_020bfa08 kind:function(thumb,size=0x5c) addr:0x020bfa08
 func_ov084_020bfa64 kind:function(thumb,size=0x96) addr:0x020bfa64
 func_ov084_020bfafc kind:function(thumb,size=0x88) addr:0x020bfafc

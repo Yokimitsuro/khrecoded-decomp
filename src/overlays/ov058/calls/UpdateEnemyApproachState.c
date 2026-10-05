@@ -52,7 +52,7 @@ extern void func_ov058_020d8834(VecFx32 *out, int mode);
 extern int func_ov058_020d895c(void);
 extern int GetSceneSlotAngle(int mode);
 extern int func_ov001_0206db8c(int index);
-extern BOOL func_ov021_020a8d3c(int groupId, int index);
+extern BOOL IsGroupMemberActive(int groupId, int index);
 extern void ResetAnimationTrackState(TrackRequest *request);
 extern int func_ov021_020a8cc0(TrackRequest *request, int groupId);
 extern void func_ov052_020ceb80(Enemy *enemy, VecFx32 *target);
@@ -78,7 +78,7 @@ void UpdateEnemyApproachState(Enemy *enemy)
     switch (func_ov058_020d895c()) {
     case 2:
         index = ai->targetIndex;
-        if (index != -1 && func_ov021_020a8d3c(func_ov001_0206db8c(7), index)) {
+        if (index != -1 && IsGroupMemberActive(func_ov001_0206db8c(7), index)) {
             return;
         }
         ResetAnimationTrackState(&request);
@@ -114,7 +114,7 @@ void UpdateEnemyApproachState(Enemy *enemy)
             enemy->onAnimDone(enemy, 0);
         }
         index = ai->targetIndex;
-        if (index != -1 && !func_ov021_020a8d3c(func_ov001_0206db8c(7), index)) {
+        if (index != -1 && !IsGroupMemberActive(func_ov001_0206db8c(7), index)) {
             enemy->stateFlags &= ~0x20000ULL;
             ai->targetIndex = -1;
         }

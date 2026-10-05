@@ -5,7 +5,7 @@ typedef struct {
     int y;
 } DigitPos;
 
-extern void *func_ov027_020b90c4(void *root, int id);
+extern void *FindWidgetById(void *root, int id);
 extern DigitPos *func_ov027_020b91c8(void *root, void *widget);
 extern int PXI_Init_0204f0c8(void *cells, int key, int flags);
 extern void IndexedRecord_ClearActive(void *cells, int index);
@@ -15,7 +15,7 @@ extern void IndexedRecords_SetFlag2(void *cells, int index, int value);
 
 s16 SetWidgetDigitDisplay(void *cells, int widgetId, int key, u32 value)
 {
-    DigitPos pos = *func_ov027_020b91c8(cells, func_ov027_020b90c4(cells, widgetId));
+    DigitPos pos = *func_ov027_020b91c8(cells, FindWidgetById(cells, widgetId));
     s16 digit = 0;
     s16 index;
 

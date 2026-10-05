@@ -23,7 +23,7 @@ struct MemberList {
     s32 player;
 };
 
-extern int func_ov021_020adae0(MemberList *list);
+extern int FindCurrentMemberIndex(MemberList *list);
 extern u8 *GetBoundedEntryField(int player);
 extern void func_ov021_020a7fc0(void *obj, u32 value);
 extern void func_ov001_02063a80(int index, int amount);
@@ -52,7 +52,7 @@ s32 SelectMenuMember(MemberList *list, int index, MenuCommand *command)
             func_ov021_020a7fc0(entry + 0xb2c, list->current->label);
         }
     } else {
-        index = func_ov021_020adae0(list);
+        index = FindCurrentMemberIndex(list);
     }
     member = list->current;
     counter = -1;

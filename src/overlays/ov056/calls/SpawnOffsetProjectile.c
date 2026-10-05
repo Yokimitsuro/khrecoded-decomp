@@ -46,7 +46,7 @@ extern const VecFx32 data_ov056_020d7fcc;
 extern s16 data_02053580[];
 extern EntryInfo *GetBoundedEntryField(int index);
 extern void func_ov021_020ab0ac(SpawnDesc *desc);
-extern void func_ov021_020a9180(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
+extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
 extern void *func_ov021_020ab0b8(SpawnUnit *unit, SpawnDesc *desc);
 extern void func_ov021_020af564(int first, int second);
 
@@ -65,7 +65,7 @@ void SpawnOffsetProjectile(SpawnUnit *unit, u32 kind, u32 subKind, s32 power)
     angle = info->facing - 0x8000;
     facing = (u16)(angle + 0x8000);
     func_ov021_020ab0ac(&desc);
-    func_ov021_020a9180(&desc.position, &info->position, facing, &offset);
+    RotateOffsetAroundY(&desc.position, &info->position, facing, &offset);
     desc.position.y -= unit->shape->height / 2;
     index = facing >> 4;
     desc.direction.x = data_02053580[index];

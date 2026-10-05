@@ -23,7 +23,7 @@ typedef struct {
 } ActorRegistry;
 
 extern int ProjectPositionDownward(void *cont, int p3, void *out);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Obj_PlaceInWorld(ActorRegistry *registry, void *actor, const VecFx32 *position);
 extern int CollModel_GetEntryField14(void *model, void *key);
 extern void InsertNodeByPriority(ActorSlot *slot, ActorSlot **head, ActorSlot **tail);
@@ -36,7 +36,7 @@ void ActorSlot_PlaceAndLink(ActorSlot *slot, int anchor, const VecFx32 *offset)
 
     if (anchor != 0 && ProjectPositionDownward(registry, anchor, &position)) {
         if (offset != NULL) {
-            func_01ff9e0c(&position, offset, &position);
+            VEC_Add(&position, offset, &position);
         }
         Obj_PlaceInWorld(registry, &slot->actorFlags, &position);
         {

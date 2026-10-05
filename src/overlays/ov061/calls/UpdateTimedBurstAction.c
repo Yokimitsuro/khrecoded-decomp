@@ -69,12 +69,12 @@ extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern void func_ov021_020af564(int first, int second);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern u16 FX_Atan2Idx(int vertical, int horizontal);
 extern int func_ov052_020d014c(Actor *actor, AnimEntry *target, SlotEntry *entry);
 extern BOOL func_ov052_020d02b4(Actor *actor, AnimEntry *data, int which);
 extern void func_ov001_020734f8(void);
-extern void func_ov001_0206e160(u32 enabled);
+extern void SetManagerEnabled(u32 enabled);
 
 void UpdateTimedBurstAction(Actor *actor)
 {
@@ -119,7 +119,7 @@ void UpdateTimedBurstAction(Actor *actor)
             if (found) {
                 int angle;
 
-                func_01ff9e3c(&target, func_ov052_020ceb74(actor), &diff);
+                VEC_Subtract(&target, func_ov052_020ceb74(actor), &diff);
                 angle = (u16)(FX_Atan2Idx(diff.x, diff.z) + 0x8000);
                 if (actor->setFacing != NULL) {
                     actor->setFacing(actor, angle);
@@ -138,7 +138,7 @@ void UpdateTimedBurstAction(Actor *actor)
     }
     flags = actor->stateFlags & 4;
     func_ov001_020734f8();
-    func_ov001_0206e160(0);
+    SetManagerEnabled(0);
     if (flags) {
         actor->setState(actor, 5);
     } else {

@@ -75,7 +75,7 @@ extern int func_ov001_02063a38(void);
 extern BOOL func_ov021_020a7524(void *unit);
 extern int func_ov021_020a7564(void *unit);
 extern u16 SharedObject_GetField2(void *unit);
-extern void func_ov021_020ad8f8(void *members);
+extern void DeactivateCurrentMember(void *members);
 
 BOOL ExitActorState(Actor *actor, int nextState, BOOL force)
 {
@@ -218,7 +218,7 @@ BOOL ExitActorState(Actor *actor, int nextState, BOOL force)
         if (choice->action == 0x1c && nextState == 3) {
             actor->velY = 0;
         }
-        func_ov021_020ad8f8(actor->members);
+        DeactivateCurrentMember(actor->members);
         break;
     case 0x1b:
         func_ov052_020d1310(actor, 0);

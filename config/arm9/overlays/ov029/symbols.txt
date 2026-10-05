@@ -1,12 +1,12 @@
 func_ov029_020ba400 kind:function(arm,size=0xc4) addr:0x020ba400
 func_ov029_020ba4c4 kind:function(arm,size=0x88) addr:0x020ba4c4
-func_ov029_020ba54c kind:function(arm,size=0x3c) addr:0x020ba54c
+ShutdownOv029SoundCtx kind:function(arm,size=0x3c) addr:0x020ba54c
 func_ov029_020ba588 kind:function(arm,size=0x38) addr:0x020ba588
 MarkSoundCtxActive kind:function(arm,size=0x28) addr:0x020ba5c0
 func_ov029_020ba5e8 kind:function(arm,size=0x14) addr:0x020ba5e8
 func_ov029_020ba5fc kind:function(arm,size=0x94) addr:0x020ba5fc
 func_ov029_020ba690 kind:function(arm,size=0x98) addr:0x020ba690
-func_ov029_020ba728 kind:function(arm,size=0x60) addr:0x020ba728
+HandleOverlayExitFlag kind:function(arm,size=0x60) addr:0x020ba728
 func_ov029_020ba788 kind:function(arm,size=0xbc) addr:0x020ba788
 func_ov029_020ba844 kind:function(arm,size=0x28) addr:0x020ba844
 func_ov029_020ba86c kind:function(arm,size=0x20) addr:0x020ba86c

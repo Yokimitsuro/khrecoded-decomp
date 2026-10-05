@@ -49,11 +49,11 @@ typedef struct Seeker {
 extern FieldObject *func_ov001_02087264(void);
 extern BOOL IsTargetInVerticalRange(TargetRef *ref);
 extern ActorNode *ActorRegistry_GetEntityByIndex(u32 actorId);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern u16 ForwardToActiveServiceWithResult(void);
 extern u16 func_ov001_0208796c(u16 startIndex);
-extern int func_ov001_02087c14(u32 id, int arg, VecFx32 *position, u16 *next);
+extern int QueryStageEventPlacement(u32 id, int arg, VecFx32 *position, u16 *next);
 
 void Seeker_SelectNearestTarget(Seeker *seeker) {
     VecFx32 eventPos;
@@ -84,7 +84,7 @@ void Seeker_SelectNearestTarget(Seeker *seeker) {
             if (IsTargetInVerticalRange(&ref)) {
                 fx64 dist;
                 ActorBody *body = &ActorRegistry_GetEntityByIndex(object->actorId)->body;
-                func_01ff9e3c(&body->position, origin, &diff);
+                VEC_Subtract(&body->position, origin, &diff);
                 offset = diff;
                 dist = VEC_DotProduct(&offset, &offset);
                 if (dist < best) {
@@ -97,7 +97,7 @@ void Seeker_SelectNearestTarget(Seeker *seeker) {
     for (event = ForwardToActiveServiceWithResult(); event != 0; event = func_ov001_0208796c(event)) {
         BOOL found;
         sub = 0;
-        found = func_ov001_02087c14(event, 0, &eventPos, &next);
+        found = QueryStageEventPlacement(event, 0, &eventPos, &next);
         while (found) {
             eventCandidate.u.event.eventId = event;
             eventCandidate.u.event.subId = sub;
@@ -105,7 +105,7 @@ void Seeker_SelectNearestTarget(Seeker *seeker) {
             eventRef = eventCandidate;
             if (IsTargetInVerticalRange(&eventRef)) {
                 fx64 dist;
-                func_01ff9e3c(&eventPos, origin, &eventDiff);
+                VEC_Subtract(&eventPos, origin, &eventDiff);
                 eventOffset = eventDiff;
                 dist = VEC_DotProduct(&eventOffset, &eventOffset);
                 if (dist < best) {
@@ -117,7 +117,7 @@ void Seeker_SelectNearestTarget(Seeker *seeker) {
                 break;
             }
             sub = next;
-            found = func_ov001_02087c14(event, sub, &eventPos, &next);
+            found = QueryStageEventPlacement(event, sub, &eventPos, &next);
         }
     }
 }

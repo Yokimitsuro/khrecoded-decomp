@@ -47,7 +47,7 @@ extern ActorBody *ActorRegistry_GetEntityByIndex(u32 id);
 extern int func_ov031_020bc758(void);
 extern void SetShapePosition(void *shape, const VecFx32 *position);
 extern void OffsetBoxByDelta(const void *src, void *dst, const VecFx32 *delta);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern BOOL IsOffsetBeyondActiveRecord(fx32 value, fx32 range);
 extern void func_ov018_020a335c(FieldObject *obj, BOOL disable);
 extern BOOL func_ov031_020bc670(int area);
@@ -76,8 +76,8 @@ int FieldObject_ShiftWithArea(FieldObject *obj, VecFx32 *move, int area)
     center.y += body->shape->height;
     SetShapePosition(&body->shape, &center);
     OffsetBoxByDelta(body->bounds, body->sweptBounds, &body->delta);
-    func_01ff9e0c(&obj->position, move, &obj->position);
-    func_01ff9e0c(&obj->anchor, move, &obj->anchor);
+    VEC_Add(&obj->position, move, &obj->position);
+    VEC_Add(&obj->anchor, move, &obj->anchor);
     if (IsOffsetBeyondActiveRecord(obj->anchor.z, 0x1000)) {
         if (!(obj->flags & 0x400)) {
             func_ov018_020a335c(obj, TRUE);
@@ -102,7 +102,7 @@ int FieldObject_ShiftWithArea(FieldObject *obj, VecFx32 *move, int area)
             }
         }
     } else {
-        func_01ff9e0c(move, &obj->velocity, &delta);
+        VEC_Add(move, &obj->velocity, &delta);
         body->delta = delta;
         OffsetBoxByDelta(body->bounds, body->sweptBounds, &body->delta);
     }

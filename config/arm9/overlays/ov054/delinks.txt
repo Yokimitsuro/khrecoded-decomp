@@ -8,9 +8,17 @@ src/overlays/ov054/calls/func_ov054_020d24fc.c:
     complete
     .text       start:0x020d24fc end:0x020d250c
 
+src/overlays/ov054/calls/ShutdownOverlay054.c:
+    complete
+    .text       start:0x020d2540 end:0x020d2574
+
 src/overlays/ov054/calls/RequestOverlay054ActorState.c:
     complete
     .text       start:0x020d2574 end:0x020d26a8
+
+src/overlays/ov054/calls/MapCodeToSlotIndex.c:
+    complete
+    .text       start:0x020d273c end:0x020d2794
 
 src/overlays/ov054/calls/UpdateRewardApproach.c:
     complete

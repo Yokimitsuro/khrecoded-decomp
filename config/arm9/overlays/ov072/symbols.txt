@@ -6,9 +6,9 @@ func_ov072_020d8254 kind:function(thumb,size=0xa4) addr:0x020d8254
 func_ov072_020d82f8 kind:function(thumb,size=0xe) addr:0x020d82f8
 func_ov072_020d8308 kind:function(thumb,size=0x18) addr:0x020d8308
 func_ov072_020d8320 kind:function(thumb,size=0x17c) addr:0x020d8320
-func_ov072_020d849c kind:function(thumb,size=0x34) addr:0x020d849c
-func_ov072_020d84d0 kind:function(thumb,size=0x34) addr:0x020d84d0
-func_ov072_020d8504 kind:function(thumb,size=0x44) addr:0x020d8504
+IsEventActionAllowed kind:function(thumb,size=0x34) addr:0x020d849c
+SnapContactNormalUp kind:function(thumb,size=0x34) addr:0x020d84d0
+FlattenContactNormal kind:function(thumb,size=0x44) addr:0x020d8504
 func_ov072_020d8548 kind:function(thumb,size=0x1584) addr:0x020d8548
 func_ov072_020d9acc kind:function(thumb,size=0x110) addr:0x020d9acc
 data_ov072_020d9bdc kind:data(any) addr:0x020d9bdc

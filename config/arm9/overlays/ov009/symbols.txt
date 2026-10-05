@@ -1,13 +1,13 @@
 ScriptCmd_CreateObjectInSlot_020a0540 kind:function(thumb,size=0x2a) addr:0x020a0540
 func_ov009_020a056c kind:function(thumb,size=0x74) addr:0x020a056c
-func_ov009_020a05e0 kind:function(thumb,size=0x36) addr:0x020a05e0
-func_ov009_020a0618 kind:function(thumb,size=0x3c) addr:0x020a0618
+ScriptCmd_SetObjectElementFlag kind:function(thumb,size=0x36) addr:0x020a05e0
+ScriptCmd_SetObjectElementState kind:function(thumb,size=0x3c) addr:0x020a0618
 func_ov009_020a0654 kind:function(arm,size=0x144) addr:0x020a0654
 func_ov009_020a0798 kind:function(thumb,size=0x170) addr:0x020a0798
 func_ov009_020a0908 kind:function(thumb,size=0x2) addr:0x020a0908
 GetFieldPtrAt0x40 kind:function(thumb,size=0x4) addr:0x020a090c
 GetFieldPtrAt0x40_020a0910 kind:function(thumb,size=0x4) addr:0x020a0910
-func_ov009_020a0914 kind:function(thumb,size=0x4e) addr:0x020a0914
+FieldObject_SetLiftedPosition kind:function(thumb,size=0x4e) addr:0x020a0914
 GetIndirectFieldAt0x50 kind:function(thumb,size=0x6) addr:0x020a0964
 func_ov009_020a096c kind:function(thumb,size=0x4) addr:0x020a096c
 ScriptCmd_SpawnModeTwo kind:function(thumb,size=0xc) addr:0x020a0970

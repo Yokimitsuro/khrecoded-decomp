@@ -22,7 +22,7 @@ typedef struct {
 } FieldObject;
 
 extern const VecFx32 data_0205344c;
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void func_ov016_020a298c(FieldObject *obj, int arg);
 
 
@@ -50,7 +50,7 @@ void PairFieldObjects(FieldObject *first, FieldObject *second)
     follower->state = 1;
     follower->isLeader = 0;
     follower->partnerSlot = leader->slotIndex;
-    func_01ff9e3c(&leader->position, &follower->position, &delta);
+    VEC_Subtract(&leader->position, &follower->position, &delta);
     func_ov016_020a298c(follower, 0);
     leader->flags &= ~0x400;
     follower->flags &= ~0x400;

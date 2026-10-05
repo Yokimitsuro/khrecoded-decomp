@@ -35,7 +35,7 @@ struct Actor {
 extern const VecFx32 data_0205344c;
 extern VecFx32 *Actor_GetModelPosition(Actor *actor);
 extern BOOL AddClampedHealth(Actor *actor, s16 delta);
-extern fx32 func_ov039_020bca50(void);
+extern fx32 IsStatePhase4(void);
 extern RespawnPoint *func_ov021_020af614(void);
 extern int FX_Mul(int left, int right);
 extern void Obj_SetPosition(void *entity, const VecFx32 *position);
@@ -54,7 +54,7 @@ void Actor_HandleFallOut(Actor *actor) {
     }
     AddClampedHealth(actor, damage);
     if (actor->stats->hp != 0) {
-        fx32 distance = func_ov039_020bca50();
+        fx32 distance = IsStatePhase4();
         RespawnPoint *respawn = func_ov021_020af614();
         VecFx32 pos = respawn->position;
         pos.x = Actor_GetModelPosition(actor)->x;

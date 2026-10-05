@@ -4,9 +4,25 @@
     .data       start:0x020bcfa0 end:0x020bd020 kind:data align:32
     .bss        start:0x020bd020 end:0x020bd040 kind:bss align:32
 
+src/overlays/ov030/calls/RunSceneStateMachine_020ba4e0.c:
+    complete
+    .text       start:0x020ba4e0 end:0x020ba538
+
+src/overlays/ov030/calls/MoviePlayer_Close.c:
+    complete
+    .text       start:0x020ba538 end:0x020ba588
+
+src/overlays/ov030/calls/FinishSceneSetup.c:
+    complete
+    .text       start:0x020ba5b4 end:0x020ba5e8
+
 src/overlays/ov030/calls/EnterState12WithHalfRate_020ba8f0.c:
     complete
     .text       start:0x020ba8f0 end:0x020ba90a
+
+src/overlays/ov030/calls/ApplyOverlayScaleMode.c:
+    complete
+    .text       start:0x020baad4 end:0x020bab20
 
 src/overlays/ov030/calls/func_ov030_020babc8.c:
     complete
@@ -23,6 +39,14 @@ src/overlays/ov030/calls/MobiClip_CloseDecoder.c:
 src/overlays/ov030/calls/IsSceneUnpaused_020bacd4.c:
     complete
     .text       start:0x020bacd4 end:0x020bacec
+
+src/overlays/ov030/calls/SuspendSceneAtQuarterRate.c:
+    complete
+    .text       start:0x020bb240 end:0x020bb288
+
+src/overlays/ov030/calls/InstallSceneHandlers_020bb288.c:
+    complete
+    .text       start:0x020bb288 end:0x020bb2ec
 
 src/overlays/ov030/calls/SetSceneLock.c:
     complete
@@ -43,6 +67,10 @@ src/overlays/ov030/calls/UpdateActorReactionState.c:
 src/overlays/ov030/calls/CheckCarriedActorEscape.c:
     complete
     .text       start:0x020bbf98 end:0x020bc130
+
+src/overlays/ov030/calls/SetPanelModelAngle.c:
+    complete
+    .text       start:0x020bc814 end:0x020bc86c
 
 src/overlays/ov030/calls/SpawnTiltedProjectile.c:
     complete

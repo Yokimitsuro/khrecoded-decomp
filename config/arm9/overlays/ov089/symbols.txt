@@ -1,4 +1,4 @@
-func_ov089_020bef20 kind:function(arm,size=0x34) addr:0x020bef20
+ShouldOpenPopupWindow kind:function(arm,size=0x34) addr:0x020bef20
 func_ov089_020bef54 kind:function(arm,size=0x8c) addr:0x020bef54
 func_ov089_020befe0 kind:function(arm,size=0x34) addr:0x020befe0
 func_ov089_020bf014 kind:function(arm,size=0xb0) addr:0x020bf014
@@ -18,7 +18,7 @@ func_ov089_020bfdcc kind:function(arm,size=0x140) addr:0x020bfdcc
 func_ov089_020bff0c kind:function(arm,size=0x17c) addr:0x020bff0c
 func_ov089_020c0088 kind:function(arm,size=0x7c) addr:0x020c0088
 func_ov089_020c0104 kind:function(arm,size=0xd0) addr:0x020c0104
-func_ov089_020c01d4 kind:function(arm,size=0x40) addr:0x020c01d4
+ShutdownOverlay089 kind:function(arm,size=0x40) addr:0x020c01d4
 func_ov089_020c0214 kind:function(arm,size=0x218) addr:0x020c0214
 func_ov089_020c042c kind:function(arm,size=0x50) addr:0x020c042c
 func_ov089_020c047c kind:function(arm,size=0x6c) addr:0x020c047c

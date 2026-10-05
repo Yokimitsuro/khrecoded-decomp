@@ -3,6 +3,22 @@
     .data       start:0x020d0de0 end:0x020d0ec0 kind:data align:32
     .bss        start:0x020d0ec0 end:0x020d0ee0 kind:bss align:32
 
+src/overlays/ov044/calls/InitPanelSwayB.c:
+    complete
+    .text       start:0x020cff80 end:0x020cffc0
+
+src/overlays/ov044/calls/InitPanelSwayA.c:
+    complete
+    .text       start:0x020cffc0 end:0x020d0000
+
+src/overlays/ov044/calls/InitPanelMotionA.c:
+    complete
+    .text       start:0x020d0040 end:0x020d0070
+
+src/overlays/ov044/calls/InitPanelMotionB.c:
+    complete
+    .text       start:0x020d0070 end:0x020d00a0
+
 src/overlays/ov044/calls/func_ov044_020d00a0.c:
     complete
     .text       start:0x020d00a0 end:0x020d00b0
@@ -23,9 +39,25 @@ src/overlays/ov044/auto/func_ov044_020d0580.c:
     complete
     .text       start:0x020d0580 end:0x020d0582
 
+src/overlays/ov044/calls/SpawnPanelDriftParticle.c:
+    complete
+    .text       start:0x020d05ac end:0x020d05e0
+
 src/overlays/ov044/auto/func_ov044_020d069c.c:
     complete
     .text       start:0x020d069c end:0x020d06a0
+
+src/overlays/ov044/calls/UpdatePanelState_020d06a0.c:
+    complete
+    .text       start:0x020d06a0 end:0x020d06d8
+
+src/overlays/ov044/calls/GetPanelView.c:
+    complete
+    .text       start:0x020d0af0 end:0x020d0b44
+
+src/overlays/ov044/calls/GetPanelViewEx.c:
+    complete
+    .text       start:0x020d0b44 end:0x020d0ba4
 
 src/overlays/ov044/auto/func_ov044_020d0ba4.c:
     complete

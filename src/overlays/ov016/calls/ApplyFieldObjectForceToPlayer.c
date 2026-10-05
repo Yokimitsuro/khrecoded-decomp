@@ -51,7 +51,7 @@ extern PlayerEntry *GetBoundedEntryField(int index);
 extern VecFx32 *func_ov001_0206dc4c(int index);
 extern void func_ov001_0208645c(FieldObject *object, int pose);
 extern void *ActorRegistry_GetEntityByIndex(int actorId);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern CollisionShape func_0203ade0(ShapeStorage *storage, const VecFx32 *start, const VecFx32 *end, const VecFx32 *axis, fx32 length);
@@ -59,7 +59,7 @@ extern void CollisionQuery_Init(CollisionQuery *query, u16 id, void *actor, u8 k
 extern void *SweepWorldCollision(CollisionQuery *query);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
 extern void func_ov016_020a4468(void);
-extern void func_ov016_020a2b58(FieldObject *object, fx32 speed, int angle);
+extern void StartFieldUnitMotion(FieldObject *object, fx32 speed, int angle);
 
 static inline void BuildSegmentShape(CollisionShape *shape, ShapeStorage *storage, const VecFx32 *start, const VecFx32 *end)
 {
@@ -67,7 +67,7 @@ static inline void BuildSegmentShape(CollisionShape *shape, ShapeStorage *storag
     VecFx32 delta;
     fx32 length;
 
-    func_01ff9e3c(end, start, &delta);
+    VEC_Subtract(end, start, &delta);
     axis = delta;
     length = func_01ffaff4(&axis, &axis);
     *shape = func_0203ade0(storage, start, end, &axis, length);
@@ -159,14 +159,14 @@ void ApplyFieldObjectForceToPlayer(FieldObject *object)
         VecFx32 force;
         PlayerEntry *entry;
 
-        func_01ff9e3c(&player, &object->position, &away);
+        VEC_Subtract(&player, &object->position, &away);
         VEC_Normalize(&away, &normal);
         force = ScaleVec(&normal, -0xcd);
         entry = GetBoundedEntryField(0);
         if (entry->push != NULL) {
             entry->push(entry, &force);
         }
-        func_ov016_020a2b58(object, 0x1000, RadiansToIndex((((object->facing + 2) & 3) * 0x3244) / 2));
+        StartFieldUnitMotion(object, 0x1000, RadiansToIndex((((object->facing + 2) & 3) * 0x3244) / 2));
         object->flags |= 0x80000;
     }
 }

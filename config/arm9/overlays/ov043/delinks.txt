@@ -2,6 +2,10 @@
     .ctor       start:0x020bd2dc end:0x020bd2dc kind:rodata align:4
     .bss        start:0x020bd2e0 end:0x020bd300 kind:bss align:32
 
+src/overlays/ov043/calls/UpdateCameraBasisAndCommit.c:
+    complete
+    .text       start:0x020bc874 end:0x020bc8d4
+
 src/overlays/ov043/auto/func_ov043_020bc8d4.c:
     complete
     .text       start:0x020bc8d4 end:0x020bc8dc

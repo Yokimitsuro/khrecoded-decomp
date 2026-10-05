@@ -6,7 +6,7 @@ typedef struct MenuContext {
 } MenuContext;
 
 extern MenuContext *data_ov001_020a04a4;
-extern void func_ov001_0206b95c(void *state, u8 *out);
+extern void ResolveWaitTarget(void *state, u8 *out);
 
 void ReadActiveMenuState(u8 *out)
 {
@@ -14,5 +14,5 @@ void ReadActiveMenuState(u8 *out)
         *out = 0;
         return;
     }
-    func_ov001_0206b95c(data_ov001_020a04a4->state, out);
+    ResolveWaitTarget(data_ov001_020a04a4->state, out);
 }

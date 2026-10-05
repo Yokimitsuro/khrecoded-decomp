@@ -12,6 +12,10 @@ src/overlays/ov058/calls/UpdateEnemyTargetTracking.c:
     complete
     .text       start:0x020d4b84 end:0x020d4fcc
 
+src/overlays/ov058/calls/RefreshAiModeFromFlags.c:
+    complete
+    .text       start:0x020d4fcc end:0x020d4ffc
+
 src/overlays/ov058/calls/CheckEnemyContactAbove.c:
     complete
     .text       start:0x020d5180 end:0x020d5354
@@ -84,6 +88,10 @@ src/overlays/ov058/calls/ReleaseRecordEntry_020d7600.c:
     complete
     .text       start:0x020d7600 end:0x020d7618
 
+src/overlays/ov058/calls/ResetEmitterRigOffset.c:
+    complete
+    .text       start:0x020d7618 end:0x020d7648
+
 src/overlays/ov058/calls/RebindEmitterSlotsPhase3.c:
     complete
     .text       start:0x020d7648 end:0x020d7660
@@ -104,6 +112,10 @@ src/overlays/ov058/calls/PlaceRigAtPlayerOffset.c:
     complete
     .text       start:0x020d7838 end:0x020d78dc
 
+src/overlays/ov058/calls/ApplyModelPolygonId.c:
+    complete
+    .text       start:0x020d78dc end:0x020d790c
+
 src/overlays/ov058/calls/RebindEmitterSlotsPhase1.c:
     complete
     .text       start:0x020d790c end:0x020d7924
@@ -111,6 +123,14 @@ src/overlays/ov058/calls/RebindEmitterSlotsPhase1.c:
 src/overlays/ov058/calls/PurgeNearbyStageObjects.c:
     complete
     .text       start:0x020d79b8 end:0x020d7a64
+
+src/overlays/ov058/calls/DrawSceneModels.c:
+    complete
+    .text       start:0x020d8794 end:0x020d87e0
+
+src/overlays/ov058/calls/ResetSceneModelState.c:
+    complete
+    .text       start:0x020d87e0 end:0x020d8834
 
 src/overlays/ov058/calls/GetSceneSlotAngle.c:
     complete

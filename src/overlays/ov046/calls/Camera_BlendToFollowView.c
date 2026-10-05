@@ -8,7 +8,7 @@ typedef struct CameraView {
 
 typedef void (*CameraViewBuilder)(CameraView *view);
 
-extern void func_ov046_020c196c(CameraView *view);
+extern void Camera_BuildFollowView(CameraView *view);
 extern void func_ov046_020c10f4(s32 returnMode, CameraView *view, s32 curveType, fx32 duration,
                                 CameraViewBuilder builder);
 
@@ -16,6 +16,6 @@ void Camera_BlendToFollowView(s32 curveType, fx32 duration)
 {
     CameraView view;
 
-    func_ov046_020c196c(&view);
-    func_ov046_020c10f4(0, &view, curveType, duration, func_ov046_020c196c);
+    Camera_BuildFollowView(&view);
+    func_ov046_020c10f4(0, &view, curveType, duration, Camera_BuildFollowView);
 }

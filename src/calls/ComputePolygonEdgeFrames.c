@@ -15,7 +15,7 @@ typedef struct CollisionPolygon {
     VecFx32 normal;
 } CollisionPolygon;
 
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *source, VecFx32 *dest);
 
@@ -32,7 +32,7 @@ void ComputePolygonEdgeFrames(CollisionPolygon *polygon)
     u8 i;
 
     for (i = 0; i < count; i++) {
-        func_01ff9e3c(&polygon->vertices[(i + 1) % (int)count].position, &polygon->vertices[i].position, &edge);
+        VEC_Subtract(&polygon->vertices[(i + 1) % (int)count].position, &polygon->vertices[i].position, &edge);
         edgeCopy = edge;
         VEC_Normalize(&edgeCopy, &edgeDir);
         polygon->vertices[i].edgeDir = edgeDir;

@@ -1,7 +1,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void func_01ffaff4(VecFx32 *in, VecFx32 *out);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
@@ -22,7 +22,7 @@ BOOL ComputePushTowardTarget(const VecFx32 *target, const VecFx32 *center, fx32 
         height = 0xc000;
     }
     eye.y = height;
-    func_01ff9e3c(&eye, center, &diff);
+    VEC_Subtract(&eye, center, &diff);
     dist = VEC_Mag(&diff);
     if (dist == 0) {
         diff.x = 1;

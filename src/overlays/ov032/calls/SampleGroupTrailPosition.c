@@ -11,11 +11,11 @@ typedef struct ObjectGroup {
 } ObjectGroup;
 
 extern ObjectGroup *func_ov032_020bbc80(void *object);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 void SampleGroupTrailPosition(int slot, void *object, VecFx32 *out, u8 *outFlag)
 {
@@ -35,12 +35,12 @@ void SampleGroupTrailPosition(int slot, void *object, VecFx32 *out, u8 *outFlag)
     for (; i > end && i > 0; i--) {
         cur = TRAIL_WRAP(i);
         prev = TRAIL_WRAP(i - 1);
-        func_01ff9e3c(&group->trail[cur], &group->trail[prev], &diff);
+        VEC_Subtract(&group->trail[cur], &group->trail[prev], &diff);
         total += VEC_Mag(&diff);
         if (total >= spacing) {
             VEC_Normalize(&diff, &dir);
             ScaleVecFx32InPlace(&dir, total - spacing);
-            func_01ff9e0c(&group->trail[prev], &dir, out);
+            VEC_Add(&group->trail[prev], &dir, out);
             *outFlag = group->trailFlags[cur];
             return;
         }

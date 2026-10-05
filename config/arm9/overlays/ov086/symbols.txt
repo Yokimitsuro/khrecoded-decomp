@@ -1,7 +1,7 @@
 func_ov086_020beac0 kind:function(arm,size=0x88) addr:0x020beac0
-func_ov086_020beb48 kind:function(arm,size=0x44) addr:0x020beb48
-func_ov086_020beb8c kind:function(arm,size=0x44) addr:0x020beb8c
-func_ov086_020bebd0 kind:function(arm,size=0x38) addr:0x020bebd0
+DrawPanelElement kind:function(arm,size=0x44) addr:0x020beb48
+ClearPanelElement kind:function(arm,size=0x44) addr:0x020beb8c
+ReturnToPrimaryPanel kind:function(arm,size=0x38) addr:0x020bebd0
 func_ov086_020bec08 kind:function(arm,size=0x144) addr:0x020bec08
 func_ov086_020bed4c kind:function(arm,size=0xe0) addr:0x020bed4c
 func_ov086_020bee2c kind:function(arm,size=0x484) addr:0x020bee2c
@@ -12,7 +12,7 @@ func_ov086_020bf428 kind:function(arm,size=0x7c) addr:0x020bf428
 func_ov086_020bf4a4 kind:function(arm,size=0xbc) addr:0x020bf4a4
 func_ov086_020bf560 kind:function(arm,size=0x98) addr:0x020bf560
 func_ov086_020bf5f8 kind:function(arm,size=0x80) addr:0x020bf5f8
-func_ov086_020bf678 kind:function(arm,size=0x54) addr:0x020bf678
+GetHighestSetFlagTier kind:function(arm,size=0x54) addr:0x020bf678
 func_ov086_020bf6cc kind:function(arm,size=0x164) addr:0x020bf6cc
 func_ov086_020bf830 kind:function(arm,size=0x94) addr:0x020bf830
 func_ov086_020bf8c4 kind:function(arm,size=0x130) addr:0x020bf8c4
@@ -27,13 +27,13 @@ func_ov086_020c0340 kind:function(arm,size=0x10c) addr:0x020c0340
 func_ov086_020c044c kind:function(arm,size=0x1fc) addr:0x020c044c
 func_ov086_020c0648 kind:function(arm,size=0x1e4) addr:0x020c0648
 func_ov086_020c082c kind:function(arm,size=0x584) addr:0x020c082c
-func_ov086_020c0db0 kind:function(arm,size=0x60) addr:0x020c0db0
-func_ov086_020c0e10 kind:function(arm,size=0x5c) addr:0x020c0e10
+StepCursorBackward kind:function(arm,size=0x60) addr:0x020c0db0
+StepCursorForward_020c0e10 kind:function(arm,size=0x5c) addr:0x020c0e10
 func_ov086_020c0e6c kind:function(arm,size=0xbc) addr:0x020c0e6c
 func_ov086_020c0f28 kind:function(arm,size=0x11c) addr:0x020c0f28
-func_ov086_020c1044 kind:function(arm,size=0x54) addr:0x020c1044
+InitRecordTileTable kind:function(arm,size=0x54) addr:0x020c1044
 func_ov086_020c1098 kind:function(arm,size=0x3f8) addr:0x020c1098
-func_ov086_020c1490 kind:function(arm,size=0x50) addr:0x020c1490
+AddTaggedIndexedRecord kind:function(arm,size=0x50) addr:0x020c1490
 func_ov086_020c14e0 kind:function(arm,size=0x140) addr:0x020c14e0
 func_ov086_020c1620 kind:function(arm,size=0x74) addr:0x020c1620
 func_ov086_020c1694 kind:function(arm,size=0x1b4) addr:0x020c1694
@@ -45,7 +45,7 @@ func_ov086_020c1e70 kind:function(arm,size=0x84) addr:0x020c1e70
 func_ov086_020c1ef4 kind:function(arm,size=0x16c) addr:0x020c1ef4
 OnSliderTouched kind:function(arm,size=0x20) addr:0x020c2060
 SelectRecordPage kind:function(arm,size=0x20) addr:0x020c2080
-func_ov086_020c20a0 kind:function(arm,size=0x54) addr:0x020c20a0
+IsRecordPageUnavailable kind:function(arm,size=0x54) addr:0x020c20a0
 data_ov086_020c20f4 kind:data(any) addr:0x020c20f4
 data_ov086_020c20fc kind:data(any) addr:0x020c20fc
 data_ov086_020c2108 kind:data(any) addr:0x020c2108

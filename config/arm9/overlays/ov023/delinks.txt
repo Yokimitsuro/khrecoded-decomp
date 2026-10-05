@@ -12,6 +12,10 @@ src/overlays/ov023/auto/func_ov023_020b5a4c.c:
     complete
     .text       start:0x020b5a4c end:0x020b5a50
 
+src/overlays/ov023/calls/DrawCacheHeaderText.c:
+    complete
+    .text       start:0x020b5a50 end:0x020b5aa0
+
 src/overlays/ov023/calls/ChangeMenuAnimSequence.c:
     complete
     .text       start:0x020b5b48 end:0x020b5b6e
@@ -24,17 +28,37 @@ src/overlays/ov023/auto/func_ov023_020b5b8c.c:
     complete
     .text       start:0x020b5b8c end:0x020b5bb2
 
+src/overlays/ov023/calls/LoadMenuScreenResource.c:
+    complete
+    .text       start:0x020b5bb4 end:0x020b5bec
+
 src/overlays/ov023/calls/SelectMenuPalette.c:
     complete
     .text       start:0x020b5dd4 end:0x020b5e00
+
+src/overlays/ov023/calls/WorldToMapPosition.c:
+    complete
+    .text       start:0x020b60f4 end:0x020b6130
 
 src/overlays/ov023/calls/IsMapPointInBounds.c:
     complete
     .text       start:0x020b6130 end:0x020b615c
 
+src/overlays/ov023/calls/StartDistanceSqrt.c:
+    complete
+    .text       start:0x020b615c end:0x020b61a4
+
 src/overlays/ov023/calls/SqrtResultRounded.c:
     complete
     .text       start:0x020b61a4 end:0x020b61c0
+
+src/overlays/ov023/calls/InsertSortedDrawEntry.c:
+    complete
+    .text       start:0x020b6428 end:0x020b6480
+
+src/overlays/ov023/calls/ResetMapMenuCursor.c:
+    complete
+    .text       start:0x020b69dc end:0x020b6a38
 
 src/overlays/ov023/calls/UpdateMenuRangePosition.c:
     complete

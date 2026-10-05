@@ -9,14 +9,14 @@ typedef struct CollisionSegment {
     fx32 length;
 } CollisionSegment;
 
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(VecFx32 *src, VecFx32 *dst);
 
 void InitSegmentFromEndpoints(CollisionSegment *segment)
 {
     VecFx32 delta;
 
-    func_01ff9e3c(&segment->end, &segment->start, &delta);
+    VEC_Subtract(&segment->end, &segment->start, &delta);
     segment->direction = delta;
     segment->length = func_01ffaff4(&segment->direction, &segment->direction);
     if (segment->length == 0) {

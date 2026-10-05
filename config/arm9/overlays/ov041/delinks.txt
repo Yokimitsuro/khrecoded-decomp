@@ -24,6 +24,26 @@ src/overlays/ov041/calls/ReleaseEmbeddedObject.c:
     complete
     .text       start:0x020c279c end:0x020c27ac
 
+src/overlays/ov041/calls/GetActorAnimTrack.c:
+    complete
+    .text       start:0x020c36b8 end:0x020c370c
+
+src/overlays/ov041/calls/DestroyDisplayObject.c:
+    complete
+    .text       start:0x020c37d4 end:0x020c3812
+
+src/overlays/ov041/calls/PlayActorAnimation.c:
+    complete
+    .text       start:0x020c3814 end:0x020c386c
+
+src/overlays/ov041/calls/SetAnimationFrameIfChanged.c:
+    complete
+    .text       start:0x020c38bc end:0x020c391c
+
+src/overlays/ov041/calls/LoadSharedRecordField.c:
+    complete
+    .text       start:0x020cdfb0 end:0x020ce004
+
 src/overlays/ov041/data/strings/Strings_ov041_020cf710.c:
     complete
     .rodata     start:0x020cf710 end:0x020cf720

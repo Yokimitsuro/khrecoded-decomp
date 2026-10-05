@@ -34,7 +34,7 @@ typedef struct {
 extern BOOL func_ov001_020872e0(FieldObject *obj);
 extern void func_ov016_020a2688(FieldObject *obj, int enabled);
 extern Actor *ActorRegistry_GetEntityByIndex(u32 actorId);
-extern void func_ov001_020809f8(void *node, int blendIndex, int frame);
+extern void RebindAnimTracks(void *node, int blendIndex, int frame);
 extern void Flags16_ClearBit1(void *node);
 
 void SyncFieldObjectAnimation(FieldObject *obj)
@@ -60,7 +60,7 @@ void SyncFieldObjectAnimation(FieldObject *obj)
     func_ov016_020a2688(obj, enabled);
     if (obj->flags & 0x20) {
         actor = ActorRegistry_GetEntityByIndex(obj->actorId);
-        func_ov001_020809f8(actor->node, 1, entry->frame);
+        RebindAnimTracks(actor->node, 1, entry->frame);
         Flags16_ClearBit1(actor->node);
     }
 }

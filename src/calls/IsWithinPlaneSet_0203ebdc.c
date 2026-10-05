@@ -3,7 +3,7 @@
 
 extern VecFx32 *func_ov021_020af5d4(void);
 extern VecFx32 *func_ov021_020af71c(void);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 
 BOOL IsWithinPlaneSet_0203ebdc(VecFx32 *point, s32 threshold)
@@ -15,7 +15,7 @@ BOOL IsWithinPlaneSet_0203ebdc(VecFx32 *point, s32 threshold)
     u8 i;
 
     basePos = func_ov021_020af5d4();
-    func_01ff9e3c(point, basePos, &diffTemp);
+    VEC_Subtract(point, basePos, &diffTemp);
     direction = diffTemp;
 
     planes = func_ov021_020af71c();

@@ -39,8 +39,8 @@ extern SceneContext *data_ov001_020a048c;
 extern void *GetActorRegistry(void);
 extern int func_ov001_02067ed4(void);
 extern BOOL func_ov001_02068268(int setIndex, int recordIndex, VecFx32 *outMin, VecFx32 *outMax);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern BOOL func_ov001_02067f08(int itemId, int *outIndex);
 extern BOOL func_ov001_020645c8(u32 value);
 
@@ -64,11 +64,11 @@ void UpdatePointTriggerBox(PointTrigger *trigger, int index)
 
     GetActorRegistry();
     if (func_ov001_02068268(func_ov001_02067ed4(), index, &min, &max)) {
-        func_01ff9e3c(&max, &min, &half);
+        VEC_Subtract(&max, &min, &half);
         half.x >>= 1;
         half.y >>= 1;
         half.z >>= 1;
-        func_01ff9e0c(&min, &half, &center);
+        VEC_Add(&min, &half, &center);
         box = &ctx->boxes[index];
         SetVec(&box->min, center.x - (half.x + trigger->margin), center.y - half.y, center.z - (half.z + trigger->margin));
         SetVec(&box->max, center.x + (half.x + trigger->margin), center.y + half.y, center.z + (half.z + trigger->margin));

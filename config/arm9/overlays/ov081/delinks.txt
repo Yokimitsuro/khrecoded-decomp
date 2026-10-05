@@ -4,9 +4,29 @@
     .data       start:0x020c5cc0 end:0x020c5da0 kind:data align:32
     .bss        start:0x020c5da0 end:0x020c5dc0 kind:bss align:32
 
+src/overlays/ov081/calls/AdvanceListAndRedraw.c:
+    complete
+    .text       start:0x020c4dd4 end:0x020c4e08
+
 src/overlays/ov081/calls/func_ov081_020c4e08.c:
     complete
     .text       start:0x020c4e08 end:0x020c4e1a
+
+src/overlays/ov081/calls/LoadBitIndexTable.c:
+    complete
+    .text       start:0x020c5180 end:0x020c51b0
+
+src/overlays/ov081/calls/CreateIdList.c:
+    complete
+    .text       start:0x020c51b0 end:0x020c51f8
+
+src/overlays/ov081/calls/CopyEntryLists.c:
+    complete
+    .text       start:0x020c51f8 end:0x020c525c
+
+src/overlays/ov081/calls/FreeEntryLists.c:
+    complete
+    .text       start:0x020c525c end:0x020c529c
 
 src/overlays/ov081/calls/func_ov081_020c544c.c:
     complete
@@ -28,9 +48,25 @@ src/overlays/ov081/calls/func_ov081_020c5660.c:
     complete
     .text       start:0x020c5660 end:0x020c5672
 
+src/overlays/ov081/calls/DrawListPageCounter.c:
+    complete
+    .text       start:0x020c5674 end:0x020c56c8
+
+src/overlays/ov081/calls/ScrollListBackward.c:
+    complete
+    .text       start:0x020c5b4c end:0x020c5ba4
+
+src/overlays/ov081/calls/ScrollListForward.c:
+    complete
+    .text       start:0x020c5ba4 end:0x020c5bf8
+
 src/overlays/ov081/calls/func_ov081_020c5bf8.c:
     complete
     .text       start:0x020c5bf8 end:0x020c5c04
+
+src/overlays/ov081/calls/ResetListCursor.c:
+    complete
+    .text       start:0x020c5c2c end:0x020c5c64
 
 src/overlays/ov081/data/strings/Strings_ov081_020c5d04.c:
     complete

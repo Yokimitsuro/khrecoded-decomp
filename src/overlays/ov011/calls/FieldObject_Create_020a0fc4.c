@@ -37,7 +37,7 @@ typedef struct FieldObject {
     s32 timer;
 } FieldObject;
 
-extern FieldObject *func_ov001_0207f3a8(int headerSize, int width, int height);
+extern FieldObject *CreateByteGrid(int headerSize, int width, int height);
 extern void func_ov001_0207f0f8(void);
 extern void func_ov001_0207f150(void);
 extern void FieldObject_LoadAndPlace(void);
@@ -54,7 +54,7 @@ extern void FieldObject_Draw(void);
 
 FieldObject *FieldObject_Create_020a0fc4(int height)
 {
-    FieldObject *object = func_ov001_0207f3a8(0x18c, 0x68, height);
+    FieldObject *object = CreateByteGrid(0x18c, 0x68, height);
 
     object->state = 0;
     object->kind = 3;

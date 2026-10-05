@@ -16,7 +16,7 @@ typedef struct ContactSet {
 
 extern void GetNormalizedAxisRejectionMasked(VecFx32 *out, const VecFx32 *v, const VecFx32 *normal, BOOL normalize);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 ComputeOneMinusSquareFraction(fx32 value);
 extern void NegateVecFx32(VecFx32 *vec);
 extern s64 _ll_mul(s64 a, s64 b);
@@ -33,7 +33,7 @@ static inline VecFx32 VecMake(fx32 x, fx32 y, fx32 z)
 static inline VecFx32 VecSum(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 sum;
-    func_01ff9e0c(a, b, &sum);
+    VEC_Add(a, b, &sum);
     return sum;
 }
 

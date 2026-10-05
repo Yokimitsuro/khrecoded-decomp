@@ -45,7 +45,7 @@ extern BOOL func_ov001_020807b4(void *entry, u8 group, u8 index, u32 slot, Shape
 extern void ApplyRecordTableEntry2(int index, int a1, int a2, int a3);
 extern FieldActor *ActorRegistry_GetEntityByIndex(u32 actorId);
 extern void Obj_SetPosition(FieldActor *entity, const VecFx32 *position);
-extern void func_ov001_020809f8(void *anim, int blendIndex, int frame);
+extern void RebindAnimTracks(void *anim, int blendIndex, int frame);
 extern void Flags16_ClearBit1(void *anim);
 extern BOOL IsObjectFlagClear(FieldObject *object);
 extern void ActorSlot_SetFlag8ByIndex(int index, BOOL enable);
@@ -67,7 +67,7 @@ void RespawnFieldObjectActor(FieldObject *object)
         actor->angle = angle;
         actor->animFlags |= 0x20;
     }
-    func_ov001_020809f8(&actor->animFlags, 0, 0);
+    RebindAnimTracks(&actor->animFlags, 0, 0);
     Flags16_ClearBit1(&actor->animFlags);
     if (IsObjectFlagClear(object)) {
         ActorSlot_SetFlag8ByIndex(object->actorId, TRUE);

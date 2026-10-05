@@ -7,6 +7,14 @@ src/overlays/ov009/calls/ScriptCmd_CreateObjectInSlot_020a0540.c:
     complete
     .text       start:0x020a0540 end:0x020a056a
 
+src/overlays/ov009/calls/ScriptCmd_SetObjectElementFlag.c:
+    complete
+    .text       start:0x020a05e0 end:0x020a0616
+
+src/overlays/ov009/calls/ScriptCmd_SetObjectElementState.c:
+    complete
+    .text       start:0x020a0618 end:0x020a0654
+
 src/overlays/ov009/auto/func_ov009_020a0908.c:
     complete
     .text       start:0x020a0908 end:0x020a090a
@@ -18,6 +26,10 @@ src/overlays/ov009/calls/GetFieldPtrAt0x40.c:
 src/overlays/ov009/calls/GetFieldPtrAt0x40_020a0910.c:
     complete
     .text       start:0x020a0910 end:0x020a0914
+
+src/overlays/ov009/calls/FieldObject_SetLiftedPosition.c:
+    complete
+    .text       start:0x020a0914 end:0x020a0962
 
 src/overlays/ov009/calls/GetIndirectFieldAt0x50.c:
     complete

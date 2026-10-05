@@ -8,6 +8,10 @@ src/overlays/ov000/calls/HasRecentTouchPoints.c:
     complete
     .text       start:0x020613f8 end:0x0206141c
 
+src/overlays/ov000/calls/InitPanelCamera.c:
+    complete
+    .text       start:0x020615b8 end:0x02061614
+
 src/overlays/ov000/calls/DSProt_OnDetection.c:
     complete
     .text       start:0x02061b6c end:0x02061b88
@@ -15,6 +19,10 @@ src/overlays/ov000/calls/DSProt_OnDetection.c:
 src/overlays/ov000/calls/IsPanelFlagSet.c:
     complete
     .text       start:0x02061bb0 end:0x02061bc4
+
+src/overlays/ov000/calls/SetPanelFlag.c:
+    complete
+    .text       start:0x02061bc4 end:0x02061bf4
 
 src/overlays/ov000/calls/SetPanelState.c:
     complete
@@ -24,9 +32,21 @@ src/overlays/ov000/calls/SetPanelMode.c:
     complete
     .text       start:0x02061dc4 end:0x02061de8
 
+src/overlays/ov000/calls/EnterPanelPhase.c:
+    complete
+    .text       start:0x02062270 end:0x020622b8
+
+src/overlays/ov000/calls/ApplyPanelSelection.c:
+    complete
+    .text       start:0x020622b8 end:0x02062318
+
 src/overlays/ov000/calls/StopTouchPanelSampling.c:
     complete
     .text       start:0x0206241c end:0x0206243c
+
+src/overlays/ov000/calls/WaitForAnimationFinish.c:
+    complete
+    .text       start:0x02062568 end:0x02062598
 
 src/overlays/ov000/calls/ResetPanelStateAndLoadSlot0.c:
     complete
@@ -36,13 +56,29 @@ src/overlays/ov000/calls/func_ov000_02062908.c:
     complete
     .text       start:0x02062908 end:0x02062920
 
+src/overlays/ov000/calls/TryEnterPanelState.c:
+    complete
+    .text       start:0x02062a10 end:0x02062a58
+
 src/overlays/ov000/calls/func_ov000_02062a58.c:
     complete
     .text       start:0x02062a58 end:0x02062a64
 
+src/overlays/ov000/calls/SetupPanelField.c:
+    complete
+    .text       start:0x02062a64 end:0x02062a98
+
 src/overlays/ov000/calls/ReleaseFieldAndReset.c:
     complete
     .text       start:0x02062bdc end:0x02062c08
+
+src/overlays/ov000/calls/UpdatePanelLookup.c:
+    complete
+    .text       start:0x02062c08 end:0x02062c64
+
+src/overlays/ov000/calls/ReleaseHandleAndResetDisplay.c:
+    complete
+    .text       start:0x02062cf4 end:0x02062d38
 
 src/overlays/ov000/calls/func_ov000_0206300c.c:
     complete
@@ -55,6 +91,10 @@ src/overlays/ov000/auto/func_ov000_02063038.c:
 src/overlays/ov000/auto/func_ov000_02063040.c:
     complete
     .text       start:0x02063040 end:0x02063044
+
+src/overlays/ov000/calls/TeardownCurrentHeap.c:
+    complete
+    .text       start:0x020633d8 end:0x02063424
 
 src/overlays/ov000/calls/NotifyOv039OfWorld.c:
     complete

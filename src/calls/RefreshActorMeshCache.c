@@ -55,8 +55,8 @@ typedef struct CollQuery {
 } CollQuery;
 
 extern u8 data_02060780;
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void TestQueryAgainstMeshList(void *list, void *params);
 
 static inline BOOL IsBoxInside(const CollBox *box, const CollBox *cache)
@@ -83,14 +83,14 @@ static inline VecFx32 MakeVec(fx32 x, fx32 y, fx32 z)
 static inline VecFx32 AddVec(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 sum;
-    func_01ff9e0c(a, b, &sum);
+    VEC_Add(a, b, &sum);
     return sum;
 }
 
 static inline VecFx32 SubVec(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 diff;
-    func_01ff9e3c(a, b, &diff);
+    VEC_Subtract(a, b, &diff);
     return diff;
 }
 

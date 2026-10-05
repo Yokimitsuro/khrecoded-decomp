@@ -68,7 +68,7 @@ extern s16 data_02053580[];
 extern const VecFx32 data_0205344c;
 extern int func_ov052_020ceb9c(Actor *actor);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
-extern void func_ov021_020a9180(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
+extern void RotateOffsetAroundY(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
 extern void func_0203ad28(ShapeQuery *query, Sphere *shape, const VecFx32 *center, fx32 radius);
 extern void OffsetBoxByDelta(const Box *src, Box *dst, const VecFx32 *delta);
 extern void ForwardToActiveService(void);
@@ -76,7 +76,7 @@ extern s32 func_ov001_020878c4(ShapeQuery *query, QueryCursor *cursor, u16 *outR
 extern BOOL func_ov001_02087988(u32 id, TargetInfo *out);
 extern void func_01ffafb4(fx32 scale, const VecFx32 *src, VecFx32 *dst);
 extern void MI_CpuFill8(void *dst, int value, int size);
-extern int func_ov001_020878fc(u32 id, HitEvent *event);
+extern int DispatchStageEventArg(u32 id, HitEvent *event);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern fx32 nextRandom12(void);
@@ -113,7 +113,7 @@ void EmitSweepHitEvents(Actor *actor)
     } else {
         origin = &actor->position;
     }
-    func_ov021_020a9180(&offset, origin, angle, &offset);
+    RotateOffsetAroundY(&offset, origin, angle, &offset);
     func_0203ad28(&temp, &sphere, &offset, 0x1800);
     temp.delta = data_0205344c;
     OffsetBoxByDelta(&temp.bounds, &temp.swept, &temp.delta);
@@ -139,7 +139,7 @@ void EmitSweepHitEvents(Actor *actor)
         event.origin = *func_ov052_020ceb74(actor);
         event.offset = dir;
         event.flags |= 0x100;
-        func_ov001_020878fc(id, &event);
+        DispatchStageEventArg(id, &event);
         pos = info.position;
         ResetAnimationTrackState(&request);
         request.id = actor->player;

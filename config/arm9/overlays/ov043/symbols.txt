@@ -1,5 +1,5 @@
 func_ov043_020bc840 kind:function(arm,size=0x34) addr:0x020bc840
-func_ov043_020bc874 kind:function(arm,size=0x60) addr:0x020bc874
+UpdateCameraBasisAndCommit kind:function(arm,size=0x60) addr:0x020bc874
 func_ov043_020bc8d4 kind:function(arm,size=0x8) addr:0x020bc8d4
 func_ov043_020bc8dc kind:function(arm,size=0x10) addr:0x020bc8dc
 func_ov043_020bc8ec kind:function(thumb,size=0x14) addr:0x020bc8ec

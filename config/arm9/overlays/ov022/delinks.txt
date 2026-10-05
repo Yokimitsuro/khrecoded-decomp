@@ -4,6 +4,14 @@
     .data       start:0x020b7c00 end:0x020b7da0 kind:data align:32
     .bss        start:0x020b7da0 end:0x020b7e40 kind:bss align:32
 
+src/overlays/ov022/calls/UpdateMovieFadeOut.c:
+    complete
+    .text       start:0x020a6ee0 end:0x020a6f44
+
+src/overlays/ov022/calls/InitMovieOverlayState.c:
+    complete
+    .text       start:0x020a724c end:0x020a72a8
+
 src/overlays/ov022/calls/StartSubtitlePlayback.c:
     complete
     .text       start:0x020a73d0 end:0x020a73f8
@@ -19,6 +27,10 @@ src/overlays/ov022/calls/func_ov022_020a7810.c:
 src/overlays/ov022/auto/func_ov022_020a7878.c:
     complete
     .text       start:0x020a7878 end:0x020a787c
+
+src/overlays/ov022/calls/CommitMovieStateText.c:
+    complete
+    .text       start:0x020a78e8 end:0x020a791c
 
 src/overlays/ov022/calls/IsMoviePlaybackIdle.c:
     complete
@@ -76,6 +88,10 @@ src/overlays/ov022/calls/func_ov022_020a7db4.c:
     complete
     .text       start:0x020a7db4 end:0x020a7dd4
 
+src/overlays/ov022/calls/StopMovieAudio.c:
+    complete
+    .text       start:0x020a7ef8 end:0x020a7f5c
+
 src/overlays/ov022/calls/func_ov022_020a809c.c:
     complete
     .text       start:0x020a809c end:0x020a80bc
@@ -100,6 +116,10 @@ src/overlays/ov022/calls/GetSubtitleStreamFrame.c:
     complete
     .text       start:0x020a8938 end:0x020a8954
 
+src/overlays/ov022/calls/openVideoStreamFromHeader_020a8a24.c:
+    complete
+    .text       start:0x020a8a24 end:0x020a8a64
+
 src/overlays/ov022/calls/func_ov022_020a8a64.c:
     complete
     .text       start:0x020a8a64 end:0x020a8a70
@@ -108,9 +128,21 @@ src/overlays/ov022/calls/ResetSubtitleLine.c:
     complete
     .text       start:0x020a8a70 end:0x020a8a90
 
+src/overlays/ov022/calls/advanceMovieStreamWindow_020a8a98.c:
+    complete
+    .text       start:0x020a8a98 end:0x020a8aec
+
+src/overlays/ov022/calls/IsMovieStreamReady_020a90c8.c:
+    complete
+    .text       start:0x020a90c8 end:0x020a9118
+
 src/overlays/ov022/calls/UploadDirtySubtitleTiles.c:
     complete
     .text       start:0x020a916c end:0x020a9190
+
+src/overlays/ov022/calls/initializeMovieStreamWrapper.c:
+    complete
+    .text       start:0x020a9190 end:0x020a91c0
 
 src/overlays/ov022/calls/func_ov022_020a9294.c:
     complete

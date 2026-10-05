@@ -24,6 +24,10 @@ src/overlays/ov027/auto/func_ov027_020b78bc.c:
     complete
     .text       start:0x020b78bc end:0x020b790c
 
+src/overlays/ov027/calls/FindFreeRecordSlot_020b790c.c:
+    complete
+    .text       start:0x020b790c end:0x020b7954
+
 src/overlays/ov027/auto/func_ov027_020b79a0.c:
     complete
     .text       start:0x020b79a0 end:0x020b79dc
@@ -48,13 +52,29 @@ src/overlays/ov027/calls/func_ov027_020b7e7c.c:
     complete
     .text       start:0x020b7e7c end:0x020b7eec
 
+src/overlays/ov027/calls/AddRecordFromTemplate.c:
+    complete
+    .text       start:0x020b7eec end:0x020b7f4c
+
+src/overlays/ov027/calls/CopyElementLayout.c:
+    complete
+    .text       start:0x020b7f4c end:0x020b7f80
+
 src/overlays/ov027/auto/func_ov027_020b7f80.c:
     complete
     .text       start:0x020b7f80 end:0x020b7fac
 
+src/overlays/ov027/calls/ReleaseListElementBuffer.c:
+    complete
+    .text       start:0x020b80ac end:0x020b80dc
+
 src/overlays/ov027/calls/func_ov027_020b8110.c:
     complete
     .text       start:0x020b8110 end:0x020b8154
+
+src/overlays/ov027/calls/FindActiveRecordById.c:
+    complete
+    .text       start:0x020b81a4 end:0x020b81f8
 
 src/overlays/ov027/auto/func_ov027_020b81f8.c:
     complete
@@ -84,6 +104,18 @@ src/overlays/ov027/calls/func_ov027_020b833c.c:
     complete
     .text       start:0x020b833c end:0x020b8354
 
+src/overlays/ov027/calls/ClearElementList.c:
+    complete
+    .text       start:0x020b8354 end:0x020b83b0
+
+src/overlays/ov027/calls/FindLoadedElementById.c:
+    complete
+    .text       start:0x020b83b0 end:0x020b8408
+
+src/overlays/ov027/calls/PositionListRecords.c:
+    complete
+    .text       start:0x020b84b8 end:0x020b8514
+
 src/overlays/ov027/calls/func_ov027_020b8514.c:
     complete
     .text       start:0x020b8514 end:0x020b8578
@@ -99,6 +131,22 @@ src/overlays/ov027/auto/func_ov027_020b85c8.c:
 src/overlays/ov027/auto/func_ov027_020b85e4.c:
     complete
     .text       start:0x020b85e4 end:0x020b85f0
+
+src/overlays/ov027/calls/GetWidgetScreenRect.c:
+    complete
+    .text       start:0x020b86c4 end:0x020b871c
+
+src/overlays/ov027/calls/GetLatestValidInputRecord.c:
+    complete
+    .text       start:0x020b8794 end:0x020b87e8
+
+src/overlays/ov027/calls/DispatchTouchToWidget.c:
+    complete
+    .text       start:0x020b8894 end:0x020b88e0
+
+src/overlays/ov027/calls/StepWidgetMoveTween.c:
+    complete
+    .text       start:0x020b8ae8 end:0x020b8b3c
 
 src/overlays/ov027/calls/ForEachListElement.c:
     complete
@@ -120,6 +168,14 @@ src/overlays/ov027/calls/func_ov027_020b8fb8.c:
     complete
     .text       start:0x020b8fb8 end:0x020b8fde
 
+src/overlays/ov027/calls/DestroyContainerElement.c:
+    complete
+    .text       start:0x020b8fe0 end:0x020b902c
+
+src/overlays/ov027/calls/DestroyAllContainerElements.c:
+    complete
+    .text       start:0x020b902c end:0x020b905c
+
 src/overlays/ov027/calls/ReleaseIfMarked.c:
     complete
     .text       start:0x020b905c end:0x020b9080
@@ -135,6 +191,10 @@ src/overlays/ov027/calls/func_ov027_020b9098.c:
 src/overlays/ov027/calls/func_ov027_020b90a8.c:
     complete
     .text       start:0x020b90a8 end:0x020b90b8
+
+src/overlays/ov027/calls/FindWidgetById.c:
+    complete
+    .text       start:0x020b90c4 end:0x020b9114
 
 src/overlays/ov027/calls/IsWidgetMoveFinished.c:
     complete
@@ -164,9 +224,17 @@ src/overlays/ov027/calls/func_ov027_020b96c0.c:
     complete
     .text       start:0x020b96c0 end:0x020b9704
 
+src/overlays/ov027/calls/ApplyWidgetFocusAnims.c:
+    complete
+    .text       start:0x020b9784 end:0x020b97d8
+
 src/overlays/ov027/calls/func_ov027_020b97d8.c:
     complete
     .text       start:0x020b97d8 end:0x020b981c
+
+src/overlays/ov027/calls/SetAllElementObjectModes.c:
+    complete
+    .text       start:0x020b981c end:0x020b986c
 
 src/overlays/ov027/calls/SetWidgetRootTouchEnabled.c:
     complete
@@ -184,6 +252,14 @@ src/overlays/ov027/calls/GetTileTableRow.c:
     complete
     .text       start:0x020b9968 end:0x020b998e
 
+src/overlays/ov027/calls/GetWidgetTileDimensions.c:
+    complete
+    .text       start:0x020b9990 end:0x020b99c0
+
+src/overlays/ov027/calls/InitTileTableFrom.c:
+    complete
+    .text       start:0x020b9a2c end:0x020b9a80
+
 src/overlays/ov027/calls/FreeAllocatedBuffers.c:
     complete
     .text       start:0x020b9a80 end:0x020b9a92
@@ -195,6 +271,10 @@ src/overlays/ov027/calls/func_ov027_020b9d68.c:
 src/overlays/ov027/calls/func_ov027_020b9e10.c:
     complete
     .text       start:0x020b9e10 end:0x020b9e20
+
+src/overlays/ov027/calls/CaptureLatestOnScreenTouch.c:
+    complete
+    .text       start:0x020b9f14 end:0x020b9f74
 
 src/overlays/ov027/calls/func_ov027_020b9f74.c:
     complete
@@ -220,6 +300,10 @@ src/overlays/ov027/calls/func_ov027_020ba124.c:
     complete
     .text       start:0x020ba124 end:0x020ba134
 
+src/overlays/ov027/calls/IsFileLoadQueueEmpty.c:
+    complete
+    .text       start:0x020ba1c0 end:0x020ba1f8
+
 src/overlays/ov027/auto/func_ov027_020ba1f8.c:
     complete
     .text       start:0x020ba1f8 end:0x020ba200
@@ -227,6 +311,10 @@ src/overlays/ov027/auto/func_ov027_020ba1f8.c:
 src/overlays/ov027/calls/func_ov027_020ba200.c:
     complete
     .text       start:0x020ba200 end:0x020ba27c
+
+src/overlays/ov027/calls/LoadPackedFileView.c:
+    complete
+    .text       start:0x020ba27c end:0x020ba2b2
 
 src/overlays/ov027/calls/FreePointerIfSet.c:
     complete

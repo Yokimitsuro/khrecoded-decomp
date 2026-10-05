@@ -2,7 +2,7 @@
 #include "nitro/fx_types.h"
 
 extern void MI_CpuFill8(void *dst, int value, int size);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
@@ -57,7 +57,7 @@ BOOL FlagBlockingNormals(const VecFx32 *dir, const VecFx32 *motion, const VecFx3
             vectors.scaledSide = vectors.side;
             ScaleVecFx32InPlace(&vectors.scaledSide, dot);
             vectors.offset = vectors.scaledSide;
-            func_01ff9e3c(motion, &vectors.offset, &vectors.difference);
+            VEC_Subtract(motion, &vectors.offset, &vectors.difference);
             vectors.radial = vectors.difference;
             func_01ff9ea8(&vectors.axis, &vectors.radial, &vectors.normalResult);
             vectors.normal = vectors.normalResult;

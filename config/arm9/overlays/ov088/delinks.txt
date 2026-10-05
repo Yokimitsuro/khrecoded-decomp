@@ -4,6 +4,10 @@
     .data       start:0x020bee80 end:0x020bef20 kind:data align:32
     .bss        start:0x020bef20 end:0x020bef20 kind:bss align:32
 
+src/overlays/ov088/calls/ConfigureOverlay088Display.c:
+    complete
+    .text       start:0x020beac0 end:0x020beb0c
+
 src/overlays/ov088/calls/func_ov088_020bebe8.c:
     complete
     .text       start:0x020bebe8 end:0x020bebfc

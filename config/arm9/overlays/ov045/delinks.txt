@@ -4,6 +4,14 @@
     .data       start:0x020c0820 end:0x020c08a0 kind:data align:32
     .bss        start:0x020c08a0 end:0x020c08c0 kind:bss align:32
 
+src/overlays/ov045/calls/OpenMessageContainer.c:
+    complete
+    .text       start:0x020be688 end:0x020be6c0
+
+src/overlays/ov045/calls/ScrollTileRowPairLeft.c:
+    complete
+    .text       start:0x020bf07c end:0x020bf0b6
+
 src/overlays/ov045/calls/CopyTileRowPair.c:
     complete
     .text       start:0x020bf0b8 end:0x020bf0e4
@@ -16,9 +24,17 @@ src/overlays/ov045/calls/OffsetRecordYById.c:
     complete
     .text       start:0x020bf0fc end:0x020bf122
 
+src/overlays/ov045/calls/DrawDigitRecords.c:
+    complete
+    .text       start:0x020bf1bc end:0x020bf218
+
 src/overlays/ov045/calls/StartUnitTween.c:
     complete
     .text       start:0x020bf218 end:0x020bf236
+
+src/overlays/ov045/calls/ArmTagAtPosition.c:
+    complete
+    .text       start:0x020bf238 end:0x020bf268
 
 src/overlays/ov045/calls/ArmTagById.c:
     complete
@@ -27,6 +43,10 @@ src/overlays/ov045/calls/ArmTagById.c:
 src/overlays/ov045/calls/DisarmTagById.c:
     complete
     .text       start:0x020bf28c end:0x020bf2a4
+
+src/overlays/ov045/calls/DrawShadowedText.c:
+    complete
+    .text       start:0x020bf2a4 end:0x020bf2da
 
 src/overlays/ov045/calls/CollectRecordPickup.c:
     complete
@@ -39,6 +59,10 @@ src/overlays/ov045/calls/UpdateTweenIsFinished.c:
 src/overlays/ov045/calls/UpdateResultFadeOut.c:
     complete
     .text       start:0x020c0064 end:0x020c0138
+
+src/overlays/ov045/calls/StepTextureUpload.c:
+    complete
+    .text       start:0x020c02fc end:0x020c033e
 
 src/overlays/ov045/calls/ReleaseHeapBlockIfAllocated.c:
     complete

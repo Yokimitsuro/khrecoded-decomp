@@ -10,7 +10,7 @@ typedef struct CollisionCapsule {
     fx32 sine;
 } CollisionCapsule;
 
-void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 fx32 func_01ffaff4(VecFx32 *src, VecFx32 *dst);
 fx32 AbsDotProduct(const VecFx32 *a, const VecFx32 *b);
 fx32 ComputeOneMinusSquareFraction(fx32 value);
@@ -24,7 +24,7 @@ fx32 GetCapsuleProjectedExtent(const CollisionCapsule *capsule, const VecFx32 *a
     fx32 radius;
     fx32 sine;
 
-    func_01ff9e3c(&capsule->end, &capsule->start, &delta);
+    VEC_Subtract(&capsule->end, &capsule->start, &delta);
     direction = delta;
     length = func_01ffaff4(&direction, &direction);
     cosine = AbsDotProduct(&direction, axis);

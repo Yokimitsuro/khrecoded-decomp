@@ -8,9 +8,45 @@ src/overlays/ov091/calls/AlignUpTo4K.c:
     complete
     .text       start:0x020beb20 end:0x020beb40
 
+src/overlays/ov091/calls/DestroyMenuScene.c:
+    complete
+    .text       start:0x020bed34 end:0x020bed84
+
+src/overlays/ov091/calls/TryCloseEntryMenu.c:
+    complete
+    .text       start:0x020bef84 end:0x020befbc
+
 src/overlays/ov091/calls/FreeMessageBuffers.c:
     complete
     .text       start:0x020bf1f8 end:0x020bf220
+
+src/overlays/ov091/calls/FreeGraphicsResources.c:
+    complete
+    .text       start:0x020bf400 end:0x020bf430
+
+src/overlays/ov091/calls/ReleaseTextLayers.c:
+    complete
+    .text       start:0x020bf504 end:0x020bf560
+
+src/overlays/ov091/calls/DrawShadowedAnchoredText.c:
+    complete
+    .text       start:0x020bf744 end:0x020bf7a8
+
+src/overlays/ov091/calls/ReleaseListPanels.c:
+    complete
+    .text       start:0x020bf89c end:0x020bf8cc
+
+src/overlays/ov091/calls/SetListPanelSlotFlag.c:
+    complete
+    .text       start:0x020bf938 end:0x020bf970
+
+src/overlays/ov091/calls/SetListPanelSlotValue.c:
+    complete
+    .text       start:0x020bfbcc end:0x020bfc20
+
+src/overlays/ov091/calls/IsEntryFlagSet.c:
+    complete
+    .text       start:0x020c1708 end:0x020c1738
 
 src/overlays/ov091/calls/SetEntryFlag.c:
     complete
@@ -28,9 +64,25 @@ src/overlays/ov091/calls/RequestEntryTransitionIfIdle.c:
     complete
     .text       start:0x020c1784 end:0x020c17b0
 
+src/overlays/ov091/calls/DestroyPopupManager.c:
+    complete
+    .text       start:0x020c1930 end:0x020c196c
+
+src/overlays/ov091/calls/SetPopupSlotVisible.c:
+    complete
+    .text       start:0x020c1d68 end:0x020c1dc0
+
 src/overlays/ov091/auto/func_ov091_020c1dc0.c:
     complete
     .text       start:0x020c1dc0 end:0x020c1dc4
+
+src/overlays/ov091/calls/HidePopupWindow.c:
+    complete
+    .text       start:0x020c21ac end:0x020c21f0
+
+src/overlays/ov091/calls/SetSubBg2Visible.c:
+    complete
+    .text       start:0x020c273c end:0x020c2774
 
 src/overlays/ov091/calls/SetPopupState.c:
     complete

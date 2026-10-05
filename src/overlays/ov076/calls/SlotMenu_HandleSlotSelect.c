@@ -52,9 +52,9 @@ extern BOOL func_ov076_020cbbc0(MenuPanel *panel, SlotMenu *owner, int (*getValu
 extern int func_ov076_020c51b0(SlotMenu *menu);
 extern int func_ov076_020c51d0(SlotMenu *menu);
 extern void SlotMenu_OpenConfirmPrompt(SlotMenu *menu);
-extern void func_ov076_020c4f54(SlotMenu *menu);
-extern void func_ov076_020c83a8(SlotMenu *menu, int messageId);
-extern void func_ov076_020ccd50(void *container, BOOL visible);
+extern void SlotMenu_EnterSlotView(SlotMenu *menu);
+extern void SlotMenu_OpenSlotMessage(SlotMenu *menu, int messageId);
+extern void SetNavigationElementsVisible(void *container, BOOL visible);
 extern void PlaySoundEffect(int seqArcNo, int index);
 extern void func_ov076_020c4464(SlotMenu *menu);
 extern void func_ov076_020c53e8(SlotMenu *menu);
@@ -78,13 +78,13 @@ void SlotMenu_HandleSlotSelect(SlotMenu *menu)
             func_ov076_020c5318(menu, menu->slotIndex, menu->column, 0, &data_ov076_020cd2e0);
             if (func_ov076_020cbbc0(&menu->panel, menu, func_ov076_020c51b0, SlotMenu_OpenConfirmPrompt, &data_ov076_020cd2d4, 2)) {
                 menu->state = 2;
-                func_ov076_020ccd50(func_ov039_020bc1dc(), FALSE);
+                SetNavigationElementsVisible(func_ov039_020bc1dc(), FALSE);
                 menu->showTutorial = 1;
                 PlaySoundEffect(1, 1);
             } else {
-                func_ov076_020c83a8(menu, 0x27);
+                SlotMenu_OpenSlotMessage(menu, 0x27);
                 menu->state = 3;
-                func_ov076_020ccd50(func_ov039_020bc1dc(), FALSE);
+                SetNavigationElementsVisible(func_ov039_020bc1dc(), FALSE);
             }
         } else {
             PlaySoundEffect(1, 4);
@@ -93,9 +93,9 @@ void SlotMenu_HandleSlotSelect(SlotMenu *menu)
         func_ov076_020c5318(menu, menu->slotIndex, menu->column, 0, &data_ov076_020cd2b0);
         func_ov076_020c5318(menu, menu->slotIndex, 0, 0, &data_ov076_020cd2ec);
         func_ov076_020c5318(menu, menu->slotIndex, 0, 0, &data_ov076_020cd2f8);
-        if (func_ov076_020cbbc0(&menu->panel, menu, func_ov076_020c51d0, func_ov076_020c4f54, &data_ov076_020cd2b0, 1)) {
+        if (func_ov076_020cbbc0(&menu->panel, menu, func_ov076_020c51d0, SlotMenu_EnterSlotView, &data_ov076_020cd2b0, 1)) {
             menu->state = 2;
-            func_ov076_020ccd50(func_ov039_020bc1dc(), FALSE);
+            SetNavigationElementsVisible(func_ov039_020bc1dc(), FALSE);
             PlaySoundEffect(1, 1);
         } else {
             *(vu16 *)0x0400000a = (*(vu16 *)0x0400000a & 0x43) | 0x10;

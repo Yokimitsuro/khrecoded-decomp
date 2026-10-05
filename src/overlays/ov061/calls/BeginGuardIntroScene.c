@@ -42,7 +42,7 @@ extern void func_ov052_020d1190(Actor *actor, int mode);
 extern int func_ov052_020ceb9c(Actor *actor);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
-extern void func_ov046_020c2f64(void *path);
+extern void CameraPath_Start(void *path);
 
 s32 BeginGuardIntroScene(SceneOwner *owner, SceneTask *task, u32 *errorCode)
 {
@@ -63,6 +63,6 @@ s32 BeginGuardIntroScene(SceneOwner *owner, SceneTask *task, u32 *errorCode)
     request.delay = 0;
     func_ov021_020a8cc0(&request, *task->groupId);
     task->timer = 0;
-    func_ov046_020c2f64(task->cameraPath);
+    CameraPath_Start(task->cameraPath);
     return task->result;
 }

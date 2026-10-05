@@ -63,7 +63,7 @@ extern ShapeTestFn gCollisionTestDispatch[][6];
 extern ShapeSweepFn gCollisionSweepDispatch[][6];
 
 extern void CopyShapeFromTemplate(CollShape *src, CollShape *dst, void *buffer);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void NegateVecFx32(VecFx32 *vec);
 extern void GetPointAlongDirectionQ27(fx32 time, VecFx32 *delta, void *origin, VecFx32 *out);
 
@@ -128,7 +128,7 @@ int TestMoverAgainstTarget(CollTarget *target, CollMover *mover)
                         contact = CONTACT_MOVING;
                     }
                 } else {
-                    func_01ff9e3c(&mover->sweep.delta, &target->sweep.delta, &difference);
+                    VEC_Subtract(&mover->sweep.delta, &target->sweep.delta, &difference);
                     relative = difference;
                     if (IsZeroVec(&relative)) {
                         contact = CONTACT_RESTING;

@@ -4,9 +4,17 @@
     .data       start:0x020c0560 end:0x020c06a0 kind:data align:32
     .bss        start:0x020c06a0 end:0x020c06a0 kind:bss align:32
 
+src/overlays/ov089/calls/ShouldOpenPopupWindow.c:
+    complete
+    .text       start:0x020bef20 end:0x020bef54
+
 src/overlays/ov089/calls/func_ov089_020bf4a8.c:
     complete
     .text       start:0x020bf4a8 end:0x020bf4bc
+
+src/overlays/ov089/calls/ShutdownOverlay089.c:
+    complete
+    .text       start:0x020c01d4 end:0x020c0214
 
 src/overlays/ov089/data/strings/Strings_ov089_020c065c.c:
     complete

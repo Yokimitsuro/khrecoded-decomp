@@ -135,12 +135,12 @@ extern s16 data_02053580[];
 extern const VecFx32 data_ov056_020d7f84;
 
 extern ArcEntry *GetBoundedEntryField(int index);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *axb);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern void func_01ffafb4(fx32 scale, const VecFx32 *src, VecFx32 *dst);
 extern int FX_Mul(int left, int right);
@@ -155,8 +155,8 @@ extern VecFx32 GetShapeCenter(const CollisionShape *shape);
 extern void func_ov021_020ac170(HitScan *scan);
 extern void func_ov021_020ac168(HitResult *result);
 extern HitResult func_ov021_020ab0e8(ArcOwner *owner, ArcUnit *unit, VecFx32 *position, VecFx32 *move);
-extern int func_ov021_020ab43c(ArcUnit *unit, fx32 step);
-extern void func_ov021_020ab610(ArcUnit *unit);
+extern int AdvanceOwnerAnimation(ArcUnit *unit, fx32 step);
+extern void AdvanceToSecondPhase(ArcUnit *unit);
 extern void func_ov056_020d5f70(void);
 extern void func_ov021_020a9250(void);
 
@@ -218,7 +218,7 @@ BOOL UpdateHomingArcProjectile(ArcOwner *owner, ArcUnit *unit, fx32 step)
         found = FALSE;
     }
     if (found && unit->age >= def->homingDelay && def->turnRate > 0 && !(def->flags & 0x100)) {
-        func_01ff9e3c(&toTarget, &pos, &toTarget);
+        VEC_Subtract(&toTarget, &pos, &toTarget);
         toTarget.y = 0;
         radius = def->radius;
         if (VEC_DotProduct(&toTarget, &toTarget) > FX_Mul(radius, radius)) {
@@ -249,8 +249,8 @@ BOOL UpdateHomingArcProjectile(ArcOwner *owner, ArcUnit *unit, fx32 step)
         }
     }
     func_01ffafb4(FX_Mul(-0x2d, step), &data_ov056_020d7f84, &gravity);
-    func_01ffa09c(step, &unit->velocity, &gravity, &move);
-    func_01ff9e0c(&unit->velocity, &gravity, &unit->velocity);
+    VEC_MultAdd(step, &unit->velocity, &gravity, &move);
+    VEC_Add(&unit->velocity, &gravity, &unit->velocity);
 
     landSwept.shape = func_0203ad28(&sphere, &pos, def->radius);
     landSwept.delta = move;
@@ -263,11 +263,11 @@ BOOL UpdateHomingArcProjectile(ArcOwner *owner, ArcUnit *unit, fx32 step)
         landPos = landCenter;
         move.y = 0;
         unit->velocity.y = 0;
-        func_01ff9e3c(&landPos, &pos, &dir);
+        VEC_Subtract(&landPos, &pos, &dir);
         if (dir.y > 0) {
             pos.y = landPos.y;
         }
-        func_01ff9e3c(&pos, &gravity, &pos);
+        VEC_Subtract(&pos, &gravity, &pos);
     }
 
     hitSwept.shape = func_0203ad28(&sphere, &pos, def->radius);
@@ -309,15 +309,15 @@ BOOL UpdateHomingArcProjectile(ArcOwner *owner, ArcUnit *unit, fx32 step)
             if (owner->onHit != NULL) {
                 owner->onHit(owner, unit, &hit);
             }
-            func_ov021_020ab610(unit);
+            AdvanceToSecondPhase(unit);
         }
     }
     strongest = func_ov021_020ab0e8(owner, unit, &pos, &move);
-    func_01ff9e0c(&pos, &move, &pos);
+    VEC_Add(&pos, &move, &pos);
     unit->position = pos;
     if (unit->status == 1) {
         done = FALSE;
-        animDone = func_ov021_020ab43c(unit, step);
+        animDone = AdvanceOwnerAnimation(unit, step);
         if (def->lifetime >= 0) {
             if (unit->age >= def->lifetime) {
                 done = TRUE;
@@ -329,7 +329,7 @@ BOOL UpdateHomingArcProjectile(ArcOwner *owner, ArcUnit *unit, fx32 step)
             done = TRUE;
         }
         if (done) {
-            func_ov021_020ab610(unit);
+            AdvanceToSecondPhase(unit);
         }
     }
     if (unit->status == -1) {

@@ -20,9 +20,17 @@ src/overlays/ov014/auto/func_ov014_0206e8fc.c:
     complete
     .text       start:0x0206e8fc end:0x0206e900
 
+src/overlays/ov014/calls/BindPanelEntryScreen.c:
+    complete
+    .text       start:0x0206e900 end:0x0206e930
+
 src/overlays/ov014/calls/QueryPanelEntry.c:
     complete
     .text       start:0x0206e930 end:0x0206e954
+
+src/overlays/ov014/calls/HitTestPanelGroup.c:
+    complete
+    .text       start:0x0206f7b4 end:0x0206f7fc
 
 src/overlays/ov014/data/strings/Strings_ov014_0206f91c.c:
     complete

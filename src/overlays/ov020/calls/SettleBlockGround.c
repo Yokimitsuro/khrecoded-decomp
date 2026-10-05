@@ -10,12 +10,12 @@ typedef struct Block {
     fx32 groundY;
 } Block;
 
-extern Block *func_ov020_020a2814(Block *block);
-extern Block *func_ov020_020a285c(Block *block);
+extern Block *FindLivePrevBlock(Block *block);
+extern Block *FindLiveNextBlock(Block *block);
 
 void SettleBlockGround(Block *block)
 {
-    Block *support = func_ov020_020a285c(block);
+    Block *support = FindLiveNextBlock(block);
     Block *above;
 
     block->flags |= 2;
@@ -24,7 +24,7 @@ void SettleBlockGround(Block *block)
     } else {
         block->groundY = support->position.y;
     }
-    above = func_ov020_020a2814(block);
+    above = FindLivePrevBlock(block);
     if (above != NULL) {
         SettleBlockGround(above);
     }

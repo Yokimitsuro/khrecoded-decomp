@@ -61,7 +61,7 @@ extern EntryInfo *GetBoundedEntryField(int index);
 extern void func_ov021_020a91d8(VecFx32 *out, int entryIndex, void *arg);
 extern void MTX_RotY33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
 extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *dst);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void func_ov021_020ab0ac(SpawnDesc *desc);
 extern SpawnedProjectile *func_ov021_020ab0b8(SpawnUnit *unit, SpawnDesc *desc);
 extern u32 SpawnSoundSlot(u32 owner, u32 kind, VecFx32 *position, u32 flags);
@@ -86,7 +86,7 @@ void SpawnSlotProjectile(SpawnUnit *unit, void *arg, SpawnRequest *request)
     index = facing >> 4;
     MTX_RotY33_(&rot, data_02053580[index], data_02053580[(0x400 - index) & 0xfff]);
     func_01ff9404(&offset, &rot, &offset);
-    func_01ff9e0c(&offset, &info->position, &desc.position);
+    VEC_Add(&offset, &info->position, &desc.position);
     desc.direction.z = 0;
     desc.direction.y = 0;
     desc.direction.x = 0;

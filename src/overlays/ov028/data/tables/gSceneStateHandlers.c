@@ -14,7 +14,7 @@ extern void func_ov028_020bab94(void); /* SceneState_WaitScreenIdle */
 extern void EnterState12WithHalfRate(void); /* EnterState12WithHalfRate */
 extern void func_ov028_020bac30(void);
 extern void func_ov028_020bac5c(void);
-extern void func_ov028_020bac98(void); /* EnterOverlayTransition */
+extern void EnterOverlayTransition(void); /* EnterOverlayTransition */
 extern void func_ov028_020bacd0(void);
 extern void func_ov028_020bad1c(void);
 extern void func_ov028_020bad50(void); /* ShutdownFieldAndSaveActorPoses */
@@ -35,7 +35,7 @@ void (*gSceneStateHandlers[19])(void) = {
     EnterState12WithHalfRate, /* EnterState12WithHalfRate */
     func_ov028_020bac30,
     func_ov028_020bac5c,
-    func_ov028_020bac98, /* EnterOverlayTransition */
+    EnterOverlayTransition, /* EnterOverlayTransition */
     func_ov028_020bacd0,
     func_ov028_020bad1c,
     func_ov028_020bad50, /* ShutdownFieldAndSaveActorPoses */

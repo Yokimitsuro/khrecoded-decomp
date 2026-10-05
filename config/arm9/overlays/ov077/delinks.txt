@@ -8,9 +8,17 @@ src/overlays/ov077/calls/HandleItemTabTouch.c:
     complete
     .text       start:0x020c4418 end:0x020c4534
 
+src/overlays/ov077/calls/OpenHelpMessageOrActivate.c:
+    complete
+    .text       start:0x020c4b70 end:0x020c4bcc
+
 src/overlays/ov077/auto/func_ov077_020c4bcc.c:
     complete
     .text       start:0x020c4bcc end:0x020c4bce
+
+src/overlays/ov077/calls/ReleaseScreenSprites.c:
+    complete
+    .text       start:0x020c5290 end:0x020c52c0
 
 src/overlays/ov077/calls/UpdateItemCountDigits.c:
     complete
@@ -44,9 +52,25 @@ src/overlays/ov077/calls/InitImageQuad_020c67c4.c:
     complete
     .text       start:0x020c67c4 end:0x020c67e6
 
+src/overlays/ov077/calls/InitGridImageQuad_020c67e8.c:
+    complete
+    .text       start:0x020c67e8 end:0x020c683a
+
+src/overlays/ov077/calls/MenuPanel_ApplyCategoryFilter_020c6c68.c:
+    complete
+    .text       start:0x020c6c68 end:0x020c6cb0
+
 src/overlays/ov077/calls/SetDialogInputDisabled_020c73dc.c:
     complete
     .text       start:0x020c73dc end:0x020c73ea
+
+src/overlays/ov077/calls/ItemList_ReleaseCursorEntry_020c73ec.c:
+    complete
+    .text       start:0x020c73ec end:0x020c7428
+
+src/overlays/ov077/calls/AddToSelectionCounters_020c7564.c:
+    complete
+    .text       start:0x020c7564 end:0x020c7594
 
 src/overlays/ov077/calls/func_ov077_020c765c.c:
     complete
@@ -68,6 +92,18 @@ src/overlays/ov077/calls/InitDefaultMessageWindow.c:
     complete
     .text       start:0x020c83d4 end:0x020c83fc
 
+src/overlays/ov077/calls/MessageWindow_BeginClosing_020c84bc.c:
+    complete
+    .text       start:0x020c84bc end:0x020c84fc
+
+src/overlays/ov077/calls/MenuScreen_RefreshMarker_020c8b90.c:
+    complete
+    .text       start:0x020c8b90 end:0x020c8be4
+
+src/overlays/ov077/calls/ReleaseScreenResources.c:
+    complete
+    .text       start:0x020c90dc end:0x020c9138
+
 src/overlays/ov077/calls/SetContainerElementVisible_020c9d3c.c:
     complete
     .text       start:0x020c9d3c end:0x020c9d52
@@ -75,6 +111,14 @@ src/overlays/ov077/calls/SetContainerElementVisible_020c9d3c.c:
 src/overlays/ov077/calls/RefreshElementCellAnimation.c:
     complete
     .text       start:0x020c9d54 end:0x020c9d6a
+
+src/overlays/ov077/calls/PlaceElement42OrHide.c:
+    complete
+    .text       start:0x020c9d6c end:0x020c9d9c
+
+src/overlays/ov077/calls/SetFlagGatedElementsVisible.c:
+    complete
+    .text       start:0x020c9d9c end:0x020c9dd4
 
 src/overlays/ov077/auto/func_ov077_020c9f7c.c:
     complete

@@ -12,6 +12,14 @@ src/overlays/ov013/calls/func_ov013_02071a90.c:
     complete
     .text       start:0x02071a90 end:0x02071a9c
 
+src/overlays/ov013/calls/ApplyPanelSubitem5.c:
+    complete
+    .text       start:0x02072228 end:0x0207225c
+
+src/overlays/ov013/calls/PollPanelSaveStep.c:
+    complete
+    .text       start:0x0207324c end:0x020732a4
+
 src/overlays/ov013/auto/func_ov013_020732a4.c:
     complete
     .text       start:0x020732a4 end:0x020732a8
@@ -19,6 +27,10 @@ src/overlays/ov013/auto/func_ov013_020732a4.c:
 src/overlays/ov013/calls/ClearPanelListCallback.c:
     complete
     .text       start:0x020738ec end:0x0207390c
+
+src/overlays/ov013/calls/AdvancePanelCloseStep.c:
+    complete
+    .text       start:0x02073944 end:0x020739a0
 
 src/overlays/ov013/auto/func_ov013_020739a0.c:
     complete
@@ -44,6 +56,10 @@ src/overlays/ov013/auto/func_ov013_0207423c.c:
     complete
     .text       start:0x0207423c end:0x02074240
 
+src/overlays/ov013/calls/LoadPanelPaletteBase.c:
+    complete
+    .text       start:0x02074240 end:0x020742a4
+
 src/overlays/ov013/auto/func_ov013_02074348.c:
     complete
     .text       start:0x02074348 end:0x0207434c
@@ -59,6 +75,18 @@ src/overlays/ov013/auto/func_ov013_02074498.c:
 src/overlays/ov013/calls/UpdateFloatingPanelSprites.c:
     complete
     .text       start:0x0207449c end:0x02074598
+
+src/overlays/ov013/calls/SelectPanelResultMode1.c:
+    complete
+    .text       start:0x020745b8 end:0x02074608
+
+src/overlays/ov013/calls/SelectPanelResultMode2.c:
+    complete
+    .text       start:0x02074608 end:0x02074658
+
+src/overlays/ov013/calls/CheckClearCountMilestone.c:
+    complete
+    .text       start:0x02074674 end:0x020746d0
 
 src/overlays/ov013/calls/SetPanelModeWithSound.c:
     complete

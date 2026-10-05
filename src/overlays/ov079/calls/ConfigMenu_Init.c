@@ -64,7 +64,7 @@ extern void *data_0205fe0c;
 
 extern void MI_CpuFill8(void *dest, int value, u32 size);
 extern void func_ov039_020be5d8(u32 position, u32 size, int layer, void *frame, FrameStyle *style);
-extern void func_ov027_020ba27c(void **out, const void *path, int flags);
+extern void LoadPackedFileView(void **out, const void *path, int flags);
 extern void *func_ov039_020bcb40(void *save);
 extern BOOL func_ov039_020bcd24(void *list, int limit, const void *text);
 extern void DrawTextAnchored(void *list, int x, int y, int color, u32 flags, const void *text);
@@ -73,9 +73,9 @@ extern int func_ov039_020bc240(int slot, u32 low);
 extern void func_ov027_020b7e44(void *pool, int params);
 extern void *func_ov027_020ba2c8(void *messages, int index);
 extern ConfigOption *func_ov079_020c4738(void *messages, int labelIndex, int count, int spec);
-extern void *func_ov027_020b83b0(void *pool, u32 id);
-extern TagLayout *func_ov027_020b81a4(void *pool, u32 id);
-extern void *func_ov027_020b7eec(void *pool, TagLayout *source, u16 id, int userData);
+extern void *FindLoadedElementById(void *pool, u32 id);
+extern TagLayout *FindActiveRecordById(void *pool, u32 id);
+extern void *AddRecordFromTemplate(void *pool, TagLayout *source, u16 id, int userData);
 extern void func_ov027_020b8208(void *pool, void *tag, s16 x, s16 y);
 extern void func_ov027_020b8408(void *pool, void *tag, BOOL arm);
 extern int func_ov039_020bc934(void);
@@ -101,7 +101,7 @@ BOOL ConfigMenu_Init(ConfigMenu *menu)
     func_ov039_020be5d8(0x00060004, 0x000c000b, 1, menu->objectLists[2], &style);
     func_ov039_020be5d8(0x00060011, 0x000c000b, 1, menu->objectLists[3], &style);
     func_ov039_020be5d8(0x00150000, 0x00030020, 1, menu->objectLists[4], &style);
-    func_ov027_020ba27c(&menu->image, sOv079_UiMenuStrLanguageConfigSZ_020c4ca4, 0);
+    LoadPackedFileView(&menu->image, sOv079_UiMenuStrLanguageConfigSZ_020c4ca4, 0);
     title = func_ov039_020bcb40(data_0205fe0c);
     func_ov039_020bcd24(menu->objectLists[0], 0xac, title);
     DrawTextAnchored(menu->objectLists[0], 0xbe, 2, 2, 0x20, title);
@@ -133,27 +133,27 @@ BOOL ConfigMenu_Init(ConfigMenu *menu)
     menu->pages[2].options[3] = func_ov079_020c4738(&menu->image, 0x45, 2, 0x4015);
     menu->pages[2].options[4] = func_ov079_020c4738(&menu->image, 0x4a, 2, 0x400b);
 
-    menu->cursorTag = func_ov027_020b83b0(pool, 2);
-    menu->helpTag = func_ov027_020b81a4(pool, 0x10);
-    layout = func_ov027_020b81a4(pool, 0xd);
+    menu->cursorTag = FindLoadedElementById(pool, 2);
+    menu->helpTag = FindActiveRecordById(pool, 0x10);
+    layout = FindActiveRecordById(pool, 0xd);
     menu->rowTags[0] = layout;
     for (i = 1; i < 6; i++) {
         void *tag;
         y = layout->y + i * 2;
         x = layout->x;
-        tag = func_ov027_020b7eec(pool, layout, nextId++, layout->userData);
+        tag = AddRecordFromTemplate(pool, layout, nextId++, layout->userData);
         func_ov027_020b8208(pool, tag, x, y);
         menu->rowTags[i] = tag;
     }
-    menu->headerTag = func_ov027_020b81a4(pool, 0x16);
+    menu->headerTag = FindActiveRecordById(pool, 0x16);
     for (i = 0; i < 3; i++) {
-        menu->pageTabs[i] = func_ov027_020b83b0(pool, (u16)(i + 6));
+        menu->pageTabs[i] = FindLoadedElementById(pool, (u16)(i + 6));
     }
-    menu->footerTag = func_ov027_020b81a4(pool, 0x11);
-    menu->arrowLeft = func_ov027_020b83b0(pool, 3);
-    menu->arrowRight = func_ov027_020b83b0(pool, 4);
-    menu->arrowLeftHelp = func_ov027_020b81a4(pool, 0x12);
-    menu->arrowRightHelp = func_ov027_020b81a4(pool, 0x14);
+    menu->footerTag = FindActiveRecordById(pool, 0x11);
+    menu->arrowLeft = FindLoadedElementById(pool, 3);
+    menu->arrowRight = FindLoadedElementById(pool, 4);
+    menu->arrowLeftHelp = FindActiveRecordById(pool, 0x12);
+    menu->arrowRightHelp = FindActiveRecordById(pool, 0x14);
     func_ov027_020b8408(pool, menu->cursorTag, TRUE);
     func_ov027_020b8408(pool, menu->arrowLeft, TRUE);
     func_ov027_020b8408(pool, menu->arrowRight, TRUE);

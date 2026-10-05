@@ -48,7 +48,7 @@ extern const ShapeTestFn gCollisionTestDispatch[][6];
 extern const ShapeSweepFn gCollisionSweepDispatch[][6];
 
 extern BOOL TestSweepAgainstFace(const void *face, const CollSweep *sweep, BOOL moving, CollHit *hit);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 BOOL TestSweepAgainstTarget(const CollSweep *sweep, const CollTargetRef *ref, CollHit *hit)
 {
@@ -70,7 +70,7 @@ BOOL TestSweepAgainstTarget(const CollSweep *sweep, const CollTargetRef *ref, Co
                 relativeDelta = NULL;
             } else {
                 VecFx32 difference;
-                func_01ff9e3c(&sweep->delta, &target->sweep.delta, &difference);
+                VEC_Subtract(&sweep->delta, &target->sweep.delta, &difference);
                 relative = difference;
                 relativeDelta = &relative;
             }

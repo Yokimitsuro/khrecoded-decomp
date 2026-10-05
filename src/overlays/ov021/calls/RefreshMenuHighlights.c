@@ -28,7 +28,7 @@ extern BOOL func_ov001_020645c8(u32 flag);
 extern int func_ov001_02064784(void);
 extern s32 func_ov001_02063a38(void);
 extern BOOL func_ov001_0206e224(void);
-extern void func_ov001_0207830c(int listKind, int entryId, BOOL highlighted);
+extern void SetMenuEntryHighlight(int listKind, int entryId, BOOL highlighted);
 
 void RefreshMenuHighlights(MemberList *list)
 {
@@ -84,7 +84,7 @@ void RefreshMenuHighlights(MemberList *list)
         MenuMember *member = list->members[i];
         if (member != NULL && func_ov001_02063a38() != 6) {
             if (member->category != 1) {
-                func_ov001_0207830c(0, i, enabled);
+                SetMenuEntryHighlight(0, i, enabled);
             } else {
                 BOOL highlight = specialEnabled;
                 switch (member->id) {
@@ -103,7 +103,7 @@ void RefreshMenuHighlights(MemberList *list)
                     }
                     break;
                 }
-                func_ov001_0207830c(0, i, highlight);
+                SetMenuEntryHighlight(0, i, highlight);
             }
         }
     }

@@ -26,8 +26,8 @@ typedef struct HitUnit {
 } HitUnit;
 
 extern HitResult func_ov021_020ab0e8(void *attacker, HitUnit *unit, VecFx32 *position, VecFx32 *offset);
-extern s16 func_ov021_020ab43c(HitUnit *owner, fx32 step);
-extern void func_ov021_020ab610(HitUnit *unit);
+extern s16 AdvanceOwnerAnimation(HitUnit *owner, fx32 step);
+extern void AdvanceToSecondPhase(HitUnit *unit);
 
 BOOL AdvanceTimedHitUnit(void *attacker, HitUnit *unit, fx32 step)
 {
@@ -41,8 +41,8 @@ BOOL AdvanceTimedHitUnit(void *attacker, HitUnit *unit, fx32 step)
     if (unit->progress < limits->duration && unit->progress == FX32_ONE) {
         func_ov021_020ab0e8(attacker, unit, &position, &offset);
     }
-    if (unit->phase == 1 && func_ov021_020ab43c(unit, step)) {
-        func_ov021_020ab610(unit);
+    if (unit->phase == 1 && AdvanceOwnerAnimation(unit, step)) {
+        AdvanceToSecondPhase(unit);
     }
     if (unit->phase == -1) {
         return TRUE;

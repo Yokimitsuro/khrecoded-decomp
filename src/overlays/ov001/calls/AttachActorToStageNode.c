@@ -17,9 +17,9 @@ typedef struct FieldActor {
     u16 attachNodeIndex;
 } FieldActor;
 
-extern StageActor *func_ov001_0209c068(int id);
-extern u16 func_ov001_02091270(StageActor *actor, const char *name);
-extern void func_ov001_02091628(StageActor *owner, u32 nodeId, VecFx32 *out);
+extern StageActor *GetStageActor(int id);
+extern u16 FindActorResourceIndexByName(StageActor *actor, const char *name);
+extern void GetNodePosition(StageActor *owner, u32 nodeId, VecFx32 *out);
 
 void AttachActorToStageNode(FieldActor *actor, int stageActorId, const char *nodeName, int align)
 {
@@ -32,12 +32,12 @@ void AttachActorToStageNode(FieldActor *actor, int stageActorId, const char *nod
         actor->motionFlags &= 0xffbf;
         return;
     }
-    stageActor = func_ov001_0209c068((s16)stageActorId);
+    stageActor = GetStageActor((s16)stageActorId);
     if (stageActor != NULL) {
         actor->attachActorId = stageActorId;
-        actor->attachNodeIndex = func_ov001_02091270(stageActor, nodeName);
+        actor->attachNodeIndex = FindActorResourceIndexByName(stageActor, nodeName);
         actor->alignToNode = (u16)align;
         actor->motionFlags |= 0x40;
-        func_ov001_02091628(stageActor, actor->attachNodeIndex, &actor->nodePosition);
+        GetNodePosition(stageActor, actor->attachNodeIndex, &actor->nodePosition);
     }
 }

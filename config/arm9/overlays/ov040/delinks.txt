@@ -12,6 +12,10 @@ src/overlays/ov040/auto/func_ov040_020bd748.c:
     complete
     .text       start:0x020bd748 end:0x020bd74e
 
+src/overlays/ov040/calls/AdvanceLoopingAnimation.c:
+    complete
+    .text       start:0x020bdb2c end:0x020bdb70
+
 src/overlays/ov040/calls/func_ov040_020bdba4.c:
     complete
     .text       start:0x020bdba4 end:0x020bdbac
@@ -23,6 +27,14 @@ src/overlays/ov040/calls/func_ov040_020be00c.c:
 src/overlays/ov040/calls/GrantRewardItem.c:
     complete
     .text       start:0x020be04c end:0x020be0e4
+
+src/overlays/ov040/calls/IsRewardSlotUnclaimed.c:
+    complete
+    .text       start:0x020be0e4 end:0x020be118
+
+src/overlays/ov040/calls/ShowRewardPopupForItem.c:
+    complete
+    .text       start:0x020be118 end:0x020be158
 
 src/overlays/ov040/calls/ApplyHealReward.c:
     complete

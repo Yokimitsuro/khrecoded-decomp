@@ -35,13 +35,13 @@ typedef struct FieldObject {
 extern const VecFx32 data_0205344c;
 extern void ActorRegistry_GetEntityByIndex(int actorId);
 extern FieldObject *func_ov001_0208724c(int group, int id);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern u16 FX_Atan2Idx(fx32 y, fx32 x);
 extern void DivideVecFx32ByScalar(VecFx32 *vec, int divisor);
-extern void func_ov016_020a6ce4(FieldObject *object, VecFx32 *position);
+extern void SetFieldUnitPosition(FieldObject *object, VecFx32 *position);
 extern void func_ov001_0208645c(FieldObject *object, int mode);
-extern void func_ov016_020a2b58(FieldObject *object, fx32 speed, u16 angle);
+extern void StartFieldUnitMotion(FieldObject *object, fx32 speed, u16 angle);
 extern void SpawnSoundSlot(int bank, int id, VecFx32 *position, int flags);
 extern void func_ov016_020a29c4(FieldObject *object);
 extern void func_ov016_020a351c(FieldObject *object, int arg);
@@ -56,7 +56,7 @@ int UpdateSlidingFieldObject(FieldObject *object)
         VecFx32 velocity = data_0205344c;
         BOOL done;
 
-        func_01ff9e3c(&target->position, &object->position, &delta);
+        VEC_Subtract(&target->position, &object->position, &delta);
         if (object->alongX) {
             delta.x = delta.x * 6 / 10;
             velocity.x += delta.x;
@@ -86,11 +86,11 @@ int UpdateSlidingFieldObject(FieldObject *object)
                 VecFx32 middle;
                 u16 angle = FX_Atan2Idx(delta.x, delta.z);
 
-                func_01ff9e0c(&object->position, &target->position, &middle);
+                VEC_Add(&object->position, &target->position, &middle);
                 DivideVecFx32ByScalar(&middle, 2);
-                func_ov016_020a6ce4(object, &middle);
+                SetFieldUnitPosition(object, &middle);
                 func_ov001_0208645c(object, 2);
-                func_ov016_020a2b58(object, 0x1000, angle);
+                StartFieldUnitMotion(object, 0x1000, angle);
                 SpawnSoundSlot(0, 0x3e, &object->position, 0);
                 object->state = 2;
             } else {

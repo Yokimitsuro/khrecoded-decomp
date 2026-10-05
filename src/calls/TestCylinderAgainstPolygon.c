@@ -45,11 +45,11 @@ typedef struct Vec2Fx32 {
 } Vec2Fx32;
 
 extern fx32 FX_Sqrt(fx32 value);
-extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
-extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
+extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern s64 _ll_sdiv(s64 numerator, s64 denominator);
 extern s64 _s32_div_f(s32 numerator, s32 denominator);
 extern fx32 ScaleDotProductFraction(const VecFx32 *a, fx32 scale, const VecFx32 *b);
@@ -104,14 +104,14 @@ static inline PenetrationResult MakeEmptyResult(void)
 static inline VecFx32 SubtractVec(const VecFx32 *a, const VecFx32 *b)
 {
     VecFx32 diff;
-    func_01ff9e3c(a, b, &diff);
+    VEC_Subtract(a, b, &diff);
     return diff;
 }
 
 static inline VecFx32 SubtractVecValue(const VecFx32 *a, VecFx32 b)
 {
     VecFx32 diff;
-    func_01ff9e3c(a, &b, &diff);
+    VEC_Subtract(a, &b, &diff);
     return diff;
 }
 
@@ -149,7 +149,7 @@ static inline VecFx32 RejectAlongEdge(const VecFx32 *vec, const CollisionEdge *e
     scaledAxis = edge->direction;
     ScaleVecFx32InPlace(&scaledAxis, amount);
     projection = scaledAxis;
-    func_01ff9e3c(vec, &projection, &rejection);
+    VEC_Subtract(vec, &projection, &rejection);
     return rejection;
 }
 
@@ -163,7 +163,7 @@ static inline VecFx32 CrossVec(const VecFx32 *a, const VecFx32 *b)
 static inline VecFx32 MultAddVec(fx32 scale, const VecFx32 *v, const VecFx32 *add)
 {
     VecFx32 sum;
-    func_01ffa09c(scale, v, add, &sum);
+    VEC_MultAdd(scale, v, add, &sum);
     return sum;
 }
 
