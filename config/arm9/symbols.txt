@@ -1123,7 +1123,7 @@ NNSi_G3dAnmObjInitNsBca kind:function(arm,size=0x7c) addr:0x0201ae18
 NNSi_G3dAnmCalcNsBca kind:function(arm,size=0x3c) addr:0x0201ae94
 getMdlTrans_ kind:function(arm,size=0x94) addr:0x0201aed0
 getMdlScale_ kind:function(arm,size=0x90) addr:0x0201af64
-func_0201aff4 kind:function(arm,size=0x180) addr:0x0201aff4
+getMdlRot_ kind:function(arm,size=0x180) addr:0x0201aff4
 func_0201b174 kind:function(arm,size=0x354) addr:0x0201b174
 func_0201b4c8 kind:function(arm,size=0x150) addr:0x0201b4c8
 func_0201b618 kind:function(arm,size=0x154) addr:0x0201b618
@@ -2609,7 +2609,7 @@ VTABLE_BG kind:data(word[3]) addr:0x020530b0
 VTABLE_OBJ1D kind:data(word[3]) addr:0x020530bc
 sMaxObjectSizeTable kind:data(byte[32]) addr:0x020530c8
 NNSiG2dBGCNTTable kind:data(word[8]) addr:0x020530e8
-data_02053108 kind:data(any) addr:0x02053108
+pivotUtil_ kind:data(byte[36]) addr:0x02053108
 data_02053109 kind:data(any) addr:0x02053109
 data_0205310a kind:data(any) addr:0x0205310a
 data_0205310b kind:data(any) addr:0x0205310b

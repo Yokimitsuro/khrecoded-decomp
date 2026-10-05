@@ -12,8 +12,14 @@ typedef struct VecFx32_ {
     fx32 z;
 } VecFx32;
 
-typedef struct MtxFx33_ {
+typedef union MtxFx33_ {
+    struct {
+        fx32 _00, _01, _02;
+        fx32 _10, _11, _12;
+        fx32 _20, _21, _22;
+    };
     fx32 m[3][3];
+    fx32 a[9];
 } MtxFx33;
 
 typedef struct MtxFx43_ {

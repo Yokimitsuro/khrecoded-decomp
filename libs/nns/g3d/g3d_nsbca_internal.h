@@ -11,6 +11,11 @@
 #define NNS_G3D_SRTFLAG_TRANS_ZERO 0x0001
 #define NNS_G3D_SRTFLAG_ROT_ZERO 0x0002
 #define NNS_G3D_SRTFLAG_PIVOT_EXIST 0x0008
+#define NNS_G3D_SRTFLAG_IDXPIVOT_MASK 0x00f0
+#define NNS_G3D_SRTFLAG_PIVOT_MINUS 0x0100
+#define NNS_G3D_SRTFLAG_SIGN_REVC 0x0200
+#define NNS_G3D_SRTFLAG_SIGN_REVD 0x0400
+#define NNS_G3D_SRTFLAG_IDXPIVOT_SHIFT 4
 
 typedef struct NNSG3dResJntAnmSRTTag_ {
     u32 tag;
@@ -80,8 +85,10 @@ typedef struct NNSG3dRS_ {
 
 extern NNSG3dFuncAnmJnt NNS_G3dFuncAnmJntNsBcaDefault;
 extern NNSG3dRS *NNS_G3dRS;
+extern const u8 pivotUtil_[36];
 
 extern void MIi_CpuClear16(u16 value, void *destination, u32 size);
+extern void MI_Zero36B(void *destination);
 
 static inline void MI_CpuFill16(void *destination, u16 value, u32 size)
 {
