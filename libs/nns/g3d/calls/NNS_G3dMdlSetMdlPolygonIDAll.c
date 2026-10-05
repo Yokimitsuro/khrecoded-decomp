@@ -70,14 +70,12 @@ typedef struct NNSG3dResMdl_ {
     NNSG3dResMdlInfo info;
     NNSG3dResNodeInfo nodeInfo;
 } NNSG3dResMdl;
-void func_0201a570(NNSG3dResMdl * pMdl, u32 matID, GXRgb col);
-extern void func_0201a570 (NNSG3dResMdl * pMdl, u32 matID, GXRgb col);
+void NNS_G3dMdlSetMdlPolygonID(NNSG3dResMdl * pMdl, u32 matID, int polygonID);
 
-/* func_0201a894 -- NitroSystem model.c: NNS_G3dMdlSetMdlDiffAll. */
-void func_0201a894 (NNSG3dResMdl * pMdl, GXRgb col)
+void NNS_G3dMdlSetMdlPolygonIDAll (NNSG3dResMdl * pMdl, int polygonID)
 {
     u32 matID;
     for (matID = 0; matID < pMdl->info.numMat; ++matID) {
-        func_0201a570(pMdl, matID, col);
+        NNS_G3dMdlSetMdlPolygonID(pMdl, matID, polygonID);
     }
 }

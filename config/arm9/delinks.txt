@@ -3877,35 +3877,35 @@ libs/nns/g3d/calls/NNS_G3dFreeAnmObj.c:
     complete
     .text       start:0x0201a3cc end:0x0201a3d8
 
-libs/nns/g3d/auto/func_0201a480.c:
+libs/nns/g3d/auto/NNS_G3dMdlSetMdlLightEnableFlag.c:
     complete
     .text       start:0x0201a480 end:0x0201a4f8
 
-libs/nns/g3d/auto/func_0201a4f8.c:
+libs/nns/g3d/auto/NNS_G3dMdlSetMdlPolygonMode.c:
     complete
     .text       start:0x0201a4f8 end:0x0201a570
 
-libs/nns/g3d/auto/func_0201a570.c:
+libs/nns/g3d/auto/NNS_G3dMdlSetMdlCullMode.c:
     complete
     .text       start:0x0201a570 end:0x0201a5e8
 
-libs/nns/g3d/auto/func_0201a5e8.c:
+libs/nns/g3d/auto/NNS_G3dMdlSetMdlPolygonID.c:
     complete
     .text       start:0x0201a5e8 end:0x0201a660
 
-libs/nns/g3d/auto/func_0201a660.c:
+libs/nns/g3d/auto/NNS_G3dMdlSetMdlAlpha.c:
     complete
     .text       start:0x0201a660 end:0x0201a6d8
 
-libs/nns/g3d/calls/func_0201a894.c:
+libs/nns/g3d/calls/NNS_G3dMdlSetMdlCullModeAll.c:
     complete
     .text       start:0x0201a894 end:0x0201a8d4
 
-libs/nns/g3d/calls/func_0201a8d4.c:
+libs/nns/g3d/calls/NNS_G3dMdlSetMdlPolygonIDAll.c:
     complete
     .text       start:0x0201a8d4 end:0x0201a914
 
-libs/nns/g3d/calls/func_0201a914.c:
+libs/nns/g3d/calls/NNS_G3dMdlSetMdlAlphaAll.c:
     complete
     .text       start:0x0201a914 end:0x0201a954
 

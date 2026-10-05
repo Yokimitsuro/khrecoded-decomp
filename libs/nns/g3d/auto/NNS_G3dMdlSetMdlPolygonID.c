@@ -158,8 +158,7 @@ inline NNSG3dResMatData * NNS_G3dGetMatDataByIdx (const NNSG3dResMat * mat, u32 
     return NULL ;
 }
 
-/* func_0201a5e8 -- NitroSystem model.c: NNS_G3dMdlSetMdlPolygonID. */
-void func_0201a5e8 (NNSG3dResMdl * pMdl, u32 matID, int polygonID)
+void NNS_G3dMdlSetMdlPolygonID (NNSG3dResMdl * pMdl, u32 matID, int polygonID)
 {
     NNSG3dResMatData * data;
 

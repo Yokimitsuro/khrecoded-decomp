@@ -70,14 +70,12 @@ typedef struct NNSG3dResMdl_ {
     NNSG3dResMdlInfo info;
     NNSG3dResNodeInfo nodeInfo;
 } NNSG3dResMdl;
-void func_0201a5e8(NNSG3dResMdl * pMdl, u32 matID, GXRgb col);
-extern void func_0201a5e8 (NNSG3dResMdl * pMdl, u32 matID, GXRgb col);
+void NNS_G3dMdlSetMdlCullMode(NNSG3dResMdl * pMdl, u32 matID, int cullMode);
 
-/* func_0201a8d4 -- NitroSystem model.c: NNS_G3dMdlSetMdlDiffAll. */
-void func_0201a8d4 (NNSG3dResMdl * pMdl, GXRgb col)
+void NNS_G3dMdlSetMdlCullModeAll (NNSG3dResMdl * pMdl, int cullMode)
 {
     u32 matID;
     for (matID = 0; matID < pMdl->info.numMat; ++matID) {
-        func_0201a5e8(pMdl, matID, col);
+        NNS_G3dMdlSetMdlCullMode(pMdl, matID, cullMode);
     }
 }

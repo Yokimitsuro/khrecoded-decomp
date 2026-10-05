@@ -20,9 +20,8 @@ typedef volatile unsigned char vu8;
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-#define REG_G3_POLYGON_ATTR_FR_MASK 0x00000080
-#define REG_G3_POLYGON_ATTR_BK_SHIFT 6
-#define REG_G3_POLYGON_ATTR_BK_MASK 0x00000040
+#define REG_G3_POLYGON_ATTR_PM_SHIFT 4
+#define REG_G3_POLYGON_ATTR_PM_MASK 0x00000030
 
 typedef s32 fx32;
 typedef s16 fx16;
@@ -51,11 +50,11 @@ typedef enum {
 } PXIFifoTag;
 typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
 typedef enum {
-    GX_CULL_ALL      = 0,
-    GX_CULL_FRONT    = 1,
-    GX_CULL_BACK     = 2,
-    GX_CULL_NONE     = 3
-} GXCull;
+    GX_POLYGONMODE_MODULATE    = 0,
+    GX_POLYGONMODE_DECAL       = 1,
+    GX_POLYGONMODE_TOON        = 2,
+    GX_POLYGONMODE_SHADOW      = 3
+} GXPolygonMode;
 typedef void * (*MIAllocatorAllocFunction)(void * userdata, u32 length, u32 alignment);
 typedef void (*MIAllocatorFreeFunction)(void * userdata, void * buffer);
 typedef u16 NNSG3dItemTag;
@@ -165,13 +164,12 @@ inline NNSG3dResMatData * NNS_G3dGetMatDataByIdx (const NNSG3dResMat * mat, u32 
     return NULL ;
 }
 
-/* func_0201a570 -- NitroSystem model.c: NNS_G3dMdlSetMdlCullMode. */
-void func_0201a570 (NNSG3dResMdl * pMdl, u32 matID, GXCull cullMode)
+void NNS_G3dMdlSetMdlPolygonMode (NNSG3dResMdl * pMdl, u32 matID, GXPolygonMode polyMode)
 {
     NNSG3dResMatData * data;
 
     data = NNS_G3dGetMatDataByIdx(NNS_G3dGetMat(pMdl), matID);
 
-    data->polyAttr = (data->polyAttr & ~(REG_G3_POLYGON_ATTR_BK_MASK | REG_G3_POLYGON_ATTR_FR_MASK)) |
-                     (cullMode << REG_G3_POLYGON_ATTR_BK_SHIFT);
+    data->polyAttr = (data->polyAttr & ~REG_G3_POLYGON_ATTR_PM_MASK) |
+                     (polyMode << REG_G3_POLYGON_ATTR_PM_SHIFT);
 }

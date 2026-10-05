@@ -20,8 +20,8 @@ typedef volatile unsigned char vu8;
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-#define REG_G3_POLYGON_ATTR_ALPHA_SHIFT 16
-#define REG_G3_POLYGON_ATTR_ALPHA_MASK 0x001f0000
+#define REG_G3_POLYGON_ATTR_LE_SHIFT 0
+#define REG_G3_POLYGON_ATTR_LE_MASK 0x0000000f
 
 typedef s32 fx32;
 typedef s16 fx16;
@@ -158,13 +158,12 @@ inline NNSG3dResMatData * NNS_G3dGetMatDataByIdx (const NNSG3dResMat * mat, u32 
     return NULL ;
 }
 
-/* func_0201a660 -- NitroSystem model.c: NNS_G3dMdlSetMdlAlpha. */
-void func_0201a660 (NNSG3dResMdl * pMdl, u32 matID, int alpha)
+void NNS_G3dMdlSetMdlLightEnableFlag (NNSG3dResMdl * pMdl, u32 matID, int light)
 {
     NNSG3dResMatData * data;
 
     data = NNS_G3dGetMatDataByIdx(NNS_G3dGetMat(pMdl), matID);
 
-    data->polyAttr = (data->polyAttr & ~REG_G3_POLYGON_ATTR_ALPHA_MASK) |
-                     (alpha << REG_G3_POLYGON_ATTR_ALPHA_SHIFT);
+    data->polyAttr = (data->polyAttr & ~REG_G3_POLYGON_ATTR_LE_MASK) |
+                     (light << REG_G3_POLYGON_ATTR_LE_SHIFT);
 }
