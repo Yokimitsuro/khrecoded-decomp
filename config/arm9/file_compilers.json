@@ -597,5 +597,7 @@
   "libs/nns/g3d/calls/calcSrtCameraMtx_.c": "dsi/1.1",
   "libs/nns/g3d/calls/NNS_G3dGlbGetWV.c": "dsi/1.1",
   "libs/nns/g3d/calls/NNS_G3dGlbGetInvWV.c": "dsi/1.1",
-  "libs/nns/g3d/calls/NNS_G3dGlbGetInvVP.c": "dsi/1.1"
+  "libs/nns/g3d/calls/NNS_G3dGlbGetInvVP.c": "dsi/1.1",
+  "libs/nns/g3d/auto/NNS_G3dGlbGetViewPort.c": "dsi/1.1",
+  "libs/nns/g3d/auto/AccumulateVec3Scaled.c": "dsi/1.1"
 }

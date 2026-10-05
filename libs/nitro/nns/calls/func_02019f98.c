@@ -35,7 +35,7 @@ extern NNSG3dGlb NNS_G3dGlb;
 extern void MTX_MultVec43(const VecFx32 *src, const MtxFx43 *mtx, VecFx32 *dst);
 extern void FX_InvAsync(fx32 value);
 extern fx64c FX_GetDivResultFx64c(void);
-extern void func_0201973c(int *x1, int *y1, int *x2, int *y2);
+extern void NNS_G3dGlbGetViewPort(int *x1, int *y1, int *x2, int *y2);
 
 static inline fx32 FX_Mul32x64c(fx32 x, fx64c y)
 {
@@ -97,7 +97,7 @@ int func_02019f98(const VecFx32 *pWorld, int *px, int *py)
         rval = 0;
     }
 
-    func_0201973c(&x1, &y1, &x2, &y2);
+    NNS_G3dGlbGetViewPort(&x1, &y1, &x2, &y2);
     dx = x2 - x1;
     dy = y2 - y1;
 

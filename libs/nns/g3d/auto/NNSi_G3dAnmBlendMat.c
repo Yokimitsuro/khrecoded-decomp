@@ -111,6 +111,7 @@ struct OSiAlarm {
     OSTick start;
 };
 typedef s32 fx32;
+typedef s16 fx16;
 typedef struct {
     u32 offset;
     u32 length;
@@ -659,38 +660,55 @@ typedef enum {
     NNS_G3D_ANMOBJ_MAPDATA_DISABLED  = 0x0200,
     NNS_G3D_ANMOBJ_MAPDATA_DATAFIELD = 0x00ff
 } NNSG3dAnmObjMapData;
-struct NNSG3dVisAnmResult_;
-typedef struct NNSG3dVisAnmResult_ {
-    BOOL isVisible;
-} NNSG3dVisAnmResult;
-typedef void (*NNSG3dFuncAnmVis)(NNSG3dVisAnmResult *, const NNSG3dAnmObj *, u32);
+struct NNSG3dMatAnmResult_;
+typedef enum {
+    NNS_G3D_MATANM_RESULTFLAG_TEXMTX_SCALEONE  = 0x00000001,
+    NNS_G3D_MATANM_RESULTFLAG_TEXMTX_ROTZERO   = 0x00000002,
+    NNS_G3D_MATANM_RESULTFLAG_TEXMTX_TRANSZERO = 0x00000004,
+    NNS_G3D_MATANM_RESULTFLAG_TEXMTX_SET       = 0x00000008,
+    NNS_G3D_MATANM_RESULTFLAG_TEXMTX_MULT      = 0x00000010,
+    NNS_G3D_MATANM_RESULTFLAG_WIREFRAME        = 0x00000020}
+NNSG3dMatAnmResultFlag;
+typedef struct NNSG3dMatAnmResult_ {
+    NNSG3dMatAnmResultFlag flag;
+    u32 prmMatColor0;
+    u32 prmMatColor1;
+    u32 prmPolygonAttr;
+    u32 prmTexImage;
+    u32 prmTexPltt;
+    fx32 scaleS, scaleT;
+    fx16 sinR, cosR;
+    fx32 transS, transT;
+    u16 origWidth, origHeight;
+    fx32 magW, magH;
+} NNSG3dMatAnmResult;
+typedef void (*NNSG3dFuncAnmMat)(NNSG3dMatAnmResult *, const NNSG3dAnmObj *, u32);
 
-/* func_02019c6c -- NitroSystem anm.c: NNSi_G3dAnmBlendVis. */
-BOOL func_02019c6c (NNSG3dVisAnmResult * pResult, const NNSG3dAnmObj * pAnmObj, u32 nodeID)
+BOOL NNSi_G3dAnmBlendMat (NNSG3dMatAnmResult * pResult, const NNSG3dAnmObj * pAnmObj, u32 matID)
 {
     BOOL rval = FALSE;
-    const NNSG3dAnmObj * p;
-    NNSG3dVisAnmResult tmp;
 
-    p = pAnmObj;
-    pResult->isVisible = FALSE;
-    do {
-        if (nodeID < p->numMapData) {
-            u32 dataIdx = p->mapData[nodeID];
+    if (pAnmObj) {
+        const NNSG3dAnmObj * p = pAnmObj;
+        do {
+            if (matID < p->numMapData) {
+                u32 dataIdx = p->mapData[matID];
+                if ((dataIdx & (NNS_G3D_ANMOBJ_MAPDATA_EXIST |
+                                NNS_G3D_ANMOBJ_MAPDATA_DISABLED)) ==
+                    NNS_G3D_ANMOBJ_MAPDATA_EXIST) {
+                    NNSG3dFuncAnmMat func = (NNSG3dFuncAnmMat)p->funcAnm;
 
-            if ((dataIdx & (NNS_G3D_ANMOBJ_MAPDATA_EXIST |
-                            NNS_G3D_ANMOBJ_MAPDATA_DISABLED)) ==
-                NNS_G3D_ANMOBJ_MAPDATA_EXIST) {
-                NNSG3dFuncAnmVis func = (NNSG3dFuncAnmVis)p->funcAnm;
-                if (func) {
-                    (*func)(&tmp, p, dataIdx & NNS_G3D_ANMOBJ_MAPDATA_DATAFIELD);
-                    pResult->isVisible |= tmp.isVisible;
-                    rval = TRUE;
+                    if (func) {
+                        (*func)(pResult,
+                                p,
+                                dataIdx & NNS_G3D_ANMOBJ_MAPDATA_DATAFIELD);
+                        rval = TRUE;
+                    }
                 }
             }
-        }
-        p = p->next;
-    } while (p);
+            p = p->next;
+        } while (p);
+    }
 
     return rval;
 }

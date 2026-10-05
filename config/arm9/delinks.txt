@@ -3825,11 +3825,19 @@ libs/nns/g3d/calls/NNS_G3dGlbGetInvVP.c:
     complete
     .text       start:0x020196d4 end:0x0201973c
 
-libs/nns/g3d/auto/func_020197a0.c:
+libs/nns/g3d/auto/NNS_G3dGlbGetViewPort.c:
+    complete
+    .text       start:0x0201973c end:0x020197a0
+
+libs/nns/g3d/auto/NNSi_G3dAnmBlendMat.c:
     complete
     .text       start:0x020197a0 end:0x0201980c
 
-libs/nns/g3d/auto/func_02019c6c.c:
+libs/nns/g3d/auto/AccumulateVec3Scaled.c:
+    complete
+    .text       start:0x0201980c end:0x0201987c
+
+libs/nns/g3d/auto/NNSi_G3dAnmBlendVis.c:
     complete
     .text       start:0x02019c6c end:0x02019cf4
 

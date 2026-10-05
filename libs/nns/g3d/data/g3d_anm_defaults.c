@@ -13,15 +13,15 @@ typedef void (*NNSG3dFuncAnmVis)(
     const NNSG3dAnmObj *,
     u32);
 
-extern BOOL func_020197a0(
+extern BOOL NNSi_G3dAnmBlendMat(
     struct NNSG3dMatAnmResult_ *,
     const NNSG3dAnmObj *,
     u32);
-extern BOOL func_0201987c(
+extern BOOL NNSi_G3dAnmBlendJnt(
     struct NNSG3dJntAnmResult_ *,
     const NNSG3dAnmObj *,
     u32);
-extern BOOL func_02019c6c(
+extern BOOL NNSi_G3dAnmBlendVis(
     struct NNSG3dVisAnmResult_ *,
     const NNSG3dAnmObj *,
     u32);
@@ -51,9 +51,9 @@ extern void func_0201cd34(
     const NNSG3dAnmObj *,
     u32);
 
-NNSG3dFuncAnmBlendMat NNS_G3dFuncBlendMatDefault = func_020197a0;
-NNSG3dFuncAnmBlendJnt NNS_G3dFuncBlendJntDefault = func_0201987c;
-NNSG3dFuncAnmBlendVis NNS_G3dFuncBlendVisDefault = func_02019c6c;
+NNSG3dFuncAnmBlendMat NNS_G3dFuncBlendMatDefault = NNSi_G3dAnmBlendMat;
+NNSG3dFuncAnmBlendJnt NNS_G3dFuncBlendJntDefault = NNSi_G3dAnmBlendJnt;
+NNSG3dFuncAnmBlendVis NNS_G3dFuncBlendVisDefault = NNSi_G3dAnmBlendVis;
 
 NNSG3dFuncAnmMat NNS_G3dFuncAnmMatNsBmaDefault = func_0201c51c;
 NNSG3dFuncAnmMat NNS_G3dFuncAnmMatNsBtpDefault = func_0201cc5c;
