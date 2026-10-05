@@ -10,7 +10,7 @@ typedef struct RecordManager {
 } RecordManager;
 
 extern RecordManager *gRecordManager;
-extern BOOL func_02051e10(s32 slot);
+extern BOOL ReleaseRecordSlot(s32 slot);
 extern void ZeroHalfThenFree(void *container);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
@@ -29,7 +29,7 @@ void ReleaseRecordManager(void)
     for (slot = 0; slot < 14; slot++) {
         if (manager->refCounts[slot] != 0) {
             manager->refCounts[slot] = 1;
-            func_02051e10(slot);
+            ReleaseRecordSlot(slot);
         }
     }
     ZeroHalfThenFree(manager->containerB);

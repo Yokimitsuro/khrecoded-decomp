@@ -38,7 +38,7 @@ extern u16 gRecordCounters[2];
 extern void func_01ff88c4(void *dst, u32 value, u32 size);
 extern SlotPair0Entry *GetRecordSlotPair0Entry(s32 index);
 extern int AcquireRecordSlot(int slot, int param);
-extern BOOL func_02051e10(s32 slot);
+extern BOOL ReleaseRecordSlot(s32 slot);
 extern void AcquireRecordManager(void);
 extern void ReleaseRecordManager(void);
 extern void RefreshSlotRecordCache(void);
@@ -87,6 +87,6 @@ void RebuildRecordCounters(void)
     } while (remaining > 0);
 
     RefreshSlotRecordCache();
-    func_02051e10(0);
+    ReleaseRecordSlot(0);
     ReleaseRecordManager();
 }

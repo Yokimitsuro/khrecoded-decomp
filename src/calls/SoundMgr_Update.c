@@ -30,7 +30,7 @@ typedef struct {
 
 extern SoundWork *gSoundWork;
 extern const u8 data_020559ec[];
-extern void func_0204caf8(void);
+extern void SoundMgr_ExpireRequests(void);
 extern void PopQueuedSound(void);
 extern int GetRecentHistoryEntry(int value);
 extern void PauseBgmForState(u16 fadeFrames);
@@ -49,7 +49,7 @@ void SoundMgr_Update(void)
 {
     SoundWork *work = gSoundWork;
 
-    func_0204caf8();
+    SoundMgr_ExpireRequests();
 
     switch (work->phase) {
     case 0:

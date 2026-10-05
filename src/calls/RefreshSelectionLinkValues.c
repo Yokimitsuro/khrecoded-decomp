@@ -23,7 +23,7 @@ u8 *GetOverlaySelectionRecord(u32 selectionIndex);
 BOOL AcquireRecordManager(void);
 void ReleaseRecordManager(void);
 int AcquireRecordSlot(int slot, int param);
-BOOL func_02051e10(s32 slot);
+BOOL ReleaseRecordSlot(s32 slot);
 SlotRecord *GetRecordSlotPair1Entry(s32 index);
 
 void RefreshSelectionLinkValues(void)
@@ -41,7 +41,7 @@ void RefreshSelectionLinkValues(void)
         if (record != NULL && record->state != 3)
             table->values[entry->valueIndex] = record->baseValue * 2;
     }
-    func_02051e10(1);
+    ReleaseRecordSlot(1);
     ReleaseRecordManager();
 }
 

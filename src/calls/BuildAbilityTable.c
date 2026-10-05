@@ -39,7 +39,7 @@ extern MapLayout *gMapLayout;
 extern void AcquireRecordManager(void);
 extern void ReleaseRecordManager(void);
 extern int AcquireRecordSlot(int slot, int param);
-extern BOOL func_02051e10(s32 slot);
+extern BOOL ReleaseRecordSlot(s32 slot);
 extern PartyRecord *GetRecordSlotPair0Entry(s32 index);
 extern ChipRecord *GetRecordSlotPair1Entry(s32 index);
 extern void ReleaseHandle(TaggedEntryTable *table);
@@ -157,7 +157,7 @@ void BuildAbilityTable(TaggedEntryTable *table)
             AddTaggedEntry(table, 20, 1, countH);
         }
         WriteGlobalPackedBits(0x1a0f, 3, countA);
-        func_02051e10(1);
+        ReleaseRecordSlot(1);
     }
 
     if (data_0205fe0c->partySlots[0] != 0xffff || data_0205fe0c->hasPartyAbilities) {
@@ -175,7 +175,7 @@ void BuildAbilityTable(TaggedEntryTable *table)
             }
             slot++;
         } while (slot < 4);
-        func_02051e10(0);
+        ReleaseRecordSlot(0);
     }
     ReleaseRecordManager();
 }

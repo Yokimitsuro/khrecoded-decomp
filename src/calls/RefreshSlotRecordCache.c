@@ -40,7 +40,7 @@ extern RecordEntry *GetActiveRecordEntryOrNull(int index);
 extern BOOL ResolveRecordHandle(int index, RecordEntry *entry, u32 *outValue);
 extern SlotPair0Entry *GetRecordSlotPair0Entry(s32 index);
 extern int AcquireRecordSlot(int slot, int param);
-extern BOOL func_02051e10(s32 slot);
+extern BOOL ReleaseRecordSlot(s32 slot);
 extern void AcquireRecordManager(void);
 extern void ReleaseRecordManager(void);
 
@@ -81,7 +81,7 @@ void RefreshSlotRecordCache(void)
             slot->state = 0;
         }
     }
-    func_02051e10(5);
-    func_02051e10(0);
+    ReleaseRecordSlot(5);
+    ReleaseRecordSlot(0);
     ReleaseRecordManager();
 }

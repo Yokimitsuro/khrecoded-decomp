@@ -7,10 +7,10 @@ typedef struct {
     ActorSlot *slots[1];
 } ActorRegistry;
 
-extern void func_02036154(ActorSlot *slot, BOOL enable);
+extern void ActorSlot_SetFlag8(ActorSlot *slot, BOOL enable);
 extern ActorRegistry *gActorRegistry;
 
 void ActorSlot_SetFlag8ByIndex(int index, BOOL enable)
 {
-    func_02036154(gActorRegistry->slots[index], enable);
+    ActorSlot_SetFlag8(gActorRegistry->slots[index], enable);
 }

@@ -432,8 +432,6 @@ def raw_candidates(results: list[dict], index: dict,
             rf"^{re.escape(rom_symbol)} kind:function", symbols, re.MULTILINE
         ):
             continue
-        if item.get("compiled_size") != item.get("expected_size"):
-            continue
         try:
             function = index[rom_symbol]
             if not equal_outside_relocations(item, function):
@@ -478,11 +476,18 @@ def main() -> None:
     parser.add_argument("--raw-inventory", action="store_true")
     parser.add_argument("--raw-auto", action="store_true")
     parser.add_argument(
+        "--compiler", default="dsi/1.1",
+        help="compiler used for the prebuilt reference trials",
+    )
+    parser.add_argument(
         "--shifted-relocs", action="store_true",
         help="pair equal-count source/EU relocations by order for an explicit import",
     )
     parser.add_argument("--limit", type=int, default=0)
     args = parser.parse_args()
+
+    global TRIALS
+    TRIALS = ROOT / "build" / "reference_trials" / args.compiler.replace("/", "_")
 
     modes = sum((args.inventory, args.auto, args.inferred_inventory,
                  args.inferred_auto, args.linked_inventory, args.linked_auto,
@@ -592,7 +597,7 @@ def main() -> None:
             if old_source.exists():
                 old_source.unlink()
 
-        compiler_map[relative_destination] = "dsi/1.1"
+        compiler_map[relative_destination] = args.compiler
         imported.append((rom_symbol, readable_name, size))
         if rom_symbol != readable_name:
             renamed_symbols[rom_symbol] = readable_name

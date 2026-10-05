@@ -1,6 +1,6 @@
 extern void NNS_G3dFreeAnmObj(void *allocator, void *anmObj);
-extern void func_0202c8bc(int a);
-extern void func_0202ca2c(void);
+extern void ReleaseSharedRecordSlot(int a);
+extern void ReleaseResourceSlot(void);
 extern void NNSi_FndFreeFromDefaultHeap(int a);
 extern void *NNSi_FndGetAllocatorForDefaultHeap(int a);
 
@@ -15,8 +15,8 @@ void func_0202eb08(int *p) {
     }
     if (last) NNSi_FndFreeFromDefaultHeap(last);
     if (p[3]) {
-        func_0202ca2c();
-        func_0202c8bc(p[3]);
+        ReleaseResourceSlot();
+        ReleaseSharedRecordSlot(p[3]);
     }
     p[3] = 0;
 }

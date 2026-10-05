@@ -1,7 +1,7 @@
 extern void PXI_Init(void);
 extern void PXI_SetFifoRecvCallback(int fifoNo, void (*cb)(int, unsigned int));
 extern int PXI_IsCallbackReady(int fifoNo, int kind);
-extern void func_0200fb20(int fifoNo, unsigned int data);
+extern void TPi_TpCallback(int fifoNo, unsigned int data);
 
 typedef struct {
     unsigned short initialized;
@@ -36,5 +36,5 @@ void TP_Init(void)
     data_02059784.field_38 = 0;
     while (!PXI_IsCallbackReady(6, 1)) {
     }
-    PXI_SetFifoRecvCallback(6, func_0200fb20);
+    PXI_SetFifoRecvCallback(6, TPi_TpCallback);
 }

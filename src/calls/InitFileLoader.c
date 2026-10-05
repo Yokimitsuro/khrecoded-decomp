@@ -35,7 +35,7 @@ extern void *data_02060664[0x40];
 extern void OS_CreateThread(void *thread, void (*entry)(void *), void *arg, void *stack, u32 stackSize,
                           u32 priority);
 extern void OS_WakeupThreadDirect(char *thread);
-extern void func_0202ba58(void *arg);
+extern void FileLoader_ThreadMain(void *arg);
 extern u8 data_020605a4[];
 extern u8 data_020569c8[];
 
@@ -73,7 +73,7 @@ BOOL InitFileLoader(void)
 
         OS_InitThreadQueue((OSThreadQueue *)((u8 *)gFileLoader.reader2 + 0x44c));
 
-        OS_CreateThread(data_020605a4, func_0202ba58, 0, data_020569c8, 0x800, 0x11);
+        OS_CreateThread(data_020605a4, FileLoader_ThreadMain, 0, data_020569c8, 0x800, 0x11);
         OS_WakeupThreadDirect((char *)data_020605a4);
     }
     return 1;

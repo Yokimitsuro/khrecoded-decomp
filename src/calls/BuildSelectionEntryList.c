@@ -55,10 +55,10 @@ extern OverlaySelectionRecord *GetOverlaySelectionRecord(u32 selectionIndex);
 extern void AcquireRecordManager(void);
 extern void ReleaseRecordManager(void);
 extern int AcquireRecordSlot(int slot, int param);
-extern BOOL func_02051e10(s32 slot);
+extern BOOL ReleaseRecordSlot(s32 slot);
 extern SlotPair0Entry *GetRecordSlotPair0Entry(s32 index);
 extern SlotPair1Entry *GetRecordSlotPair1Entry(s32 index);
-extern BOOL func_020295dc(int index, RecordEntry *entry, s32 *outValue);
+extern BOOL ResolveMergedRecordEntry(int index, RecordEntry *entry, s32 *outValue);
 
 void BuildSelectionEntryList(void)
 {
@@ -76,7 +76,7 @@ void BuildSelectionEntryList(void)
     AcquireRecordSlot(1, 1);
     list->entryCount = 0;
     for (; i < 8; i++) {
-        if (func_020295dc(i, &entry, &value)) {
+        if (ResolveMergedRecordEntry(i, &entry, &value)) {
             SelectionEntry *out = &list->entries[list->entryCount];
 
             out->index = i;
@@ -94,7 +94,7 @@ void BuildSelectionEntryList(void)
             list->entryCount++;
         }
     }
-    func_02051e10(1);
-    func_02051e10(0);
+    ReleaseRecordSlot(1);
+    ReleaseRecordSlot(0);
     ReleaseRecordManager();
 }

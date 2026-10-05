@@ -9,13 +9,13 @@ typedef struct {
 extern u32 Obj_HasFlag0(void);
 extern void *NNSi_FndGetAllocatorForDefaultHeap(u32 kind);
 extern void NNS_FndFreeToAllocator(void *allocator, void *block);
-extern void func_0202c8bc(void *resource);
+extern void ReleaseSharedRecordSlot(void *resource);
 
 void Obj_ReleaseIfSet(Entity *entity)
 {
     if (Obj_HasFlag0() != 0) {
         NNS_FndFreeToAllocator(NNSi_FndGetAllocatorForDefaultHeap(0), entity->block);
-        func_0202c8bc(entity->resource);
+        ReleaseSharedRecordSlot(entity->resource);
     }
     entity->flags = 0;
 }

@@ -7,7 +7,7 @@ typedef struct {
 
 extern SharedContext_0205fe00 data_0205fe00;
 extern void AcquireRecordSlot(int a, int b);
-extern void func_02051e10(int a);
+extern void ReleaseRecordSlot(int a);
 extern s32 TestRecordFlagBit(u32 handle, s32 *outIndex, u8 *outFlags);
 
 s32 SetSharedFlagBits(u32 handle)
@@ -19,7 +19,7 @@ s32 SetSharedFlagBits(u32 handle)
 
     AcquireRecordSlot(9, 1);
     result = TestRecordFlagBit(handle, &index, flags);
-    func_02051e10(9);
+    ReleaseRecordSlot(9);
 
     base = data_0205fe00.baseAddr + 0x2788;
     if (result == 0) {

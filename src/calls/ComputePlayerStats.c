@@ -63,7 +63,7 @@ extern GameState *data_0205fe0c;
 extern void AcquireRecordManager(void);
 extern void ReleaseRecordManager(void);
 extern int AcquireRecordSlot(int slot, int param);
-extern BOOL func_02051e10(s32 slot);
+extern BOOL ReleaseRecordSlot(s32 slot);
 extern ChipEntry *GetRecordSlotPair0Entry(s32 index);
 extern void func_01ff88c4(void *dst, u32 value, u32 size);
 extern void LoadLevelStats(u32 level, PlayerStats *stats);
@@ -126,7 +126,7 @@ void ComputePlayerStats(GameState *state, PlayerStats *out, BOOL recompute, int 
             }
         }
         map->bonusStats = bonus;
-        func_02051e10(0);
+        ReleaseRecordSlot(0);
         ReleaseRecordManager();
     } else {
         bonus = map->bonusStats;

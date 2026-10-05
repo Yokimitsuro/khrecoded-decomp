@@ -37,7 +37,7 @@ typedef struct {
 
 extern WMArm9Buf *func_02011050(void);
 extern u16 GetSessionChannel(void);
-extern void func_02011f7c(void *arg);
+extern void WmDataSharingReceiveCallback_Parent(void *arg);
 extern void WmDataSharingReceiveCallback_Child(void *arg);
 
 void WmDataSharingSetDataCallback(void *arg)
@@ -50,7 +50,7 @@ void WmDataSharingSetDataCallback(void *arg)
 
     dsInfo = (WMDataSharingInfo *)p->portCallbackArgument[callback->port];
     func = p->portCallbackTable[callback->port];
-    if (func != func_02011f7c && func != WmDataSharingReceiveCallback_Child) {
+    if (func != WmDataSharingReceiveCallback_Parent && func != WmDataSharingReceiveCallback_Child) {
         return;
     }
     if (dsInfo == NULL || dsInfo != callback->arg) {

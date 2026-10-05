@@ -29,7 +29,7 @@ extern u64 _u32_div_f(u32 dividend, u32 divisor);
 extern void OS_GetMacAddress(void *dest);
 extern void OS_GetOwnerInfo(OwnerInfo *info);
 extern int AcquireRecordSlot(int slot, int param);
-extern BOOL func_02051e10(s32 slot);
+extern BOOL ReleaseRecordSlot(s32 slot);
 extern RecordC *GetRecordTableCEntry(s32 index);
 extern RecordB *GetRecordTableBEntry(s32 index);
 extern s32 SetSharedFlagBits(u32 handle);
@@ -126,6 +126,6 @@ void GrantStartingRecords(void)
         }
         EquipRecordList(&recordIndex, 1);
     }
-    func_02051e10(10);
-    func_02051e10(9);
+    ReleaseRecordSlot(10);
+    ReleaseRecordSlot(9);
 }

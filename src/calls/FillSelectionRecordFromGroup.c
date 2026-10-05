@@ -32,7 +32,7 @@ extern void PackNamedRecordEntry(NamedEntry *out, int index, int nameId);
 extern void AcquireRecordManager(void);
 extern void ReleaseRecordManager(void);
 extern int AcquireRecordSlot(int slot, int param);
-extern BOOL func_02051e10(s32 slot);
+extern BOOL ReleaseRecordSlot(s32 slot);
 extern SlotPair0Entry *GetRecordSlotPair0Entry(s32 index);
 
 void FillSelectionRecordFromGroup(void)
@@ -55,6 +55,6 @@ void FillSelectionRecordFromGroup(void)
     for (; i < 4; i++) {
         entry->values[i] = GetRecordSlotPair0Entry(groupBase + i)->value;
     }
-    func_02051e10(0);
+    ReleaseRecordSlot(0);
     ReleaseRecordManager();
 }

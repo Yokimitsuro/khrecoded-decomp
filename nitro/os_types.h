@@ -3,4 +3,7 @@
 
 #include "nitro/types.h"
 
+typedef int OSIntrMode;
+typedef u64 OSTick;
+
 #endif

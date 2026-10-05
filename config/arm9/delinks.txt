@@ -2753,6 +2753,10 @@ libs/nitro/snd/calls/SND_GetWaveDataAddress.c:
     complete
     .text       start:0x0200fae4 end:0x0200fb20
 
+src/calls/TPi_TpCallback.c:
+    complete
+    .text       start:0x0200fb20 end:0x0200fc8c
+
 src/calls/TP_Init.c:
     complete
     .text       start:0x0200fc8c end:0x0200fcd0
@@ -2764,6 +2768,18 @@ src/calls/TP_GetUserInfo.c:
 src/calls/TP_SetCalibrateParam.c:
     complete
     .text       start:0x0200fd4c end:0x0200fdec
+
+src/calls/TP_RequestAutoSamplingStartAsync.c:
+    complete
+    .text       start:0x0200fdec end:0x0200fe98
+
+src/calls/TP_RequestAutoSamplingStopAsync.c:
+    complete
+    .text       start:0x0200fe98 end:0x0200fefc
+
+src/calls/TP_RequestSetStabilityAsync.c:
+    complete
+    .text       start:0x0200fefc end:0x0200ff64
 
 src/calls/TP_GetLatestIndexInAuto.c:
     complete
@@ -3117,9 +3133,21 @@ src/calls/WmDataSharingSetDataCallback.c:
     complete
     .text       start:0x02011eec end:0x02011f7c
 
+src/calls/WmDataSharingReceiveCallback_Parent.c:
+    complete
+    .text       start:0x02011f7c end:0x02012040
+
 src/calls/WmDataSharingReceiveCallback_Child.c:
     complete
     .text       start:0x02012040 end:0x020120e0
+
+src/calls/WmDataSharingReceiveData.c:
+    complete
+    .text       start:0x020120e0 end:0x02012170
+
+src/calls/WmDataSharingSendDataSet.c:
+    complete
+    .text       start:0x02012170 end:0x02012264
 
 src/calls/WmGetSharedDataAddress.c:
     complete
@@ -3284,6 +3312,10 @@ libs/nitro/nns/auto/InitMBlock.c:
 libs/nitro/nns/calls/InitExpHeap.c:
     complete
     .text       start:0x02012c94 end:0x02012d0c
+
+src/calls/AllocateExpandedHeapBlock.c:
+    complete
+    .text       start:0x02012d0c end:0x02012eb0
 
 libs/nitro/nns/calls/AllocFromHead.c:
     complete
@@ -6049,6 +6081,10 @@ src/calls/ResolveRecordHandle.c:
     complete
     .text       start:0x02029588 end:0x020295dc
 
+src/calls/ResolveMergedRecordEntry.c:
+    complete
+    .text       start:0x020295dc end:0x020297c4
+
 src/calls/ClearItemCountsByGroup.c:
     complete
     .text       start:0x02029890 end:0x02029950
@@ -6196,6 +6232,10 @@ src/calls/func_0202a45c.c:
 src/calls/Obj_CreateWithTailWork.c:
     complete
     .text       start:0x0202a490 end:0x0202a4c4
+
+src/calls/Obj_Construct.c:
+    complete
+    .text       start:0x0202a4c4 end:0x0202a5b8
 
 src/calls/StoreWord0.c:
     complete
@@ -6505,6 +6545,10 @@ src/calls/PrepareCompressedLoad.c:
     complete
     .text       start:0x0202b9b8 end:0x0202ba58
 
+src/calls/FileLoader_ThreadMain.c:
+    complete
+    .text       start:0x0202ba58 end:0x0202bdf8
+
 src/calls/FileLoader_LoadAlloc.c:
     complete
     .text       start:0x0202bdf8 end:0x0202c014
@@ -6577,9 +6621,17 @@ libs/nitro/snd/calls/SND_RegisterSeq.c:
     complete
     .text       start:0x0202c820 end:0x0202c8bc
 
+src/calls/ReleaseSharedRecordSlot.c:
+    complete
+    .text       start:0x0202c8bc end:0x0202c954
+
 src/calls/AcquireOrRefreshResourceBlock.c:
     complete
     .text       start:0x0202c954 end:0x0202ca2c
+
+src/calls/ReleaseResourceSlot.c:
+    complete
+    .text       start:0x0202ca2c end:0x0202ca9c
 
 src/calls/QueueTypedMessage.c:
     complete
@@ -6841,6 +6893,10 @@ src/calls/attach_child_object.c:
     complete
     .text       start:0x0202f514 end:0x0202f5a4
 
+src/calls/func_0202f5a4.c:
+    complete
+    .text       start:0x0202f5a4 end:0x0202f5c8
+
 src/calls/Obj_SetHalfwordFC.c:
     complete
     .text       start:0x0202f5c8 end:0x0202f5d0
@@ -7021,9 +7077,17 @@ src/calls/ResetCollTraversal.c:
     complete
     .text       start:0x02032c2c end:0x02032c80
 
+src/calls/TestMoverAgainstModelTree.c:
+    complete
+    .text       start:0x02032c80 end:0x02032ffc
+
 src/calls/InitMotionState.c:
     complete
     .text       start:0x02032ffc end:0x020330d4
+
+src/calls/TestMoverAgainstModelWalls.c:
+    complete
+    .text       start:0x020330d4 end:0x0203343c
 
 src/calls/InitMoverFromParams.c:
     complete
@@ -7293,6 +7357,10 @@ src/calls/ApplyRecordTableEntry5.c:
     complete
     .text       start:0x02035a0c end:0x02035a2c
 
+src/calls/ActorSlot_PlaceAndLink.c:
+    complete
+    .text       start:0x02035a2c end:0x02035b2c
+
 src/calls/ActorSlot_IsLinked.c:
     complete
     .text       start:0x02035b2c end:0x02035b4c
@@ -7304,6 +7372,10 @@ src/calls/Container_HasFlag1.c:
 src/calls/ActorSlot_AttachToParentByIndex.c:
     complete
     .text       start:0x02035b60 end:0x02035b88
+
+src/calls/ActorSlot_AttachToParent.c:
+    complete
+    .text       start:0x02035b88 end:0x02035c3c
 
 src/calls/ActorSlot_UnlinkByIndex.c:
     complete
@@ -7329,6 +7401,10 @@ src/calls/ActorSlot_SetFlag8ByIndex.c:
     complete
     .text       start:0x02036134 end:0x02036154
 
+src/calls/ActorSlot_SetFlag8.c:
+    complete
+    .text       start:0x02036154 end:0x02036178
+
 src/calls/ActorSlot_IsFlag8SetByIndex.c:
     complete
     .text       start:0x02036178 end:0x02036198
@@ -7340,6 +7416,10 @@ src/calls/Container_HasFlag3.c:
 src/calls/SetWorldObjectProbeSphere.c:
     complete
     .text       start:0x020361ac end:0x020361cc
+
+src/calls/SetObjectProbeSphere.c:
+    complete
+    .text       start:0x020361cc end:0x02036244
 
 src/calls/GetActorRegistry.c:
     complete
@@ -8765,6 +8845,10 @@ src/calls/RecentRing_Reset.c:
     complete
     .text       start:0x0204cacc end:0x0204caf8
 
+src/calls/SoundMgr_ExpireRequests.c:
+    complete
+    .text       start:0x0204caf8 end:0x0204cbb0
+
 src/calls/RecentRing_Record.c:
     complete
     .text       start:0x0204cbb0 end:0x0204cc70
@@ -8884,6 +8968,10 @@ libs/nitro/snd/calls/SNDi_BroadcastChannelOp.c:
 src/calls/IsCachedSeqPlaying.c:
     complete
     .text       start:0x0204da5c end:0x0204daa0
+
+src/calls/SpawnSoundSlot.c:
+    complete
+    .text       start:0x0204daa0 end:0x0204dbb0
 
 src/calls/Handle_WritePayloadIfLive.c:
     complete
@@ -9017,6 +9105,10 @@ src/calls/FindFreeVramGapOffset.c:
     complete
     .text       start:0x0204e670 end:0x0204e6f4
 
+src/calls/DispObj_LoadImage.c:
+    complete
+    .text       start:0x0204e6f4 end:0x0204e834
+
 src/calls/FindFreeElementIndex.c:
     complete
     .text       start:0x0204e834 end:0x0204e860
@@ -9080,6 +9172,10 @@ src/calls/Obj_Release.c:
 src/calls/PXI_Init_0204f020.c:
     complete
     .text       start:0x0204f020 end:0x0204f028
+
+src/calls/ObjManager_FreeSlot.c:
+    complete
+    .text       start:0x0204f028 end:0x0204f0c8
 
 src/calls/PXI_Init_0204f0c8.c:
     complete
@@ -9592,6 +9688,10 @@ src/calls/ReleaseRecordManager.c:
 src/calls/AcquireRecordSlot.c:
     complete
     .text       start:0x02051d50 end:0x02051e10
+
+src/calls/ReleaseRecordSlot.c:
+    complete
+    .text       start:0x02051e10 end:0x02051ebc
 
 src/calls/IsRecordSlotAcquired.c:
     complete

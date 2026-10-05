@@ -8,10 +8,10 @@ typedef struct CollisionWorld {
     WorldObject *objects[1];
 } CollisionWorld;
 
-extern void func_020361cc(WorldObject *object, BOOL enable, fx32 radius);
+extern void SetObjectProbeSphere(WorldObject *object, BOOL enable, fx32 radius);
 extern CollisionWorld *gActorRegistry;
 
 void SetWorldObjectProbeSphere(int index, BOOL enable, fx32 radius)
 {
-    func_020361cc(gActorRegistry->objects[index], enable, radius);
+    SetObjectProbeSphere(gActorRegistry->objects[index], enable, radius);
 }

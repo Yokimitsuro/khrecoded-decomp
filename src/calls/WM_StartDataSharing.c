@@ -58,7 +58,7 @@ extern u32 PopCount32(u32 bits);
 extern int SetSlotEventHandler(int port, WMCallbackFunc callback, void *arg);
 extern int WM_SetMPDataToPortEx(WMCallbackFunc callback, void *arg, const u16 *sendData, u16 sendDataSize, u16 destBitmap, u16 port, u16 prio);
 extern void WmDataSharingSetDataCallback(void *arg);
-extern void func_02011f7c(void *arg);
+extern void WmDataSharingReceiveCallback_Parent(void *arg);
 extern void WmDataSharingReceiveCallback_Child(void *arg);
 
 int WM_StartDataSharing(WMDataSharingInfo *dsInfo, u16 port, u16 aidBitmap, u16 dataLength, BOOL doubleMode)
@@ -119,7 +119,7 @@ int WM_StartDataSharing(WMDataSharingInfo *dsInfo, u16 port, u16 aidBitmap, u16 
             dsInfo->ds[i].aidBitmap = (u16)(dsInfo->aidBitmap & (connectedAidBitmap | 1));
         }
 
-        SetSlotEventHandler(port, func_02011f7c, dsInfo);
+        SetSlotEventHandler(port, WmDataSharingReceiveCallback_Parent, dsInfo);
 
         for (i = 0; i < ((dsInfo->doubleMode == TRUE) ? 2 : 1); i++) {
             int sendResult;

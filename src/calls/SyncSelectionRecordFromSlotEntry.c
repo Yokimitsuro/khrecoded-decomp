@@ -24,7 +24,7 @@ extern OverlaySelectionRecord *GetOverlaySelectionRecord(u32 selectionIndex);
 extern void AcquireRecordManager(void);
 extern void ReleaseRecordManager(void);
 extern int AcquireRecordSlot(int slot, int param);
-extern BOOL func_02051e10(s32 slot);
+extern BOOL ReleaseRecordSlot(s32 slot);
 extern SlotPair0Entry *GetRecordSlotPair0Entry(s32 index);
 
 void SyncSelectionRecordFromSlotEntry(void)
@@ -36,6 +36,6 @@ void SyncSelectionRecordFromSlotEntry(void)
     AcquireRecordSlot(0, 1);
     record->unk_130 = GetRecordSlotPair0Entry(entryIndex)->unk_20;
     record->unk_134 = 0;
-    func_02051e10(0);
+    ReleaseRecordSlot(0);
     ReleaseRecordManager();
 }
