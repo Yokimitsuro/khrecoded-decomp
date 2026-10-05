@@ -1222,8 +1222,8 @@ NNSi_SndCaptureMain kind:function(arm,size=0x80) addr:0x0201e558
 NNSi_SndCaptureStop kind:function(arm,size=0xe4) addr:0x0201e5d8
 NNSi_SndCaptureBeginSleep kind:function(arm,size=0x58) addr:0x0201e6bc
 NNSi_SndCaptureEndSleep kind:function(arm,size=0x80) addr:0x0201e714
-func_0201e794 kind:function(arm,size=0xb8) addr:0x0201e794
-func_0201e84c kind:function(arm,size=0x1a0) addr:0x0201e84c
+NNS_SndArcInit kind:function(arm,size=0xb8) addr:0x0201e794
+NNS_SndArcSetup kind:function(arm,size=0x1a0) addr:0x0201e84c
 SND_SetActiveSlotSwap kind:function(arm,size=0x18) addr:0x0201e9ec
 func_0201ea04 kind:function(arm,size=0x10) addr:0x0201ea04
 NNS_SndArcGetSeqInfo kind:function(arm,size=0x64) addr:0x0201ea14
@@ -1233,7 +1233,7 @@ NNS_SndArcGetWaveArcInfo kind:function(arm,size=0x64) addr:0x0201eb40
 NNS_SndArcGetStrmInfo kind:function(arm,size=0x64) addr:0x0201eba4
 NNS_SndArcGetPlayerInfo kind:function(arm,size=0x64) addr:0x0201ec08
 NNS_SndArcGetStrmPlayerInfo kind:function(arm,size=0x64) addr:0x0201ec6c
-func_0201ecd0 kind:function(arm,size=0x30) addr:0x0201ecd0
+NNS_SndArcGetSeqArcSeqCount kind:function(arm,size=0x30) addr:0x0201ecd0
 NNS_SndArcGetFileOffset kind:function(arm,size=0x28) addr:0x0201ed00
 NNS_SndArcGetFileSize kind:function(arm,size=0x28) addr:0x0201ed28
 NNS_SndArcReadFile kind:function(arm,size=0xcc) addr:0x0201ed50
@@ -1241,11 +1241,11 @@ NNS_SndArcGetFileID kind:function(arm,size=0x20) addr:0x0201ee1c
 NNS_SndArcGetFileAddress kind:function(arm,size=0x28) addr:0x0201ee3c
 NNS_SndArcSetFileAddress kind:function(arm,size=0x1c) addr:0x0201ee64
 NNS_SndArcSetLoadBlockSize kind:function(arm,size=0x14) addr:0x0201ee80
-func_0201ee94 kind:function(arm,size=0x84) addr:0x0201ee94
+NNS_SndArcGetSeqArcIdxSymbol kind:function(arm,size=0x84) addr:0x0201ee94
 func_0201ef18 kind:function(arm,size=0x14) addr:0x0201ef18
 func_0201ef2c kind:function(arm,size=0x14) addr:0x0201ef2c
 func_0201ef40 kind:function(arm,size=0x14) addr:0x0201ef40
-func_0201ef54 kind:function(arm,size=0x40) addr:0x0201ef54
+GetSoundArchiveSymbol kind:function(arm,size=0x40) addr:0x0201ef54
 InfoDisposeCallback kind:function(arm,size=0xc) addr:0x0201ef94
 FatDisposeCallback kind:function(arm,size=0xc) addr:0x0201efa0
 SymbolDisposeCallback kind:function(arm,size=0xc) addr:0x0201efac
@@ -1324,7 +1324,7 @@ func_02021810 kind:function(arm,size=0x4) addr:0x02021810
 ReadMemoryStream kind:function(arm,size=0x1c) addr:0x02021814
 func_02021830 kind:function(arm,size=0x4) addr:0x02021830
 func_02021834 kind:function(arm,size=0x54) addr:0x02021834
-func_02021888 kind:function(arm,size=0x8) addr:0x02021888
+NNSi_SndSeqArcGetSeqCount kind:function(arm,size=0x8) addr:0x02021888
 func_02021890 kind:function(arm,size=0x40) addr:0x02021890
 NNSi_SndFaderInit kind:function(arm,size=0x18) addr:0x020218d0
 NNSi_SndFaderSet kind:function(arm,size=0x28) addr:0x020218e8
@@ -2613,7 +2613,7 @@ pivotUtil_ kind:data(byte[36]) addr:0x02053108
 data_02053109 kind:data(any) addr:0x02053109
 data_0205310a kind:data(any) addr:0x0205310a
 data_0205310b kind:data(any) addr:0x0205310b
-data_0205312c kind:data(any) addr:0x0205312c
+sNullSoundArchiveSymbol kind:data(byte[4]) addr:0x0205312c
 data_02053130 kind:data(any) addr:0x02053130
 data_02053140 kind:data(any) addr:0x02053140
 data_020531f4 kind:data(any) addr:0x020531f4

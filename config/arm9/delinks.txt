@@ -4373,6 +4373,14 @@ libs/nns/snd/calls/NNSi_SndCaptureEndSleep.c:
     complete
     .text       start:0x0201e714 end:0x0201e794
 
+libs/nns/snd/calls/NNS_SndArcInit.c:
+    complete
+    .text       start:0x0201e794 end:0x0201e84c
+
+libs/nns/snd/calls/NNS_SndArcSetup.c:
+    complete
+    .text       start:0x0201e84c end:0x0201e9ec
+
 libs/nitro/snd/calls/SND_SetActiveSlotSwap.c:
     complete
     .text       start:0x0201e9ec end:0x0201ea04
@@ -4409,6 +4417,10 @@ libs/nns/snd/calls/NNS_SndArcGetStrmPlayerInfo.c:
     complete
     .text       start:0x0201ec6c end:0x0201ecd0
 
+libs/nns/snd/calls/NNS_SndArcGetSeqArcSeqCount.c:
+    complete
+    .text       start:0x0201ecd0 end:0x0201ed00
+
 libs/nns/snd/calls/NNS_SndArcGetFileOffset.c:
     complete
     .text       start:0x0201ed00 end:0x0201ed28
@@ -4436,6 +4448,14 @@ libs/nns/snd/calls/NNS_SndArcSetFileAddress.c:
 libs/nns/snd/calls/NNS_SndArcSetLoadBlockSize.c:
     complete
     .text       start:0x0201ee80 end:0x0201ee94
+
+libs/nns/snd/calls/NNS_SndArcGetSeqArcIdxSymbol.c:
+    complete
+    .text       start:0x0201ee94 end:0x0201ef18
+
+libs/nns/snd/auto/GetSoundArchiveSymbol.c:
+    complete
+    .text       start:0x0201ef54 end:0x0201ef94
 
 libs/nns/snd/calls/InfoDisposeCallback.c:
     complete
@@ -4644,6 +4664,10 @@ libs/nns/snd/calls/ReadMemoryStream.c:
 src/auto/func_02021830.c:
     complete
     .text       start:0x02021830 end:0x02021834
+
+libs/nns/snd/auto/NNSi_SndSeqArcGetSeqCount.c:
+    complete
+    .text       start:0x02021888 end:0x02021890
 
 libs/nns/snd/auto/func_02021890.c:
     complete
