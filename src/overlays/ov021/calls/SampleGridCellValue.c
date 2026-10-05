@@ -21,7 +21,7 @@ typedef struct GridSample {
 
 extern GridContext data_ov021_020b56c4;
 extern void *GetStageMotionRecord(u32 id);
-extern void func_ov001_02091c5c(void *object, VecFx32 *pos);
+extern void NotifySceneObjectHandler(void *object, VecFx32 *pos);
 extern int GetGridCellIndex(void *grid, VecFx32 *position);
 extern u8 func_ov006_020a14e0(void *table, int index);
 
@@ -44,7 +44,7 @@ int SampleGridCellValue(GridSample *sample)
     if (table == NULL) {
         return 0;
     }
-    func_ov001_02091c5c(object, &pos);
+    NotifySceneObjectHandler(object, &pos);
     index = GetGridCellIndex(table, &pos);
     sample->valid = 1;
     sample->value = func_ov006_020a14e0(table, index);

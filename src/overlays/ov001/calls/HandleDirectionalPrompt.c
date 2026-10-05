@@ -11,7 +11,7 @@ typedef struct {
     s32 hitTotal;
 } DirectionalPrompt;
 
-extern void func_ov001_0207e118(int hitCount);
+extern void IncrementAndShowCounter(int hitCount);
 extern void LoadMenuPhaseGraphics(int phase);
 
 int HandleDirectionalPrompt(DirectionalPrompt *prompt, u32 keys) {
@@ -59,7 +59,7 @@ int HandleDirectionalPrompt(DirectionalPrompt *prompt, u32 keys) {
         return 3;
     }
     if (hit) {
-        func_ov001_0207e118(++prompt->hitCount);
+        IncrementAndShowCounter(++prompt->hitCount);
         if (prompt->hitCount == prompt->hitTotal) {
             LoadMenuPhaseGraphics(0);
             return 1;

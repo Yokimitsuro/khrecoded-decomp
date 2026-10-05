@@ -19,8 +19,8 @@ typedef struct SessionQueue {
 } SessionQueue;
 
 extern SessionQueue *data_ov001_020a0498;
-extern SessionEntry *func_ov001_02069014(SessionQueue *queue, u32 id);
-extern void func_01ff86d8(const void *source, void *dest, u32 size);
+extern SessionEntry *FindSceneNodeById(SessionQueue *queue, u32 id);
+extern void MI_CpuMove16(const void *source, void *dest, u32 size);
 extern void func_ov001_020645dc(u32 bitOffset);
 
 void PopSessionQueue(u32 *outId)
@@ -30,8 +30,8 @@ void PopSessionQueue(u32 *outId)
     SessionEntry *entry;
 
     *outId = id;
-    entry = func_ov001_02069014(queue, id);
-    func_01ff86d8(&queue->ids[1], queue->ids, 0xe);
+    entry = FindSceneNodeById(queue, id);
+    MI_CpuMove16(&queue->ids[1], queue->ids, 0xe);
     queue->ids[7] = 0xffff;
     queue->count--;
     if (entry->silent == 0) {

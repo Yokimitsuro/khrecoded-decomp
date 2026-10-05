@@ -18,7 +18,7 @@ typedef struct {
     s32 counter;
 } ObjHandle;
 
-extern void func_ov021_020aa928(HandleTarget *target);
+extern void ResetModelGroup(HandleTarget *target);
 extern BOOL IsObjHandleRequirementMet(ObjHandle *handle, int mode);
 
 void BeginObjHandleCheck(ObjHandle *handle, HandleConfig *config, int mode)
@@ -28,7 +28,7 @@ void BeginObjHandleCheck(ObjHandle *handle, HandleConfig *config, int mode)
 
     handle->config = config;
     handle->flags &= ~0xf;
-    func_ov021_020aa928(config->target);
+    ResetModelGroup(config->target);
     target = handle->config->target;
     if (mode == 0) {
         if (config->type != 4) {

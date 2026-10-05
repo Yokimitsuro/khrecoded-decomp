@@ -29,7 +29,7 @@ extern void DestroyAllContainerElements(void *container);
 extern void ReleaseIfMarked(void *owner);
 extern void FreePointerIfSet(void **ptr);
 extern BOOL DestroyFndObjectList(TextLayer *layer);
-extern void func_ov039_020be6c0(void);
+extern void SetupMainBgLayers_020be6c0(void);
 extern void RebuildRecordCounters(void);
 extern void *GetOverlaySelectionRecord(u32 selectionIndex);
 extern void ComputePlayerStats(SaveData *state, void *out, BOOL recompute, int scaleParam);
@@ -50,7 +50,7 @@ void DestroySaveSelectScreen(SaveSelectScreen *screen)
     DestroyFndObjectList(&screen->layers[3]);
     DestroyFndObjectList(&screen->layers[2]);
     *(vu16 *)0x04000050 = 0;
-    func_ov039_020be6c0();
+    SetupMainBgLayers_020be6c0();
     data_ov080_020c5e20 = NULL;
     if (screen->step != 9) {
         *data_0205fe0c = screen->savedGame;

@@ -104,9 +104,17 @@ src/overlays/ov023/calls/PlaceMapStoryIcons.c:
     complete
     .text       start:0x020b655c end:0x020b65cc
 
+src/overlays/ov023/calls/RemapIntoDisplayRange.c:
+    complete
+    .text       start:0x020b69bc end:0x020b69da
+
 src/overlays/ov023/calls/ResetMapMenuCursor.c:
     complete
     .text       start:0x020b69dc end:0x020b6a38
+
+src/overlays/ov023/calls/InitMapMenuState.c:
+    complete
+    .text       start:0x020b6a38 end:0x020b6ae4
 
 src/overlays/ov023/calls/DestroyScreenState.c:
     complete

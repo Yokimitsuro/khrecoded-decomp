@@ -71,7 +71,7 @@ typedef struct {
 } NodeRecord;
 
 extern void *NNSi_FndAllocFromDefaultHeap(u32 size);
-extern void func_ov021_020aa928(NodeRecord *node);
+extern void ResetModelGroup(NodeRecord *node);
 
 void ParseNodeRecord(NodeRecord *node, u8 layer, s32 *src)
 {
@@ -160,5 +160,5 @@ void ParseNodeRecord(NodeRecord *node, u8 layer, s32 *src)
         }
         }
     }
-    func_ov021_020aa928(node);
+    ResetModelGroup(node);
 }

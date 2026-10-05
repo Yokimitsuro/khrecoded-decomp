@@ -17,7 +17,7 @@ extern FieldMenuHandle data_ov001_020a04d0;
 extern BOOL IsModeSetOrFlag370aClear(void);
 extern BOOL IsLeadEntryFlag80Set(void);
 extern void *FindFieldMenuEntryById(FieldMenu *menu, int listKind, int entryId, s32 *outIndex);
-extern void func_ov001_020769f4(FieldMenu *menu);
+extern void DrawMenuPanelPage(FieldMenu *menu);
 extern BOOL PlaySoundEffect(int seqArcNo, int index);
 
 void SelectFieldMenuEntryById(int entryId)
@@ -34,6 +34,6 @@ void SelectFieldMenuEntryById(int entryId)
         return;
     }
     FindFieldMenuEntryById(menu, 0, entryId, &menu->cursorIndex);
-    func_ov001_020769f4(menu);
+    DrawMenuPanelPage(menu);
     PlaySoundEffect(0, 0);
 }

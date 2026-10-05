@@ -36,6 +36,10 @@ src/overlays/ov022/auto/func_ov022_020a7878.c:
     complete
     .text       start:0x020a7878 end:0x020a787c
 
+src/overlays/ov022/calls/InitMovieSceneCallbacks.c:
+    complete
+    .text       start:0x020a789c end:0x020a78e8
+
 src/overlays/ov022/calls/CommitMovieStateText.c:
     complete
     .text       start:0x020a78e8 end:0x020a791c

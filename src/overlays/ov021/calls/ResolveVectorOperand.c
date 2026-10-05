@@ -21,7 +21,7 @@ typedef struct {
 extern StageGlobals data_ov021_020b56c4;
 extern TaggedValue *ResolveTaggedValueRef(ScriptContext *context, TaggedValue *value);
 extern fx32 TaggedValueToFixed(TaggedValue *tagged);
-extern void func_ov001_02091c5c(void *target, VecFx32 *out);
+extern void NotifySceneObjectHandler(void *target, VecFx32 *out);
 extern VecFx32 *func_ov001_02090f2c(void *target);
 
 void ResolveVectorOperand(ScriptContext *context, TaggedValue *operand, VecFx32 *out)
@@ -32,7 +32,7 @@ void ResolveVectorOperand(ScriptContext *context, TaggedValue *operand, VecFx32 
 
     switch (operand->value) {
     case -1:
-        func_ov001_02091c5c(data_ov021_020b56c4.target, out);
+        NotifySceneObjectHandler(data_ov021_020b56c4.target, out);
         return;
     case -2:
         *out = *func_ov001_02090f2c(data_ov021_020b56c4.target);

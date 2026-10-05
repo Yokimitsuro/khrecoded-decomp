@@ -26,7 +26,7 @@ extern void SetSecondaryBrightness(int brightness);
 extern void DrawOv038PercentDigits(s32 poolIndex, s32 firstRecord, s32 value);
 extern void func_ov038_020bb500(s32 poolIndex, s32 firstRecord, u32 totalSeconds);
 extern void SetOv038PoolRecordFlags(s32 poolIndex, s32 recordIndex, int value);
-extern void func_ov038_020bb43c(s32 poolIndex, s32 firstRecord, s32 value);
+extern void DrawScoreDigits(s32 poolIndex, s32 firstRecord, s32 value);
 extern void PrepareAndStartStream(int stream, int mode);
 extern void ResetOv038ExitState(int state);
 
@@ -56,13 +56,13 @@ s32 ShowOv038ResultsFadeIn(void)
         SetOv038PoolRecordFlags(1, 0x35, ctx->categories[6].entries[ctx->selections[6]].rank);
         SetOv038PoolRecordFlags(1, 0x36, ctx->categories[7].entries[ctx->selections[7]].rank);
         SetOv038PoolRecordFlags(1, 0x37, ctx->categories[8].entries[ctx->selections[8]].rank);
-        func_ov038_020bb43c(1, 0x39, ctx->categories[0].entries[ctx->selections[0]].score);
-        func_ov038_020bb43c(1, 0x3f, ctx->categories[1].entries[ctx->selections[1]].score);
-        func_ov038_020bb43c(1, 0x45, ctx->categories[2].entries[ctx->selections[2]].score);
-        func_ov038_020bb43c(1, 0x4b, ctx->categories[ctx->currentCategory].entries[ctx->selections[ctx->currentCategory]].score);
-        func_ov038_020bb43c(1, 0x51, ctx->categories[6].entries[ctx->selections[6]].score);
-        func_ov038_020bb43c(1, 0x57, ctx->categories[7].entries[ctx->selections[7]].score);
-        func_ov038_020bb43c(1, 0x5d, ctx->categories[8].entries[ctx->selections[8]].score);
+        DrawScoreDigits(1, 0x39, ctx->categories[0].entries[ctx->selections[0]].score);
+        DrawScoreDigits(1, 0x3f, ctx->categories[1].entries[ctx->selections[1]].score);
+        DrawScoreDigits(1, 0x45, ctx->categories[2].entries[ctx->selections[2]].score);
+        DrawScoreDigits(1, 0x4b, ctx->categories[ctx->currentCategory].entries[ctx->selections[ctx->currentCategory]].score);
+        DrawScoreDigits(1, 0x51, ctx->categories[6].entries[ctx->selections[6]].score);
+        DrawScoreDigits(1, 0x57, ctx->categories[7].entries[ctx->selections[7]].score);
+        DrawScoreDigits(1, 0x5d, ctx->categories[8].entries[ctx->selections[8]].score);
         PrepareAndStartStream(0, 2);
     }
     if (++ctx->fadeTimer > 0x10) {

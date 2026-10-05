@@ -18,7 +18,7 @@ extern void RefreshProgressCaption(void);
 extern void func_ov013_02070a50(void);
 extern BOOL PlaySoundEffect(int seqArcNo, int index);
 extern int func_ov002_020621c4(int textIndex, int unused);
-extern void func_ov002_02061d58(int window, int x, int y, int palette, int width, int height, int text, int flags);
+extern void DrawPanelTextLine(int window, int x, int y, int palette, int width, int height, int text, int flags);
 extern PanelObject *FindWidgetById(void *panel, int id);
 extern void func_ov027_020b9604(void *panel, PanelObject *object);
 extern void func_ov027_020b96c0(void *panel, PanelObject *object, int mode);
@@ -38,7 +38,7 @@ void OpenPanelConfirmPrompt(void) {
     *(vu16 *)0x0400100a = (u16)((*(vu16 *)0x0400100a & ~3) | 3);
     *(vu16 *)0x0400100c = (u16)((*(vu16 *)0x0400100c & ~3) | 1);
     *(vu16 *)0x0400100e = (u16)(*(vu16 *)0x0400100e & ~3);
-    func_ov002_02061d58(1, 0x80, 0x41, 2, 6, 10, func_ov002_020621c4(0x6f, 0), 0);
+    DrawPanelTextLine(1, 0x80, 0x41, 2, 6, 10, func_ov002_020621c4(0x6f, 0), 0);
     panel = data_ov013_02074ce0->panel;
     object = FindWidgetById(panel, 4);
     SetEntrySlotsVisible(panel, object, 1);

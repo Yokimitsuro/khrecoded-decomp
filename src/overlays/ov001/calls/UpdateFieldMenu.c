@@ -38,7 +38,7 @@ extern void AdvanceActiveSlotTimers(FieldMenu *menu);
 extern void func_ov001_020758c4(FieldMenu *menu);
 extern void FillBackgroundLayerRect(void *info, u16 *dst, int x, int y, u8 palette);
 extern void RefreshFieldMenuHighlights(FieldMenu *menu);
-extern void func_ov001_020769f4(FieldMenu *menu);
+extern void DrawMenuPanelPage(FieldMenu *menu);
 extern void func_ov001_02075e10(FieldMenu *menu, void *tracker, s32 mode);
 extern void DrawItemCountBadge(FieldMenu *menu);
 extern void func_ov001_02076ebc(FieldMenu *menu, int arg);
@@ -70,10 +70,10 @@ int UpdateFieldMenu(void)
         if (menu->state == 0) {
             RefreshFieldMenuHighlights(menu);
         } else {
-            func_ov001_020769f4(menu);
+            DrawMenuPanelPage(menu);
         }
         if (menu->unk_13C != 0) {
-            func_ov001_020769f4(menu);
+            DrawMenuPanelPage(menu);
             func_ov001_02075e10(menu, tracker, menu->mode);
             menu->unk_13C = 0;
         }

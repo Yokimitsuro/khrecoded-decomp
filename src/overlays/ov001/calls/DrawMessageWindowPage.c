@@ -29,7 +29,7 @@ extern void DrawTextPackedColor(void *layer, int x, int y, int color, int colorL
 extern void DrawCenteredWindowText(void *layer, const u16 *text);
 extern void Text_UploadTileBuffer(void *layer);
 extern void SampleTweenValue(void *tween, s32 *value);
-extern void func_ov001_02079524(MessageWindow *window, int left, int top, int right, int bottom);
+extern void StartWindow1Fade(MessageWindow *window, int left, int top, int right, int bottom);
 
 int DrawMessageWindowPage(MessageWindow *window, int force)
 {
@@ -73,7 +73,7 @@ int DrawMessageWindowPage(MessageWindow *window, int force)
         width = window->widthTiles * 8;
         height = window->heightTiles * 8;
         if (context->mode == 1) {
-            func_ov001_02079524(window, window->x, window->y, window->x + width, window->y + height);
+            StartWindow1Fade(window, window->x, window->y, window->x + width, window->y + height);
         }
     } else {
         SampleTweenValue(context->tween, &value);

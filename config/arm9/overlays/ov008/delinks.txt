@@ -120,6 +120,10 @@ src/overlays/ov008/calls/ReleaseSlot.c:
     complete
     .text       start:0x020a133c end:0x020a134c
 
+src/overlays/ov008/calls/BindLinkSlotTable.c:
+    complete
+    .text       start:0x020a134c end:0x020a13b2
+
 src/overlays/ov008/data/strings/Strings_ov008_020a13b4.c:
     complete
     .rodata     start:0x020a13b4 end:0x020a13c4

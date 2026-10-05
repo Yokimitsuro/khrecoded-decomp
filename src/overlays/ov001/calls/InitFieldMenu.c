@@ -28,7 +28,7 @@ extern s8 func_ov001_02068084(void);
 extern BOOL func_ov001_020645c8(u32 flagId);
 extern void *FindActiveRecordById(void *pool, u32 recordId);
 extern void func_ov001_0207723c(FieldMenu *menu, u32 arg);
-extern void func_ov001_020769f4(FieldMenu *menu);
+extern void DrawMenuPanelPage(FieldMenu *menu);
 extern int UpdateFieldMenu(void);
 
 void *InitFieldMenu(u32 *params)
@@ -45,6 +45,6 @@ void *InitFieldMenu(u32 *params)
     menu->unk_144 = -1;
     menu->record = FindActiveRecordById(tracker, 0x20);
     func_ov001_0207723c(menu, *params);
-    func_ov001_020769f4(menu);
+    DrawMenuPanelPage(menu);
     return UpdateFieldMenu;
 }

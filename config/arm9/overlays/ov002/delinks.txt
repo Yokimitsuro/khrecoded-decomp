@@ -44,6 +44,10 @@ src/overlays/ov002/calls/DrawPanelSlotCDText.c:
     complete
     .text       start:0x02061c64 end:0x02061d58
 
+src/overlays/ov002/calls/DrawPanelTextLine.c:
+    complete
+    .text       start:0x02061d58 end:0x02061dc8
+
 src/overlays/ov002/calls/func_ov002_02062000.c:
     complete
     .text       start:0x02062000 end:0x02062014

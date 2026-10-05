@@ -29,7 +29,7 @@ extern BOOL func_ov001_02064490(void);
 extern u32 func_ov001_0207b3f4(void);
 extern void *LookupChannelEntry(int index);
 extern void SetDisplaySetting(int value);
-extern void func_ov001_0207b234(PanelScene *panel, int mode);
+extern void Panel_InitFromModeTables(PanelScene *panel, int mode);
 
 BOOL RequestPanelModeChange(int mode) {
     PanelScene *panel = data_ov001_020a04e8;
@@ -56,7 +56,7 @@ BOOL RequestPanelModeChange(int mode) {
         }
     }
     SetDisplaySetting(panel->altDisplay != 0 ? 2 : 1);
-    func_ov001_0207b234(panel, mode);
+    Panel_InitFromModeTables(panel, mode);
     panel->fadeSpeed = 6;
     return TRUE;
 }

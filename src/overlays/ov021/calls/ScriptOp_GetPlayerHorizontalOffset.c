@@ -17,7 +17,7 @@ typedef struct {
 } ScriptGlobals;
 
 extern ScriptGlobals data_ov021_020b56c4;
-extern void func_ov001_02091c5c(PlayerActor *player, VecFx32 *out);
+extern void NotifySceneObjectHandler(PlayerActor *player, VecFx32 *out);
 extern VecFx32 *func_ov001_02090f2c(PlayerActor *player);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern fx32 VEC_Mag(const VecFx32 *v);
@@ -32,7 +32,7 @@ int ScriptOp_GetPlayerHorizontalOffset(ScriptContext *context)
     if (player == NULL) {
         return 0;
     }
-    func_ov001_02091c5c(player, &current);
+    NotifySceneObjectHandler(player, &current);
     reference = *func_ov001_02090f2c(player);
     VEC_Subtract(&current, &reference, &delta);
     delta.y = 0;

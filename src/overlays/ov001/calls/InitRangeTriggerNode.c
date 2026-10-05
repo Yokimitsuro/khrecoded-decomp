@@ -28,7 +28,7 @@ struct RangeNode {
 extern void MIi_CpuCopy32(const void *src, void *dst, u32 size);
 extern BOOL IsPointWithinEntityRadius(RangeNode *node, const VecFx32 *point);
 extern BOOL IsPointInNodeRange(RangeNode *node, const VecFx32 *point);
-extern BOOL func_ov001_020696c8(RangeNode *node, const VecFx32 *point);
+extern BOOL IsWithinHorizontalRange(RangeNode *node, const VecFx32 *point);
 extern BOOL PointInBox3D(RangeNode *node, const VecFx32 *point);
 extern BOOL PointInBoxXZ(RangeNode *node, const VecFx32 *point);
 extern void func_ov001_020695b8(void);
@@ -48,7 +48,7 @@ void InitRangeTriggerNode(RangeNode *node, RangeNodeParams *params)
         node->test = IsPointInNodeRange;
         break;
     case 2:
-        node->test = func_ov001_020696c8;
+        node->test = IsWithinHorizontalRange;
         break;
     case 3:
         node->test = PointInBox3D;

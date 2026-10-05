@@ -24,7 +24,7 @@ extern s64 OS_GetTick(void);
 extern s64 GetCardThreadStartTick(void);
 extern int func_ov027_020b9f9c(void *dst);
 extern void ClearScreenLayerDirty(int layerId);
-extern void func_ov027_020b9e80(void *table);
+extern void FlushDirtyTileTableRows(void *table);
 extern void SetPageHeaderVisible(RecordPanel *panel, int mode);
 extern void UpdateRecordSliderTouch(RecordPanel *panel);
 extern BOOL func_ov086_020c1694(RecordPanel *panel, int mode);
@@ -63,5 +63,5 @@ void UpdateRecordPanelInput(RecordPanel *panel)
     func_ov027_020b9f9c(panel->sourceBlock);
     ClearScreenLayerDirty(0x19);
     ClearScreenLayerDirty(0x1a);
-    func_ov027_020b9e80(panel->tileTable);
+    FlushDirtyTileTableRows(panel->tileTable);
 }

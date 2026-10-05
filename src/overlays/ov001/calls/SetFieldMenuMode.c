@@ -33,7 +33,7 @@ extern BOOL IsFieldFlag8Set(void);
 extern void func_ov001_02078ac4(void);
 extern BOOL HasFieldOverlayScreen(void);
 extern void func_ov001_02076ebc(FieldMenu *menu, int arg);
-extern void func_ov001_020769f4(FieldMenu *menu);
+extern void DrawMenuPanelPage(FieldMenu *menu);
 extern void FillBackgroundLayerRect(void *layer, u16 *dst, int x, int y, u8 palette);
 extern void func_ov027_020b9e20(void *layers, int layerId);
 
@@ -81,7 +81,7 @@ void SetFieldMenuMode(int mode) {
         func_ov001_02076ebc(menu, 0);
     }
     if (refresh) {
-        func_ov001_020769f4(menu);
+        DrawMenuPanelPage(menu);
     }
     if ((shown && !menu->shown) || (!shown && menu->shown)) {
         FillBackgroundLayerRect(menu->textLayer, dst, 2, 0x16, 10);

@@ -42,7 +42,7 @@ extern int SharedObject_GetMode(void *unit);
 extern BOOL CameraPath_ConsumeSkipRequest(void);
 extern void RestartScriptSound(void *sound, int arg);
 extern void ApplyTimeScaledSpeed(Actor *actor, int speed);
-extern void func_ov052_020d1190(Actor *actor, int arg);
+extern void ActivateSlotModelGroup(Actor *actor, int arg);
 extern void func_ov056_020d3418(Actor *actor);
 void RunOv067BossIntroState(Actor *actor);
 
@@ -86,7 +86,7 @@ void RunOv067BossIntroState(Actor *actor)
         RestartScriptSound(actor->sound, 0);
         ApplyTimeScaledSpeed(actor, 0x1000);
         actor->dashLocked = 0;
-        func_ov052_020d1190(actor, 0);
+        ActivateSlotModelGroup(actor, 0);
         actor->state.func = func_ov056_020d3418;
         actor->state.id = 0x18;
         actor->state.func(actor);

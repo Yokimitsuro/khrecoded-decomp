@@ -26,7 +26,7 @@ typedef struct HudHandle {
 
 extern HudHandle data_ov001_020a04c4;
 
-extern void func_ov001_0206fef4(Hud *hud);
+extern void FlushAndCloseSceneMessage(Hud *hud);
 extern void func_02052528(Tween *tween, int mode, int from, int to, int duration);
 extern void func_02052570(Tween *tween);
 
@@ -41,7 +41,7 @@ BOOL BeginHudSlideClose(void)
         result = FALSE;
         break;
     case 2:
-        func_ov001_0206fef4(hud);
+        FlushAndCloseSceneMessage(hud);
     case 3:
         func_02052528(&slide->tween, 4, 0, 0x28000, 500);
         func_02052570(&slide->tween);

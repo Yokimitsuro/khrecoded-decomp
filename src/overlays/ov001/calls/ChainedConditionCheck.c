@@ -1,13 +1,13 @@
 #include "nitro/types.h"
 
-extern s32 func_ov001_02091ad0(void);
+extern s32 GetRecordSlotEnabled(void);
 extern s32 GetGroupMemberValueIfAny(void);
 
 s32 ChainedConditionCheck(void)
 {
     s32 result;
 
-    result = func_ov001_02091ad0();
+    result = GetRecordSlotEnabled();
     if (result == 0) {
         return 0;
     }

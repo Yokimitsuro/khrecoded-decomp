@@ -11,7 +11,7 @@ extern BOOL IsFirstEntryFlagSet(void);
 extern StageNode *func_ov001_02087264(void);
 extern VecFx32 *func_ov001_0208641c(StageNode *node);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
-extern void func_ov016_020a6dac(StageNode *node, int arg);
+extern void TryEnterFieldUnitPhase5(StageNode *node, int arg);
 
 void PurgeNearbyStageObjects(void)
 {
@@ -50,7 +50,7 @@ void PurgeNearbyStageObjects(void)
             continue;
         }
         if (VEC_Distance(pos, center) < 0x8000) {
-            func_ov016_020a6dac(node, 0);
+            TryEnterFieldUnitPhase5(node, 0);
         }
     }
 }

@@ -29,7 +29,7 @@ static inline void G3_TexCoord(fx16 s, fx16 t)
 
 extern volatile u16 data_027e0078[];
 
-extern void func_01fff810(void *a, void *b, int c, int d);
+extern void SetupModelDrawState(void *a, void *b, int c, int d);
 extern void func_01fff8b0(void *a, fx32 *width, fx32 *height);
 extern void GXi_FlushCommandList(void);
 
@@ -45,7 +45,7 @@ void DrawTexturedGridQuads(void *texture, void *palette, int rows, int cols, int
     fx32 y0;
     int col;
 
-    func_01fff810(texture, palette, texParamA, texParamB);
+    SetupModelDrawState(texture, palette, texParamA, texParamB);
     func_01fff8b0(texture, &width, &height);
     GXi_FlushCommandList();
     if (!useColors) {

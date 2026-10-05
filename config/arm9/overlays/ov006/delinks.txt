@@ -20,6 +20,14 @@ src/overlays/ov006/calls/CreateElevatorObject.c:
     complete
     .text       start:0x020a0f38 end:0x020a1054
 
+src/overlays/ov006/calls/FloodGridDistance.c:
+    complete
+    .text       start:0x020a1054 end:0x020a10f8
+
+src/overlays/ov006/calls/LoadGridLevel.c:
+    complete
+    .text       start:0x020a11b4 end:0x020a123c
+
 src/overlays/ov006/calls/ResolveSegmentNodes.c:
     complete
     .text       start:0x020a123c end:0x020a126a

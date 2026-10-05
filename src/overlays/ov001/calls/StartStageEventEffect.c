@@ -37,7 +37,7 @@ extern StageActor *GetStageActor(int id);
 extern SmallRecord *GetSmallTableEntry(int index);
 extern void func_ov001_02066684(int effectId, VecFx32 *position, u8 arg, int flags);
 extern void HandleEnemyDefeat(u16 objectType, u16 recordIndex, VecFx32 *position, u32 param, u8 arg);
-extern void func_ov001_0209ce38(StageEvent *event);
+extern void FinishScoreEvent(StageEvent *event);
 
 void StartStageEventEffect(StageEvent *event)
 {
@@ -68,5 +68,5 @@ void StartStageEventEffect(StageEvent *event)
     }
     func_ov001_02066684(record->effectId, &actor->effectPos, event->effectArg, 0);
     HandleEnemyDefeat(*object, event->recordIndex, &actor->position, event->soundParam, event->soundArg);
-    func_ov001_0209ce38(event);
+    FinishScoreEvent(event);
 }

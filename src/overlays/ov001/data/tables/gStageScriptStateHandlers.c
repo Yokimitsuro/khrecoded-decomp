@@ -9,7 +9,7 @@ extern void StartStageActorScript(void); /* StartStageActorScript */
 extern void FinishStageEventStep(void); /* FinishStageEventStep */
 extern void NotifyActorGroupAndTarget(void); /* NotifyActorGroupAndTarget */
 extern void AllocateActorSlotOrReportError(void); /* AllocateActorSlotOrReportError */
-extern void func_ov001_02093b24(void);
+extern void FinishActorEventStep(void);
 extern void RunGateFadeSequence(void); /* RunGateFadeSequence */
 
 void (*gStageScriptStateHandlers[12])(void) = {
@@ -23,6 +23,6 @@ void (*gStageScriptStateHandlers[12])(void) = {
     FinishStageEventStep, /* FinishStageEventStep */
     NotifyActorGroupAndTarget, /* NotifyActorGroupAndTarget */
     AllocateActorSlotOrReportError, /* AllocateActorSlotOrReportError */
-    func_ov001_02093b24,
+    FinishActorEventStep,
     RunGateFadeSequence, /* RunGateFadeSequence */
 };

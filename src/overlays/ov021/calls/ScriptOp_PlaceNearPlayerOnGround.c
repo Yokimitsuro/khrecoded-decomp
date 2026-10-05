@@ -49,7 +49,7 @@ extern s32 TaggedValueToFixed(s16 *tagged);
 extern fx32 Surface_GetKindValue(void *surface);
 extern fx32 FX_Mul(fx32 a, fx32 b);
 extern void MI_CpuFill8(void *dest, u32 value, u32 size);
-extern void func_ov001_02091c5c(PlayerActor *actor, VecFx32 *out);
+extern void NotifySceneObjectHandler(PlayerActor *actor, VecFx32 *out);
 extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern CollisionResult *QueryWorldMotionCollision(CollisionQuery *query);
 extern CollisionResult *ResetAndQueryWorldCollision(CollisionQuery *query);
@@ -67,7 +67,7 @@ s32 ScriptOp_PlaceNearPlayerOnGround(ScriptObject *obj, ScriptCommand *cmd)
     CollisionQuery query;
 
     MI_CpuFill8(&query, 0, 0x60);
-    func_ov001_02091c5c(player, &base);
+    NotifySceneObjectHandler(player, &base);
     for (; i < 8; i++) {
         CollisionResult *result;
         start = base;

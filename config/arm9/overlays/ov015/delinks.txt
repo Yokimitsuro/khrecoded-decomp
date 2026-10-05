@@ -612,6 +612,10 @@ src/overlays/ov015/calls/BlitTileToSheet.c:
     complete
     .text       start:0x02078d90 end:0x02078df0
 
+src/overlays/ov015/calls/ExtractTileFromSheet.c:
+    complete
+    .text       start:0x02078df0 end:0x02078e38
+
 src/overlays/ov015/calls/FillTileInSheet.c:
     complete
     .text       start:0x02078e38 end:0x02078e88
@@ -635,6 +639,10 @@ src/overlays/ov015/calls/IsCursorOffscreen.c:
 src/overlays/ov015/calls/IsPointInRect.c:
     complete
     .text       start:0x0207913c end:0x02079194
+
+src/overlays/ov015/calls/ComputeEmptyPixelPercent.c:
+    complete
+    .text       start:0x02079194 end:0x02079228
 
 src/overlays/ov015/calls/OpenPanelConfirmWindow.c:
     complete

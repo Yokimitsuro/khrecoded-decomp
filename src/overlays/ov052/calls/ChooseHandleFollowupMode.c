@@ -37,8 +37,8 @@ extern BOOL IsObjHandleBit0Set(ObjHandle *handle);
 extern BOOL IsObjHandleRequirementMet(ObjHandle *handle, int which);
 extern int GetObjHandleLevel(ObjHandle *handle, int which);
 extern void SetSlotBFromHandler(ObjHandle *handle, int which);
-extern void func_ov021_020aa308(ObjHandle *handle, int forced);
-extern BOOL func_ov021_020aa3bc(ObjHandle *handle, int id, int forced);
+extern void AdvanceObjHandleConfig(ObjHandle *handle, int forced);
+extern BOOL TriggerMatchingHandle(ObjHandle *handle, int id, int forced);
 extern Anchor *func_ov052_020ceb74(Actor *actor);
 extern void BuildApproachChoices(Actor *actor, int forced, int *ids);
 extern BOOL IsTargetAboveInRange(Actor *actor);
@@ -77,7 +77,7 @@ void ChooseHandleFollowupMode(Actor *actor)
         waiting = FALSE;
     }
     if (!waiting) {
-        func_ov021_020aa308(handle, forced);
+        AdvanceObjHandleConfig(handle, forced);
         actor->setMode(actor, 0xb);
         return;
     }
@@ -86,7 +86,7 @@ void ChooseHandleFollowupMode(Actor *actor)
         if (ids[i] == -1) {
             break;
         }
-        if (func_ov021_020aa3bc(handle, ids[i], forced)) {
+        if (TriggerMatchingHandle(handle, ids[i], forced)) {
             actor->setMode(actor, 0xb);
             return;
         }
@@ -95,6 +95,6 @@ void ChooseHandleFollowupMode(Actor *actor)
         actor->setMode(actor, 0xd);
         return;
     }
-    func_ov021_020aa308(handle, forced);
+    AdvanceObjHandleConfig(handle, forced);
     actor->setMode(actor, 0xb);
 }

@@ -34,7 +34,7 @@ typedef struct Session {
 
 extern Session *data_ov001_020a0480;
 extern int func_ov001_020644b0(void);
-extern void func_ov001_020631e4(int mode);
+extern void SetPendingFieldValue(int mode);
 extern u32 ReadGlobalPackedBits(u32 bitOffset, u32 bitCount);
 extern void ConfigureFieldTracks(int areaId, int roomId, int entranceId, int transitionFlags);
 extern void func_ov001_020645dc(u32 eventId);
@@ -54,7 +54,7 @@ int HandleMenuPromptResult(void)
     switch (menu->state) {
     case 5:
         if (func_ov001_020644b0() == 899) {
-            func_ov001_020631e4(0);
+            SetPendingFieldValue(0);
         } else if (session->flags.bit13) {
             if (session->unk_27EC == 3 && selection != 0) {
                 slotIndex = ReadGlobalPackedBits(0x1a00, 2);
@@ -79,7 +79,7 @@ int HandleMenuPromptResult(void)
         switch (selection) {
         case 0:
             if (session->flags.bit11) {
-                func_ov001_020631e4(2);
+                SetPendingFieldValue(2);
             } else {
                 func_ov001_020645dc(0x1a06);
                 session->flags.bit4 = TRUE;

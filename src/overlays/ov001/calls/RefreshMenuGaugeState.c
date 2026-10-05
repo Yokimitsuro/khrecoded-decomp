@@ -33,7 +33,7 @@ typedef struct Session {
 extern Session *data_ov001_020a0480;
 extern BOOL func_ov001_020645c8(u32 value);
 extern void func_ov001_020716e8(int index, int mode);
-extern void func_ov001_02071770(int index, int mode);
+extern void UploadScreenSlotBlock(int index, int mode);
 extern void SetMenuGaugeActive(int index, BOOL enable);
 
 void RefreshMenuGaugeState(GaugeMenu *menu, int index, BOOL force)
@@ -53,16 +53,16 @@ void RefreshMenuGaugeState(GaugeMenu *menu, int index, BOOL force)
             func_ov001_020716e8(index, 2);
             SetMenuGaugeActive(index, FALSE);
         }
-        func_ov001_02071770(index, 2);
+        UploadScreenSlotBlock(index, 2);
         menu->empty[index] = TRUE;
         return;
     }
     if (menu->empty[index]) {
         func_ov001_020716e8(index, 0);
         if (index == 0 && menu->entries[0].highlighted) {
-            func_ov001_02071770(index, 2);
+            UploadScreenSlotBlock(index, 2);
         } else {
-            func_ov001_02071770(index, 0);
+            UploadScreenSlotBlock(index, 0);
         }
         menu->empty[index] = FALSE;
     }

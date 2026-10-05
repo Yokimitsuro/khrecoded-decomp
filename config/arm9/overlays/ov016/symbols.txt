@@ -121,7 +121,7 @@ ResetUnitToBasePosition kind:function(thumb,size=0x1c8) addr:0x020a6b1c
 SetFieldUnitPosition kind:function(thumb,size=0x36) addr:0x020a6ce4
 SetGroupMembersFlag21 kind:function(thumb,size=0x44) addr:0x020a6d1c
 EnterFieldUnitPhase5 kind:function(thumb,size=0x4c) addr:0x020a6d60
-func_ov016_020a6dac kind:function(thumb,size=0x38) addr:0x020a6dac
+TryEnterFieldUnitPhase5 kind:function(thumb,size=0x38) addr:0x020a6dac
 func_ov016_020a6de4 kind:function(thumb,size=0x14) addr:0x020a6de4
 func_ov016_020a6df8 kind:function(thumb,size=0x12) addr:0x020a6df8
 data_ov016_020a6e0c kind:data(any) addr:0x020a6e0c

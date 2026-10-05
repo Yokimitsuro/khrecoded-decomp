@@ -384,6 +384,10 @@ src/overlays/ov016/calls/EnterFieldUnitPhase5.c:
     complete
     .text       start:0x020a6d60 end:0x020a6dac
 
+src/overlays/ov016/calls/TryEnterFieldUnitPhase5.c:
+    complete
+    .text       start:0x020a6dac end:0x020a6de4
+
 src/overlays/ov016/data/strings/Strings_ov016_020a6ec8.c:
     complete
     .data       start:0x020a6ec8 end:0x020a6ee0

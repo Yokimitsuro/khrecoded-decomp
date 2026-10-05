@@ -71,7 +71,7 @@ extern void func_ov001_02065a00(void); /* CmdOpenDialog */
 extern void func_ov001_02065a10(void); /* thumbStep */
 extern void func_ov001_02065a24(void); /* FSi_CloseFileCommand */
 extern void func_ov001_02065a28(void); /* ScriptCmd_EnterPhase */
-extern void func_ov001_02065a38(void);
+extern void ScriptCmd_SaveCheckpoint(void);
 extern void func_ov001_02065a54(void); /* ScriptCmd_EnterPhase */
 extern void func_ov001_02065a64(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_02065a70(void);
@@ -238,7 +238,7 @@ void (*gFieldScriptCommandHandlers[190])(void) = {
     NULL,
     func_ov001_02065a28, /* ScriptCmd_EnterPhase */
     NULL,
-    func_ov001_02065a38,
+    ScriptCmd_SaveCheckpoint,
     NULL,
     func_ov001_02065a54, /* ScriptCmd_EnterPhase */
     NULL,

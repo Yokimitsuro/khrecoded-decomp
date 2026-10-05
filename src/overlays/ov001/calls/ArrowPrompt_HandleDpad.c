@@ -12,7 +12,7 @@ typedef struct ArrowPrompt {
 
 extern ArrowPrompt *data_ov001_020a04f0;
 extern BOOL PlaySoundEffect(int seqArcNo, int index);
-extern BOOL func_ov001_0207da80(ArrowPrompt *prompt);
+extern BOOL AdvanceCounterPanel(ArrowPrompt *prompt);
 extern void func_ov001_0207db18(ArrowPrompt *prompt);
 
 int ArrowPrompt_HandleDpad(u32 keys)
@@ -55,7 +55,7 @@ int ArrowPrompt_HandleDpad(u32 keys)
         case 0:
         case 2:
             PlaySoundEffect(0, 0x42);
-            if (func_ov001_0207da80(prompt)) {
+            if (AdvanceCounterPanel(prompt)) {
                 result = 1;
             }
             break;

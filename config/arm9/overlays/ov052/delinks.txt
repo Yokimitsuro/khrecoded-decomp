@@ -88,6 +88,10 @@ src/overlays/ov052/calls/DispatchAttackHitEvent.c:
     complete
     .text       start:0x020c9e38 end:0x020c9fa8
 
+src/overlays/ov052/calls/ResetMotionState_020c9fa8.c:
+    complete
+    .text       start:0x020c9fa8 end:0x020c9fd4
+
 src/overlays/ov052/calls/ReleaseResourceSlotArray.c:
     complete
     .text       start:0x020ca304 end:0x020ca330
@@ -399,6 +403,10 @@ src/overlays/ov052/calls/ApplyItemRewardEffect.c:
 src/overlays/ov052/calls/IsLockedOnActiveFieldUnit.c:
     complete
     .text       start:0x020d1110 end:0x020d1190
+
+src/overlays/ov052/calls/ActivateSlotModelGroup.c:
+    complete
+    .text       start:0x020d1190 end:0x020d1258
 
 src/overlays/ov052/calls/SelectFallStateHandler.c:
     complete

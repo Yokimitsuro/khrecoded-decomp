@@ -60,7 +60,7 @@ typedef BOOL (*ShapeSweepFn)(const CollShape *shape, const CollShape *other, Col
 extern const ShapeTestFn gCollisionTestDispatch[][6];
 extern const ShapeSweepFn gCollisionSweepDispatch[][6];
 
-extern BOOL func_01ffb328(const MeshFace *face, const CollBox *box);
+extern BOOL OverlapsHeightRange(const MeshFace *face, const CollBox *box);
 extern void func_01ffb3a0(const MeshFace *face, FaceGeometry *geometry, BOOL transformed);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
@@ -74,7 +74,7 @@ fx32 TestMoverAgainstFace(const MeshFace *face, CollMover *mover, CollHit *hit, 
     BOOL result;
     fx32 time;
 
-    if (!func_01ffb328(face, box)) {
+    if (!OverlapsHeightRange(face, box)) {
         return -FX32_ONE;
     }
     faceShape.data = &geometry;

@@ -20,12 +20,12 @@ typedef struct TaskManager {
 } TaskManager;
 
 extern TaskManager *data_ov001_020a0498;
-extern TaskNode *func_ov001_02069014(TaskManager *manager, u16 id);
+extern TaskNode *FindSceneNodeById(TaskManager *manager, u16 id);
 
 void DeactivateTaskById(int id)
 {
     TaskManager *manager = data_ov001_020a0498;
-    TaskNode *node = func_ov001_02069014(manager, id);
+    TaskNode *node = FindSceneNodeById(manager, id);
     TaskBody *body;
     int slot;
 

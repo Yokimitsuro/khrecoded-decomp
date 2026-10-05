@@ -31,7 +31,7 @@ func_ov019_020a3348 kind:function(thumb,size=0x258) addr:0x020a3348
 SetLinkedCallbackId kind:function(thumb,size=0x6) addr:0x020a35a0
 func_ov019_020a35a8 kind:function(thumb,size=0x34) addr:0x020a35a8
 SendStateEvent10 kind:function(thumb,size=0x4c) addr:0x020a35dc
-func_ov019_020a3628 kind:function(thumb,size=0x38) addr:0x020a3628
+EnsureOwnedEntryGroup kind:function(thumb,size=0x38) addr:0x020a3628
 ReleaseOwnedEntryGroup kind:function(thumb,size=0x1c) addr:0x020a3660
 data_ov019_020a367c kind:data(any) addr:0x020a367c
 gLinkedObjectCreationHandlers kind:data(any) addr:0x020a36a0

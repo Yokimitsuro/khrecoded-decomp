@@ -44,6 +44,10 @@ src/overlays/ov030/calls/MobiClip_CloseDecoder.c:
     complete
     .text       start:0x020bac48 end:0x020bac68
 
+src/overlays/ov030/calls/ApplyMovieStartParams.c:
+    complete
+    .text       start:0x020bac68 end:0x020bacd4
+
 src/overlays/ov030/calls/IsSceneUnpaused_020bacd4.c:
     complete
     .text       start:0x020bacd4 end:0x020bacec
@@ -100,6 +104,10 @@ src/overlays/ov030/calls/UpdateActorReactionState.c:
     complete
     .text       start:0x020bbe20 end:0x020bbf30
 
+src/overlays/ov030/calls/AreMeshEntriesClear.c:
+    complete
+    .text       start:0x020bbf30 end:0x020bbf98
+
 src/overlays/ov030/calls/CheckCarriedActorEscape.c:
     complete
     .text       start:0x020bbf98 end:0x020bc130
@@ -108,6 +116,10 @@ src/overlays/ov030/calls/SpawnSceneMarker.c:
     complete
     .text       start:0x020bc3ac end:0x020bc444
 
+src/overlays/ov030/calls/InitMovieSelectionItems.c:
+    complete
+    .text       start:0x020bc444 end:0x020bc4c8
+
 src/overlays/ov030/calls/DrawCarriedActor.c:
     complete
     .text       start:0x020bc644 end:0x020bc814
@@ -115,6 +127,14 @@ src/overlays/ov030/calls/DrawCarriedActor.c:
 src/overlays/ov030/calls/SetPanelModelAngle.c:
     complete
     .text       start:0x020bc814 end:0x020bc86c
+
+src/overlays/ov030/calls/ChangeCarriedActorState.c:
+    complete
+    .text       start:0x020bc86c end:0x020bc920
+
+src/overlays/ov030/calls/OnUnitHitEvent.c:
+    complete
+    .text       start:0x020bcb50 end:0x020bcbac
 
 src/overlays/ov030/calls/SpawnTiltedProjectile.c:
     complete

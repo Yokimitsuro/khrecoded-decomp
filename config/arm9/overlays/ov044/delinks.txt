@@ -75,6 +75,10 @@ src/overlays/ov044/calls/CombineBasisAxes.c:
     complete
     .text       start:0x020d06d8 end:0x020d0748
 
+src/overlays/ov044/calls/GetPanelBasis.c:
+    complete
+    .text       start:0x020d08f8 end:0x020d0964
+
 src/overlays/ov044/calls/UpdatePanelCamera.c:
     complete
     .text       start:0x020d0964 end:0x020d0af0

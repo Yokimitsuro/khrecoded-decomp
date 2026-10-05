@@ -24,7 +24,7 @@ typedef struct Sequencer {
 
 extern void FreeOwnedBuffer(Sequencer *sequencer);
 extern void MI_CpuFill8(void *dest, u32 value, u32 size);
-extern void *func_ov001_0209cf0c(u32 size);
+extern void *AllocFromStageHeap(u32 size);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern int SelectSequenceTrack(Sequencer *sequencer, int track);
 
@@ -48,7 +48,7 @@ void InitSequencer(Sequencer *sequencer, u16 *header, SequenceFile *file, u8 *en
     sequencer->base = (u8 *)file;
     sequencer->id = header[2];
     size = end - file->dataOffset;
-    copy = func_ov001_0209cf0c(size);
+    copy = AllocFromStageHeap(size);
     if (copy == NULL) {
         sequencer->buffer = sequencer->base + sequencer->file->dataOffset;
     } else {

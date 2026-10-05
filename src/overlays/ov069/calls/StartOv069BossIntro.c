@@ -30,7 +30,7 @@ typedef struct {
 
 extern BossEntity *GetBoundedEntryField(int index);
 extern void RunHudEnterCallback(void);
-extern void func_ov052_020d1190(BossEntity *entity, int level);
+extern void ActivateSlotModelGroup(BossEntity *entity, int level);
 
 int StartOv069BossIntro(SceneOwner *owner, SceneObject *obj, int *wait)
 {
@@ -46,7 +46,7 @@ int StartOv069BossIntro(SceneOwner *owner, SceneObject *obj, int *wait)
     obj->counter.step = 1;
     obj->counter.count = 1;
     entity->dashLevel = 0;
-    func_ov052_020d1190(entity, entity->dashLevel);
+    ActivateSlotModelGroup(entity, entity->dashLevel);
     *wait = 0x18;
     return obj->nextState;
 }

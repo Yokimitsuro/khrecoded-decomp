@@ -78,7 +78,7 @@ extern BOOL func_ov001_0206c768(void);
 extern void func_ov001_0206c720(void (*callback)(void));
 extern void DrawVisibleStageQuads(void);
 extern void ReleaseSlotActor(StageSlot *slot);
-extern void func_ov001_02093e7c(StageEvent *event);
+extern void ReleaseEventResources(StageEvent *event);
 extern void ReleaseActorResources(StageActor *actor);
 extern StageObjectRecord *GetStageObjectRecord(u16 id);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
@@ -124,7 +124,7 @@ void ShutdownStageManager(void)
     }
     for (i = 0; i < data_ov001_020a0528->eventCount; i++) {
         if (data_ov001_020a0528->events[i].id != 0) {
-            func_ov001_02093e7c(&data_ov001_020a0528->events[i]);
+            ReleaseEventResources(&data_ov001_020a0528->events[i]);
         }
     }
     for (i = 0; i < 64; i++) {

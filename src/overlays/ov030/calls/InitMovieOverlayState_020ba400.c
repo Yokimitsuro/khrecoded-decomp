@@ -43,7 +43,7 @@ extern u8 data_ov021_020b52c0[];
 extern u8 data_ov001_0209eb38[];
 
 extern MovieOverlayState *NNSi_FndGetCurrentRootHeap(void);
-extern void func_ov030_020bc444(void);
+extern void InitMovieSelectionItems(void);
 extern void CreateSessionNameMenu(void);
 extern void func_ov030_020bab20(void);
 extern void func_ov001_0206c6dc(void);
@@ -73,7 +73,7 @@ StateHandler InitMovieOverlayState_020ba400(MovieEntryParams *params)
     upVector.z = FX32_ONE;
     data_ov030_020bd020->upVector = upVector;
     data_ov030_020bd020->flags = 0x23;
-    func_ov030_020bc444();
+    InitMovieSelectionItems();
     CreateSessionNameMenu();
     func_ov030_020bab20();
     func_ov001_0206c6dc();

@@ -360,6 +360,10 @@ src/overlays/ov021/calls/SetObjectAnimationEnabled.c:
     complete
     .text       start:0x020a9d48 end:0x020a9d86
 
+src/overlays/ov021/calls/RelocateUnitMotionData.c:
+    complete
+    .text       start:0x020a9d88 end:0x020a9e1c
+
 src/overlays/ov021/calls/SelectSubObject.c:
     complete
     .text       start:0x020aa164 end:0x020aa170
@@ -379,6 +383,14 @@ src/overlays/ov021/calls/ReleaseEffectBank.c:
 src/overlays/ov021/calls/InitUnitResources.c:
     complete
     .text       start:0x020aa284 end:0x020aa308
+
+src/overlays/ov021/calls/AdvanceObjHandleConfig.c:
+    complete
+    .text       start:0x020aa308 end:0x020aa3bc
+
+src/overlays/ov021/calls/TriggerMatchingHandle.c:
+    complete
+    .text       start:0x020aa3bc end:0x020aa42a
 
 src/overlays/ov021/calls/BeginObjHandleCheck.c:
     complete
@@ -443,6 +455,10 @@ src/overlays/ov021/calls/ParseNodeRecord.c:
 src/overlays/ov021/calls/FreeResourceAt0x44.c:
     complete
     .text       start:0x020aa918 end:0x020aa926
+
+src/overlays/ov021/calls/ResetModelGroup.c:
+    complete
+    .text       start:0x020aa928 end:0x020aa9e4
 
 src/overlays/ov021/calls/InitEntryPool.c:
     complete
@@ -596,6 +612,10 @@ src/overlays/ov021/calls/InitRecord60.c:
     complete
     .text       start:0x020ac0d8 end:0x020ac0f2
 
+src/overlays/ov021/calls/GetObjectKindValue.c:
+    complete
+    .text       start:0x020ac0f4 end:0x020ac116
+
 src/overlays/ov021/calls/ZeroBytes0x28.c:
     complete
     .text       start:0x020ac118 end:0x020ac124
@@ -671,6 +691,10 @@ src/overlays/ov021/calls/CreateTimedEntryPair.c:
 src/overlays/ov021/calls/RelocateResourceOffsets.c:
     complete
     .text       start:0x020acc80 end:0x020accb2
+
+src/overlays/ov021/calls/FindWideEntryById.c:
+    complete
+    .text       start:0x020accb4 end:0x020accdc
 
 src/overlays/ov021/calls/FindListObjectByIdPrimary.c:
     complete
@@ -1371,6 +1395,10 @@ src/overlays/ov021/calls/ScriptCmd_SetActorGroupFlag.c:
 src/overlays/ov021/calls/ScriptCmd_SetActorGroupFlag_020b3070.c:
     complete
     .text       start:0x020b3070 end:0x020b3090
+
+src/overlays/ov021/calls/ScriptCmd_SetActorLinkValue.c:
+    complete
+    .text       start:0x020b3090 end:0x020b30f4
 
 src/overlays/ov021/calls/ScriptOp_SetContextFlag0.c:
     complete

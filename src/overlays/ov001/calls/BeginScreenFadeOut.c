@@ -17,7 +17,7 @@ typedef struct Session {
 
 extern ScreenState *data_ov001_020a04a0;
 extern Session *data_ov001_020a0480;
-extern void func_ov001_0206a670(int enable, int mode);
+extern void SetScreenModeFlags(int enable, int mode);
 extern int func_02029f5c(void);
 extern int func_02029f6c(void);
 
@@ -26,7 +26,7 @@ void BeginScreenFadeOut(int mode)
     ScreenState *screen = data_ov001_020a04a0;
 
     data_ov001_020a0480->flags |= 0x40000;
-    func_ov001_0206a670(0, mode);
+    SetScreenModeFlags(0, mode);
     if (mode == 3) {
         return;
     }

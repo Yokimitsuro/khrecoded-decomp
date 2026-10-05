@@ -25,7 +25,7 @@ typedef struct {
 } FallingContext;
 
 extern void LoadMenuPhaseGraphics(int phase);
-extern void func_ov001_0207e118(int hitCount);
+extern void IncrementAndShowCounter(int hitCount);
 
 int HandleFallingPieceInput(FallingContext *context, u32 keys)
 {
@@ -56,7 +56,7 @@ int HandleFallingPieceInput(FallingContext *context, u32 keys)
     }
     if (hit) {
         context->hitCount++;
-        func_ov001_0207e118(context->hitCount);
+        IncrementAndShowCounter(context->hitCount);
         if (context->hitCount == context->targetCount) {
             LoadMenuPhaseGraphics(0);
             result = 1;

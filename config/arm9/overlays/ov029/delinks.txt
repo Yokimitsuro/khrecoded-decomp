@@ -3,6 +3,10 @@
     .data       start:0x020bab80 end:0x020babc0 kind:data align:32
     .bss        start:0x020babc0 end:0x020babe0 kind:bss align:32
 
+src/overlays/ov029/calls/InitOv029OverlayState.c:
+    complete
+    .text       start:0x020ba400 end:0x020ba4c4
+
 src/overlays/ov029/calls/RunSceneStateMachine_020ba4c4.c:
     complete
     .text       start:0x020ba4c4 end:0x020ba54c
@@ -14,6 +18,10 @@ src/overlays/ov029/calls/ShutdownOv029SoundCtx.c:
 src/overlays/ov029/calls/MarkSoundCtxActive.c:
     complete
     .text       start:0x020ba5c0 end:0x020ba5e8
+
+src/overlays/ov029/calls/FinishOv029MenuLoad.c:
+    complete
+    .text       start:0x020ba5fc end:0x020ba690
 
 src/overlays/ov029/calls/EnableOv029Sound.c:
     complete
@@ -46,6 +54,10 @@ src/overlays/ov029/auto/func_ov029_020baaec.c:
 src/overlays/ov029/auto/func_ov029_020baaf4.c:
     complete
     .text       start:0x020baaf4 end:0x020baafc
+
+src/overlays/ov029/calls/InstallOv029SceneHandlers.c:
+    complete
+    .text       start:0x020baafc end:0x020bab7c
 
 src/overlays/ov029/data/bss/Bss_ov029_020babc0.c:
     complete

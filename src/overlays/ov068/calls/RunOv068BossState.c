@@ -75,7 +75,7 @@ extern BOOL func_ov001_02072040(void);
 extern BOOL UpdateIdleTimeout(void);
 extern void CameraPath_Start(void *path);
 extern void RestartScriptSound(void *sound, int arg);
-extern void func_ov052_020d1190(Actor *actor, int level);
+extern void ActivateSlotModelGroup(Actor *actor, int level);
 extern void func_ov056_020d3418(Actor *actor);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
@@ -179,7 +179,7 @@ void RunOv068BossState(Actor *actor)
         break;
     }
     if (apply) {
-        func_ov052_020d1190(actor, actor->level);
+        ActivateSlotModelGroup(actor, actor->level);
         value = GetSubObjectValue(boss->parts + actor->level * 0x90, 1, 0);
         if (actor->onLand != NULL) {
             if (value <= 0) {

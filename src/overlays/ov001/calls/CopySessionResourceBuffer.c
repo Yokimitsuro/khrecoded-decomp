@@ -10,7 +10,7 @@ typedef struct SessionContext {
 extern SessionContext *GetBoundedEntryField(s32 arg);
 extern s32 func_ov001_02063a38(void);
 extern void func_ov059_020cd2a0(SessionContext *context, UNDEF4 param1);
-extern void func_01fffe28(SessionContext *context, UNDEF4 param1);
+extern void CaptureSelectedJointMtx_01fffe28(SessionContext *context, UNDEF4 param1);
 extern void MI_CpuCopy8(void *src, void *dst, u32 size);
 
 void CopySessionResourceBuffer(UNDEF4 param1)
@@ -29,7 +29,7 @@ void CopySessionResourceBuffer(UNDEF4 param1)
             return;
         }
     } else {
-        func_01fffe28(context, param1);
+        CaptureSelectedJointMtx_01fffe28(context, param1);
         resource = *(u8 **)(context->field_230 + 0xc4);
         if (resource != 0) {
             MI_CpuCopy8(*(void **)((u8 *)context + 0xc78), resource + 0x80, 0x30);

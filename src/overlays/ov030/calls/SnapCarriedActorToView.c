@@ -66,7 +66,7 @@ extern void CollisionQuery_Init(CollisionQuery *query, u16 id, void *owner, u8 k
 extern void *SweepWorldCollision(CollisionQuery *query);
 extern VecFx32 GetShapeCenter(const CollisionShape *shape);
 extern void Obj_SetPosition(void *entity, const VecFx32 *position);
-extern void func_ov030_020bbf30(void);
+extern void AreMeshEntriesClear(void);
 
 void SnapCarriedActorToView(CarriedActor *actor, CarryMotion *motion)
 {
@@ -92,7 +92,7 @@ void SnapCarriedActorToView(CarriedActor *actor, CarryMotion *motion)
     shapeCopy = shape;
     CollisionQuery_Init(&setup, 1, NULL, 7, 0, 0, &shapeCopy, &workspace, 0);
     query = setup;
-    filter.callback = func_ov030_020bbf30;
+    filter.callback = AreMeshEntriesClear;
     filter.owner = actor->owner;
     query.filter = filter;
     if (SweepWorldCollision(&query)) {

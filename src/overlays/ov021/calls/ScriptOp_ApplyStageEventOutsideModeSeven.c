@@ -1,6 +1,6 @@
 extern unsigned int func_ov001_02063a24();
 extern unsigned int func_ov001_02063a38();
-extern unsigned int func_ov001_0209cd40();
+extern unsigned int FlushMarkerPosition();
 extern unsigned int ResolveTaggedValueRef();
 extern unsigned int TaggedValueToFixed();
 
@@ -28,7 +28,7 @@ unsigned int ScriptOp_ApplyStageEventOutsideModeSeven(unsigned int context,int o
     mode = 0;
   }
   if (mode != 7) {
-    func_ov001_0209cd40(*(unsigned int *)(event + 4) & 0xffff);
+    FlushMarkerPosition(*(unsigned int *)(event + 4) & 0xffff);
   }
   return 0;
 }

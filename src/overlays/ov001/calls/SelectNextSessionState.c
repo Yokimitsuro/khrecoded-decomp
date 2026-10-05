@@ -74,7 +74,7 @@ extern int func_ov001_0206dc4c(int index);
 extern u16 GetBiasAdjustedField(int index);
 extern void func_ov001_020645f4(int values, u32 extra);
 extern void func_ov001_0206a8c8(int value);
-extern void func_ov001_0206e4f0(int enable);
+extern void NotifySceneActorsPaused(int enable);
 extern int DispatchPartyEntryByMode(int index);
 extern int IsSessionLinked(void);
 extern int func_ov001_02062c64(void);
@@ -107,12 +107,12 @@ int SelectNextSessionState(void)
             func_ov001_020645f4(func_ov001_0206dc4c(0), GetBiasAdjustedField(0));
             func_ov001_0206a8c8(0x4000);
             session->resumeStatus.active = 1;
-            func_ov001_0206e4f0(1);
+            NotifySceneActorsPaused(1);
             if (DispatchPartyEntryByMode(0)) {
                 data_ov001_020a0480->status.bit6 = 1;
             }
         } else {
-            func_ov001_0206e4f0(0);
+            NotifySceneActorsPaused(0);
         }
         session->flags.resumePending = FALSE;
         session->flags.promptOpen = FALSE;
@@ -135,7 +135,7 @@ int SelectNextSessionState(void)
         if (session->unk_20E != -2 || IsEntryFlag2Active(0)) {
             session->flags.promptOpen = FALSE;
         } else if (!func_ov001_0206685c()) {
-            func_ov001_0206e4f0(1);
+            NotifySceneActorsPaused(1);
             func_ov001_020690dc();
             func_ov001_0206e444(1);
             Camera_SaveSnapshot(session->unk_27B8);

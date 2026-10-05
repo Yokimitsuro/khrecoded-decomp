@@ -43,7 +43,7 @@ extern Session *data_ov001_020a0480;
 extern BOOL func_ov001_020645c8(u32 value);
 extern void ReleaseSessionHandle(Session *session, BOOL flush);
 extern s32 RunSessionScriptFrame(void);
-extern void func_ov001_020631e4(int request);
+extern void SetPendingFieldValue(int request);
 extern void RunPendingCallback(Session *session);
 extern void FlushPendingEntryRefresh(void);
 
@@ -66,7 +66,7 @@ s32 StepSessionScriptOrAbort(void) {
             nextState = 9;
             break;
         case 1:
-            func_ov001_020631e4(session->scriptResult);
+            SetPendingFieldValue(session->scriptResult);
         case 0:
             ReleaseSessionHandle(session, FALSE);
             work->finish(session->finishArg);

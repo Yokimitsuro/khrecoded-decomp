@@ -17,7 +17,7 @@ extern Panel *data_ov001_020a04e8;
 extern u32 func_ov001_0207b3f4(void);
 extern u32 LookupChannelEntry(s32 index);
 extern void SetDisplaySetting(int value);
-extern void func_ov001_0207b234(Panel *panel, s32 transitionType);
+extern void Panel_InitFromModeTables(Panel *panel, s32 transitionType);
 
 BOOL Panel_TryBeginTransition4(void)
 {
@@ -42,7 +42,7 @@ BOOL Panel_TryBeginTransition4(void)
         } while (i < 4);
     }
     SetDisplaySetting(1);
-    func_ov001_0207b234(panel, 4);
+    Panel_InitFromModeTables(panel, 4);
     panel->nextState = 6;
     return TRUE;
 }

@@ -27,7 +27,7 @@ extern void Text_UploadTileBuffer(void *text);
 extern void RefreshMenuListLayout(void);
 extern void PlaySoundEffect(int player, int sound);
 extern void func_ov027_020b7df4(void *list);
-extern void func_ov027_020b9e80(void *tileTable);
+extern void FlushDirtyTileTableRows(void *tileTable);
 extern void camera_commit_projection(void *camera);
 extern void AdvanceAnimationTracks(void *model, int step);
 extern void func_01ffb12c(void *model);
@@ -65,7 +65,7 @@ s32 UpdateMenuSelection(void)
         }
     }
     func_ov027_020b7df4(gContinueScreenContext->list);
-    func_ov027_020b9e80(gContinueScreenContext->tileTable);
+    FlushDirtyTileTableRows(gContinueScreenContext->tileTable);
     camera_commit_projection(gContinueScreenContext->camera);
     AdvanceAnimationTracks(gContinueScreenContext->model, 0x1000);
     func_01ffb12c(gContinueScreenContext->model);

@@ -38,7 +38,7 @@ typedef struct {
 } SceneTask;
 
 extern Actor *GetBoundedEntryField(int index);
-extern void func_ov052_020d1190(Actor *actor, int mode);
+extern void ActivateSlotModelGroup(Actor *actor, int mode);
 extern int GetLinkedAngleOffset(Actor *actor);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
@@ -52,7 +52,7 @@ s32 BeginGuardIntroScene(SceneOwner *owner, SceneTask *task, u32 *errorCode)
     actor->guarding = 0;
     actor->flags |= 0x40;
     *errorCode = 0x18;
-    func_ov052_020d1190(actor, 0);
+    ActivateSlotModelGroup(actor, 0);
     GetLinkedAngleOffset(actor);
     ResetAnimationTrackState(&request);
     request.id = actor->player;

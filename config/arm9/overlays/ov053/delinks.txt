@@ -7,6 +7,10 @@ src/overlays/ov053/calls/LoadOverlay053EntityModel.c:
     complete
     .text       start:0x020d22fc end:0x020d23f8
 
+src/overlays/ov053/calls/RegisterOverlay053TaggedEntries.c:
+    complete
+    .text       start:0x020d23f8 end:0x020d2434
+
 src/overlays/ov053/calls/LoadOverlay053EntityResources.c:
     complete
     .text       start:0x020d2434 end:0x020d2648

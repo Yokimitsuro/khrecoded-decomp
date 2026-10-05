@@ -36,7 +36,7 @@ extern StageActor *GetStageActor(int id);
 extern void *GetStageObjectHandle(u16 index);
 extern u32 func_ov001_0209c5ac(u32 mask);
 extern int SelectSequenceTrack(ScriptRunner *runner, int slot);
-extern void func_ov001_02093e7c(StageTask *task);
+extern void ReleaseEventResources(StageTask *task);
 
 BOOL StartStageActorScript(StageTask *task)
 {
@@ -59,6 +59,6 @@ BOOL StartStageActorScript(StageTask *task)
     if (runScript && SelectSequenceTrack(&actor->runner, 7) != 4) {
         return FALSE;
     }
-    func_ov001_02093e7c(task);
+    ReleaseEventResources(task);
     return TRUE;
 }

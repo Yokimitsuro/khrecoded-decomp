@@ -31,7 +31,7 @@ SlotTable_GetEntry kind:function(thumb,size=0x22) addr:0x020a127c
 SlotTable_FindNearestFree kind:function(thumb,size=0x8c) addr:0x020a12a0
 ClaimSlot kind:function(thumb,size=0x10) addr:0x020a132c
 ReleaseSlot kind:function(thumb,size=0x10) addr:0x020a133c
-func_ov008_020a134c kind:function(thumb,size=0x66) addr:0x020a134c
+BindLinkSlotTable kind:function(thumb,size=0x66) addr:0x020a134c
 sOv008_BlockElevator_020a13b4 kind:data(any) addr:0x020a13b4
 gOv008ScriptObjectCreationHandlers kind:data(any) addr:0x020a13e0
 data_ov008_020a1400 kind:data(any) addr:0x020a1400

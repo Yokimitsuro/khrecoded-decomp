@@ -40,7 +40,7 @@ typedef struct Session {
 extern Session *data_ov001_020a0480;
 extern int func_ov001_0206dc38(void);
 extern void func_ov001_02067fa4(int index, int level, VecFx32 *position, u16 *angle);
-extern void func_ov001_0206dd90(int index, VecFx32 *position, u16 angle);
+extern void ActivateFieldPlayerEntry(int index, VecFx32 *position, u16 angle);
 extern ActorEntry *GetBoundedEntryField(int index);
 extern void ApplyModeCallbackAndBlock(ActorEntry *entry, void *resource, void *motionState);
 extern void func_ov001_0206e444(s32 enable);
@@ -60,7 +60,7 @@ BOOL RestoreSessionActors(void) {
         restored = TRUE;
     }
     for (i = 0; i < func_ov001_0206dc38(); i++) {
-        func_ov001_0206dd90(i, &session->restore.positions[i], session->restore.angles[i]);
+        ActivateFieldPlayerEntry(i, &session->restore.positions[i], session->restore.angles[i]);
         if (session->restore.resources[i].handle != 0) {
             ApplyModeCallbackAndBlock(GetBoundedEntryField(i), session->restore.resources[i].data, session->restore.motionStates[i]);
         } else {

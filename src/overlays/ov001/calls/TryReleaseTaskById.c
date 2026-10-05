@@ -10,16 +10,16 @@ typedef struct TaskNode {
 typedef struct TaskManager TaskManager;
 
 extern TaskManager *data_ov001_020a0498;
-extern TaskNode *func_ov001_02069014(TaskManager *manager, u16 id);
+extern TaskNode *FindSceneNodeById(TaskManager *manager, u16 id);
 extern TaskNode *ReleaseTaskNode(TaskNode *node);
 
 BOOL TryReleaseTaskById(int id)
 {
     TaskManager *manager = data_ov001_020a0498;
 
-    if (func_ov001_02069014(manager, id)->locked != 0) {
+    if (FindSceneNodeById(manager, id)->locked != 0) {
         return FALSE;
     }
-    ReleaseTaskNode(func_ov001_02069014(manager, id));
+    ReleaseTaskNode(FindSceneNodeById(manager, id));
     return TRUE;
 }

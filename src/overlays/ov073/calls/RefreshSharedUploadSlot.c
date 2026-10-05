@@ -10,7 +10,7 @@ typedef struct MenuSharedState {
 
 extern MenuSharedState *func_ov039_020bc650(void);
 extern void func_ov027_020b9e20(void *uploads, int slotId);
-extern void func_ov027_020b9e80(void *uploads);
+extern void FlushDirtyTileTableRows(void *uploads);
 
 void RefreshSharedUploadSlot(void)
 {
@@ -18,6 +18,6 @@ void RefreshSharedUploadSlot(void)
 
     func_ov027_020b9e20(state->uploads, 0x1a);
     if ((state->flags & 2) == 0) {
-        func_ov027_020b9e80(state->uploads);
+        FlushDirtyTileTableRows(state->uploads);
     }
 }

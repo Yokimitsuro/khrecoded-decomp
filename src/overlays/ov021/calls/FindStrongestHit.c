@@ -42,7 +42,7 @@ struct Attacker {
 
 extern void func_ov021_020ac168(HitResult *result);
 extern void BuildEntryHitShape(Unit *unit, HitQuery *query, u32 arg0, u32 arg1);
-extern s32 func_ov021_020ac0f4(HitQuery *query);
+extern s32 GetObjectKindValue(HitQuery *query);
 extern void BuildDrawParams(Unit *unit, s32 player, HitFilter *filter);
 extern void ZeroAndSetField0xd4(HitScan *scan);
 extern BOOL StepHitScan(s32 player, HitQuery *query, HitFilter *filter, HitScan *scan);
@@ -60,7 +60,7 @@ HitResult FindStrongestHit(Attacker *attacker, Unit *unit, u32 arg0, u32 arg1)
 
     func_ov021_020ac168(&best);
     BuildEntryHitShape(unit, &query, arg0, arg1);
-    if (func_ov021_020ac0f4(&query) <= 0) {
+    if (GetObjectKindValue(&query) <= 0) {
         return best;
     }
     BuildDrawParams(unit, attacker->player, &filter);

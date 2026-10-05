@@ -66,7 +66,7 @@ extern BOOL AdvanceGaugeSlot(int index, GaugeSlot *slot);
 extern void NNS_GfdRegisterNewVramTransferTask(int command, int offset, void *data, int size);
 extern u64 OS_GetTick(void);
 extern void func_ov001_020716e8(int index, int mode);
-extern void func_ov001_02071770(int index, int mode);
+extern void UploadScreenSlotBlock(int index, int mode);
 extern BOOL func_ov001_020645c8(int bitOffset);
 extern BOOL IsFieldPanelHidden(void);
 extern BOOL IsFirstEntryFlagSet(void);
@@ -104,9 +104,9 @@ int UpdateHudGauges(void)
                 if (set->counts[i].count != 0) {
                     func_ov001_020716e8(i, 0);
                     if (i == 0 && set->slots[0].active) {
-                        func_ov001_02071770(i, 2);
+                        UploadScreenSlotBlock(i, 2);
                     } else {
-                        func_ov001_02071770(i, 0);
+                        UploadScreenSlotBlock(i, 0);
                     }
                 } else {
                     if (i == 0 && (func_ov001_020645c8(0x3525) || data_ov001_020a0480->keepGauge)) {
@@ -117,7 +117,7 @@ int UpdateHudGauges(void)
                     if (!keepShown) {
                         func_ov001_020716e8(i, 2);
                     }
-                    func_ov001_02071770(i, 2);
+                    UploadScreenSlotBlock(i, 2);
                 }
             }
         }

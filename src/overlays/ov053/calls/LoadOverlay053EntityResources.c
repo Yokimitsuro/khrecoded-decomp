@@ -57,7 +57,7 @@ extern BOOL func_ov001_020645c8(u32 value);
 extern int func_ov001_02063a38(void);
 extern void ZeroBytes0x14(EntryGroupDesc *desc);
 extern u16 func_ov021_020a89c8(EntryGroupDesc *desc);
-extern void func_ov053_020d23f8(Entity *entity);
+extern void RegisterOverlay053TaggedEntries(Entity *entity);
 extern void LoadOverlay053EntityModel(Entity *entity);
 extern void LoadSelectionCues(void *cues, CueSource *source);
 extern void func_ov040_020bdf9c(Entity *entity, CueSource *source);
@@ -105,7 +105,7 @@ void LoadOverlay053EntityResources(Entity *entity)
     group.fixedSlots = 1;
     group.unk_0c = 0;
     entity->effectGroupId = func_ov021_020a89c8(&group);
-    func_ov053_020d23f8(entity);
+    RegisterOverlay053TaggedEntries(entity);
     LoadOverlay053EntityModel(entity);
     source.selection = entity->selection;
     source.unitResources = entity->unitResources;

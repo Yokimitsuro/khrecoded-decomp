@@ -23,7 +23,7 @@ typedef struct {
 
 extern const char sOv000_FormatD_02063938[];
 extern void OS_SPrintf(char *dst, const char *fmt, ...);
-extern void func_ov022_020a789c(PanelCallbacks *callbacks);
+extern void InitMovieSceneCallbacks(PanelCallbacks *callbacks);
 
 void SubmitNumberedPanelRequest(Panel *panel, BOOL useAltMode, int number)
 {
@@ -33,7 +33,7 @@ void SubmitNumberedPanelRequest(Panel *panel, BOOL useAltMode, int number)
     request.unk_0C = 1;
     request.mode = useAltMode ? 2 : 1;
     OS_SPrintf(request.name, sOv000_FormatD_02063938, number);
-    func_ov022_020a789c(&panel->callbacks);
+    InitMovieSceneCallbacks(&panel->callbacks);
     panel->callbacks.submit(&request);
     panel->callbacks.finish();
 }

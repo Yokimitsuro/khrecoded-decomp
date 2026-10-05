@@ -127,8 +127,8 @@ func_ov039_020be470 kind:function(thumb,size=0xd8) addr:0x020be470
 func_ov039_020be548 kind:function(thumb,size=0x4c) addr:0x020be548
 func_ov039_020be594 kind:function(thumb,size=0x44) addr:0x020be594
 OpenTextFrame kind:function(thumb,size=0x94) addr:0x020be5d8
-func_ov039_020be66c kind:function(thumb,size=0x54) addr:0x020be66c
-func_ov039_020be6c0 kind:function(thumb,size=0x90) addr:0x020be6c0
+FormatPlayTimeText kind:function(thumb,size=0x54) addr:0x020be66c
+SetupMainBgLayers_020be6c0 kind:function(thumb,size=0x90) addr:0x020be6c0
 data_ov039_020be750 kind:data(any) addr:0x020be750
 data_ov039_020be754 kind:data(any) addr:0x020be754
 data_ov039_020be760 kind:data(any) addr:0x020be760

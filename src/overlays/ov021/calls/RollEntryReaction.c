@@ -21,7 +21,7 @@ typedef struct ReactionParams {
 
 extern ReactionEntry *GetBoundedEntryField(int id);
 extern int SelectFallStateHandler(ReactionEntry *entry, int *out);
-extern void func_ov052_020d1190(ReactionEntry *entry, int reaction);
+extern void ActivateSlotModelGroup(ReactionEntry *entry, int reaction);
 extern u32 random_next_scaled(u32 range);
 extern BOOL IsPlayerEntryFlagSet(u8 index, int flag);
 
@@ -43,7 +43,7 @@ int RollEntryReaction(ReactionSource *source, ReactionParams *params, int *out)
                 reaction++;
             }
         }
-        func_ov052_020d1190(entry, reaction);
+        ActivateSlotModelGroup(entry, reaction);
         entry->reaction = reaction;
         result = params->result;
     }

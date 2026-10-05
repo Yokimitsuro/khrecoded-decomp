@@ -12,7 +12,7 @@ typedef struct HandlePool {
     PoolNode *usedList;
 } HandlePool;
 
-extern int func_ov001_0208f268(HandlePool *pool, PoolNode *node);
+extern int GetEntryNumberFromAddress(HandlePool *pool, PoolNode *node);
 extern void HandlePool_ReleaseHandle(HandlePool *pool, int handle);
 
 void HandlePool_ReleaseAll(HandlePool *pool)
@@ -24,7 +24,7 @@ void HandlePool_ReleaseAll(HandlePool *pool)
         node = pool->usedList;
         while (node != NULL) {
             next = node->next;
-            HandlePool_ReleaseHandle(pool, func_ov001_0208f268(pool, node));
+            HandlePool_ReleaseHandle(pool, GetEntryNumberFromAddress(pool, node));
             node = next;
         }
     }

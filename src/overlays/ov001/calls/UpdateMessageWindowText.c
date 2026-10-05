@@ -50,7 +50,7 @@ extern int func_0200191c(TextLayer *layer, const u16 *text, int flags);
 extern int GetNestedModeByte(TextLayer *layer);
 extern void Text_UploadTileBuffer(TextLayer *layer);
 extern void SampleTweenValue(Tween *tween, s32 *value);
-extern void func_ov001_02079524(MessageWindow *window, int left, int top, int right, int bottom);
+extern void StartWindow1Fade(MessageWindow *window, int left, int top, int right, int bottom);
 
 int UpdateMessageWindowText(MessageWindow *window, BOOL fullRedraw)
 {
@@ -119,7 +119,7 @@ int UpdateMessageWindowText(MessageWindow *window, BOOL fullRedraw)
             window->cursorX = 0;
             window->cursorY = lineY + (lineHeight + 3);
             if (context->layout == 1) {
-                func_ov001_02079524(window, window->originX, window->originY + lineY, window->originX + widthPx, window->originY + heightPx);
+                StartWindow1Fade(window, window->originX, window->originY + lineY, window->originX + widthPx, window->originY + heightPx);
             }
         }
         Text_UploadTileBuffer(&window->layer);

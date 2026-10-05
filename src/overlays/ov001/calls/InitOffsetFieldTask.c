@@ -24,7 +24,7 @@ typedef struct FieldTaskParams {
     int param;
 } FieldTaskParams;
 
-extern void func_ov001_02069830(FieldTask *task);
+extern void EventTrigger_CheckCounterGoal(FieldTask *task);
 extern void func_ov001_020698ac(FieldTask *task);
 
 void InitOffsetFieldTask(FieldTask *task, const FieldTaskParams *params)
@@ -34,6 +34,6 @@ void InitOffsetFieldTask(FieldTask *task, const FieldTaskParams *params)
     task->target = params->target;
     task->offsetX = params->offsetX;
     task->offsetY = params->offsetY;
-    task->update = func_ov001_02069830;
+    task->update = EventTrigger_CheckCounterGoal;
     task->draw = func_ov001_020698ac;
 }

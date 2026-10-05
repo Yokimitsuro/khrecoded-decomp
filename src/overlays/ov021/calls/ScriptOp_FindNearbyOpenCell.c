@@ -84,7 +84,7 @@ extern s16 *ResolveTaggedValueRef(ScriptObject *obj, s16 *value);
 extern void MI_CpuFill8(void *dest, u32 value, u32 size);
 extern fx32 Surface_GetKindValue(void *surface);
 extern fx32 FX_Mul(fx32 a, fx32 b);
-extern void func_ov001_02091c5c(PlayerActor *actor, VecFx32 *out);
+extern void NotifySceneObjectHandler(PlayerActor *actor, VecFx32 *out);
 extern s32 _s32_div_f(s32 numerator, s32 denominator);
 extern void VEC_MultAdd(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern CollisionShape func_0203ad28(ShapeStorage *storage, const VecFx32 *center, fx32 radius);
@@ -129,7 +129,7 @@ s32 ScriptOp_FindNearbyOpenCell(ScriptObject *obj, ScriptCommand *cmd)
     MI_CpuFill8(&query, 0, 0x60);
     radius = FX_Mul(Surface_GetKindValue(body->surface), 0x1000);
     playerPos = player->position;
-    func_ov001_02091c5c(player, &cell);
+    NotifySceneObjectHandler(player, &cell);
     if (cell.x < 0) {
         cell.x = _s32_div_f(cell.x, 0x3000) * 0x3000 - 0x1800;
     } else {

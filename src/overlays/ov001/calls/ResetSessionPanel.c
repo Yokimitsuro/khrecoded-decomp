@@ -16,14 +16,14 @@ typedef struct Session {
 
 extern Session *data_ov001_020a0480;
 extern char sOv001_M_0209e6f8[];
-extern void func_ov022_020a789c(void *widget);
+extern void InitMovieSceneCallbacks(void *widget);
 extern int OS_SPrintf(char *dst, const char *fmt, ...);
 
 void ResetSessionPanel(void)
 {
     SessionPanel *panel = &data_ov001_020a0480->panel;
 
-    func_ov022_020a789c(panel->widget);
+    InitMovieSceneCallbacks(panel->widget);
     panel->counter = 0;
     panel->active = 1;
     panel->pending = 0;

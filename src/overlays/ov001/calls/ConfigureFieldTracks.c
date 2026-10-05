@@ -20,7 +20,7 @@ typedef struct FieldContext {
 } FieldContext;
 
 extern FieldContext *data_ov001_020a0480;
-extern void func_ov001_020631e4(int arg);
+extern void SetPendingFieldValue(int arg);
 
 void ConfigureFieldTracks(int mainId, int subId, u8 param, int mode) {
     FieldContext *context = data_ov001_020a0480;
@@ -32,7 +32,7 @@ void ConfigureFieldTracks(int mainId, int subId, u8 param, int mode) {
         } else {
             track->main = mainId;
         }
-        func_ov001_020631e4(1);
+        SetPendingFieldValue(1);
     }
     if (subId == -1) {
         track->sub = track->defaultSub;

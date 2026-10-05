@@ -48,7 +48,7 @@ extern BOOL func_ov001_0207b61c(void);
 extern void IndexedRecords_SetFlag2(void *renderer, int slot, int value);
 extern void *func_ov027_020b9f9c(TouchSample *out);
 extern void func_ov001_0207b6dc(void);
-extern void func_ov001_0207b348(int mode);
+extern void RequestPanelModeWithStyle2(int mode);
 extern void PlaySoundEffect(int channel, int sound);
 extern void func_ov001_0207b6ec(void);
 extern void MI_CpuCopy8(const void *src, void *dest, u32 size);
@@ -92,7 +92,7 @@ void *UpdateMapMenuState(void)
             if (state->lastTouch.touching == 0 && touch.invalid == 0 && touch.x >= 0xc0 && touch.x <= 0xff
                 && touch.y >= 0x86 && touch.y <= 0xa6) {
                 func_ov001_0207b6dc();
-                func_ov001_0207b348(2);
+                RequestPanelModeWithStyle2(2);
                 PlaySoundEffect(0, 0x3b);
             }
         } else {

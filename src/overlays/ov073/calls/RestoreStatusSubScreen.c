@@ -41,7 +41,7 @@ extern void *UpdateScreenWidgetLayer(int widget);
 extern void GXS_LoadBG0Scr(const void *src, u32 offset, u32 size);
 extern void GXS_LoadBG1Scr(const void *src, u32 offset, u32 size);
 extern void func_ov027_020b9e20(void *table, int id);
-extern void func_ov027_020b9e80(void *uploads);
+extern void FlushDirtyTileTableRows(void *uploads);
 extern void FlushBufferAndRunCallback(void *context);
 
 int RestoreStatusSubScreen(void)
@@ -58,7 +58,7 @@ int RestoreStatusSubScreen(void)
     func_ov027_020b9e20(data_ov073_020c4260->uploads, 0x1a);
     func_ov027_020b9e20(data_ov073_020c4260->uploads, 0x1b);
     data_ov073_020c4260->uploadImmediate = TRUE;
-    func_ov027_020b9e80(data_ov073_020c4260->uploads);
+    FlushDirtyTileTableRows(data_ov073_020c4260->uploads);
     data_ov073_020c4260->uploadImmediate = FALSE;
     FlushBufferAndRunCallback(data_ov073_020c4260->textLayer);
     FlushBufferAndRunCallback(data_ov073_020c4260->titleLayer);

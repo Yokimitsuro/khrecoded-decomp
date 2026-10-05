@@ -36,7 +36,7 @@ extern void func_ov001_02073870(void *context, int index, int mode);
 extern u64 OS_GetTick(void);
 extern void AdvanceGaugeSlot(int index, GaugeAnim *anim);
 extern void RunMenuEntryCallbacks(void *context, int menu, int count, void (*callback)(void *context, int index, int mode), int mode);
-extern void func_ov001_02071770(int index, int mode);
+extern void UploadScreenSlotBlock(int index, int mode);
 extern BOOL IsFieldPanelHidden(void);
 extern BOOL IsFirstEntryFlagSet(void);
 extern u32 func_ov001_02064490(void);
@@ -71,11 +71,11 @@ void SetMenuGaugeActive(int index, BOOL enable) {
         anim->elapsed = 0;
         anim->startTick = OS_GetTick();
         AdvanceGaugeSlot(index, anim);
-        func_ov001_02071770(index, 2);
+        UploadScreenSlotBlock(index, 2);
     } else {
         anim->active = 0;
         RunMenuEntryCallbacks(menu->contexts[index], index, state, callback, menu->slots[index].current == 0);
-        func_ov001_02071770(index, 0);
+        UploadScreenSlotBlock(index, 0);
     }
     if (index == 0) {
         if (enable) {

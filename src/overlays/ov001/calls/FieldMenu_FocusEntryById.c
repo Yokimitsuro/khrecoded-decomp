@@ -28,7 +28,7 @@ typedef struct FieldMenuHandle {
 
 extern FieldMenuHandle data_ov001_020a04d0;
 extern MenuEntry *CycleMenuEntry(FieldMenu *menu, s32 index, s32 slot, s32 *outValue);
-extern void func_ov001_020769f4(FieldMenu *menu);
+extern void DrawMenuPanelPage(FieldMenu *menu);
 
 void FieldMenu_FocusEntryById(int id)
 {
@@ -39,7 +39,7 @@ void FieldMenu_FocusEntryById(int id)
         if (menu->focusActive > 0) {
             CycleMenuEntry(menu, menu->entryIndex, 1, NULL)->frame = 0;
             menu->focusActive = 0;
-            func_ov001_020769f4(menu);
+            DrawMenuPanelPage(menu);
         }
         return;
     }

@@ -33,6 +33,10 @@ libs/nitro/mi/asm_stubs/auto/MIi_CpuCopy16.c:
     complete
     .text       start:0x01ff869c end:0x01ff86b8
 
+src/calls/MI_CpuMove16.c:
+    complete
+    .text       start:0x01ff86d8 end:0x01ff86fc
+
 libs/nitro/mi/asm_stubs/auto/MIi_CpuClear32.c:
     complete
     .text       start:0x01ff86fc end:0x01ff8710
@@ -257,6 +261,10 @@ src/calls/func_01ffb2f8.c:
     complete
     .text       start:0x01ffb2f8 end:0x01ffb328
 
+src/calls/OverlapsHeightRange.c:
+    complete
+    .text       start:0x01ffb328 end:0x01ffb3a0
+
 src/calls/QueryModelCollision.c:
     complete
     .text       start:0x01ffce24 end:0x01ffce6c
@@ -264,6 +272,10 @@ src/calls/QueryModelCollision.c:
 src/calls/QueryModelMotionCollision.c:
     complete
     .text       start:0x01ffce6c end:0x01ffceb4
+
+src/calls/QueryCollisionSegment.c:
+    complete
+    .text       start:0x01ffceb4 end:0x01ffcedc
 
 libs/nitro/nns/calls/func_01ffcedc.c:
     complete
@@ -312,6 +324,18 @@ src/calls/NNS_G3dDraw1Mat1Shp.c:
 src/calls/func_01fff67c.c:
     complete
     .text       start:0x01fff67c end:0x01fff6c8
+
+src/calls/SetupModelDrawState.c:
+    complete
+    .text       start:0x01fff810 end:0x01fff8b0
+
+src/calls/CaptureSelectedJointMtx_01fffe28.c:
+    complete
+    .text       start:0x01fffe28 end:0x01fffe7c
+
+src/calls/CaptureContextJointMtx.c:
+    complete
+    .text       start:0x01fffe7c end:0x01fffe94
 
 src/data/itcm/bss/Bss_itcm_01fffea0.c:
     complete

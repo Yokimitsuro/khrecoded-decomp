@@ -22,7 +22,7 @@ typedef struct CueFactoryTable {
 } CueFactoryTable;
 
 extern const CueFactoryTable gEffectCreationHandlers;
-extern CueDef *func_ov021_020accb4(CueTable *table, int id);
+extern CueDef *FindWideEntryById(CueTable *table, int id);
 extern int func_ov001_02063a38(void);
 
 CueInstance *SpawnCueHandler(s16 *source, void *owner, void *arg, CueTable *table)
@@ -32,7 +32,7 @@ CueInstance *SpawnCueHandler(s16 *source, void *owner, void *arg, CueTable *tabl
     CueInstance *instance;
     BOOL blocked = FALSE;
 
-    def = func_ov021_020accb4(table, *source);
+    def = FindWideEntryById(table, *source);
 
     if (def == NULL) {
         return NULL;

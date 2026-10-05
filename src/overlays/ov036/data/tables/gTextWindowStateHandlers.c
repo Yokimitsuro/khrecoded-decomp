@@ -4,7 +4,7 @@ extern void func_ov036_020bf6dc(void);
 extern void func_ov036_020bf6e0(void);
 extern void LoadTextWindowFrame(void); /* LoadTextWindowFrame */
 extern void func_ov036_020bfe38(void);
-extern void func_ov036_020c0348(void);
+extern void StepPanelFade(void);
 extern void func_ov036_020c0400(void);
 extern void UpdateTextWindowTyping(void); /* UpdateTextWindowTyping */
 extern void func_ov036_020c0e30(void);
@@ -20,7 +20,7 @@ void (*const gTextWindowStateHandlers[14])(void) = {
     func_ov036_020bf6e0,
     LoadTextWindowFrame, /* LoadTextWindowFrame */
     func_ov036_020bfe38,
-    func_ov036_020c0348,
+    StepPanelFade,
     func_ov036_020c0400,
     UpdateTextWindowTyping, /* UpdateTextWindowTyping */
     func_ov036_020c0e30,

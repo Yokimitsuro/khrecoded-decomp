@@ -29,7 +29,7 @@ typedef struct {
 extern Panel *data_ov044_020d0ec0;
 extern const s16 data_02053580[];
 
-extern void func_ov044_020d08f8(Basis *out);
+extern void GetPanelBasis(Basis *out);
 extern void CombineBasisAxes(const Basis *basis, const fx32 *weights, VecFx32 *out, VecFx32 *partial);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern BOOL UpdateDriftParticle(void *particle);
@@ -47,7 +47,7 @@ void UpdatePanelCamera(void)
     VecFx32 positionSum;
     VecFx32 lookAtSum;
 
-    func_ov044_020d08f8(&basis);
+    GetPanelBasis(&basis);
     CombineBasisAxes(&basis, panel->weights, &full, &partial);
     VEC_Add(&panel->target, &partial, &panel->positionOffset);
     VEC_Add(&panel->target, &full, &panel->lookAtOffset);

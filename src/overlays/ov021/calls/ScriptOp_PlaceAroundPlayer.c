@@ -35,7 +35,7 @@ extern const s16 data_02053580[];
 extern s16 *ResolveTaggedValueRef(ScriptObject *obj, s16 *value);
 extern s32 TaggedValueToFixed(s16 *tagged);
 extern s32 TaggedValueToInt(s16 *tagged);
-extern void func_ov001_02091c5c(PlayerActor *actor, VecFx32 *out);
+extern void NotifySceneObjectHandler(PlayerActor *actor, VecFx32 *out);
 extern u32 GetStageEntryParam(u32 id);
 extern fx32 Surface_GetKindValue(void *surface);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -64,7 +64,7 @@ s32 ScriptOp_PlaceAroundPlayer(ScriptObject *obj, PlaceCommand *cmd)
     VecFx32 hitPoint;
     MtxFx33 rotation;
 
-    func_ov001_02091c5c(player, &base);
+    NotifySceneObjectHandler(player, &base);
     distance = TaggedValueToFixed(distanceRef);
     degrees = TaggedValueToFixed(angleRef);
     flags = TaggedValueToInt(flagsRef);

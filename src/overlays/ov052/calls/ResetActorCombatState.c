@@ -60,7 +60,7 @@ extern void func_ov052_020c7480(Actor *actor);
 extern void ApplyTimeScaledSpeed(Actor *actor, fx32 targetSpeed);
 extern s32 GetClampedPaletteSlot(void);
 extern BOOL IsFieldFlag16Set(void);
-extern void func_ov052_020c9fa8(void *speed);
+extern void ResetMotionState_020c9fa8(void *speed);
 extern void func_ov052_020ccab0(void *timer, int duration);
 extern void ClearRecord68(void *handle);
 extern void InitSlotTable(SlotTable *table, u8 player);
@@ -98,7 +98,7 @@ void ResetActorCombatState(Actor *actor)
     if (IsFieldFlag16Set()) {
         actor->palette = 4;
     }
-    func_ov052_020c9fa8(actor->speed);
+    ResetMotionState_020c9fa8(actor->speed);
     actor->hitCount = 0;
     func_ov052_020ccab0(actor->stepTimer, 1);
     func_ov052_020ccab0(actor->idleTimer, 0x69);

@@ -26,7 +26,7 @@ typedef struct {
 
 extern StageGlobals data_ov021_020b56c4;
 extern void *GetStageMotionRecord(u16 motionId);
-extern void func_ov001_02091c5c(StageTarget *target, VecFx32 *out);
+extern void NotifySceneObjectHandler(StageTarget *target, VecFx32 *out);
 extern int GetGridCellIndex(void *grid, VecFx32 *position);
 extern BOOL IsGridLineClear(void *grid, int fromCell, int toCell);
 
@@ -59,7 +59,7 @@ int ScriptCmd_CheckTargetLineOfSight(ScriptContext *context)
     if (target == NULL) {
         return 0;
     }
-    func_ov001_02091c5c(target, &targetPos);
+    NotifySceneObjectHandler(target, &targetPos);
     fromCell = GetGridCellIndex(grid, &target->position);
     toCell = GetGridCellIndex(grid, &targetPos);
     context->hasResult = 1;

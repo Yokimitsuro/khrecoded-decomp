@@ -18,7 +18,7 @@ typedef struct TriggerQueue TriggerQueue;
 
 extern TriggerQueue *data_ov001_020a0498;
 
-extern TriggerNode *func_ov001_02069014(TriggerQueue *queue, u16 id);
+extern TriggerNode *FindSceneNodeById(TriggerQueue *queue, u16 id);
 extern BOOL func_ov001_020645c8(u32 value);
 extern void WriteSessionPackedBits(int bitOffset, u32 bitCount, u32 value);
 extern void func_ov001_020645dc(u32 bit);
@@ -37,7 +37,7 @@ void SetupEventTriggerNode(u32 id, BOOL isSecondary, int type, int kind, u32 ini
         id += 0xF8;
     }
     bit = id * 2 + 0x331F;
-    node = func_ov001_02069014(queue, id);
+    node = FindSceneNodeById(queue, id);
     if (!func_ov001_020645c8(bit + 1)) {
         WriteSessionPackedBits(bit, 1, initialBit);
         func_ov001_020645dc(bit + 1);

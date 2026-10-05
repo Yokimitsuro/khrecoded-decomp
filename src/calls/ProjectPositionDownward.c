@@ -15,7 +15,7 @@ typedef struct Hit {
 } Hit;
 
 extern Entry *CollModel_FindEntry(void *cont);
-extern Hit *func_01ffceb4(void *world, VecFx32 *from, VecFx32 *dir);
+extern Hit *QueryCollisionSegment(void *world, VecFx32 *from, VecFx32 *dir);
 extern void AddScaledVector(int s, const VecFx32 *dir, const VecFx32 *from, VecFx32 *out);
 
 int ProjectPositionDownward(void *cont, int p3, void *out) {
@@ -31,7 +31,7 @@ int ProjectPositionDownward(void *cont, int p3, void *out) {
     dir.y = -0x5000;
     dir.z = 0;
 
-    hit = func_01ffceb4(cont, &from, &dir);
+    hit = QueryCollisionSegment(cont, &from, &dir);
     if (hit != 0) {
         AddScaledVector(hit->distance2c, &dir, &from, (VecFx32 *)out);
         return 1;

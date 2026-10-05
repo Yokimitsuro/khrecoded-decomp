@@ -360,6 +360,10 @@ src/overlays/ov036/calls/CopyRecordTableAString.c:
     complete
     .text       start:0x020be314 end:0x020be342
 
+src/overlays/ov036/calls/ScriptCmd_ShowNameList.c:
+    complete
+    .text       start:0x020be3cc end:0x020be488
+
 src/overlays/ov036/calls/ScriptCmd_WaitWindowAnswer.c:
     complete
     .text       start:0x020be488 end:0x020be4ec
@@ -459,6 +463,10 @@ src/overlays/ov036/auto/func_ov036_020bf6dc.c:
 src/overlays/ov036/calls/LoadTextWindowFrame.c:
     complete
     .text       start:0x020bfb2c end:0x020bfe38
+
+src/overlays/ov036/calls/StepPanelFade.c:
+    complete
+    .text       start:0x020c0348 end:0x020c0400
 
 src/overlays/ov036/calls/UpdateTextWindowTyping.c:
     complete

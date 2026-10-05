@@ -1,10 +1,10 @@
-func_ov029_020ba400 kind:function(arm,size=0xc4) addr:0x020ba400
+InitOv029OverlayState kind:function(arm,size=0xc4) addr:0x020ba400
 RunSceneStateMachine_020ba4c4 kind:function(arm,size=0x88) addr:0x020ba4c4
 ShutdownOv029SoundCtx kind:function(arm,size=0x3c) addr:0x020ba54c
 func_ov029_020ba588 kind:function(arm,size=0x38) addr:0x020ba588
 MarkSoundCtxActive kind:function(arm,size=0x28) addr:0x020ba5c0
 func_ov029_020ba5e8 kind:function(arm,size=0x14) addr:0x020ba5e8
-func_ov029_020ba5fc kind:function(arm,size=0x94) addr:0x020ba5fc
+FinishOv029MenuLoad kind:function(arm,size=0x94) addr:0x020ba5fc
 EnableOv029Sound kind:function(arm,size=0x98) addr:0x020ba690
 HandleOverlayExitFlag kind:function(arm,size=0x60) addr:0x020ba728
 DisableOv029Sound kind:function(arm,size=0xbc) addr:0x020ba788
@@ -21,7 +21,7 @@ ReleaseOv029Object kind:function(arm,size=0x20) addr:0x020baa84
 func_ov029_020baaa4 kind:function(arm,size=0x48) addr:0x020baaa4
 func_ov029_020baaec kind:function(arm,size=0x8) addr:0x020baaec
 func_ov029_020baaf4 kind:function(arm,size=0x8) addr:0x020baaf4
-func_ov029_020baafc kind:function(arm,size=0x80) addr:0x020baafc
+InstallOv029SceneHandlers kind:function(arm,size=0x80) addr:0x020baafc
 data_ov029_020bab80 kind:data(any) addr:0x020bab80
 data_ov029_020bab84 kind:data(any) addr:0x020bab84
 gOv029SoundControlHandlers kind:data(any) addr:0x020bab98

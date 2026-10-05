@@ -18,7 +18,7 @@ extern void *GetOverlaySelectionRecord(u32 selectionIndex);
 extern int OS_SPrintf(char *dst, const char *fmt, ...);
 extern void *func_0202c4a0(const char *path, u32 flags);
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
-extern void func_ov021_020a9d88(UnitResources *unit, void *data, int kind);
+extern void RelocateUnitMotionData(UnitResources *unit, void *data, int kind);
 extern void func_ov021_020a9eec(UnitResources *unit, void *arg, int kind, void *data);
 
 void InitUnitResources(UnitResources *unit, void *arg, int kind, u32 selection)
@@ -36,7 +36,7 @@ void InitUnitResources(UnitResources *unit, void *arg, int kind, u32 selection)
     unit->record = (u8 *)GetOverlaySelectionRecord(selection) + 0x10;
     OS_SPrintf(motionPath, sOv021_BaChFormatSCpBZ_020b5258, gSoundCategoryNames[kind]);
     data = func_0202c4a0(motionPath, 0x11);
-    func_ov021_020a9d88(unit, data, kind);
+    RelocateUnitMotionData(unit, data, kind);
     NNSi_FndFreeFromDefaultHeap(data);
     OS_SPrintf(modelPath, data_ov021_020b5268, gSoundCategoryNames[kind]);
     file = func_0202c4a0(modelPath, 0x11);

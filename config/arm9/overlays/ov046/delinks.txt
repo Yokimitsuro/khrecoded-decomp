@@ -31,6 +31,10 @@ src/overlays/ov046/calls/Camera_UpdateViewAxes.c:
     complete
     .text       start:0x020c0c54 end:0x020c0d58
 
+src/overlays/ov046/calls/Camera_RequestMode.c:
+    complete
+    .text       start:0x020c0da8 end:0x020c0dd4
+
 src/overlays/ov046/calls/func_ov046_020c0dd4.c:
     complete
     .text       start:0x020c0dd4 end:0x020c0de4

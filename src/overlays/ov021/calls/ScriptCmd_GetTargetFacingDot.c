@@ -21,7 +21,7 @@ typedef struct {
 
 extern StageGlobals data_ov021_020b56c4;
 extern s16 data_02053580[];
-extern void func_ov001_02091c5c(StageTarget *target, VecFx32 *out);
+extern void NotifySceneObjectHandler(StageTarget *target, VecFx32 *out);
 extern VecFx32 *func_ov001_02090f2c(StageTarget *target);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
@@ -39,7 +39,7 @@ int ScriptCmd_GetTargetFacingDot(ScriptContext *context)
     if (target == NULL) {
         return 0;
     }
-    func_ov001_02091c5c(target, &lookPos);
+    NotifySceneObjectHandler(target, &lookPos);
     basePos = *func_ov001_02090f2c(target);
     VEC_Subtract(&lookPos, &basePos, &delta);
     delta.y = 0;
