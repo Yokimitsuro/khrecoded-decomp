@@ -6,13 +6,13 @@ typedef struct {
 } RegistryHead;
 
 extern u32 Archive_LoadFile(u32 fileId, u32 param2, u32 param3, u32 param4);
-extern int func_02035120(void *g, void *res);
+extern int ModelGroup_Open(void *g, void *res);
 extern RegistryHead *gActorRegistry;
 
 BOOL OpenActorModelGroupResource(u32 param1, u32 param2, u32 param3, u32 param4) {
     RegistryHead *registry = gActorRegistry;
     u32 result = Archive_LoadFile(param2, 1, param3, param4);
-    func_02035120(registry, (void *)result);
+    ModelGroup_Open(registry, (void *)result);
     registry->modelGroupResource = result;
     return TRUE;
 }

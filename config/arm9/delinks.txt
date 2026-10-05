@@ -6933,6 +6933,10 @@ src/calls/CopyTransformFields.c:
     complete
     .text       start:0x020350e8 end:0x02035120
 
+src/calls/ModelGroup_Open.c:
+    complete
+    .text       start:0x02035120 end:0x0203518c
+
 src/calls/FreeRecordArrayAndReset.c:
     complete
     .text       start:0x0203518c end:0x020351ca

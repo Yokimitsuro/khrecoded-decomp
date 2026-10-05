@@ -163,10 +163,12 @@ def source_relocations(item: dict) -> dict[int, str]:
     return source_relocs
 
 
-def relocation_rewrites(item: dict, function: dict) -> dict[str, str]:
+def relocation_rewrites(item: dict, function: dict,
+                        allow_shifted: bool = False) -> dict[str, str]:
     source_relocs = source_relocations(item)
 
     eu_relocs = {int(offset): target for offset, target in function["relocs"]}
+    shifted_relocs = {}
     extra_eu_relocs = set(eu_relocs) - set(source_relocs)
     if extra_eu_relocs:
         trial = compiled_symbol_bytes(item)
@@ -174,10 +176,13 @@ def relocation_rewrites(item: dict, function: dict) -> dict[str, str]:
         expected = ARM9_BIN.read_bytes()[
             address - ARM9_BASE:address - ARM9_BASE + item["eu"]["size"]
         ]
-        if any(
+        differs_at_extra = any(
             trial[offset:offset + 4] != expected[offset:offset + 4]
             for offset in extra_eu_relocs
-        ):
+        )
+        if differs_at_extra and allow_shifted and len(source_relocs) == len(eu_relocs):
+            shifted_relocs = dict(zip(sorted(source_relocs), sorted(eu_relocs)))
+        elif differs_at_extra:
             raise RuntimeError(
                 f"relocation offsets differ for {item['eu']['name']}: "
                 f"source={sorted(source_relocs)} eu={sorted(eu_relocs)}"
@@ -185,9 +190,10 @@ def relocation_rewrites(item: dict, function: dict) -> dict[str, str]:
 
     rewrites = {}
     for offset, source_name in source_relocs.items():
-        if offset in eu_relocs:
+        eu_offset = shifted_relocs.get(offset, offset)
+        if eu_offset in eu_relocs:
             target_name = canonical_target(
-                eu_relocs[offset], item["eu"]["address"] + offset
+                eu_relocs[eu_offset], item["eu"]["address"] + eu_offset
             )
         else:
             address = item["eu"]["address"]
@@ -382,6 +388,10 @@ def main() -> None:
     parser.add_argument("--inferred-auto", action="store_true")
     parser.add_argument("--linked-inventory", action="store_true")
     parser.add_argument("--linked-auto", action="store_true")
+    parser.add_argument(
+        "--shifted-relocs", action="store_true",
+        help="pair equal-count source/EU relocations by order for an explicit import",
+    )
     parser.add_argument("--limit", type=int, default=0)
     args = parser.parse_args()
 
@@ -391,6 +401,8 @@ def main() -> None:
         parser.error("select only one automatic or inventory mode")
     if args.mapping and modes:
         parser.error("explicit mappings cannot be combined with --inventory or --auto")
+    if args.shifted_relocs and modes:
+        parser.error("--shifted-relocs is only valid with explicit mappings")
     if not args.mapping and not modes:
         parser.error("provide mappings, --inventory, or --auto")
 
@@ -441,7 +453,9 @@ def main() -> None:
             raise RuntimeError(f"definition {reference_symbol} not found in {reference_path}")
         rewrites = cached_rewrites.get(rom_symbol)
         if rewrites is None:
-            rewrites = relocation_rewrites(item, function)
+            rewrites = relocation_rewrites(
+                item, function, allow_shifted=args.shifted_relocs
+            )
         rewrites = {**rewrites, reference_symbol: readable_name}
         source = replace_identifiers(source, rewrites)
         source = re.sub(

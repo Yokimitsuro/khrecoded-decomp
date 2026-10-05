@@ -2303,5 +2303,6 @@
   "src/calls/ClearBusyFlag.c": "dsi/1.1",
   "src/calls/IsBusyFlagSet.c": "dsi/1.1",
   "src/calls/AdvancePendingScene.c": "dsi/1.1",
-  "src/calls/ActorEntry_Init.c": "dsi/1.1"
+  "src/calls/ActorEntry_Init.c": "dsi/1.1",
+  "src/calls/ModelGroup_Open.c": "dsi/1.1"
 }
