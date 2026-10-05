@@ -1,4 +1,4 @@
-extern int func_02025df8(int ctx, void *arg);
+extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ScriptCmd_ReturnValue(int ctx, int arg);
 extern char *func_02036254(int index);
 
@@ -8,7 +8,7 @@ extern void NNS_G3dMdlSetMdlPolygonIDAll(int model, int polygonID);
 typedef struct { int x, y, z; } Ov023Vec3;
 
 int func_ov001_0208ded8(int ctx, int args) {
-    char *node = func_02036254((unsigned short)ScriptCmd_ReturnValue(ctx, func_02025df8(ctx, (void *)args)));
+    char *node = func_02036254((unsigned short)ScriptCmd_ReturnValue(ctx, ScriptVm_ReadOperandInt(ctx, (void *)args)));
     Ov023Vec3 v;
     v.x = *(int *)(node + 0xb4);
     v.y = 0;

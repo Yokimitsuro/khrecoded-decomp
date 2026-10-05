@@ -23,6 +23,11 @@ SYMBOL_LINE_RE = re.compile(
     r"addr:0x([0-9a-fA-F]+)",
     re.MULTILINE,
 )
+RELOC_LINE_RE = re.compile(
+    r"^from:0x([0-9a-fA-F]+)\s+kind:\S+\s+"
+    r"to:0x([0-9a-fA-F]+)\s+module:(\S+)$",
+    re.MULTILINE,
+)
 
 
 def current_symbol_index() -> tuple[set[str], dict[int, list[str]]]:
@@ -41,9 +46,30 @@ def current_symbol_index() -> tuple[set[str], dict[int, list[str]]]:
 
 
 CURRENT_NAMES, CURRENT_BY_ADDRESS = current_symbol_index()
+CURRENT_RELOCS = {
+    int(match.group(1), 16): (int(match.group(2), 16), match.group(3))
+    for match in RELOC_LINE_RE.finditer(
+        (ROOT / "config" / "arm9" / "relocs.txt").read_text(encoding="utf-8")
+    )
+}
 
 
-def canonical_target(name: str) -> str:
+def canonical_target(name: str, from_address: int) -> str:
+    relocation = CURRENT_RELOCS.get(from_address)
+    if relocation is not None and relocation[1] in ("main", "itcm", "dtcm"):
+        target_address = relocation[0]
+        choices = CURRENT_BY_ADDRESS.get(target_address, [])
+        if not choices and target_address & 1:
+            choices = CURRENT_BY_ADDRESS.get(target_address - 1, [])
+        if choices:
+            return min(
+                choices,
+                key=lambda value: (
+                    value.startswith(("func_", "data_", "bss_")),
+                    len(value),
+                    value,
+                ),
+            )
     if name in CURRENT_NAMES:
         return name
     match = re.search(r"_([0-9a-fA-F]{8})$", name)
@@ -142,7 +168,9 @@ def relocation_rewrites(item: dict, function: dict) -> dict[str, str]:
 
     rewrites = {}
     for offset, source_name in source_relocs.items():
-        target_name = canonical_target(eu_relocs[offset])
+        target_name = canonical_target(
+            eu_relocs[offset], item["eu"]["address"] + offset
+        )
         previous = rewrites.setdefault(source_name, target_name)
         if previous != target_name:
             raise RuntimeError(
@@ -152,7 +180,7 @@ def relocation_rewrites(item: dict, function: dict) -> dict[str, str]:
 
 
 def automatic_candidates(results: list[dict], index: dict, symbols: str) -> list[tuple]:
-    occupied = set(re.findall(r"^(\S+)\s+kind:", symbols, re.MULTILINE))
+    occupied = set(CURRENT_NAMES)
     candidates = []
     for item in results:
         if item.get("result") != "match":

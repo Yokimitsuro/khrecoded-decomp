@@ -13,12 +13,12 @@ typedef struct Ov023RampCmd {
     int  nRemaining;
 } Ov023RampCmd;
 
-extern int   func_02025df8(void *pCtx, Ov023Operand *pOperand);
+extern int   ScriptVm_ReadOperandInt(void *pCtx, Ov023Operand *pOperand);
 extern int   func_02025e0c(void *pCtx, Ov023Operand *pOperand);
 extern void *func_02036254(u16 nEntity);
 extern void  func_020361ac(u16 nEntity, int bEnable, int nDuration);
 extern int   func_0202572c(int nMode, int nTotal, int nRemaining);
-extern int   func_020257c4(int nFactor, int nFrom, int nTo);
+extern int   ScaleAroundPivot(int nFactor, int nFrom, int nTo);
 extern void  ScriptCmd_SetElemField(void *pCtx, void *pCmd);
 
 int func_ov001_0208cb3c(void *pCtx, Ov023RampCmd *pCmd)
@@ -28,8 +28,8 @@ int func_ov001_0208cb3c(void *pCtx, Ov023RampCmd *pCmd)
     int nFrom;
     int nTo;
 
-    nActor = func_02025df8(pCtx, &pCmd->aOperand[0]);
-    nFrames = func_02025df8(pCtx, &pCmd->aOperand[3]);
+    nActor = ScriptVm_ReadOperandInt(pCtx, &pCmd->aOperand[0]);
+    nFrames = ScriptVm_ReadOperandInt(pCtx, &pCmd->aOperand[3]);
     nFrom = func_02025e0c(pCtx, &pCmd->aOperand[1]);
     nTo = func_02025e0c(pCtx, &pCmd->aOperand[2]);
     func_02036254((u16)nActor);
@@ -38,7 +38,7 @@ int func_ov001_0208cb3c(void *pCtx, Ov023RampCmd *pCmd)
         func_020361ac((u16)nActor, 1, nTo);
         return 1;
     }
-    func_020361ac((u16)nActor, 1, func_020257c4(func_0202572c(2, nFrames, pCmd->nRemaining), nTo, nFrom));
+    func_020361ac((u16)nActor, 1, ScaleAroundPivot(func_0202572c(2, nFrames, pCmd->nRemaining), nTo, nFrom));
     ScriptCmd_SetElemField(pCtx, pCmd);
     return 0;
 }

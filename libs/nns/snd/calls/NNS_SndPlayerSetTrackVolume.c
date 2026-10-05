@@ -1,7 +1,7 @@
 #include "nnsys/snd.h"
 
 extern const s16 data_02052b1c[128];
-extern void func_0200ea88(int playerNo, u32 trackMask, int volume);
+extern void SND_SetTrackParam0A(int playerNo, u32 trackMask, int volume);
 
 static inline s16 SND_CalcDecibel(int volume)
 {
@@ -14,7 +14,7 @@ void NNS_SndPlayerSetTrackVolume(NNSSndHandle *handle, u16 trackMask, int volume
         return;
     }
 
-    func_0200ea88(
+    SND_SetTrackParam0A(
         handle->player->playerNo,
         trackMask,
         SND_CalcDecibel(volume));

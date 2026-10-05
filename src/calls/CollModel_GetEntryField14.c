@@ -1,5 +1,5 @@
-extern int *func_020352e0(void *model, void *key);
+extern int *CollModel_FindEntry(void *model, void *key);
 
 int CollModel_GetEntryField14(void *model, void *key) {
-    return func_020352e0(model, key)[5];
+    return CollModel_FindEntry(model, key)[5];
 }

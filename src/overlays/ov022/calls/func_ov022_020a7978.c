@@ -1,4 +1,4 @@
-extern int func_02025df8(int owner, void *entry);
+extern int ScriptVm_ReadOperandInt(int owner, void *entry);
 extern int ScriptCmd_SetElemField(int owner, int handle);
 extern int func_ov022_020a73f8(int handle);
 extern int func_ov022_020a8938(void);
@@ -7,7 +7,7 @@ int func_ov022_020a7978(int owner, void *entry) {
     int len;
     int pos;
 
-    len = func_02025df8(owner, entry);
+    len = ScriptVm_ReadOperandInt(owner, entry);
     if (func_ov022_020a73f8(ScriptCmd_SetElemField(owner, len)) == 0) {
         return 1;
     }
