@@ -1,5 +1,15 @@
 # khrecoded-decomp
 
+> [!IMPORTANT]
+> **Development has moved to the shared
+> [kh-recoded-decomp/kh-recoded-decomp](https://github.com/kh-recoded-decomp/kh-recoded-decomp)
+> repository.** This EU (`BK9P`) project has been merged with
+> [ricky074game/kh-recoded-decomp](https://github.com/ricky074game/kh-recoded-decomp)
+> (US `BK9E`) so both regions can be developed in one codebase. The complete EU
+> history and attribution are preserved under [`eu/`](https://github.com/kh-recoded-decomp/kh-recoded-decomp/tree/main/eu).
+> This repository is retained for historical reference; please send new issues,
+> pull requests and decompilation work to the shared repository.
+
 A work-in-progress **matching decompilation** of *Kingdom Hearts Re:coded*
 (Nintendo DS). The goal is C source that recompiles to a binary **byte-for-byte
 identical** to the original game code.
