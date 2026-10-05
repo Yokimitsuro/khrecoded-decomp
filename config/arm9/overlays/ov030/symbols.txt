@@ -70,9 +70,10 @@ ReleaseEffectPool kind:function(thumb,size=0x10) addr:0x020bcf44
 ResetUnitCounts kind:function(thumb,size=0x10) addr:0x020bcf54
 data_ov030_020bcf64 kind:data(any) addr:0x020bcf64
 data_ov030_020bcf6c kind:data(any) addr:0x020bcf6c
-data_ov030_020bcfa0 kind:data(any) addr:0x020bcfa0
-data_ov030_020bcfa4 kind:data(any) addr:0x020bcfa4
-data_ov030_020bcfb8 kind:data(any) addr:0x020bcfb8
+gMobiClipSourceHandle kind:data(any) addr:0x020bcfa0
+gMovieOverlayDescriptor kind:data(any) addr:0x020bcfa4
+gMovieSceneStateHandlers kind:data(any) addr:0x020bcfb8
+data_ov030_020bd004 kind:data(any) addr:0x020bd004
 data_ov030_020bd020 kind:bss addr:0x020bd020
 data_ov030_020bd024 kind:bss addr:0x020bd024
 gMarkerReset kind:bss addr:0x020bd024

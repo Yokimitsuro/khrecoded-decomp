@@ -8,7 +8,7 @@ typedef struct {
 } SceneState;
 
 extern SceneState *data_ov030_020bd020;
-extern int (*const data_ov030_020bcfb8[])(void);
+extern int (*const gMovieSceneStateHandlers[])(void);
 
 extern void ApplyOverlayScaleMode(int mode);
 extern void func_ov030_020baab8(void);
@@ -18,7 +18,7 @@ int RunSceneStateMachine_020ba4e0(void) {
 
     do {
         data_ov030_020bd020->flags &= 0x7fff;
-        next = data_ov030_020bcfb8[data_ov030_020bd020->state]();
+        next = gMovieSceneStateHandlers[data_ov030_020bd020->state]();
         if (next >= 0) {
             data_ov030_020bd020->state = next;
         }

@@ -6972,5 +6972,6 @@
   "src/overlays/ov052/calls/BuildApproachChoices.c": "dsi/1.1",
   "src/overlays/ov035/calls/DrawLevelBarQuads.c": "dsi/1.1",
   "src/overlays/ov081/calls/BuildVisibleEntryIndex.c": "dsi/1.1",
-  "src/overlays/ov083/calls/InitScoreScreen.c": "dsi/1.1"
+  "src/overlays/ov083/calls/InitScoreScreen.c": "dsi/1.1",
+  "src/overlays/ov030/data/MovieOverlayData_020bcfa0.c": "dsi/1.1"
 }
