@@ -2297,5 +2297,9 @@
   "src/calls/GetSelectionPackedValueBlock.c": "dsi/1.1",
   "src/calls/GetMapBonusStats.c": "dsi/1.1",
   "src/calls/GetMapFinalStats.c": "dsi/1.1",
-  "src/calls/GetRecordTableAEntry.c": "dsi/1.1"
+  "src/calls/GetRecordTableAEntry.c": "dsi/1.1",
+  "src/calls/SetPanelEnabled.c": "dsi/1.1",
+  "src/calls/SetBusyFlag.c": "dsi/1.1",
+  "src/calls/ClearBusyFlag.c": "dsi/1.1",
+  "src/calls/IsBusyFlagSet.c": "dsi/1.1"
 }

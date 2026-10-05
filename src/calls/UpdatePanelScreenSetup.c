@@ -31,7 +31,7 @@ typedef struct PanelState {
 
 extern PanelState *gPanelState;
 extern u32 data_0205fde4;
-extern u8 data_0205fdc4;
+extern u8 gPanelEnabled;
 extern char sMain_PauseRefresh_02055f44[];
 
 extern void NotifyBothOrOne(u32 mask, const char *name, int index);
@@ -103,7 +103,7 @@ void UpdatePanelScreenSetup(void)
     }
     switch (panel->step) {
     case 0:
-        if (data_0205fdc4 == 0) {
+        if (gPanelEnabled == 0) {
             return;
         }
         if (func_ov001_02063a38() != 8) {

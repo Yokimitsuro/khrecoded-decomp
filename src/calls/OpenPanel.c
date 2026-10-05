@@ -28,7 +28,7 @@ typedef struct PanelState {
 } PanelState;
 
 extern PanelState *gPanelState;
-extern u8 data_0205fdc4;
+extern u8 gPanelEnabled;
 extern u8 sMain_PauseRefresh_02055f44[];
 extern s32 func_ov001_02063a38(void);
 extern u64 OS_GetTick(void);
@@ -49,7 +49,7 @@ BOOL OpenPanel(void)
     if (func_ov001_02063a38() == 9) {
         return FALSE;
     }
-    if (data_0205fdc4 == 0) {
+    if (gPanelEnabled == 0) {
         panel->active = 0;
         return FALSE;
     }

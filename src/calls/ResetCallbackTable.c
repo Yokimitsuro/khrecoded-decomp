@@ -2,7 +2,7 @@
 
 extern int data_0205fdd4[];
 extern int data_0205fdc8[];
-extern u8 data_0205fdc4[];
+extern u8 gPanelEnabled[];
 
 int ResetCallbackTable(void)
 {
@@ -13,6 +13,6 @@ int ResetCallbackTable(void)
         data_0205fdc8[i] = zero;
         i = i + 1;
     } while (i < 3);
-    data_0205fdc4[0] = (u8)zero;
+    gPanelEnabled[0] = (u8)zero;
     return 1;
 }

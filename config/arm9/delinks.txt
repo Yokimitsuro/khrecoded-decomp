@@ -5269,7 +5269,7 @@ src/calls/ResetCallbackTable.c:
     complete
     .text       start:0x0202540c end:0x0202544c
 
-src/calls/func_0202544c.c:
+src/calls/SetPanelEnabled.c:
     complete
     .text       start:0x0202544c end:0x0202545c
 
@@ -5293,7 +5293,15 @@ src/calls/IsBusyCounterZero.c:
     complete
     .text       start:0x020254cc end:0x020254e4
 
-src/calls/func_020254fc.c:
+src/calls/SetBusyFlag.c:
+    complete
+    .text       start:0x020254e4 end:0x020254f0
+
+src/calls/ClearBusyFlag.c:
+    complete
+    .text       start:0x020254f0 end:0x020254fc
+
+src/calls/IsBusyFlagSet.c:
     complete
     .text       start:0x020254fc end:0x02025508
 

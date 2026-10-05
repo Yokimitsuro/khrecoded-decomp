@@ -6,11 +6,11 @@ typedef struct {
     s16 count;
 } BusyCounterState;
 
-extern BusyCounterState data_0205fde8;
+extern BusyCounterState gBusyCounterState;
 
 BOOL IsBusyCounterZero(void)
 {
-    if (data_0205fde8.count == 0) {
+    if (gBusyCounterState.count == 0) {
         return TRUE;
     }
     return FALSE;

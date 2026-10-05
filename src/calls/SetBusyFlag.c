@@ -1,6 +1,6 @@
 #include "nitro/types.h"
 
-typedef struct {
+typedef struct BusyCounterState {
     u8 flag;
     u8 pad_01;
     s16 count;
@@ -8,7 +8,8 @@ typedef struct {
 
 extern BusyCounterState gBusyCounterState;
 
-void IncrementBusyCounter(void)
+BusyCounterState *SetBusyFlag(void)
 {
-    gBusyCounterState.count++;
+    gBusyCounterState.flag = TRUE;
+    return &gBusyCounterState;
 }

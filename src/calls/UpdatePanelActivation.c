@@ -11,7 +11,7 @@ typedef struct PanelState {
 } PanelState;
 
 extern PanelState *gPanelState;
-extern u8 data_0205fdc4;
+extern u8 gPanelEnabled;
 extern u16 data_02060500;
 extern void SNDi_BroadcastChannelOp(int arg0);
 extern void PlaySoundEffect(u32 a, u32 b);
@@ -31,7 +31,7 @@ BOOL UpdatePanelActivation(void)
         PlaySoundEffect(0, 2);
         panel->pendingSoundReset = 0;
     }
-    if (data_0205fdc4 == 0) {
+    if (gPanelEnabled == 0) {
         if (panel->active != 0) {
             ResetPanelFieldB8AndNotify();
         }
