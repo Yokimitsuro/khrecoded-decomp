@@ -26,11 +26,11 @@ extern void NNS_GfdSetFrmTexVramState(const NNSGfdFrmTexVramState *state);
 extern void NNS_GfdSetFrmPlttVramState(const PlttVramState *state);
 extern void Obj_ConditionalShutdown(ActorSlot *slot, u16 index);
 extern void OS_Terminate(void);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 void PopVramState(void)
 {
-    ActorRegistry *registry = data_0206083c;
+    ActorRegistry *registry = gActorRegistry;
     int i;
 
     if (registry->vramStateDepth == 0) {

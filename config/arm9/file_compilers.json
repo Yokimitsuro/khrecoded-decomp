@@ -2269,5 +2269,20 @@
   "src/calls/AcquireOrRefreshResourceBlock.c": "dsi/1.1",
   "src/calls/OpenAndClassifyFile.c": "dsi/1.1",
   "src/calls/Ov105_ClearSharedRequestBit.c": "dsi/1.1",
-  "src/calls/CTRDGi_HasValidModuleInfo.c": "dsi/1.1"
+  "src/calls/CTRDGi_HasValidModuleInfo.c": "dsi/1.1",
+  "src/calls/InitVBlankInterrupt.c": "dsi/1.1",
+  "src/calls/GetDispersionBeaconPeriod.c": "dsi/1.1",
+  "src/calls/GetDispersionScanPeriod.c": "dsi/1.1",
+  "src/calls/InitSceneSystem.c": "dsi/1.1",
+  "src/calls/QuadTree_ReinsertNodeIfFlagSet.c": "dsi/1.1",
+  "src/calls/GetActorRegistry.c": "dsi/1.1",
+  "src/calls/ActorRegistry_GetEntityByIndex.c": "dsi/1.1",
+  "src/calls/ActorRegistry_ClearCollisionResult.c": "dsi/1.1",
+  "src/calls/ActorSlot_GetFlagsByIndex.c": "dsi/1.1",
+  "src/calls/ActorSlot_SetField1C4ByIndex.c": "dsi/1.1",
+  "src/calls/ActorSlot_GetField1C4ByIndex.c": "dsi/1.1",
+  "src/calls/ActorSlot_GetByIndex.c": "dsi/1.1",
+  "src/calls/ActorSlot_AddPriorityByIndex.c": "dsi/1.1",
+  "src/calls/ActorRegistry_RegisterSlot.c": "dsi/1.1",
+  "src/calls/ActorRegistry_UnregisterSlot.c": "dsi/1.1"
 }

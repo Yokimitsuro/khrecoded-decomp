@@ -11,11 +11,11 @@ typedef struct CollisionWorld {
     NamedEntry *namedEntries;
 } CollisionWorld;
 
-extern CollisionWorld *data_0206083c;
+extern CollisionWorld *gActorRegistry;
 
 void SetWorldNamedEntryValue(int index, const u32 *value)
 {
-    NamedEntry *entries = data_0206083c->namedEntries;
+    NamedEntry *entries = gActorRegistry->namedEntries;
     if (entries != NULL) {
         entries[index].value = *value;
     }

@@ -13,10 +13,10 @@ typedef struct CollisionWorld {
 } CollisionWorld;
 
 extern void *NNSi_FndAllocFromDefaultHeap(u32 size);
-extern CollisionWorld *data_0206083c;
+extern CollisionWorld *gActorRegistry;
 
 void AllocWorldNamedEntries(int count)
 {
-    data_0206083c->namedEntries = NNSi_FndAllocFromDefaultHeap(count * sizeof(NamedEntry));
-    data_0206083c->namedEntryCount = count;
+    gActorRegistry->namedEntries = NNSi_FndAllocFromDefaultHeap(count * sizeof(NamedEntry));
+    gActorRegistry->namedEntryCount = count;
 }

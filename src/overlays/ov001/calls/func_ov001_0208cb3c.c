@@ -15,7 +15,7 @@ typedef struct Ov023RampCmd {
 
 extern int   ScriptVm_ReadOperandInt(void *pCtx, Ov023Operand *pOperand);
 extern int   ScriptVm_ReadOperandFx32(void *pCtx, Ov023Operand *pOperand);
-extern void *func_02036254(u16 nEntity);
+extern void *ActorRegistry_GetEntityByIndex(u16 nEntity);
 extern void  SetWorldObjectProbeSphere(u16 nEntity, int bEnable, int nDuration);
 extern int   EvaluateInterpolationCurve(int nMode, int nTotal, int nRemaining);
 extern int   ScaleAroundPivot(int nFactor, int nFrom, int nTo);
@@ -32,7 +32,7 @@ int func_ov001_0208cb3c(void *pCtx, Ov023RampCmd *pCmd)
     nFrames = ScriptVm_ReadOperandInt(pCtx, &pCmd->aOperand[3]);
     nFrom = ScriptVm_ReadOperandFx32(pCtx, &pCmd->aOperand[1]);
     nTo = ScriptVm_ReadOperandFx32(pCtx, &pCmd->aOperand[2]);
-    func_02036254((u16)nActor);
+    ActorRegistry_GetEntityByIndex((u16)nActor);
     pCmd->nRemaining--;
     if (pCmd->nRemaining == 0) {
         SetWorldObjectProbeSphere((u16)nActor, 1, nTo);

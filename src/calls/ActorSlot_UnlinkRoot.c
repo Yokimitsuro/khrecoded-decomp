@@ -11,7 +11,7 @@ typedef struct {
     ActorSlot *rootHead;
 } ActorRegistry;
 
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 void ActorSlot_UnlinkRoot(ActorSlot *slot)
 {
@@ -21,7 +21,7 @@ void ActorSlot_UnlinkRoot(ActorSlot *slot)
         return;
     }
     slot->flags &= 0xfff5;
-    registry = data_0206083c;
+    registry = gActorRegistry;
     if (slot->next != NULL) {
         slot->next->prev = slot->prev;
     }

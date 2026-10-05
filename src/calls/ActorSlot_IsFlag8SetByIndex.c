@@ -8,9 +8,9 @@ typedef struct {
 } ActorRegistry;
 
 extern BOOL Container_HasFlag3(ActorSlot *slot);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 BOOL ActorSlot_IsFlag8SetByIndex(int index)
 {
-    return Container_HasFlag3(data_0206083c->slots[index]);
+    return Container_HasFlag3(gActorRegistry->slots[index]);
 }

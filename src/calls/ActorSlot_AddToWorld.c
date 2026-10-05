@@ -12,10 +12,10 @@ typedef struct {
 } ActorSlot;
 
 extern void Obj_PlaceInWorld(ActorRegistry *registry, void *entity, VecFx32 *position);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 void ActorSlot_AddToWorld(ActorSlot *slot)
 {
-    Obj_PlaceInWorld(data_0206083c, slot->entity, &slot->position);
+    Obj_PlaceInWorld(gActorRegistry, slot->entity, &slot->position);
     slot->flags |= 0x100;
 }

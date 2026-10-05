@@ -16,11 +16,11 @@ typedef struct CollisionWorld {
     MeshData **meshes;
 } CollisionWorld;
 
-extern CollisionWorld *data_0206083c;
+extern CollisionWorld *gActorRegistry;
 
 MeshNamedEntry *GetWorldMeshNamedEntry(int index)
 {
-    MeshData *mesh = data_0206083c->meshes[0];
+    MeshData *mesh = gActorRegistry->meshes[0];
     if (index == 0xff) {
         return NULL;
     }

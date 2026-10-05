@@ -19,7 +19,7 @@ typedef struct {
 
 extern void attach_child_object(void *child, void *parent, void *initializationData);
 extern void Obj_RemoveFromQuadTree(void *entity);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 static inline void RemoveFromList(ActorSlot *slot, ActorSlot **head, ActorSlot **tail)
 {
@@ -49,9 +49,9 @@ void ActorSlot_Unlink(ActorSlot *slot)
     }
     Obj_RemoveFromQuadTree(slot->actor);
     if (slot->flags & 0x20) {
-        RemoveFromList(slot, &data_0206083c->secondaryHead, &data_0206083c->secondaryTail);
+        RemoveFromList(slot, &gActorRegistry->secondaryHead, &gActorRegistry->secondaryTail);
     } else {
-        RemoveFromList(slot, &data_0206083c->primaryHead, &data_0206083c->primaryTail);
+        RemoveFromList(slot, &gActorRegistry->primaryHead, &gActorRegistry->primaryTail);
     }
     slot->flags &= 0xfef5;
 }

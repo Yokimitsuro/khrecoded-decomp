@@ -10,10 +10,10 @@ typedef struct {
 } ActorSlot;
 
 extern u32 Obj_UpdateQuadTreeLink(ActorRegistry *registry, void *entity, fx32 frameStep);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 void ActorSlot_AdvanceAnimation(ActorSlot *slot, fx32 frameStep)
 {
-    Obj_UpdateQuadTreeLink(data_0206083c, slot->entity,
+    Obj_UpdateQuadTreeLink(gActorRegistry, slot->entity,
                                     (fx32)(((s64)frameStep * slot->animSpeed + 0x800) >> 12));
 }

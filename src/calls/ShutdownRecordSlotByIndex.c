@@ -8,9 +8,9 @@ typedef struct {
 } Container;
 
 extern void Obj_ConditionalShutdown(Container *obj, int arg);
-extern u8 *data_0206083c;
+extern u8 *gActorRegistry;
 
 void ShutdownRecordSlotByIndex(int index) {
-    Container **slots = (Container **)(data_0206083c + 0x20);
+    Container **slots = (Container **)(gActorRegistry + 0x20);
     Obj_ConditionalShutdown(slots[index], index);
 }

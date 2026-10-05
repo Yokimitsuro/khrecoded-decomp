@@ -8,9 +8,9 @@ typedef struct {
 } ActorRegistry;
 
 extern ActorSlot *Obj_SetWord1CC(ActorSlot *slot, u32 value);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 ActorSlot *ActorSlot_SetField1CCByIndex(int index, u32 value)
 {
-    return Obj_SetWord1CC(data_0206083c->slots[index], value);
+    return Obj_SetWord1CC(gActorRegistry->slots[index], value);
 }

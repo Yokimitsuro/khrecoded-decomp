@@ -15,11 +15,11 @@ typedef struct CollisionWorld {
 } CollisionWorld;
 
 extern MeshNamedEntry *func_020338d4(MeshData *mesh, const char *name);
-extern CollisionWorld *data_0206083c;
+extern CollisionWorld *gActorRegistry;
 
 void SetWorldMeshEntryValueByName(const char *name, const u32 *value)
 {
-    CollisionWorld *world = data_0206083c;
+    CollisionWorld *world = gActorRegistry;
     int meshIndex;
 
     for (meshIndex = 0; meshIndex < world->meshCount; meshIndex++) {

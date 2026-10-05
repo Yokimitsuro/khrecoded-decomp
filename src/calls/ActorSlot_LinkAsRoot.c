@@ -11,7 +11,7 @@ typedef struct {
     ActorSlot *rootHead;
 } ActorRegistry;
 
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 void ActorSlot_LinkAsRoot(ActorSlot *slot)
 {
@@ -22,7 +22,7 @@ void ActorSlot_LinkAsRoot(ActorSlot *slot)
         return;
     }
     slot->flags |= 0xa;
-    registry = data_0206083c;
+    registry = gActorRegistry;
     head = registry->rootHead;
     if (head != NULL) {
         slot->next = head;

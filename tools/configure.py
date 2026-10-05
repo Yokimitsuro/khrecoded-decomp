@@ -38,6 +38,10 @@ ABSOLUTE_SYMBOLS = {
     "data_027ffff0": 0x027FFFF0,
     # Cartridge module information cached in the shared system work area.
     "data_02fffc30": 0x02FFFC30,
+    # Game state pointer stored in the shared system work area.
+    "gEngineState": 0x02FFFC20,
+    # VBlank counter mixed into wireless timing dispersion.
+    "gVBlankCount": 0x02FFFC3C,
     # Shared wireless request flags written by ARM7.
     "data_02ffff96": 0x02FFFF96,
 }

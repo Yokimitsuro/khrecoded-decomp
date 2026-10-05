@@ -112,6 +112,10 @@ src/calls/UnregisterChannelEntry.c:
     complete
     .text       start:0x02001044 end:0x020010e0
 
+src/calls/InitVBlankInterrupt.c:
+    complete
+    .text       start:0x020010e0 end:0x02001120
+
 src/calls/InvokeForChannelOrBoth.c:
     complete
     .text       start:0x02001120 end:0x02001168
@@ -2989,6 +2993,14 @@ src/calls/GetTransitionFrame.c:
     complete
     .text       start:0x020115c0 end:0x020115dc
 
+src/calls/GetDispersionBeaconPeriod.c:
+    complete
+    .text       start:0x020115dc end:0x02011624
+
+src/calls/GetDispersionScanPeriod.c:
+    complete
+    .text       start:0x02011624 end:0x0201166c
+
 src/calls/WM_GetNextTgid.c:
     complete
     .text       start:0x0201166c end:0x020116b0
@@ -5285,6 +5297,10 @@ src/calls/func_020254fc.c:
     complete
     .text       start:0x020254fc end:0x02025508
 
+src/calls/InitSceneSystem.c:
+    complete
+    .text       start:0x02025508 end:0x02025550
+
 src/calls/PanelState_NoOpE.c:
     complete
     .text       start:0x02025550 end:0x02025554
@@ -6793,7 +6809,7 @@ src/calls/UnlinkNodeFromList.c:
     complete
     .text       start:0x02033c00 end:0x02033c50
 
-src/calls/func_02033c50.c:
+src/calls/QuadTree_InsertObject.c:
     complete
     .text       start:0x02033c50 end:0x02033c74
 
@@ -6828,6 +6844,10 @@ src/calls/ResizeBoxCollisionObject.c:
 src/calls/Obj_IsWord40Zero.c:
     complete
     .text       start:0x02033f10 end:0x02033f24
+
+src/calls/QuadTree_ReinsertNodeIfFlagSet.c:
+    complete
+    .text       start:0x02033f24 end:0x02033f5c
 
 src/calls/SetCollisionObjectPosition.c:
     complete
@@ -7053,9 +7073,13 @@ src/calls/SetWorldObjectProbeSphere.c:
     complete
     .text       start:0x020361ac end:0x020361cc
 
-src/calls/func_02036244.c:
+src/calls/GetActorRegistry.c:
     complete
     .text       start:0x02036244 end:0x02036254
+
+src/calls/ActorRegistry_GetEntityByIndex.c:
+    complete
+    .text       start:0x02036254 end:0x02036270
 
 src/calls/GetWorldMeshNamedEntry.c:
     complete
@@ -7084,6 +7108,10 @@ src/calls/SetWorldMeshEntryDataByName.c:
 src/calls/SetWorldNamedEntryValue.c:
     complete
     .text       start:0x02036420 end:0x02036448
+
+src/calls/ActorRegistry_ClearCollisionResult.c:
+    complete
+    .text       start:0x02036448 end:0x02036460
 
 src/calls/ResetAndQueryWorldCollision.c:
     complete
@@ -7121,6 +7149,10 @@ src/calls/ProjectRecordPositionDownward.c:
     complete
     .text       start:0x02036578 end:0x0203659c
 
+src/calls/ActorSlot_GetFlagsByIndex.c:
+    complete
+    .text       start:0x0203659c end:0x020365b8
+
 src/calls/PushVramState.c:
     complete
     .text       start:0x020365b8 end:0x02036604
@@ -7148,6 +7180,30 @@ src/calls/func_020367c4.c:
 src/calls/func_020367d4.c:
     complete
     .text       start:0x020367d4 end:0x020367e4
+
+src/calls/ActorSlot_SetField1C4ByIndex.c:
+    complete
+    .text       start:0x020367e4 end:0x02036804
+
+src/calls/ActorSlot_GetField1C4ByIndex.c:
+    complete
+    .text       start:0x02036804 end:0x02036824
+
+src/calls/ActorSlot_GetByIndex.c:
+    complete
+    .text       start:0x02036824 end:0x0203683c
+
+src/calls/ActorSlot_AddPriorityByIndex.c:
+    complete
+    .text       start:0x0203683c end:0x02036864
+
+src/calls/ActorRegistry_RegisterSlot.c:
+    complete
+    .text       start:0x02036864 end:0x02036888
+
+src/calls/ActorRegistry_UnregisterSlot.c:
+    complete
+    .text       start:0x02036888 end:0x020368b8
 
 src/calls/ShutdownRecordSlotByIndex.c:
     complete

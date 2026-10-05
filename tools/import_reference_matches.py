@@ -167,11 +167,21 @@ def relocation_rewrites(item: dict, function: dict) -> dict[str, str]:
     source_relocs = source_relocations(item)
 
     eu_relocs = {int(offset): target for offset, target in function["relocs"]}
-    if set(eu_relocs) - set(source_relocs):
-        raise RuntimeError(
-            f"relocation offsets differ for {item['eu']['name']}: "
-            f"source={sorted(source_relocs)} eu={sorted(eu_relocs)}"
-        )
+    extra_eu_relocs = set(eu_relocs) - set(source_relocs)
+    if extra_eu_relocs:
+        trial = compiled_symbol_bytes(item)
+        address = item["eu"]["address"]
+        expected = ARM9_BIN.read_bytes()[
+            address - ARM9_BASE:address - ARM9_BASE + item["eu"]["size"]
+        ]
+        if any(
+            trial[offset:offset + 4] != expected[offset:offset + 4]
+            for offset in extra_eu_relocs
+        ):
+            raise RuntimeError(
+                f"relocation offsets differ for {item['eu']['name']}: "
+                f"source={sorted(source_relocs)} eu={sorted(eu_relocs)}"
+            )
 
     rewrites = {}
     for offset, source_name in source_relocs.items():

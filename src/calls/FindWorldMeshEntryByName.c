@@ -19,7 +19,7 @@ typedef struct CollisionWorld {
 } CollisionWorld;
 
 extern int strncmp(const unsigned char *s1, const unsigned char *s2, unsigned int n);
-extern CollisionWorld *data_0206083c;
+extern CollisionWorld *gActorRegistry;
 
 MeshNamedEntry *FindWorldMeshEntryByName(const char *name)
 {
@@ -31,10 +31,10 @@ MeshNamedEntry *FindWorldMeshEntryByName(const char *name)
     int meshCount;
     MeshData *mesh;
 
-    meshCount = data_0206083c->meshCount;
+    meshCount = gActorRegistry->meshCount;
     meshIndex = 0;
     if (meshCount > 0) {
-        meshes = data_0206083c->meshes;
+        meshes = gActorRegistry->meshes;
         do {
             mesh = meshes[meshIndex];
             if (mesh != NULL) {

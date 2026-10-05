@@ -31,7 +31,7 @@ AppendNodeToListTail kind:function(arm,size=0x34) addr:0x02000f14
 UnlinkNodeIrqSafe kind:function(arm,size=0x50) addr:0x02000f48
 RegisterChannelEntry kind:function(arm,size=0xac) addr:0x02000f98
 UnregisterChannelEntry kind:function(arm,size=0x9c) addr:0x02001044
-func_020010e0 kind:function(arm,size=0x40) addr:0x020010e0
+InitVBlankInterrupt kind:function(arm,size=0x40) addr:0x020010e0
 InvokeForChannelOrBoth kind:function(arm,size=0x48) addr:0x02001120
 NotifyBothOrOne kind:function(arm,size=0x40) addr:0x02001168
 func_020011a8 kind:function(arm,size=0x10) addr:0x020011a8
@@ -774,8 +774,8 @@ SetSlotEventHandler kind:function(thumb,size=0x94) addr:0x02011460
 WM_GetMPSendBufferSize kind:function(thumb,size=0x46) addr:0x020114f4
 WM_GetMPReceiveBufferSize kind:function(thumb,size=0x84) addr:0x0201153c
 GetTransitionFrame kind:function(thumb,size=0x1c) addr:0x020115c0
-func_020115dc kind:function(thumb,size=0x48) addr:0x020115dc
-func_02011624 kind:function(thumb,size=0x48) addr:0x02011624
+GetDispersionBeaconPeriod kind:function(thumb,size=0x48) addr:0x020115dc
+GetDispersionScanPeriod kind:function(thumb,size=0x48) addr:0x02011624
 WM_GetNextTgid kind:function(thumb,size=0x44) addr:0x0201166c
 FS_ReadFile_020116b0 kind:function(thumb,size=0xa) addr:0x020116b0
 WM_InitializeEx kind:function(thumb,size=0x3e) addr:0x020116bc
@@ -1421,7 +1421,7 @@ IsBusyCounterZero kind:function(thumb,size=0x18) addr:0x020254cc
 func_020254e4 kind:function(thumb,size=0xc) addr:0x020254e4
 func_020254f0 kind:function(thumb,size=0xc) addr:0x020254f0
 func_020254fc kind:function(thumb,size=0xc) addr:0x020254fc
-func_02025508 kind:function(arm,size=0x48) addr:0x02025508
+InitSceneSystem kind:function(arm,size=0x48) addr:0x02025508
 PanelState_NoOpE kind:function(arm,size=0x4) addr:0x02025550
 func_02025554 kind:function(arm,size=0x10) addr:0x02025554
 ResetSceneCtl kind:function(arm,size=0x20) addr:0x02025564
@@ -1868,9 +1868,9 @@ CopyShortTripleToIntTriple kind:function(arm,size=0x1c) addr:0x0203385c
 FindEntryByNameNoCase kind:function(arm,size=0x5c) addr:0x02033878
 func_020338d4 kind:function(arm,size=0x58) addr:0x020338d4
 ForEachFaceOnPoint kind:function(arm,size=0x178) addr:0x0203392c
-func_02033aa4 kind:function(arm,size=0x15c) addr:0x02033aa4
+QuadTree_Insert kind:function(arm,size=0x15c) addr:0x02033aa4
 UnlinkNodeFromList kind:function(arm,size=0x50) addr:0x02033c00
-func_02033c50 kind:function(arm,size=0x24) addr:0x02033c50
+QuadTree_InsertObject kind:function(arm,size=0x24) addr:0x02033c50
 QuadTree_RemoveObject kind:function(arm,size=0x1c) addr:0x02033c74
 InitCollisionObject kind:function(thumb,size=0x20) addr:0x02033c90
 InitCylinderCollisionObject kind:function(thumb,size=0x7c) addr:0x02033cb0
@@ -1879,7 +1879,7 @@ InitCapsuleCollisionObject kind:function(thumb,size=0x7c) addr:0x02033d68
 InitBoxCollisionObject kind:function(thumb,size=0x9c) addr:0x02033de4
 ResizeBoxCollisionObject kind:function(thumb,size=0x90) addr:0x02033e80
 Obj_IsWord40Zero kind:function(arm,size=0x14) addr:0x02033f10
-func_02033f24 kind:function(arm,size=0x38) addr:0x02033f24
+QuadTree_ReinsertNodeIfFlagSet kind:function(arm,size=0x38) addr:0x02033f24
 SetCollisionObjectPosition kind:function(arm,size=0x108) addr:0x02033f5c
 IndexedBytes_SetAt10 kind:function(arm,size=0xc) addr:0x02034064
 TestMoverAgainstTarget kind:function(thumb,size=0x42c) addr:0x02034070
@@ -1947,8 +1947,8 @@ ActorSlot_IsFlag8SetByIndex kind:function(arm,size=0x20) addr:0x02036178
 Container_HasFlag3 kind:function(arm,size=0x14) addr:0x02036198
 SetWorldObjectProbeSphere kind:function(arm,size=0x20) addr:0x020361ac
 func_020361cc kind:function(arm,size=0x78) addr:0x020361cc
-func_02036244 kind:function(arm,size=0x10) addr:0x02036244
-func_02036254 kind:function(arm,size=0x1c) addr:0x02036254
+GetActorRegistry kind:function(arm,size=0x10) addr:0x02036244
+ActorRegistry_GetEntityByIndex kind:function(arm,size=0x1c) addr:0x02036254
 GetWorldMeshNamedEntry kind:function(arm,size=0x2c) addr:0x02036270
 FindWorldMeshEntryByName kind:function(arm,size=0x88) addr:0x0203629c
 AllocWorldNamedEntries kind:function(thumb,size=0x24) addr:0x02036324
@@ -1956,7 +1956,7 @@ GetWorldNamedEntry kind:function(arm,size=0x34) addr:0x02036348
 SetWorldMeshEntryValueByName kind:function(thumb,size=0x3c) addr:0x0203637c
 SetWorldMeshEntryDataByName kind:function(thumb,size=0x68) addr:0x020363b8
 SetWorldNamedEntryValue kind:function(arm,size=0x28) addr:0x02036420
-func_02036448 kind:function(arm,size=0x18) addr:0x02036448
+ActorRegistry_ClearCollisionResult kind:function(arm,size=0x18) addr:0x02036448
 ResetAndQueryWorldCollision kind:function(arm,size=0x1c) addr:0x02036460
 QueryWorldModelCollision kind:function(arm,size=0x1c) addr:0x0203647c
 QueryWorldMotionCollision kind:function(arm,size=0x1c) addr:0x02036498
@@ -1966,7 +1966,7 @@ TestQueryAgainstWorldMeshes kind:function(arm,size=0x1c) addr:0x020364ec
 GetActorRecord kind:function(arm,size=0x54) addr:0x02036508
 FindWorldCollisionEntry kind:function(arm,size=0x1c) addr:0x0203655c
 ProjectRecordPositionDownward kind:function(arm,size=0x24) addr:0x02036578
-func_0203659c kind:function(arm,size=0x1c) addr:0x0203659c
+ActorSlot_GetFlagsByIndex kind:function(arm,size=0x1c) addr:0x0203659c
 PushVramState kind:function(thumb,size=0x4c) addr:0x020365b8
 PopVramState kind:function(thumb,size=0x7c) addr:0x02036604
 ShutdownAllActorSlots kind:function(thumb,size=0x8c) addr:0x02036680
@@ -1975,12 +1975,12 @@ ActorSlot_LinkAsRoot kind:function(arm,size=0x38) addr:0x02036724
 ActorSlot_UnlinkRoot kind:function(arm,size=0x68) addr:0x0203675c
 func_020367c4 kind:function(arm,size=0x10) addr:0x020367c4
 func_020367d4 kind:function(arm,size=0x10) addr:0x020367d4
-func_020367e4 kind:function(arm,size=0x20) addr:0x020367e4
-func_02036804 kind:function(arm,size=0x20) addr:0x02036804
-func_02036824 kind:function(arm,size=0x18) addr:0x02036824
-func_0203683c kind:function(arm,size=0x28) addr:0x0203683c
-func_02036864 kind:function(arm,size=0x24) addr:0x02036864
-func_02036888 kind:function(arm,size=0x30) addr:0x02036888
+ActorSlot_SetField1C4ByIndex kind:function(arm,size=0x20) addr:0x020367e4
+ActorSlot_GetField1C4ByIndex kind:function(arm,size=0x20) addr:0x02036804
+ActorSlot_GetByIndex kind:function(arm,size=0x18) addr:0x02036824
+ActorSlot_AddPriorityByIndex kind:function(arm,size=0x28) addr:0x0203683c
+ActorRegistry_RegisterSlot kind:function(arm,size=0x24) addr:0x02036864
+ActorRegistry_UnregisterSlot kind:function(arm,size=0x30) addr:0x02036888
 ShutdownRecordSlotByIndex kind:function(arm,size=0x24) addr:0x020368b8
 Obj_ConditionalShutdown kind:function(arm,size=0x5c) addr:0x020368dc
 TransitionRecordSlot kind:function(arm,size=0x20) addr:0x02036938
@@ -3020,7 +3020,7 @@ data_0206076c kind:bss addr:0x0206076c
 data_02060770 kind:bss addr:0x02060770
 data_02060780 kind:bss addr:0x02060780
 data_02060784 kind:bss addr:0x02060784
-data_0206083c kind:bss addr:0x0206083c
+gActorRegistry kind:bss addr:0x0206083c
 data_02060840 kind:bss addr:0x02060840
 data_02060848 kind:bss addr:0x02060848
 data_0206084c kind:bss addr:0x0206084c
@@ -3045,5 +3045,7 @@ data_02060f23 kind:bss addr:0x02060f23
 data_02060f24 kind:bss addr:0x02060f24
 data_020613cc kind:bss addr:0x020613cc
 data_020613d0 kind:bss addr:0x020613d0
+gEngineState kind:data(any) addr:0x02fffc20
 data_02fffc30 kind:data(any) addr:0x02fffc30
+gVBlankCount kind:data(any) addr:0x02fffc3c
 data_02ffff96 kind:data(any) addr:0x02ffff96

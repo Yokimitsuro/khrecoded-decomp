@@ -155,7 +155,7 @@ typedef struct CollQuery {
     Callback filter;
 } CollQuery;
 
-extern void *func_02036244(void);
+extern void *GetActorRegistry(void);
 extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
@@ -376,7 +376,7 @@ void MoveActorAndSnapToGround(VecFx32 *pos, VecFx32 *vel, CollActor *actor, u32 
     fx32 distance;
     BOOL commit;
 
-    world = func_02036244();
+    world = GetActorRegistry();
     state = MakeContactState(actor, &hitContext, world, flags);
     contextRef = MakeContextRef(&hitContext, 2);
     savedPos = *pos;

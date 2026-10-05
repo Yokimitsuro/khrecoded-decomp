@@ -8,9 +8,9 @@ typedef struct {
 } ActorRegistry;
 
 extern void ActorSlot_Unlink(ActorSlot *slot);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 void ActorSlot_UnlinkByIndex(int index)
 {
-    ActorSlot_Unlink(data_0206083c->slots[index]);
+    ActorSlot_Unlink(gActorRegistry->slots[index]);
 }

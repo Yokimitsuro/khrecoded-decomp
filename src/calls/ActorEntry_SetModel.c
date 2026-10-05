@@ -16,7 +16,7 @@ typedef struct ActorRegistry {
 
 extern void func_020357ec(int slot, ActorEntry *entry, u16 group, const u8 *attributes, const void *shape, BOOL flag20, s8 priority);
 extern BOOL Obj_SetModel(void *object, s32 resource, s32 source, u32 extra);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 BOOL ActorEntry_SetModel(ActorEntry *entry, s32 resource, s32 source, u32 extra)
 {
@@ -24,7 +24,7 @@ BOOL ActorEntry_SetModel(ActorEntry *entry, s32 resource, s32 source, u32 extra)
         func_020357ec(0xffff, entry, 0, NULL, NULL, TRUE, 0x20);
     }
     if (Obj_SetModel(entry->object, resource, source, extra)) {
-        entry->registryTag = data_0206083c->currentTag;
+        entry->registryTag = gActorRegistry->currentTag;
         entry->flags |= 4;
         entry->modelExtra = extra;
         return TRUE;

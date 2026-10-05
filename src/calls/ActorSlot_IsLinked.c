@@ -8,9 +8,9 @@ typedef struct {
 } ActorRegistry;
 
 extern BOOL Container_HasFlag1(ActorSlot *slot);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 BOOL ActorSlot_IsLinked(int index)
 {
-    return Container_HasFlag1(data_0206083c->slots[index]);
+    return Container_HasFlag1(gActorRegistry->slots[index]);
 }

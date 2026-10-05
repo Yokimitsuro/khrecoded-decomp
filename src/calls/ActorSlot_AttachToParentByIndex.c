@@ -8,10 +8,10 @@ typedef struct {
 } ActorRegistry;
 
 extern void func_02035b88(ActorSlot *child, ActorSlot *parent, void *initializationData);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 void ActorSlot_AttachToParentByIndex(int childIndex, int parentIndex, void *initializationData)
 {
-    func_02035b88(data_0206083c->slots[childIndex],
-                                      data_0206083c->slots[parentIndex], initializationData);
+    func_02035b88(gActorRegistry->slots[childIndex],
+                                      gActorRegistry->slots[parentIndex], initializationData);
 }

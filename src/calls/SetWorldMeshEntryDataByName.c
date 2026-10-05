@@ -19,11 +19,11 @@ typedef struct CollisionWorld {
 
 extern MeshNamedEntry *func_020338d4(MeshData *mesh, const char *name);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
-extern CollisionWorld *data_0206083c;
+extern CollisionWorld *gActorRegistry;
 
 void SetWorldMeshEntryDataByName(const char *name, const void *src, u32 size)
 {
-    CollisionWorld *world = data_0206083c;
+    CollisionWorld *world = gActorRegistry;
     int meshIndex;
 
     for (meshIndex = 0; meshIndex < world->meshCount; meshIndex++) {
@@ -31,8 +31,8 @@ void SetWorldMeshEntryDataByName(const char *name, const void *src, u32 size)
         if (mesh != NULL) {
             MeshNamedEntry *entry = func_020338d4(mesh, name);
             if (entry != NULL) {
-                u8 *dest = &data_0206083c->dataPool[data_0206083c->dataPoolUsed];
-                data_0206083c->dataPoolUsed += size;
+                u8 *dest = &gActorRegistry->dataPool[gActorRegistry->dataPoolUsed];
+                gActorRegistry->dataPoolUsed += size;
                 MI_CpuCopy8(src, dest, size);
                 entry->data = dest;
                 return;

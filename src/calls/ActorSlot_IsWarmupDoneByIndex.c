@@ -12,12 +12,12 @@ typedef struct {
     ActorSlot *slots[1];
 } ActorRegistry;
 
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 BOOL ActorSlot_IsWarmupDoneByIndex(int index)
 {
     BOOL warmingUp = FALSE;
-    ActorSlot *slot = data_0206083c->slots[index];
+    ActorSlot *slot = gActorRegistry->slots[index];
 
     if ((slot->flags & 0x1000) && slot->warmupTimer < 15) {
         warmingUp = TRUE;

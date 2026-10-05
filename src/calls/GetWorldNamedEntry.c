@@ -11,12 +11,12 @@ typedef struct CollisionWorld {
     NamedEntry *namedEntries;
 } CollisionWorld;
 
-extern CollisionWorld *data_0206083c;
+extern CollisionWorld *gActorRegistry;
 
 NamedEntry *GetWorldNamedEntry(int index)
 {
     BOOL invalid = TRUE;
-    NamedEntry *entries = data_0206083c->namedEntries;
+    NamedEntry *entries = gActorRegistry->namedEntries;
     if (entries != NULL && index != 0xff) {
         invalid = FALSE;
     }

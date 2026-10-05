@@ -7,14 +7,14 @@ typedef struct {
     u32 sub;
 } Container;
 
-extern void func_02036888(Container *obj, u16 arg);
+extern void ActorRegistry_UnregisterSlot(Container *obj, u16 arg);
 extern void func_020359c4(Container *obj);
 extern void ActorSlot_Unlink(Container *obj);
 extern void Obj_ShutdownBase(void *entity);
 
 void Obj_ConditionalShutdown(Container *obj, u16 arg) {
     if (obj->flags & 0x80) {
-        func_02036888(obj, arg);
+        ActorRegistry_UnregisterSlot(obj, arg);
     }
     if (obj->flags & 0x40) {
         return;

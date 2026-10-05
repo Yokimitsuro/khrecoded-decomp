@@ -9,10 +9,10 @@ typedef struct {
 
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
 extern void FreeRecordArrayAndReset(void *table);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 BOOL ShutdownActorRegistry(void) {
-    ActorRegistry *table = data_0206083c;
+    ActorRegistry *table = gActorRegistry;
     if (table != NULL) {
         if (table->field_820 != NULL) {
             NNSi_FndFreeFromDefaultHeap(table->field_820);
@@ -23,7 +23,7 @@ BOOL ShutdownActorRegistry(void) {
             NNSi_FndFreeFromDefaultHeap(table->field_08);
         }
         NNSi_FndFreeFromDefaultHeap(table);
-        data_0206083c = NULL;
+        gActorRegistry = NULL;
     }
     return TRUE;
 }

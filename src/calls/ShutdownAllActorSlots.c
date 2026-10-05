@@ -26,11 +26,11 @@ extern void ActorSlot_UnlinkByIndex(u16 index);
 extern void Obj_ShutdownBase(void *entity);
 extern void FreeRecordArrayAndReset(ActorRegistry *registry);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 void ShutdownAllActorSlots(void)
 {
-    ActorRegistry *registry = data_0206083c;
+    ActorRegistry *registry = gActorRegistry;
     int i;
 
     for (i = 0; i < 0x200; i++) {
@@ -40,7 +40,7 @@ void ShutdownAllActorSlots(void)
             if (slot->flags & 2) {
                 ActorSlot_UnlinkByIndex(i);
             }
-            Obj_ShutdownBase(data_0206083c->slots[i]->entity);
+            Obj_ShutdownBase(gActorRegistry->slots[i]->entity);
             slot->flags = 0;
             registry->slots[i] = NULL;
         }

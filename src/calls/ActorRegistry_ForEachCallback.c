@@ -17,18 +17,18 @@ typedef struct {
     ActorSlot *primaryTail;
 } ActorRegistry;
 
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 void ActorRegistry_ForEachCallback(void *argument)
 {
     ActorSlot *slot;
 
-    for (slot = data_0206083c->primaryHead; slot != NULL; slot = slot->next) {
+    for (slot = gActorRegistry->primaryHead; slot != NULL; slot = slot->next) {
         if (slot->callback != NULL) {
             slot->callback(slot, argument);
         }
     }
-    for (slot = data_0206083c->secondaryHead; slot != NULL; slot = slot->next) {
+    for (slot = gActorRegistry->secondaryHead; slot != NULL; slot = slot->next) {
         if (slot->callback != NULL) {
             slot->callback(slot, argument);
         }

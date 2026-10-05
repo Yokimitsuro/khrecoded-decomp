@@ -16,11 +16,11 @@ typedef struct {
 extern void NNS_GfdGetFrmTexVramState(NNSGfdFrmTexVramState *state);
 extern void NNS_GfdGetFrmPlttVramState(PlttVramState *state);
 extern void OS_Terminate(void);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 u8 PushVramState(void)
 {
-    ActorRegistry *registry = data_0206083c;
+    ActorRegistry *registry = gActorRegistry;
 
     if (registry->vramStateDepth < 16) {
         NNS_GfdGetFrmTexVramState(&registry->texStates[registry->vramStateDepth]);

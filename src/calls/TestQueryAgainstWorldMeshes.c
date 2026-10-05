@@ -3,9 +3,9 @@
 typedef struct CollisionWorld CollisionWorld;
 
 extern void TestQueryAgainstMeshList(CollisionWorld *world, void *params);
-extern CollisionWorld *data_0206083c;
+extern CollisionWorld *gActorRegistry;
 
 void TestQueryAgainstWorldMeshes(void *params)
 {
-    TestQueryAgainstMeshList(data_0206083c, params);
+    TestQueryAgainstMeshList(gActorRegistry, params);
 }

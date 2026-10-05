@@ -9,7 +9,7 @@ typedef struct {
 
 extern void func_020357ec(int a, void *entry, int b, int c, int d, int e, int f);
 extern int Obj_SetModelDirect(void *sub, u32 param2, u32 param3, u32 param4);
-extern u8 *data_0206083c;
+extern u8 *gActorRegistry;
 
 BOOL ActivateEntrySubobject(Entry *entry, u32 param2, u32 param3, u32 param4) {
     int ok;
@@ -18,7 +18,7 @@ BOOL ActivateEntrySubobject(Entry *entry, u32 param2, u32 param3, u32 param4) {
     }
     ok = Obj_SetModelDirect((u8 *)entry + 0x10, param2, param3, param4);
     if (ok != 0) {
-        entry->field_0b = data_0206083c[0xc2c];
+        entry->field_0b = gActorRegistry[0xc2c];
         entry->flags |= 4;
         entry->field_0a = (u8)param4;
         return TRUE;

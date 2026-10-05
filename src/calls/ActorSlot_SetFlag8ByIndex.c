@@ -8,9 +8,9 @@ typedef struct {
 } ActorRegistry;
 
 extern void func_02036154(ActorSlot *slot, BOOL enable);
-extern ActorRegistry *data_0206083c;
+extern ActorRegistry *gActorRegistry;
 
 void ActorSlot_SetFlag8ByIndex(int index, BOOL enable)
 {
-    func_02036154(data_0206083c->slots[index], enable);
+    func_02036154(gActorRegistry->slots[index], enable);
 }

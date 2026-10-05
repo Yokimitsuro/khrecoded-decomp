@@ -38,6 +38,10 @@ def disassemble(data: bytes, address: int, mode: str) -> list[str]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("symbol")
+    parser.add_argument(
+        "--built", action="store_true",
+        help="compare against the currently linked ARM9 instead of the reference trial",
+    )
     args = parser.parse_args()
 
     results = json.loads(RESULTS.read_text(encoding="utf-8"))
@@ -46,16 +50,22 @@ def main() -> None:
     size = item["eu"]["size"]
     mode = item["eu"]["mode"]
     original = ARM9.read_bytes()[address - ARM9_BASE:address - ARM9_BASE + size]
-    trial = object_symbol(
-        TRIALS / f"{item['ordinal']:04d}.o", item["match"]["source_symbol"]
-    )
+    if args.built:
+        built = (ROOT / "build" / "build" / "arm9.bin").read_bytes()
+        trial = built[address - ARM9_BASE:address - ARM9_BASE + size]
+        trial_label = "CURRENT BUILD"
+    else:
+        trial = object_symbol(
+            TRIALS / f"{item['ordinal']:04d}.o", item["match"]["source_symbol"]
+        )
+        trial_label = "REFERENCE TRIAL"
 
     expected_lines = disassemble(original, address, mode)
     trial_lines = disassemble(trial, address, mode)
     width = max((len(line) for line in expected_lines), default=0)
     print(f"{args.symbol}: expected {size} bytes, trial {len(trial)} bytes")
     print(f"reference: {item['match']['source']} ({item['match']['source_symbol']})")
-    print(f"{'EU ROM':<{width}} | REFERENCE TRIAL")
+    print(f"{'EU ROM':<{width}} | {trial_label}")
     for index in range(max(len(expected_lines), len(trial_lines))):
         left = expected_lines[index] if index < len(expected_lines) else ""
         right = trial_lines[index] if index < len(trial_lines) else ""

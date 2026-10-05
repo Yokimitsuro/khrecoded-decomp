@@ -10,7 +10,7 @@ extern void GX_DispOff(void);
 extern void SetBrightnessAndSyncMain(int value);
 extern void SetSecondaryBrightness(int value);
 extern void *NNS_GfdInitVramTransferManager(int a, int b);
-extern void func_020010e0(void);
+extern void InitVBlankInterrupt(void);
 extern unsigned int OS_EnableIrqMask(unsigned int mask);
 extern void InitEngineHeaps(int oldIme);
 extern void ClearVideoMemory(void);
@@ -42,7 +42,7 @@ void InitEngine(void)
     SetBrightnessAndSyncMain(0x10);
     SetSecondaryBrightness(0x10);
     NNS_GfdInitVramTransferManager((int)&data_02060088, 0x30);
-    func_020010e0();
+    InitVBlankInterrupt();
     OS_EnableIrqMask(0x40000);
     oldIme = *ime;
     *ime = 1;

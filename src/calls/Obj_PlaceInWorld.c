@@ -21,7 +21,7 @@ typedef struct World {
 } World;
 
 extern void SetCollisionObjectPosition(SpatialNode *node, const VecFx32 *position);
-extern void func_02033c50(void *tree, SpatialNode *node);
+extern void QuadTree_InsertObject(void *tree, SpatialNode *node);
 
 void Obj_PlaceInWorld(World *world, Entity *entity, const VecFx32 *position)
 {
@@ -34,7 +34,7 @@ void Obj_PlaceInWorld(World *world, Entity *entity, const VecFx32 *position)
     }
     if ((entity->flags & 0x10) == 0) {
         SetCollisionObjectPosition(&entity->node, position);
-        func_02033c50(*world->tree, &entity->node);
+        QuadTree_InsertObject(*world->tree, &entity->node);
     }
     if ((entity->flags & 0x20) == 0) {
         entity->position = *position;
