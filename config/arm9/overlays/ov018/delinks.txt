@@ -14,3 +14,7 @@ src/overlays/ov018/auto/func_ov018_020a31b4.c:
 src/overlays/ov018/data/strings/Strings_ov018_020a3870.c:
     complete
     .data       start:0x020a3870 end:0x020a3880
+
+src/overlays/ov018/data/tables/gScriptObjectCreationHandlers.c:
+    complete
+    .data       start:0x020a3860 end:0x020a3870

@@ -37,4 +37,4 @@ data_ov006_020a185c kind:data(any) addr:0x020a185c
 data_ov006_020a1864 kind:data(any) addr:0x020a1864
 data_ov006_020a1874 kind:data(any) addr:0x020a1874
 data_ov006_020a1884 kind:data(any) addr:0x020a1884
-data_ov006_020a18e0 kind:data(any) addr:0x020a18e0
+gOv006Handlers kind:data(any) addr:0x020a18e0

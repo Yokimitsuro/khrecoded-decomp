@@ -22,3 +22,7 @@ src/overlays/ov033/calls/func_ov033_020ba9d8.c:
 src/overlays/ov033/calls/func_ov033_020baa60.c:
     complete
     .text       start:0x020baa60 end:0x020baa6c
+
+src/overlays/ov033/data/tables/gResumeModeHandlers.c:
+    complete
+    .data       start:0x020baaa4 end:0x020baab4

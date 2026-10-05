@@ -27,3 +27,7 @@ src/overlays/ov052/data/strings/Strings_ov052_020d21b0.c:
 src/overlays/ov052/data/strings/Strings_ov052_020d21c4.c:
     complete
     .data       start:0x020d21c4 end:0x020d21e0
+
+src/overlays/ov052/data/tables/gWeaponAttachmentBoneNames.c:
+    complete
+    .data       start:0x020d218c end:0x020d219c

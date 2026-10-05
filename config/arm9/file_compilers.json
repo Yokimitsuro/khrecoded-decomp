@@ -1289,5 +1289,11 @@
   "src/overlays/ov005/data/tables/gOv005HandlerTable.c": "dsi/1.1",
   "src/overlays/ov012/data/tables/gDefaultStepHandler.c": "dsi/1.1",
   "src/overlays/ov025/data/tables/gSubBgScreenLoaders.c": "dsi/1.1",
-  "src/overlays/ov101/data/tables/gOv101Callbacks.c": "dsi/1.1"
+  "src/overlays/ov101/data/tables/gOv101Callbacks.c": "dsi/1.1",
+  "src/overlays/ov006/data/tables/gOv006Handlers.c": "dsi/1.1",
+  "src/overlays/ov018/data/tables/gScriptObjectCreationHandlers.c": "dsi/1.1",
+  "src/overlays/ov019/data/tables/gLinkedObjectCreationHandlers.c": "dsi/1.1",
+  "src/overlays/ov033/data/tables/gResumeModeHandlers.c": "dsi/1.1",
+  "src/overlays/ov052/data/tables/gWeaponAttachmentBoneNames.c": "dsi/1.1",
+  "src/overlays/ov059/data/tables/gBattleEffectPathParts.c": "dsi/1.1"
 }

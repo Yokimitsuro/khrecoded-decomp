@@ -153,7 +153,7 @@ sOv052_Root_020d2160 kind:data(any) addr:0x020d2160
 sOv052_Bip01_020d2168 kind:data(any) addr:0x020d2168
 sOv052_WeaponTg00_020d2170 kind:data(any) addr:0x020d2170
 sOv052_Bip01LHand_020d217c kind:data(any) addr:0x020d217c
-data_ov052_020d218c kind:data(any) addr:0x020d218c
+gWeaponAttachmentBoneNames kind:data(any) addr:0x020d218c
 sOv052_BaChFormatSMdlFormatDPZ_020d219c kind:data(any) addr:0x020d219c
 sOv052_BaChFormatSTexFormatDZ_020d21b0 kind:data(any) addr:0x020d21b0
 sOv052_FormatS_020d21c4 kind:data(any) addr:0x020d21c4

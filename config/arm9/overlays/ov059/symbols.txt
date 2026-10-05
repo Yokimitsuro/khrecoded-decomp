@@ -174,7 +174,7 @@ data_ov059_020cfe9c kind:data(any) addr:0x020cfe9c
 data_ov059_020cfed8 kind:data(any) addr:0x020cfed8
 sOv059_AbPZ_020cff00 kind:data(any) addr:0x020cff00
 sOv059_EtcPZ_020cff08 kind:data(any) addr:0x020cff08
-data_ov059_020cff10 kind:data(any) addr:0x020cff10
+gBattleEffectPathParts kind:data(any) addr:0x020cff10
 sOv059_ShootingPZ_020cff1c kind:data(any) addr:0x020cff1c
 sOv059_BaChFormatS_020cff2c kind:data(any) addr:0x020cff2c
 sOv059_BaChSoWd00_020cff38 kind:data(any) addr:0x020cff38

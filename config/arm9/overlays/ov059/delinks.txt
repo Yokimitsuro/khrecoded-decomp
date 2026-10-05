@@ -59,3 +59,7 @@ src/overlays/ov059/data/strings/Strings_ov059_020cff70.c:
 src/overlays/ov059/data/strings/Strings_ov059_020cff84.c:
     complete
     .data       start:0x020cff84 end:0x020cffc0
+
+src/overlays/ov059/data/tables/gBattleEffectPathParts.c:
+    complete
+    .data       start:0x020cff10 end:0x020cff1c
