@@ -29,6 +29,7 @@ typedef struct NNSSndResourceLocks {
 
 extern NNSSndGlobalState sSndGlobalState;
 extern NNSSndResourceLocks sSndResourceLocks;
+extern NNSFndList sSndFreePlayerList;
 extern NNSFndList sSndSeqPlayerList;
 extern NNSSndSeqPlayer sSndSeqPlayers[NNS_SND_PLAYER_COUNT];
 extern NNSSndPlayer sSndPlayers[NNS_SND_LOGICAL_PLAYER_COUNT];
