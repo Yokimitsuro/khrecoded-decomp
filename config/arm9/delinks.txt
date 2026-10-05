@@ -3877,6 +3877,10 @@ libs/nns/g3d/calls/NNS_G3dFreeAnmObj.c:
     complete
     .text       start:0x0201a3cc end:0x0201a3d8
 
+libs/nns/g3d/auto/NNSi_G3dModifyPolygonAttrMask.c:
+    complete
+    .text       start:0x0201a3d8 end:0x0201a480
+
 libs/nns/g3d/auto/NNS_G3dMdlSetMdlLightEnableFlag.c:
     complete
     .text       start:0x0201a480 end:0x0201a4f8
@@ -3896,6 +3900,22 @@ libs/nns/g3d/auto/NNS_G3dMdlSetMdlPolygonID.c:
 libs/nns/g3d/auto/NNS_G3dMdlSetMdlAlpha.c:
     complete
     .text       start:0x0201a660 end:0x0201a6d8
+
+libs/nns/g3d/auto/NNS_G3dMdlGetMdlLightEnableFlag.c:
+    complete
+    .text       start:0x0201a6d8 end:0x0201a744
+
+libs/nns/g3d/auto/NNS_G3dMdlGetMdlPolygonMode.c:
+    complete
+    .text       start:0x0201a744 end:0x0201a7b4
+
+libs/nns/g3d/auto/NNS_G3dMdlGetMdlPolygonID.c:
+    complete
+    .text       start:0x0201a7b4 end:0x0201a824
+
+libs/nns/g3d/auto/NNS_G3dMdlGetMdlAlpha.c:
+    complete
+    .text       start:0x0201a824 end:0x0201a894
 
 libs/nns/g3d/calls/NNS_G3dMdlSetMdlCullModeAll.c:
     complete
