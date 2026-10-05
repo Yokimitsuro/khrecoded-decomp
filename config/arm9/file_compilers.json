@@ -734,5 +734,12 @@
   "libs/nns/snd/calls/NNS_SndArcPlayerStartSeqArcEx.c": "dsi/1.1",
   "libs/nns/snd/calls/StartSeq.c": "dsi/1.1",
   "libs/nns/snd/calls/StartSeqArc.c": "dsi/1.1",
-  "libs/nns/snd/auto/NNSi_SndSeqArcGetSeqInfo.c": "dsi/1.1"
+  "libs/nns/snd/auto/NNSi_SndSeqArcGetSeqInfo.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcStrmInit.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcStrmSetupPlayer.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcStrmPrepare.c": "dsi/1.1",
+  "libs/nns/snd/auto/NNS_SndArcStrmStartPrepared.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcStrmStart.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcStrmStop.c": "dsi/1.1",
+  "libs/nns/snd/auto/Word_ClearB.c": "dsi/1.1"
 }

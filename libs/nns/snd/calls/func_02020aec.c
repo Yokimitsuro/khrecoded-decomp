@@ -565,7 +565,7 @@ typedef struct LoadCommand {
     void * buffer[6 ];
     u32 bufLen;
 } LoadCommand;
-extern NNSFndList data_0205e330;
+extern NNSFndList sFreeStreamCommandList;
 
 /* shared-bss */
 NNSSndStrmThread * sPrepareThread = 0;   /* sPrepareThread */
@@ -579,7 +579,7 @@ void func_02020aec (LoadCommand * command)
 
     old = OS_DisableInterrupts();
 
-    NNS_FndAppendListObject(&data_0205e330, command);
+    NNS_FndAppendListObject(&sFreeStreamCommandList, command);
 
     (void)OS_RestoreInterrupts(old);
 }

@@ -4617,19 +4617,31 @@ libs/nns/snd/calls/StartSeqArc.c:
     complete
     .text       start:0x0201ffc0 end:0x02020088
 
-libs/nns/snd/calls/func_02020254.c:
+libs/nns/snd/calls/NNS_SndArcStrmInit.c:
+    complete
+    .text       start:0x02020088 end:0x0202018c
+
+libs/nns/snd/calls/NNS_SndArcStrmSetupPlayer.c:
+    complete
+    .text       start:0x0202018c end:0x02020254
+
+libs/nns/snd/calls/NNS_SndArcStrmPrepare.c:
     complete
     .text       start:0x02020254 end:0x020202b0
 
-libs/nns/snd/calls/func_020202cc.c:
+libs/nns/snd/auto/NNS_SndArcStrmStartPrepared.c:
+    complete
+    .text       start:0x020202b0 end:0x020202cc
+
+libs/nns/snd/calls/NNS_SndArcStrmStart.c:
     complete
     .text       start:0x020202cc end:0x020202f4
 
-libs/nns/snd/calls/func_020202f4.c:
+libs/nns/snd/calls/NNS_SndArcStrmStop.c:
     complete
     .text       start:0x020202f4 end:0x02020310
 
-src/auto/func_02020310.c:
+libs/nns/snd/auto/Word_ClearB.c:
     complete
     .text       start:0x02020310 end:0x0202031c
 
