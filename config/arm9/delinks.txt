@@ -3929,6 +3929,10 @@ libs/nns/g3d/calls/NNS_G3dMdlSetMdlAlphaAll.c:
     complete
     .text       start:0x0201a914 end:0x0201a954
 
+libs/nns/g3d/auto/NNS_G3dGetResDictIdxByName.c:
+    complete
+    .text       start:0x0201ab10 end:0x0201ac74
+
 libs/nns/g3d/auto/NNS_G3dGetMdlSet.c:
     complete
     .text       start:0x0201ac74 end:0x0201ac84
@@ -4009,13 +4013,89 @@ libs/nns/g3d/auto/getRotDataByIdx_.c:
     complete
     .text       start:0x0201c1fc end:0x0201c364
 
-libs/nns/g3d/auto/func_0201c364.c:
+libs/nns/g3d/auto/GetMatColAnmuAlphaValue_.c:
     complete
     .text       start:0x0201c364 end:0x0201c450
 
-libs/nns/g3d/auto/func_0201c71c.c:
+libs/nns/g3d/calls/AnmObj_InitMatTable.c:
+    complete
+    .text       start:0x0201c450 end:0x0201c51c
+
+libs/nns/g3d/calls/NNSi_G3dAnmCalcNsBma.c:
+    complete
+    .text       start:0x0201c51c end:0x0201c628
+
+libs/nns/g3d/auto/GetTexSRTAnmVectorVal_.c:
+    complete
+    .text       start:0x0201c628 end:0x0201c71c
+
+libs/nns/g3d/auto/GetTexSRTAnmSinCosVal_.c:
     complete
     .text       start:0x0201c71c end:0x0201c828
+
+libs/nns/g3d/calls/GetTexSRTAnm_.c:
+    complete
+    .text       start:0x0201c828 end:0x0201c924
+
+libs/nns/g3d/calls/AnmObj_InitVisTable.c:
+    complete
+    .text       start:0x0201c924 end:0x0201c9f0
+
+libs/nns/g3d/calls/NNSi_G3dAnmCalcNsBta.c:
+    complete
+    .text       start:0x0201c9f0 end:0x0201ca50
+
+libs/nns/g3d/calls/NNSi_G3dAnmObjInitNsBtp.c:
+    complete
+    .text       start:0x0201ca50 end:0x0201cb20
+
+libs/nns/g3d/calls/SetTexParamaters_.c:
+    complete
+    .text       start:0x0201cb20 end:0x0201cbf8
+
+libs/nns/g3d/calls/SetPlttParamaters_.c:
+    complete
+    .text       start:0x0201cbf8 end:0x0201cc5c
+
+libs/nns/g3d/calls/NNSi_G3dAnmCalcNsBtp.c:
+    complete
+    .text       start:0x0201cc5c end:0x0201ccec
+
+libs/nns/g3d/calls/NNSi_G3dAnmObjInitNsBva.c:
+    complete
+    .text       start:0x0201ccec end:0x0201cd34
+
+libs/nns/g3d/auto/NNSi_G3dAnmCalcNsBva.c:
+    complete
+    .text       start:0x0201cd34 end:0x0201cd88
+
+libs/nns/g3d/calls/BuildTextureTransformB_.c:
+    complete
+    .text       start:0x0201cd88 end:0x0201ce8c
+
+libs/nns/g3d/calls/BuildTextureTransformE_.c:
+    complete
+    .text       start:0x0201ce8c end:0x0201cf64
+
+libs/nns/g3d/auto/BuildTextureTransformG_.c:
+    complete
+    .text       start:0x0201cf64 end:0x0201cfd8
+
+libs/nns/g3d/auto/BuildTextureTranslationMatrix_.c:
+    complete
+    .text       start:0x0201cfd8 end:0x0201d024
+
+libs/nns/g3d/calls/BuildTextureTransformC_.c:
+    complete
+    .text       start:0x0201d024 end:0x0201d118
+
+libs/nns/g3d/calls/BuildTextureTransformF_.c:
+    complete
+    .text       start:0x0201d118 end:0x0201d1e0
+
+libs/nns/g3d/auto/BuildTextureScaleMatrix_.c:
+    complete
+    .text       start:0x0201d1e0 end:0x0201d228
 
 libs/nns/snd/calls/NNS_SndMain.c:
     complete

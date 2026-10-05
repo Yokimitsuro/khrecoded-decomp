@@ -1,18 +1,7 @@
 #ifndef G3D_KERNEL_INTERNAL_H
 #define G3D_KERNEL_INTERNAL_H
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef short s16;
-typedef int s32;
-typedef int BOOL;
-typedef int fx32;
-typedef short fx16;
-
-#define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
+#include "nitro/types.h"
 
 #define NNS_G3D_ANMOBJ_MAPDATA_EXIST 0x0100
 #define NNS_G3D_RENDEROBJ_FLAG_HINT_OBSOLETE 0x00000010

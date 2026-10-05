@@ -18,9 +18,6 @@ typedef volatile unsigned char vu8;
 #define FALSE 0
 #define HW_MAIN_MEM 0x02000000
 
-
-
-
 typedef struct NNSG3dResDictTreeNode_ {
     u8 refBit;
     u8 idxLeft;
@@ -58,8 +55,7 @@ typedef struct NNSG3dResMatCAnm_ {
     NNSG3dResDict dict;
 } NNSG3dResMatCAnm;
 
-/* func_0201c364 -- NitroSystem nsbma.c: GetMatColAnmuAlphaValue_. */
-u16 func_0201c364 (const NNSG3dResMatCAnm * pAnm, u32 info, u32 frame)
+u16 GetMatColAnmuAlphaValue_ (const NNSG3dResMatCAnm * pAnm, u32 info, u32 frame)
 {
     const u8 * pDataHead;
     u32 last_interp;
