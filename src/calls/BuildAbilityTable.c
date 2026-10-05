@@ -43,7 +43,7 @@ extern BOOL func_02051e10(s32 slot);
 extern PartyRecord *GetRecordSlotPair0Entry(s32 index);
 extern ChipRecord *GetRecordSlotPair1Entry(s32 index);
 extern void ReleaseHandle(TaggedEntryTable *table);
-extern void *func_0204fe40(TaggedEntryTable *table, u32 id, int flag, u32 value);
+extern void *AddTaggedEntry(TaggedEntryTable *table, u32 id, int flag, u32 value);
 extern void WriteGlobalPackedBits(u32 bitOffset, u32 bitCount, u32 value);
 
 void BuildAbilityTable(TaggedEntryTable *table)
@@ -71,7 +71,7 @@ void BuildAbilityTable(TaggedEntryTable *table)
             if (count >= 100) {
                 count = 100;
             }
-            func_0204fe40(table, i, 1, count);
+            AddTaggedEntry(table, i, 1, count);
         }
     }
     for (i = 0; i < 4; i++) {
@@ -80,7 +80,7 @@ void BuildAbilityTable(TaggedEntryTable *table)
             if (count >= 100) {
                 count = 100;
             }
-            func_0204fe40(table, i + 5, 1, count);
+            AddTaggedEntry(table, i + 5, 1, count);
         }
     }
 
@@ -127,34 +127,34 @@ void BuildAbilityTable(TaggedEntryTable *table)
                     countH++;
                     break;
                 default:
-                    func_0204fe40(table, *chipIds, 1, 1);
+                    AddTaggedEntry(table, *chipIds, 1, 1);
                     break;
                 }
             }
         }
         if (countA != 0) {
-            func_0204fe40(table, 9, 1, countA);
+            AddTaggedEntry(table, 9, 1, countA);
         }
         if (countB != 0) {
-            func_0204fe40(table, 10, 1, countB);
+            AddTaggedEntry(table, 10, 1, countB);
         }
         if (countC != 0) {
-            func_0204fe40(table, 13, 1, countC);
+            AddTaggedEntry(table, 13, 1, countC);
         }
         if (countD != 0) {
-            func_0204fe40(table, 14, 1, countD);
+            AddTaggedEntry(table, 14, 1, countD);
         }
         if (countE != 0) {
-            func_0204fe40(table, 16, 1, countE);
+            AddTaggedEntry(table, 16, 1, countE);
         }
         if (countF != 0) {
-            func_0204fe40(table, 18, 1, countF);
+            AddTaggedEntry(table, 18, 1, countF);
         }
         if (countG != 0) {
-            func_0204fe40(table, 19, 1, countG);
+            AddTaggedEntry(table, 19, 1, countG);
         }
         if (countH != 0) {
-            func_0204fe40(table, 20, 1, countH);
+            AddTaggedEntry(table, 20, 1, countH);
         }
         WriteGlobalPackedBits(0x1a0f, 3, countA);
         func_02051e10(1);
@@ -169,7 +169,7 @@ void BuildAbilityTable(TaggedEntryTable *table)
                 int k;
                 for (k = 0; k < 4; k++) {
                     if (record->abilities[k].abilityId != -1) {
-                        func_0204fe40(table, record->abilities[k].abilityId, 1, 1);
+                        AddTaggedEntry(table, record->abilities[k].abilityId, 1, 1);
                     }
                 }
             }

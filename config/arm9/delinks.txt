@@ -6793,6 +6793,10 @@ src/calls/ReleaseResourceAndDetach.c:
     complete
     .text       start:0x0202eefc end:0x0202ef38
 
+src/calls/AdvanceAnimationTracks.c:
+    complete
+    .text       start:0x0202ef38 end:0x0202f048
+
 src/calls/BuildSlotMask.c:
     complete
     .text       start:0x0202f048 end:0x0202f0a4
@@ -7608,6 +7612,10 @@ src/calls/ModelAnimation_SampleJointTranslation.c:
 src/calls/ModelAnimation_BlendJointTranslation.c:
     complete
     .text       start:0x02039294 end:0x020393e8
+
+src/calls/ModelAnimation_SampleJointScale.c:
+    complete
+    .text       start:0x020393e8 end:0x020395bc
 
 src/calls/ModelAnimation_BlendJointScale.c:
     complete
@@ -9280,6 +9288,10 @@ src/calls/ReleaseHandle.c:
 src/calls/DetachHandle.c:
     complete
     .text       start:0x0204fe0c end:0x0204fe40
+
+src/calls/AddTaggedEntry.c:
+    complete
+    .text       start:0x0204fe40 end:0x0204ff2c
 
 src/calls/RegisterTaggedEntry.c:
     complete

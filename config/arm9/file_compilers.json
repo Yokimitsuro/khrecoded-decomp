@@ -2401,5 +2401,8 @@
   "src/calls/NNSi_G3dFuncSbc_PRJMAP.c": "dsi/1.1",
   "src/calls/func_020253c8.c": "dsi/1.1",
   "src/calls/InitSaveSystem.c": "dsi/1.1",
-  "src/calls/OS_InitThread.c": "dsi/1.1"
+  "src/calls/OS_InitThread.c": "dsi/1.1",
+  "src/calls/ModelAnimation_SampleJointScale.c": "dsi/1.2",
+  "src/calls/AddTaggedEntry.c": "dsi/1.2",
+  "src/calls/AdvanceAnimationTracks.c": "dsi/1.2"
 }

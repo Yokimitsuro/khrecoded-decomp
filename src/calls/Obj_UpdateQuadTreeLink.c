@@ -6,7 +6,7 @@ typedef struct {
     u32 node;
 } Entity;
 
-extern u32 func_0202ef38(u32 *fields, u32 arg);
+extern u32 AdvanceAnimationTracks(u32 *fields, u32 arg);
 extern void QuadTree_ReinsertNodeIfFlagSet(u32 tree, u32 *node);
 
 u32 Obj_UpdateQuadTreeLink(u32 world, Entity *entity, u32 arg)
@@ -17,7 +17,7 @@ u32 Obj_UpdateQuadTreeLink(u32 world, Entity *entity, u32 arg)
         QuadTree_ReinsertNodeIfFlagSet(**(u32 **)(world + 4), &entity->node);
     }
     if (((entity->flags & 0x20) == 0) && ((entity->flags & 0x40) == 0)) {
-        result = func_0202ef38(&entity->flags + 1, arg);
+        result = AdvanceAnimationTracks(&entity->flags + 1, arg);
     }
     return result;
 }

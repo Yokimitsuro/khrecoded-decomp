@@ -42,7 +42,17 @@ def main() -> None:
         "--built", action="store_true",
         help="compare against the currently linked ARM9 instead of the reference trial",
     )
+    parser.add_argument(
+        "--object", type=Path,
+        help="compare against a freshly compiled ELF object",
+    )
+    parser.add_argument(
+        "--object-symbol",
+        help="symbol to extract from --object (defaults to the requested symbol)",
+    )
     args = parser.parse_args()
+    if args.built and args.object:
+        parser.error("--built and --object are mutually exclusive")
 
     results = json.loads(RESULTS.read_text(encoding="utf-8"))
     item = next(entry for entry in results if entry["eu"]["name"] == args.symbol)
@@ -50,7 +60,10 @@ def main() -> None:
     size = item["eu"]["size"]
     mode = item["eu"]["mode"]
     original = ARM9.read_bytes()[address - ARM9_BASE:address - ARM9_BASE + size]
-    if args.built:
+    if args.object:
+        trial = object_symbol(args.object, args.object_symbol or args.symbol)
+        trial_label = "COMPILED OBJECT"
+    elif args.built:
         built = (ROOT / "build" / "build" / "arm9.bin").read_bytes()
         trial = built[address - ARM9_BASE:address - ARM9_BASE + size]
         trial_label = "CURRENT BUILD"

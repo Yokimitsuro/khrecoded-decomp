@@ -23,7 +23,7 @@ extern TaggedEntry *data_02060940[];
 
 extern OverlaySelectionRecord *GetOverlaySelectionRecord(u32 selectionIndex);
 extern TaggedEntry *FindEntryById(TaggedEntryTable *table, u32 id);
-extern TaggedEntry *func_0204fe40(TaggedEntryTable *table, u32 id, int flag, u32 value);
+extern TaggedEntry *AddTaggedEntry(TaggedEntryTable *table, u32 id, int flag, u32 value);
 
 void RegisterTaggedEntry(u32 id)
 {
@@ -33,7 +33,7 @@ void RegisterTaggedEntry(u32 id)
     if (FindEntryById(&record->taggedEntries, id) != NULL) {
         return;
     }
-    entry = func_0204fe40(&record->taggedEntries, id, 0, 0);
+    entry = AddTaggedEntry(&record->taggedEntries, id, 0, 0);
     data_02060940[data_020608c8[1]] = entry;
     data_020608c8[1]++;
 }
