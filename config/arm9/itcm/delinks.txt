@@ -189,7 +189,7 @@ src/calls/func_01ffa1f4.c:
     complete
     .text       start:0x01ffa1f4 end:0x01ffa204
 
-libs/nitro/nns/calls/func_01ffa37c.c:
+libs/nns/g3d/calls/NNS_G3dGeBufferOP_N.c:
     complete
     .text       start:0x01ffa37c end:0x01ffa450
 

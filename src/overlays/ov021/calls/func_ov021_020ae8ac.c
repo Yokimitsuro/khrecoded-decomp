@@ -6,14 +6,14 @@ struct vec3_0208ffe8 {
     int b;
     int c;
 };
-extern struct vec3_0208ffe8 data_0205ab3c;
+extern struct vec3_0208ffe8 NNS_G3dGlb_camPos;
 
 void func_ov021_020ae8ac(unsigned short *param_1, int param_2, int param_3, int param_4) {
     struct vec3_0208ffe8 local_1c;
     struct vec3_0208ffe8 local_28;
     int iVar1;
     int iVar2;
-    local_1c = data_0205ab3c;
+    local_1c = NNS_G3dGlb_camPos;
     local_28 = *(struct vec3_0208ffe8 *)(param_1 + 0x52);
     iVar2 = local_1c.b - local_28.b;
     local_28.b = 0;

@@ -587,5 +587,15 @@
   "libs/nns/g3d/calls/NNS_G3dBindMdlTex.c": "dsi/1.1",
   "libs/nns/g3d/auto/bindMdlPltt_Internal_.c": "dsi/1.1",
   "libs/nns/g3d/calls/NNS_G3dBindMdlPltt.c": "dsi/1.1",
-  "libs/nns/g3d/auto/NNS_G3dReleaseMdlPltt.c": "dsi/1.1p1"
+  "libs/nns/g3d/auto/NNS_G3dReleaseMdlPltt.c": "dsi/1.1p1",
+  "libs/nns/g3d/calls/NNS_G3dGlbInit.c": "dsi/1.1",
+  "libs/nns/g3d/calls/NNS_G3dGlbFlushP.c": "dsi/1.1",
+  "libs/nns/g3d/calls/NNS_G3dGlbFlushWVP.c": "dsi/1.1",
+  "libs/nns/g3d/calls/NNS_G3dGlbGetInvV.c": "dsi/1.1",
+  "libs/nns/g3d/auto/mtx_inverse44.c": "dsi/1.1",
+  "libs/nns/g3d/calls/NNS_G3dGlbGetInvP.c": "dsi/1.1",
+  "libs/nns/g3d/calls/calcSrtCameraMtx_.c": "dsi/1.1",
+  "libs/nns/g3d/calls/NNS_G3dGlbGetWV.c": "dsi/1.1",
+  "libs/nns/g3d/calls/NNS_G3dGlbGetInvWV.c": "dsi/1.1",
+  "libs/nns/g3d/calls/NNS_G3dGlbGetInvVP.c": "dsi/1.1"
 }

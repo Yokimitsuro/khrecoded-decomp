@@ -48,7 +48,7 @@ typedef struct NNSG3dRenderObj {
     NNSG3dResMdl *resMdl;
 } NNSG3dRenderObj;
 
-extern void func_01ffa37c(u32 op, const u32 *args, u32 num);
+extern void NNS_G3dGeBufferOP_N(u32 op, const u32 *args, u32 num);
 extern void func_02019d14(MtxFx43 *pos, MtxFx33 *nrm);
 
 static inline void *NNS_G3dGetResDataByIdx(const NNSG3dResDict *dict, u32 idx)
@@ -78,7 +78,7 @@ static inline NNSG3dResNodeData *NNS_G3dGetNodeDataByIdx(const NNSG3dResNodeInfo
 
 static inline void NNS_G3dGeRestoreMtx(int num)
 {
-    func_01ffa37c(0x14, (u32 *)&num, 1);
+    NNS_G3dGeBufferOP_N(0x14, (u32 *)&num, 1);
 }
 
 BOOL func_02019da0(const NNSG3dRenderObj *pRenderObj, MtxFx43 *pos, MtxFx33 *nrm, u32 nodeID)

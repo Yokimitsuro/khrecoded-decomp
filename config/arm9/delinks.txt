@@ -3769,17 +3769,61 @@ libs/nns/g3d/calls/NNS_G3dReleaseMdlSet.c:
     complete
     .text       start:0x02019030 end:0x020190c4
 
-libs/nitro/nns/calls/func_020191cc.c:
+libs/nns/g3d/calls/NNS_G3dGlbInit.c:
+    complete
+    .text       start:0x020190c4 end:0x0201919c
+
+libs/nns/g3d/calls/NNS_G3dGlbFlushP.c:
+    complete
+    .text       start:0x0201919c end:0x020191cc
+
+libs/nns/g3d/calls/NNS_G3dGlbFlushVP.c:
     complete
     .text       start:0x020191cc end:0x02019244
 
-src/calls/func_02019300.c:
+libs/nns/g3d/calls/NNS_G3dGlbFlushWVP.c:
+    complete
+    .text       start:0x02019244 end:0x02019300
+
+libs/nns/g3d/auto/NNS_G3dGlbSetBaseTrans.c:
     complete
     .text       start:0x02019300 end:0x02019330
 
-src/calls/func_02019330.c:
+libs/nns/g3d/auto/NNS_G3dGlbSetBaseScale.c:
     complete
     .text       start:0x02019330 end:0x02019360
+
+libs/nns/g3d/auto/NNS_G3dGlbPolygonAttr.c:
+    complete
+    .text       start:0x02019360 end:0x0201938c
+
+libs/nns/g3d/calls/NNS_G3dGlbGetInvV.c:
+    complete
+    .text       start:0x0201938c end:0x020193cc
+
+libs/nns/g3d/auto/mtx_inverse44.c:
+    complete
+    .text       start:0x020193cc end:0x020195c8
+
+libs/nns/g3d/calls/NNS_G3dGlbGetInvP.c:
+    complete
+    .text       start:0x020195c8 end:0x02019608
+
+libs/nns/g3d/calls/calcSrtCameraMtx_.c:
+    complete
+    .text       start:0x02019608 end:0x0201966c
+
+libs/nns/g3d/calls/NNS_G3dGlbGetWV.c:
+    complete
+    .text       start:0x0201966c end:0x020196a0
+
+libs/nns/g3d/calls/NNS_G3dGlbGetInvWV.c:
+    complete
+    .text       start:0x020196a0 end:0x020196d4
+
+libs/nns/g3d/calls/NNS_G3dGlbGetInvVP.c:
+    complete
+    .text       start:0x020196d4 end:0x0201973c
 
 libs/nns/g3d/auto/func_020197a0.c:
     complete
@@ -5312,6 +5356,10 @@ libs/nns/g2d/data/g2d_screen_tables.c:
 libs/nns/g3d/data/g3d_anm_defaults.c:
     complete
     .data       start:0x02055cf0 end:0x02055d3c
+
+libs/nns/g3d/data/g3d_glbstate.c:
+    complete
+    .bss        start:0x0205a924 end:0x0205ab60
 
 libs/nns/gfd/data/sLnkPlttVramManager.c:
     complete

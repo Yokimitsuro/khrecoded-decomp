@@ -34,14 +34,14 @@ static inline void G3X_SetFifoIntrCond (GXFifoIntrCond cond)
     (*( REGType32v *) (0x04000000 + 0x600)) = (((*( REGType32v *) (0x04000000 + 0x600)) & ~0xc0000000 ) |
                       (cond << 30 ));
 }
-void func_020190c4(void);
+void NNS_G3dGlbInit(void);
 
 /* func_02019e4c -- NitroSystem util.c: NNS_G3dInit. */
 void func_02019e4c (void)
 {
     G3X_Init();
 
-    func_020190c4();
+    NNS_G3dGlbInit();
 
     G3X_SetFifoIntrCond(GX_FIFOINTR_COND_EMPTY);
 }
