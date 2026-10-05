@@ -7013,6 +7013,10 @@ src/calls/OpenActorModelGroupResource.c:
     complete
     .text       start:0x020357c8 end:0x020357ec
 
+src/calls/ActorEntry_Init.c:
+    complete
+    .text       start:0x020357ec end:0x020358ac
+
 src/calls/ApplyRecordTableEntry.c:
     complete
     .text       start:0x020358ac end:0x020358c4
