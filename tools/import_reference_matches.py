@@ -6,6 +6,8 @@ import json
 import re
 from pathlib import Path
 
+from elftools.elf.elffile import ELFFile
+
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "build" / "reference_batch_results.json"
@@ -14,6 +16,49 @@ REFERENCE = ROOT / "build" / "reference_ricky"
 SYMBOLS = ROOT / "config" / "arm9" / "symbols.txt"
 DELINKS = ROOT / "config" / "arm9" / "delinks.txt"
 COMPILERS = ROOT / "config" / "arm9" / "file_compilers.json"
+TRIALS = ROOT / "build" / "reference_trials" / "dsi_1.1"
+ADDRESS_SUFFIX_RE = re.compile(r"_[0-9a-fA-F]{8}$")
+SYMBOL_LINE_RE = re.compile(
+    r"^(\S+)\s+kind:(?:function|data|bss)(?:\([^)]*\))?\s+"
+    r"addr:0x([0-9a-fA-F]+)",
+    re.MULTILINE,
+)
+
+
+def current_symbol_index() -> tuple[set[str], dict[int, list[str]]]:
+    names = set()
+    by_address = {}
+    for path in (
+        SYMBOLS,
+        ROOT / "config" / "arm9" / "itcm" / "symbols.txt",
+        ROOT / "config" / "arm9" / "dtcm" / "symbols.txt",
+    ):
+        for match in SYMBOL_LINE_RE.finditer(path.read_text(encoding="utf-8")):
+            name = match.group(1)
+            names.add(name)
+            by_address.setdefault(int(match.group(2), 16), []).append(name)
+    return names, by_address
+
+
+CURRENT_NAMES, CURRENT_BY_ADDRESS = current_symbol_index()
+
+
+def canonical_target(name: str) -> str:
+    if name in CURRENT_NAMES:
+        return name
+    match = re.search(r"_([0-9a-fA-F]{8})$", name)
+    if match:
+        choices = CURRENT_BY_ADDRESS.get(int(match.group(1), 16), [])
+        if choices:
+            return min(
+                choices,
+                key=lambda value: (
+                    value.startswith(("func_", "data_", "bss_")),
+                    len(value),
+                    value,
+                ),
+            )
+    return name
 
 
 def parse_mapping(value: str) -> tuple[str, str]:
@@ -40,18 +85,143 @@ def replace_delink(delinks: str, old_path: str | None, new_path: str,
     return delinks.rstrip() + f"\n\n{new_path}:\n    complete\n{range_line}\n"
 
 
+def replace_identifiers(source: str, replacements: dict[str, str]) -> str:
+    if not replacements:
+        return source
+    pattern = re.compile(
+        r"\b(?:" + "|".join(
+            sorted((re.escape(name) for name in replacements), key=len, reverse=True)
+        ) + r")\b"
+    )
+    return pattern.sub(lambda match: replacements[match.group(0)], source)
+
+
+def relocation_rewrites(item: dict, function: dict) -> dict[str, str]:
+    object_path = TRIALS / f"{item['ordinal']:04d}.o"
+    if not object_path.exists():
+        raise RuntimeError(f"compiled trial missing: {object_path}")
+
+    source_symbol = item["match"]["source_symbol"]
+    source_relocs = {}
+    with object_path.open("rb") as handle:
+        elf = ELFFile(handle)
+        symtab = elf.get_section_by_name(".symtab")
+        symbol = next(
+            (candidate for candidate in symtab.iter_symbols()
+             if candidate.name == source_symbol),
+            None,
+        )
+        if symbol is None:
+            raise RuntimeError(f"compiled symbol missing: {source_symbol}")
+        section_index = symbol["st_shndx"]
+        start = symbol["st_value"]
+        size = symbol["st_size"]
+        for reloc_section in elf.iter_sections():
+            if reloc_section["sh_type"] not in ("SHT_REL", "SHT_RELA"):
+                continue
+            if reloc_section["sh_info"] != section_index:
+                continue
+            linked_symbols = elf.get_section(reloc_section["sh_link"])
+            for relocation in reloc_section.iter_relocations():
+                offset = relocation["r_offset"] - start
+                if not 0 <= offset < size:
+                    continue
+                target = linked_symbols.get_symbol(relocation["r_info_sym"]).name
+                if offset in source_relocs and source_relocs[offset] != target:
+                    raise RuntimeError(
+                        f"multiple source relocations at {source_symbol}+0x{offset:x}"
+                    )
+                source_relocs[offset] = target
+
+    eu_relocs = {int(offset): target for offset, target in function["relocs"]}
+    if set(source_relocs) != set(eu_relocs):
+        raise RuntimeError(
+            f"relocation offsets differ for {item['eu']['name']}: "
+            f"source={sorted(source_relocs)} eu={sorted(eu_relocs)}"
+        )
+
+    rewrites = {}
+    for offset, source_name in source_relocs.items():
+        target_name = canonical_target(eu_relocs[offset])
+        previous = rewrites.setdefault(source_name, target_name)
+        if previous != target_name:
+            raise RuntimeError(
+                f"{source_name} maps to both {previous} and {target_name}"
+            )
+    return rewrites
+
+
+def automatic_candidates(results: list[dict], index: dict, symbols: str) -> list[tuple]:
+    occupied = set(re.findall(r"^(\S+)\s+kind:", symbols, re.MULTILINE))
+    candidates = []
+    for item in results:
+        if item.get("result") != "match":
+            continue
+        rom_symbol = item["eu"]["name"]
+        source_symbol = item["match"]["source_symbol"]
+        if source_symbol.startswith(("func_", "FUN_")):
+            continue
+        if not re.search(
+            rf"^{re.escape(rom_symbol)} kind:function", symbols, re.MULTILINE
+        ):
+            continue
+        readable_name = ADDRESS_SUFFIX_RE.sub("", source_symbol)
+        if readable_name in occupied:
+            readable_name = f"{readable_name}_{item['eu']['address']:08x}"
+        if readable_name in occupied:
+            continue
+        try:
+            rewrites = relocation_rewrites(item, index[rom_symbol])
+        except (KeyError, RuntimeError):
+            continue
+        occupied.add(readable_name)
+        candidates.append((rom_symbol, readable_name, item, rewrites))
+    candidates.sort(key=lambda value: (value[2]["eu"]["size"], value[2]["ordinal"]))
+    return candidates
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("mapping", nargs="+", type=parse_mapping)
+    parser.add_argument("mapping", nargs="*", type=parse_mapping)
+    parser.add_argument("--inventory", action="store_true")
+    parser.add_argument("--auto", action="store_true")
+    parser.add_argument("--limit", type=int, default=0)
     args = parser.parse_args()
 
+    if args.inventory and args.auto:
+        parser.error("--inventory and --auto are mutually exclusive")
+    if args.mapping and (args.inventory or args.auto):
+        parser.error("explicit mappings cannot be combined with --inventory or --auto")
+    if not args.mapping and not args.inventory and not args.auto:
+        parser.error("provide mappings, --inventory, or --auto")
+
+    result_list = json.loads(RESULTS.read_text(encoding="utf-8"))
     results = {
         item["eu"]["name"]: item
-        for item in json.loads(RESULTS.read_text(encoding="utf-8"))
+        for item in result_list
         if item.get("result") == "match"
     }
     index = json.loads(INDEX.read_text(encoding="utf-8"))
     symbols = SYMBOLS.read_text(encoding="utf-8")
+
+    cached_rewrites = {}
+    if args.inventory or args.auto:
+        candidates = automatic_candidates(result_list, index, symbols)
+        if args.limit:
+            candidates = candidates[:args.limit]
+        total = sum(item[2]["eu"]["size"] for item in candidates)
+        for rom_symbol, readable_name, item, rewrites in candidates:
+            print(
+                f"{rom_symbol} -> {readable_name} "
+                f"({item['eu']['size']} bytes, {len(rewrites)} bindings, "
+                f"{item['match']['domain']})"
+            )
+            cached_rewrites[rom_symbol] = rewrites
+        print(f"eligible {len(candidates)} functions, {total} bytes")
+        if args.inventory:
+            return
+        args.mapping = [(item[0], item[1]) for item in candidates]
+
     delinks = DELINKS.read_text(encoding="utf-8")
     compiler_map = json.loads(COMPILERS.read_text(encoding="utf-8"))
 
@@ -62,8 +232,6 @@ def main() -> None:
             raise RuntimeError(f"function name already exists: {readable_name}")
         item = results[rom_symbol]
         function = index[rom_symbol]
-        if function["relocs"]:
-            raise RuntimeError(f"{rom_symbol} has relocations")
 
         match = item["match"]
         reference_symbol = match["source_symbol"]
@@ -71,7 +239,11 @@ def main() -> None:
         source = reference_path.read_text(encoding="utf-8")
         if reference_symbol not in source:
             raise RuntimeError(f"definition {reference_symbol} not found in {reference_path}")
-        source = source.replace(reference_symbol, readable_name)
+        rewrites = cached_rewrites.get(rom_symbol)
+        if rewrites is None:
+            rewrites = relocation_rewrites(item, function)
+        rewrites = {**rewrites, reference_symbol: readable_name}
+        source = replace_identifiers(source, rewrites)
 
         destination = ROOT / "src" / "calls" / f"{readable_name}.c"
         destination.parent.mkdir(parents=True, exist_ok=True)

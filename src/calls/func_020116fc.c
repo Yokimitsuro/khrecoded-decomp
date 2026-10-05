@@ -1,5 +1,5 @@
 extern int func_02011070(void);
-extern void func_02010f3c(int slot, int arg);
+extern void SetCommandArg(int slot, int arg);
 extern int func_02010f94(int slot, int flag);
 
 int func_020116fc(int arg) {
@@ -7,7 +7,7 @@ int func_020116fc(int arg) {
     if (r != 0) {
         return r;
     }
-    func_02010f3c(1, arg);
+    SetCommandArg(1, arg);
     r = func_02010f94(1, 0);
     if (r == 0) {
         r = 2;

@@ -6,6 +6,8 @@
 #include "nitro/hw.h"
 #include "nitro/mi.h"
 
+#define CTRDG_PXI_COMMAND_TERMINATE 0x0002
+
 typedef struct CTRDGRomCycle {
     MICartridgeRomCycle1st c1;
     MICartridgeRomCycle2nd c2;

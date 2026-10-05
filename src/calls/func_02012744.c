@@ -1,5 +1,5 @@
 extern void OS_Terminate(void);
-extern void func_0201277c(void);
+extern void CTRDG_TerminateForPulledOut(void);
 extern int data_0205a2a8[];
 
 void func_02012744(int param_1, unsigned param_2) {
@@ -10,7 +10,7 @@ void func_02012744(int param_1, unsigned param_2) {
         result = 0;
         fn = (int (*)(void))data_0205a2a8[6];
         if (fn != 0) result = fn();
-        if (result != 0) func_0201277c();
+        if (result != 0) CTRDG_TerminateForPulledOut();
         data_0205a2a8[3] = 1;
     } else {
         OS_Terminate();

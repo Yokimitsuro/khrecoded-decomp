@@ -538,7 +538,7 @@ libs/nitro/os/asm_stubs/auto/OSi_CancelDma0.c:
     complete
     .text       start:0x020034b8 end:0x020034d8
 
-src/calls/func_020034d8.c:
+src/calls/PXI_Init_020034d8.c:
     complete
     .text       start:0x020034d8 end:0x020034e4
 
@@ -2609,15 +2609,15 @@ libs/nitro/snd/calls/SND_GetWaveDataAddress.c:
     complete
     .text       start:0x0200fae4 end:0x0200fb20
 
-src/calls/func_0200ff64.c:
+src/calls/TP_GetLatestIndexInAuto.c:
     complete
     .text       start:0x0200ff64 end:0x0200ff70
 
-src/calls/func_020101a0.c:
+src/calls/TP_WaitBusy.c:
     complete
     .text       start:0x020101a0 end:0x020101b0
 
-src/calls/func_020101b0.c:
+src/calls/TP_CheckError.c:
     complete
     .text       start:0x020101b0 end:0x020101bc
 
@@ -2769,7 +2769,7 @@ src/calls/func_02010d78.c:
     complete
     .text       start:0x02010d78 end:0x02010d94
 
-src/calls/func_02010f3c.c:
+src/calls/SetCommandArg.c:
     complete
     .text       start:0x02010f3c end:0x02010f4c
 
@@ -2789,7 +2789,11 @@ src/calls/func_020113cc.c:
     complete
     .text       start:0x020113cc end:0x020113f4
 
-src/calls/func_02011428.c:
+src/calls/SNDi_LockMutex.c:
+    complete
+    .text       start:0x02011418 end:0x02011428
+
+src/calls/PXI_Init_02011428.c:
     complete
     .text       start:0x02011428 end:0x02011430
 
@@ -2797,7 +2801,7 @@ src/calls/func_02011430.c:
     complete
     .text       start:0x02011430 end:0x0201145e
 
-src/calls/func_020116b0.c:
+src/calls/FS_ReadFile_020116b0.c:
     complete
     .text       start:0x020116b0 end:0x020116ba
 
@@ -2809,7 +2813,7 @@ src/calls/WmCheckParentParameter.c:
     complete
     .text       start:0x020117d8 end:0x02011806
 
-src/calls/func_02011848.c:
+src/calls/AlarmCallback_02011848.c:
     complete
     .text       start:0x02011848 end:0x02011854
 
@@ -2821,7 +2825,7 @@ src/calls/func_02011950.c:
     complete
     .text       start:0x02011950 end:0x02011978
 
-src/calls/func_02012298.c:
+src/calls/PXI_Init_02012298.c:
     complete
     .text       start:0x02012298 end:0x020122a0
 
@@ -2853,7 +2857,7 @@ src/calls/func_02012744.c:
     complete
     .text       start:0x02012744 end:0x0201277c
 
-src/calls/func_0201277c.c:
+src/calls/CTRDG_TerminateForPulledOut.c:
     complete
     .text       start:0x0201277c end:0x0201278a
 
@@ -2865,7 +2869,7 @@ src/calls/func_02012798.c:
     complete
     .text       start:0x02012798 end:0x020127fc
 
-src/calls/func_020127fc.c:
+src/calls/MIi_CpuFill24.c:
     complete
     .text       start:0x020127fc end:0x02012808
 
@@ -2961,7 +2965,7 @@ libs/nitro/nns/calls/NNS_FndCreateExpHeapEx.c:
     complete
     .text       start:0x02013104 end:0x0201313c
 
-src/calls/func_0201313c.c:
+src/calls/PXI_Init_0201313c.c:
     complete
     .text       start:0x0201313c end:0x02013148
 
@@ -4133,7 +4137,7 @@ libs/nns/snd/calls/BeginSleep.c:
     complete
     .text       start:0x0201d2d4 end:0x0201d30c
 
-src/calls/func_0201d30c.c:
+src/calls/PXI_Init_0201d30c.c:
     complete
     .text       start:0x0201d30c end:0x0201d318
 
@@ -4913,7 +4917,7 @@ src/calls/MSL_Fabs.c:
     complete
     .text       start:0x02022ad8 end:0x02022af8
 
-src/calls/func_02022af8.c:
+src/calls/PXI_Init_02022af8.c:
     complete
     .text       start:0x02022af8 end:0x02022b04
 
@@ -4941,6 +4945,10 @@ src/calls/func_0202545c.c:
     complete
     .text       start:0x0202545c end:0x02025478
 
+src/calls/IncrementBusyCounter.c:
+    complete
+    .text       start:0x020254bc end:0x020254cc
+
 src/calls/func_020254fc.c:
     complete
     .text       start:0x020254fc end:0x02025508
@@ -4961,7 +4969,7 @@ src/calls/func_0202566c.c:
     complete
     .text       start:0x0202566c end:0x0202567c
 
-src/calls/func_0202567c.c:
+src/calls/StoreGlobalArrayEntry.c:
     complete
     .text       start:0x0202567c end:0x02025688
 
@@ -4977,7 +4985,7 @@ src/calls/func_0202595c.c:
     complete
     .text       start:0x0202595c end:0x02025968
 
-src/calls/func_02025968.c:
+src/calls/LoadGlobalS8At0.c:
     complete
     .text       start:0x02025968 end:0x02025974
 
@@ -5073,15 +5081,15 @@ src/calls/func_020267b8.c:
     complete
     .text       start:0x020267b8 end:0x020267d8
 
-src/calls/func_02026a90.c:
+src/calls/FS_UnloadOverlayImage_02026a90.c:
     complete
     .text       start:0x02026a90 end:0x02026a9a
 
-src/calls/func_02026ac4.c:
+src/calls/ScriptCmd_RestorePanel.c:
     complete
     .text       start:0x02026ac4 end:0x02026ad0
 
-src/calls/func_02026ad0.c:
+src/calls/ScriptCmd_RestorePanel_02026ad0.c:
     complete
     .text       start:0x02026ad0 end:0x02026adc
 
@@ -5089,19 +5097,31 @@ src/calls/InvokeOptionalCallback.c:
     complete
     .text       start:0x02026adc end:0x02026af4
 
+src/calls/SetCardThreadDoneCallback.c:
+    complete
+    .text       start:0x02026af4 end:0x02026b04
+
+src/calls/SetCardThreadDoneCallback_02026b04.c:
+    complete
+    .text       start:0x02026b04 end:0x02026b14
+
 src/calls/func_02026c80.c:
     complete
     .text       start:0x02026c80 end:0x02026ca6
 
-src/calls/func_02026ca8.c:
+src/calls/PXI_Init_02026ca8.c:
     complete
     .text       start:0x02026ca8 end:0x02026cb0
+
+src/calls/GetCardThreadStartTick.c:
+    complete
+    .text       start:0x02027280 end:0x0202728c
 
 src/calls/GetMainBg3Priority.c:
     complete
     .text       start:0x02027ef0 end:0x02027f00
 
-src/calls/func_02028964.c:
+src/calls/PXI_Init_02028964.c:
     complete
     .text       start:0x02028964 end:0x0202896c
 
@@ -5133,17 +5153,21 @@ libs/nitro/nns/calls/func_02028c38.c:
     complete
     .text       start:0x02028c38 end:0x02028dc0
 
-src/calls/func_02028dc0.c:
+src/calls/PXI_Init_02028dc0.c:
     complete
     .text       start:0x02028dc0 end:0x02028dcc
 
-src/calls/func_02028dcc.c:
+src/calls/PXI_Init_02028dcc.c:
     complete
     .text       start:0x02028dcc end:0x02028dd8
 
 src/calls/func_020291c8.c:
     complete
     .text       start:0x020291c8 end:0x020291d4
+
+src/calls/GetSecondaryRecordCount.c:
+    complete
+    .text       start:0x020291d4 end:0x020291e0
 
 src/calls/TruncateToU16.c:
     complete
@@ -5177,6 +5201,10 @@ src/calls/Heap_GetCurrent.c:
     complete
     .text       start:0x0202a16c end:0x0202a17c
 
+src/calls/NNS_SndPlayerPause_0202a17c.c:
+    complete
+    .text       start:0x0202a17c end:0x0202a18c
+
 libs/nitro/nns/calls/NNS_FndAllocFromDefaultExpHeapEx.c:
     complete
     .text       start:0x0202a1b0 end:0x0202a1d8
@@ -5188,6 +5216,10 @@ libs/nitro/nns/calls/NNSi_FndFreeFromDefaultHeap.c:
 libs/nitro/nns/calls/NNSi_FndGetAllocatorForDefaultHeap.c:
     complete
     .text       start:0x0202a27c end:0x0202a294
+
+src/calls/NNS_SndPlayerPause_0202a294.c:
+    complete
+    .text       start:0x0202a294 end:0x0202a2a4
 
 src/calls/func_0202a3bc.c:
     complete
@@ -5205,7 +5237,7 @@ src/calls/func_0202a5c8.c:
     complete
     .text       start:0x0202a5c8 end:0x0202a64c
 
-src/calls/func_0202a64c.c:
+src/calls/PXI_Init_0202a64c.c:
     complete
     .text       start:0x0202a64c end:0x0202a658
 
@@ -5457,7 +5489,7 @@ src/calls/func_0202d218.c:
     complete
     .text       start:0x0202d218 end:0x0202d25c
 
-src/calls/func_0202d33c.c:
+src/calls/CallSelectionHandler.c:
     complete
     .text       start:0x0202d33c end:0x0202d34c
 
@@ -5565,7 +5597,7 @@ src/calls/Obj_SetHalfwordFC.c:
     complete
     .text       start:0x0202f5c8 end:0x0202f5d0
 
-src/calls/func_0202f5d0.c:
+src/calls/PXI_Init_0202f5d0.c:
     complete
     .text       start:0x0202f5d0 end:0x0202f5dc
 
@@ -5681,7 +5713,7 @@ src/calls/CopyTransformFields.c:
     complete
     .text       start:0x020350e8 end:0x02035120
 
-src/calls/func_02035278.c:
+src/calls/PXI_Init_02035278.c:
     complete
     .text       start:0x02035278 end:0x02035284
 
@@ -5689,7 +5721,7 @@ src/calls/func_020352e0.c:
     complete
     .text       start:0x020352e0 end:0x020352f4
 
-src/calls/func_02035390.c:
+src/calls/CollModel_GetEntryField14.c:
     complete
     .text       start:0x02035390 end:0x020353a0
 
@@ -5833,7 +5865,7 @@ src/calls/UpdatePenetrationDepth.c:
     complete
     .text       start:0x0203d8c8 end:0x0203d910
 
-src/calls/func_0203f23c.c:
+src/calls/PXI_Init_0203f23c.c:
     complete
     .text       start:0x0203f23c end:0x0203f248
 
@@ -5897,7 +5929,7 @@ src/calls/SquareFx32.c:
     complete
     .text       start:0x020434cc end:0x020434e4
 
-src/calls/func_02047dc0.c:
+src/calls/PXI_Init_02047dc0.c:
     complete
     .text       start:0x02047dc0 end:0x02047dcc
 
@@ -6117,11 +6149,11 @@ src/calls/func_0204f00c.c:
     complete
     .text       start:0x0204f00c end:0x0204f01e
 
-src/calls/func_0204f020.c:
+src/calls/PXI_Init_0204f020.c:
     complete
     .text       start:0x0204f020 end:0x0204f028
 
-src/calls/func_0204f0c8.c:
+src/calls/PXI_Init_0204f0c8.c:
     complete
     .text       start:0x0204f0c8 end:0x0204f0d4
 

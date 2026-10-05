@@ -1,5 +1,5 @@
 extern int strlen(void *a);
-extern int func_02022af8(void *a, void *b, int c);
+extern int PXI_Init_02022af8(void *a, void *b, int c);
 
 int func_0202cda0(unsigned char *arg0, void *arg1) {
     int i;
@@ -12,7 +12,7 @@ int func_0202cda0(unsigned char *arg0, void *arg1) {
     p = (arg0 + 0x10) + (((unsigned int)((count + 1) / 2) << 17) >> 15);
     p += count * 4;
     for (i = 0; i < count; i++) {
-        if (func_02022af8(p, arg1, r0) == 0) {
+        if (PXI_Init_02022af8(p, arg1, r0) == 0) {
             return i;
         }
         p += 8;

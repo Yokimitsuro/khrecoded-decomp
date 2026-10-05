@@ -1,5 +1,5 @@
-extern void *func_0202a64c();
+extern void *PXI_Init_0202a64c();
 
 void *func_ov091_020c27ec() {
-    return func_0202a64c();
+    return PXI_Init_0202a64c();
 }
