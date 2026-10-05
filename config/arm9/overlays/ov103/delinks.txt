@@ -116,6 +116,10 @@ src/overlays/ov103/calls/func_ov103_020c0490.c:
     complete
     .text       start:0x020c0490 end:0x020c049c
 
+src/overlays/ov103/data/bss/Bss_ov103_020c0720.c:
+    complete
+    .bss        start:0x020c0720 end:0x020c0740
+
 src/overlays/ov103/data/strings/Strings_ov103_020c052c.c:
     complete
     .data       start:0x020c052c end:0x020c0544

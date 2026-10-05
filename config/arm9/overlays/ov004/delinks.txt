@@ -128,6 +128,10 @@ src/overlays/ov004/calls/LoadScrollTextEntryTable.c:
     complete
     .text       start:0x02063aec end:0x02063ba8
 
+src/overlays/ov004/data/bss/Bss_ov004_020645a0.c:
+    complete
+    .bss        start:0x020645a0 end:0x020645c0
+
 src/overlays/ov004/data/strings/Strings_ov004_02064544.c:
     complete
     .data       start:0x02064544 end:0x02064564

@@ -15,6 +15,7 @@ Then:
 import concurrent.futures as cf
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -59,6 +60,11 @@ ABSOLUTE_SYMBOLS = {
     # Geometry state also lives in the resident BSS.  Some recovered render
     # helpers address the material cache directly.
     "NNS_G3dGlb_prmMatColor0": 0x0205A9A4,
+    # Alternate names and interior views of reconstructed resident BSS blocks.
+    "data_02056ae0": 0x02056AE0,
+    "sVramTransferTaskQueueState": 0x0205A8D0,
+    "sWaveArcHeader": 0x0205E2E8,
+    "gSceneControllerStorage": 0x0205FDEC,
     # CodeWarrior emits these helper names itself for float expressions, so
     # identifier rewriting cannot retarget them to the EU raw symbol names.
     "_fgr": 0x02023828,
@@ -66,6 +72,40 @@ ABSOLUTE_SYMBOLS = {
     "_fflt": 0x02023AAC,
     "_fadd": 0x020245FC,
 }
+
+
+def reconstructed_bss_symbols():
+    """Return canonical addresses for private reconstructed BSS storage."""
+    declaration = re.compile(
+        r"^static\s+(?:u8|u16|u32)\s+([A-Za-z_]\w*)",
+        re.MULTILINE,
+    )
+    wanted = set()
+    for source in ROOT.glob("src/**/data/bss/Bss_*.c"):
+        wanted.update(declaration.findall(source.read_text(encoding="utf-8")))
+
+    symbol = re.compile(
+        r"^(\S+)\s+kind:bss\s+addr:0x([0-9a-fA-F]+)",
+        re.MULTILINE,
+    )
+    found = {}
+    for symbols_path in CONFIG_DIR.rglob("symbols.txt"):
+        for name, address_text in symbol.findall(
+            symbols_path.read_text(encoding="utf-8")
+        ):
+            if name not in wanted:
+                continue
+            address = int(address_text, 16)
+            previous = found.setdefault(name, address)
+            if previous != address:
+                raise RuntimeError(
+                    f"conflicting BSS address for {name}: "
+                    f"0x{previous:08x} vs 0x{address:08x}"
+                )
+    missing = sorted(wanted - found.keys())
+    if missing:
+        raise RuntimeError("missing BSS symbols: " + ", ".join(missing))
+    return found
 
 
 def discover_modules():
@@ -84,7 +124,7 @@ def files_from_delinks(delinks_txt):
     return out
 
 
-def stage_delinked_objects(link_dir, compiled_names=()):
+def stage_delinked_objects(link_dir, lcf_path, compiled_names=()):
     """Copy the dsd delink objects into build/link/ with flat names.
 
     `dsd lcf` references bare object names, so mwldarm finds them via the
@@ -92,12 +132,21 @@ def stage_delinked_objects(link_dir, compiled_names=()):
     objects with the same bare name would leave the choice to input order.
     """
     compiled_names = set(compiled_names)
+    delinked = list((BUILD_DIR / "delinks").rglob("*.o"))
+    lcf_text = lcf_path.read_text(encoding="utf-8")
+    referenced = set(re.findall(r"(?m)^\s+(\S+\.o)\(", lcf_text))
+    expected = referenced - compiled_names
+    for stale in link_dir.glob("*.o"):
+        if stale.name not in expected:
+            stale.unlink()
     for stale in compiled_names:
         f = link_dir / stale
         if f.exists():
             f.unlink()
     skipped = 0
-    for src in (BUILD_DIR / "delinks").rglob("*.o"):
+    for src in delinked:
+        if src.name not in expected:
+            continue
         if src.name in compiled_names:
             skipped += 1
             continue
@@ -195,7 +244,9 @@ def emit_ninja(ninja_path, src_files):
 def add_absolute_symbols(lcf_path):
     """Append the linker-absolute symbols to the SECTIONS block dsd generated."""
     text = lcf_path.read_text(encoding="utf-8")
-    wanted = ["    %s = 0x%08X;" % (name, addr) for name, addr in sorted(ABSOLUTE_SYMBOLS.items())]
+    symbols = dict(ABSOLUTE_SYMBOLS)
+    symbols.update(reconstructed_bss_symbols())
+    wanted = ["    %s = 0x%08X;" % (name, addr) for name, addr in sorted(symbols.items())]
     missing = [line for line in wanted if line not in text]
     if not missing:
         return
@@ -269,7 +320,11 @@ def main():
     print(f"[configure] {len(src_files)} matched source files to compile")
 
     print("[configure] stage delinked objects into build/link/")
-    stage_delinked_objects(LINK, {Path(s).with_suffix(".o").name for s in src_files})
+    stage_delinked_objects(
+        LINK,
+        BUILD_DIR / "arm9.lcf",
+        {Path(s).with_suffix(".o").name for s in src_files},
+    )
 
     emit_ninja(ROOT / "build.ninja", src_files)
     print("[configure] wrote build.ninja")

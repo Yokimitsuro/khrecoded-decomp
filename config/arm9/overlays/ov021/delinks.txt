@@ -1444,6 +1444,46 @@ src/overlays/ov021/calls/TickSequenceCountdown.c:
     complete
     .text       start:0x020b4d88 end:0x020b4dca
 
+src/overlays/ov021/data/bss/Bss_ov021_020b5620.c:
+    complete
+    .bss        start:0x020b5620 end:0x020b5624
+
+src/overlays/ov021/data/bss/Bss_ov021_020b5624.c:
+    complete
+    .bss        start:0x020b5624 end:0x020b5628
+
+src/overlays/ov021/data/bss/Bss_ov021_020b5628.c:
+    complete
+    .bss        start:0x020b5628 end:0x020b5640
+
+src/overlays/ov021/data/bss/Bss_ov021_020b5640.c:
+    complete
+    .bss        start:0x020b5640 end:0x020b5658
+
+src/overlays/ov021/data/bss/Bss_ov021_020b5658.c:
+    complete
+    .bss        start:0x020b5658 end:0x020b5694
+
+src/overlays/ov021/data/bss/Bss_ov021_020b5694.c:
+    complete
+    .bss        start:0x020b5694 end:0x020b56c0
+
+src/overlays/ov021/data/bss/Bss_ov021_020b56c0.c:
+    complete
+    .bss        start:0x020b56c0 end:0x020b56d0
+
+src/overlays/ov021/data/bss/Bss_ov021_020b56d0.c:
+    complete
+    .bss        start:0x020b56d0 end:0x020b575c
+
+src/overlays/ov021/data/bss/Bss_ov021_020b575c.c:
+    complete
+    .bss        start:0x020b575c end:0x020b57dc
+
+src/overlays/ov021/data/bss/Bss_ov021_020b57dc.c:
+    complete
+    .bss        start:0x020b57dc end:0x020b5820
+
 src/overlays/ov021/data/strings/Strings_ov021_020b4fe8.c:
     complete
     .rodata     start:0x020b4fe8 end:0x020b4ff8

@@ -68,6 +68,10 @@ src/overlays/ov040/calls/ApplyHealReward.c:
     complete
     .text       start:0x020be158 end:0x020be1c0
 
+src/overlays/ov040/data/bss/Bss_ov040_020be280.c:
+    complete
+    .bss        start:0x020be280 end:0x020be2a0
+
 src/overlays/ov040/data/strings/Strings_ov040_020be22c.c:
     complete
     .data       start:0x020be22c end:0x020be238

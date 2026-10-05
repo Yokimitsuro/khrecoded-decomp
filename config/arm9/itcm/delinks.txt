@@ -312,3 +312,7 @@ src/calls/NNS_G3dDraw1Mat1Shp.c:
 src/calls/func_01fff67c.c:
     complete
     .text       start:0x01fff67c end:0x01fff6c8
+
+src/data/itcm/bss/Bss_itcm_01fffea0.c:
+    complete
+    .bss        start:0x01fffea0 end:0x01fffec0

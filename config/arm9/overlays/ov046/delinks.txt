@@ -278,3 +278,7 @@ src/overlays/ov046/calls/CameraCollision_CheckContact.c:
 src/overlays/ov046/calls/Camera_AimViewAtPlayer.c:
     complete
     .text       start:0x020c3310 end:0x020c3388
+
+src/overlays/ov046/data/bss/Bss_ov046_020c3500.c:
+    complete
+    .bss        start:0x020c3500 end:0x020c3520

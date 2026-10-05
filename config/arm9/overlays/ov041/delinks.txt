@@ -88,6 +88,10 @@ src/overlays/ov041/calls/InitRecordOwnerSlots.c:
     complete
     .text       start:0x020ce1c8 end:0x020ce200
 
+src/overlays/ov041/data/bss/Bss_ov041_020cff40.c:
+    complete
+    .bss        start:0x020cff40 end:0x020cff80
+
 src/overlays/ov041/data/strings/Strings_ov041_020cf710.c:
     complete
     .rodata     start:0x020cf710 end:0x020cf720

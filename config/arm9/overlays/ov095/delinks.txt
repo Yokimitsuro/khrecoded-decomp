@@ -160,6 +160,10 @@ src/overlays/ov095/calls/ClearEntryFlag_020c139c.c:
     complete
     .text       start:0x020c139c end:0x020c13c4
 
+src/overlays/ov095/data/bss/Bss_ov095_020c28e0.c:
+    complete
+    .bss        start:0x020c28e0 end:0x020c2900
+
 src/overlays/ov095/data/strings/Strings_ov095_020c17f0.c:
     complete
     .data       start:0x020c17f0 end:0x020c1838

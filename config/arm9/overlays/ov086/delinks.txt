@@ -164,6 +164,10 @@ src/overlays/ov086/calls/IsRecordPageUnavailable.c:
     complete
     .text       start:0x020c20a0 end:0x020c20f4
 
+src/overlays/ov086/data/bss/Bss_ov086_020c3020.c:
+    complete
+    .bss        start:0x020c3020 end:0x020c3040
+
 src/overlays/ov086/data/strings/Strings_ov086_020c2fe4.c:
     complete
     .data       start:0x020c2fe4 end:0x020c2fe8

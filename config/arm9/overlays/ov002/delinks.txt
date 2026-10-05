@@ -664,6 +664,22 @@ src/overlays/ov002/calls/TallyFlagGroups.c:
     complete
     .text       start:0x0206abc0 end:0x0206ac94
 
+src/overlays/ov002/data/bss/Bss_ov002_0206c460.c:
+    complete
+    .bss        start:0x0206c460 end:0x0206c464
+
+src/overlays/ov002/data/bss/Bss_ov002_0206c464.c:
+    complete
+    .bss        start:0x0206c464 end:0x0206c468
+
+src/overlays/ov002/data/bss/Bss_ov002_0206c468.c:
+    complete
+    .bss        start:0x0206c468 end:0x0206c46c
+
+src/overlays/ov002/data/bss/Bss_ov002_0206c46c.c:
+    complete
+    .bss        start:0x0206c46c end:0x0206c480
+
 src/overlays/ov002/data/strings/Strings_ov002_0206c290.c:
     complete
     .data       start:0x0206c290 end:0x0206c2a0

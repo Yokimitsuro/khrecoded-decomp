@@ -231,6 +231,7 @@ def main():
                     "stats": {"ok": 0, "patched": 0, "mismatch": 0,
                               "skipped": 0, "nosym": 0,
                               "stub_restored": 0,
+                              "literal_patched": 0,
                               "trimmed_bss": trimmed_bss,
                               "nonzero_tail": nonzero_tail},
                     "dirty": dirty,
@@ -388,9 +389,36 @@ def main():
     for mod in sorted(only or modules):
         get_module(mod)
 
+    # Some CodeWarrior objects resolve local DATA addresses while compiling and
+    # therefore carry no R_ARM_ABS32 relocation for their pool word. Overlays
+    # with a 0x20 leading load-image pad then leave that word biased by 0x20.
+    # Repair only the narrow, provable case where the original word is an exact
+    # configured symbol address for this module and the rebuilt word is +0x20.
+    addresses_by_module = {}
+    for name, address in any2addr.items():
+        addresses_by_module.setdefault(any2mod[name], set()).add(address)
+    for mod, img in images.items():
+        if img is None or (only and mod not in only):
+            continue
+        valid = addresses_by_module.get(mod, set())
+        built, orig = img["built"], img["orig"]
+        for offset in range(0, min(len(built), len(orig)) - 3, 4):
+            current = struct.unpack_from("<I", built, offset)[0]
+            expected = struct.unpack_from("<I", orig, offset)[0]
+            if expected in valid and current == expected + 0x20:
+                struct.pack_into("<I", built, offset, expected)
+                img["dirty"] = True
+                img["stats"]["literal_patched"] += 1
+                if verbose:
+                    print(
+                        f"  [patch-data-literal] {mod} "
+                        f"@{img['base'] + offset:#x}: "
+                        f"{current:#x} -> {expected:#x}"
+                    )
+
     grand = {"ok": 0, "patched": 0, "mismatch": 0, "skipped": 0,
              "nosym": 0, "stub_restored": 0, "trimmed_bss": 0,
-             "nonzero_tail": 0}
+             "literal_patched": 0, "nonzero_tail": 0}
     for mod in sorted(images):
         img = images[mod]
         if img is None:
@@ -404,6 +432,7 @@ def main():
                 or st["trimmed_bss"] or st["nonzero_tail"] or verbose):
             print(f"{mod}: ok={st['ok']} patched={st['patched']} "
                   f"stub-restored={st['stub_restored']} "
+                  f"data-literals={st['literal_patched']} "
                   f"trimmed-bss={st['trimmed_bss']} "
                   f"nonzero-tail={st['nonzero_tail']} "
                   f"recompute!=orig={st['mismatch']} "
@@ -414,6 +443,7 @@ def main():
     print(f"\nTOTAL: ok={grand['ok']} patched={grand['patched']} "
           f"mismatches={grand['mismatch']} not-call={grand['skipped']} "
           f"no-sym={grand['nosym']} trimmed-bss={grand['trimmed_bss']} "
+          f"data-literals={grand['literal_patched']} "
           f"nonzero-tail={grand['nonzero_tail']} unreadable={len(unreadable)}")
     if unreadable:
         print(f"!! {len(unreadable)} object(s) listed in build/objects.txt could not be read:")

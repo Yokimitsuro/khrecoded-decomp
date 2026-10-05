@@ -52,6 +52,10 @@ src/overlays/ov078/calls/StepCursorForward.c:
     complete
     .text       start:0x020c4f88 end:0x020c4fae
 
+src/overlays/ov078/data/bss/Bss_ov078_020c51e0.c:
+    complete
+    .bss        start:0x020c51e0 end:0x020c5200
+
 src/overlays/ov078/data/strings/Strings_ov078_020c5168.c:
     complete
     .data       start:0x020c5168 end:0x020c517c

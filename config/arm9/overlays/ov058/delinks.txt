@@ -196,6 +196,18 @@ src/overlays/ov058/calls/func_ov058_020d895c.c:
     complete
     .text       start:0x020d895c end:0x020d896c
 
+src/overlays/ov058/data/bss/Bss_ov058_020d8a40.c:
+    complete
+    .bss        start:0x020d8a40 end:0x020d8bb8
+
+src/overlays/ov058/data/bss/Bss_ov058_020d8bb8.c:
+    complete
+    .bss        start:0x020d8bb8 end:0x020d9088
+
+src/overlays/ov058/data/bss/Bss_ov058_020d9088.c:
+    complete
+    .bss        start:0x020d9088 end:0x020d9260
+
 src/overlays/ov058/data/strings/Strings_ov058_020d8a00.c:
     complete
     .data       start:0x020d8a00 end:0x020d8a14

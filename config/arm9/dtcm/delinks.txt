@@ -4,3 +4,31 @@
 src/data/dtcm/SDK_AUTOLOAD_DTCM_START.c:
     complete
     .data       start:0x027e0000 end:0x027e0058
+
+src/data/dtcm/bss/Bss_dtcm_027e00a0.c:
+    complete
+    .bss        start:0x027e00a0 end:0x027e00a8
+
+src/data/dtcm/bss/Bss_dtcm_027e00a8.c:
+    complete
+    .bss        start:0x027e00a8 end:0x027e00ac
+
+src/data/dtcm/bss/Bss_dtcm_027e00ac.c:
+    complete
+    .bss        start:0x027e00ac end:0x027e00b0
+
+src/data/dtcm/bss/Bss_dtcm_027e00b0.c:
+    complete
+    .bss        start:0x027e00b0 end:0x027e0134
+
+src/data/dtcm/bss/Bss_dtcm_027e0134.c:
+    complete
+    .bss        start:0x027e0134 end:0x027e0160
+
+src/data/dtcm/bss/Bss_dtcm_027e0160.c:
+    complete
+    .bss        start:0x027e0160 end:0x027e01ec
+
+src/data/dtcm/bss/Bss_dtcm_027e01ec.c:
+    complete
+    .bss        start:0x027e01ec end:0x027e0280

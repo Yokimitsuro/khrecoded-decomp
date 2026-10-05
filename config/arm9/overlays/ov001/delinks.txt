@@ -5592,6 +5592,98 @@ src/overlays/ov001/calls/BuildSweptShape.c:
     complete
     .text       start:0x0209d638 end:0x0209d8a0
 
+src/overlays/ov001/data/bss/Bss_ov001_020a0480.c:
+    complete
+    .bss        start:0x020a0480 end:0x020a0484
+
+src/overlays/ov001/data/bss/Bss_ov001_020a0484.c:
+    complete
+    .bss        start:0x020a0484 end:0x020a0488
+
+src/overlays/ov001/data/bss/Bss_ov001_020a0488.c:
+    complete
+    .bss        start:0x020a0488 end:0x020a048c
+
+src/overlays/ov001/data/bss/Bss_ov001_020a048c.c:
+    complete
+    .bss        start:0x020a048c end:0x020a0490
+
+src/overlays/ov001/data/bss/Bss_ov001_020a0490.c:
+    complete
+    .bss        start:0x020a0490 end:0x020a0494
+
+src/overlays/ov001/data/bss/Bss_ov001_020a0494.c:
+    complete
+    .bss        start:0x020a0494 end:0x020a0498
+
+src/overlays/ov001/data/bss/Bss_ov001_020a0498.c:
+    complete
+    .bss        start:0x020a0498 end:0x020a049c
+
+src/overlays/ov001/data/bss/Bss_ov001_020a049c.c:
+    complete
+    .bss        start:0x020a049c end:0x020a04a0
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04a0.c:
+    complete
+    .bss        start:0x020a04a0 end:0x020a04a4
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04a4.c:
+    complete
+    .bss        start:0x020a04a4 end:0x020a04a8
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04a8.c:
+    complete
+    .bss        start:0x020a04a8 end:0x020a04b8
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04b8.c:
+    complete
+    .bss        start:0x020a04b8 end:0x020a04c4
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04c4.c:
+    complete
+    .bss        start:0x020a04c4 end:0x020a04cc
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04cc.c:
+    complete
+    .bss        start:0x020a04cc end:0x020a04dc
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04dc.c:
+    complete
+    .bss        start:0x020a04dc end:0x020a04e4
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04e4.c:
+    complete
+    .bss        start:0x020a04e4 end:0x020a04e8
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04e8.c:
+    complete
+    .bss        start:0x020a04e8 end:0x020a04ec
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04ec.c:
+    complete
+    .bss        start:0x020a04ec end:0x020a04f0
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04f0.c:
+    complete
+    .bss        start:0x020a04f0 end:0x020a04f4
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04f4.c:
+    complete
+    .bss        start:0x020a04f4 end:0x020a04f8
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04f8.c:
+    complete
+    .bss        start:0x020a04f8 end:0x020a04fc
+
+src/overlays/ov001/data/bss/Bss_ov001_020a04fc.c:
+    complete
+    .bss        start:0x020a04fc end:0x020a0500
+
+src/overlays/ov001/data/bss/Bss_ov001_020a0500.c:
+    complete
+    .bss        start:0x020a0500 end:0x020a0514
+
 src/overlays/ov001/data/strings/Strings_ov001_0209e61c.c:
     complete
     .rodata     start:0x0209e61c end:0x0209e62c

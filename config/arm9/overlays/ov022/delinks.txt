@@ -400,6 +400,14 @@ src/overlays/ov022/calls/decodeMovieAdpcmSamples.cpp:
     complete
     .text       start:0x020aaafc end:0x020aac54
 
+src/overlays/ov022/data/bss/Bss_ov022_020b7da0.c:
+    complete
+    .bss        start:0x020b7da0 end:0x020b7e10
+
+src/overlays/ov022/data/bss/Bss_ov022_020b7e10.c:
+    complete
+    .bss        start:0x020b7e10 end:0x020b7e40
+
 src/overlays/ov022/data/strings/Strings_ov022_020b7cec.c:
     complete
     .data       start:0x020b7cec end:0x020b7d00

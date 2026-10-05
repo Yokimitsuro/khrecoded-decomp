@@ -119,3 +119,7 @@ src/overlays/ov030/calls/ReleaseEffectPool.c:
 src/overlays/ov030/calls/ResetUnitCounts.c:
     complete
     .text       start:0x020bcf54 end:0x020bcf64
+
+src/overlays/ov030/data/bss/Bss_ov030_020bd020.c:
+    complete
+    .bss        start:0x020bd020 end:0x020bd040

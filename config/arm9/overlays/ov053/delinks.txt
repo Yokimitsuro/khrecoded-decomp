@@ -35,6 +35,10 @@ src/overlays/ov053/calls/MapKindToSlotIndex.c:
     complete
     .text       start:0x020d2a60 end:0x020d2b3e
 
+src/overlays/ov053/data/bss/Bss_ov053_020d2c40.c:
+    complete
+    .bss        start:0x020d2c40 end:0x020d2c60
+
 src/overlays/ov053/data/strings/Strings_ov053_020d2b80.c:
     complete
     .data       start:0x020d2b80 end:0x020d2b94

@@ -411,3 +411,7 @@ src/overlays/ov027/calls/func_ov027_020ba33c.c:
 src/overlays/ov027/calls/FindPageEntryById.c:
     complete
     .text       start:0x020ba368 end:0x020ba384
+
+src/overlays/ov027/data/bss/Bss_ov027_020ba3e0.c:
+    complete
+    .bss        start:0x020ba3e0 end:0x020ba400

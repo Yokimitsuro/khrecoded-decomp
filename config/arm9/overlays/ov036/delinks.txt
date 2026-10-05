@@ -604,6 +604,34 @@ src/overlays/ov036/calls/func_ov036_020c3374.c:
     complete
     .text       start:0x020c3374 end:0x020c3380
 
+src/overlays/ov036/data/bss/Bss_ov036_020c3940.c:
+    complete
+    .bss        start:0x020c3940 end:0x020c394c
+
+src/overlays/ov036/data/bss/Bss_ov036_020c394c.c:
+    complete
+    .bss        start:0x020c394c end:0x020c4014
+
+src/overlays/ov036/data/bss/Bss_ov036_020c4014.c:
+    complete
+    .bss        start:0x020c4014 end:0x020c4c60
+
+src/overlays/ov036/data/bss/Bss_ov036_020c4c60.c:
+    complete
+    .bss        start:0x020c4c60 end:0x020c59a0
+
+src/overlays/ov036/data/bss/Bss_ov036_020c59a0.c:
+    complete
+    .bss        start:0x020c59a0 end:0x020c5cc0
+
+src/overlays/ov036/data/bss/Bss_ov036_020c5cc0.c:
+    complete
+    .bss        start:0x020c5cc0 end:0x020ca204
+
+src/overlays/ov036/data/bss/Bss_ov036_020ca204.c:
+    complete
+    .bss        start:0x020ca204 end:0x020ca220
+
 src/overlays/ov036/data/strings/Strings_ov036_020c3718.c:
     complete
     .data       start:0x020c3718 end:0x020c3734

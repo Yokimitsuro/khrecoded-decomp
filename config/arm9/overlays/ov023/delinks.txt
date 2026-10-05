@@ -132,6 +132,14 @@ src/overlays/ov023/calls/ApplyScreenAlphaBlend.c:
     complete
     .text       start:0x020b6e80 end:0x020b6e94
 
+src/overlays/ov023/data/bss/Bss_ov023_020b6f80.c:
+    complete
+    .bss        start:0x020b6f80 end:0x020b6f84
+
+src/overlays/ov023/data/bss/Bss_ov023_020b6f84.c:
+    complete
+    .bss        start:0x020b6f84 end:0x020b6fa0
+
 src/overlays/ov023/data/strings/Strings_ov023_020b6f40.c:
     complete
     .data       start:0x020b6f40 end:0x020b6f80

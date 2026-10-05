@@ -448,6 +448,10 @@ src/overlays/ov059/auto/func_ov059_020cfe0c.c:
     complete
     .text       start:0x020cfe0c end:0x020cfe0e
 
+src/overlays/ov059/data/bss/Bss_ov059_020cffc0.c:
+    complete
+    .bss        start:0x020cffc0 end:0x020cffe0
+
 src/overlays/ov059/data/strings/Strings_ov059_020cfe40.c:
     complete
     .rodata     start:0x020cfe40 end:0x020cfe50

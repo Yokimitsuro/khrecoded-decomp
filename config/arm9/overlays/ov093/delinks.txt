@@ -228,6 +228,10 @@ src/overlays/ov093/calls/func_ov093_020c3c38.c:
     complete
     .text       start:0x020c3c38 end:0x020c3c44
 
+src/overlays/ov093/data/bss/Bss_ov093_020c5100.c:
+    complete
+    .bss        start:0x020c5100 end:0x020c5120
+
 src/overlays/ov093/data/strings/Strings_ov093_020c3ebc.c:
     complete
     .data       start:0x020c3ebc end:0x020c3ed4

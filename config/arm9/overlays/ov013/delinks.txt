@@ -256,6 +256,10 @@ src/overlays/ov013/auto/func_ov013_020749f0.c:
     complete
     .text       start:0x020749f0 end:0x020749f4
 
+src/overlays/ov013/data/bss/Bss_ov013_02074ce0.c:
+    complete
+    .bss        start:0x02074ce0 end:0x02074d00
+
 src/overlays/ov013/data/strings/Strings_ov013_02074b58.c:
     complete
     .data       start:0x02074b58 end:0x02074b6c

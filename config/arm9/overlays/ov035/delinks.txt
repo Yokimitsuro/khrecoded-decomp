@@ -204,6 +204,14 @@ src/overlays/ov035/calls/UpdateChannelLevel.c:
     complete
     .text       start:0x020bc270 end:0x020bc310
 
+src/overlays/ov035/data/bss/Bss_ov035_020bc500.c:
+    complete
+    .bss        start:0x020bc500 end:0x020bc504
+
+src/overlays/ov035/data/bss/Bss_ov035_020bc504.c:
+    complete
+    .bss        start:0x020bc504 end:0x020bc520
+
 src/overlays/ov035/data/strings/Strings_ov035_020bc4c0.c:
     complete
     .data       start:0x020bc4c0 end:0x020bc4c8

@@ -680,6 +680,42 @@ src/overlays/ov015/calls/OnPanelSlot17Selected.c:
     complete
     .text       start:0x02079ed4 end:0x02079f4c
 
+src/overlays/ov015/data/bss/Bss_ov015_0207e960.c:
+    complete
+    .bss        start:0x0207e960 end:0x0207e9e0
+
+src/overlays/ov015/data/bss/Bss_ov015_0207e9e0.c:
+    complete
+    .bss        start:0x0207e9e0 end:0x0207ea60
+
+src/overlays/ov015/data/bss/Bss_ov015_0207fbc0.c:
+    complete
+    .bss        start:0x0207fbc0 end:0x02080000
+
+src/overlays/ov015/data/bss/Bss_ov015_02080000.c:
+    complete
+    .bss        start:0x02080000 end:0x02080202
+
+src/overlays/ov015/data/bss/Bss_ov015_02080202.c:
+    complete
+    .bss        start:0x02080202 end:0x0208020e
+
+src/overlays/ov015/data/bss/Bss_ov015_0208020e.c:
+    complete
+    .bss        start:0x0208020e end:0x02080303
+
+src/overlays/ov015/data/bss/Bss_ov015_02080303.c:
+    complete
+    .bss        start:0x02080303 end:0x020803e0
+
+src/overlays/ov015/data/bss/Bss_ov015_020803e0.c:
+    complete
+    .bss        start:0x020803e0 end:0x02080504
+
+src/overlays/ov015/data/bss/Bss_ov015_020812e0.c:
+    complete
+    .bss        start:0x020812e0 end:0x02081300
+
 src/overlays/ov015/data/strings/Strings_ov015_0207e730.c:
     complete
     .data       start:0x0207e730 end:0x0207e744

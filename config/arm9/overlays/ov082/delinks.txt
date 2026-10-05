@@ -19,3 +19,7 @@ src/overlays/ov082/calls/DrawEntryRowFrames.c:
 src/overlays/ov082/calls/ShutdownOv082Screen.c:
     complete
     .text       start:0x020bf320 end:0x020bf390
+
+src/overlays/ov082/data/bss/Bss_ov082_020bf6e0.c:
+    complete
+    .bss        start:0x020bf6e0 end:0x020bf700

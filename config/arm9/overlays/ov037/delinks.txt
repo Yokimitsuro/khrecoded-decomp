@@ -96,6 +96,10 @@ src/overlays/ov037/calls/UpdateMenuSelection.c:
     complete
     .text       start:0x020bb4dc end:0x020bb648
 
+src/overlays/ov037/data/bss/Bss_ov037_020bb780.c:
+    complete
+    .bss        start:0x020bb780 end:0x020bb7a0
+
 src/overlays/ov037/data/strings/Strings_ov037_020bb704.c:
     complete
     .data       start:0x020bb704 end:0x020bb714

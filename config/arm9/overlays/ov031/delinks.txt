@@ -242,3 +242,7 @@ src/overlays/ov031/calls/NotifyFlaggedActor.c:
 src/overlays/ov031/calls/SetFlagBit4.c:
     complete
     .text       start:0x020bc768 end:0x020bc790
+
+src/overlays/ov031/data/bss/Bss_ov031_020bc820.c:
+    complete
+    .bss        start:0x020bc820 end:0x020bc840

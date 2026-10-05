@@ -8,7 +8,7 @@ an identified name (NitroSDK, NNS, MSL, ...) but no source yet.
 
 | Module | C matched | ASM stubs | Named | Not started | Total | C % | C bytes % |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| PART main | 2362 | 89 | 37 | 84 | 2572 | 91.8% | 78.7% |
+| PART main | 2362 | 89 | 41 | 84 | 2576 | 91.7% | 78.7% |
 | PART itcm | 55 | 23 | 8 | 41 | 127 | 43.3% | 28.7% |
 | PART ov000 | 46 | 0 | 0 | 32 | 78 | 59.0% | 49.7% |
 | PART ov001 | 1397 | 0 | 0 | 698 | 2095 | 66.7% | 60.1% |
@@ -115,7 +115,7 @@ an identified name (NitroSDK, NNS, MSL, ...) but no source yet.
 | DONE ov102 | 3 | 0 | 0 | 0 | 3 | 100.0% | 100.0% |
 | PART ov103 | 28 | 0 | 0 | 11 | 39 | 71.8% | 62.5% |
 | PART ov104 | 33 | 24 | 0 | 0 | 57 | 57.9% | 75.8% |
-| **TOTAL** | **7613** | **137** | **48** | **2617** | **10415** | **73.1%** | **56.82%** |
+| **TOTAL** | **7613** | **137** | **52** | **2617** | **10419** | **73.1%** | **56.82%** |
 
 ## Byte progress
 
@@ -133,5 +133,5 @@ Naming is tracked separately and does not count as reconstructed DATA.
 
 | Metric | Complete | Total | % |
 |---|---:|---:|---:|
-| Reconstructed byte-exact DATA | **18,737** | **228,172** | **8.21%** |
+| Reconstructed byte-exact DATA | **93,529** | **228,172** | **40.99%** |
 | Named DATA symbols | **807** | **2,385** | **33.84%** |

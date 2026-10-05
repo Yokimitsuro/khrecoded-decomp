@@ -39,6 +39,14 @@ src/overlays/ov055/calls/CreatePageEffectTask.c:
     complete
     .text       start:0x020d3dfc end:0x020d3edc
 
+src/overlays/ov055/data/bss/Bss_ov055_020d3f20.c:
+    complete
+    .bss        start:0x020d3f20 end:0x020d3f3d
+
+src/overlays/ov055/data/bss/Bss_ov055_020d3f3d.c:
+    complete
+    .bss        start:0x020d3f3d end:0x020d3f40
+
 src/overlays/ov055/data/strings/Strings_ov055_020d3ee0.c:
     complete
     .data       start:0x020d3ee0 end:0x020d3ef4

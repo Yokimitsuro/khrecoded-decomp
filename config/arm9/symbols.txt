@@ -3051,3 +3051,7 @@ gEngineState kind:data(any) addr:0x02fffc20
 data_02fffc30 kind:data(any) addr:0x02fffc30
 gVBlankCount kind:data(any) addr:0x02fffc3c
 data_02ffff96 kind:data(any) addr:0x02ffff96
+_fgr kind:function(arm,size=0x0) addr:0x02023828
+_fflt kind:function(arm,size=0x0) addr:0x02023aac
+_ffix kind:function(arm,size=0x0) addr:0x020241c0
+_fadd kind:function(arm,size=0x0) addr:0x020245fc

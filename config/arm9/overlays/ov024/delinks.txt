@@ -84,6 +84,10 @@ src/overlays/ov024/calls/ResetBoardCursor.c:
     complete
     .text       start:0x020b7304 end:0x020b7340
 
+src/overlays/ov024/data/bss/Bss_ov024_020b7540.c:
+    complete
+    .bss        start:0x020b7540 end:0x020b7580
+
 src/overlays/ov024/data/strings/Strings_ov024_020b74b4.c:
     complete
     .data       start:0x020b74b4 end:0x020b74cc

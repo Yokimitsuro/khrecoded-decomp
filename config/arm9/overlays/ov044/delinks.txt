@@ -106,3 +106,7 @@ src/overlays/ov044/calls/StartScaledPanelTransition.c:
 src/overlays/ov044/calls/NNSi_FndFreeFromDefaultHeap_2.c:
     complete
     .text       start:0x020d0da0 end:0x020d0dc0
+
+src/overlays/ov044/data/bss/Bss_ov044_020d0ec0.c:
+    complete
+    .bss        start:0x020d0ec0 end:0x020d0ee0

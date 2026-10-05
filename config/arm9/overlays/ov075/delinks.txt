@@ -412,6 +412,14 @@ src/overlays/ov075/calls/DrawMenuImageModulated.c:
     complete
     .text       start:0x020d1284 end:0x020d1408
 
+src/overlays/ov075/data/bss/Bss_ov075_020d1900.c:
+    complete
+    .bss        start:0x020d1900 end:0x020d1b04
+
+src/overlays/ov075/data/bss/Bss_ov075_020d1b04.c:
+    complete
+    .bss        start:0x020d1b04 end:0x020d1b20
+
 src/overlays/ov075/data/strings/Strings_ov075_020d1568.c:
     complete
     .rodata     start:0x020d1568 end:0x020d1580

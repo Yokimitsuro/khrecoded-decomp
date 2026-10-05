@@ -172,6 +172,10 @@ src/overlays/ov097/calls/func_ov097_020c1db8.c:
     complete
     .text       start:0x020c1db8 end:0x020c1dc4
 
+src/overlays/ov097/data/bss/Bss_ov097_020c2540.c:
+    complete
+    .bss        start:0x020c2540 end:0x020c2560
+
 src/overlays/ov097/data/strings/Strings_ov097_020c1df8.c:
     complete
     .data       start:0x020c1df8 end:0x020c1e40

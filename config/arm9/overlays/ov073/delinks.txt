@@ -272,6 +272,10 @@ src/overlays/ov073/calls/SetListWidgetBusy.c:
     complete
     .text       start:0x020c4064 end:0x020c40a6
 
+src/overlays/ov073/data/bss/Bss_ov073_020c4260.c:
+    complete
+    .bss        start:0x020c4260 end:0x020c4280
+
 src/overlays/ov073/data/strings/Strings_ov073_020c41a8.c:
     complete
     .data       start:0x020c41a8 end:0x020c41d4

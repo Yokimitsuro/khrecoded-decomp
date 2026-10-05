@@ -244,6 +244,10 @@ src/overlays/ov077/auto/func_ov077_020c9f7c.c:
     complete
     .text       start:0x020c9f7c end:0x020c9f7e
 
+src/overlays/ov077/data/bss/Bss_ov077_020ca3a0.c:
+    complete
+    .bss        start:0x020ca3a0 end:0x020ca3c0
+
 src/overlays/ov077/data/strings/Strings_ov077_020ca2f0.c:
     complete
     .data       start:0x020ca2f0 end:0x020ca304
