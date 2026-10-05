@@ -104,6 +104,13 @@ matching function must pass byte-exact verification.
 
 ## License
 
-The decompilation and tooling in this repository are dedicated to the public
-domain under [CC0 1.0](LICENSE). This applies only to the contributors' own
-work; the original game and its assets remain the property of their owners.
+Original contributions made specifically to this repository are dedicated to
+the public domain under [CC0 1.0](LICENSE). Portions of the C source,
+decompilation metadata and tooling were imported or adapted from
+[ricky074game/kh-recoded-decomp](https://github.com/ricky074game/kh-recoded-decomp)
+and remain available under that project's MIT license. See
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the attribution, scope and
+full license text.
+
+These licenses apply only to contributors' own work; the original game and its
+assets remain the property of their owners.
