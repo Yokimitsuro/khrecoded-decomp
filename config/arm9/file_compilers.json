@@ -747,5 +747,8 @@
   "libs/nns/snd/calls/CreateThread.c": "dsi/1.1",
   "libs/nns/snd/calls/RemoveCommandByPlayer.c": "dsi/1.1",
   "libs/nns/snd/calls/AllocCommandBuffer.c": "dsi/1.1",
-  "libs/nns/snd/calls/FreeCommandBuffer.c": "dsi/1.1"
+  "libs/nns/snd/calls/FreeCommandBuffer.c": "dsi/1.1",
+  "libs/nns/snd/calls/DisposeCallback_2.c": "dsi/1.1",
+  "libs/nns/snd/calls/StrmCallback_2.c": "dsi/1.1",
+  "libs/nns/snd/calls/OnDataEnd.c": "dsi/1.1"
 }

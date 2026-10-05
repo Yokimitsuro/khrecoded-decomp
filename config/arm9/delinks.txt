@@ -4713,6 +4713,18 @@ libs/nns/snd/calls/FreeCommandBuffer.c:
     complete
     .text       start:0x02020aec end:0x02020b18
 
+libs/nns/snd/calls/DisposeCallback_2.c:
+    complete
+    .text       start:0x02020b18 end:0x02020bb0
+
+libs/nns/snd/calls/StrmCallback_2.c:
+    complete
+    .text       start:0x02020bb0 end:0x02020cec
+
+libs/nns/snd/calls/OnDataEnd.c:
+    complete
+    .text       start:0x02020cec end:0x02020e28
+
 libs/nns/snd/calls/ReadFileStream.c:
     complete
     .text       start:0x020217a0 end:0x020217d8
