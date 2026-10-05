@@ -216,6 +216,10 @@ src/overlays/ov052/calls/UpdateDriveGaugeCharge.c:
     complete
     .text       start:0x020cc930 end:0x020ccab0
 
+src/overlays/ov052/auto/func_ov052_020ccab0.c:
+    complete
+    .text       start:0x020ccab0 end:0x020ccaba
+
 src/overlays/ov052/calls/AdvanceTimerWithCarry.c:
     complete
     .text       start:0x020ccabc end:0x020ccae8
@@ -291,6 +295,10 @@ src/overlays/ov052/calls/UpdateActorAnimation.c:
 src/overlays/ov052/calls/SetSubModelsEnabled.c:
     complete
     .text       start:0x020ceb14 end:0x020ceb74
+
+src/overlays/ov052/auto/func_ov052_020ceb74.c:
+    complete
+    .text       start:0x020ceb74 end:0x020ceb7e
 
 src/overlays/ov052/calls/GetLinkedAngleOffset.c:
     complete

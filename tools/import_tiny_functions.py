@@ -3,6 +3,8 @@
 
 import argparse
 import json
+import re
+from functools import lru_cache
 from pathlib import Path
 
 from capstone import CS_ARCH_ARM, CS_MODE_ARM, CS_MODE_THUMB, Cs
@@ -12,6 +14,33 @@ from verify_idx import check
 
 
 HEADER = '#include "nitro/types.h"\n\n'
+
+
+@lru_cache(maxsize=None)
+def current_symbol_name(original_name: str) -> str:
+    """Resolve an address-style name to a semantic name already in symbols.txt."""
+    match = re.search(r"_([0-9a-fA-F]{8})$", original_name)
+    if match is None:
+        return original_name
+    address = int(match.group(1), 16)
+    candidates = []
+    symbol_pattern = re.compile(
+        r"^(\S+)\s+kind:function(?:\([^)]*\))?\s+addr:0x([0-9a-fA-F]+)",
+        re.MULTILINE,
+    )
+    overlay_match = re.match(r"func_(ov[0-9]+)_", original_name)
+    if overlay_match:
+        paths = [ROOT / "config" / "arm9" / "overlays" / overlay_match.group(1) / "symbols.txt"]
+    else:
+        paths = [ROOT / "config" / "arm9" / "symbols.txt"]
+    for path in paths:
+        if not path.exists():
+            continue
+        for name, address_text in symbol_pattern.findall(path.read_text(encoding="utf-8")):
+            if int(address_text, 16) == address:
+                candidates.append(name)
+    semantic = [name for name in candidates if not name.startswith("func_")]
+    return semantic[0] if semantic else (candidates[0] if candidates else original_name)
 
 
 def destination(module: str, name: str) -> Path:
@@ -134,6 +163,137 @@ def source_for(name: str, mode: str, code: bytes, relocs: list[list]) -> str | N
             return HEADER + f"extern u8 {symbol}[];\n\n" + (
                 f"void *{name}(u32 offset)\n{{\n"
                 f"    return {symbol} + offset;\n"
+                "}\n"
+            )
+
+    # Small wrappers around one external routine. Only the forms whose complete
+    # calling convention is visible in the instructions are proposed; the normal
+    # relocation-aware verifier rejects wrong ARM/Thumb veneers or prototypes.
+    if len(relocs) == 1 and not relocs[0][1].startswith("data_"):
+        target = current_symbol_name(relocs[0][1])
+        call_header = HEADER + f"extern u32 {target}();\n\n"
+
+        if (
+            len(insns) == 4
+            and insns[0][0] == "push"
+            and insns[1][0] in {"bl", "blx"}
+            and insns[2][0] in {"mov", "movs"}
+            and insns[2][1].startswith("r0, #")
+            and insns[3][0] == "pop"
+        ):
+            result = int(insns[2][1].split("#", 1)[1], 0)
+            return call_header + (
+                f"u32 {name}(void *argument)\n{{\n"
+                f"    {target}(argument);\n"
+                f"    return {result};\n"
+                "}\n"
+            )
+
+        if (
+            len(insns) == 4
+            and insns[0][0] == "push"
+            and insns[1][0] in {"bl", "blx"}
+            and insns[2][0] == "ldr"
+            and insns[2][1].startswith("r0, [r0")
+            and insns[3][0] == "pop"
+        ):
+            offset = 0 if insns[2][1] == "r0, [r0]" else int(insns[2][1].split("#", 1)[1].rstrip("]"), 0)
+            return call_header + (
+                f"u32 {name}(void *argument)\n{{\n"
+                f"    const u8 *result = (const u8 *){target}(argument);\n"
+                f"    return *(const u32 *)(result + 0x{offset:x});\n"
+                "}\n"
+            )
+
+        if (
+            len(insns) == 4
+            and insns[0][0] == "push"
+            and insns[1][0] in {"bl", "blx"}
+            and insns[2][0] == "adds"
+            and insns[2][1].startswith("r0, #")
+            and insns[3][0] == "pop"
+        ):
+            offset = int(insns[2][1].split("#", 1)[1], 0)
+            return call_header + (
+                f"void *{name}(void *argument)\n{{\n"
+                f"    return (u8 *){target}(argument) + 0x{offset:x};\n"
+                "}\n"
+            )
+
+        if (
+            len(insns) == 3
+            and insns[0][0] == "ldr"
+            and "[pc" in insns[0][1]
+            and insns[1][0] in {"mov", "movs"}
+            and insns[1][1].startswith("r1, #")
+            and insns[2][0] == "bx"
+        ):
+            argument = int(insns[1][1].split("#", 1)[1], 0)
+            return call_header + (
+                f"u32 {name}(void *object)\n{{\n"
+                f"    return {target}(object, {argument});\n"
+                "}\n"
+            )
+
+        if (
+            len(insns) == 4
+            and insns[0][0] == "ldr"
+            and "[pc" in insns[0][1]
+            and insns[1][0] in {"mov", "movs"}
+            and insns[1][1].startswith("r0, #")
+            and insns[2][0] in {"mov", "movs"}
+            and insns[2][1].startswith("r1, #")
+            and insns[3][0] == "bx"
+        ):
+            first = int(insns[1][1].split("#", 1)[1], 0)
+            second = int(insns[2][1].split("#", 1)[1], 0)
+            return call_header + (
+                f"u32 {name}(void)\n{{\n"
+                f"    return {target}({first}, {second});\n"
+                "}\n"
+            )
+
+        if (
+            len(insns) == 3
+            and insns[0][0] == "ldr"
+            and "[pc" in insns[0][1]
+            and insns[1][0] in {"add", "adds"}
+            and insns[1][1].startswith("r0, r0, #")
+            and insns[2][0] == "bx"
+        ):
+            offset = int(insns[1][1].rsplit("#", 1)[1], 0)
+            return call_header + (
+                f"u32 {name}(void *object)\n{{\n"
+                f"    return {target}((u8 *)object + 0x{offset:x});\n"
+                "}\n"
+            )
+
+        if (
+            len(insns) == 3
+            and insns[0][0] == "ldr"
+            and "[pc" in insns[0][1]
+            and insns[1][0] == "asrs"
+            and insns[1][1].startswith("r0, r0, #")
+            and insns[2][0] == "bx"
+        ):
+            shift = int(insns[1][1].rsplit("#", 1)[1], 0)
+            return call_header + (
+                f"u32 {name}(s32 value)\n{{\n"
+                f"    return {target}(value >> {shift});\n"
+                "}\n"
+            )
+
+        if (
+            len(insns) == 4
+            and insns[0] == ("lsls", "r0, r0, #0x10")
+            and insns[1][0] == "ldr"
+            and "[pc" in insns[1][1]
+            and insns[2] == ("lsrs", "r0, r0, #0x10")
+            and insns[3][0] == "bx"
+        ):
+            return call_header + (
+                f"u32 {name}(u32 value)\n{{\n"
+                f"    return {target}((u16)value);\n"
                 "}\n"
             )
 
@@ -609,6 +769,235 @@ def source_for(name: str, mode: str, code: bytes, relocs: list[list]) -> str | N
         return HEADER + (
             f"u32 {name}(const void *object, u32 mask)\n{{\n"
             "    return *(const u32 *)((const u8 *)object + 4) & mask;\n"
+            "}\n"
+        )
+
+    # Thumb form of a fixed bit test on a word field.
+    if (
+        len(insns) == 4
+        and insns[0][0] == "ldr"
+        and insns[0][1].startswith("r1, [r0, #")
+        and insns[1][0] == "movs"
+        and insns[1][1].startswith("r0, #")
+        and insns[2] == ("ands", "r0, r1")
+        and insns[3] == ("bx", "lr")
+    ):
+        offset = int(insns[0][1].split("#", 1)[1].rstrip("]"), 0)
+        mask = int(insns[1][1].split("#", 1)[1], 0)
+        return HEADER + (
+            f"u32 {name}(const void *object)\n{{\n"
+            f"    return *(const u32 *)((const u8 *)object + 0x{offset:x}) & 0x{mask:x};\n"
+            "}\n"
+        )
+
+    # Store the third argument in a large-offset field of the second argument.
+    if (
+        len(insns) == 4
+        and insns[0][0] == "movs"
+        and insns[0][1].startswith("r0, #")
+        and insns[1][0] == "lsls"
+        and insns[1][1].startswith("r0, r0, #")
+        and insns[2] == ("str", "r2, [r1, r0]")
+        and insns[3] == ("bx", "lr")
+    ):
+        offset = int(insns[0][1].split("#", 1)[1], 0) << int(insns[1][1].rsplit("#", 1)[1], 0)
+        return HEADER + (
+            f"void {name}(void *unused, void *object, u32 value)\n{{\n"
+            "    (void)unused;\n"
+            f"    *(u32 *)((u8 *)object + 0x{offset:x}) = value;\n"
+            "}\n"
+        )
+
+    # Write a constant through the third argument and return a dispatch code.
+    if (
+        len(insns) == 4
+        and insns[0][0] == "movs"
+        and insns[0][1].startswith("r0, #")
+        and insns[1] == ("str", "r0, [r2]")
+        and insns[2][0] == "movs"
+        and insns[2][1].startswith("r0, #")
+        and insns[3] == ("bx", "lr")
+    ):
+        value = int(insns[0][1].split("#", 1)[1], 0)
+        result = int(insns[2][1].split("#", 1)[1], 0)
+        return HEADER + (
+            f"u32 {name}(void *unused0, void *unused1, u32 *output)\n{{\n"
+            "    (void)unused0;\n"
+            "    (void)unused1;\n"
+            f"    *output = {value};\n"
+            f"    return {result};\n"
+            "}\n"
+        )
+
+    # Initialize one byte field and clear two related flags.
+    if insns == [
+        ("strb", "r1, [r0, #0x14]"),
+        ("movs", "r1, #0"),
+        ("strb", "r1, [r0, #0x17]"),
+        ("strb", "r1, [r0, #6]"),
+        ("bx", "lr"),
+    ]:
+        return HEADER + (
+            f"void {name}(void *object, u8 value)\n{{\n"
+            "    u8 *bytes = object;\n"
+            "    bytes[0x14] = value;\n"
+            "    bytes[0x17] = 0;\n"
+            "    bytes[6] = 0;\n"
+            "}\n"
+        )
+
+    # Clear a word and initialize the adjacent halfword pair.
+    if insns == [
+        ("movs", "r2, #0"),
+        ("str", "r2, [r0]"),
+        ("strh", "r2, [r0, #4]"),
+        ("strh", "r1, [r0, #6]"),
+        ("bx", "lr"),
+    ]:
+        return HEADER + (
+            f"void {name}(void *record, u16 value)\n{{\n"
+            "    *(u32 *)record = 0;\n"
+            "    *(u16 *)((u8 *)record + 4) = 0;\n"
+            "    *(u16 *)((u8 *)record + 6) = value;\n"
+            "}\n"
+        )
+
+    # Read a halfword through an indexed pointer table.
+    if insns == [
+        ("lsls", "r1, r1, #2"),
+        ("adds", "r0, r0, r1"),
+        ("ldr", "r0, [r0, #0x70]"),
+        ("ldrh", "r0, [r0, #4]"),
+        ("bx", "lr"),
+    ]:
+        return HEADER + (
+            f"u16 {name}(const void *table, u32 index)\n{{\n"
+            "    const u8 *entry = *(const u8 *const *)((const u8 *)table + index * 4 + 0x70);\n"
+            "    return *(const u16 *)(entry + 4);\n"
+            "}\n"
+        )
+
+    # Read a pointer from a large-offset table and advance to its payload.
+    if (
+        len(insns) == 5
+        and insns[0][0] == "movs"
+        and insns[0][1].startswith("r1, #")
+        and insns[1][0] == "lsls"
+        and insns[1][1].startswith("r1, r1, #")
+        and insns[2] == ("ldr", "r0, [r0, r1]")
+        and insns[3][0] == "adds"
+        and insns[3][1].startswith("r0, #")
+        and insns[4] == ("bx", "lr")
+    ):
+        field = int(insns[0][1].split("#", 1)[1], 0) << int(insns[1][1].rsplit("#", 1)[1], 0)
+        payload = int(insns[3][1].split("#", 1)[1], 0)
+        return HEADER + (
+            f"void *{name}(const void *object)\n{{\n"
+            f"    u8 *nested = *(u8 *const *)((const u8 *)object + 0x{field:x});\n"
+            f"    return nested + 0x{payload:x};\n"
+            "}\n"
+        )
+
+    # Pointer field followed by a constant payload offset.
+    if (
+        len(insns) == 3
+        and insns[0][0] == "ldr"
+        and insns[0][1].startswith("r0, [r0, #")
+        and insns[1][0] == "add"
+        and insns[1][1].startswith("r0, r0, #")
+        and insns[2] == ("bx", "lr")
+    ):
+        field = int(insns[0][1].split("#", 1)[1].rstrip("]"), 0)
+        payload = int(insns[1][1].rsplit("#", 1)[1], 0)
+        return HEADER + (
+            f"void *{name}(const void *object)\n{{\n"
+            f"    return *(u8 *const *)((const u8 *)object + 0x{field:x}) + 0x{payload:x};\n"
+            "}\n"
+        )
+
+    # Sum two halfword fields with a halfword result.
+    if insns == [
+        ("ldrh", "r1, [r0]"),
+        ("ldrh", "r0, [r0, #4]"),
+        ("adds", "r0, r1, r0"),
+        ("lsls", "r0, r0, #0x10"),
+        ("lsrs", "r0, r0, #0x10"),
+        ("bx", "lr"),
+    ]:
+        return HEADER + (
+            f"u16 {name}(const void *object)\n{{\n"
+            "    const u8 *bytes = object;\n"
+            "    return *(const u16 *)bytes + *(const u16 *)(bytes + 4);\n"
+            "}\n"
+        )
+
+    # Initialize a state field from another word field and return zero.
+    if (
+        len(insns) == 6
+        and insns[0] == ("movs", "r1, #0x10")
+        and insns[1] == ("strh", "r1, [r0, #0x2c]")
+        and insns[2][0] == "ldr"
+        and insns[2][1].startswith("r1, [r0, #")
+        and insns[3] == ("str", "r1, [r0, #0x30]")
+        and insns[4] == ("movs", "r0, #0")
+        and insns[5] == ("bx", "lr")
+    ):
+        source_offset = int(insns[2][1].split("#", 1)[1].rstrip("]"), 0)
+        return HEADER + (
+            f"u32 {name}(void *object)\n{{\n"
+            "    u8 *bytes = object;\n"
+            "    *(u16 *)(bytes + 0x2c) = 0x10;\n"
+            f"    *(u32 *)(bytes + 0x30) = *(const u32 *)(bytes + 0x{source_offset:x});\n"
+            "    return 0;\n"
+            "}\n"
+        )
+
+    # Clear all four words of a 16-byte record in the original store order.
+    if insns == [
+        ("movs", "r1, #0"),
+        ("str", "r1, [r0]"),
+        ("str", "r1, [r0, #0xc]"),
+        ("str", "r1, [r0, #8]"),
+        ("str", "r1, [r0, #4]"),
+        ("bx", "lr"),
+    ]:
+        return HEADER + (
+            f"void {name}(u32 fields[4])\n{{\n"
+            "    fields[0] = 0;\n"
+            "    fields[3] = 0;\n"
+            "    fields[2] = 0;\n"
+            "    fields[1] = 0;\n"
+            "}\n"
+        )
+
+    # Load a word after a large pointer adjustment.
+    if (
+        len(insns) == 3
+        and insns[0][0] == "add"
+        and insns[0][1].startswith("r0, r0, #")
+        and insns[1][0] == "ldr"
+        and insns[1][1].startswith("r0, [r0, #")
+        and insns[2] == ("bx", "lr")
+    ):
+        high = int(insns[0][1].rsplit("#", 1)[1], 0)
+        low = int(insns[1][1].split("#", 1)[1].rstrip("]"), 0)
+        return HEADER + (
+            f"u32 {name}(const void *object)\n{{\n"
+            f"    return *(const u32 *)((const u8 *)object + 0x{high + low:x});\n"
+            "}\n"
+        )
+
+    # Clear caller-selected bits from a word field.
+    if insns == [
+        ("ldr", "r2, [r0, #4]"),
+        ("mvn", "r1, r1"),
+        ("and", "r1, r2, r1"),
+        ("str", "r1, [r0, #4]"),
+        ("bx", "lr"),
+    ]:
+        return HEADER + (
+            f"void {name}(void *object, u32 mask)\n{{\n"
+            "    *(u32 *)((u8 *)object + 4) &= ~mask;\n"
             "}\n"
         )
 

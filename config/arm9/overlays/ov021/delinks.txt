@@ -16,6 +16,10 @@ src/overlays/ov021/calls/UpdateDirectionInput.c:
     complete
     .text       start:0x020a6f54 end:0x020a6ff8
 
+src/overlays/ov021/auto/func_ov021_020a7480.c:
+    complete
+    .text       start:0x020a7480 end:0x020a748a
+
 src/overlays/ov021/calls/UpdateFieldButton.c:
     complete
     .text       start:0x020a748c end:0x020a7510
@@ -35,6 +39,14 @@ src/overlays/ov021/calls/HasFlagsAt0xc.c:
 src/overlays/ov021/calls/HasFlagsAt0xe.c:
     complete
     .text       start:0x020a754c end:0x020a755a
+
+src/overlays/ov021/auto/func_ov021_020a755c.c:
+    complete
+    .text       start:0x020a755c end:0x020a7564
+
+src/overlays/ov021/auto/func_ov021_020a7564.c:
+    complete
+    .text       start:0x020a7564 end:0x020a7570
 
 src/overlays/ov021/auto/SharedObject_GetField2.c:
     complete
@@ -1111,6 +1123,18 @@ src/overlays/ov021/calls/ScriptOp_GetObjectFixedField.c:
 src/overlays/ov021/calls/ReadContextFlagBit8.c:
     complete
     .text       start:0x020b10fc end:0x020b111c
+
+src/overlays/ov021/auto/func_ov021_020b111c.c:
+    complete
+    .text       start:0x020b111c end:0x020b1128
+
+src/overlays/ov021/auto/func_ov021_020b1128.c:
+    complete
+    .text       start:0x020b1128 end:0x020b1134
+
+src/overlays/ov021/auto/func_ov021_020b1134.c:
+    complete
+    .text       start:0x020b1134 end:0x020b1140
 
 src/overlays/ov021/calls/ScriptOp_IsObjectCounterNonpositive.c:
     complete

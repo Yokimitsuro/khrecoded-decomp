@@ -156,6 +156,10 @@ src/overlays/ov097/calls/SyncUnlockedEntryFlags.c:
     complete
     .text       start:0x020c14e0 end:0x020c1578
 
+src/overlays/ov097/auto/func_ov097_020c1590.c:
+    complete
+    .text       start:0x020c1590 end:0x020c159c
+
 src/overlays/ov097/auto/func_ov097_020c159c.c:
     complete
     .text       start:0x020c159c end:0x020c15a0

@@ -71,6 +71,10 @@ src/overlays/ov007/calls/RespawnWanderActor.c:
     complete
     .text       start:0x020a0eec end:0x020a100a
 
+src/overlays/ov007/auto/func_ov007_020a100c.c:
+    complete
+    .text       start:0x020a100c end:0x020a1018
+
 src/overlays/ov007/calls/GetRaisedOwnerPosition.c:
     complete
     .text       start:0x020a1018 end:0x020a1044

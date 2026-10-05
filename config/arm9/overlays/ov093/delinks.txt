@@ -144,6 +144,10 @@ src/overlays/ov093/calls/SetSceneState.c:
     complete
     .text       start:0x020c233c end:0x020c2368
 
+src/overlays/ov093/auto/func_ov093_020c2368.c:
+    complete
+    .text       start:0x020c2368 end:0x020c2374
+
 src/overlays/ov093/auto/func_ov093_020c2374.c:
     complete
     .text       start:0x020c2374 end:0x020c2378
@@ -219,6 +223,10 @@ src/overlays/ov093/calls/SetBgSubLayerVisible.c:
 src/overlays/ov093/auto/func_ov093_020c3bb4.c:
     complete
     .text       start:0x020c3bb4 end:0x020c3bc4
+
+src/overlays/ov093/auto/func_ov093_020c3bc4.c:
+    complete
+    .text       start:0x020c3bc4 end:0x020c3bd8
 
 src/overlays/ov093/auto/func_ov093_020c3bd8.c:
     complete

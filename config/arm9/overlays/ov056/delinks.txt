@@ -36,6 +36,10 @@ src/overlays/ov056/calls/PullActorTowardSource.c:
     complete
     .text       start:0x020d385c end:0x020d3924
 
+src/overlays/ov056/auto/func_ov056_020d3b3c.c:
+    complete
+    .text       start:0x020d3b3c end:0x020d3b44
+
 src/overlays/ov056/calls/ForwardTargetHandle.c:
     complete
     .text       start:0x020d3b44 end:0x020d3b50

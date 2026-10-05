@@ -348,6 +348,14 @@ src/overlays/ov002/calls/CopyWideStringWithNewline.c:
     complete
     .text       start:0x02066484 end:0x020664e4
 
+src/overlays/ov002/auto/func_ov002_020664e4.c:
+    complete
+    .text       start:0x020664e4 end:0x020664f4
+
+src/overlays/ov002/auto/func_ov002_020664f4.c:
+    complete
+    .text       start:0x020664f4 end:0x02066504
+
 src/overlays/ov002/calls/PostPanelEventOff.c:
     complete
     .text       start:0x02066504 end:0x02066530
@@ -460,6 +468,14 @@ src/overlays/ov002/calls/SetClampedPercentValue.c:
     complete
     .text       start:0x020674fc end:0x02067524
 
+src/overlays/ov002/auto/func_ov002_02067524.c:
+    complete
+    .text       start:0x02067524 end:0x02067538
+
+src/overlays/ov002/auto/func_ov002_02067538.c:
+    complete
+    .text       start:0x02067538 end:0x02067548
+
 src/overlays/ov002/calls/GetContextConfigField1acc.c:
     complete
     .text       start:0x02067548 end:0x02067564
@@ -503,6 +519,10 @@ src/overlays/ov002/calls/IsContextSlotFlag19Set.c:
 src/overlays/ov002/calls/WriteGlobalPackedFlag.c:
     complete
     .text       start:0x020679dc end:0x020679fc
+
+src/overlays/ov002/auto/func_ov002_020679fc.c:
+    complete
+    .text       start:0x020679fc end:0x02067a0c
 
 src/overlays/ov002/calls/SetContextConfigByte1ba2.c:
     complete

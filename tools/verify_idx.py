@@ -6,7 +6,7 @@ relocated words are masked and every (offset -> target) pair must agree.
     python tools/verify_idx.py <file.c> <func_name> [--thumb]
     python tools/verify_idx.py --batch [-j N] <file.c | @list.txt> ...
 """
-import sys, os, json
+import sys, os, json, re
 try:
     sys.stdout.reconfigure(errors="replace")  # never let console encoding crash a run
 except Exception:
@@ -65,6 +65,15 @@ SYM_ADDR = _load_sym_addrs()
 ABS_SYM = _load_abs_syms()
 IDX = os.path.join(ROOT, "build", "func_index.json")
 
+
+def _symbol_address(name):
+    """Address of a current symbol or an address-style historical name."""
+    address = SYM_ADDR.get(name)
+    if address is not None:
+        return address
+    match = re.search(r"_(?:ov[0-9]+_)?([0-9a-fA-F]{8})$", name or "")
+    return int(match.group(1), 16) if match else None
+
 def _read_addends(o_path, name):
     """RELA r_addend per .text offset (absent -> treated as 0 by the caller). mwccarm
     emits .rela.text, so a struct-field address carries its field offset here rather than
@@ -121,7 +130,7 @@ def _verified_local_data_relocs(o_path, original_relocs, mine_relocs, addends, m
             expected_name = original_relocs.get(off)
             if expected_name is None or mine_name == expected_name or reloc_type != 2:
                 continue
-            expected_address = SYM_ADDR.get(expected_name)
+            expected_address = _symbol_address(expected_name)
             if expected_address is None:
                 continue
             candidates = symtab.get_symbol_by_name(mine_name) or []
@@ -273,7 +282,7 @@ def check(cpath, name, thumb):
             against. Only ARM data relocs (R_ARM_ABS32, type 2) carry a meaningful address
             addend; the pc-relative call reloc (type 1) uses -8 as a pipeline fixup, not an
             address offset, so it is excluded."""
-            a = SYM_ADDR.get(mrel[off])
+            a = _symbol_address(mrel[off])
             if a is None:
                 return None
             typ = mrel_full[off][1]
@@ -282,7 +291,7 @@ def check(cpath, name, thumb):
         same = all(
             (o in orel and (mrel[o] == orel[o]
                             or (_mine_addr(o) is not None
-                                and _mine_addr(o) == SYM_ADDR.get(orel[o]))
+                                and _mine_addr(o) == _symbol_address(orel[o]))
                             or o in local_relocs))
             or _abs_ok(o)
             for o in mrel) and all(o in mrel for o in orel)

@@ -232,6 +232,10 @@ src/overlays/ov027/calls/FindWidgetById.c:
     complete
     .text       start:0x020b90c4 end:0x020b9114
 
+src/overlays/ov027/auto/func_ov027_020b9114.c:
+    complete
+    .text       start:0x020b9114 end:0x020b9120
+
 src/overlays/ov027/calls/IsWidgetMoveFinished.c:
     complete
     .text       start:0x020b9120 end:0x020b914c

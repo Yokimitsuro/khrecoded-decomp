@@ -72,6 +72,10 @@ src/overlays/ov059/calls/Collider_IsOwnerKind11.c:
     complete
     .text       start:0x020c8568 end:0x020c8578
 
+src/overlays/ov059/auto/func_ov059_020c8578.c:
+    complete
+    .text       start:0x020c8578 end:0x020c8580
+
 src/overlays/ov059/calls/Actor_ApplyFrameMotion.c:
     complete
     .text       start:0x020c87b4 end:0x020c88e4

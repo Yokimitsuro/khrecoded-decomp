@@ -124,6 +124,10 @@ src/overlays/ov091/calls/SetSceneMode.c:
     complete
     .text       start:0x020c175c end:0x020c1774
 
+src/overlays/ov091/auto/func_ov091_020c1774.c:
+    complete
+    .text       start:0x020c1774 end:0x020c1780
+
 src/overlays/ov091/auto/func_ov091_020c1780.c:
     complete
     .text       start:0x020c1780 end:0x020c1784
@@ -199,6 +203,10 @@ src/overlays/ov091/calls/SetSubBg2Visible.c:
 src/overlays/ov091/auto/func_ov091_020c2774.c:
     complete
     .text       start:0x020c2774 end:0x020c2784
+
+src/overlays/ov091/auto/func_ov091_020c2784.c:
+    complete
+    .text       start:0x020c2784 end:0x020c2798
 
 src/overlays/ov091/auto/func_ov091_020c2798.c:
     complete

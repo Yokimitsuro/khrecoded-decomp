@@ -188,6 +188,10 @@ src/overlays/ov025/calls/GetSlotEntryValue_020b7608.c:
     complete
     .text       start:0x020b7608 end:0x020b7650
 
+src/overlays/ov025/auto/func_ov025_020b7650.c:
+    complete
+    .text       start:0x020b7650 end:0x020b765a
+
 src/overlays/ov025/calls/GetAvailableMenuEntryIndex.c:
     complete
     .text       start:0x020b765c end:0x020b7676

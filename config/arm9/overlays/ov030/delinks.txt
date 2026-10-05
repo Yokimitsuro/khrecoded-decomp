@@ -76,6 +76,10 @@ src/overlays/ov030/calls/ClearSceneEntry.c:
     complete
     .text       start:0x020bb444 end:0x020bb460
 
+src/overlays/ov030/auto/func_ov030_020bb488.c:
+    complete
+    .text       start:0x020bb488 end:0x020bb494
+
 src/overlays/ov030/calls/SnapCarriedActorToView.c:
     complete
     .text       start:0x020bb494 end:0x020bb5c0
