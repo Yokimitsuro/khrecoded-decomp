@@ -6416,3 +6416,75 @@ src/data/strings/Strings_main_02056198.c:
 src/data/strings/Strings_main_020561a4.c:
     complete
     .data       start:0x020561a4 end:0x020561ac
+
+src/data/tables/CARDiDmaUsingFormer.c:
+    complete
+    .rodata     start:0x02052978 end:0x02052980
+
+src/data/tables/OSi_ProtectionRegionSetters.c:
+    complete
+    .data       start:0x02055bd8 end:0x02055c18
+
+src/data/tables/PointerTables_02052f00.c:
+    complete
+    .rodata     start:0x02052f00 end:0x02052fa0
+
+src/data/tables/PointerTables_02055780.c:
+    complete
+    .rodata     start:0x02055780 end:0x02055838
+
+src/data/tables/PointerTables_020558b4.c:
+    complete
+    .rodata     start:0x020558b4 end:0x02055944
+
+src/data/tables/PointerTables_02055944.c:
+    complete
+    .rodata     start:0x02055944 end:0x020559d4
+
+src/data/tables/PointerTables_02055c58.c:
+    complete
+    .data       start:0x02055c58 end:0x02055c78
+
+src/data/tables/PointerTables_02055d70.c:
+    complete
+    .data       start:0x02055d70 end:0x02055d8c
+
+src/data/tables/gBgAffineControlDispatch.c:
+    complete
+    .rodata     start:0x020555d8 end:0x020555f8
+
+src/data/tables/gBgExtendedControlDispatch.c:
+    complete
+    .rodata     start:0x02055658 end:0x02055678
+
+src/data/tables/gCollisionBoundsDispatch.c:
+    complete
+    .rodata     start:0x020559d4 end:0x020559ec
+
+src/data/tables/gGameTitleStringTable.c:
+    complete
+    .data       start:0x02055f30 end:0x02055f38
+
+src/data/tables/gJointAnimationResultDispatch.c:
+    complete
+    .data       start:0x02055d64 end:0x02055d70
+
+src/data/tables/gLanguageCodeTable.c:
+    complete
+    .data       start:0x02055ff8 end:0x02056014
+
+src/data/tables/gSoundCategoryNames.c:
+    complete
+    .data       start:0x0205615c end:0x0205616c
+
+src/data/tables/sDefaultAllocPlttVramFunc.c:
+    complete
+    .data       start:0x02055c54 end:0x02055c58
+
+src/data/tables/sDefaultAllocTexVramFunc.c:
+    complete
+    .data       start:0x02055c4c end:0x02055c50
+
+src/data/tables/sDefaultFreeTexVramFunc.c:
+    complete
+    .data       start:0x02055c50 end:0x02055c54
