@@ -3977,6 +3977,38 @@ libs/nns/g3d/calls/getMdlRot_.c:
     complete
     .text       start:0x0201aff4 end:0x0201b174
 
+libs/nns/g3d/calls/getJntSRTAnmResult_.c:
+    complete
+    .text       start:0x0201b174 end:0x0201b4c8
+
+libs/nns/g3d/auto/getTransData_.c:
+    complete
+    .text       start:0x0201b4c8 end:0x0201b618
+
+libs/nns/g3d/auto/getTransDataEx_.c:
+    complete
+    .text       start:0x0201b618 end:0x0201b76c
+
+libs/nns/g3d/auto/getScaleData_.c:
+    complete
+    .text       start:0x0201b76c end:0x0201b940
+
+libs/nns/g3d/auto/getScaleDataEx_.c:
+    complete
+    .text       start:0x0201b940 end:0x0201bac0
+
+libs/nns/g3d/calls/getRotData_.c:
+    complete
+    .text       start:0x0201bac0 end:0x0201bec4
+
+libs/nns/g3d/calls/getRotDataEx_.c:
+    complete
+    .text       start:0x0201bec4 end:0x0201c1fc
+
+libs/nns/g3d/auto/getRotDataByIdx_.c:
+    complete
+    .text       start:0x0201c1fc end:0x0201c364
+
 libs/nns/g3d/auto/func_0201c364.c:
     complete
     .text       start:0x0201c364 end:0x0201c450

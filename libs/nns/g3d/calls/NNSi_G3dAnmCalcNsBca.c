@@ -1,6 +1,6 @@
 #include "libs/nns/g3d/g3d_nsbca_internal.h"
 
-extern void func_0201b174(
+extern void getJntSRTAnmResult_(
     const NNSG3dResJntAnm *animation,
     u32 dataIndex,
     fx32 frame,
@@ -23,5 +23,5 @@ void NNSi_G3dAnmCalcNsBca(
         frame = animationObject->frame;
     }
 
-    func_0201b174(animation, dataIndex, frame, result);
+    getJntSRTAnmResult_(animation, dataIndex, frame, result);
 }

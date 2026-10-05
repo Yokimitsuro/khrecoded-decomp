@@ -613,5 +613,13 @@
   "libs/nns/g3d/calls/getMdlTrans_.c": "dsi/1.1",
   "libs/nns/g3d/calls/getMdlScale_.c": "dsi/1.1",
   "libs/nns/g3d/calls/getMdlRot_.c": "dsi/1.1",
+  "libs/nns/g3d/calls/getJntSRTAnmResult_.c": "dsi/1.1",
+  "libs/nns/g3d/auto/getTransData_.c": "dsi/1.1",
+  "libs/nns/g3d/auto/getTransDataEx_.c": "dsi/1.1",
+  "libs/nns/g3d/auto/getScaleData_.c": "dsi/1.2",
+  "libs/nns/g3d/auto/getScaleDataEx_.c": "dsi/1.1",
+  "libs/nns/g3d/calls/getRotData_.c": "dsi/1.1",
+  "libs/nns/g3d/calls/getRotDataEx_.c": "dsi/1.1",
+  "libs/nns/g3d/auto/getRotDataByIdx_.c": "dsi/1.1",
   "libs/nns/g3d/data/g3d_nsbca_pivot_table.c": "dsi/1.1"
 }
