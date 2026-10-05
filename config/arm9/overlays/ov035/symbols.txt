@@ -96,7 +96,7 @@ data_ov035_020bc444 kind:data(any) addr:0x020bc444
 data_ov035_020bc480 kind:data(any) addr:0x020bc480
 data_ov035_020bc484 kind:data(any) addr:0x020bc484
 data_ov035_020bc498 kind:data(any) addr:0x020bc498
-data_ov035_020bc4c0 kind:data(any) addr:0x020bc4c0
+sOv035_RpgZ_020bc4c0 kind:data(any) addr:0x020bc4c0
 data_ov035_020bc4c8 kind:data(any) addr:0x020bc4c8
 data_ov035_020bc4c9 kind:data(any) addr:0x020bc4c9 ambiguous
 data_ov035_020bc4d0 kind:data(any) addr:0x020bc4d0

@@ -11,3 +11,7 @@ src/overlays/ov035/calls/func_ov035_020ba960.c:
 src/overlays/ov035/auto/func_ov035_020bac90.c:
     complete
     .text       start:0x020bac90 end:0x020bac92
+
+src/overlays/ov035/data/strings/Strings_ov035_020bc4c0.c:
+    complete
+    .data       start:0x020bc4c0 end:0x020bc4c8

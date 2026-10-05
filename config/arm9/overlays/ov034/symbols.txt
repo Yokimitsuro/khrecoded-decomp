@@ -80,19 +80,19 @@ data_ov034_020c0820 kind:data(any) addr:0x020c0820 ambiguous
 data_ov034_020c0d59 kind:data(any) addr:0x020c0d59 ambiguous
 data_ov034_020c0d69 kind:data(any) addr:0x020c0d69 ambiguous
 data_ov034_020c0d79 kind:data(any) addr:0x020c0d79 ambiguous
-data_ov034_020c0ea8 kind:data(any) addr:0x020c0ea8
+sOv034_UiBtlStrLanguageP2_020c0ea8 kind:data(any) addr:0x020c0ea8
 data_ov034_020c0eb8 kind:data(any) addr:0x020c0eb8
 data_ov034_020c0ed0 kind:data(any) addr:0x020c0ed0
-data_ov034_020c0ee8 kind:data(any) addr:0x020c0ee8
-data_ov034_020c0efc kind:data(any) addr:0x020c0efc
-data_ov034_020c0f10 kind:data(any) addr:0x020c0f10
+sOv034_UiBtlBtluiP2_020c0ee8 kind:data(any) addr:0x020c0ee8
+sOv034_UiBtlBtlLanguageP2_020c0efc kind:data(any) addr:0x020c0efc
+sOv034_SYSAREAMENU_020c0f10 kind:data(any) addr:0x020c0f10
 data_ov034_020c0f20 kind:data(any) addr:0x020c0f20
 data_ov034_020c0f3c kind:data(any) addr:0x020c0f3c
 data_ov034_020c0f44 kind:data(any) addr:0x020c0f44
 data_ov034_020c0f4c kind:data(any) addr:0x020c0f4c
 data_ov034_020c0f58 kind:data(any) addr:0x020c0f58
-data_ov034_020c0f64 kind:data(any) addr:0x020c0f64
-data_ov034_020c0f74 kind:data(any) addr:0x020c0f74
+sOv034_UiMenuTipsP2_020c0f64 kind:data(any) addr:0x020c0f64
+sOv034_UiMenuLanguageTipsP2_020c0f74 kind:data(any) addr:0x020c0f74
 data_ov034_020c0fa0 kind:bss addr:0x020c0fa0
 data_ov034_020c0fa8 kind:bss addr:0x020c0fa8
 data_ov034_020c0fe8 kind:bss addr:0x020c0fe8

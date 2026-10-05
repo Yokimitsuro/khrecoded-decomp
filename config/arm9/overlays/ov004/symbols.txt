@@ -47,8 +47,8 @@ data_ov004_02063c30 kind:data(any) addr:0x02063c30
 data_ov004_02063ec0 kind:data(any) addr:0x02063ec0
 data_ov004_02064520 kind:data(any) addr:0x02064520
 data_ov004_02064530 kind:data(any) addr:0x02064530
-data_ov004_02064544 kind:data(any) addr:0x02064544
-data_ov004_02064550 kind:data(any) addr:0x02064550
+sOv004_SfSfP2_02064544 kind:data(any) addr:0x02064544
+sOv004_SfSffont10Nftr_02064550 kind:data(any) addr:0x02064550
 data_ov004_02064564 kind:data(any) addr:0x02064564
 data_ov004_02064575 kind:data(any) addr:0x02064575 ambiguous
 data_ov004_02064578 kind:data(any) addr:0x02064578

@@ -18,9 +18,9 @@ func_ov054_020d34d0 kind:function(arm,size=0x17c) addr:0x020d34d0
 func_ov054_020d364c kind:function(thumb,size=0x28) addr:0x020d364c
 data_ov054_020d3674 kind:data(any) addr:0x020d3674
 data_ov054_020d3690 kind:data(any) addr:0x020d3690
-data_ov054_020d36c0 kind:data(any) addr:0x020d36c0
-data_ov054_020d36d4 kind:data(any) addr:0x020d36d4
-data_ov054_020d36e8 kind:data(any) addr:0x020d36e8
+sOv054_BaChFormatSEtc2PZ_020d36c0 kind:data(any) addr:0x020d36c0
+sOv054_BaChFormatSAb2PZ_020d36d4 kind:data(any) addr:0x020d36d4
+sOv054_BaChFormatSJpPZ_020d36e8 kind:data(any) addr:0x020d36e8
 data_ov054_020d36f8 kind:data(any) addr:0x020d36f8
 data_ov054_020d36fd kind:data(any) addr:0x020d36fd ambiguous
 data_ov054_020d3720 kind:bss addr:0x020d3720

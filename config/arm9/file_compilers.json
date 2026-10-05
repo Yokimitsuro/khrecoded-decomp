@@ -1254,5 +1254,17 @@
   "src/overlays/ov103/data/strings/Strings_ov103_020c0544.c": "dsi/1.1",
   "src/overlays/ov103/data/strings/Strings_ov103_020c056c.c": "dsi/1.1",
   "src/overlays/ov103/data/strings/Strings_ov103_020c05a0.c": "dsi/1.1",
-  "src/overlays/ov103/data/strings/Strings_ov103_020c06f8.c": "dsi/1.1"
+  "src/overlays/ov103/data/strings/Strings_ov103_020c06f8.c": "dsi/1.1",
+  "src/overlays/ov034/data/strings/Strings_ov034_020c0ea8.c": "dsi/1.1",
+  "src/overlays/ov034/data/strings/Strings_ov034_020c0ee8.c": "dsi/1.1",
+  "src/overlays/ov034/data/strings/Strings_ov034_020c0efc.c": "dsi/1.1",
+  "src/overlays/ov034/data/strings/Strings_ov034_020c0f10.c": "dsi/1.1",
+  "src/overlays/ov034/data/strings/Strings_ov034_020c0f64.c": "dsi/1.1",
+  "src/overlays/ov035/data/strings/Strings_ov035_020bc4c0.c": "dsi/1.1",
+  "src/overlays/ov054/data/strings/Strings_ov054_020d36c0.c": "dsi/1.1",
+  "src/overlays/ov054/data/strings/Strings_ov054_020d36d4.c": "dsi/1.1",
+  "src/overlays/ov054/data/strings/Strings_ov054_020d36e8.c": "dsi/1.1",
+  "src/overlays/ov097/data/strings/Strings_ov097_020c1df8.c": "dsi/1.1",
+  "src/overlays/ov097/data/strings/Strings_ov097_020c1e40.c": "dsi/1.1",
+  "src/overlays/ov004/data/strings/Strings_ov004_02064544.c": "dsi/1.1"
 }

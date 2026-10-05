@@ -23,3 +23,7 @@ src/overlays/ov004/auto/func_ov004_0206252c.c:
 src/overlays/ov004/auto/func_ov004_02062d78.c:
     complete
     .text       start:0x02062d78 end:0x02062dc0
+
+src/overlays/ov004/data/strings/Strings_ov004_02064544.c:
+    complete
+    .data       start:0x02064544 end:0x02064564

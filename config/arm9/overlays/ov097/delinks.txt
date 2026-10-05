@@ -15,3 +15,11 @@ src/overlays/ov097/auto/func_ov097_020c1a64.c:
 src/overlays/ov097/calls/func_ov097_020c1db8.c:
     complete
     .text       start:0x020c1db8 end:0x020c1dc4
+
+src/overlays/ov097/data/strings/Strings_ov097_020c1df8.c:
+    complete
+    .data       start:0x020c1df8 end:0x020c1e40
+
+src/overlays/ov097/data/strings/Strings_ov097_020c1e40.c:
+    complete
+    .data       start:0x020c1e40 end:0x020c1e5c

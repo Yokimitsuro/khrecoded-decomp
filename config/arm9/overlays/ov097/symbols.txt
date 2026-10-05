@@ -63,10 +63,10 @@ data_ov097_020c1dc4 kind:data(any) addr:0x020c1dc4
 data_ov097_020c1dcc kind:data(any) addr:0x020c1dcc
 data_ov097_020c1de0 kind:data(any) addr:0x020c1de0
 data_ov097_020c1dec kind:data(any) addr:0x020c1dec
-data_ov097_020c1df8 kind:data(any) addr:0x020c1df8
-data_ov097_020c1e0c kind:data(any) addr:0x020c1e0c
-data_ov097_020c1e24 kind:data(any) addr:0x020c1e24
-data_ov097_020c1e40 kind:data(any) addr:0x020c1e40
+sOv097_UiReportStoryP2f_020c1df8 kind:data(any) addr:0x020c1df8
+sOv097_UiReportLanguageStoryP2f_020c1e0c kind:data(any) addr:0x020c1e0c
+sOv097_UiReportLanguageStoryObjP2f_020c1e24 kind:data(any) addr:0x020c1e24
+sOv097_UiReportTextLanguageStorySZ_020c1e40 kind:data(any) addr:0x020c1e40
 data_ov097_020c1e5c kind:data(any) addr:0x020c1e5c
 data_ov097_020c1e61 kind:data(any) addr:0x020c1e61 ambiguous
 data_ov097_020c1e7c kind:data(any) addr:0x020c1e7c

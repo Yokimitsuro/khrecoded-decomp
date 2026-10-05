@@ -7,3 +7,15 @@
 src/overlays/ov054/calls/func_ov054_020d24fc.c:
     complete
     .text       start:0x020d24fc end:0x020d250c
+
+src/overlays/ov054/data/strings/Strings_ov054_020d36c0.c:
+    complete
+    .data       start:0x020d36c0 end:0x020d36d4
+
+src/overlays/ov054/data/strings/Strings_ov054_020d36d4.c:
+    complete
+    .data       start:0x020d36d4 end:0x020d36e8
+
+src/overlays/ov054/data/strings/Strings_ov054_020d36e8.c:
+    complete
+    .data       start:0x020d36e8 end:0x020d36f8

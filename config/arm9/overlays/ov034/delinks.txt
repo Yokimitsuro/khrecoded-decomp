@@ -19,3 +19,23 @@ src/overlays/ov034/auto/func_ov034_020bdea4.c:
 src/overlays/ov034/auto/func_ov034_020be734.c:
     complete
     .text       start:0x020be734 end:0x020be736
+
+src/overlays/ov034/data/strings/Strings_ov034_020c0ea8.c:
+    complete
+    .data       start:0x020c0ea8 end:0x020c0eb8
+
+src/overlays/ov034/data/strings/Strings_ov034_020c0ee8.c:
+    complete
+    .data       start:0x020c0ee8 end:0x020c0efc
+
+src/overlays/ov034/data/strings/Strings_ov034_020c0efc.c:
+    complete
+    .data       start:0x020c0efc end:0x020c0f10
+
+src/overlays/ov034/data/strings/Strings_ov034_020c0f10.c:
+    complete
+    .data       start:0x020c0f10 end:0x020c0f20
+
+src/overlays/ov034/data/strings/Strings_ov034_020c0f64.c:
+    complete
+    .data       start:0x020c0f64 end:0x020c0fa0
