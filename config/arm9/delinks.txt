@@ -4385,7 +4385,7 @@ libs/nitro/snd/calls/SND_SetActiveSlotSwap.c:
     complete
     .text       start:0x0201e9ec end:0x0201ea04
 
-src/calls/func_0201ea04.c:
+libs/nns/snd/auto/NNS_SndArcGetCurrent.c:
     complete
     .text       start:0x0201ea04 end:0x0201ea14
 
@@ -4509,51 +4509,63 @@ libs/nns/snd/calls/EraseSync.c:
     complete
     .text       start:0x0201f30c end:0x0201f32c
 
-libs/nns/snd/calls/func_0201f3bc.c:
+libs/nns/snd/calls/NNS_SndArcLoadSeq.c:
+    complete
+    .text       start:0x0201f32c end:0x0201f35c
+
+libs/nns/snd/calls/NNS_SndArcLoadSeqArc.c:
+    complete
+    .text       start:0x0201f35c end:0x0201f38c
+
+libs/nns/snd/calls/NNS_SndArcLoadBank.c:
+    complete
+    .text       start:0x0201f38c end:0x0201f3bc
+
+libs/nns/snd/calls/NNSi_SndArcLoadSeq.c:
     complete
     .text       start:0x0201f3bc end:0x0201f440
 
-libs/nns/snd/calls/func_0201f440.c:
+libs/nns/snd/calls/NNSi_SndArcLoadSeqArc.c:
     complete
     .text       start:0x0201f440 end:0x0201f4a0
 
-libs/nns/snd/calls/func_0201f4a0.c:
+libs/nns/snd/calls/NNSi_SndArcLoadFile.c:
     complete
-    .text       start:0x0201f4a0 end:0x0201f5e0
+    .text       start:0x0201f664 end:0x0201f708
 
-libs/nns/snd/calls/func_0201f708.c:
+libs/nns/snd/calls/LoadSeq.c:
     complete
     .text       start:0x0201f708 end:0x0201f774
 
-libs/nns/snd/calls/func_0201f774.c:
+libs/nns/snd/calls/LoadSeqArc.c:
     complete
     .text       start:0x0201f774 end:0x0201f7e0
 
-libs/nns/snd/calls/func_0201f7e0.c:
+libs/nns/snd/calls/LoadBank.c:
     complete
     .text       start:0x0201f7e0 end:0x0201f84c
 
-libs/nns/snd/calls/func_0201f84c.c:
+libs/nns/snd/calls/LoadWaveArc.c:
     complete
     .text       start:0x0201f84c end:0x0201f8b8
 
-libs/nns/snd/calls/func_0201f9e0.c:
+libs/nns/snd/calls/DisposeCallback.c:
     complete
     .text       start:0x0201f9e0 end:0x0201fa38
 
-libs/nns/snd/calls/func_0201fa38.c:
+libs/nns/snd/calls/SeqDisposeCallback.c:
     complete
     .text       start:0x0201fa38 end:0x0201fa60
 
-libs/nns/snd/calls/func_0201fa60.c:
+libs/nns/snd/calls/BankDisposeCallback.c:
     complete
     .text       start:0x0201fa60 end:0x0201fa90
 
-libs/nns/snd/calls/func_0201fa90.c:
+libs/nns/snd/calls/WaveArcDisposeCallback.c:
     complete
     .text       start:0x0201fa90 end:0x0201fac0
 
-libs/nns/snd/calls/func_0201fac0.c:
+libs/nns/snd/calls/WaveArcTableDisposeCallback.c:
     complete
     .text       start:0x0201fac0 end:0x0201fae0
 

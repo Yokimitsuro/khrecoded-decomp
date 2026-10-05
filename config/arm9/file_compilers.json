@@ -704,5 +704,21 @@
   "libs/nns/snd/calls/NNS_SndArcGetSeqArcSeqCount.c": "dsi/1.1",
   "libs/nns/snd/auto/NNSi_SndSeqArcGetSeqCount.c": "dsi/1.1",
   "libs/nns/snd/calls/NNS_SndArcGetSeqArcIdxSymbol.c": "dsi/1.1",
-  "libs/nns/snd/auto/GetSoundArchiveSymbol.c": "dsi/1.1"
+  "libs/nns/snd/auto/GetSoundArchiveSymbol.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcLoadSeq.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcLoadSeqArc.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcLoadBank.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndArcLoadSeq.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndArcLoadSeqArc.c": "dsi/1.1",
+  "libs/nns/snd/calls/LoadSeq.c": "dsi/1.1",
+  "libs/nns/snd/calls/LoadSeqArc.c": "dsi/1.1",
+  "libs/nns/snd/auto/NNS_SndArcGetCurrent.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndArcLoadFile.c": "dsi/1.1",
+  "libs/nns/snd/calls/SeqDisposeCallback.c": "dsi/1.1",
+  "libs/nns/snd/calls/LoadBank.c": "dsi/1.1",
+  "libs/nns/snd/calls/LoadWaveArc.c": "dsi/1.1",
+  "libs/nns/snd/calls/DisposeCallback.c": "dsi/1.1",
+  "libs/nns/snd/calls/BankDisposeCallback.c": "dsi/1.1",
+  "libs/nns/snd/calls/WaveArcDisposeCallback.c": "dsi/1.1",
+  "libs/nns/snd/calls/WaveArcTableDisposeCallback.c": "dsi/1.1"
 }
