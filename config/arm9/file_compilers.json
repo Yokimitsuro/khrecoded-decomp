@@ -720,5 +720,11 @@
   "libs/nns/snd/calls/DisposeCallback.c": "dsi/1.1",
   "libs/nns/snd/calls/BankDisposeCallback.c": "dsi/1.1",
   "libs/nns/snd/calls/WaveArcDisposeCallback.c": "dsi/1.1",
-  "libs/nns/snd/calls/WaveArcTableDisposeCallback.c": "dsi/1.1"
+  "libs/nns/snd/calls/WaveArcTableDisposeCallback.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndArcLoadBank.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndArcLoadWaveArc.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcLoadWaveArcTable.c": "dsi/1.1",
+  "libs/nns/snd/calls/SingleWaveDisposeCallback.c": "dsi/1.1",
+  "libs/nns/snd/calls/SndLoadWaveData.c": "dsi/1.1",
+  "libs/nns/snd/calls/LoadSingleWaves.c": "dsi/1.1"
 }

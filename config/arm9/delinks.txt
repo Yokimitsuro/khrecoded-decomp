@@ -4529,6 +4529,14 @@ libs/nns/snd/calls/NNSi_SndArcLoadSeqArc.c:
     complete
     .text       start:0x0201f440 end:0x0201f4a0
 
+libs/nns/snd/calls/NNSi_SndArcLoadBank.c:
+    complete
+    .text       start:0x0201f4a0 end:0x0201f5e0
+
+libs/nns/snd/calls/NNSi_SndArcLoadWaveArc.c:
+    complete
+    .text       start:0x0201f5e0 end:0x0201f664
+
 libs/nns/snd/calls/NNSi_SndArcLoadFile.c:
     complete
     .text       start:0x0201f664 end:0x0201f708
@@ -4548,6 +4556,10 @@ libs/nns/snd/calls/LoadBank.c:
 libs/nns/snd/calls/LoadWaveArc.c:
     complete
     .text       start:0x0201f84c end:0x0201f8b8
+
+libs/nns/snd/calls/NNS_SndArcLoadWaveArcTable.c:
+    complete
+    .text       start:0x0201f8b8 end:0x0201f9e0
 
 libs/nns/snd/calls/DisposeCallback.c:
     complete
@@ -4569,13 +4581,17 @@ libs/nns/snd/calls/WaveArcTableDisposeCallback.c:
     complete
     .text       start:0x0201fac0 end:0x0201fae0
 
-libs/nns/snd/calls/func_0201fae0.c:
+libs/nns/snd/calls/SingleWaveDisposeCallback.c:
     complete
     .text       start:0x0201fae0 end:0x0201fb28
 
-libs/nitro/snd/calls/func_0201fb28.c:
+libs/nns/snd/calls/SndLoadWaveData.c:
     complete
     .text       start:0x0201fb28 end:0x0201fbf0
+
+libs/nns/snd/calls/LoadSingleWaves.c:
+    complete
+    .text       start:0x0201fbf0 end:0x0201fcb0
 
 libs/nns/snd/calls/func_0201fd48.c:
     complete
