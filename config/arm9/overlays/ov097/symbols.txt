@@ -80,5 +80,5 @@ data_ov097_020c22e4 kind:data(any) addr:0x020c22e4
 data_ov097_020c2360 kind:data(any) addr:0x020c2360 ambiguous
 data_ov097_020c2368 kind:data(any) addr:0x020c2368 ambiguous
 data_ov097_020c2380 kind:data(any) addr:0x020c2380 ambiguous
-data_ov097_020c2514 kind:data(any) addr:0x020c2514
+sOv097_TextFontEu10Nftr_020c2514 kind:data(any) addr:0x020c2514
 data_ov097_020c2540 kind:bss addr:0x020c2540

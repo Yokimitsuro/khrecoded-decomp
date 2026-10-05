@@ -2366,9 +2366,9 @@ gNearestEntrySyncHandlers kind:data(any) addr:0x020a0260
 sOv001_Bip_020a0294 kind:data(any) addr:0x020a0294
 gStageScriptStateHandlers kind:data(any) addr:0x020a0298
 data_ov001_020a02c8 kind:data(any) addr:0x020a02c8
-data_ov001_020a02fc kind:data(any) addr:0x020a02fc
+sOv001_TraTg_020a02fc kind:data(any) addr:0x020a02fc
 data_ov001_020a0303 kind:data(any) addr:0x020a0303
-data_ov001_020a0304 kind:data(any) addr:0x020a0304
+sOv001_EnAmFormat04dAp2_020a0304 kind:data(any) addr:0x020a0304
 data_ov001_020a0314 kind:data(any) addr:0x020a0314
 data_ov001_020a0318 kind:data(any) addr:0x020a0318
 data_ov001_020a032c kind:data(any) addr:0x020a032c

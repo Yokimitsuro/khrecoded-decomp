@@ -72,7 +72,12 @@ def read_module(module: str) -> dict:
     symbols_text = symbols_path.read_text(encoding="utf-8")
     symbols = {}
     for match in DATA_SYMBOL_RE.finditer(symbols_text):
-        symbols.setdefault(int(match.group(3), 16), []).append(match.group(1))
+        # Ambiguous placeholders often point into the middle of a regional
+        # string (for example, "s%02d" inside "%s%02d"). Those bytes can be
+        # unique without representing a standalone object, so never import
+        # them automatically.
+        if "ambiguous" not in match.group(2):
+            symbols.setdefault(int(match.group(3), 16), []).append(match.group(1))
     return {
         "config": config,
         "binary": binary_path.read_bytes(),
@@ -288,8 +293,11 @@ def imported_sources(module: str) -> list[Path]:
     )
 
 
-def remove_modules(modules: list[str]) -> None:
-    """Roll back generated string imports for selected modules only."""
+def remove_modules(
+    modules: list[str],
+    selected_starts: dict[str, set[int]] | None = None,
+) -> None:
+    """Roll back generated string imports for selected modules or blocks."""
     compiler_map = json.loads(COMPILERS.read_text(encoding="utf-8"))
     replacements = {}
     removals = []
@@ -303,6 +311,8 @@ def remove_modules(modules: list[str]) -> None:
             name_match = IMPORTED_SOURCE_RE.match(source_path_item.name)
             assert name_match is not None
             start = int(name_match.group(2), 16)
+            if selected_starts is not None and start not in selected_starts[module]:
+                continue
             source = source_path_item.read_text(encoding="utf-8")
             declarations = decode_declarations(source, start)
             if not declarations:
@@ -359,7 +369,26 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--module")
     parser.add_argument("--remove-module", action="append", default=[])
+    parser.add_argument(
+        "--remove-block",
+        action="append",
+        default=[],
+        metavar="MODULE:ADDRESS",
+        help="remove one generated block without touching other module strings",
+    )
     args = parser.parse_args()
+
+    if args.remove_block:
+        selected_starts = {}
+        for spec in args.remove_block:
+            try:
+                module, address_text = spec.split(":", 1)
+                address = int(address_text, 0)
+            except ValueError as exc:
+                raise SystemExit(f"invalid --remove-block {spec!r}") from exc
+            selected_starts.setdefault(module, set()).add(address)
+        remove_modules(list(selected_starts), selected_starts)
+        return
 
     if args.remove_module:
         remove_modules(args.remove_module)

@@ -2462,5 +2462,9 @@
   "src/overlays/ov041/data/strings/Strings_ov041_020cfa8c.c": "dsi/1.1",
   "src/overlays/ov041/data/strings/Strings_ov041_020cfaa0.c": "dsi/1.1",
   "src/overlays/ov041/data/strings/Strings_ov041_020cfab0.c": "dsi/1.1",
-  "src/overlays/ov041/data/strings/Strings_ov041_020cfac0.c": "dsi/1.1"
+  "src/overlays/ov041/data/strings/Strings_ov041_020cfac0.c": "dsi/1.1",
+  "src/overlays/ov001/data/strings/Strings_ov001_020a02fc.c": "dsi/1.1",
+  "src/overlays/ov061/data/strings/Strings_ov061_020d8540.c": "dsi/1.1",
+  "src/overlays/ov062/data/strings/Strings_ov062_020d8540.c": "dsi/1.1",
+  "src/overlays/ov097/data/strings/Strings_ov097_020c2514.c": "dsi/1.1"
 }

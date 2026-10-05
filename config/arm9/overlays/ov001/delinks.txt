@@ -972,6 +972,10 @@ src/overlays/ov001/data/strings/Strings_ov001_020a0294.c:
     complete
     .data       start:0x020a0294 end:0x020a0298
 
+src/overlays/ov001/data/strings/Strings_ov001_020a02fc.c:
+    complete
+    .data       start:0x020a02fc end:0x020a0314
+
 src/overlays/ov001/data/strings/Strings_ov001_020a03f4.c:
     complete
     .data       start:0x020a03f4 end:0x020a0404

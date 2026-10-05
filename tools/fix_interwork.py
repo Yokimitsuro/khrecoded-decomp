@@ -269,8 +269,8 @@ def main():
                 continue
             tgt_idx = sec["sh_info"]
             tgt_sec = e.get_section(tgt_idx)
-            if tgt_sec.name not in (".text",):
-                continue  # only code sections carry call relocs
+            if tgt_sec.name not in (".text", ".rodata", ".data", ".ctor"):
+                continue
             anch = anchors.get(tgt_idx)
             if anch is None:
                 continue
@@ -281,6 +281,8 @@ def main():
             for r in sec.iter_relocations():
                 rtype = r["r_info_type"]
                 if rtype not in (R_ARM_PC24, R_ARM_THM_CALL, R_ARM_ABS32):
+                    continue
+                if rtype != R_ARM_ABS32 and tgt_sec.name != ".text":
                     continue
                 sym = symtab.get_symbol(r["r_info_sym"]).name
                 site = base_addr + r["r_offset"]
