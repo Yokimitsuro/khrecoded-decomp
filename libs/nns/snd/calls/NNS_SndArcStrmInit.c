@@ -20,7 +20,7 @@ void NNS_SndArcStrmInit(u32 threadPriority, NNSSndHeapHandle heap)
             &sFreeStreamCommandList,
             &sStreamCommands[i]);
     }
-    OS_InitMutex(sStreamCommandMutex);
+    OS_InitMutex(sDecodeBufferMutex);
 
     sSoundArcStreamState.decodeBuffer = sDecodeBufferArea;
 

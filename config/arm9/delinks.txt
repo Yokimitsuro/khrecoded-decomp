@@ -4725,6 +4725,10 @@ libs/nns/snd/calls/OnDataEnd.c:
     complete
     .text       start:0x02020cec end:0x02020e28
 
+libs/nns/snd/calls/NNSi_SndArcStrm_MakeWaveData.c:
+    complete
+    .text       start:0x02020e28 end:0x02021630
+
 libs/nns/snd/calls/SetupStreamFunction.c:
     complete
     .text       start:0x02021630 end:0x02021698
@@ -5776,3 +5780,7 @@ libs/nns/gfd/data/sLnkTexVramManager.c:
 libs/nns/snd/data/sStrmChannel.c:
     complete
     .bss        start:0x0205e1c8 end:0x0205e248
+
+libs/nns/snd/data/sndarc_stream_adpcm_tables.c:
+    complete
+    .rodata     start:0x02053130 end:0x020531f4

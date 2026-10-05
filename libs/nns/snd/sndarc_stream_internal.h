@@ -13,6 +13,10 @@ enum {
     NNS_SND_ARC_STRM_FORCE_STEREO = 1 << 0
 };
 
+enum {
+    NNS_SND_ADPCM_INDEX_COUNT = 89
+};
+
 typedef struct NNSFndList {
     void *headObject;
     void *tailObject;
@@ -200,13 +204,15 @@ struct NNSSndStrmThread {
 
 extern NNSSndArcStreamState sSoundArcStreamState;
 extern NNSFndList sFreeStreamCommandList;
-extern u8 sStreamCommandMutex[0x18];
+extern u8 sDecodeBufferMutex[0x18];
 extern NNSSndStrmCommand sStreamCommands[NNS_SND_STRM_COMMAND_NUM];
 extern u8 sDecodeBufferArea[0x200];
 extern NNSSndStrmPlayer sStrmPlayers[NNS_SND_STRM_PLAYER_NUM];
 extern NNSSndStrmThread sPrepareStreamThread;
 extern NNSFndList sStreamCommandList;
 extern u8 sSoundArcStreamMutex[0x18];
+extern const signed char cAdpcmIndexTable[16];
+extern const short cAdpcmStepSizeTable[NNS_SND_ADPCM_INDEX_COUNT];
 
 extern void NNS_FndInitList(NNSFndList *list, u16 offset);
 extern void NNS_FndAppendListObject(NNSFndList *list, void *object);
@@ -217,6 +223,7 @@ extern u32 OS_RestoreInterrupts(u32 state);
 extern void OS_InitMutex(void *mutex);
 extern void OS_LockMutex(void *mutex);
 extern void OS_UnlockMutex(void *mutex);
+extern void DC_FlushRange(const void *address, u32 size);
 extern void OS_CreateThread(
     void *thread,
     void (*entry)(void *),

@@ -2614,8 +2614,9 @@ data_02053109 kind:data(any) addr:0x02053109
 data_0205310a kind:data(any) addr:0x0205310a
 data_0205310b kind:data(any) addr:0x0205310b
 sNullSoundArchiveSymbol kind:data(byte[4]) addr:0x0205312c
-data_02053130 kind:data(any) addr:0x02053130
-data_02053140 kind:data(any) addr:0x02053140
+cAdpcmIndexTable kind:data(byte[16]) addr:0x02053130
+cAdpcmStepSizeTable kind:data(short[89]) addr:0x02053140
+cAdpcmTablePadding kind:data(byte[2]) addr:0x020531f2
 data_020531f4 kind:data(any) addr:0x020531f4
 data_02053274 kind:data(any) addr:0x02053274
 data_020532f4 kind:data(any) addr:0x020532f4
@@ -2950,7 +2951,7 @@ sWaveArcHeaderBuffer kind:bss addr:0x0205e2e8
 sWaveArcHeader kind:bss addr:0x0205e2e8
 sSoundArcStreamState kind:bss addr:0x0205e324
 sFreeStreamCommandList kind:bss addr:0x0205e330
-sStreamCommandMutex kind:bss addr:0x0205e33c
+sDecodeBufferMutex kind:bss addr:0x0205e33c
 sStreamCommands kind:bss addr:0x0205e354
 sDecodeBufferArea kind:bss addr:0x0205e4e0
 sStrmPlayers kind:bss addr:0x0205e6e0

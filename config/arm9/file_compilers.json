@@ -751,11 +751,13 @@
   "libs/nns/snd/calls/DisposeCallback_2.c": "dsi/1.1",
   "libs/nns/snd/calls/StrmCallback_2.c": "dsi/1.1",
   "libs/nns/snd/calls/OnDataEnd.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndArcStrm_MakeWaveData.c": "dsi/1.1",
   "libs/nns/snd/calls/SetupStreamFunction.c": "dsi/1.1",
   "libs/nns/snd/calls/OpenFileStream.c": "dsi/1.1",
   "libs/nns/snd/calls/CloseFileStream.c": "dsi/1.1",
   "libs/nns/snd/calls/CancelFileStream.c": "dsi/1.1",
   "libs/nns/snd/auto/CloseMemoryStream.c": "dsi/1.1",
   "libs/nns/snd/auto/CancelMemoryStream.c": "dsi/1.1",
-  "libs/nns/snd/calls/StrmThread.c": "dsi/1.1"
+  "libs/nns/snd/calls/StrmThread.c": "dsi/1.1",
+  "libs/nns/snd/data/sndarc_stream_adpcm_tables.c": "dsi/1.1"
 }
