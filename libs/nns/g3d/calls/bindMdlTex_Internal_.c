@@ -191,8 +191,7 @@ inline NNSG3dResMatData * NNS_G3dGetMatDataByIdx (const NNSG3dResMat * mat, u32 
     return NULL ;
 }
 
-/* func_020189bc -- NitroSystem kernel.c: bindMdlTex_Internal_. */
-void func_020189bc (NNSG3dResMat * pMat, NNSG3dResDictTexToMatIdxData * pBindData, const NNSG3dResTex * pTex, const NNSG3dResDictTexData * pTexData)
+void bindMdlTex_Internal_ (NNSG3dResMat * pMat, NNSG3dResDictTexToMatIdxData * pBindData, const NNSG3dResTex * pTex, const NNSG3dResDictTexData * pTexData)
 {
     u8 * base = (u8 *)pMat + pBindData->offset;
     u32 vramOffset;

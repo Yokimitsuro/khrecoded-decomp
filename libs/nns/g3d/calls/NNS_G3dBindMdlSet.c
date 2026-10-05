@@ -235,8 +235,8 @@ typedef struct NNSG3dResMdlSet_ {
     NNSG3dResDataBlockHeader header;
     NNSG3dResDict dict;
 } NNSG3dResMdlSet;
-BOOL func_02018ba4(NNSG3dResMdl * pMdl, const NNSG3dResTex * pTex);
-BOOL func_02018e00(NNSG3dResMdl * pMdl, const NNSG3dResTex * pTex);
+BOOL NNS_G3dBindMdlTex(NNSG3dResMdl * pMdl, const NNSG3dResTex * pTex);
+BOOL NNS_G3dBindMdlPltt(NNSG3dResMdl * pMdl, const NNSG3dResTex * pTex);
 struct NNSG3dResMdl_;
 inline void * NNS_G3dGetResDataByIdx(const NNSG3dResDict * dict, u32 idx);
 inline NNSG3dResMdl * NNS_G3dGetMdlByIdx(const NNSG3dResMdlSet * mdlSet, u32 idx);
@@ -261,11 +261,10 @@ inline NNSG3dResMdl * NNS_G3dGetMdlByIdx (const NNSG3dResMdlSet * mdlSet, u32 id
     }
     return NULL ;
 }
-extern BOOL func_02018ba4 (NNSG3dResMdl * pMdl, const NNSG3dResTex * pTex);
-extern BOOL func_02018e00 (NNSG3dResMdl * pMdl, const NNSG3dResTex * pTex);
+extern BOOL NNS_G3dBindMdlTex (NNSG3dResMdl * pMdl, const NNSG3dResTex * pTex);
+extern BOOL NNS_G3dBindMdlPltt (NNSG3dResMdl * pMdl, const NNSG3dResTex * pTex);
 
-/* func_02018f80 -- NitroSystem kernel.c: NNS_G3dBindMdlSet. */
-BOOL func_02018f80 (NNSG3dResMdlSet * pMdlSet, const NNSG3dResTex * pTex)
+BOOL NNS_G3dBindMdlSet (NNSG3dResMdlSet * pMdlSet, const NNSG3dResTex * pTex)
 {
     u32 i;
     BOOL result = TRUE;
@@ -274,8 +273,8 @@ BOOL func_02018f80 (NNSG3dResMdlSet * pMdlSet, const NNSG3dResTex * pTex)
     for (i = 0; i < pMdlSet->dict.numEntry; ++i) {
         NNSG3dResMdl * mdl = NNS_G3dGetMdlByIdx(pMdlSet, i);
 
-        result &= func_02018ba4(mdl, pTex);
-        result &= func_02018e00(mdl, pTex);
+        result &= NNS_G3dBindMdlTex(mdl, pTex);
+        result &= NNS_G3dBindMdlPltt(mdl, pTex);
     }
     return result;
 }

@@ -49,6 +49,13 @@ typedef enum {
 typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
 typedef void * (*MIAllocatorAllocFunction)(void * userdata, u32 length, u32 alignment);
 typedef void (*MIAllocatorFreeFunction)(void * userdata, void * buffer);
+typedef struct NNSG3dResDataBlockHeader_ {
+    union {
+        u32 kind;
+        char chr[4];
+    };
+    u32 size;
+} NNSG3dResDataBlockHeader;
 typedef struct NNSG3dResDictTreeNode_ {
     u8 refBit;
     u8 idxLeft;
@@ -68,16 +75,6 @@ typedef struct NNSG3dResDictEntryHeader_ {
     u16 ofsName;
     u8 data[4];
 } NNSG3dResDictEntryHeader;
-typedef struct NNSG3dResDictTexToMatIdxData_ {
-    u16 offset;
-    u8 numIdx;
-    u8 flag;
-} NNSG3dResDictTexToMatIdxData;
-typedef struct NNSG3dResMat_ {
-    u16 ofsDictTexToMatList;
-    u16 ofsDictPlttToMatList;
-    NNSG3dResDict dict;
-} NNSG3dResMat;
 typedef struct NNSG3dResMdlInfo_ {
     u8 sbcType;
     u8 scalingRule;
@@ -110,9 +107,18 @@ typedef struct NNSG3dResMdl_ {
     NNSG3dResMdlInfo info;
     NNSG3dResNodeInfo nodeInfo;
 } NNSG3dResMdl;
+typedef struct NNSG3dResDictMdlSetData_ {
+    u32 offset;
+} NNSG3dResDictMdlSetData;
+typedef struct NNSG3dResMdlSet_ {
+    NNSG3dResDataBlockHeader header;
+    NNSG3dResDict dict;
+} NNSG3dResMdlSet;
+void NNS_G3dReleaseMdlTex(NNSG3dResMdl * pMdl);
+void NNS_G3dReleaseMdlPltt(NNSG3dResMdl * pMdl);
 struct NNSG3dResMdl_;
 inline void * NNS_G3dGetResDataByIdx(const NNSG3dResDict * dict, u32 idx);
-inline NNSG3dResMat * NNS_G3dGetMat(const NNSG3dResMdl * mdl);
+inline NNSG3dResMdl * NNS_G3dGetMdlByIdx(const NNSG3dResMdlSet * mdlSet, u32 idx);
 inline void * NNS_G3dGetResDataByIdx (const NNSG3dResDict * dict, u32 idx)
 {
     NNSG3dResDictEntryHeader * hdr;
@@ -123,32 +129,28 @@ inline void * NNS_G3dGetResDataByIdx (const NNSG3dResDict * dict, u32 idx)
         return NULL ;
     }
 }
-inline NNSG3dResMat * NNS_G3dGetMat (const NNSG3dResMdl * mdl)
+inline NNSG3dResMdl * NNS_G3dGetMdlByIdx (const NNSG3dResMdlSet * mdlSet, u32 idx)
 {
-    if (mdl && mdl->ofsMat != 0)
-        return (NNSG3dResMat *)((u8 *)mdl + mdl->ofsMat);
-    else
-        return NULL ;
+    NNSG3dResDictMdlSetData * data;
+    if (mdlSet) {
+        data = (NNSG3dResDictMdlSetData *)NNS_G3dGetResDataByIdx(&mdlSet->dict, idx);
+        if (data) {
+            return (NNSG3dResMdl *)((u8 *)mdlSet + data->offset);
+        }
+    }
+    return NULL ;
 }
-extern void func_02018aec (NNSG3dResMat * pMat, NNSG3dResDictTexToMatIdxData * pData);
+extern void NNS_G3dReleaseMdlTex (NNSG3dResMdl * pMdl);
+extern void NNS_G3dReleaseMdlPltt (NNSG3dResMdl * pMdl);
 
-/* func_02018c98 -- NitroSystem kernel.c: NNS_G3dReleaseMdlTex. */
-void func_02018c98 (NNSG3dResMdl * pMdl)
+void NNS_G3dReleaseMdlSet (NNSG3dResMdlSet * pMdlSet)
 {
-    NNSG3dResMat * mat;
-    NNSG3dResDict * dictTex;
     u32 i;
 
+    for (i = 0; i < pMdlSet->dict.numEntry; ++i) {
+        NNSG3dResMdl * mdl = NNS_G3dGetMdlByIdx(pMdlSet, i);
 
-    mat = NNS_G3dGetMat(pMdl);
-    dictTex = (NNSG3dResDict *)((u8 *)mat + mat->ofsDictTexToMatList);
-
-    for (i = 0; i < dictTex->numEntry; ++i) {
-        NNSG3dResDictTexToMatIdxData * data =
-            (NNSG3dResDictTexToMatIdxData *) NNS_G3dGetResDataByIdx(dictTex, i);
-
-        if (data->flag & 1) {
-            func_02018aec(mat, data);
-        }
+        NNS_G3dReleaseMdlTex(mdl);
+        NNS_G3dReleaseMdlPltt(mdl);
     }
 }

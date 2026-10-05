@@ -3709,15 +3709,19 @@ libs/nns/g3d/auto/NNS_G3dTexGetRequiredSize.c:
     complete
     .text       start:0x020188e0 end:0x020188f4
 
-libs/nns/g3d/auto/func_020188f4.c:
+libs/nns/g3d/auto/NNS_G3dTex4x4GetRequiredSize.c:
     complete
     .text       start:0x020188f4 end:0x02018908
 
-libs/nns/g3d/auto/func_02018908.c:
+libs/nns/g3d/auto/NNS_G3dTexSetTexKey.c:
     complete
     .text       start:0x02018908 end:0x0201891c
 
-libs/nns/g3d/auto/func_02018978.c:
+libs/nns/g3d/auto/NNS_G3dTexReleaseTexKey.c:
+    complete
+    .text       start:0x0201891c end:0x02018978
+
+libs/nns/g3d/auto/NNS_G3dPlttGetRequiredSize.c:
     complete
     .text       start:0x02018978 end:0x0201898c
 
@@ -3725,19 +3729,43 @@ src/auto/func_0201898c.c:
     complete
     .text       start:0x0201898c end:0x02018994
 
-libs/nns/g3d/calls/func_020189bc.c:
+libs/nns/g3d/auto/NNS_G3dPlttReleasePlttKey.c:
+    complete
+    .text       start:0x02018994 end:0x020189bc
+
+libs/nns/g3d/calls/bindMdlTex_Internal_.c:
     complete
     .text       start:0x020189bc end:0x02018aec
 
-libs/nns/g3d/calls/func_02018c98.c:
+libs/nns/g3d/auto/releaseMdlTex_Internal_.c:
+    complete
+    .text       start:0x02018aec end:0x02018ba4
+
+libs/nns/g3d/calls/NNS_G3dBindMdlTex.c:
+    complete
+    .text       start:0x02018ba4 end:0x02018c98
+
+libs/nns/g3d/calls/NNS_G3dReleaseMdlTex.c:
     complete
     .text       start:0x02018c98 end:0x02018d24
 
-libs/nns/g3d/calls/func_02018f80.c:
+libs/nns/g3d/auto/bindMdlPltt_Internal_.c:
+    complete
+    .text       start:0x02018d24 end:0x02018e00
+
+libs/nns/g3d/calls/NNS_G3dBindMdlPltt.c:
+    complete
+    .text       start:0x02018e00 end:0x02018efc
+
+libs/nns/g3d/auto/NNS_G3dReleaseMdlPltt.c:
+    complete
+    .text       start:0x02018efc end:0x02018f80
+
+libs/nns/g3d/calls/NNS_G3dBindMdlSet.c:
     complete
     .text       start:0x02018f80 end:0x02019030
 
-libs/nns/g3d/calls/func_02019030.c:
+libs/nns/g3d/calls/NNS_G3dReleaseMdlSet.c:
     complete
     .text       start:0x02019030 end:0x020190c4
 
