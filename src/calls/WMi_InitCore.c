@@ -37,7 +37,7 @@ extern void OS_InitMessageQueue(void *queue, void **messages, int count);
 extern void DC_StoreRange(void *addr, u32 size);
 extern BOOL OS_SendMessage(void *queue, void *message, int flags);
 extern void PXI_SetFifoRecvCallback(int tag, void *callback);
-extern void func_020110ec(void);
+extern void WmReceiveFifo(void);
 
 static inline void DmaClear32(u32 dmaNo, void *dest, u32 size)
 {
@@ -97,7 +97,7 @@ int WMi_InitCore(void *buffer, u16 dmaNo, u32 size)
         DC_StoreRange(data_020598a0[i], 2);
         OS_SendMessage(data_02059814, data_020598a0[i], 1);
     }
-    PXI_SetFifoRecvCallback(10, func_020110ec);
+    PXI_SetFifoRecvCallback(10, WmReceiveFifo);
     data_020597fc.initialized = TRUE;
     OS_RestoreInterrupts(enabled);
     return 0;

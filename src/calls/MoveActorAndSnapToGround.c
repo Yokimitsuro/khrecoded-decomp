@@ -174,7 +174,7 @@ extern VecFx32 *GetModeContext(void);
 extern void func_02032000(ContactSet *set, const VecFx32 *normal);
 extern void NegateVecFx32(VecFx32 *vec);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
-extern HitResult *func_020351e0(void *world, CollQuery *query);
+extern HitResult *CollWorld_FindHit(void *world, CollQuery *query);
 extern void func_ov059_020cd46c(void *world, CollActor *actor, CollQuery *query, HitResult *hit, VecFx32 *pos,
                                 VecFx32 *vel, fx32 height, u32 flags);
 extern void func_020382c4(void *world, CollActor *actor, CollQuery *query, HitResult *hit, VecFx32 *pos,
@@ -428,7 +428,7 @@ void MoveActorAndSnapToGround(VecFx32 *pos, VecFx32 *vel, CollActor *actor, u32 
     query.filter = MakeCallback(ResolveSteepSurfaceContact, &state);
     hitContext.actor = actor;
     query.contacts = contacts;
-    hit = func_020351e0(world, &query);
+    hit = CollWorld_FindHit(world, &query);
     if (hit != NULL) {
         *vel = hit->velocity;
         if (contacts->orderCount != 0) {
@@ -490,7 +490,7 @@ void MoveActorAndSnapToGround(VecFx32 *pos, VecFx32 *vel, CollActor *actor, u32 
     query.onContact.func = Container_IsOperationAllowed;
     query.unk_48 = 0;
     query.filter.func = NULL;
-    hit = func_020351e0(world, &query);
+    hit = CollWorld_FindHit(world, &query);
     if (hit == NULL) {
         goto finish;
     }

@@ -42,7 +42,7 @@ enum {
 
 typedef struct OSMutex OSMutex;
 extern void OS_InitMutex(OSMutex *mutex);
-extern void func_0200ee04(void);              /* SND_CommandInit */
+extern void SND_CommandInit(void);              /* SND_CommandInit */
 extern void SND_AlarmInit(void);
 extern BOOL data_02057c34;                    /* initialized */
 extern OSMutex data_02057c38;                 /* sSndMutex */
@@ -60,6 +60,6 @@ void SND_Init(void)
     }
 
     OS_InitMutex(&sSndMutex);
-    func_0200ee04();
+    SND_CommandInit();
     SND_AlarmInit();
 }

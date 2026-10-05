@@ -16,14 +16,14 @@ typedef struct {
     ModelDraw modelDraw;
 } ActorSlot;
 
-extern void func_02036b94(ModelDraw *draw);
+extern void ShadowVolume_Draw(ModelDraw *draw);
 extern void func_01ffb12c(SceneNode *node);
 
 void ActorSlot_Draw(ActorSlot *slot, BOOL asModel)
 {
     if (asModel) {
         slot->modelDraw.position = slot->position;
-        func_02036b94(&slot->modelDraw);
+        ShadowVolume_Draw(&slot->modelDraw);
         return;
     }
     if (slot->entityFlags & 0x20) {

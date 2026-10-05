@@ -9,7 +9,7 @@ typedef struct {
 
 extern int WmInit(int wmSysBuf, int dmaNo);
 extern void SetCommandArg(int idx, int value);
-extern void func_020113f4(void);
+extern void RegisterPxiPreSleepCallback(void);
 extern int func_02011050(void);
 extern int WMi_SendCommand(int id, u16 paramNum, ...);
 
@@ -24,7 +24,7 @@ int WM_InitializeEx(int wmSysBuf, int callback, int dmaNo, int miscFlags)
     }
 
     SetCommandArg(0, callback);
-    func_020113f4();
+    RegisterPxiPreSleepCallback();
 
     wm9buf = (WMArm9Buf *)func_02011050();
     result = WMi_SendCommand(0, 4, (int)wm9buf->WM7, (int)wm9buf->status, (int)wm9buf->fifo7to9, miscFlags);

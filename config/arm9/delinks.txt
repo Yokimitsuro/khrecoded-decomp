@@ -2625,6 +2625,10 @@ libs/nitro/snd/calls/SNDi_UnlockMutex.c:
     complete
     .text       start:0x0200edf0 end:0x0200ee04
 
+src/calls/SND_CommandInit.c:
+    complete
+    .text       start:0x0200ee04 end:0x0200eed4
+
 libs/nitro/snd/calls/SND_RecvCommandReply.c:
     complete
     .text       start:0x0200eed4 end:0x0200efd4
@@ -2969,6 +2973,10 @@ src/calls/WMi_CheckStateEx.c:
     complete
     .text       start:0x0201109c end:0x020110ec
 
+src/calls/WmReceiveFifo.c:
+    complete
+    .text       start:0x020110ec end:0x0201138c
+
 src/calls/Ov105_ClearSharedRequestBit.c:
     complete
     .text       start:0x0201138c end:0x020113a8
@@ -2980,6 +2988,10 @@ src/calls/GetSessionChannel.c:
 src/calls/GetSessionLinkState.c:
     complete
     .text       start:0x020113cc end:0x020113f4
+
+src/calls/RegisterPxiPreSleepCallback.c:
+    complete
+    .text       start:0x020113f4 end:0x02011418
 
 src/calls/SNDi_LockMutex.c:
     complete
@@ -3164,6 +3176,10 @@ src/calls/CTRDG_Enable.c:
 src/calls/CTRDG_Init.c:
     complete
     .text       start:0x02012564 end:0x020125dc
+
+src/calls/CTRDGi_InitModuleInfo.c:
+    complete
+    .text       start:0x020125dc end:0x02012728
 
 src/calls/CTRDGi_InitCallback.c:
     complete
@@ -5913,6 +5929,10 @@ src/calls/func_02028b30.c:
     complete
     .text       start:0x02028b30 end:0x02028b38
 
+src/calls/ResetCameraToDefaults.c:
+    complete
+    .text       start:0x02028b38 end:0x02028bdc
+
 src/calls/MSL_FpInitB.c:
     complete
     .text       start:0x02028bdc end:0x02028bde
@@ -6216,6 +6236,10 @@ src/calls/func_0202a7b8.c:
 src/calls/LoadDefaultProjectionValues.c:
     complete
     .text       start:0x0202a7c8 end:0x0202a828
+
+src/calls/camera_commit_projection.c:
+    complete
+    .text       start:0x0202a828 end:0x0202a8d8
 
 src/calls/camera_commit_explicit_projection.c:
     complete
@@ -7133,6 +7157,10 @@ src/calls/func_020351cc.c:
     complete
     .text       start:0x020351cc end:0x020351e0
 
+src/calls/CollWorld_FindHit.c:
+    complete
+    .text       start:0x020351e0 end:0x02035278
+
 src/calls/PXI_Init_02035278.c:
     complete
     .text       start:0x02035278 end:0x02035284
@@ -7501,6 +7529,10 @@ src/calls/FSi_DefaultStepDoneA.c:
     complete
     .text       start:0x02036b90 end:0x02036b94
 
+src/calls/ShadowVolume_Draw.c:
+    complete
+    .text       start:0x02036b94 end:0x02036cec
+
 src/calls/GetModeContext.c:
     complete
     .text       start:0x02036cec end:0x02036d34
@@ -7589,9 +7621,25 @@ src/calls/HandleSbcReturn.c:
     complete
     .text       start:0x02039d90 end:0x02039db8
 
+src/calls/NNSi_G3dFuncSbc_BB.c:
+    complete
+    .text       start:0x02039db8 end:0x0203a000
+
+src/calls/NNSi_G3dFuncSbc_RollBB.c:
+    complete
+    .text       start:0x0203a000 end:0x0203a2a0
+
 src/calls/Sbc_CallDl.c:
     complete
     .text       start:0x0203a2a0 end:0x0203a308
+
+src/calls/NNSi_G3dFuncSbc_ENVMAP.c:
+    complete
+    .text       start:0x0203a308 end:0x0203a588
+
+src/calls/NNSi_G3dFuncSbc_PRJMAP.c:
+    complete
+    .text       start:0x0203a588 end:0x0203a86c
 
 src/calls/InitializeArchiveBackend.c:
     complete
@@ -9169,6 +9217,10 @@ src/calls/SetupFlaggedSelectionRecords.c:
     complete
     .text       start:0x0204f78c end:0x0204f818
 
+src/calls/LoadLevelStats.c:
+    complete
+    .text       start:0x0204f818 end:0x0204f854
+
 src/calls/func_0204f854.c:
     complete
     .text       start:0x0204f854 end:0x0204f870
@@ -9256,6 +9308,10 @@ src/calls/SaveSlotEntriesToBits.c:
 src/calls/ResetSlotEntries.c:
     complete
     .text       start:0x02050220 end:0x02050264
+
+src/calls/AddToStackSlot.c:
+    complete
+    .text       start:0x02050264 end:0x02050330
 
 src/calls/TickSlotTimer.c:
     complete

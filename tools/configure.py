@@ -44,6 +44,9 @@ ABSOLUTE_SYMBOLS = {
     "gVBlankCount": 0x02FFFC3C,
     # Shared wireless request flags written by ARM7.
     "data_02ffff96": 0x02FFFF96,
+    # Camera vectors live inside the main-module BSS rather than a compiled
+    # translation unit, but recovered C references the structure by name.
+    "NNS_G3dGlb_camPos": 0x0205AB3C,
 }
 
 

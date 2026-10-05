@@ -48,6 +48,11 @@ def current_symbol_index() -> tuple[set[str], dict[int, list[str]]]:
 
 
 CURRENT_NAMES, CURRENT_BY_ADDRESS = current_symbol_index()
+CURRENT_ADDRESS_BY_NAME = {
+    name: address
+    for address, names in CURRENT_BY_ADDRESS.items()
+    for name in names
+}
 CURRENT_RELOCS = {
     int(match.group(1), 16): (int(match.group(2), 16), match.group(3))
     for match in RELOC_LINE_RE.finditer(
@@ -219,6 +224,15 @@ def relocation_rewrites(item: dict, function: dict,
             )
         previous = rewrites.setdefault(source_name, target_name)
         if previous != target_name:
+            if source_name.startswith(("data_", "bss_", "g_")):
+                previous_address = CURRENT_ADDRESS_BY_NAME.get(previous)
+                target_address = CURRENT_ADDRESS_BY_NAME.get(target_name)
+                if previous_address is not None and target_address is not None:
+                    rewrites[source_name] = min(
+                        (previous, target_name),
+                        key=lambda name: CURRENT_ADDRESS_BY_NAME[name],
+                    )
+                    continue
             raise RuntimeError(
                 f"{source_name} maps to both {previous} and {target_name}"
             )
@@ -410,11 +424,19 @@ def raw_candidates(results: list[dict], index: dict,
             continue
         try:
             function = index[rom_symbol]
-            rewrites = relocation_rewrites(item, function)
             if not equal_outside_relocations(item, function):
                 continue
         except (KeyError, RuntimeError, StopIteration, FileNotFoundError):
             continue
+        try:
+            rewrites = relocation_rewrites(item, function)
+        except RuntimeError:
+            try:
+                if len(source_relocations(item)) != len(function["relocs"]):
+                    continue
+                rewrites = relocation_rewrites(item, function, allow_shifted=True)
+            except (RuntimeError, StopIteration, FileNotFoundError):
+                continue
 
         match = item["match"]
         readable_name = ADDRESS_SUFFIX_RE.sub("", match.get("name", ""))

@@ -2384,5 +2384,19 @@
   "src/calls/func_02001620.c": "dsi/1.1",
   "src/calls/func_02001704.c": "dsi/1.1",
   "src/calls/func_02026590.c": "dsi/1.1",
-  "src/calls/func_020229dc.c": "dsi/1.1"
+  "src/calls/func_020229dc.c": "dsi/1.1",
+  "src/calls/RegisterPxiPreSleepCallback.c": "dsi/1.1",
+  "src/calls/LoadLevelStats.c": "dsi/1.1",
+  "src/calls/CollWorld_FindHit.c": "dsi/1.1",
+  "src/calls/ResetCameraToDefaults.c": "dsi/1.1",
+  "src/calls/camera_commit_projection.c": "dsi/1.1",
+  "src/calls/AddToStackSlot.c": "dsi/1.1",
+  "src/calls/SND_CommandInit.c": "dsi/1.1",
+  "src/calls/CTRDGi_InitModuleInfo.c": "dsi/1.1",
+  "src/calls/ShadowVolume_Draw.c": "dsi/1.1",
+  "src/calls/NNSi_G3dFuncSbc_BB.c": "dsi/1.1",
+  "src/calls/NNSi_G3dFuncSbc_ENVMAP.c": "dsi/1.1",
+  "src/calls/WmReceiveFifo.c": "dsi/1.1",
+  "src/calls/NNSi_G3dFuncSbc_RollBB.c": "dsi/1.1",
+  "src/calls/NNSi_G3dFuncSbc_PRJMAP.c": "dsi/1.1"
 }

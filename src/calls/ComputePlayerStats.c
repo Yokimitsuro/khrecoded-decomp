@@ -66,7 +66,7 @@ extern int AcquireRecordSlot(int slot, int param);
 extern BOOL func_02051e10(s32 slot);
 extern ChipEntry *GetRecordSlotPair0Entry(s32 index);
 extern void func_01ff88c4(void *dst, u32 value, u32 size);
-extern void func_0204f818(u32 level, PlayerStats *stats);
+extern void LoadLevelStats(u32 level, PlayerStats *stats);
 extern void ScaleStatsByPercent(PlayerStats *stats, int param);
 extern fx32 MultiplyTwoPercentFractions(GameState *state);
 extern s64 _s32_div_f(s32 numerator, s32 denominator);
@@ -135,7 +135,7 @@ void ComputePlayerStats(GameState *state, PlayerStats *out, BOOL recompute, int 
     if (bonus.level > 98) {
         bonus.level = 98;
     }
-    func_0204f818(bonus.level, &base);
+    LoadLevelStats(bonus.level, &base);
     map->finalStats.unk_0 = 0;
     map->finalStats.level = bonus.level;
     map->finalStats.hp = bonus.hp + base.hp;
@@ -161,7 +161,7 @@ void ComputePlayerStats(GameState *state, PlayerStats *out, BOOL recompute, int 
 
     if (data_0205fe0c->mode == 6) {
         ScaleStatsByPercent(&bonus, scaleParam);
-        func_0204f818(bonus.level, &base);
+        LoadLevelStats(bonus.level, &base);
         out->unk_0 = 0;
         out->level = bonus.level;
         out->hp = bonus.hp + base.hp;

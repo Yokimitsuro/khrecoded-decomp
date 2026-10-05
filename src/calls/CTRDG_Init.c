@@ -3,7 +3,7 @@ extern int PXI_IsCallbackReady(int fifoNo, int kind);
 extern void PXI_SetFifoRecvCallback(int fifoNo, void (*cb)(int, unsigned int));
 extern void CTRDG_Enable(int enable);
 extern void CTRDGi_InitCommon(void);
-extern void func_020125dc(void);
+extern void CTRDGi_InitModuleInfo(void);
 extern void CTRDGi_InitTaskThread(void *p);
 extern void CTRDGi_InitCallback(int fifoNo, unsigned int data);
 extern void CTRDGi_PulledOutCallback(int fifoNo, unsigned int data);
@@ -31,7 +31,7 @@ void CTRDG_Init(void)
     while (!PXI_IsCallbackReady(13, 1)) {
     }
     PXI_SetFifoRecvCallback(13, CTRDGi_InitCallback);
-    func_020125dc();
+    CTRDGi_InitModuleInfo();
     PXI_SetFifoRecvCallback(13, 0);
     PXI_SetFifoRecvCallback(13, CTRDGi_PulledOutCallback);
     data_0205a2a8.field_18 = 0;

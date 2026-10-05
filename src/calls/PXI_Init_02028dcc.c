@@ -1,5 +1,5 @@
-extern void *func_02028b38();
+extern void *ResetCameraToDefaults();
 
 void *PXI_Init_02028dcc() {
-    return func_02028b38();
+    return ResetCameraToDefaults();
 }

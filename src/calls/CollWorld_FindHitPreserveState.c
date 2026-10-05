@@ -8,7 +8,7 @@ typedef struct CollTraversalFrame CollTraversalFrame;
 typedef struct CollWorld CollWorld;
 
 extern void MIi_CpuCopyFast(const void *src, void *dest, u32 size);
-extern CollHitRecord *func_020351e0(CollWorld *world, const void *params);
+extern CollHitRecord *CollWorld_FindHit(CollWorld *world, const void *params);
 extern CollHitRecord data_027e0134;
 extern CollHitRecord data_02060784;
 extern u8 data_027e00b4[0x80];
@@ -24,7 +24,7 @@ CollHitRecord *CollWorld_FindHitPreserveState(CollWorld *world, const void *para
     data_02060784 = data_027e0134;
     MIi_CpuCopyFast(data_027e00b4, savedFrames, sizeof(savedFrames));
     savedTop = data_027e00b0;
-    hit = func_020351e0(world, params);
+    hit = CollWorld_FindHit(world, params);
     if (hit != NULL) {
         result = *hit;
     }
