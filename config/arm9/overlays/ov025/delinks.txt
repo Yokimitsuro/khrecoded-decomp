@@ -7,3 +7,7 @@
 src/overlays/ov025/data/strings/Strings_ov025_020b775c.c:
     complete
     .data       start:0x020b775c end:0x020b7780
+
+src/overlays/ov025/data/tables/gSubBgScreenLoaders.c:
+    complete
+    .data       start:0x020b7740 end:0x020b7748

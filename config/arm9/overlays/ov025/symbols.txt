@@ -68,7 +68,7 @@ data_ov025_020b76c0 kind:data(any) addr:0x020b76c0
 data_ov025_020b76d0 kind:data(any) addr:0x020b76d0
 data_ov025_020b76e0 kind:data(any) addr:0x020b76e0
 data_ov025_020b76f4 kind:data(any) addr:0x020b76f4
-data_ov025_020b7740 kind:data(any) addr:0x020b7740
+gSubBgScreenLoaders kind:data(any) addr:0x020b7740
 data_ov025_020b7748 kind:data(any) addr:0x020b7748 ambiguous
 sOv025_Ocuitask_020b775c kind:data(any) addr:0x020b775c
 data_ov025_020b7780 kind:bss addr:0x020b7780

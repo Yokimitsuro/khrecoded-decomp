@@ -1,2 +1,2 @@
-func_ov012_020a0540 kind:function(thumb,size=0x4) addr:0x020a0540
-data_ov012_020a0560 kind:data(any) addr:0x020a0560
+DefaultStepDone kind:function(thumb,size=0x4) addr:0x020a0540
+gDefaultStepHandler kind:data(any) addr:0x020a0560
