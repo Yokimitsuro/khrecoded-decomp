@@ -6,8 +6,7 @@ typedef struct ResCacheEntry {
     char name[0x20];
 } ResCacheEntry;
 extern ResCacheEntry *gFileLoader[];
-extern int func_02021fbc(const char *left, const char *right);
-#define strcmp func_02021fbc
+extern int strcmp(const char *left, const char *right);
 
 ResCacheEntry *ResCache_FindSlot(const char *key)
 {

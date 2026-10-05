@@ -1,5 +1,5 @@
-extern void *func_02021bec();
+extern void *strnicmp();
 
 void *func_02022af8() {
-    return func_02021bec();
+    return strnicmp();
 }

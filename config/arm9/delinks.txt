@@ -4805,6 +4805,26 @@ libs/msl/c/auto/abs.c:
     complete
     .text       start:0x020219a0 end:0x020219ac
 
+libs/msl/c/calls/MSL_Div.c:
+    complete
+    .text       start:0x020219ac end:0x02021a18
+
+libs/msl/c/calls/CheckedMultiply.c:
+    complete
+    .text       start:0x02021ab0 end:0x02021b1c
+
+libs/msl/c/calls/FloorDiv.c:
+    complete
+    .text       start:0x02021b1c end:0x02021b94
+
+libs/msl/c/calls/FloorMod.c:
+    complete
+    .text       start:0x02021b94 end:0x02021bec
+
+libs/msl/c/calls/strnicmp.c:
+    complete
+    .text       start:0x02021bec end:0x02021c68
+
 src/auto/func_02021c68.c:
     complete
     .text       start:0x02021c68 end:0x02021ca8
@@ -4817,13 +4837,25 @@ libs/msl/c/auto/strcpy.c:
     complete
     .text       start:0x02021e74 end:0x02021f3c
 
-libs/msl/c/auto/func_02021fbc.c:
+libs/msl/c/calls/strncpy.c:
+    complete
+    .text       start:0x02021f3c end:0x02021f8c
+
+libs/msl/c/calls/strcat.c:
+    complete
+    .text       start:0x02021f8c end:0x02021fbc
+
+libs/msl/c/calls/strcmp.c:
     complete
     .text       start:0x02021fbc end:0x020220d0
 
 libs/msl/c/auto/strncmp.c:
     complete
     .text       start:0x020220d0 end:0x02022104
+
+libs/msl/c/calls/strchr.c:
+    complete
+    .text       start:0x02022104 end:0x0202213c
 
 src/calls/func_02022570.c:
     complete
@@ -5712,6 +5744,10 @@ src/calls/func_02051170.c:
 src/calls/func_02051180.c:
     complete
     .text       start:0x02051180 end:0x02051190
+
+libs/msl/c/data/sLowerCaseMap.c:
+    complete
+    .rodata     start:0x020531f4 end:0x02053274
 
 libs/nitro/fs/data/FSiOverlayContext.c:
     complete
