@@ -42,9 +42,9 @@ data_ov014_0206f894 kind:data(any) addr:0x0206f894
 data_ov014_0206f8ac kind:data(any) addr:0x0206f8ac
 data_ov014_0206f8e0 kind:data(any) addr:0x0206f8e0
 data_ov014_0206f8e8 kind:data(any) addr:0x0206f8e8
-data_ov014_0206f8f8 kind:data(any) addr:0x0206f8f8
-data_ov014_0206f8fc kind:data(any) addr:0x0206f8fc
-data_ov014_0206f900 kind:data(any) addr:0x0206f900
+gPanelInitialUpdateCallback kind:data(any) addr:0x0206f8f8
+gPanelOpenStepHandler kind:data(any) addr:0x0206f8fc
+gPanelLifecycleHandlers kind:data(any) addr:0x0206f900
 sOv014_WxcWldLanguageP2_0206f91c kind:data(any) addr:0x0206f91c
 sOv014_WxcWldl1LanguagePobjZ_0206f92c kind:data(any) addr:0x0206f92c
 sOv014_WxcWldu1LanguagePobjZ_0206f940 kind:data(any) addr:0x0206f940

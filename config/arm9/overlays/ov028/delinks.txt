@@ -6,3 +6,7 @@
 src/overlays/ov028/calls/func_ov028_020bafe8.c:
     complete
     .text       start:0x020bafe8 end:0x020bb00c
+
+src/overlays/ov028/data/tables/gSceneStateHandlers.c:
+    complete
+    .data       start:0x020bb338 end:0x020bb3a0

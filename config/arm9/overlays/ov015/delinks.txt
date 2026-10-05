@@ -211,3 +211,39 @@ src/overlays/ov015/data/strings/Strings_ov015_0207e8ac.c:
 src/overlays/ov015/data/strings/Strings_ov015_0207e8c8.c:
     complete
     .data       start:0x0207e8c8 end:0x0207e8d8
+
+src/overlays/ov015/data/tables/PointerTables_ov015_0207e784.c:
+    complete
+    .data       start:0x0207e784 end:0x0207e7e0
+
+src/overlays/ov015/data/tables/PointerTables_ov015_0207e808.c:
+    complete
+    .data       start:0x0207e808 end:0x0207e864
+
+src/overlays/ov015/data/tables/PointerTables_ov015_0207e868.c:
+    complete
+    .data       start:0x0207e868 end:0x0207e8ac
+
+src/overlays/ov015/data/tables/gLinkPanelAssetPaths.c:
+    complete
+    .data       start:0x0207e720 end:0x0207e730
+
+src/overlays/ov015/data/tables/gPanelExitResetCallback.c:
+    complete
+    .data       start:0x0207e780 end:0x0207e784
+
+src/overlays/ov015/data/tables/gWirelessResourceTableA.c:
+    complete
+    .data       start:0x0207e8d8 end:0x0207e900
+
+src/overlays/ov015/data/tables/gWirelessResourceTableB.c:
+    complete
+    .data       start:0x0207e900 end:0x0207e928
+
+src/overlays/ov015/data/tables/gWirelessResourceTableC.c:
+    complete
+    .data       start:0x0207e928 end:0x0207e960
+
+src/overlays/ov015/data/tables/gWirelessStateInitCallback.c:
+    complete
+    .data       start:0x0207e804 end:0x0207e808

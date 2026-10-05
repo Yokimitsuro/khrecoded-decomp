@@ -25,4 +25,4 @@ func_ov011_020a0fc4 kind:function(thumb,size=0xb0) addr:0x020a0fc4
 func_ov011_020a1074 kind:function(thumb,size=0x6e) addr:0x020a1074
 func_ov011_020a10e4 kind:function(thumb,size=0x5e) addr:0x020a10e4
 func_ov011_020a1144 kind:function(thumb,size=0x28) addr:0x020a1144
-data_ov011_020a1180 kind:data(any) addr:0x020a1180
+gCrawlScriptCommandHandlers kind:data(any) addr:0x020a1180

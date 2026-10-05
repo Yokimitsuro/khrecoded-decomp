@@ -11,3 +11,7 @@ src/overlays/ov032/calls/func_ov032_020bb468.c:
 src/overlays/ov032/data/strings/Strings_ov032_020c0040.c:
     complete
     .data       start:0x020c0040 end:0x020c0050
+
+src/overlays/ov032/data/tables/gGroupActionStateHandlers.c:
+    complete
+    .data       start:0x020bfff8 end:0x020c0040

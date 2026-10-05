@@ -37,5 +37,5 @@ func_ov028_020bb220 kind:function(arm,size=0xa8) addr:0x020bb220
 func_ov028_020bb2c8 kind:function(arm,size=0x44) addr:0x020bb2c8
 data_ov028_020bb320 kind:data(any) addr:0x020bb320
 data_ov028_020bb324 kind:data(any) addr:0x020bb324
-data_ov028_020bb338 kind:data(any) addr:0x020bb338
+gSceneStateHandlers kind:data(any) addr:0x020bb338
 data_ov028_020bb3a0 kind:bss addr:0x020bb3a0

@@ -35,3 +35,7 @@ src/overlays/ov037/data/strings/Strings_ov037_020bb748.c:
 src/overlays/ov037/data/strings/Strings_ov037_020bb770.c:
     complete
     .data       start:0x020bb770 end:0x020bb780
+
+src/overlays/ov037/data/tables/gCommunicationStateHandlers.c:
+    complete
+    .data       start:0x020bb6d8 end:0x020bb704

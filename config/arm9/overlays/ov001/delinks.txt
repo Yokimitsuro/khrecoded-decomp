@@ -1003,3 +1003,75 @@ src/overlays/ov001/data/strings/Strings_ov001_020a043c.c:
 src/overlays/ov001/data/strings/Strings_ov001_020a045c.c:
     complete
     .data       start:0x020a045c end:0x020a0480
+
+src/overlays/ov001/data/tables/PointerTables_ov001_0209ec90.c:
+    complete
+    .data       start:0x0209ec90 end:0x0209ecac
+
+src/overlays/ov001/data/tables/PointerTables_ov001_0209ece0.c:
+    complete
+    .data       start:0x0209ece0 end:0x0209ecfc
+
+src/overlays/ov001/data/tables/PointerTables_ov001_0209efc8.c:
+    complete
+    .data       start:0x0209efc8 end:0x0209eff4
+
+src/overlays/ov001/data/tables/gActorScriptCommandHandlers.c:
+    complete
+    .data       start:0x0209f344 end:0x0209f62c
+
+src/overlays/ov001/data/tables/gBgScreenLoaders.c:
+    complete
+    .data       start:0x0209ed10 end:0x0209ed2c
+
+src/overlays/ov001/data/tables/gFieldMenuDrawHandlers.c:
+    complete
+    .data       start:0x0209eed0 end:0x0209eee8
+
+src/overlays/ov001/data/tables/gFieldMessagePaths.c:
+    complete
+    .data       start:0x0209ec38 end:0x0209ec5c
+
+src/overlays/ov001/data/tables/gFieldObjectScriptCommandHandlers.c:
+    complete
+    .data       start:0x0209f048 end:0x0209f180
+
+src/overlays/ov001/data/tables/gFieldScriptCommandHandlers.c:
+    complete
+    .data       start:0x0209e718 end:0x0209ea10
+
+src/overlays/ov001/data/tables/gHudSlideResourceGroup1.c:
+    complete
+    .data       start:0x0209ecb0 end:0x0209ecbc
+
+src/overlays/ov001/data/tables/gHudSlideResourceGroup2.c:
+    complete
+    .data       start:0x0209ecbc end:0x0209ecc8
+
+src/overlays/ov001/data/tables/gHudSlideResourceGroup3.c:
+    complete
+    .data       start:0x0209ecc8 end:0x0209ecd4
+
+src/overlays/ov001/data/tables/gHudSlideResourceGroup4.c:
+    complete
+    .data       start:0x0209ecd4 end:0x0209ece0
+
+src/overlays/ov001/data/tables/gMenuOverlayStateHandlers.c:
+    complete
+    .data       start:0x0209ef6c end:0x0209ef88
+
+src/overlays/ov001/data/tables/gMessageWindowStateHandlers.c:
+    complete
+    .data       start:0x0209ef24 end:0x0209ef44
+
+src/overlays/ov001/data/tables/gNearestEntrySyncHandlers.c:
+    complete
+    .data       start:0x020a0260 end:0x020a0294
+
+src/overlays/ov001/data/tables/gSessionScriptStateHandlers.c:
+    complete
+    .data       start:0x0209e6a0 end:0x0209e6d4
+
+src/overlays/ov001/data/tables/gStageScriptStateHandlers.c:
+    complete
+    .data       start:0x020a0298 end:0x020a02c8

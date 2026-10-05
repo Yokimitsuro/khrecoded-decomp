@@ -135,3 +135,7 @@ src/overlays/ov039/data/strings/Strings_ov039_020be8ec.c:
 src/overlays/ov039/data/strings/Strings_ov039_020be94c.c:
     complete
     .data       start:0x020be94c end:0x020be950
+
+src/overlays/ov039/data/tables/PointerTables_ov039_020be800.c:
+    complete
+    .data       start:0x020be800 end:0x020be81c

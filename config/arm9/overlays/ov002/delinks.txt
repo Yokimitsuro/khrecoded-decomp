@@ -143,3 +143,31 @@ src/overlays/ov002/data/strings/Strings_ov002_0206c410.c:
 src/overlays/ov002/data/strings/Strings_ov002_0206c438.c:
     complete
     .data       start:0x0206c438 end:0x0206c460
+
+src/overlays/ov002/data/tables/PointerTables_ov002_0206c2f4.c:
+    complete
+    .data       start:0x0206c2f4 end:0x0206c35c
+
+src/overlays/ov002/data/tables/PointerTables_ov002_0206c3cc.c:
+    complete
+    .data       start:0x0206c3cc end:0x0206c410
+
+src/overlays/ov002/data/tables/gMenuIntroCallback.c:
+    complete
+    .data       start:0x0206c3c8 end:0x0206c3cc
+
+src/overlays/ov002/data/tables/gPanelModeEnterCallback.c:
+    complete
+    .data       start:0x0206c2ec end:0x0206c2f0
+
+src/overlays/ov002/data/tables/gPanelModeExitCallback.c:
+    complete
+    .data       start:0x0206c2f0 end:0x0206c2f4
+
+src/overlays/ov002/data/tables/gPanelResourcePaths.c:
+    complete
+    .data       start:0x0206c280 end:0x0206c290
+
+src/overlays/ov002/data/tables/gPanelUiResourcePaths.c:
+    complete
+    .data       start:0x0206c364 end:0x0206c374

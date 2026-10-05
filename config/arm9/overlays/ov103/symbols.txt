@@ -38,8 +38,8 @@ func_ov103_020c033c kind:function(arm,size=0xac) addr:0x020c033c
 func_ov103_020c03e8 kind:function(arm,size=0xa8) addr:0x020c03e8
 func_ov103_020c0490 kind:function(arm,size=0xc) addr:0x020c0490
 data_ov103_020c049c kind:data(any) addr:0x020c049c
-data_ov103_020c04c0 kind:data(any) addr:0x020c04c0
-data_ov103_020c04c8 kind:data(any) addr:0x020c04c8
+gTheaterReportResourcePaths kind:data(any) addr:0x020c04c0
+gTheaterReportTextPaths kind:data(any) addr:0x020c04c8
 data_ov103_020c04d4 kind:data(any) addr:0x020c04d4
 data_ov103_020c0500 kind:data(any) addr:0x020c0500
 sOv103_UiReportTheaterP2f_020c052c kind:data(any) addr:0x020c052c

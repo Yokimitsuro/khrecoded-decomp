@@ -59,10 +59,10 @@ func_ov097_020c19cc kind:function(thumb,size=0x98) addr:0x020c19cc
 func_ov097_020c1a64 kind:function(thumb,size=0x2) addr:0x020c1a64
 func_ov097_020c1a68 kind:function(thumb,size=0x350) addr:0x020c1a68
 func_ov097_020c1db8 kind:function(thumb,size=0xc) addr:0x020c1db8
-data_ov097_020c1dc4 kind:data(any) addr:0x020c1dc4
+gStoryReportStateHandlers kind:data(any) addr:0x020c1dc4
 data_ov097_020c1dcc kind:data(any) addr:0x020c1dcc
-data_ov097_020c1de0 kind:data(any) addr:0x020c1de0
-data_ov097_020c1dec kind:data(any) addr:0x020c1dec
+gStoryReportResourcePaths kind:data(any) addr:0x020c1de0
+gStoryReportTextPaths kind:data(any) addr:0x020c1dec
 sOv097_UiReportStoryP2f_020c1df8 kind:data(any) addr:0x020c1df8
 sOv097_UiReportLanguageStoryP2f_020c1e0c kind:data(any) addr:0x020c1e0c
 sOv097_UiReportLanguageStoryObjP2f_020c1e24 kind:data(any) addr:0x020c1e24

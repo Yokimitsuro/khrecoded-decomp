@@ -136,8 +136,8 @@ data_ov039_020be770 kind:data(any) addr:0x020be770
 data_ov039_020be784 kind:data(any) addr:0x020be784
 data_ov039_020be7a0 kind:data(any) addr:0x020be7a0
 data_ov039_020be7bc kind:data(any) addr:0x020be7bc
-data_ov039_020be800 kind:data(any) addr:0x020be800
-data_ov039_020be80c kind:data(any) addr:0x020be80c
+gMainBgScreenLoaders kind:data(any) addr:0x020be800
+gOv039SubBgScreenLoaders kind:data(any) addr:0x020be80c
 sOv039_MENUMNGR_020be81c kind:data(any) addr:0x020be81c
 sOv039_UiMenuFormatSP2_020be828 kind:data(any) addr:0x020be828
 sOv039_UiMenuLanguageFormatSP2_020be838 kind:data(any) addr:0x020be838

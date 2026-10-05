@@ -43,3 +43,11 @@ src/overlays/ov093/data/strings/Strings_ov093_020c3f48.c:
 src/overlays/ov093/data/strings/Strings_ov093_020c4d54.c:
     complete
     .data       start:0x020c4d54 end:0x020c4d78
+
+src/overlays/ov093/data/tables/PointerTables_ov093_020c3ea0.c:
+    complete
+    .data       start:0x020c3ea0 end:0x020c3ebc
+
+src/overlays/ov093/data/tables/gTrophyReportStateHandlers.c:
+    complete
+    .rodata     start:0x020c3c9c end:0x020c3cb8

@@ -159,3 +159,27 @@ src/overlays/ov036/data/strings/Strings_ov036_020c38fc.c:
 src/overlays/ov036/data/strings/Strings_ov036_020c3914.c:
     complete
     .data       start:0x020c3914 end:0x020c392c
+
+src/overlays/ov036/data/tables/gPanelScriptStateHandlers.c:
+    complete
+    .data       start:0x020c36f8 end:0x020c3718
+
+src/overlays/ov036/data/tables/gTextSceneBgCharacterLoaders.c:
+    complete
+    .data       start:0x020c387c end:0x020c389c
+
+src/overlays/ov036/data/tables/gTextSceneBgScreenLoaders.c:
+    complete
+    .data       start:0x020c389c end:0x020c38bc
+
+src/overlays/ov036/data/tables/gTextScriptCommandHandlers.c:
+    complete
+    .data       start:0x020c375c end:0x020c385c
+
+src/overlays/ov036/data/tables/gTextWindowResourceTable.c:
+    complete
+    .data       start:0x020c3864 end:0x020c3868
+
+src/overlays/ov036/data/tables/gTextWindowStateHandlers.c:
+    complete
+    .rodata     start:0x020c3454 end:0x020c348c

@@ -40,9 +40,9 @@ data_ov085_020c22fc kind:data(any) addr:0x020c22fc
 data_ov085_020c230c kind:data(any) addr:0x020c230c
 data_ov085_020c231c kind:data(any) addr:0x020c231c
 data_ov085_020c2334 kind:data(any) addr:0x020c2334
-data_ov085_020c2360 kind:data(any) addr:0x020c2360 ambiguous
+gOv085InitHandlers kind:data(any) addr:0x020c2360 ambiguous
 data_ov085_020c2368 kind:data(any) addr:0x020c2368 ambiguous
-data_ov085_020c2380 kind:data(any) addr:0x020c2380 ambiguous
+gOv085StateHandlers kind:data(any) addr:0x020c2380 ambiguous
 sOv085_UiMenuStrLanguageShopSZ_020c23a4 kind:data(any) addr:0x020c23a4
 data_ov085_020c23bc kind:data(any) addr:0x020c23bc
 sOv085_X_020c23c4 kind:data(any) addr:0x020c23c4

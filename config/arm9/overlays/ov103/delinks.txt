@@ -31,3 +31,7 @@ src/overlays/ov103/data/strings/Strings_ov103_020c05a0.c:
 src/overlays/ov103/data/strings/Strings_ov103_020c06f8.c:
     complete
     .data       start:0x020c06f8 end:0x020c0720
+
+src/overlays/ov103/data/tables/PointerTables_ov103_020c04c0.c:
+    complete
+    .data       start:0x020c04c0 end:0x020c04d4

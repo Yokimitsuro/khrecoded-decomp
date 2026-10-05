@@ -55,3 +55,15 @@ src/overlays/ov099/data/strings/Strings_ov099_020c28e4.c:
 src/overlays/ov099/data/strings/Strings_ov099_020c28ec.c:
     complete
     .data       start:0x020c28ec end:0x020c2900
+
+src/overlays/ov099/data/tables/PointerTables_ov099_020c22a0.c:
+    complete
+    .data       start:0x020c22a0 end:0x020c22b4
+
+src/overlays/ov099/data/tables/gEnemyReportListHandlers.c:
+    complete
+    .data       start:0x020c2380 end:0x020c23ac
+
+src/overlays/ov099/data/tables/gEnemyReportStateHandlers.c:
+    complete
+    .rodata     start:0x020c226c end:0x020c2274

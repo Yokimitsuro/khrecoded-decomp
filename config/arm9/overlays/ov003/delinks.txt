@@ -46,3 +46,11 @@ src/overlays/ov003/data/strings/Strings_ov003_02065868.c:
 src/overlays/ov003/data/strings/Strings_ov003_02065874.c:
     complete
     .data       start:0x02065874 end:0x02065880
+
+src/overlays/ov003/data/tables/gMovieEventHandlers.c:
+    complete
+    .data       start:0x020650c4 end:0x020650e0
+
+src/overlays/ov003/data/tables/gMovieScriptCommandHandlers.c:
+    complete
+    .data       start:0x02065880 end:0x020658c0

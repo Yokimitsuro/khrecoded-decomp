@@ -48,4 +48,4 @@ func_ov020_020a37f8 kind:function(arm,size=0x168) addr:0x020a37f8
 func_ov020_020a3960 kind:function(thumb,size=0x58) addr:0x020a3960
 func_ov020_020a39b8 kind:function(thumb,size=0x98) addr:0x020a39b8
 data_ov020_020a3a50 kind:data(any) addr:0x020a3a50
-data_ov020_020a3a60 kind:data(any) addr:0x020a3a60
+gPanelObjectScriptCommandHandlers kind:data(any) addr:0x020a3a60

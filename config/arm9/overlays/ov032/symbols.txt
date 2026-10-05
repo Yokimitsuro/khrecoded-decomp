@@ -152,7 +152,7 @@ data_ov032_020bffc4 kind:data(any) addr:0x020bffc4
 data_ov032_020bffd0 kind:data(any) addr:0x020bffd0
 data_ov032_020bffe0 kind:data(any) addr:0x020bffe0
 data_ov032_020bffe4 kind:data(any) addr:0x020bffe4
-data_ov032_020bfff8 kind:data(any) addr:0x020bfff8
+gGroupActionStateHandlers kind:data(any) addr:0x020bfff8
 sOv032_UiBtlStrLanguageP2_020c0040 kind:data(any) addr:0x020c0040
 data_ov032_020c0050 kind:data(any) addr:0x020c0050
 data_ov032_020c0064 kind:data(any) addr:0x020c0064

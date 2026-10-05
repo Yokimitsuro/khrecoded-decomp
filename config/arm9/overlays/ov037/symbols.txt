@@ -46,7 +46,7 @@ data_ov037_020bb67c kind:data(any) addr:0x020bb67c
 data_ov037_020bb690 kind:data(any) addr:0x020bb690
 data_ov037_020bb6c0 kind:data(any) addr:0x020bb6c0
 data_ov037_020bb6c4 kind:data(any) addr:0x020bb6c4
-data_ov037_020bb6d8 kind:data(any) addr:0x020bb6d8
+gCommunicationStateHandlers kind:data(any) addr:0x020bb6d8
 sOv037_CntCntPbgZ_020bb704 kind:data(any) addr:0x020bb704
 sOv037_CntCntBguiZ_020bb714 kind:data(any) addr:0x020bb714
 sOv037_BaChSoTex0Z_020bb724 kind:data(any) addr:0x020bb724

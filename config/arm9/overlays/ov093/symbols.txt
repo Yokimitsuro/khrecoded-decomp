@@ -89,7 +89,7 @@ func_ov093_020c3c44 kind:function(arm,size=0x1c) addr:0x020c3c44
 data_ov093_020c3c60 kind:data(any) addr:0x020c3c60
 data_ov093_020c3c74 kind:data(any) addr:0x020c3c74
 data_ov093_020c3c88 kind:data(any) addr:0x020c3c88
-data_ov093_020c3c9c kind:data(any) addr:0x020c3c9c
+gTrophyReportStateHandlers kind:data(any) addr:0x020c3c9c
 data_ov093_020c3cb8 kind:data(any) addr:0x020c3cb8
 data_ov093_020c3cd4 kind:data(any) addr:0x020c3cd4
 data_ov093_020c3cf4 kind:data(any) addr:0x020c3cf4
@@ -101,8 +101,8 @@ data_ov093_020c3d94 kind:data(any) addr:0x020c3d94
 data_ov093_020c3db4 kind:data(any) addr:0x020c3db4
 data_ov093_020c3de4 kind:data(any) addr:0x020c3de4
 data_ov093_020c3e74 kind:data(any) addr:0x020c3e74
-data_ov093_020c3ea0 kind:data(any) addr:0x020c3ea0
-data_ov093_020c3eac kind:data(any) addr:0x020c3eac
+gTrophyReportResourcePaths kind:data(any) addr:0x020c3ea0
+gTrophyReportTextPaths kind:data(any) addr:0x020c3eac
 sOv093_UiReportTrophyP2f_020c3ebc kind:data(any) addr:0x020c3ebc
 sOv093_UiReportLanguageTrophyP2f_020c3ed4 kind:data(any) addr:0x020c3ed4
 sOv093_UiReportLanguageTrophyObjP2f_020c3eec kind:data(any) addr:0x020c3eec

@@ -23,3 +23,15 @@ src/overlays/ov097/data/strings/Strings_ov097_020c1df8.c:
 src/overlays/ov097/data/strings/Strings_ov097_020c1e40.c:
     complete
     .data       start:0x020c1e40 end:0x020c1e5c
+
+src/overlays/ov097/data/tables/gStoryReportResourcePaths.c:
+    complete
+    .data       start:0x020c1de0 end:0x020c1dec
+
+src/overlays/ov097/data/tables/gStoryReportStateHandlers.c:
+    complete
+    .rodata     start:0x020c1dc4 end:0x020c1dcc
+
+src/overlays/ov097/data/tables/gStoryReportTextPaths.c:
+    complete
+    .data       start:0x020c1dec end:0x020c1df8

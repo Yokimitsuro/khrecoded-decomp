@@ -73,7 +73,7 @@ data_ov087_020c7d3c kind:data(any) addr:0x020c7d3c
 data_ov087_020c7d5c kind:data(any) addr:0x020c7d5c
 data_ov087_020c7d60 kind:data(any) addr:0x020c7d60
 data_ov087_020c7da0 kind:data(any) addr:0x020c7da0 ambiguous
-data_ov087_020c7de4 kind:data(any) addr:0x020c7de4
+gSelectionPanelStateHandlers kind:data(any) addr:0x020c7de4
 data_ov087_020c7e2c kind:data(any) addr:0x020c7e2c
 data_ov087_020c7e90 kind:data(any) addr:0x020c7e90
 sOv087_UiMenuStrLanguageWstSZ_020c7e9c kind:data(any) addr:0x020c7e9c

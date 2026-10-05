@@ -31,3 +31,11 @@ src/overlays/ov091/data/strings/Strings_ov091_020c2a90.c:
 src/overlays/ov091/data/strings/Strings_ov091_020c2c64.c:
     complete
     .data       start:0x020c2c64 end:0x020c2c7c
+
+src/overlays/ov091/data/tables/PointerTables_ov091_020c2a40.c:
+    complete
+    .data       start:0x020c2a40 end:0x020c2a50
+
+src/overlays/ov091/data/tables/gReportTopStateHandlers.c:
+    complete
+    .rodata     start:0x020c283c end:0x020c2848

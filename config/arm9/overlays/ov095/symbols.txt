@@ -53,11 +53,11 @@ func_ov095_020c139c kind:function(arm,size=0x28) addr:0x020c139c
 func_ov095_020c13c4 kind:function(arm,size=0x264) addr:0x020c13c4
 func_ov095_020c1628 kind:function(arm,size=0xec) addr:0x020c1628
 data_ov095_020c1714 kind:data(any) addr:0x020c1714
-data_ov095_020c171c kind:data(any) addr:0x020c171c
+gItemReportStateHandlers kind:data(any) addr:0x020c171c
 data_ov095_020c1728 kind:data(any) addr:0x020c1728
 data_ov095_020c1744 kind:data(any) addr:0x020c1744
-data_ov095_020c1780 kind:data(any) addr:0x020c1780
-data_ov095_020c1788 kind:data(any) addr:0x020c1788
+gItemReportTextPaths kind:data(any) addr:0x020c1780
+gItemReportResourcePaths kind:data(any) addr:0x020c1788
 data_ov095_020c1794 kind:data(any) addr:0x020c1794
 data_ov095_020c17a8 kind:data(any) addr:0x020c17a8
 data_ov095_020c17cc kind:data(any) addr:0x020c17cc

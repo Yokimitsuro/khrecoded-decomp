@@ -57,10 +57,10 @@ func_ov099_020c216c kind:function(arm,size=0x4c) addr:0x020c216c
 func_ov099_020c21b8 kind:function(arm,size=0x20) addr:0x020c21b8
 func_ov099_020c21d8 kind:function(arm,size=0x88) addr:0x020c21d8
 func_ov099_020c2260 kind:function(arm,size=0xc) addr:0x020c2260
-data_ov099_020c226c kind:data(any) addr:0x020c226c
+gEnemyReportStateHandlers kind:data(any) addr:0x020c226c
 data_ov099_020c2274 kind:data(any) addr:0x020c2274
-data_ov099_020c22a0 kind:data(any) addr:0x020c22a0
-data_ov099_020c22a8 kind:data(any) addr:0x020c22a8
+gEnemyReportTextPaths kind:data(any) addr:0x020c22a0
+gEnemyReportResourcePaths kind:data(any) addr:0x020c22a8
 data_ov099_020c22b4 kind:data(any) addr:0x020c22b4
 sOv099_UiReportEnemyP2f_020c22e0 kind:data(any) addr:0x020c22e0
 sOv099_UiReportLanguageEnemyP2f_020c22f4 kind:data(any) addr:0x020c22f4
@@ -69,7 +69,7 @@ sOv099_UiReportTextLanguageEnemySZ_020c2328 kind:data(any) addr:0x020c2328
 data_ov099_020c2344 kind:data(any) addr:0x020c2344
 sOv099_LSZ_020c2360 kind:data(any) addr:0x020c2360 ambiguous
 data_ov099_020c2368 kind:data(any) addr:0x020c2368 ambiguous
-data_ov099_020c2380 kind:data(any) addr:0x020c2380 ambiguous
+gEnemyReportListHandlers kind:data(any) addr:0x020c2380 ambiguous
 data_ov099_020c23ac kind:data(any) addr:0x020c23ac
 data_ov099_020c243c kind:data(any) addr:0x020c243c
 data_ov099_020c257c kind:data(any) addr:0x020c257c

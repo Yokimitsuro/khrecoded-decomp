@@ -148,9 +148,9 @@ func_ov017_020a5dfc kind:function(thumb,size=0xa) addr:0x020a5dfc
 func_ov017_020a5e08 kind:function(thumb,size=0x8) addr:0x020a5e08
 func_ov017_020a5e10 kind:function(thumb,size=0x8) addr:0x020a5e10
 data_ov017_020a5e18 kind:data(any) addr:0x020a5e18
-data_ov017_020a5e24 kind:data(any) addr:0x020a5e24
-data_ov017_020a5e34 kind:data(any) addr:0x020a5e34
-data_ov017_020a5e48 kind:data(any) addr:0x020a5e48
+gPoolInitHandlers kind:data(any) addr:0x020a5e24
+gPoolValueHandlers kind:data(any) addr:0x020a5e34
+gPoolMotionHandlers kind:data(any) addr:0x020a5e48
 data_ov017_020a5e5c kind:data(any) addr:0x020a5e5c
-data_ov017_020a5e80 kind:data(any) addr:0x020a5e80
+gPoolScriptCommandHandlers kind:data(any) addr:0x020a5e80
 sOv017_BaEfDbhit_020a5f38 kind:data(any) addr:0x020a5f38

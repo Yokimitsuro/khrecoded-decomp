@@ -70,7 +70,7 @@ func_ov091_020c27f8 kind:function(arm,size=0xc) addr:0x020c27f8
 func_ov091_020c2804 kind:function(arm,size=0x1c) addr:0x020c2804
 func_ov091_020c2820 kind:function(arm,size=0x14) addr:0x020c2820
 data_ov091_020c2834 kind:data(any) addr:0x020c2834
-data_ov091_020c283c kind:data(any) addr:0x020c283c
+gReportTopStateHandlers kind:data(any) addr:0x020c283c
 data_ov091_020c2848 kind:data(any) addr:0x020c2848
 data_ov091_020c285c kind:data(any) addr:0x020c285c
 data_ov091_020c2870 kind:data(any) addr:0x020c2870
@@ -83,8 +83,8 @@ data_ov091_020c2930 kind:data(any) addr:0x020c2930
 data_ov091_020c2950 kind:data(any) addr:0x020c2950
 data_ov091_020c2980 kind:data(any) addr:0x020c2980
 data_ov091_020c2a10 kind:data(any) addr:0x020c2a10
-data_ov091_020c2a40 kind:data(any) addr:0x020c2a40
-data_ov091_020c2a44 kind:data(any) addr:0x020c2a44
+gReportTopTextPath kind:data(any) addr:0x020c2a40
+gReportTopResourcePaths kind:data(any) addr:0x020c2a44
 data_ov091_020c2a50 kind:data(any) addr:0x020c2a50
 sOv091_UiReportTopP2f_020c2a7c kind:data(any) addr:0x020c2a7c
 sOv091_UiReportLanguageTopP2f_020c2a90 kind:data(any) addr:0x020c2a90

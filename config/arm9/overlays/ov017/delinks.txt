@@ -63,3 +63,15 @@ src/overlays/ov017/calls/func_ov017_020a5e10.c:
 src/overlays/ov017/data/strings/Strings_ov017_020a5f38.c:
     complete
     .data       start:0x020a5f38 end:0x020a5f60
+
+src/overlays/ov017/data/tables/PointerTables_ov017_020a5e24.c:
+    complete
+    .rodata     start:0x020a5e24 end:0x020a5e48
+
+src/overlays/ov017/data/tables/gPoolMotionHandlers.c:
+    complete
+    .rodata     start:0x020a5e48 end:0x020a5e5c
+
+src/overlays/ov017/data/tables/gPoolScriptCommandHandlers.c:
+    complete
+    .data       start:0x020a5e80 end:0x020a5f38

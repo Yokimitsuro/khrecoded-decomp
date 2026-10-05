@@ -55,7 +55,7 @@ func_ov040_020be118 kind:function(thumb,size=0x40) addr:0x020be118
 func_ov040_020be158 kind:function(thumb,size=0x68) addr:0x020be158
 data_ov040_020be1c0 kind:data(any) addr:0x020be1c0
 data_ov040_020be1c4 kind:data(any) addr:0x020be1c4
-data_ov040_020be1e0 kind:data(any) addr:0x020be1e0
+gAreaSceneStateHandlers kind:data(any) addr:0x020be1e0
 data_ov040_020be22c kind:data(any) addr:0x020be22c
 data_ov040_020be238 kind:data(any) addr:0x020be238
 data_ov040_020be240 kind:data(any) addr:0x020be240

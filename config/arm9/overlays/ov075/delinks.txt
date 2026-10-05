@@ -71,3 +71,11 @@ src/overlays/ov075/data/strings/Strings_ov075_020d18c0.c:
 src/overlays/ov075/data/strings/Strings_ov075_020d18d4.c:
     complete
     .data       start:0x020d18d4 end:0x020d1900
+
+src/overlays/ov075/data/tables/gOv075CursorHandlers.c:
+    complete
+    .rodata     start:0x020d1428 end:0x020d143c
+
+src/overlays/ov075/data/tables/gOv075StateHandlers.c:
+    complete
+    .rodata     start:0x020d1414 end:0x020d1428

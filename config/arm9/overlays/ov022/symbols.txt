@@ -131,7 +131,7 @@ data_ov022_020b7b28 kind:data(any) addr:0x020b7b28
 data_ov022_020b7b38 kind:data(any) addr:0x020b7b38
 data_ov022_020b7c00 kind:data(any) addr:0x020b7c00
 data_ov022_020b7c04 kind:data(any) addr:0x020b7c04
-data_ov022_020b7c18 kind:data(any) addr:0x020b7c18
+gStreamBufferTables kind:data(any) addr:0x020b7c18
 data_ov022_020b7c30 kind:data(any) addr:0x020b7c30
 data_ov022_020b7c40 kind:data(any) addr:0x020b7c40
 data_ov022_020b7c50 kind:data(any) addr:0x020b7c50
@@ -140,10 +140,10 @@ data_ov022_020b7c78 kind:data(any) addr:0x020b7c78
 data_ov022_020b7c90 kind:data(any) addr:0x020b7c90
 data_ov022_020b7cac kind:data(any) addr:0x020b7cac
 sOv022_FontEu10allNftr_020b7cec kind:data(any) addr:0x020b7cec
-data_ov022_020b7d00 kind:data(any) addr:0x020b7d00
+gStreamScriptCommandHandlers kind:data(any) addr:0x020b7d00
 sOv022_MobiclipIntr_020b7d30 kind:data(any) addr:0x020b7d30
-data_ov022_020b7d48 kind:data(any) addr:0x020b7d48
-data_ov022_020b7d6c kind:data(any) addr:0x020b7d6c
+gStreamStateHandlers kind:data(any) addr:0x020b7d48
+gStreamIoCallbacks kind:data(any) addr:0x020b7d6c
 data_ov022_020b7da0 kind:bss addr:0x020b7da0
 data_ov022_020b7da8 kind:bss addr:0x020b7da8
 data_ov022_020b7db4 kind:bss addr:0x020b7db4

@@ -27,3 +27,15 @@ src/overlays/ov038/calls/func_ov038_020bbcb0.c:
 src/overlays/ov038/data/strings/Strings_ov038_020bbddc.c:
     complete
     .data       start:0x020bbddc end:0x020bbe18
+
+src/overlays/ov038/data/tables/gResultsPageStateHandlers.c:
+    complete
+    .rodata     start:0x020bbd44 end:0x020bbd58
+
+src/overlays/ov038/data/tables/gResultsResourcePaths.c:
+    complete
+    .data       start:0x020bbdd0 end:0x020bbddc
+
+src/overlays/ov038/data/tables/gResultsSoundStateHandlers.c:
+    complete
+    .data       start:0x020bbdb8 end:0x020bbdd0

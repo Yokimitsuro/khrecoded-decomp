@@ -59,3 +59,19 @@ src/overlays/ov000/data/strings/Strings_ov000_0206397c.c:
 src/overlays/ov000/data/strings/Strings_ov000_02063998.c:
     complete
     .data       start:0x02063998 end:0x020639a4
+
+src/overlays/ov000/data/tables/PointerTables_ov000_02063848.c:
+    complete
+    .data       start:0x02063848 end:0x02063860
+
+src/overlays/ov000/data/tables/PointerTables_ov000_02063888.c:
+    complete
+    .data       start:0x02063888 end:0x02063938
+
+src/overlays/ov000/data/tables/gPanelPhaseHandlers.c:
+    complete
+    .data       start:0x02063884 end:0x02063888
+
+src/overlays/ov000/data/tables/gTitleScreenTransitionHandlers.c:
+    complete
+    .data       start:0x02063840 end:0x02063848

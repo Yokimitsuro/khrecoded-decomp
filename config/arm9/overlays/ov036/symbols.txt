@@ -229,7 +229,7 @@ data_ov036_020c342c kind:data(any) addr:0x020c342c
 data_ov036_020c342e kind:data(any) addr:0x020c342e
 data_ov036_020c3430 kind:data(any) addr:0x020c3430
 data_ov036_020c3432 kind:data(any) addr:0x020c3432
-data_ov036_020c3454 kind:data(any) addr:0x020c3454
+gTextWindowStateHandlers kind:data(any) addr:0x020c3454
 data_ov036_020c348c kind:data(any) addr:0x020c348c
 data_ov036_020c34cc kind:data(any) addr:0x020c34cc
 data_ov036_020c3500 kind:data(any) addr:0x020c3500 ambiguous
@@ -239,19 +239,19 @@ data_ov036_020c36b8 kind:data(any) addr:0x020c36b8
 data_ov036_020c36c0 kind:data(any) addr:0x020c36c0
 data_ov036_020c36e0 kind:data(any) addr:0x020c36e0
 data_ov036_020c36e4 kind:data(any) addr:0x020c36e4
-data_ov036_020c36f8 kind:data(any) addr:0x020c36f8
+gPanelScriptStateHandlers kind:data(any) addr:0x020c36f8
 sOv036_Ev2DBgP2_020c3718 kind:data(any) addr:0x020c3718
 sOv036_Ev2DChtexP2_020c3724 kind:data(any) addr:0x020c3724
 sOv036_Ev2DObjP2_020c3734 kind:data(any) addr:0x020c3734
 sOv036_E_020c3744 kind:data(any) addr:0x020c3744
 sOv036_Ev2DEVW0FormatDP2_020c3748 kind:data(any) addr:0x020c3748
-data_ov036_020c375c kind:data(any) addr:0x020c375c
+gTextScriptCommandHandlers kind:data(any) addr:0x020c375c
 data_ov036_020c385c kind:data(any) addr:0x020c385c
 sOv036_QuestionQuestionQuestion_020c3860 kind:data(any) addr:0x020c3860
-data_ov036_020c3864 kind:data(any) addr:0x020c3864
+gTextWindowResourceTable kind:data(any) addr:0x020c3864
 data_ov036_020c3868 kind:data(any) addr:0x020c3868
-data_ov036_020c387c kind:data(any) addr:0x020c387c
-data_ov036_020c389c kind:data(any) addr:0x020c389c
+gTextSceneBgCharacterLoaders kind:data(any) addr:0x020c387c
+gTextSceneBgScreenLoaders kind:data(any) addr:0x020c389c
 data_ov036_020c38bc kind:data(any) addr:0x020c38bc
 sOv036_UiEventuiEventuiP2f_020c38e4 kind:data(any) addr:0x020c38e4
 sOv036_TextFontEu10Nftr_020c38fc kind:data(any) addr:0x020c38fc

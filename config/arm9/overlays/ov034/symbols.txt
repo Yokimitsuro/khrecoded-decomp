@@ -56,7 +56,7 @@ data_ov034_020be954 kind:data(any) addr:0x020be954
 data_ov034_020be968 kind:data(any) addr:0x020be968
 data_ov034_020be96c kind:data(any) addr:0x020be96c
 data_ov034_020be970 kind:data(any) addr:0x020be970
-data_ov034_020be974 kind:data(any) addr:0x020be974
+gResultsScreenResourceSet kind:data(any) addr:0x020be974
 data_ov034_020be980 kind:data(any) addr:0x020be980
 data_ov034_020be9f8 kind:data(any) addr:0x020be9f8
 data_ov034_020be9fa kind:data(any) addr:0x020be9fa

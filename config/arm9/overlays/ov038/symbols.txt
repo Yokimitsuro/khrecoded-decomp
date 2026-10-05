@@ -44,13 +44,13 @@ func_ov038_020bbcbc kind:function(arm,size=0x1c) addr:0x020bbcbc
 func_ov038_020bbcd8 kind:function(arm,size=0x30) addr:0x020bbcd8
 func_ov038_020bbd08 kind:function(arm,size=0x28) addr:0x020bbd08
 data_ov038_020bbd30 kind:data(any) addr:0x020bbd30
-data_ov038_020bbd44 kind:data(any) addr:0x020bbd44
+gResultsPageStateHandlers kind:data(any) addr:0x020bbd44
 data_ov038_020bbd58 kind:data(any) addr:0x020bbd58
 data_ov038_020bbd78 kind:data(any) addr:0x020bbd78
 data_ov038_020bbda0 kind:data(any) addr:0x020bbda0
 data_ov038_020bbda4 kind:data(any) addr:0x020bbda4
-data_ov038_020bbdb8 kind:data(any) addr:0x020bbdb8
-data_ov038_020bbdd0 kind:data(any) addr:0x020bbdd0
+gResultsSoundStateHandlers kind:data(any) addr:0x020bbdb8
+gResultsResourcePaths kind:data(any) addr:0x020bbdd0
 sOv038_ClearClearP2f_020bbddc kind:data(any) addr:0x020bbddc
 sOv038_ClearLanguageClearP2f_020bbdec kind:data(any) addr:0x020bbdec
 sOv038_ClearLanguageClearObjP2f_020bbe00 kind:data(any) addr:0x020bbe00

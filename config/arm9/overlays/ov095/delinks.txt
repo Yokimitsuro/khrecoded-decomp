@@ -23,3 +23,11 @@ src/overlays/ov095/data/strings/Strings_ov095_020c1854.c:
 src/overlays/ov095/data/strings/Strings_ov095_020c28a8.c:
     complete
     .data       start:0x020c28a8 end:0x020c28cc
+
+src/overlays/ov095/data/tables/PointerTables_ov095_020c1780.c:
+    complete
+    .data       start:0x020c1780 end:0x020c1794
+
+src/overlays/ov095/data/tables/gItemReportStateHandlers.c:
+    complete
+    .rodata     start:0x020c171c end:0x020c1728

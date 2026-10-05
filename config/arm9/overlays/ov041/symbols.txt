@@ -160,7 +160,7 @@ data_ov041_020cfa8c kind:data(any) addr:0x020cfa8c
 data_ov041_020cfaa0 kind:data(any) addr:0x020cfaa0
 data_ov041_020cfab0 kind:data(any) addr:0x020cfab0
 data_ov041_020cfac0 kind:data(any) addr:0x020cfac0
-data_ov041_020cfac8 kind:data(any) addr:0x020cfac8
+gOv041ResourceSets kind:data(any) addr:0x020cfac8
 data_ov041_020cfae0 kind:data(any) addr:0x020cfae0
 data_ov041_020cfc30 kind:data(any) addr:0x020cfc30
 data_ov041_020cff30 kind:data(any) addr:0x020cff30

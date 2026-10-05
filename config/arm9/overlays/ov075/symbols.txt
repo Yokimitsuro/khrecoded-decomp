@@ -164,8 +164,8 @@ func_ov075_020d10fc kind:function(thumb,size=0x2) addr:0x020d10fc
 func_ov075_020d1100 kind:function(thumb,size=0x184) addr:0x020d1100
 func_ov075_020d1284 kind:function(thumb,size=0x184) addr:0x020d1284
 data_ov075_020d140a kind:data(any) addr:0x020d140a
-data_ov075_020d1414 kind:data(any) addr:0x020d1414
-data_ov075_020d1428 kind:data(any) addr:0x020d1428
+gOv075StateHandlers kind:data(any) addr:0x020d1414
+gOv075CursorHandlers kind:data(any) addr:0x020d1428
 data_ov075_020d143c kind:data(any) addr:0x020d143c
 data_ov075_020d143d kind:data(any) addr:0x020d143d
 data_ov075_020d1454 kind:data(any) addr:0x020d1454

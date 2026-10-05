@@ -18,3 +18,7 @@ src/overlays/ov011/auto/func_ov011_020a0ee8.c:
 src/overlays/ov011/auto/func_ov011_020a0f18.c:
     complete
     .text       start:0x020a0f18 end:0x020a0f1c
+
+src/overlays/ov011/data/tables/gCrawlScriptCommandHandlers.c:
+    complete
+    .data       start:0x020a1180 end:0x020a11c0

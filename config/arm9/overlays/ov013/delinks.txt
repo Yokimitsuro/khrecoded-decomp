@@ -91,3 +91,23 @@ src/overlays/ov013/data/strings/Strings_ov013_02074c58.c:
 src/overlays/ov013/data/strings/Strings_ov013_02074c64.c:
     complete
     .data       start:0x02074c64 end:0x02074c70
+
+src/overlays/ov013/data/tables/PointerTables_ov013_02074b38.c:
+    complete
+    .data       start:0x02074b38 end:0x02074b58
+
+src/overlays/ov013/data/tables/PointerTables_ov013_02074bc0.c:
+    complete
+    .data       start:0x02074bc0 end:0x02074c4c
+
+src/overlays/ov013/data/tables/gPanelAssetPaths.c:
+    complete
+    .data       start:0x02074b20 end:0x02074b34
+
+src/overlays/ov013/data/tables/gPanelExitModeResolver.c:
+    complete
+    .data       start:0x02074bbc end:0x02074bc0
+
+src/overlays/ov013/data/tables/gPanelScrollStartCallback.c:
+    complete
+    .data       start:0x02074b34 end:0x02074b38

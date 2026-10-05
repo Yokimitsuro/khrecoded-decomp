@@ -31,3 +31,7 @@ src/overlays/ov020/auto/func_ov020_020a3598.c:
 src/overlays/ov020/auto/func_ov020_020a359c.c:
     complete
     .text       start:0x020a359c end:0x020a35a4
+
+src/overlays/ov020/data/tables/gPanelObjectScriptCommandHandlers.c:
+    complete
+    .data       start:0x020a3a60 end:0x020a3aa0
