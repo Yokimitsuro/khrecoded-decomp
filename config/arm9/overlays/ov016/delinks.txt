@@ -8,13 +8,129 @@ src/overlays/ov016/calls/func_ov016_020a2284.c:
     complete
     .text       start:0x020a2284 end:0x020a228e
 
+src/overlays/ov016/calls/InstallFieldObjectHitCallbacks.c:
+    complete
+    .text       start:0x020a25e4 end:0x020a2688
+
+src/overlays/ov016/calls/SnapFieldObjectToGround.c:
+    complete
+    .text       start:0x020a27cc end:0x020a28f0
+
+src/overlays/ov016/calls/GrantFieldObjectReward.c:
+    complete
+    .text       start:0x020a28f0 end:0x020a298c
+
+src/overlays/ov016/calls/SetFieldObjectWeightByKind.c:
+    complete
+    .text       start:0x020a29ec end:0x020a2a92
+
+src/overlays/ov016/calls/PlaceFieldObjectNode.c:
+    complete
+    .text       start:0x020a2acc end:0x020a2b28
+
+src/overlays/ov016/calls/SteerFieldObjectToTarget.c:
+    complete
+    .text       start:0x020a2bd0 end:0x020a2c2a
+
+src/overlays/ov016/calls/PushFieldObject.c:
+    complete
+    .text       start:0x020a3278 end:0x020a3374
+
+src/overlays/ov016/calls/OnFieldObjectBumped.c:
+    complete
+    .text       start:0x020a3374 end:0x020a341c
+
+src/overlays/ov016/calls/GetCarrierVelocity.c:
+    complete
+    .text       start:0x020a3438 end:0x020a34e8
+
+src/overlays/ov016/calls/PairFieldObjects.c:
+    complete
+    .text       start:0x020a3810 end:0x020a395c
+
+src/overlays/ov016/calls/UpdateSlidingFieldObject.c:
+    complete
+    .text       start:0x020a395c end:0x020a3b64
+
+src/overlays/ov016/calls/OnMode11FieldObjectHit.c:
+    complete
+    .text       start:0x020a3b64 end:0x020a3c02
+
+src/overlays/ov016/calls/AnimateLaunchedFieldObject.c:
+    complete
+    .text       start:0x020a3c70 end:0x020a3d44
+
+src/overlays/ov016/calls/RecordVisitedEntry.c:
+    complete
+    .text       start:0x020a3d44 end:0x020a3db0
+
 src/overlays/ov016/auto/func_ov016_020a41cc.c:
     complete
     .text       start:0x020a41cc end:0x020a41d0
 
+src/overlays/ov016/calls/UpdateFloorSwitch.c:
+    complete
+    .text       start:0x020a4230 end:0x020a4458
+
+src/overlays/ov016/calls/ApplyFieldObjectForceToPlayer.c:
+    complete
+    .text       start:0x020a448c end:0x020a46b4
+
+src/overlays/ov016/calls/UpdateKickedFieldObject.c:
+    complete
+    .text       start:0x020a4820 end:0x020a4970
+
+src/overlays/ov016/calls/ApplyFieldObjectBob.c:
+    complete
+    .text       start:0x020a4970 end:0x020a49f8
+
+src/overlays/ov016/calls/StartFieldObjectFall.c:
+    complete
+    .text       start:0x020a49f8 end:0x020a4a84
+
+src/overlays/ov016/calls/StackLinkedFieldObjects.c:
+    complete
+    .text       start:0x020a4c74 end:0x020a4cea
+
+src/overlays/ov016/calls/LowerFieldObjectStep.c:
+    complete
+    .text       start:0x020a4d30 end:0x020a4df8
+
+src/overlays/ov016/calls/HandleFieldObjectHit_020a50a4.c:
+    complete
+    .text       start:0x020a50a4 end:0x020a5150
+
+src/overlays/ov016/calls/DispatchFieldObjectPhase.c:
+    complete
+    .text       start:0x020a584c end:0x020a58c0
+
+src/overlays/ov016/calls/TickFieldObjectRespawn.c:
+    complete
+    .text       start:0x020a58c0 end:0x020a598c
+
 src/overlays/ov016/auto/func_ov016_020a5b40.c:
     complete
     .text       start:0x020a5b40 end:0x020a5b42
+
+src/overlays/ov016/calls/RefreshFieldObjectPhase.c:
+    complete
+    .text       start:0x020a5b44 end:0x020a5bb4
+
+src/overlays/ov016/calls/SetFieldObjectVisible.c:
+    complete
+    .text       start:0x020a5bb4 end:0x020a5c34
+
+src/overlays/ov016/calls/ApplyFieldObjectSpawnEntry.c:
+    complete
+    .text       start:0x020a5f38 end:0x020a6084
+
+src/overlays/ov016/calls/SyncFieldObjectAnimation.c:
+    complete
+    .text       start:0x020a6084 end:0x020a60fa
+
+src/overlays/ov016/calls/SetFieldObjectHidden.c:
+    complete
+    .text       start:0x020a6988 end:0x020a6a0e
 
 src/overlays/ov016/calls/func_ov016_020a6a98.c:
     complete

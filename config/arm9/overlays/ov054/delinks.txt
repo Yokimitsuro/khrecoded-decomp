@@ -8,6 +8,18 @@ src/overlays/ov054/calls/func_ov054_020d24fc.c:
     complete
     .text       start:0x020d24fc end:0x020d250c
 
+src/overlays/ov054/calls/RequestOverlay054ActorState.c:
+    complete
+    .text       start:0x020d2574 end:0x020d26a8
+
+src/overlays/ov054/calls/UpdateRewardApproach.c:
+    complete
+    .text       start:0x020d2fac end:0x020d3098
+
+src/overlays/ov054/calls/UpdateRewardCharge.c:
+    complete
+    .text       start:0x020d3098 end:0x020d31d0
+
 src/overlays/ov054/data/strings/Strings_ov054_020d36c0.c:
     complete
     .data       start:0x020d36c0 end:0x020d36d4

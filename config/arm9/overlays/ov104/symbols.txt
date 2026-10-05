@@ -62,5 +62,5 @@ bad_mac_addr kind:data(any) addr:0x020d3718
 .p__sinit_ov104_020d2958 kind:data(word) addr:0x020d3728
 .p__sinit_ov104_020d31fc kind:data(word) addr:0x020d372c
 .p__sinit_ov104_020d36b4 kind:data(word) addr:0x020d3730
-BSS kind:bss addr:0x020d3740
+DSProt_BSS kind:bss addr:0x020d3740
 data_ov104_020d3744 kind:bss addr:0x020d3744

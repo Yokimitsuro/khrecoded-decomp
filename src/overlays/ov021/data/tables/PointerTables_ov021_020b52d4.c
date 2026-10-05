@@ -53,7 +53,7 @@ extern void func_ov021_020b2000(void); /* SetScriptContextVector */
 extern void func_ov021_020b1fb0(void); /* AddScriptContextVector */
 extern void func_ov021_020b1f98(void); /* SubmitActorRender */
 extern void func_ov021_020b1f54(void);
-extern void func_ov021_020b1e24(void); /* PickSpawnPointNearPlayer */
+extern void PickSpawnPointNearPlayer(void); /* PickSpawnPointNearPlayer */
 extern void func_ov021_020b1e04(void); /* ScriptOp_GetObjectPosition */
 extern void func_ov021_020b1d98(void); /* ScriptOp_DropToGround */
 extern void func_ov021_020b1d34(void); /* ScriptOp_MoveAlongPlayerFacing */
@@ -71,8 +71,8 @@ extern void func_ov021_020b1a9c(void);
 extern void func_ov021_020b1a50(void); /* ScriptOp_GetSlotPosition */
 extern void func_ov021_020b19f0(void); /* ScriptOp_ProjectObjectMovement */
 extern void func_ov021_020b19d0(void); /* LoadStageEntryPosition */
-extern void func_ov021_020b1870(void); /* ScriptOp_PlaceAroundPlayer */
-extern void func_ov021_020b1734(void); /* ScriptOp_PlaceNearPlayerOnGround */
+extern void ScriptOp_PlaceAroundPlayer(void); /* ScriptOp_PlaceAroundPlayer */
+extern void ScriptOp_PlaceNearPlayerOnGround(void); /* ScriptOp_PlaceNearPlayerOnGround */
 extern void func_ov021_020b170c(void); /* ScriptOp_GetMotionTarget */
 extern void func_ov021_020b1688(void); /* ScriptCmd_PushRandomSpherical */
 extern void func_ov021_020b1608(void); /* ScriptCmd_PushRandomHorizontal */
@@ -261,7 +261,7 @@ void (*gScriptVectorHandlers[33])(void) = {
     func_ov021_020b1fb0, /* AddScriptContextVector */
     func_ov021_020b1f98, /* SubmitActorRender */
     func_ov021_020b1f54,
-    func_ov021_020b1e24, /* PickSpawnPointNearPlayer */
+    PickSpawnPointNearPlayer, /* PickSpawnPointNearPlayer */
     func_ov021_020b1e04, /* ScriptOp_GetObjectPosition */
     func_ov021_020b1d98, /* ScriptOp_DropToGround */
     func_ov021_020b1d34, /* ScriptOp_MoveAlongPlayerFacing */
@@ -282,8 +282,8 @@ void (*gScriptVectorHandlers[33])(void) = {
     func_ov021_020b1a50, /* ScriptOp_GetSlotPosition */
     func_ov021_020b19f0, /* ScriptOp_ProjectObjectMovement */
     func_ov021_020b19d0, /* LoadStageEntryPosition */
-    func_ov021_020b1870, /* ScriptOp_PlaceAroundPlayer */
-    func_ov021_020b1734, /* ScriptOp_PlaceNearPlayerOnGround */
+    ScriptOp_PlaceAroundPlayer, /* ScriptOp_PlaceAroundPlayer */
+    ScriptOp_PlaceNearPlayerOnGround, /* ScriptOp_PlaceNearPlayerOnGround */
     func_ov021_020b170c, /* ScriptOp_GetMotionTarget */
     func_ov021_020b1688, /* ScriptCmd_PushRandomSpherical */
     func_ov021_020b1608, /* ScriptCmd_PushRandomHorizontal */

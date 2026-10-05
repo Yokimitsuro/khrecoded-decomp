@@ -4,6 +4,14 @@
     .data       start:0x020c22a0 end:0x020c2900 kind:data align:32
     .bss        start:0x020c2900 end:0x020c2920 kind:bss align:32
 
+src/overlays/ov099/calls/RemapModelId.c:
+    complete
+    .text       start:0x020beb40 end:0x020becb4
+
+src/overlays/ov099/calls/SyncEnemyEntryFlags.c:
+    complete
+    .text       start:0x020c16f0 end:0x020c1780
+
 src/overlays/ov099/auto/func_ov099_020c17a4.c:
     complete
     .text       start:0x020c17a4 end:0x020c17a8

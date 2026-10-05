@@ -7,7 +7,7 @@ typedef unsigned long u32;
 #define HW_DCACHE_SIZE 0x1000
 #define ROTL(x, amount) ((amount) == 0 ? (x) : (((x) << (amount)) | ((x) >> (32 - (amount)))))
 
-extern u8 BSS[4];
+extern u8 DSProt_BSS[32];
 
 extern u32 RC4_InitAndEncryptInstructions(void *key, void *dst, void *src, u32 size);
 extern u32 RC4_InitAndDecryptInstructions(void *key, void *dst, void *src, u32 size);

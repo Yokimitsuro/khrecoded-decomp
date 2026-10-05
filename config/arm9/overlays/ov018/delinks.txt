@@ -3,6 +3,22 @@
     .data       start:0x020a3860 end:0x020a3880 kind:data align:32
     .bss        start:0x020a3880 end:0x020a3880 kind:bss align:32
 
+src/overlays/ov018/calls/FieldObject_SpawnContactEffect.c:
+    complete
+    .text       start:0x020a288c end:0x020a28f2
+
+src/overlays/ov018/calls/FieldObject_HandleStrongHit.c:
+    complete
+    .text       start:0x020a28f4 end:0x020a2988
+
+src/overlays/ov018/calls/FieldObject_ShiftWithArea.c:
+    complete
+    .text       start:0x020a2a00 end:0x020a2c18
+
+src/overlays/ov018/calls/BounceVelocityOffNormal.c:
+    complete
+    .text       start:0x020a3154 end:0x020a31b0
+
 src/overlays/ov018/auto/func_ov018_020a31b0.c:
     complete
     .text       start:0x020a31b0 end:0x020a31b2

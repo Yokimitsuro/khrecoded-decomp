@@ -16,6 +16,14 @@ src/overlays/ov020/auto/func_ov020_020a2364.c:
     complete
     .text       start:0x020a2364 end:0x020a2368
 
+src/overlays/ov020/calls/ProbeBlockGroundOffset.c:
+    complete
+    .text       start:0x020a254c end:0x020a25c0
+
+src/overlays/ov020/calls/SettleBlockGround.c:
+    complete
+    .text       start:0x020a28cc end:0x020a2914
+
 src/overlays/ov020/calls/func_ov020_020a2914.c:
     complete
     .text       start:0x020a2914 end:0x020a2920
@@ -23,6 +31,10 @@ src/overlays/ov020/calls/func_ov020_020a2914.c:
 src/overlays/ov020/auto/func_ov020_020a2920.c:
     complete
     .text       start:0x020a2920 end:0x020a2924
+
+src/overlays/ov020/calls/ApplyBlockLift.c:
+    complete
+    .text       start:0x020a33b8 end:0x020a3428
 
 src/overlays/ov020/auto/func_ov020_020a3598.c:
     complete

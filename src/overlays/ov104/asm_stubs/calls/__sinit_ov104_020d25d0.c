@@ -11,13 +11,13 @@ asm void __sinit_ov104_020d25d0(void)
     adds  r0, r0, #4
     bne   Encryptor_DecodeFunctionTable
     DCD   RunEncrypted_Integrity_MACOwner_IsBad + 0x1000
-    DCD   BSS + 0x1024
+    DCD   DSProt_BSS + 0x1024
     DCD   RunEncrypted_Integrity_MACOwner_IsGood + 0x1000
-    DCD   BSS + 0x1024
+    DCD   DSProt_BSS + 0x1024
     DCD   RunEncrypted_Integrity_ROMTest_IsBad + 0x1000
-    DCD   BSS + 0x1024
+    DCD   DSProt_BSS + 0x1024
     DCD   RunEncrypted_Integrity_ROMTest_IsGood + 0x1000
-    DCD   BSS + 0x1024
+    DCD   DSProt_BSS + 0x1024
     DCD   0
     DCD   0
 }

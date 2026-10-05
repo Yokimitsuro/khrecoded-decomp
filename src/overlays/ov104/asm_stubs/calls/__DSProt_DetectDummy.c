@@ -13,10 +13,10 @@ asm u32 __DSProt_DetectDummy(void)
     stmfd  sp!, {ip}
     orr    ip, pc, pc
     ldmfd  sp!, {pc}
-    DCD    BSS + 1
-    DCD    BSS + 0x18d82
+    DCD    DSProt_BSS + 1
+    DCD    DSProt_BSS + 0x18d82
     DCD    DetectDummy + 0x1000
-    DCD    BSS + 0x1080
+    DCD    DSProt_BSS + 0x1080
     DCD    0
     DCD    Encryptor_DecryptionWrapperFragment + 0x1000
 }

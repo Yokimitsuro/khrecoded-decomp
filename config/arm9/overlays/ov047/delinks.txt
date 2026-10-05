@@ -2,3 +2,7 @@
     .rodata     start:0x020c7274 end:0x020c72d4 kind:rodata align:4
     .ctor       start:0x020c72d4 end:0x020c72d4 kind:rodata align:4
     .bss        start:0x020c72e0 end:0x020c72e0 kind:bss align:32
+
+src/overlays/ov047/calls/Camera_ShouldStartManualTurn.c:
+    complete
+    .text       start:0x020c3af8 end:0x020c3b7c

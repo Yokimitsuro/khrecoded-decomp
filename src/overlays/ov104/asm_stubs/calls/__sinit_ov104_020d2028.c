@@ -13,17 +13,17 @@ asm void __sinit_ov104_020d2028(void)
     adds  r0, r0, #4
     bne   Encryptor_DecodeFunctionTable
     DCD   __DSProt_DetectFlashcart + 0x1000
-    DCD   BSS + 0x1024
+    DCD   DSProt_BSS + 0x1024
     DCD   __DSProt_DetectNotFlashcart + 0x1000
-    DCD   BSS + 0x1024
+    DCD   DSProt_BSS + 0x1024
     DCD   __DSProt_DetectEmulator + 0x1000
-    DCD   BSS + 0x1024
+    DCD   DSProt_BSS + 0x1024
     DCD   __DSProt_DetectNotEmulator + 0x1000
-    DCD   BSS + 0x1024
+    DCD   DSProt_BSS + 0x1024
     DCD   __DSProt_DetectDummy + 0x1000
-    DCD   BSS + 0x1024
+    DCD   DSProt_BSS + 0x1024
     DCD   __DSProt_DetectNotDummy + 0x1000
-    DCD   BSS + 0x1024
+    DCD   DSProt_BSS + 0x1024
     DCD   0
     DCD   0
     DCD   Garbage + 0x1000

@@ -7,7 +7,7 @@ func_ov034_020bb090 kind:function(arm,size=0x24) addr:0x020bb090
 func_ov034_020bb0b4 kind:function(arm,size=0x1a0) addr:0x020bb0b4
 func_ov034_020bb254 kind:function(thumb,size=0x40) addr:0x020bb254
 func_ov034_020bb294 kind:function(thumb,size=0x1c) addr:0x020bb294
-func_ov034_020bb2b0 kind:function(thumb,size=0x74) addr:0x020bb2b0
+EnterResultsTierMode kind:function(thumb,size=0x74) addr:0x020bb2b0
 func_ov034_020bb324 kind:function(thumb,size=0x274) addr:0x020bb324
 func_ov034_020bb598 kind:function(thumb,size=0x1878) addr:0x020bb598
 .L_020bb6b2 kind:label(thumb) addr:0x020bb6b2
@@ -18,10 +18,10 @@ func_ov034_020bce10 kind:function(thumb,size=0x60) addr:0x020bce10
 func_ov034_020bce70 kind:function(thumb,size=0xe0) addr:0x020bce70
 func_ov034_020bcf50 kind:function(thumb,size=0xde) addr:0x020bcf50
 func_ov034_020bd030 kind:function(thumb,size=0x90) addr:0x020bd030
-func_ov034_020bd0c0 kind:function(thumb,size=0x70) addr:0x020bd0c0
+CommitResultsRewards kind:function(thumb,size=0x70) addr:0x020bd0c0
 func_ov034_020bd130 kind:function(thumb,size=0xa60) addr:0x020bd130
 .L_020bdb8c kind:label(thumb) addr:0x020bdb8c local
-func_ov034_020bdb90 kind:function(thumb,size=0x60) addr:0x020bdb90
+IsResultsShopEntryUnlocked kind:function(thumb,size=0x60) addr:0x020bdb90
 func_ov034_020bdbf0 kind:function(thumb,size=0x48) addr:0x020bdbf0
 func_ov034_020bdc38 kind:function(thumb,size=0x24) addr:0x020bdc38
 func_ov034_020bdc5c kind:function(thumb,size=0x50) addr:0x020bdc5c

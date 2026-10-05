@@ -4,6 +4,90 @@
     .data       start:0x020d8a00 end:0x020d8a40 kind:data align:32
     .bss        start:0x020d8a40 end:0x020d9260 kind:bss align:32
 
+src/overlays/ov058/calls/HasReachedMoveTarget.c:
+    complete
+    .text       start:0x020d485c end:0x020d4968
+
+src/overlays/ov058/calls/CheckEnemyContactAbove.c:
+    complete
+    .text       start:0x020d5180 end:0x020d5354
+
+src/overlays/ov058/calls/StartEnemyLaunch.c:
+    complete
+    .text       start:0x020d5354 end:0x020d546c
+
+src/overlays/ov058/calls/UpdateEnemyDownState.c:
+    complete
+    .text       start:0x020d59d4 end:0x020d5b14
+
+src/overlays/ov058/calls/UpdateEnemyApproachState.c:
+    complete
+    .text       start:0x020d5b14 end:0x020d5f08
+
+src/overlays/ov058/calls/SetEnemyTargetAndClearFlag.c:
+    complete
+    .text       start:0x020d64e8 end:0x020d64fc
+
+src/overlays/ov058/calls/TryRequestEnemyAction.c:
+    complete
+    .text       start:0x020d64fc end:0x020d65e4
+
+src/overlays/ov058/calls/HandleEnemyEvent.c:
+    complete
+    .text       start:0x020d690c end:0x020d6978
+
+src/overlays/ov058/calls/SetEnemyModeEnabled.c:
+    complete
+    .text       start:0x020d6978 end:0x020d6a98
+
+src/overlays/ov058/calls/ResetEnemyLaunchState.c:
+    complete
+    .text       start:0x020d6a98 end:0x020d6b54
+
+src/overlays/ov058/calls/RestoreEnemyHealthAndReset.c:
+    complete
+    .text       start:0x020d6c2c end:0x020d6c98
+
+src/overlays/ov058/calls/FinishEnemyRecovery.c:
+    complete
+    .text       start:0x020d6c98 end:0x020d6d64
+
+src/overlays/ov058/calls/FilterEnemyStatusFlags.c:
+    complete
+    .text       start:0x020d6d64 end:0x020d6e14
+
+src/overlays/ov058/calls/UpdateEnemyFallCheck.c:
+    complete
+    .text       start:0x020d6f78 end:0x020d704c
+
+src/overlays/ov058/calls/IsEnemyStunnedOrDowned.c:
+    complete
+    .text       start:0x020d704c end:0x020d7074
+
+src/overlays/ov058/calls/UpdateBlastFadeSequence.c:
+    complete
+    .text       start:0x020d72e4 end:0x020d7424
+
+src/overlays/ov058/calls/ClearStageEventsAndPlayerFlags.c:
+    complete
+    .text       start:0x020d7424 end:0x020d74b8
+
+src/overlays/ov058/calls/UpdateHazardRig.c:
+    complete
+    .text       start:0x020d779c end:0x020d7838
+
+src/overlays/ov058/calls/PlaceRigAtPlayerOffset.c:
+    complete
+    .text       start:0x020d7838 end:0x020d78dc
+
+src/overlays/ov058/calls/PurgeNearbyStageObjects.c:
+    complete
+    .text       start:0x020d79b8 end:0x020d7a64
+
+src/overlays/ov058/calls/GetSceneSlotAngle.c:
+    complete
+    .text       start:0x020d8904 end:0x020d895c
+
 src/overlays/ov058/calls/func_ov058_020d895c.c:
     complete
     .text       start:0x020d895c end:0x020d896c

@@ -4,6 +4,10 @@
     .data       start:0x020a36a0 end:0x020a36c0 kind:data align:32
     .bss        start:0x020a36c0 end:0x020a36c0 kind:bss align:32
 
+src/overlays/ov019/calls/FieldObject_HandlePushContact.c:
+    complete
+    .text       start:0x020a1f58 end:0x020a2018
+
 src/overlays/ov019/calls/func_ov019_020a23c0.c:
     complete
     .text       start:0x020a23c0 end:0x020a23cc
@@ -11,6 +15,10 @@ src/overlays/ov019/calls/func_ov019_020a23c0.c:
 src/overlays/ov019/auto/func_ov019_020a23cc.c:
     complete
     .text       start:0x020a23cc end:0x020a23ce
+
+src/overlays/ov019/calls/SetLinkedCallbackId.c:
+    complete
+    .text       start:0x020a35a0 end:0x020a35a6
 
 src/overlays/ov019/data/strings/Strings_ov019_020a36b0.c:
     complete

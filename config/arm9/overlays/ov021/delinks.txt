@@ -12,9 +12,41 @@ src/overlays/ov021/calls/func_ov021_020a7530.c:
     complete
     .text       start:0x020a7530 end:0x020a753c
 
-src/overlays/ov021/auto/func_ov021_020a757c.c:
+src/overlays/ov021/auto/SharedObject_GetField2.c:
+    complete
+    .text       start:0x020a7570 end:0x020a7574
+
+src/overlays/ov021/auto/SharedObject_GetFlagsA.c:
+    complete
+    .text       start:0x020a7574 end:0x020a7578
+
+src/overlays/ov021/auto/SharedObject_GetFlagsB.c:
+    complete
+    .text       start:0x020a7578 end:0x020a757c
+
+src/overlays/ov021/auto/SharedObject_GetId.c:
     complete
     .text       start:0x020a757c end:0x020a7580
+
+src/overlays/ov021/auto/SharedObject_GetMode.c:
+    complete
+    .text       start:0x020a7580 end:0x020a7586
+
+src/overlays/ov021/calls/AddClampedHealth.c:
+    complete
+    .text       start:0x020a760c end:0x020a763e
+
+src/overlays/ov021/calls/ApplyScaledHealthDelta.c:
+    complete
+    .text       start:0x020a7640 end:0x020a7670
+
+src/overlays/ov021/calls/TryApplyStatusEffect.c:
+    complete
+    .text       start:0x020a791c end:0x020a7a60
+
+src/overlays/ov021/calls/ApplyRewardByTier.c:
+    complete
+    .text       start:0x020a7a60 end:0x020a7c00
 
 src/overlays/ov021/calls/func_ov021_020a7ca8.c:
     complete
@@ -32,6 +64,18 @@ src/overlays/ov021/auto/func_ov021_020ac168.c:
     complete
     .text       start:0x020ac168 end:0x020ac170
 
+src/overlays/ov021/calls/ComputeAttackDamage.c:
+    complete
+    .text       start:0x020ac6ec end:0x020ac810
+
+src/overlays/ov021/calls/RefreshMenuHighlights.c:
+    complete
+    .text       start:0x020aca50 end:0x020acb8c
+
+src/overlays/ov021/calls/SelectMenuMember.c:
+    complete
+    .text       start:0x020ad9a0 end:0x020adacc
+
 src/overlays/ov021/calls/func_ov021_020ae738.c:
     complete
     .text       start:0x020ae738 end:0x020ae740
@@ -48,6 +92,18 @@ src/overlays/ov021/calls/func_ov021_020af408.c:
     complete
     .text       start:0x020af408 end:0x020af414
 
+src/overlays/ov021/calls/ScriptOp_PlaceNearPlayerOnGround.c:
+    complete
+    .text       start:0x020b1734 end:0x020b1870
+
+src/overlays/ov021/calls/ScriptOp_PlaceAroundPlayer.c:
+    complete
+    .text       start:0x020b1870 end:0x020b19d0
+
+src/overlays/ov021/calls/PickSpawnPointNearPlayer.c:
+    complete
+    .text       start:0x020b1e24 end:0x020b1f54
+
 src/overlays/ov021/auto/func_ov021_020b23fc.c:
     complete
     .text       start:0x020b23fc end:0x020b2400
@@ -55,6 +111,14 @@ src/overlays/ov021/auto/func_ov021_020b23fc.c:
 src/overlays/ov021/auto/func_ov021_020b246c.c:
     complete
     .text       start:0x020b246c end:0x020b2470
+
+src/overlays/ov021/calls/ScriptOp_SpawnLinkedSlotEvent.c:
+    complete
+    .text       start:0x020b25d4 end:0x020b2780
+
+src/overlays/ov021/calls/ScriptOp_SpawnStageObject.c:
+    complete
+    .text       start:0x020b2914 end:0x020b2a6c
 
 src/overlays/ov021/auto/func_ov021_020b48a0.c:
     complete

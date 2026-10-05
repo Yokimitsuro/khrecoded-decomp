@@ -5,7 +5,7 @@ func_ov057_020d40c0 kind:function(thumb,size=0x178) addr:0x020d40c0
 func_ov057_020d4238 kind:function(arm,size=0x38) addr:0x020d4238
 func_ov057_020d4270 kind:function(arm,size=0x3c) addr:0x020d4270
 func_ov057_020d42ac kind:function(thumb,size=0x28) addr:0x020d42ac
-func_ov057_020d42d4 kind:function(arm,size=0x1cc) addr:0x020d42d4
+UpdateTimedMarkerAction kind:function(arm,size=0x1cc) addr:0x020d42d4
 sOv057_BaChFormatSDefPZ_020d44c0 kind:data(any) addr:0x020d44c0
 sOv057_BaChFormatSEtcPZ_020d44d4 kind:data(any) addr:0x020d44d4
 sOv057_BaChFormatSJpPZ_020d44e8 kind:data(any) addr:0x020d44e8

@@ -1,5 +1,5 @@
 func_ov099_020beb20 kind:function(arm,size=0x20) addr:0x020beb20
-func_ov099_020beb40 kind:function(arm,size=0x174) addr:0x020beb40
+RemapModelId kind:function(arm,size=0x174) addr:0x020beb40
 func_ov099_020becb4 kind:function(arm,size=0x11c) addr:0x020becb4
 func_ov099_020bedd0 kind:function(arm,size=0xac) addr:0x020bedd0
 func_ov099_020bee7c kind:function(arm,size=0x78) addr:0x020bee7c
@@ -39,7 +39,7 @@ func_ov099_020c14d8 kind:function(arm,size=0xb4) addr:0x020c14d8
 func_ov099_020c158c kind:function(arm,size=0x120) addr:0x020c158c
 func_ov099_020c16ac kind:function(arm,size=0x28) addr:0x020c16ac
 func_ov099_020c16d4 kind:function(arm,size=0x1c) addr:0x020c16d4
-func_ov099_020c16f0 kind:function(arm,size=0x90) addr:0x020c16f0
+SyncEnemyEntryFlags kind:function(arm,size=0x90) addr:0x020c16f0
 func_ov099_020c1780 kind:function(arm,size=0x18) addr:0x020c1780
 func_ov099_020c1798 kind:function(arm,size=0xc) addr:0x020c1798
 func_ov099_020c17a4 kind:function(arm,size=0x4) addr:0x020c17a4

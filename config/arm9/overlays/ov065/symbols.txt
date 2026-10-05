@@ -1,9 +1,9 @@
 func_ov065_020d8120 kind:function(thumb,size=0x34) addr:0x020d8120
 func_ov065_020d8154 kind:function(thumb,size=0x2a) addr:0x020d8154
-func_ov065_020d8180 kind:function(thumb,size=0x134) addr:0x020d8180
-func_ov065_020d82b4 kind:function(thumb,size=0x1a) addr:0x020d82b4
+FireMarkedGroupShot kind:function(thumb,size=0x134) addr:0x020d8180
+UpdateStoppingEffect kind:function(thumb,size=0x1a) addr:0x020d82b4
 func_ov065_020d82d0 kind:function(thumb,size=0x98) addr:0x020d82d0
-func_ov065_020d8368 kind:function(thumb,size=0xb8) addr:0x020d8368
+UpdateAuraAttackAction kind:function(thumb,size=0xb8) addr:0x020d8368
 func_ov065_020d8420 kind:function(thumb,size=0x1d0) addr:0x020d8420
 sOv065_CmMR_020d8600 kind:data(any) addr:0x020d8600
 sOv065_BaEfFnMrP2_020d8608 kind:data(any) addr:0x020d8608

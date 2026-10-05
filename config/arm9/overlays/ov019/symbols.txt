@@ -1,6 +1,6 @@
 func_ov019_020a1e00 kind:function(thumb,size=0x2e) addr:0x020a1e00
 func_ov019_020a1e30 kind:function(thumb,size=0x128) addr:0x020a1e30
-func_ov019_020a1f58 kind:function(thumb,size=0xc0) addr:0x020a1f58
+FieldObject_HandlePushContact kind:function(thumb,size=0xc0) addr:0x020a1f58
 func_ov019_020a2018 kind:function(thumb,size=0x3c) addr:0x020a2018
 func_ov019_020a2054 kind:function(thumb,size=0x62) addr:0x020a2054
 func_ov019_020a20b8 kind:function(arm,size=0x48) addr:0x020a20b8
@@ -28,7 +28,7 @@ func_ov019_020a322c kind:function(arm,size=0x28) addr:0x020a322c
 func_ov019_020a3254 kind:function(thumb,size=0x50) addr:0x020a3254
 func_ov019_020a32a4 kind:function(thumb,size=0xa4) addr:0x020a32a4
 func_ov019_020a3348 kind:function(thumb,size=0x258) addr:0x020a3348
-func_ov019_020a35a0 kind:function(thumb,size=0x6) addr:0x020a35a0
+SetLinkedCallbackId kind:function(thumb,size=0x6) addr:0x020a35a0
 func_ov019_020a35a8 kind:function(thumb,size=0x34) addr:0x020a35a8
 func_ov019_020a35dc kind:function(thumb,size=0x4c) addr:0x020a35dc
 func_ov019_020a3628 kind:function(thumb,size=0x38) addr:0x020a3628

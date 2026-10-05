@@ -24,6 +24,14 @@ src/overlays/ov017/calls/func_ov017_020a2e84.c:
     complete
     .text       start:0x020a2e84 end:0x020a2e90
 
+src/overlays/ov017/calls/GetOwnerRaisedPosition.c:
+    complete
+    .text       start:0x020a3260 end:0x020a32a4
+
+src/overlays/ov017/calls/GetActorVelocity.c:
+    complete
+    .text       start:0x020a32a4 end:0x020a32da
+
 src/overlays/ov017/auto/func_ov017_020a3964.c:
     complete
     .text       start:0x020a3964 end:0x020a3966
@@ -31,6 +39,14 @@ src/overlays/ov017/auto/func_ov017_020a3964.c:
 src/overlays/ov017/auto/func_ov017_020a4290.c:
     complete
     .text       start:0x020a4290 end:0x020a4296
+
+src/overlays/ov017/calls/IsFacingContact.c:
+    complete
+    .text       start:0x020a4548 end:0x020a4592
+
+src/overlays/ov017/calls/ResetFallTarget.c:
+    complete
+    .text       start:0x020a48dc end:0x020a48ea
 
 src/overlays/ov017/calls/func_ov017_020a4f98.c:
     complete
@@ -44,6 +60,10 @@ src/overlays/ov017/auto/func_ov017_020a502c.c:
     complete
     .text       start:0x020a502c end:0x020a5032
 
+src/overlays/ov017/calls/PropagateStackHeight.c:
+    complete
+    .text       start:0x020a5218 end:0x020a525a
+
 src/overlays/ov017/calls/func_ov017_020a525c.c:
     complete
     .text       start:0x020a525c end:0x020a5264
@@ -51,6 +71,10 @@ src/overlays/ov017/calls/func_ov017_020a525c.c:
 src/overlays/ov017/auto/func_ov017_020a5264.c:
     complete
     .text       start:0x020a5264 end:0x020a5266
+
+src/overlays/ov017/calls/GetRaisedPosition.c:
+    complete
+    .text       start:0x020a5714 end:0x020a5752
 
 src/overlays/ov017/calls/func_ov017_020a5e08.c:
     complete

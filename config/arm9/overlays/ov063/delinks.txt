@@ -3,6 +3,18 @@
     .data       start:0x020d8720 end:0x020d8740 kind:data align:32
     .bss        start:0x020d8740 end:0x020d8740 kind:bss align:32
 
+src/overlays/ov063/calls/BeginBossIntroScene.c:
+    complete
+    .text       start:0x020d8120 end:0x020d817c
+
+src/overlays/ov063/calls/AdvanceTimedHitUnit.c:
+    complete
+    .text       start:0x020d823c end:0x020d82b8
+
+src/overlays/ov063/calls/UpdateGroundSlamAction.c:
+    complete
+    .text       start:0x020d82b8 end:0x020d85bc
+
 src/overlays/ov063/data/strings/Strings_ov063_020d8720.c:
     complete
     .data       start:0x020d8720 end:0x020d8740

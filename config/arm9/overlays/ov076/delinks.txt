@@ -20,9 +20,17 @@ src/overlays/ov076/calls/func_ov076_020c5d38.c:
     complete
     .text       start:0x020c5d38 end:0x020c5d40
 
+src/overlays/ov076/calls/SlotMenu_HandleSlotSelect.c:
+    complete
+    .text       start:0x020c8b80 end:0x020c8d40
+
 src/overlays/ov076/calls/func_ov076_020c8f10.c:
     complete
     .text       start:0x020c8f10 end:0x020c8f18
+
+src/overlays/ov076/calls/ItemList_BuildStock.c:
+    complete
+    .text       start:0x020c8fc0 end:0x020c9308
 
 src/overlays/ov076/calls/func_ov076_020ca628.c:
     complete

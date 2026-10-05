@@ -108,6 +108,22 @@ src/overlays/ov002/calls/func_ov002_02066c68.c:
     complete
     .text       start:0x02066c68 end:0x02066c78
 
+src/overlays/ov002/calls/ApplyCategoryRecord.c:
+    complete
+    .text       start:0x02069190 end:0x02069308
+
+src/overlays/ov002/calls/FillCategoryRecords.c:
+    complete
+    .text       start:0x02069e8c end:0x02069f9c
+
+src/overlays/ov002/calls/CollectRecordItemsBySlot.c:
+    complete
+    .text       start:0x0206a020 end:0x0206a214
+
+src/overlays/ov002/calls/PickRandomRecordWithBias.c:
+    complete
+    .text       start:0x0206a824 end:0x0206a888
+
 src/overlays/ov002/data/strings/Strings_ov002_0206c290.c:
     complete
     .data       start:0x0206c290 end:0x0206c2a0

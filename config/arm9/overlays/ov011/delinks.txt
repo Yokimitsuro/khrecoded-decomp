@@ -3,21 +3,69 @@
     .data       start:0x020a1180 end:0x020a11c0 kind:data align:32
     .bss        start:0x020a11c0 end:0x020a11c0 kind:bss align:32
 
+src/overlays/ov011/calls/ScriptCmd_SpawnFieldObject_020a05ac.c:
+    complete
+    .text       start:0x020a05ac end:0x020a068e
+
 src/overlays/ov011/calls/func_ov011_020a06c4.c:
     complete
     .text       start:0x020a06c4 end:0x020a06d6
+
+src/overlays/ov011/calls/ScriptCmd_PostRequestAndSetPanel.c:
+    complete
+    .text       start:0x020a06d8 end:0x020a0706
+
+src/overlays/ov011/calls/FieldObject_LoadAndPlace.c:
+    complete
+    .text       start:0x020a07dc end:0x020a0930
 
 src/overlays/ov011/auto/func_ov011_020a096c.c:
     complete
     .text       start:0x020a096c end:0x020a096e
 
+src/overlays/ov011/calls/FieldObject_SetPositionAndSync.c:
+    complete
+    .text       start:0x020a0974 end:0x020a09a8
+
+src/overlays/ov011/calls/FieldObject_BeginSpawn.c:
+    complete
+    .text       start:0x020a09a8 end:0x020a09d0
+
+src/overlays/ov011/calls/FieldObject_HandleContact.c:
+    complete
+    .text       start:0x020a0d44 end:0x020a0e50
+
+src/overlays/ov011/calls/FieldObject_Draw.c:
+    complete
+    .text       start:0x020a0e50 end:0x020a0ee8
+
 src/overlays/ov011/auto/func_ov011_020a0ee8.c:
     complete
     .text       start:0x020a0ee8 end:0x020a0eec
 
+src/overlays/ov011/calls/FieldObject_AdvanceToAnimEnd.c:
+    complete
+    .text       start:0x020a0eec end:0x020a0f18
+
 src/overlays/ov011/auto/func_ov011_020a0f18.c:
     complete
     .text       start:0x020a0f18 end:0x020a0f1c
+
+src/overlays/ov011/calls/ClaimNthFreeSpawnPoint.c:
+    complete
+    .text       start:0x020a0f1c end:0x020a0f4e
+
+src/overlays/ov011/calls/FieldGroup_ShufflePositions.c:
+    complete
+    .text       start:0x020a0f50 end:0x020a0fbe
+
+src/overlays/ov011/calls/FieldObject_Create_020a0fc4.c:
+    complete
+    .text       start:0x020a0fc4 end:0x020a1074
+
+src/overlays/ov011/calls/FieldObject_ResetToIdle.c:
+    complete
+    .text       start:0x020a10e4 end:0x020a1142
 
 src/overlays/ov011/data/tables/gCrawlScriptCommandHandlers.c:
     complete

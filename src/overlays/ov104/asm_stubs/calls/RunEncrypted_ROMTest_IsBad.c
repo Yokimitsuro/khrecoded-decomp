@@ -13,10 +13,10 @@ asm u32 RunEncrypted_ROMTest_IsBad(void)
     stmfd  sp!, {ip}
     orr    ip, pc, pc
     ldmfd  sp!, {pc}
-    DCD    BSS + 1
-    DCD    BSS + 0x9145
+    DCD    DSProt_BSS + 1
+    DCD    DSProt_BSS + 0x9145
     DCD    ROMTest_IsBad + 0x1000
-    DCD    BSS + 0x123c
+    DCD    DSProt_BSS + 0x123c
     DCD    0
     DCD    Encryptor_DecryptionWrapperFragment + 0x1000
 }

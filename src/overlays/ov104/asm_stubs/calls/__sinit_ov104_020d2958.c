@@ -10,11 +10,11 @@ asm void __sinit_ov104_020d2958(void)
     adds  r0, r0, #4
     bne   Encryptor_DecodeFunctionTable
     DCD   Encryptor_EncryptFunction + 0x1000
-    DCD   BSS + 0x10d0
+    DCD   DSProt_BSS + 0x10d0
     DCD   Encryptor_DecryptFunction + 0x1000
-    DCD   BSS + 0x10bc
+    DCD   DSProt_BSS + 0x10bc
     DCD   Encryptor_DecryptionWrapperFragment + 0x1000
-    DCD   BSS + 0x1050
+    DCD   DSProt_BSS + 0x1050
     DCD   0
     DCD   0
 }

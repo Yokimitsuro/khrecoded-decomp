@@ -5,7 +5,7 @@ typedef struct FuncInfo {
     u32 obfs_size;
 } FuncInfo;
 
-extern unsigned char BSS;
+extern unsigned char DSProt_BSS[];
 extern u32 Encryptor_CategorizeInstruction(u32 instruction);
 
 static inline void clearDataAndInstructionCache(void)
@@ -45,7 +45,7 @@ void Encryptor_DecodeFunctionTable(FuncInfo *functions)
     do {
         xorval = 0xf0b9a2ea;
         addr = (u32 *)(functions->obfs_addr - 0x1000);
-        size = functions->obfs_size - (u32)&BSS - 0x1000;
+        size = functions->obfs_size - (u32)&DSProt_BSS - 0x1000;
         end_addr = addr + size / 4;
 
         for (; addr < end_addr; addr++) {

@@ -1,5 +1,5 @@
-extern int func_ov024_020b5f2c();
+extern int RerollBoardSlots();
 
 int func_ov024_020b72fc(int arg0) {
-    return func_ov024_020b5f2c(arg0);
+    return RerollBoardSlots(arg0);
 }

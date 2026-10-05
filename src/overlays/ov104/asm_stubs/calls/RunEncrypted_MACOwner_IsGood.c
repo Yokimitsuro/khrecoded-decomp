@@ -13,10 +13,10 @@ asm u32 RunEncrypted_MACOwner_IsGood(void)
     stmfd  sp!, {ip}
     orr    ip, pc, pc
     ldmfd  sp!, {pc}
-    DCD    BSS + 1
-    DCD    BSS + 0x8e45
+    DCD    DSProt_BSS + 1
+    DCD    DSProt_BSS + 0x8e45
     DCD    MACOwner_IsGood + 0x1000
-    DCD    BSS + 0x10ac
+    DCD    DSProt_BSS + 0x10ac
     DCD    0
     DCD    Encryptor_DecryptionWrapperFragment + 0x1000
 }

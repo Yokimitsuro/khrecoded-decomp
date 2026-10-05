@@ -6,10 +6,10 @@ extern void func_ov001_02064e94(void); /* ScriptCmd_SwitchFieldMode */
 extern void func_ov001_02064ec0(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_02064edc(void); /* ScriptCmd_EnterPhase */
 extern void func_ov001_02064eec(void); /* ScriptCmd_LoadFieldObjectSet */
-extern void func_ov001_02064f08(void); /* ScriptOp_StartFieldMotion */
+extern void ScriptOp_StartFieldMotion(void); /* ScriptOp_StartFieldMotion */
 extern void func_ov001_02064fa8(void); /* ScriptCmd_QueueFlagTaskKind1 */
 extern void func_ov001_02065010(void);
-extern void func_ov001_020650e4(void); /* ScriptOp_StartFieldTimerAt */
+extern void ScriptOp_StartFieldTimerAt(void); /* ScriptOp_StartFieldTimerAt */
 extern void func_ov001_02065178(void); /* ScriptOp_StartFieldTimer */
 extern void func_ov001_020651f0(void); /* CmdOpenDialog */
 extern void func_ov001_02065200(void);
@@ -29,7 +29,7 @@ extern void func_ov001_02065454(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_02065dbc(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_02065460(void); /* ScriptCmd_SetWorldByte8D68 */
 extern void func_ov001_02065474(void); /* ScriptCmd_QueueFlagTaskKind4 */
-extern void func_ov001_02065dc8(void); /* ScriptCmd_AdjustItemCount */
+extern void ScriptCmd_AdjustItemCount(void); /* ScriptCmd_AdjustItemCount */
 extern void func_ov001_02065e34(void);
 extern void func_ov001_020654d8(void); /* ScriptCmd_SetFieldParameter */
 extern void func_ov001_0206550c(void); /* FS_UnloadOverlayImage */
@@ -116,13 +116,13 @@ void (*gFieldScriptCommandHandlers[190])(void) = {
     NULL,
     func_ov001_02064eec, /* ScriptCmd_LoadFieldObjectSet */
     NULL,
-    func_ov001_02064f08, /* ScriptOp_StartFieldMotion */
+    ScriptOp_StartFieldMotion, /* ScriptOp_StartFieldMotion */
     NULL,
     func_ov001_02064fa8, /* ScriptCmd_QueueFlagTaskKind1 */
     NULL,
     func_ov001_02065010,
     NULL,
-    func_ov001_020650e4, /* ScriptOp_StartFieldTimerAt */
+    ScriptOp_StartFieldTimerAt, /* ScriptOp_StartFieldTimerAt */
     NULL,
     func_ov001_02065178, /* ScriptOp_StartFieldTimer */
     NULL,
@@ -160,7 +160,7 @@ void (*gFieldScriptCommandHandlers[190])(void) = {
     NULL,
     func_ov001_02065474, /* ScriptCmd_QueueFlagTaskKind4 */
     NULL,
-    func_ov001_02065dc8, /* ScriptCmd_AdjustItemCount */
+    ScriptCmd_AdjustItemCount, /* ScriptCmd_AdjustItemCount */
     NULL,
     func_ov001_02065e34,
     NULL,

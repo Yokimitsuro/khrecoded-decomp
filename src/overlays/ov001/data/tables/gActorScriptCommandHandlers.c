@@ -22,9 +22,9 @@ extern void func_ov001_0208cabc(void); /* ScriptCmd_SetActorProbeSphere */
 extern void func_ov001_0208cb3c(void); /* updateActorTransitionParameterRampCommand */
 extern void func_ov001_0208cbbc(void);
 extern void func_ov001_0208ded8(void); /* Script_MakeActorTranslucentAndClearVerticalOffset */
-extern void func_ov001_0208df70(void); /* PlaceActorRelativeToActor */
+extern void PlaceActorRelativeToActor(void); /* PlaceActorRelativeToActor */
 extern void func_ov001_0208cbdc(void); /* Script_SetActorParameterFromInteger */
-extern void func_ov001_0208e114(void); /* ScriptCmd_PlaceActor */
+extern void ScriptCmd_PlaceActor_0208e114(void); /* ScriptCmd_PlaceActor */
 extern void func_ov001_0208ddf0(void); /* ScriptCmd_BindActorTarget */
 extern void func_ov001_0208de44(void); /* ScriptCmd_SetElemFieldIfFlagSet */
 extern void func_ov001_0208e4b4(void); /* ScriptCmd_SetActorPlaybackRate */
@@ -32,7 +32,7 @@ extern void func_ov001_0208e2a0(void); /* ScriptCmd_SetActorFlagBit4 */
 extern void func_ov001_0208d694(void); /* ScriptCmd_SetActorPrimarySlot */
 extern void func_ov001_0208e3d8(void); /* ScriptCmd_SetActorAlpha */
 extern void func_ov001_0208e430(void); /* ScriptCmd_UpdateActorAlphaFade */
-extern void func_ov001_0208dc74(void); /* ScriptCmd_StartActorRotation */
+extern void ScriptCmd_StartActorRotation(void); /* ScriptCmd_StartActorRotation */
 extern void func_ov001_0208debc(void); /* DefaultStepDone */
 extern void func_ov001_0208dd08(void); /* DefaultStepDone */
 extern void func_ov001_0208cce4(void); /* ScriptCmd_PlayActorMotionOrBlend */
@@ -51,7 +51,7 @@ extern void func_ov001_0208d574(void); /* thumbStep */
 extern void func_ov001_0208d55c(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_0208d568(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_0208d430(void); /* ScriptCmd_SetCameraTarget */
-extern void func_ov001_0208e070(void); /* ScriptCmd_ActorTimerOrAnim */
+extern void ScriptCmd_ActorTimerOrAnim(void); /* ScriptCmd_ActorTimerOrAnim */
 extern void func_ov001_0208e0f0(void); /* ScriptCmd_ClearActorTimers */
 extern void func_ov001_0208e4ac(void); /* DefaultStepDone */
 extern void func_ov001_0208e4b0(void); /* DefaultStepDone */
@@ -97,7 +97,7 @@ extern void func_ov001_0208ee18(void); /* ScriptOp_InitSubsystemIfFlagClear */
 extern void func_ov001_0208ee34(void); /* ScriptCmd_QueueCameraAngleTransition */
 extern void func_ov001_0208ee58(void); /* ScriptCmd_EnterPhase */
 extern void func_ov001_0208ee68(void);
-extern void func_ov001_0208eea8(void); /* RefreshPartyMemberStates */
+extern void RefreshPartyMemberStates(void); /* RefreshPartyMemberStates */
 extern void func_ov001_0208ef18(void); /* RecordPlayerStateFlags */
 extern void func_ov001_0208ef54(void); /* Actor_BroadcastCallback */
 extern void func_ov001_0208ef8c(void); /* ScriptCmd_WaitMenuState */
@@ -143,11 +143,11 @@ void (*gActorScriptCommandHandlers[186])(void) = {
     NULL,
     func_ov001_0208ded8, /* Script_MakeActorTranslucentAndClearVerticalOffset */
     NULL,
-    func_ov001_0208df70, /* PlaceActorRelativeToActor */
+    PlaceActorRelativeToActor, /* PlaceActorRelativeToActor */
     NULL,
     func_ov001_0208cbdc, /* Script_SetActorParameterFromInteger */
     NULL,
-    func_ov001_0208e114, /* ScriptCmd_PlaceActor */
+    ScriptCmd_PlaceActor_0208e114, /* ScriptCmd_PlaceActor */
     NULL,
     func_ov001_0208ddf0, /* ScriptCmd_BindActorTarget */
     func_ov001_0208de44, /* ScriptCmd_SetElemFieldIfFlagSet */
@@ -159,7 +159,7 @@ void (*gActorScriptCommandHandlers[186])(void) = {
     NULL,
     func_ov001_0208e3d8, /* ScriptCmd_SetActorAlpha */
     func_ov001_0208e430, /* ScriptCmd_UpdateActorAlphaFade */
-    func_ov001_0208dc74, /* ScriptCmd_StartActorRotation */
+    ScriptCmd_StartActorRotation, /* ScriptCmd_StartActorRotation */
     NULL,
     func_ov001_0208debc, /* DefaultStepDone */
     NULL,
@@ -195,7 +195,7 @@ void (*gActorScriptCommandHandlers[186])(void) = {
     NULL,
     func_ov001_0208d430, /* ScriptCmd_SetCameraTarget */
     NULL,
-    func_ov001_0208e070, /* ScriptCmd_ActorTimerOrAnim */
+    ScriptCmd_ActorTimerOrAnim, /* ScriptCmd_ActorTimerOrAnim */
     NULL,
     func_ov001_0208e0f0, /* ScriptCmd_ClearActorTimers */
     NULL,
@@ -279,7 +279,7 @@ void (*gActorScriptCommandHandlers[186])(void) = {
     NULL,
     func_ov001_0208ee68,
     NULL,
-    func_ov001_0208eea8, /* RefreshPartyMemberStates */
+    RefreshPartyMemberStates, /* RefreshPartyMemberStates */
     NULL,
     func_ov001_0208ef18, /* RecordPlayerStateFlags */
     NULL,

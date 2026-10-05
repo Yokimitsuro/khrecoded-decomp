@@ -3,6 +3,18 @@
     .data       start:0x020d8600 end:0x020d8640 kind:data align:32
     .bss        start:0x020d8640 end:0x020d8640 kind:bss align:32
 
+src/overlays/ov065/calls/FireMarkedGroupShot.c:
+    complete
+    .text       start:0x020d8180 end:0x020d82b4
+
+src/overlays/ov065/calls/UpdateStoppingEffect.c:
+    complete
+    .text       start:0x020d82b4 end:0x020d82ce
+
+src/overlays/ov065/calls/UpdateAuraAttackAction.c:
+    complete
+    .text       start:0x020d8368 end:0x020d8420
+
 src/overlays/ov065/data/strings/Strings_ov065_020d8600.c:
     complete
     .data       start:0x020d8600 end:0x020d8640

@@ -4,13 +4,97 @@
     .data       start:0x020cff00 end:0x020cffc0 kind:data align:32
     .bss        start:0x020cffc0 end:0x020cffe0 kind:bss align:32
 
+src/overlays/ov059/calls/Actor_SelectAction.c:
+    complete
+    .text       start:0x020c784c end:0x020c7980
+
+src/overlays/ov059/calls/Actor_ConsumeKnockback.c:
+    complete
+    .text       start:0x020c7dc8 end:0x020c7e7c
+
+src/overlays/ov059/calls/Actor_HandleFallOut.c:
+    complete
+    .text       start:0x020c839c end:0x020c8490
+
+src/overlays/ov059/calls/Actor_UpdateCommandInput.c:
+    complete
+    .text       start:0x020c8490 end:0x020c8568
+
+src/overlays/ov059/calls/Actor_ApplyFrameMotion.c:
+    complete
+    .text       start:0x020c87b4 end:0x020c88e4
+
+src/overlays/ov059/calls/Actor_PlayHitReaction.c:
+    complete
+    .text       start:0x020c9164 end:0x020c921c
+
+src/overlays/ov059/calls/Actor_UpdateChargeCommand.c:
+    complete
+    .text       start:0x020c9b8c end:0x020c9d34
+
+src/overlays/ov059/calls/Actor_SelectInputState.c:
+    complete
+    .text       start:0x020ca24c end:0x020ca31c
+
+src/overlays/ov059/calls/Actor_UpdateChargeState.c:
+    complete
+    .text       start:0x020cb5c8 end:0x020cb6a0
+
+src/overlays/ov059/calls/Actor_ResetMovementState.c:
+    complete
+    .text       start:0x020cb6a0 end:0x020cb774
+
 src/overlays/ov059/auto/func_ov059_020cb92c.c:
     complete
     .text       start:0x020cb92c end:0x020cb930
 
+src/overlays/ov059/calls/Actor_PlaySurfaceSound.c:
+    complete
+    .text       start:0x020cca34 end:0x020ccb08
+
+src/overlays/ov059/calls/Actor_TakeHit.c:
+    complete
+    .text       start:0x020ccb08 end:0x020ccc88
+
+src/overlays/ov059/calls/Actor_AdvanceFrame.c:
+    complete
+    .text       start:0x020cce9c end:0x020cd098
+
+src/overlays/ov059/calls/Actor_GetModelPosition.c:
+    complete
+    .text       start:0x020cd0f8 end:0x020cd102
+
 src/overlays/ov059/calls/func_ov059_020cd3d8.c:
     complete
     .text       start:0x020cd3d8 end:0x020cd3e4
+
+src/overlays/ov059/calls/SpawnSourceRewardOrbs.c:
+    complete
+    .text       start:0x020cd3e4 end:0x020cd46c
+
+src/overlays/ov059/calls/Seeker_SelectNearestTarget.c:
+    complete
+    .text       start:0x020cecac end:0x020ceddc
+
+src/overlays/ov059/calls/IsTargetInVerticalRange.c:
+    complete
+    .text       start:0x020cf120 end:0x020cf1bc
+
+src/overlays/ov059/calls/RewardQueue_Push.c:
+    complete
+    .text       start:0x020cf324 end:0x020cf3b4
+
+src/overlays/ov059/calls/EntryQueue_Clear.c:
+    complete
+    .text       start:0x020cf3fc end:0x020cf406
+
+src/overlays/ov059/calls/RewardQueue_CanAddEventHit.c:
+    complete
+    .text       start:0x020cf4e8 end:0x020cf5d4
+
+src/overlays/ov059/calls/RewardQueue_PruneOutOfRange.c:
+    complete
+    .text       start:0x020cf5d4 end:0x020cf67a
 
 src/overlays/ov059/auto/func_ov059_020cfe0c.c:
     complete

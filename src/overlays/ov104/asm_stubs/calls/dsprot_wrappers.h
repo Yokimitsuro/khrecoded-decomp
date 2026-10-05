@@ -3,7 +3,7 @@
 
 typedef unsigned long u32;
 
-extern unsigned char BSS;
+extern unsigned char DSProt_BSS[];
 extern const u32 Garbage[];
 extern u32 Encryptor_DecryptionWrapperFragment(void);
 extern void Encryptor_DecodeFunctionTable(void *functions);

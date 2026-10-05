@@ -4,9 +4,121 @@
     .data       start:0x020d2160 end:0x020d21e0 kind:data align:32
     .bss        start:0x020d21e0 end:0x020d2200 kind:bss align:32
 
+src/overlays/ov052/calls/ApplyActorVelocity.c:
+    complete
+    .text       start:0x020c76ec end:0x020c7a80
+
+src/overlays/ov052/calls/CheckFallOutOfBounds.c:
+    complete
+    .text       start:0x020c7d74 end:0x020c7de4
+
+src/overlays/ov052/calls/TryStartSpecialAction.c:
+    complete
+    .text       start:0x020c7de4 end:0x020c7efc
+
+src/overlays/ov052/calls/SelectGroundAction.c:
+    complete
+    .text       start:0x020c7efc end:0x020c8028
+
+src/overlays/ov052/calls/IsStageAllowedForMode.c:
+    complete
+    .text       start:0x020c8028 end:0x020c805e
+
+src/overlays/ov052/calls/TryEnterLevelTargetState.c:
+    complete
+    .text       start:0x020c86b0 end:0x020c8730
+
+src/overlays/ov052/calls/IsTargetAboveInRange.c:
+    complete
+    .text       start:0x020c9504 end:0x020c959c
+
+src/overlays/ov052/calls/EnterRecoilState.c:
+    complete
+    .text       start:0x020c959c end:0x020c9648
+
 src/overlays/ov052/auto/func_ov052_020c9968.c:
     complete
     .text       start:0x020c9968 end:0x020c996c
+
+src/overlays/ov052/calls/TryFlagTargetBehind.c:
+    complete
+    .text       start:0x020c9bfc end:0x020c9cd8
+
+src/overlays/ov052/calls/UpdateEndOfAction.c:
+    complete
+    .text       start:0x020cb21c end:0x020cb290
+
+src/overlays/ov052/calls/FinishLockedAction.c:
+    complete
+    .text       start:0x020cb5d4 end:0x020cb65c
+
+src/overlays/ov052/calls/AdvanceChargeState.c:
+    complete
+    .text       start:0x020cb65c end:0x020cb6fc
+
+src/overlays/ov052/calls/UpdateModelTilt.c:
+    complete
+    .text       start:0x020cc140 end:0x020cc20c
+
+src/overlays/ov052/calls/ConsumeActionInterruptFlag.c:
+    complete
+    .text       start:0x020cc294 end:0x020cc310
+
+src/overlays/ov052/calls/ComputeApproachStep.c:
+    complete
+    .text       start:0x020cc310 end:0x020cc68a
+
+src/overlays/ov052/calls/UseFirstAvailableMember.c:
+    complete
+    .text       start:0x020cc8dc end:0x020cc930
+
+src/overlays/ov052/calls/ExitActorState.c:
+    complete
+    .text       start:0x020ccfc4 end:0x020cd358
+
+src/overlays/ov052/calls/ApplyIncomingHit.c:
+    complete
+    .text       start:0x020ce308 end:0x020ce5f4
+
+src/overlays/ov052/calls/StepFacingToward.c:
+    complete
+    .text       start:0x020cec20 end:0x020cecba
+
+src/overlays/ov052/calls/UpdateFacingTowardTarget.c:
+    complete
+    .text       start:0x020cecbc end:0x020ced40
+
+src/overlays/ov052/calls/RefreshLockTarget.c:
+    complete
+    .text       start:0x020cef40 end:0x020cef84
+
+src/overlays/ov052/calls/GetLockTargetPosition.c:
+    complete
+    .text       start:0x020cef84 end:0x020cf008
+
+src/overlays/ov052/calls/CanUseMemberSlot.c:
+    complete
+    .text       start:0x020d0620 end:0x020d0688
+
+src/overlays/ov052/calls/ChooseNextAction.c:
+    complete
+    .text       start:0x020d0e10 end:0x020d0ea0
+
+src/overlays/ov052/calls/IsLockedOnActiveFieldUnit.c:
+    complete
+    .text       start:0x020d1110 end:0x020d1190
+
+src/overlays/ov052/calls/IsFacingNearbyTarget.c:
+    complete
+    .text       start:0x020d16e8 end:0x020d17b0
+
+src/overlays/ov052/calls/IsFacingWallContact.c:
+    complete
+    .text       start:0x020d17b0 end:0x020d1880
+
+src/overlays/ov052/calls/ScanAttackHits.c:
+    complete
+    .text       start:0x020d1b58 end:0x020d1e80
 
 src/overlays/ov052/data/strings/Strings_ov052_020d2160.c:
     complete

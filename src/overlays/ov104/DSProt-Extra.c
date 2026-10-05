@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 typedef unsigned long u32;
 
-u8 BSS[4];
+u8 DSProt_BSS[32];
 
 const u32 Garbage[6] = {
     0xe2ed720b,

@@ -8,6 +8,118 @@ src/overlays/ov032/calls/func_ov032_020bb468.c:
     complete
     .text       start:0x020bb468 end:0x020bb480
 
+src/overlays/ov032/calls/SetGroupFormation.c:
+    complete
+    .text       start:0x020bbfe4 end:0x020bc128
+
+src/overlays/ov032/calls/ApplyModeToGroupFollowers.c:
+    complete
+    .text       start:0x020bc3d0 end:0x020bc484
+
+src/overlays/ov032/calls/QueueFieldObjectModeChange.c:
+    complete
+    .text       start:0x020bc484 end:0x020bc518
+
+src/overlays/ov032/calls/UpdateFieldObjectModeTransition.c:
+    complete
+    .text       start:0x020bc518 end:0x020bc60c
+
+src/overlays/ov032/calls/ComputeGroupOrbitPosition.c:
+    complete
+    .text       start:0x020bc814 end:0x020bc8f4
+
+src/overlays/ov032/calls/ComputePushTowardTarget.c:
+    complete
+    .text       start:0x020bc944 end:0x020bc9f0
+
+src/overlays/ov032/calls/UpdateLedgeClimb.c:
+    complete
+    .text       start:0x020bce98 end:0x020bcf44
+
+src/overlays/ov032/calls/UpdateHopWithSpeedRamp.c:
+    complete
+    .text       start:0x020bcf44 end:0x020bcfe4
+
+src/overlays/ov032/calls/TurnTowardOpenDirection.c:
+    complete
+    .text       start:0x020bcfe4 end:0x020bd04a
+
+src/overlays/ov032/calls/SelectGroupMemberPose.c:
+    complete
+    .text       start:0x020bd04c end:0x020bd0fc
+
+src/overlays/ov032/calls/Fx32ToIntTruncate.c:
+    complete
+    .text       start:0x020bd25c end:0x020bd266
+
+src/overlays/ov032/calls/SpawnRowChainMembers.c:
+    complete
+    .text       start:0x020bd2a8 end:0x020bd434
+
+src/overlays/ov032/calls/HitAllGroupMembersExcept.c:
+    complete
+    .text       start:0x020bd490 end:0x020bd538
+
+src/overlays/ov032/calls/UnlinkGroupMember.c:
+    complete
+    .text       start:0x020bd538 end:0x020bd5f8
+
+src/overlays/ov032/calls/SampleGroupTrailPosition.c:
+    complete
+    .text       start:0x020bd644 end:0x020bd70a
+
+src/overlays/ov032/calls/FollowChainLeader.c:
+    complete
+    .text       start:0x020bd70c end:0x020bd8dc
+
+src/overlays/ov032/calls/PickJitteredLeaderOffset.c:
+    complete
+    .text       start:0x020bd8dc end:0x020bd974
+
+src/overlays/ov032/calls/PickJitteredPlayerOffset.c:
+    complete
+    .text       start:0x020bdd94 end:0x020bde18
+
+src/overlays/ov032/calls/RollGroupAndSteerMember.c:
+    complete
+    .text       start:0x020be368 end:0x020be460
+
+src/overlays/ov032/calls/SteerMemberToFormationSlot.c:
+    complete
+    .text       start:0x020be474 end:0x020be5e0
+
+src/overlays/ov032/calls/PushGroupFromPlayer.c:
+    complete
+    .text       start:0x020be5e0 end:0x020be674
+
+src/overlays/ov032/calls/ResetGroupMemberPhases.c:
+    complete
+    .text       start:0x020bea64 end:0x020beaf2
+
+src/overlays/ov032/calls/ComputeGroupAimDelta.c:
+    complete
+    .text       start:0x020beaf4 end:0x020beb8a
+
+src/overlays/ov032/calls/UpdateBouncingGroupMember.c:
+    complete
+    .text       start:0x020beb8c end:0x020beed6
+
+src/overlays/ov032/calls/ScatterGroupMembers_020befdc.c:
+    complete
+    .text       start:0x020befdc end:0x020bf0a6
+
+src/overlays/ov032/calls/UpdateGroupChaseState.c:
+    complete
+    .text       start:0x020bf0d8 end:0x020bf21c
+
+src/overlays/ov032/calls/TickFieldObjectCounters.c:
+    complete
+    .text       start:0x020bf7b0 end:0x020bf850
+
+src/overlays/ov032/calls/ApplyGroupLeaderHit.c:
+    complete
+    .text       start:0x020bfbc4 end:0x020bfda4
+
 src/overlays/ov032/data/strings/Strings_ov032_020c0040.c:
     complete
     .data       start:0x020c0040 end:0x020c0050

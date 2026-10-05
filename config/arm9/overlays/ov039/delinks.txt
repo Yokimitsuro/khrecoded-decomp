@@ -8,9 +8,21 @@ src/overlays/ov039/calls/RuntimeState_SetMode.c:
     complete
     .text       start:0x020bab00 end:0x020bab18
 
+src/overlays/ov039/calls/SetMenuButtonsEnabled.c:
+    complete
+    .text       start:0x020baea4 end:0x020baf3c
+
+src/overlays/ov039/calls/UpdateExitSequence.c:
+    complete
+    .text       start:0x020bb35c end:0x020bb42c
+
 src/overlays/ov039/calls/func_ov039_020bb708.c:
     complete
     .text       start:0x020bb708 end:0x020bb72c
+
+src/overlays/ov039/calls/StartSubScene.c:
+    complete
+    .text       start:0x020bbf98 end:0x020bc038
 
 src/overlays/ov039/calls/RuntimeState_SetCondition.c:
     complete
@@ -107,6 +119,34 @@ src/overlays/ov039/calls/func_ov039_020bd674.c:
 src/overlays/ov039/calls/func_ov039_020bd694.c:
     complete
     .text       start:0x020bd694 end:0x020bd6b4
+
+src/overlays/ov039/calls/ClampScrollCursor.c:
+    complete
+    .text       start:0x020bd6b4 end:0x020bd720
+
+src/overlays/ov039/calls/SnapScrollToStep.c:
+    complete
+    .text       start:0x020bd770 end:0x020bd7ce
+
+src/overlays/ov039/calls/UpdateScrollInertia.c:
+    complete
+    .text       start:0x020bd7d0 end:0x020bd886
+
+src/overlays/ov039/calls/InitScrollListWidgets.c:
+    complete
+    .text       start:0x020bdea4 end:0x020bdf2e
+
+src/overlays/ov039/calls/UpdateScrollListInput.c:
+    complete
+    .text       start:0x020be0e4 end:0x020be158
+
+src/overlays/ov039/calls/SetWidgetDigitDisplay.c:
+    complete
+    .text       start:0x020be254 end:0x020be2e8
+
+src/overlays/ov039/calls/SetDigitDisplay.c:
+    complete
+    .text       start:0x020be2e8 end:0x020be378
 
 src/overlays/ov039/data/strings/Strings_ov039_020be81c.c:
     complete

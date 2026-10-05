@@ -4,6 +4,18 @@
     .data       start:0x020b74a0 end:0x020b7540 kind:data align:32
     .bss        start:0x020b7540 end:0x020b7580 kind:bss align:32
 
+src/overlays/ov024/calls/RerollBoardSlots.c:
+    complete
+    .text       start:0x020b5f2c end:0x020b6100
+
+src/overlays/ov024/calls/GenerateRandomLinks.c:
+    complete
+    .text       start:0x020b6100 end:0x020b61a6
+
+src/overlays/ov024/calls/PlaceBoardBonuses.c:
+    complete
+    .text       start:0x020b620c end:0x020b63e4
+
 src/overlays/ov024/calls/func_ov024_020b72fc.c:
     complete
     .text       start:0x020b72fc end:0x020b7304

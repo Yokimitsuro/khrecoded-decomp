@@ -24,6 +24,14 @@ src/overlays/ov001/calls/func_ov001_02063cac.c:
     complete
     .text       start:0x02063cac end:0x02063cca
 
+src/overlays/ov001/calls/OpenFieldMenuMode.c:
+    complete
+    .text       start:0x020641d4 end:0x02064280
+
+src/overlays/ov001/calls/EnterSceneSlot.c:
+    complete
+    .text       start:0x020647a4 end:0x02064810
+
 src/overlays/ov001/calls/func_ov001_02064a30.c:
     complete
     .text       start:0x02064a30 end:0x02064a38
@@ -43,6 +51,14 @@ src/overlays/ov001/calls/func_ov001_02064ecc.c:
 src/overlays/ov001/calls/func_ov001_02064edc.c:
     complete
     .text       start:0x02064edc end:0x02064eea
+
+src/overlays/ov001/calls/ScriptOp_StartFieldMotion.c:
+    complete
+    .text       start:0x02064f08 end:0x02064fa6
+
+src/overlays/ov001/calls/ScriptOp_StartFieldTimerAt.c:
+    complete
+    .text       start:0x020650e4 end:0x02065176
 
 src/overlays/ov001/calls/func_ov001_020651f0.c:
     complete
@@ -188,6 +204,10 @@ src/overlays/ov001/calls/func_ov001_02065dbc.c:
     complete
     .text       start:0x02065dbc end:0x02065dc6
 
+src/overlays/ov001/calls/ScriptCmd_AdjustItemCount.c:
+    complete
+    .text       start:0x02065dc8 end:0x02065e34
+
 src/overlays/ov001/calls/func_ov001_02065e44.c:
     complete
     .text       start:0x02065e44 end:0x02065e4e
@@ -220,9 +240,25 @@ src/overlays/ov001/calls/func_ov001_02065f80.c:
     complete
     .text       start:0x02065f80 end:0x02065f8a
 
+src/overlays/ov001/calls/SpawnRewardOrbs.c:
+    complete
+    .text       start:0x02066514 end:0x020665ba
+
+src/overlays/ov001/calls/RollRewardOrbDrop.c:
+    complete
+    .text       start:0x020665bc end:0x02066684
+
+src/overlays/ov001/calls/WakeNearbyIdleNodes.c:
+    complete
+    .text       start:0x02066874 end:0x020668e4
+
 src/overlays/ov001/calls/func_ov001_02066ca0.c:
     complete
     .text       start:0x02066ca0 end:0x02066cb4
+
+src/overlays/ov001/calls/UpdatePointTriggerBox.c:
+    complete
+    .text       start:0x02066f20 end:0x0206700c
 
 src/overlays/ov001/calls/func_ov001_020670b4.c:
     complete
@@ -248,6 +284,10 @@ src/overlays/ov001/calls/func_ov001_02068378.c:
     complete
     .text       start:0x02068378 end:0x0206838c
 
+src/overlays/ov001/calls/RollEnemyDrop.c:
+    complete
+    .text       start:0x0206844c end:0x02068530
+
 src/overlays/ov001/calls/func_ov001_0206888c.c:
     complete
     .text       start:0x0206888c end:0x0206889e
@@ -263,6 +303,10 @@ src/overlays/ov001/auto/func_ov001_02068980.c:
 src/overlays/ov001/calls/func_ov001_020689a4.c:
     complete
     .text       start:0x020689a4 end:0x020689b0
+
+src/overlays/ov001/calls/HandleEnemyDefeat.c:
+    complete
+    .text       start:0x02068abc end:0x02068c0c
 
 src/overlays/ov001/calls/func_ov001_02068c3c.c:
     complete
@@ -340,6 +384,10 @@ src/overlays/ov001/calls/func_ov001_02069a30.c:
     complete
     .text       start:0x02069a30 end:0x02069a44
 
+src/overlays/ov001/calls/CheckLeaderHpTrigger.c:
+    complete
+    .text       start:0x02069c10 end:0x02069c7c
+
 src/overlays/ov001/calls/func_ov001_0206a918.c:
     complete
     .text       start:0x0206a918 end:0x0206a93c
@@ -355,6 +403,14 @@ src/overlays/ov001/calls/func_ov001_0206ad1c.c:
 src/overlays/ov001/calls/func_ov001_0206ad28.c:
     complete
     .text       start:0x0206ad28 end:0x0206ad34
+
+src/overlays/ov001/calls/ClassifyTargetRange.c:
+    complete
+    .text       start:0x0206ba2c end:0x0206bb48
+
+src/overlays/ov001/calls/HandleShoulderLockOn.c:
+    complete
+    .text       start:0x0206bd30 end:0x0206bdbc
 
 src/overlays/ov001/auto/func_ov001_0206c038.c:
     complete
@@ -376,9 +432,41 @@ src/overlays/ov001/calls/func_ov001_0206cbb8.c:
     complete
     .text       start:0x0206cbb8 end:0x0206cbd0
 
+src/overlays/ov001/calls/SetOverlayObjectFactory.c:
+    complete
+    .text       start:0x0206dd84 end:0x0206dd90
+
+src/overlays/ov001/calls/AwardPartyGaugePoints.c:
+    complete
+    .text       start:0x0206ded8 end:0x0206df78
+
+src/overlays/ov001/calls/AddRegionProgress.c:
+    complete
+    .text       start:0x0206e074 end:0x0206e160
+
+src/overlays/ov001/calls/ResumeFieldAfterPause.c:
+    complete
+    .text       start:0x020704fc end:0x020705a4
+
 src/overlays/ov001/auto/func_ov001_020708f0.c:
     complete
     .text       start:0x020708f0 end:0x020708f2
+
+src/overlays/ov001/calls/GetSceneTagTracker.c:
+    complete
+    .text       start:0x020711b0 end:0x020711bc
+
+src/overlays/ov001/calls/GetSceneFont.c:
+    complete
+    .text       start:0x020711bc end:0x020711c8
+
+src/overlays/ov001/calls/GetFieldFont1.c:
+    complete
+    .text       start:0x020711c8 end:0x020711d4
+
+src/overlays/ov001/calls/GetFieldFont2.c:
+    complete
+    .text       start:0x020711d4 end:0x020711e0
 
 src/overlays/ov001/calls/func_ov001_0207123c.c:
     complete
@@ -420,6 +508,10 @@ src/overlays/ov001/auto/func_ov001_0207ad5c.c:
     complete
     .text       start:0x0207ad5c end:0x0207ad5e
 
+src/overlays/ov001/calls/UpdateIdleTimerToggle.c:
+    complete
+    .text       start:0x0207aec8 end:0x0207af6c
+
 src/overlays/ov001/calls/func_ov001_0207b604.c:
     complete
     .text       start:0x0207b604 end:0x0207b610
@@ -448,6 +540,18 @@ src/overlays/ov001/auto/func_ov001_0207e2cc.c:
     complete
     .text       start:0x0207e2cc end:0x0207e2ce
 
+src/overlays/ov001/calls/HandleFallingPieceInput.c:
+    complete
+    .text       start:0x0207e674 end:0x0207e764
+
+src/overlays/ov001/calls/UpdateFallingPieces.c:
+    complete
+    .text       start:0x0207e948 end:0x0207e9e0
+
+src/overlays/ov001/calls/FieldObject_SetProbeSphere.c:
+    complete
+    .text       start:0x0207f924 end:0x0207f9c0
+
 src/overlays/ov001/calls/func_ov001_0207fad0.c:
     complete
     .text       start:0x0207fad0 end:0x0207fade
@@ -460,6 +564,22 @@ src/overlays/ov001/calls/func_ov001_0207fb58.c:
     complete
     .text       start:0x0207fb58 end:0x0207fb7a
 
+src/overlays/ov001/calls/ScriptCmd_SpawnFieldObjectInSlot.c:
+    complete
+    .text       start:0x0207fb7c end:0x0207fc08
+
+src/overlays/ov001/calls/ScriptCmd_CreateRotatedFieldObject.c:
+    complete
+    .text       start:0x0207fc08 end:0x0207fc8e
+
+src/overlays/ov001/calls/ScriptCmd_RegisterTriggerClass.c:
+    complete
+    .text       start:0x0207fd2c end:0x0207fdcc
+
+src/overlays/ov001/calls/ScriptCmd_CreateRotatedFieldObject_0207ff38.c:
+    complete
+    .text       start:0x0207ff38 end:0x0207ffd2
+
 src/overlays/ov001/calls/func_ov001_0207ffd4.c:
     complete
     .text       start:0x0207ffd4 end:0x0207ffe2
@@ -467,6 +587,10 @@ src/overlays/ov001/calls/func_ov001_0207ffd4.c:
 src/overlays/ov001/calls/func_ov001_02080020.c:
     complete
     .text       start:0x02080020 end:0x02080042
+
+src/overlays/ov001/calls/ScriptCmd_CreateRunningFieldObject.c:
+    complete
+    .text       start:0x020800d4 end:0x02080168
 
 src/overlays/ov001/calls/func_ov001_02080168.c:
     complete
@@ -480,9 +604,17 @@ src/overlays/ov001/auto/func_ov001_020801ac.c:
     complete
     .text       start:0x020801ac end:0x020801b0
 
+src/overlays/ov001/calls/ScriptCmd_CreateFieldObject.c:
+    complete
+    .text       start:0x020801dc end:0x02080260
+
 src/overlays/ov001/calls/func_ov001_0208055c.c:
     complete
     .text       start:0x0208055c end:0x02080596
+
+src/overlays/ov001/calls/ScriptCmd_CreateUpdatingFieldObject.c:
+    complete
+    .text       start:0x02080690 end:0x02080716
 
 src/overlays/ov001/calls/func_ov001_020807a4.c:
     complete
@@ -496,25 +628,81 @@ src/overlays/ov001/auto/func_ov001_02080ba8.c:
     complete
     .text       start:0x02080ba8 end:0x02080baa
 
+src/overlays/ov001/calls/FieldObject_CreateWithShape.c:
+    complete
+    .text       start:0x02080dc4 end:0x02080e58
+
+src/overlays/ov001/calls/UpdateTurningFieldObject.c:
+    complete
+    .text       start:0x020810f0 end:0x02081254
+
 src/overlays/ov001/auto/func_ov001_020816a8.c:
     complete
     .text       start:0x020816a8 end:0x020816aa
+
+src/overlays/ov001/calls/UpdateProximityGlow.c:
+    complete
+    .text       start:0x02081be8 end:0x02081ce4
+
+src/overlays/ov001/calls/RespawnFieldObjectActor.c:
+    complete
+    .text       start:0x02081ed0 end:0x02081fa8
 
 src/overlays/ov001/auto/func_ov001_02081fa8.c:
     complete
     .text       start:0x02081fa8 end:0x02081fac
 
+src/overlays/ov001/calls/LaunchMatchingFieldObject.c:
+    complete
+    .text       start:0x020827fc end:0x02082886
+
+src/overlays/ov001/calls/RespawnCapsuleFieldObject.c:
+    complete
+    .text       start:0x02082918 end:0x02082b08
+
+src/overlays/ov001/calls/SetActorRaisedCollision.c:
+    complete
+    .text       start:0x02082b50 end:0x02082bfc
+
 src/overlays/ov001/auto/func_ov001_02082c74.c:
     complete
     .text       start:0x02082c74 end:0x02082c78
+
+src/overlays/ov001/calls/CanTriggerOnContact.c:
+    complete
+    .text       start:0x02083348 end:0x02083372
+
+src/overlays/ov001/calls/FieldObject_CreateWithTimer.c:
+    complete
+    .text       start:0x02083670 end:0x02083700
+
+src/overlays/ov001/calls/ResetPatrolObject.c:
+    complete
+    .text       start:0x02083ab0 end:0x02083b60
+
+src/overlays/ov001/calls/SetActorTargetPosition.c:
+    complete
+    .text       start:0x02083c2c end:0x02083c52
 
 src/overlays/ov001/auto/func_ov001_02083c5c.c:
     complete
     .text       start:0x02083c5c end:0x02083c60
 
+src/overlays/ov001/calls/FieldObject_AdvanceRandomVariant.c:
+    complete
+    .text       start:0x020846cc end:0x02084750
+
 src/overlays/ov001/auto/func_ov001_02084dcc.c:
     complete
     .text       start:0x02084dcc end:0x02084dce
+
+src/overlays/ov001/calls/UpdateSpawnerRise.c:
+    complete
+    .text       start:0x02085160 end:0x02085240
+
+src/overlays/ov001/calls/ProbeWorldAlongVelocity.c:
+    complete
+    .text       start:0x020852a0 end:0x02085348
 
 src/overlays/ov001/auto/func_ov001_02085f04.c:
     complete
@@ -532,9 +720,17 @@ src/overlays/ov001/auto/func_ov001_0208627c.c:
     complete
     .text       start:0x0208627c end:0x02086280
 
+src/overlays/ov001/calls/IsMovingAgainstDirection.c:
+    complete
+    .text       start:0x02086640 end:0x020866d4
+
 src/overlays/ov001/calls/func_ov001_02086994.c:
     complete
     .text       start:0x02086994 end:0x020869a0
+
+src/overlays/ov001/calls/GrantEntryUnlockReward.c:
+    complete
+    .text       start:0x02087540 end:0x02087642
 
 src/overlays/ov001/calls/func_ov001_02087644.c:
     complete
@@ -576,6 +772,10 @@ src/overlays/ov001/calls/func_ov001_02088ab0.c:
     complete
     .text       start:0x02088ab0 end:0x02088ab8
 
+src/overlays/ov001/calls/IsPartnerAheadOfActor.c:
+    complete
+    .text       start:0x02088ab8 end:0x02088b48
+
 src/overlays/ov001/calls/func_ov001_02088b48.c:
     complete
     .text       start:0x02088b48 end:0x02088b50
@@ -583,6 +783,10 @@ src/overlays/ov001/calls/func_ov001_02088b48.c:
 src/overlays/ov001/calls/func_ov001_0208985c.c:
     complete
     .text       start:0x0208985c end:0x0208986c
+
+src/overlays/ov001/calls/UpdatePartyActorMotion.c:
+    complete
+    .text       start:0x0208a13c end:0x0208a290
 
 src/overlays/ov001/auto/func_ov001_0208b7a4.c:
     complete
@@ -632,9 +836,17 @@ src/overlays/ov001/auto/func_ov001_0208dabc.c:
     complete
     .text       start:0x0208dabc end:0x0208dac0
 
+src/overlays/ov001/calls/ScriptCmd_StartActorRotation.c:
+    complete
+    .text       start:0x0208dc74 end:0x0208dd06
+
 src/overlays/ov001/auto/func_ov001_0208dd08.c:
     complete
     .text       start:0x0208dd08 end:0x0208dd0c
+
+src/overlays/ov001/calls/ScriptCmd_TweenActorScale.c:
+    complete
+    .text       start:0x0208dd4c end:0x0208ddee
 
 src/overlays/ov001/auto/func_ov001_0208debc.c:
     complete
@@ -647,6 +859,22 @@ src/overlays/ov001/calls/func_ov001_0208ded8.c:
 src/overlays/ov001/calls/func_ov001_0208df2c.c:
     complete
     .text       start:0x0208df2c end:0x0208df70
+
+src/overlays/ov001/calls/PlaceActorRelativeToActor.c:
+    complete
+    .text       start:0x0208df70 end:0x0208e070
+
+src/overlays/ov001/calls/ScriptCmd_ActorTimerOrAnim.c:
+    complete
+    .text       start:0x0208e070 end:0x0208e0f0
+
+src/overlays/ov001/calls/ScriptCmd_PlaceActor_0208e114.c:
+    complete
+    .text       start:0x0208e114 end:0x0208e2a0
+
+src/overlays/ov001/calls/SetActorModelAlpha.c:
+    complete
+    .text       start:0x0208e348 end:0x0208e3d8
 
 src/overlays/ov001/auto/func_ov001_0208e4ac.c:
     complete
@@ -671,6 +899,10 @@ src/overlays/ov001/calls/func_ov001_0208ecec.c:
 src/overlays/ov001/calls/func_ov001_0208ee58.c:
     complete
     .text       start:0x0208ee58 end:0x0208ee66
+
+src/overlays/ov001/calls/RefreshPartyMemberStates.c:
+    complete
+    .text       start:0x0208eea8 end:0x0208ef18
 
 src/overlays/ov001/calls/func_ov001_0208efd4.c:
     complete
@@ -700,17 +932,49 @@ src/overlays/ov001/auto/func_ov001_0208f70c.c:
     complete
     .text       start:0x0208f70c end:0x0208f70e
 
+src/overlays/ov001/calls/DrawProximityMarker.c:
+    complete
+    .text       start:0x0208f788 end:0x0208f864
+
 src/overlays/ov001/auto/func_ov001_02090f28.c:
     complete
     .text       start:0x02090f28 end:0x02090f2c
+
+src/overlays/ov001/calls/AttachActorToStageNode.c:
+    complete
+    .text       start:0x020911dc end:0x02091270
+
+src/overlays/ov001/calls/PlayActorAnimationSlot.c:
+    complete
+    .text       start:0x02091a28 end:0x02091ad0
+
+src/overlays/ov001/calls/FilterPlayerAttackTarget.c:
+    complete
+    .text       start:0x02091c90 end:0x02091d20
+
+src/overlays/ov001/calls/SpawnLaunchedActor.c:
+    complete
+    .text       start:0x02092a1c end:0x02092af8
 
 src/overlays/ov001/auto/func_ov001_02093604.c:
     complete
     .text       start:0x02093604 end:0x02093608
 
+src/overlays/ov001/calls/RunGateFadeSequence.c:
+    complete
+    .text       start:0x02093bb4 end:0x02093c98
+
+src/overlays/ov001/calls/ComputeActorPushOut.c:
+    complete
+    .text       start:0x02094188 end:0x02094400
+
 src/overlays/ov001/calls/func_ov001_02095904.c:
     complete
     .text       start:0x02095904 end:0x0209590c
+
+src/overlays/ov001/calls/ChooseWanderDestination.c:
+    complete
+    .text       start:0x02097ca0 end:0x02097d7c
 
 src/overlays/ov001/auto/func_ov001_02097d7c.c:
     complete
@@ -748,9 +1012,17 @@ src/overlays/ov001/calls/func_ov001_0209b66c.c:
     complete
     .text       start:0x0209b66c end:0x0209b678
 
+src/overlays/ov001/calls/LoadActorAnimationSet.c:
+    complete
+    .text       start:0x0209bff8 end:0x0209c002
+
 src/overlays/ov001/calls/func_ov001_0209c3e8.c:
     complete
     .text       start:0x0209c3e8 end:0x0209c3f4
+
+src/overlays/ov001/calls/ComputeArcTrajectory.c:
+    complete
+    .text       start:0x0209d444 end:0x0209d57c
 
 src/overlays/ov001/data/strings/Strings_ov001_0209e61c.c:
     complete

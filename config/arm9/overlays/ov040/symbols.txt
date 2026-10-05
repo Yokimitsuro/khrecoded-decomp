@@ -49,10 +49,10 @@ func_ov040_020bdf9c kind:function(thumb,size=0x70) addr:0x020bdf9c
 func_ov040_020be00c kind:function(thumb,size=0x1c) addr:0x020be00c
 func_ov040_020be028 kind:function(thumb,size=0x14) addr:0x020be028
 func_ov040_020be03c kind:function(thumb,size=0x10) addr:0x020be03c
-func_ov040_020be04c kind:function(thumb,size=0x98) addr:0x020be04c
+GrantRewardItem kind:function(thumb,size=0x98) addr:0x020be04c
 func_ov040_020be0e4 kind:function(thumb,size=0x34) addr:0x020be0e4
 func_ov040_020be118 kind:function(thumb,size=0x40) addr:0x020be118
-func_ov040_020be158 kind:function(thumb,size=0x68) addr:0x020be158
+ApplyHealReward kind:function(thumb,size=0x68) addr:0x020be158
 data_ov040_020be1c0 kind:data(any) addr:0x020be1c0
 data_ov040_020be1c4 kind:data(any) addr:0x020be1c4
 gAreaSceneStateHandlers kind:data(any) addr:0x020be1e0

@@ -13,10 +13,10 @@ asm u32 __DSProt_DetectFlashcart(void)
     stmfd  sp!, {ip}
     orr    ip, pc, pc
     ldmfd  sp!, {pc}
-    DCD    BSS + 1
-    DCD    BSS + 0x18a82
+    DCD    DSProt_BSS + 1
+    DCD    DSProt_BSS + 0x18a82
     DCD    DetectFlashcart + 0x1000
-    DCD    BSS + 0x108c
+    DCD    DSProt_BSS + 0x108c
     DCD    0
     DCD    Encryptor_DecryptionWrapperFragment + 0x1000
 }

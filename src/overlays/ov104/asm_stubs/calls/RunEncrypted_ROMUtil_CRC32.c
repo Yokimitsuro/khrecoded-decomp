@@ -13,10 +13,10 @@ asm u32 RunEncrypted_ROMUtil_CRC32(void)
     stmfd  sp!, {ip}
     orr    ip, pc, pc
     ldmfd  sp!, {pc}
-    DCD    BSS + 1
-    DCD    BSS + 0x9025
+    DCD    DSProt_BSS + 1
+    DCD    DSProt_BSS + 0x9025
     DCD    ROMUtil_CRC32 + 0x1000
-    DCD    BSS + 0x1090
+    DCD    DSProt_BSS + 0x1090
     DCD    0
     DCD    Encryptor_DecryptionWrapperFragment + 0x1000
 }

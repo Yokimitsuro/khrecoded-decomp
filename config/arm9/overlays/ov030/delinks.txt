@@ -7,3 +7,23 @@
 src/overlays/ov030/calls/func_ov030_020babc8.c:
     complete
     .text       start:0x020babc8 end:0x020babe0
+
+src/overlays/ov030/calls/UpdateDraggedActorMotion.c:
+    complete
+    .text       start:0x020bbaec end:0x020bbd70
+
+src/overlays/ov030/calls/UpdateActorReactionState.c:
+    complete
+    .text       start:0x020bbe20 end:0x020bbf30
+
+src/overlays/ov030/calls/CheckCarriedActorEscape.c:
+    complete
+    .text       start:0x020bbf98 end:0x020bc130
+
+src/overlays/ov030/calls/SpawnTiltedProjectile.c:
+    complete
+    .text       start:0x020bcbac end:0x020bcc98
+
+src/overlays/ov030/calls/UpdateSpiralProjectile.c:
+    complete
+    .text       start:0x020bcc98 end:0x020bcdac

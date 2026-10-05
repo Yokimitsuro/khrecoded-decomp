@@ -14,19 +14,19 @@ asm void __sinit_ov104_020d36b4(void)
     adds  r0, r0, #4
     bne   Encryptor_DecodeFunctionTable
     DCD   RC4_Init + 0x1000
-    DCD   BSS + 0x1084
+    DCD   DSProt_BSS + 0x1084
     DCD   RC4_InitSBox + 0x1000
-    DCD   BSS + 0x1030
+    DCD   DSProt_BSS + 0x1030
     DCD   RC4_EncryptInstructions + 0x1000
-    DCD   BSS + 0x1118
+    DCD   DSProt_BSS + 0x1118
     DCD   RC4_DecryptInstructions + 0x1000
-    DCD   BSS + 0x1184
+    DCD   DSProt_BSS + 0x1184
     DCD   RC4_InitAndEncryptInstructions + 0x1000
-    DCD   BSS + 0x1058
+    DCD   DSProt_BSS + 0x1058
     DCD   RC4_InitAndDecryptInstructions + 0x1000
-    DCD   BSS + 0x1058
+    DCD   DSProt_BSS + 0x1058
     DCD   RC4_Byte + 0x1000
-    DCD   BSS + 0x1058
+    DCD   DSProt_BSS + 0x1058
     DCD   0
     DCD   0
 }

@@ -1,5 +1,5 @@
-func_ov064_020d8120 kind:function(thumb,size=0x9c) addr:0x020d8120
-func_ov064_020d81bc kind:function(thumb,size=0x98) addr:0x020d81bc
+BeginMarkedIntroScene kind:function(thumb,size=0x9c) addr:0x020d8120
+UpdateRisingFinisherAction kind:function(thumb,size=0x98) addr:0x020d81bc
 func_ov064_020d8254 kind:function(thumb,size=0x46e) addr:0x020d8254
 func_ov064_020d86c4 kind:function(thumb,size=0xe) addr:0x020d86c4
 func_ov064_020d86d4 kind:function(thumb,size=0x1a) addr:0x020d86d4

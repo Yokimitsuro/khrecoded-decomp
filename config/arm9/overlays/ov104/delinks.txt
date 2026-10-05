@@ -234,5 +234,5 @@ src/overlays/ov104/asm_stubs/calls/__sinit_ov104_020d36b4.c:
 
 src/overlays/ov104/DSProt-Extra.c:
     complete
-    .bss        start:0x020d3740 end:0x020d3744
+    .bss        start:0x020d3740 end:0x020d3760
     .rodata     start:0x020d3700 end:0x020d3718

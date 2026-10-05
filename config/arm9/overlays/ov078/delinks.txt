@@ -8,9 +8,41 @@ src/overlays/ov078/auto/func_ov078_020c4370.c:
     complete
     .text       start:0x020c4370 end:0x020c4372
 
+src/overlays/ov078/calls/LoadPageMenuWidgets.c:
+    complete
+    .text       start:0x020c4590 end:0x020c4728
+
 src/overlays/ov078/calls/func_ov078_020c4728.c:
     complete
     .text       start:0x020c4728 end:0x020c473c
+
+src/overlays/ov078/calls/PlaceCursorNode.c:
+    complete
+    .text       start:0x020c4768 end:0x020c4792
+
+src/overlays/ov078/calls/ShowUnlockedPageTabs.c:
+    complete
+    .text       start:0x020c4794 end:0x020c48fc
+
+src/overlays/ov078/calls/RefreshPageTabs.c:
+    complete
+    .text       start:0x020c48fc end:0x020c49a0
+
+src/overlays/ov078/calls/DrawPageHeader.c:
+    complete
+    .text       start:0x020c4b38 end:0x020c4c4c
+
+src/overlays/ov078/calls/SelectNextPage.c:
+    complete
+    .text       start:0x020c4ea0 end:0x020c4f44
+
+src/overlays/ov078/calls/StepCursorBack.c:
+    complete
+    .text       start:0x020c4f60 end:0x020c4f86
+
+src/overlays/ov078/calls/StepCursorForward.c:
+    complete
+    .text       start:0x020c4f88 end:0x020c4fae
 
 src/overlays/ov078/data/strings/Strings_ov078_020c5168.c:
     complete

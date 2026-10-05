@@ -3,3 +3,123 @@
     .ctor       start:0x020d7fd8 end:0x020d7fd8 kind:rodata align:4
     .data       start:0x020d7fe0 end:0x020d8120 kind:data align:32
     .bss        start:0x020d8120 end:0x020d8120 kind:bss align:32
+
+src/overlays/ov056/calls/SpawnEventHitMarker.c:
+    complete
+    .text       start:0x020d2c60 end:0x020d2d3c
+
+src/overlays/ov056/calls/FireMarkedLinkedShot.c:
+    complete
+    .text       start:0x020d2d3c end:0x020d2e80
+
+src/overlays/ov056/calls/AdvanceHitUnit.c:
+    complete
+    .text       start:0x020d3028 end:0x020d3098
+
+src/overlays/ov056/calls/FireLinkedShot.c:
+    complete
+    .text       start:0x020d3098 end:0x020d318c
+
+src/overlays/ov056/calls/PullActorTowardSource.c:
+    complete
+    .text       start:0x020d385c end:0x020d3924
+
+src/overlays/ov056/calls/SpawnTimedAuraMarker.c:
+    complete
+    .text       start:0x020d3b6c end:0x020d3c50
+
+src/overlays/ov056/calls/SpawnGroupHitMarker.c:
+    complete
+    .text       start:0x020d3c50 end:0x020d3d28
+
+src/overlays/ov056/calls/SpawnRecordedProjectile.c:
+    complete
+    .text       start:0x020d4708 end:0x020d4800
+
+src/overlays/ov056/calls/UpdateSweepProjectile.c:
+    complete
+    .text       start:0x020d4800 end:0x020d48f8
+
+src/overlays/ov056/calls/StartGaugeRewardEffect.c:
+    complete
+    .text       start:0x020d4ba8 end:0x020d4ca0
+
+src/overlays/ov056/calls/UpdateGaugeRewardEffect.c:
+    complete
+    .text       start:0x020d4ca0 end:0x020d4d7c
+
+src/overlays/ov056/calls/SpawnSlotRequestProjectile.c:
+    complete
+    .text       start:0x020d4fd8 end:0x020d50d8
+
+src/overlays/ov056/calls/UpdateSpinAttackUnit.c:
+    complete
+    .text       start:0x020d54fc end:0x020d5708
+
+src/overlays/ov056/calls/CircleActorAroundUnit.c:
+    complete
+    .text       start:0x020d5708 end:0x020d5904
+
+src/overlays/ov056/calls/ApplyScaledPathHit.c:
+    complete
+    .text       start:0x020d5a9c end:0x020d5b5a
+
+src/overlays/ov056/calls/SpawnIndexedProjectile.c:
+    complete
+    .text       start:0x020d5e9c end:0x020d5f70
+
+src/overlays/ov056/calls/SpawnTrailProjectile.c:
+    complete
+    .text       start:0x020d657c end:0x020d6654
+
+src/overlays/ov056/calls/PullActorTowardTarget.c:
+    complete
+    .text       start:0x020d6664 end:0x020d6736
+
+src/overlays/ov056/calls/QueuePullOnStageEvent.c:
+    complete
+    .text       start:0x020d6738 end:0x020d6788
+
+src/overlays/ov056/calls/SpawnArcUnitFromSpawner.c:
+    complete
+    .text       start:0x020d6798 end:0x020d68b8
+
+src/overlays/ov056/calls/UpdateDelayedSlotProjectile.c:
+    complete
+    .text       start:0x020d6a70 end:0x020d6ae8
+
+src/overlays/ov056/calls/UpdateFallingProjectile.c:
+    complete
+    .text       start:0x020d6bb4 end:0x020d6c84
+
+src/overlays/ov056/calls/SpawnSlotProjectile.c:
+    complete
+    .text       start:0x020d6dbc end:0x020d6ea0
+
+src/overlays/ov056/calls/SpawnEntryProjectile.c:
+    complete
+    .text       start:0x020d7140 end:0x020d7214
+
+src/overlays/ov056/calls/AdvancePulsingHitUnit.c:
+    complete
+    .text       start:0x020d7214 end:0x020d72c0
+
+src/overlays/ov056/calls/OrbitActorAroundUnit.c:
+    complete
+    .text       start:0x020d7748 end:0x020d7834
+
+src/overlays/ov056/calls/QueueMotionOnStageEvent.c:
+    complete
+    .text       start:0x020d7834 end:0x020d788c
+
+src/overlays/ov056/calls/SpawnOffsetProjectile.c:
+    complete
+    .text       start:0x020d7a08 end:0x020d7af0
+
+src/overlays/ov056/calls/UpdateTimedUnitEntries.c:
+    complete
+    .text       start:0x020d7af0 end:0x020d7bec
+
+src/overlays/ov056/calls/AdvanceLinkedHitUnit.c:
+    complete
+    .text       start:0x020d7c6c end:0x020d7ce4

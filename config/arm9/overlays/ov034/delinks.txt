@@ -4,6 +4,18 @@
     .data       start:0x020be940 end:0x020c0fa0 kind:data align:32
     .bss        start:0x020c0fa0 end:0x020c1040 kind:bss align:32
 
+src/overlays/ov034/calls/EnterResultsTierMode.c:
+    complete
+    .text       start:0x020bb2b0 end:0x020bb324
+
+src/overlays/ov034/calls/CommitResultsRewards.c:
+    complete
+    .text       start:0x020bd0c0 end:0x020bd130
+
+src/overlays/ov034/calls/IsResultsShopEntryUnlocked.c:
+    complete
+    .text       start:0x020bdb90 end:0x020bdbf0
+
 src/overlays/ov034/auto/func_ov034_020bdcac.c:
     complete
     .text       start:0x020bdcac end:0x020bdcb2

@@ -4,6 +4,34 @@
     .data       start:0x020c4c60 end:0x020c4cc0 kind:data align:32
     .bss        start:0x020c4cc0 end:0x020c4cc0 kind:bss align:32
 
+src/overlays/ov079/calls/ConfigMenu_Init.c:
+    complete
+    .text       start:0x020c4280 end:0x020c4628
+
+src/overlays/ov079/calls/ConfigMenu_SaveOptions.c:
+    complete
+    .text       start:0x020c4820 end:0x020c489c
+
+src/overlays/ov079/calls/ConfigMenu_Refresh.c:
+    complete
+    .text       start:0x020c4a8c end:0x020c4abe
+
+src/overlays/ov079/calls/ConfigMenu_CursorUp.c:
+    complete
+    .text       start:0x020c4ac0 end:0x020c4ae8
+
+src/overlays/ov079/calls/ConfigMenu_CursorDown.c:
+    complete
+    .text       start:0x020c4ae8 end:0x020c4b14
+
+src/overlays/ov079/calls/ConfigMenu_PrevValue.c:
+    complete
+    .text       start:0x020c4b14 end:0x020c4b44
+
+src/overlays/ov079/calls/ConfigMenu_NextValue.c:
+    complete
+    .text       start:0x020c4b44 end:0x020c4b74
+
 src/overlays/ov079/data/strings/Strings_ov079_020c4ca4.c:
     complete
     .data       start:0x020c4ca4 end:0x020c4cc0
