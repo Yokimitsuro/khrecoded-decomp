@@ -144,7 +144,7 @@ libs/nitro/os/calls/OS_WaitIrq.c:
     complete
     .text       start:0x02001c0c end:0x02001c80
 
-src/calls/PanelState_NoOpC.c:
+src/calls/OSi_IrqDummy.c:
     complete
     .text       start:0x02001c80 end:0x02001c84
 
@@ -152,7 +152,7 @@ libs/nitro/os/calls/func_02001c84.c:
     complete
     .text       start:0x02001c84 end:0x02001d0c
 
-src/calls/func_02001d0c.c:
+src/calls/OSi_IrqDma0.c:
     complete
     .text       start:0x02001d0c end:0x02001d1c
 
@@ -164,7 +164,7 @@ libs/nitro/os/calls/OSi_IrqDma2.c:
     complete
     .text       start:0x02001d2c end:0x02001d3c
 
-libs/nitro/os/calls/func_02001d3c.c:
+libs/nitro/os/calls/OSi_IrqDma3.c:
     complete
     .text       start:0x02001d3c end:0x02001d4c
 
@@ -180,7 +180,7 @@ libs/nitro/os/calls/OSi_IrqTimer2.c:
     complete
     .text       start:0x02001d6c end:0x02001d7c
 
-src/calls/func_02001d7c.c:
+src/calls/OSi_IrqTimer3.c:
     complete
     .text       start:0x02001d7c end:0x02001d8c
 

@@ -1,5 +1,5 @@
 extern void *func_02001c84();
 
-void *func_02001d7c() {
+void *OSi_IrqTimer3() {
     return func_02001c84(7);
 }

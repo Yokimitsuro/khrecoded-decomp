@@ -909,7 +909,7 @@
   "src/calls/PanelState_NoOpA.c": "dsi/1.1",
   "src/calls/PanelState_NoOpB.c": "dsi/1.1",
   "src/calls/GetNestedModeByte.c": "dsi/1.1",
-  "src/calls/PanelState_NoOpC.c": "dsi/1.1",
+  "src/calls/OSi_IrqDummy.c": "dsi/1.1",
   "src/calls/PopCount32.c": "dsi/1.1",
   "src/calls/Obj_SetWord2C.c": "dsi/1.1",
   "src/calls/GetMaxPositiveInt.c": "dsi/1.1",
@@ -1284,5 +1284,6 @@
   "src/data/tables/PointerTables_02055780.c": "dsi/1.1",
   "src/data/tables/PointerTables_020558b4.c": "dsi/1.1",
   "src/data/tables/PointerTables_02055944.c": "dsi/1.1",
-  "src/data/tables/PointerTables_02052f00.c": "dsi/1.1"
+  "src/data/tables/PointerTables_02052f00.c": "dsi/1.1",
+  "src/data/dtcm/SDK_AUTOLOAD_DTCM_START.c": "dsi/1.1"
 }
