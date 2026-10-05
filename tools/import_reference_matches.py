@@ -35,11 +35,13 @@ RELOC_LINE_RE = re.compile(
 def current_symbol_index() -> tuple[set[str], dict[int, list[str]]]:
     names = set()
     by_address = {}
-    for path in (
+    paths = [
         SYMBOLS,
         ROOT / "config" / "arm9" / "itcm" / "symbols.txt",
         ROOT / "config" / "arm9" / "dtcm" / "symbols.txt",
-    ):
+    ]
+    paths.extend(sorted((ROOT / "config" / "arm9" / "overlays").glob("*/symbols.txt")))
+    for path in paths:
         for match in SYMBOL_LINE_RE.finditer(path.read_text(encoding="utf-8")):
             name = match.group(1)
             names.add(name)
@@ -58,6 +60,14 @@ CURRENT_RELOCS = {
     for match in RELOC_LINE_RE.finditer(
         (ROOT / "config" / "arm9" / "relocs.txt").read_text(encoding="utf-8")
     )
+}
+
+LINKER_SYMBOL_REWRITES = {
+    "ARM9_CTOR_START": "ARM9_CTOR_START",
+    "SDK_SYS_STACKSIZE_00000000": "SDK_SYS_STACKSIZE",
+    "SDK_IRQ_STACKSIZE_00000800": "SDK_IRQ_STACKSIZE",
+    "g_saveCheckOverlayId_00000068": "gSaveCheckOverlayId",
+    "data_02056cfc": "OSi_IdleThreadStack",
 }
 
 
@@ -196,7 +206,9 @@ def relocation_rewrites(item: dict, function: dict,
     rewrites = {}
     for offset, source_name in source_relocs.items():
         eu_offset = shifted_relocs.get(offset, offset)
-        if eu_offset in eu_relocs:
+        if source_name in LINKER_SYMBOL_REWRITES:
+            target_name = LINKER_SYMBOL_REWRITES[source_name]
+        elif eu_offset in eu_relocs:
             target_name = canonical_target(
                 eu_relocs[eu_offset], item["eu"]["address"] + eu_offset
             )

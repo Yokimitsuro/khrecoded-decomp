@@ -477,6 +477,10 @@ libs/nitro/os/calls/OSi_RescheduleThread.c:
     complete
     .text       start:0x0200269c end:0x02002760
 
+src/calls/OS_InitThread.c:
+    complete
+    .text       start:0x02002760 end:0x020028ac
+
 libs/nitro/os/calls/OS_ExitThread.c:
     complete
     .text       start:0x0200299c end:0x020029bc
@@ -5309,6 +5313,10 @@ src/calls/PanelState_NoOpD.c:
     complete
     .text       start:0x020253c4 end:0x020253c8
 
+src/calls/func_020253c8.c:
+    complete
+    .text       start:0x020253c8 end:0x020253f8
+
 src/calls/StackAlloc_FreeIfSetB_020253f8.c:
     complete
     .text       start:0x020253f8 end:0x0202540c
@@ -5704,6 +5712,10 @@ src/calls/VerifyCardIdMatchesReference.c:
 src/calls/FormatCardBackup.c:
     complete
     .text       start:0x02026d44 end:0x02026dd4
+
+src/calls/InitSaveSystem.c:
+    complete
+    .text       start:0x02026dd4 end:0x02026eb4
 
 src/calls/FormatSaveData.c:
     complete

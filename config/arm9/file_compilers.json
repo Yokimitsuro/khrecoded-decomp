@@ -2398,5 +2398,8 @@
   "src/calls/NNSi_G3dFuncSbc_ENVMAP.c": "dsi/1.1",
   "src/calls/WmReceiveFifo.c": "dsi/1.1",
   "src/calls/NNSi_G3dFuncSbc_RollBB.c": "dsi/1.1",
-  "src/calls/NNSi_G3dFuncSbc_PRJMAP.c": "dsi/1.1"
+  "src/calls/NNSi_G3dFuncSbc_PRJMAP.c": "dsi/1.1",
+  "src/calls/func_020253c8.c": "dsi/1.1",
+  "src/calls/InitSaveSystem.c": "dsi/1.1",
+  "src/calls/OS_InitThread.c": "dsi/1.1"
 }

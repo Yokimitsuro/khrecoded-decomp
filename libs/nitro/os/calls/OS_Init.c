@@ -24,7 +24,7 @@ typedef volatile unsigned char vu8;
 #define OS_InitPrintServer() ((void)0)
 #define SDK_EXCEPTION_BUG 
 
-void func_02002760(void);
+void OS_InitThread(void);
 void OS_InitIrqTable(void);
 extern void OSi_InitStackChecker(void);
 void OS_InitLock(void);
@@ -66,7 +66,7 @@ void OS_Init(void)
     OSi_InitVramExclusive();
 
 #ifndef SDK_NO_THREAD
-    func_02002760();
+    OS_InitThread();
 #endif
 
 #ifndef SDK_SMALL_BUILD
@@ -99,7 +99,7 @@ void OS_Init(void)
 #endif
     OS_InitTick();
     OS_InitAlarm();
-    func_02002760();
+    OS_InitThread();
 
 #ifndef SDK_SMALL_BUILD
     OS_InitReset();

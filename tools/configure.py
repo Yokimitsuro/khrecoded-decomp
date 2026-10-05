@@ -44,6 +44,15 @@ ABSOLUTE_SYMBOLS = {
     "gVBlankCount": 0x02FFFC3C,
     # Shared wireless request flags written by ARM7.
     "data_02ffff96": 0x02FFFF96,
+    # Fixed overlay ID used by the save-system self-check.
+    "gSaveCheckOverlayId": 0x68,
+    # Storage immediately before OSi_ArenaState used by the idle thread.
+    "OSi_IdleThreadStack": 0x02056CFC,
+    # Save verification callbacks execute from overlay 104 but are referenced
+    # directly by the resident ARM9 initialization path.
+    "__DSProt_DetectNotFlashcart": 0x020D1EFC,
+    "__DSProt_DetectEmulator": 0x020D1F38,
+    "__DSProt_DetectNotDummy": 0x020D1FEC,
     # Camera vectors live inside the main-module BSS rather than a compiled
     # translation unit, but recovered C references the structure by name.
     "NNS_G3dGlb_camPos": 0x0205AB3C,
