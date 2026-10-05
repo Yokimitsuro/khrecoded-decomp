@@ -18,7 +18,7 @@ typedef struct FieldObjectClass {
     u16 slotCount;
 } FieldObjectClass;
 
-extern FieldObject *func_ov001_0207f4dc(FieldObjectClass *objectClass, int slotIndex);
+extern FieldObject *GetStridedBufferEntry(FieldObjectClass *objectClass, int slotIndex);
 extern void Obj_ConditionalShutdown(void *object, u16 arg);
 extern void ReleaseResourceAndDetach(void *resource);
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
@@ -30,7 +30,7 @@ void FieldObjectClass_Destroy(FieldObjectClass *objectClass)
     int i;
 
     for (i = 0; i < count; i++) {
-        object = func_ov001_0207f4dc(objectClass, i);
+        object = GetStridedBufferEntry(objectClass, i);
         if (object->flags & 1) {
             if (objectClass->onObjectDestroy != NULL) {
                 objectClass->onObjectDestroy(object);

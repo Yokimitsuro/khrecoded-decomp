@@ -9,7 +9,7 @@ typedef struct MovieContext {
 
 extern MovieContext *data_ov035_020bc500;
 extern void func_ov035_020bad28(void);
-extern void func_ov001_020645e8(int messageId);
+extern void ClearSessionPackedBit(int messageId);
 
 int FinishMovieSkip(void)
 {
@@ -18,7 +18,7 @@ int FinishMovieSkip(void)
     func_ov035_020bad28();
     if (context->pendingSkip > 0) {
         context->pendingSkip = 0;
-        func_ov001_020645e8(0x3533);
+        ClearSessionPackedBit(0x3533);
     }
     data_ov035_020bc500->flags |= 0x8000;
     return 6;

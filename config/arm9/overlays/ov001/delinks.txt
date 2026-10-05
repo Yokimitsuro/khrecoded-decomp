@@ -268,6 +268,10 @@ src/overlays/ov001/calls/WriteSessionPackedBits.c:
     complete
     .text       start:0x0206459c end:0x020645c8
 
+src/overlays/ov001/calls/ClearSessionPackedBit.c:
+    complete
+    .text       start:0x020645e8 end:0x020645f4
+
 src/overlays/ov001/calls/AllocSessionBuffer.c:
     complete
     .text       start:0x02064660 end:0x0206468c
@@ -560,6 +564,10 @@ src/overlays/ov001/calls/ScriptCmd_SetFieldObjectsFlag.c:
     complete
     .text       start:0x020659dc end:0x020659f4
 
+src/overlays/ov001/auto/func_ov001_020659f4.c:
+    complete
+    .text       start:0x020659f4 end:0x02065a00
+
 src/overlays/ov001/calls/func_ov001_02065a00.c:
     complete
     .text       start:0x02065a00 end:0x02065a0e
@@ -747,6 +755,10 @@ src/overlays/ov001/calls/StepFadeTween.c:
 src/overlays/ov001/calls/SubScene9_StartFade.c:
     complete
     .text       start:0x02066da4 end:0x02066df4
+
+src/overlays/ov001/calls/SetMainBrightnessFromFx.c:
+    complete
+    .text       start:0x02066df4 end:0x02066e00
 
 src/overlays/ov001/calls/CreateSubScene9Task.c:
     complete
@@ -1035,6 +1047,10 @@ src/overlays/ov001/calls/func_ov001_02069090.c:
 src/overlays/ov001/calls/ReleaseServiceInstance_020690ac.c:
     complete
     .text       start:0x020690ac end:0x020690c8
+
+src/overlays/ov001/calls/ClearSecondaryTaskCount.c:
+    complete
+    .text       start:0x020690dc end:0x020690ec
 
 src/overlays/ov001/calls/IsSessionLinked.c:
     complete
@@ -1932,6 +1948,10 @@ src/overlays/ov001/calls/HideFieldMessageLine.c:
     complete
     .text       start:0x0207166c end:0x02071690
 
+src/overlays/ov001/calls/SetClampedMenuCursorAnimated.c:
+    complete
+    .text       start:0x02071690 end:0x0207169c
+
 src/overlays/ov001/calls/CountAssignedFieldSlots.c:
     complete
     .text       start:0x0207169c end:0x020716c4
@@ -2688,6 +2708,14 @@ src/overlays/ov001/calls/Panel_SetFormationType.c:
     complete
     .text       start:0x0207b4a0 end:0x0207b4c4
 
+src/overlays/ov001/calls/SetPanelSessionActive.c:
+    complete
+    .text       start:0x0207b500 end:0x0207b510
+
+src/overlays/ov001/calls/ClearPanelSessionActive.c:
+    complete
+    .text       start:0x0207b510 end:0x0207b520
+
 src/overlays/ov001/calls/GetPartySize.c:
     complete
     .text       start:0x0207b5b8 end:0x0207b5f4
@@ -2704,9 +2732,21 @@ src/overlays/ov001/calls/IsSceneModeThreeOrSix.c:
     complete
     .text       start:0x0207b634 end:0x0207b654
 
+src/overlays/ov001/calls/SetPanelInputActive.c:
+    complete
+    .text       start:0x0207b6dc end:0x0207b6ec
+
+src/overlays/ov001/calls/ClearPanelInputActive.c:
+    complete
+    .text       start:0x0207b6ec end:0x0207b6fc
+
 src/overlays/ov001/auto/func_ov001_0207b6fc.c:
     complete
     .text       start:0x0207b6fc end:0x0207b708
+
+src/overlays/ov001/calls/RequestPanelFallback.c:
+    complete
+    .text       start:0x0207b71c end:0x0207b72c
 
 src/overlays/ov001/calls/Panel_CaptureBrightness.c:
     complete
@@ -2719,6 +2759,10 @@ src/overlays/ov001/calls/func_ov001_0207b764.c:
 src/overlays/ov001/auto/func_ov001_0207b770.c:
     complete
     .text       start:0x0207b770 end:0x0207b77c
+
+src/overlays/ov001/calls/RequestPanelBrightnessRestore.c:
+    complete
+    .text       start:0x0207b7a0 end:0x0207b7b0
 
 src/overlays/ov001/calls/IntPow.c:
     complete
@@ -3067,6 +3111,10 @@ src/overlays/ov001/calls/FieldObjectClass_Destroy.c:
 src/overlays/ov001/calls/FieldObject_Create.c:
     complete
     .text       start:0x0207f468 end:0x0207f4dc
+
+src/overlays/ov001/calls/GetStridedBufferEntry.c:
+    complete
+    .text       start:0x0207f4dc end:0x0207f4e8
 
 src/overlays/ov001/calls/FieldObject_Activate.c:
     complete

@@ -17,7 +17,7 @@ extern EventEffect *data_ov010_020a1de0;
 extern void UpdateObjectEffects(EventEffect *effect);
 extern void UpdateTargetEffect(EventEffect *effect, int step);
 extern BOOL func_ov001_020645c8(u32 eventId);
-extern void func_ov001_020645e8(int eventId);
+extern void ClearSessionPackedBit(int eventId);
 extern void StartObjectEffects(EventEffect *effect);
 extern void func_ov010_020a0d20(EventEffect *effect);
 extern void SpawnEffectAtTarget(EventEffect *effect);
@@ -38,7 +38,7 @@ void Entity_UpdateEventEffect(Entity *entity, int step)
             effect->timer = 0;
             StartObjectEffects(effect);
         } else {
-            func_ov001_020645e8(0x3713);
+            ClearSessionPackedBit(0x3713);
         }
     }
     if (effect->state != 0) {

@@ -22,7 +22,7 @@ typedef struct SceneArgs {
 } SceneArgs;
 
 extern Session *data_ov001_020a0480;
-extern void func_ov001_020645e8(int bitOffset);
+extern void ClearSessionPackedBit(int bitOffset);
 
 void InitSessionRequestDefaults(SceneArgs *args) {
     Session *session = data_ov001_020a0480;
@@ -32,5 +32,5 @@ void InitSessionRequestDefaults(SceneArgs *args) {
     session->request.unk_0A = -1;
     session->request.unk_04 = 100;
     session->request.unk_06 = -1;
-    func_ov001_020645e8(0x1a05);
+    ClearSessionPackedBit(0x1a05);
 }

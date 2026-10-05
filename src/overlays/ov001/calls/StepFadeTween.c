@@ -12,7 +12,7 @@ typedef struct FadeTween {
 
 extern FadeTween *NNSi_FndGetCurrentRootHeap(void);
 extern void SampleTweenValue(void *tween, s32 *value);
-extern void func_ov001_02066df4(s32 value);
+extern void SetMainBrightnessFromFx(s32 value);
 extern void *func_ov001_02066cb4(void);
 
 void *StepFadeTween(void)
@@ -26,6 +26,6 @@ void *StepFadeTween(void)
         fade->active = 0;
         next = func_ov001_02066cb4;
     }
-    func_ov001_02066df4(value);
+    SetMainBrightnessFromFx(value);
     return next;
 }

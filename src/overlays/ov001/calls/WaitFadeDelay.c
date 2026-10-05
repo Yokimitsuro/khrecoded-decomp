@@ -8,7 +8,7 @@ typedef struct FadeDelay {
 extern FadeDelay *NNSi_FndGetCurrentRootHeap(void);
 extern u64 OS_GetTick(void);
 extern u64 _ll_udiv(u64 dividend, u64 divisor);
-extern void func_ov001_02066df4(s32 value);
+extern void SetMainBrightnessFromFx(s32 value);
 extern void *StepFadeTween(void);
 
 void *WaitFadeDelay(void)
@@ -19,6 +19,6 @@ void *WaitFadeDelay(void)
     if (fade->startMilliseconds + 100 < _ll_udiv(OS_GetTick() * 64, 0x82ea)) {
         next = StepFadeTween;
     }
-    func_ov001_02066df4(0x10000);
+    SetMainBrightnessFromFx(0x10000);
     return next;
 }

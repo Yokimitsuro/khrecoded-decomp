@@ -20,7 +20,7 @@ typedef struct {
 
 extern BOOL func_ov032_020bf47c(FieldObject *obj);
 extern void func_ov001_020645dc(u32 flag);
-extern void func_ov001_020645e8(u32 flag);
+extern void ClearSessionPackedBit(u32 flag);
 extern void func_ov001_020874f4(u32 *record, u32 field0, u32 field1, u32 field2, u32 field3, u32 field4, u32 field5);
 extern void GrantEntryUnlockReward(FieldObject *owner, u32 *request);
 
@@ -34,7 +34,7 @@ void GrantFieldObjectReward(FieldObject *obj)
         if (func_ov032_020bf47c(obj)) {
             func_ov001_020645dc(obj->flagId);
         } else {
-            func_ov001_020645e8(obj->flagId);
+            ClearSessionPackedBit(obj->flagId);
         }
     }
     if (obj->useEntryBits) {

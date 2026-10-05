@@ -51,8 +51,15 @@ def destination(module: str, name: str) -> Path:
 
 def source_for(name: str, mode: str, code: bytes, relocs: list[list]) -> str | None:
     decoder = Cs(CS_ARCH_ARM, CS_MODE_THUMB if mode == "thumb" else CS_MODE_ARM)
-    instruction_size = min((offset for offset, _ in relocs), default=len(code))
-    insns = [(item.mnemonic, item.op_str) for item in decoder.disasm(code[:instruction_size], 0)]
+    # A relocation may belong either to an instruction (BL/BLX) or to a
+    # trailing literal-pool word. Cutting at the first relocation therefore
+    # discarded almost every call wrapper. Decode through the first terminal
+    # return/tail-call instead; any bytes after it are the local literal pool.
+    insns = []
+    for item in decoder.disasm(code, 0):
+        insns.append((item.mnemonic, item.op_str))
+        if item.mnemonic == "bx" or (item.mnemonic == "pop" and "pc" in item.op_str):
+            break
 
     # Accessors for a global which stores an object pointer. The exact external
     # symbol is retained, so relocation verification remains as strict as the
@@ -1013,6 +1020,198 @@ def source_for(name: str, mode: str, code: bytes, relocs: list[list]) -> str | N
         return HEADER + (
             f"void {name}(void *object, u32 value)\n{{\n"
             f"    *(u32 *)((u8 *)object + 0x{offset:x}) = value;\n"
+            "}\n"
+        )
+
+    # Boolean view of a word field.  The explicit comparison is important:
+    # mwcc keeps the CMP/BX sequence used by the original Thumb leaf.
+    if (
+        len(insns) == 3
+        and insns[0][0] == "ldr"
+        and insns[0][1].startswith("r0, [r0, #")
+        and insns[1] == ("cmp", "r0, #0")
+        and insns[2] == ("bx", "lr")
+    ):
+        offset = int(insns[0][1].split("#", 1)[1].rstrip("]"), 0)
+        return HEADER + (
+            f"BOOL {name}(const void *object)\n{{\n"
+            f"    return *(const u32 *)((const u8 *)object + 0x{offset:x}) != 0;\n"
+            "}\n"
+        )
+
+    # Signed-halfword accessors around a shared record lookup.
+    if (
+        len(relocs) == 1
+        and len(insns) == 5
+        and insns[0][0] == "push"
+        and insns[1][0] in {"bl", "blx"}
+        and insns[2][0] == "movs"
+        and insns[2][1].startswith("r1, #")
+        and insns[3] == ("ldrsh", "r0, [r0, r1]")
+        and insns[4][0] == "pop"
+    ):
+        target = current_symbol_name(relocs[0][1])
+        offset = int(insns[2][1].split("#", 1)[1], 0)
+        return HEADER + f"extern void *{target}();\n\n" + (
+            f"s32 {name}(void *owner, s32 index)\n{{\n"
+            f"    const u8 *record = {target}(owner, index);\n"
+            f"    return *(const s16 *)(record + 0x{offset:x});\n"
+            "}\n"
+        )
+
+    # The compiler sometimes loads a full word before narrowing it to s16.
+    if (
+        len(relocs) == 1
+        and len(insns) == 6
+        and insns[0][0] == "push"
+        and insns[1][0] in {"bl", "blx"}
+        and insns[2][0] == "ldr"
+        and insns[2][1].startswith("r0, [r0, #")
+        and insns[3] == ("lsls", "r0, r0, #0x10")
+        and insns[4] == ("asrs", "r0, r0, #0x10")
+        and insns[5][0] == "pop"
+    ):
+        target = current_symbol_name(relocs[0][1])
+        offset = int(insns[2][1].split("#", 1)[1].rstrip("]"), 0)
+        return HEADER + f"extern void *{target}();\n\n" + (
+            f"s32 {name}(void *owner, s32 index)\n{{\n"
+            f"    const u8 *record = {target}(owner, index);\n"
+            f"    return (s16)*(const u32 *)(record + 0x{offset:x});\n"
+            "}\n"
+        )
+
+    # Tail wrapper which supplies two small constants after the caller's r0.
+    if (
+        len(relocs) == 1
+        and len(insns) == 4
+        and insns[0][0] == "ldr"
+        and "[pc" in insns[0][1]
+        and insns[1][0] == "movs"
+        and insns[1][1].startswith("r1, #")
+        and insns[2][0] == "movs"
+        and insns[2][1].startswith("r2, #")
+        and insns[3][0] == "bx"
+    ):
+        target = current_symbol_name(relocs[0][1])
+        first = int(insns[1][1].split("#", 1)[1], 0)
+        second = int(insns[2][1].split("#", 1)[1], 0)
+        return HEADER + f"extern u32 {target}();\n\n" + (
+            f"u32 {name}(void *object)\n{{\n"
+            f"    return {target}(object, {first}, {second});\n"
+            "}\n"
+        )
+
+    # Call one routine with a constant and return a fixed dispatch result.
+    if (
+        len(relocs) == 1
+        and len(insns) == 5
+        and insns[0][0] == "push"
+        and insns[1][0] == "movs"
+        and insns[1][1].startswith("r0, #")
+        and insns[2][0] in {"bl", "blx"}
+        and insns[3][0] == "movs"
+        and insns[3][1].startswith("r0, #")
+        and insns[4][0] == "pop"
+    ):
+        target = current_symbol_name(relocs[0][1])
+        argument = int(insns[1][1].split("#", 1)[1], 0)
+        result = int(insns[3][1].split("#", 1)[1], 0)
+        return HEADER + f"extern void {target}();\n\n" + (
+            f"u32 {name}(void)\n{{\n"
+            f"    {target}({argument});\n"
+            f"    return {result};\n"
+            "}\n"
+        )
+
+    # Tail wrappers which obtain their primary argument through an owner field.
+    if (
+        len(relocs) == 1
+        and len(insns) in {3, 4}
+        and insns[0][0] == "ldr"
+        and insns[0][1].startswith("r0, [r1, #")
+        and insns[1][0] == "ldr"
+        and "[pc" in insns[1][1]
+        and insns[-1][0] == "bx"
+    ):
+        target = current_symbol_name(relocs[0][1])
+        offset = int(insns[0][1].split("#", 1)[1].rstrip("]"), 0)
+        if len(insns) == 4 and insns[2] == ("adds", "r1, r2, #0"):
+            return HEADER + f"extern u32 {target}();\n\n" + (
+                f"u32 {name}(void *unused, const void *owner, u32 argument)\n{{\n"
+                "    (void)unused;\n"
+                f"    void *object = *(void *const *)((const u8 *)owner + 0x{offset:x});\n"
+                f"    return {target}(object, argument);\n"
+                "}\n"
+            )
+        if len(insns) == 3:
+            return HEADER + f"extern u32 {target}();\n\n" + (
+                f"u32 {name}(void *unused, const void *owner)\n{{\n"
+                "    (void)unused;\n"
+                f"    void *object = *(void *const *)((const u8 *)owner + 0x{offset:x});\n"
+                f"    return {target}(object, owner);\n"
+                "}\n"
+            )
+
+    # Address an element when the base and stride fields require separate loads.
+    if (
+        len(insns) == 6
+        and insns[0][0] == "ldr"
+        and insns[0][1].startswith("r2, [r0, #")
+        and insns[1][0] == "adds"
+        and insns[1][1].startswith("r0, #")
+        and insns[2] == ("ldrh", "r0, [r0]")
+        and insns[3] == ("muls", "r1, r0, r1")
+        and insns[4] == ("adds", "r0, r2, r1")
+        and insns[5] == ("bx", "lr")
+    ):
+        base_offset = int(insns[0][1].split("#", 1)[1].rstrip("]"), 0)
+        stride_offset = int(insns[1][1].split("#", 1)[1], 0)
+        return HEADER + (
+            f"void *{name}(const void *object, u32 index)\n{{\n"
+            f"    const u8 *base = *(u8 *const *)((const u8 *)object + 0x{base_offset:x});\n"
+            f"    u16 stride = *(const u16 *)((const u8 *)object + 0x{stride_offset:x});\n"
+            "    return (void *)(base + stride * index);\n"
+            "}\n"
+        )
+
+    # Bit accessor through a pointer stored in a large-offset owner field.
+    if (
+        len(insns) == 6
+        and insns[0][0] == "adds"
+        and insns[0][1].startswith("r0, #")
+        and insns[1] == ("ldr", "r0, [r0]")
+        and insns[2][0] == "ldr"
+        and insns[2][1].startswith("r0, [r0, #")
+        and insns[3][0] == "lsls"
+        and insns[4][0] == "lsrs"
+        and insns[5] == ("bx", "lr")
+    ):
+        owner_offset = int(insns[0][1].split("#", 1)[1], 0)
+        value_offset = int(insns[2][1].split("#", 1)[1].rstrip("]"), 0)
+        left = int(insns[3][1].rsplit("#", 1)[1], 0)
+        right = int(insns[4][1].rsplit("#", 1)[1], 0)
+        bit = right - left
+        return HEADER + (
+            f"u32 {name}(const void *owner)\n{{\n"
+            f"    const u8 *record = *(u8 *const *)((const u8 *)owner + 0x{owner_offset:x});\n"
+            f"    return (*(const u32 *)(record + 0x{value_offset:x}) >> {bit}) & 1;\n"
+            "}\n"
+        )
+
+    # Large ARM pointer adjustment emitted as two encodable immediates.
+    if (
+        len(insns) == 3
+        and insns[0][0] == "add"
+        and insns[0][1].startswith("r0, r0, #")
+        and insns[1][0] == "add"
+        and insns[1][1].startswith("r0, r0, #")
+        and insns[2] == ("bx", "lr")
+    ):
+        first = int(insns[0][1].rsplit("#", 1)[1], 0)
+        second = int(insns[1][1].rsplit("#", 1)[1], 0)
+        return HEADER + (
+            f"void *{name}(void *object)\n{{\n"
+            f"    return (u8 *)object + 0x{first + second:x};\n"
             "}\n"
         )
 

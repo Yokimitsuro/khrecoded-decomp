@@ -35,7 +35,7 @@ extern u8 data_ov001_0209eb38[];
 
 extern FieldOverlayState *NNSi_FndGetCurrentRootHeap(void);
 extern BOOL func_ov001_020645c8(u32 eventId);
-extern void func_ov001_020645e8(u32 eventId);
+extern void ClearSessionPackedBit(u32 eventId);
 extern void SetupAllSelectionRecords(void);
 extern void FillSelectionRecordFromGroup(void);
 extern void BuildSelectionEntryList(void);
@@ -71,7 +71,7 @@ StateHandler InitFieldOverlayState(FieldEntryParams *params)
         SyncSelectionRecordFromSlotEntry();
         func_0204fbb4();
         RebuildRecordCounters();
-        func_ov001_020645e8(0x35e3);
+        ClearSessionPackedBit(0x35e3);
     }
     data_ov028_020bb3a0->flags = 0x23;
     flagged = FALSE;

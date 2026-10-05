@@ -222,7 +222,7 @@ def _index():
     return _IDX_CACHE
 
 
-def check(cpath, name, thumb):
+def check(cpath, name, thumb, object_name=None):
     """Grade one function: (exit code, verdict text). Failures main() has always
     reported through SystemExit (unknown name, compile error, symbol absent from
     the object) still raise it."""
@@ -233,9 +233,10 @@ def check(cpath, name, thumb):
     orig = bytearray.fromhex(e["hex"])
     orel = {off: sym for off, sym in e["relocs"]}
     o = compile_c(cpath, thumb)
-    mine, mrel_full = text_relocs(o, name)
+    emitted_name = object_name or name
+    mine, mrel_full = text_relocs(o, emitted_name)
     mrel = {off: nm for off, (nm, _t) in mrel_full.items()}
-    maddend = _read_addends(o, name)
+    maddend = _read_addends(o, emitted_name)
     local_relocs, local_data_note = _verified_local_data_relocs(
         o, orel, mrel_full, maddend, e.get("module")
     )
@@ -344,7 +345,15 @@ def batch(args):
 def main():
     if sys.argv[1:2] == ["--batch"]:
         batch(sys.argv[2:])
-    rc, out = check(sys.argv[1], sys.argv[2], "--thumb" in sys.argv)
+    object_name = None
+    if "--object-symbol" in sys.argv:
+        object_name = sys.argv[sys.argv.index("--object-symbol") + 1]
+    rc, out = check(
+        sys.argv[1],
+        sys.argv[2],
+        "--thumb" in sys.argv,
+        object_name=object_name,
+    )
     print(out)
     sys.exit(rc)
 

@@ -16,7 +16,7 @@ typedef struct Session {
 
 extern Session *data_ov001_020a0480;
 extern s32 RunSessionScriptFrame(void);
-extern void func_ov001_020645e8(int bitOffset);
+extern void ClearSessionPackedBit(int bitOffset);
 
 s32 StepSessionScriptState(void) {
     Session *session = data_ov001_020a0480;
@@ -36,7 +36,7 @@ s32 StepSessionScriptState(void) {
         }
     }
     if (nextState != -1 && session->notifyOnExit) {
-        func_ov001_020645e8(0x3309);
+        ClearSessionPackedBit(0x3309);
     }
     return nextState;
 }

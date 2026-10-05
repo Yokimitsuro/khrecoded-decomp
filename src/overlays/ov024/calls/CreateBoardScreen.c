@@ -62,7 +62,7 @@ extern BOOL func_ov001_020645c8(int flag);
 extern BOOL IsFieldFlag13OrSessionFlagSet(void);
 extern void func_ov001_0207b228(void (*callback)(void));
 extern void SetupSubScreenBgLayers(void);
-extern void func_ov001_0207b500(void);
+extern void SetPanelSessionActive(void);
 extern void *func_ov001_0207123c(void);
 extern void InitTileTableFrom(void *widget, BgLayerDesc *desc);
 extern int Msg_OpenContainerAndReadHeader(const char *path, int heap, int flags);
@@ -106,7 +106,7 @@ void *CreateBoardScreen(int mode)
     }
     SetupSubScreenBgLayers();
     if (!data_ov024_020b7540.state->useChannel) {
-        func_ov001_0207b500();
+        SetPanelSessionActive();
     }
     if (data_ov024_020b7540.state->useChannel) {
         bgDesc.layout = &layout;

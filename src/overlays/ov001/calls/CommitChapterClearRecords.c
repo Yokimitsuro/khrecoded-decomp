@@ -7,7 +7,7 @@ extern u32 ReadSessionPackedBits(int flagIndex, u32 bitCount);
 extern void WriteSessionPackedBits(int flagIndex, u32 bitCount, u32 value);
 extern BOOL func_ov001_020645c8(u32 flagIndex);
 extern void func_ov001_020645dc(int flagIndex);
-extern void func_ov001_020645e8(int flagIndex);
+extern void ClearSessionPackedBit(int flagIndex);
 
 void CommitChapterClearRecords(void)
 {
@@ -59,6 +59,6 @@ void CommitChapterClearRecords(void)
         }
     }
     if (chapter != 7 || ReadGlobalPackedBits(0x1a00, 2) != 0) {
-        func_ov001_020645e8(0x3536);
+        ClearSessionPackedBit(0x3536);
     }
 }

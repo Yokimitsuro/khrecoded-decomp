@@ -42,7 +42,7 @@ extern u16 LookupSessionKeyValue(int key);
 extern void func_020257d8(void *channel, u32 source, u32 param);
 extern void OpenSessionArchive(char *name, char *flag);
 extern void SaveSessionCheckpoint(int id);
-extern void func_ov001_020645e8(int flag);
+extern void ClearSessionPackedBit(int flag);
 
 int EnterPendingRoom(void) {
     SessionState *state = data_ov001_020a0480;
@@ -82,6 +82,6 @@ int EnterPendingRoom(void) {
         SaveSessionCheckpoint(0x42);
     }
     data_ov001_020a0480->loading = 1;
-    func_ov001_020645e8(0x3632);
+    ClearSessionPackedBit(0x3632);
     return 2;
 }

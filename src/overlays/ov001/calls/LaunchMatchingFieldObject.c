@@ -17,7 +17,7 @@ typedef struct FieldObjectList {
 
 extern VecFx32 *func_ov021_020af5d4(void);
 extern fx32 func_ov042_020bd5a4(void);
-extern FieldObject *func_ov001_0207f4dc(FieldObjectList *list, int index);
+extern FieldObject *GetStridedBufferEntry(FieldObjectList *list, int index);
 extern void *ActorSlot_GetByIndex(u16 slotIndex);
 extern void func_ov001_020827ac(FieldObject *object, VecFx32 *target);
 
@@ -32,7 +32,7 @@ BOOL LaunchMatchingFieldObject(FieldObjectList *list, u32 ownerId, fx32 x)
     VecFx32 position;
 
     for (i = 0; i < count; i++) {
-        object = func_ov001_0207f4dc(list, i);
+        object = GetStridedBufferEntry(list, i);
         if (object->ownerId == ownerId && object->state == 2 && ActorSlot_GetByIndex(object->slotIndex) != NULL) {
             position.x = x;
             position.y = height;

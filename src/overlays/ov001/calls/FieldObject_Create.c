@@ -20,14 +20,14 @@ typedef struct FieldObject {
     u32 unk_54;
 } FieldObject;
 
-extern FieldObject *func_ov001_0207f4dc(FieldObjectClass *objectClass, int slotIndex);
+extern FieldObject *GetStridedBufferEntry(FieldObjectClass *objectClass, int slotIndex);
 extern u8 FindRegisteredEntryIndex(FieldObjectClass *objectClass);
 extern void *NNSi_FndAllocFromDefaultHeap(u32 size);
 extern void MIi_CpuClearFast(u32 value, void *dest, u32 size);
 
 FieldObject *FieldObject_Create(FieldObjectClass *objectClass, u8 slotIndex)
 {
-    FieldObject *object = func_ov001_0207f4dc(objectClass, slotIndex);
+    FieldObject *object = GetStridedBufferEntry(objectClass, slotIndex);
 
     if (object->flags != 0) {
         return NULL;

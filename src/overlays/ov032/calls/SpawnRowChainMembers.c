@@ -46,7 +46,7 @@ typedef struct ChainWorld {
 extern const VecFx32 data_0205344c;
 extern const MtxFx33 data_02053458;
 
-extern s32 func_ov032_020bbc38(ChainWorld *world, s32 rowIndex);
+extern s32 GetRowRespawnLimit(ChainWorld *world, s32 rowIndex);
 extern ChainWork *func_ov032_020bbc98(ChainObject *object);
 extern ChainObject *func_ov001_02086384(ChainWorld *world, int index);
 extern BOOL IsNodeFlagBitClear(ChainObject *object);
@@ -67,7 +67,7 @@ void SpawnRowChainMembers(ChainWorld *world, s32 rowIndex, ChainObject *origin)
     ChainWork *childWork;
     int i;
 
-    if (row->spawnTimer < func_ov032_020bbc38(world, rowIndex)) {
+    if (row->spawnTimer < GetRowRespawnLimit(world, rowIndex)) {
         return;
     }
     work = func_ov032_020bbc98(origin);

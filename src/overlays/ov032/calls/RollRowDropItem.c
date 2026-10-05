@@ -12,7 +12,7 @@ typedef struct {
 } RowOwner;
 
 extern const u8 data_ov032_020bff8c[];
-extern u8 *func_ov032_020bbbf4(void *owner, s32 index);
+extern u8 *GetRowDefinition(void *owner, s32 index);
 extern void func_01ff8ad8(const void *src, void *dst, u32 size);
 extern int PickWeightedIndex(u8 *weights, int count);
 
@@ -23,7 +23,7 @@ u8 RollRowDropItem(RowOwner *owner, int index)
     int scaled;
     int scale;
 
-    func_01ff8ad8(func_ov032_020bbbf4(owner, index) + 0x1f, weights, 8);
+    func_01ff8ad8(GetRowDefinition(owner, index) + 0x1f, weights, 8);
     scale = row->rareScale;
     scaled = weights[7] * scale / 4096;
     if (scaled == 0 && scale != 0) {

@@ -15,7 +15,7 @@ typedef struct {
     RowEntry *rows;
 } RowOwner;
 
-extern s32 func_ov032_020bbc2c(void *owner, s32 index);
+extern s32 GetRowCycleLimit(void *owner, s32 index);
 extern void QueueFieldObjectModeChange(RowOwner *owner, int index, int arg);
 
 void TickRowCycleTimer(RowOwner *owner, int index)
@@ -26,7 +26,7 @@ void TickRowCycleTimer(RowOwner *owner, int index)
         return;
     }
     if (row->frozen == 0) {
-        if (row->timer >= func_ov032_020bbc2c(owner, index)) {
+        if (row->timer >= GetRowCycleLimit(owner, index)) {
             QueueFieldObjectModeChange(owner, index, 0);
             row->timer = 0;
         } else {

@@ -35,7 +35,7 @@ UpdateMapMenuState kind:function(thumb,size=0x14c) addr:0x020b6b1c
 func_ov023_020b6c68 kind:function(thumb,size=0xac) addr:0x020b6c68
 ResetMapMenuScreen kind:function(thumb,size=0x9c) addr:0x020b6d14
 ApplyFormationSlots kind:function(thumb,size=0xa0) addr:0x020b6db0
-func_ov023_020b6e50 kind:function(thumb,size=0x10) addr:0x020b6e50
+MarkMapMenuDirty kind:function(thumb,size=0x10) addr:0x020b6e50
 UpdateMenuRangePosition kind:function(thumb,size=0x20) addr:0x020b6e60
 ApplyScreenAlphaBlend kind:function(thumb,size=0x14) addr:0x020b6e80
 data_ov023_020b6e94 kind:data(any) addr:0x020b6e94

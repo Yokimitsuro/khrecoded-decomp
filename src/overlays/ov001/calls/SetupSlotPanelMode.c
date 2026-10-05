@@ -13,7 +13,7 @@ extern u32 PopCount32(u32 value);
 extern BOOL InitSlotLayout(int first, int second);
 extern BOOL InitSlotLayoutCompact(u32 mode);
 extern void func_ov001_020645dc(u32 flag);
-extern void func_ov001_020645e8(u32 flag);
+extern void ClearSessionPackedBit(u32 flag);
 extern int func_ov001_0207d3ac(int value);
 
 void SetupSlotPanelMode(int mode, int enable) {
@@ -28,7 +28,7 @@ void SetupSlotPanelMode(int mode, int enable) {
             }
             func_ov001_020645dc(0x3716);
         } else {
-            func_ov001_020645e8(0x3716);
+            ClearSessionPackedBit(0x3716);
         }
         break;
     case 1:
@@ -39,7 +39,7 @@ void SetupSlotPanelMode(int mode, int enable) {
             }
             func_ov001_020645dc(0x3714);
         } else {
-            func_ov001_020645e8(0x3714);
+            ClearSessionPackedBit(0x3714);
         }
         break;
     case 2:

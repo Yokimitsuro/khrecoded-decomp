@@ -1,7 +1,7 @@
 #include "nitro/types.h"
 
 extern void func_ov035_020ba594(void);
-extern void func_ov035_020ba5d8(void);
+extern void LoadShadowModelAndReturnState2(void);
 extern void func_ov035_020ba5e4(void);
 extern void func_ov035_020ba610(void);
 extern void PollOverlay40Phase(void); /* PollOverlay40Phase */
@@ -13,7 +13,7 @@ extern void func_ov035_020ba760(void);
 
 void (*gMovieSkipHandlers[10])(void) = {
     func_ov035_020ba594,
-    func_ov035_020ba5d8,
+    LoadShadowModelAndReturnState2,
     func_ov035_020ba5e4,
     func_ov035_020ba610,
     PollOverlay40Phase, /* PollOverlay40Phase */

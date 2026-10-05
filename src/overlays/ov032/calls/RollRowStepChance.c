@@ -23,12 +23,12 @@ typedef struct {
 } ChancePair;
 
 extern const ChancePair data_ov032_020bff94[];
-extern RowDefinition *func_ov032_020bbbf4(void *owner, s32 index);
+extern RowDefinition *GetRowDefinition(void *owner, s32 index);
 extern unsigned int random_next_scaled(unsigned int upperBound);
 
 BOOL RollRowStepChance(RowOwner *owner, int index)
 {
-    RowDefinition *definition = func_ov032_020bbbf4(owner, index);
+    RowDefinition *definition = GetRowDefinition(owner, index);
     const ChancePair *chance = &data_ov032_020bff94[definition->sequence[(u8)owner->rows[index].step]];
 
     if (chance->failWeight == 0) {

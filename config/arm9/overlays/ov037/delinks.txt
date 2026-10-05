@@ -40,6 +40,10 @@ src/overlays/ov037/calls/StoreCommResultSlot.c:
     complete
     .text       start:0x020ba904 end:0x020ba92c
 
+src/overlays/ov037/calls/UpdateMenuSelectionAndReturnState7.c:
+    complete
+    .text       start:0x020ba92c end:0x020ba93c
+
 src/overlays/ov037/calls/AdvanceCommWhenReady.c:
     complete
     .text       start:0x020ba93c end:0x020ba964

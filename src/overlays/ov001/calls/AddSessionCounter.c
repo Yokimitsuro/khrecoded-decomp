@@ -12,7 +12,7 @@ extern BOOL func_ov001_02088100(VecFx32 *out);
 extern VecFx32 *func_ov001_0206dc4c(int index);
 extern void SpawnRewardOrbs(u16 *amounts, void *position, int popupFlags);
 extern void func_02027390(int messageId, int category, int amount, int limit);
-extern void func_ov001_020645e8(u32 eventId);
+extern void ClearSessionPackedBit(u32 eventId);
 extern int func_ov001_020644b0(void);
 extern u32 ReadSessionPackedBits(int bitOffset, u32 bitCount);
 extern void WriteSessionPackedBits(int bitOffset, u32 bitCount, u32 value);
@@ -46,7 +46,7 @@ void AddSessionCounter(int index, int amount) {
         func_02027390(0xb37, 0x11, amount, 99999);
         return;
     case 12:
-        func_ov001_020645e8(0x35ca);
+        ClearSessionPackedBit(0x35ca);
         return;
     case 28:
         if (func_ov001_020644b0() == 100) {

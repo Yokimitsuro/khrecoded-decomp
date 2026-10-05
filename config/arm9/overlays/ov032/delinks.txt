@@ -172,6 +172,34 @@ src/overlays/ov032/calls/UploadGroupMenuTiles.c:
     complete
     .text       start:0x020bbbc8 end:0x020bbbf4
 
+src/overlays/ov032/calls/GetRowDefinition.c:
+    complete
+    .text       start:0x020bbbf4 end:0x020bbc10
+
+src/overlays/ov032/calls/GetRowTurnLimit.c:
+    complete
+    .text       start:0x020bbc10 end:0x020bbc1c
+
+src/overlays/ov032/calls/GetRowIdleLimit.c:
+    complete
+    .text       start:0x020bbc1c end:0x020bbc2a
+
+src/overlays/ov032/calls/GetRowCycleLimit.c:
+    complete
+    .text       start:0x020bbc2c end:0x020bbc38
+
+src/overlays/ov032/calls/GetRowRespawnLimit.c:
+    complete
+    .text       start:0x020bbc38 end:0x020bbc44
+
+src/overlays/ov032/calls/GetRowStepLimit.c:
+    complete
+    .text       start:0x020bbc44 end:0x020bbc50
+
+src/overlays/ov032/calls/GetRowMoveSpeed.c:
+    complete
+    .text       start:0x020bbc50 end:0x020bbc5a
+
 src/overlays/ov032/auto/func_ov032_020bbc98.c:
     complete
     .text       start:0x020bbc98 end:0x020bbc9e

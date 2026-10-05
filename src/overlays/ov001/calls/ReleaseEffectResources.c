@@ -23,7 +23,7 @@ extern void ReleaseSharedRecordSlot(void *record);
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
 extern int func_ov001_020645c8(int flagId);
 extern int func_ov001_020644c0(void);
-extern void func_ov001_020645e8(int flagId);
+extern void ClearSessionPackedBit(int flagId);
 extern void DestroyAllEffectEntries(int mode);
 
 void ReleaseEffectResources(void)
@@ -46,7 +46,7 @@ void ReleaseEffectResources(void)
         manager->savedValue = func_ov001_020644c0();
         manager->savedAreaId = manager->areaId;
     } else {
-        func_ov001_020645e8(0x3614);
+        ClearSessionPackedBit(0x3614);
     }
     DestroyAllEffectEntries(1);
 }

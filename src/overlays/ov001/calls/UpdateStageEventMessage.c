@@ -32,7 +32,7 @@ extern void ShowFieldMessageLine(u16 tickerMode, u32 tickerValue, int messageId,
 extern void HideFieldMessageLine(void);
 extern void ResetPendingRequest(void);
 extern void StageRecord_SetFlagBit2(u16 id);
-extern void *func_ov001_02071690(u16 id);
+extern void SetClampedMenuCursorAnimated(u16 cursor);
 
 void UpdateStageEventMessage(int id)
 {
@@ -74,7 +74,7 @@ void UpdateStageEventMessage(int id)
             return;
         }
         if (func_ov001_02087988(id, &info)) {
-            func_ov001_02071690(info.tickerMode);
+            SetClampedMenuCursorAnimated(info.tickerMode);
         }
         break;
     }

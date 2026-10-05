@@ -13,11 +13,11 @@ extern OverlayDisplaySession *data_ov026_020b5b20;
 extern OverlayDisplaySession *NNSi_FndGetCurrentRootHeap(void);
 extern void GXS_LoadBGPltt(const void *source, unsigned offset, unsigned size);
 extern void InitializeOverlayDisplaySession(OverlayDisplaySession *session, int *alternateUpdate);
-extern void func_ov001_0207b500(void);
+extern void SetPanelSessionActive(void);
 extern void *AddFieldListener(void (*callback)(void));
 extern void RunOverlayDisplayUpdate(void);
 extern int ShouldRestorePositiveBrightness(OverlayDisplaySession *session);
-extern void func_ov001_0207b7a0(void);
+extern void RequestPanelBrightnessRestore(void);
 extern int func_ov026_020b58e8(void);
 int (*BeginOverlayDisplaySession(void))(void) {
     OverlayDisplaySession *session = NNSi_FndGetCurrentRootHeap();
@@ -27,8 +27,8 @@ int (*BeginOverlayDisplaySession(void))(void) {
     alternateUpdate = 1;
     GXS_LoadBGPltt(&paletteValue, 0, 2);
     InitializeOverlayDisplaySession(session, &alternateUpdate);
-    func_ov001_0207b500();
+    SetPanelSessionActive();
     session->updateRegistration = AddFieldListener(RunOverlayDisplayUpdate);
-    if (ShouldRestorePositiveBrightness(session)) func_ov001_0207b7a0();
+    if (ShouldRestorePositiveBrightness(session)) RequestPanelBrightnessRestore();
     return func_ov026_020b58e8;
 }

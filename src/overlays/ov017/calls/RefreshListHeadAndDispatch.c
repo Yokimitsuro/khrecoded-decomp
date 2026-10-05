@@ -5,13 +5,13 @@ typedef struct {
     void *listHead;
 } OverlayObject;
 
-extern void *func_ov017_020a50f8();
+extern void *GetLinkedEntryAfterTail(void *entry);
 extern void DispatchListHeadCallback(OverlayObject *obj);
 
 void RefreshListHeadAndDispatch(OverlayObject *obj)
 {
     if (obj->listHead != 0) {
-        obj->listHead = func_ov017_020a50f8();
+        obj->listHead = GetLinkedEntryAfterTail(obj->listHead);
         DispatchListHeadCallback(obj);
     }
 }

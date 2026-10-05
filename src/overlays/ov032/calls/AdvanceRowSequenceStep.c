@@ -17,12 +17,12 @@ typedef struct {
     u8 sequence[11];
 } RowDefinition;
 
-extern RowDefinition *func_ov032_020bbbf4(void *owner, s32 index);
+extern RowDefinition *GetRowDefinition(void *owner, s32 index);
 
 void AdvanceRowSequenceStep(RowOwner *owner, int index)
 {
     RowEntry *row = &owner->rows[index];
-    RowDefinition *definition = func_ov032_020bbbf4(owner, index);
+    RowDefinition *definition = GetRowDefinition(owner, index);
     row->step++;
     if (row->step >= 11 || definition->sequence[row->step] == 11) {
         row->step = 0;

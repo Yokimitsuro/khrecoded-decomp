@@ -21,7 +21,7 @@ typedef struct ObjectGroup {
 
 extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
 extern ObjectGroup *func_ov032_020bbc80(GroupObject *object);
-extern s32 func_ov032_020bbc38(void *world, s32 groupIndex);
+extern s32 GetRowRespawnLimit(void *world, s32 groupIndex);
 
 void InitGroupMode4(GroupObject *object)
 {
@@ -30,6 +30,6 @@ void InitGroupMode4(GroupObject *object)
 
     work->state = 0;
     work->unk_30 = 0;
-    group->respawnCountdown = func_ov032_020bbc38(object->world, work->groupIndex);
+    group->respawnCountdown = GetRowRespawnLimit(object->world, work->groupIndex);
     group->flags = (group->flags & ~8) | 4;
 }

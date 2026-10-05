@@ -35,10 +35,10 @@ extern void UpdateIdleTimerToggle(PanelScene *panel);
 extern void func_ov001_0207af6c(PanelScene *panel);
 extern u32 func_ov001_0207b3f4(void);
 extern BOOL func_ov001_0207b610(void);
-extern void func_ov001_0207b6ec(void);
+extern void ClearPanelInputActive(void);
 extern int LookupChannelEntry_020b62ac(int channel);
 extern int func_ov027_020b9f9c(TouchSample *sample);
-extern void func_ov027_020b9fbc(void);
+extern void ClearCapturedTouchState(void);
 
 int UpdatePanelScene(void)
 {
@@ -74,9 +74,9 @@ int UpdatePanelScene(void)
     if (panel->touchActive != 0) {
         func_ov027_020b9f9c(&sample);
         if (sample.touch == 0) {
-            func_ov001_0207b6ec();
+            ClearPanelInputActive();
         } else {
-            func_ov027_020b9fbc();
+            ClearCapturedTouchState();
         }
     }
     return 0;

@@ -23,7 +23,7 @@ extern u8 *data_ov001_020a0480;
 extern int func_02029f5c(void);
 extern int func_02029f6c(void);
 extern void func_ov036_020ba840(char *name);
-extern void func_ov001_020645e8(int id);
+extern void ClearSessionPackedBit(int id);
 
 void EnterPanelModeThree(char *name)
 {
@@ -37,8 +37,8 @@ void EnterPanelModeThree(char *name)
     func_ov036_020ba840(name);
     work->state = 3;
     work->flags |= 0x10;
-    func_ov001_020645e8(0x3309);
-    func_ov001_020645e8(0x3527);
+    ClearSessionPackedBit(0x3309);
+    ClearSessionPackedBit(0x3527);
     if (func_02029f5c() != 0) {
         work->savedSlot = data_ov001_020a0480[0x27f9];
     }

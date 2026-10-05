@@ -62,12 +62,12 @@ typedef struct Session {
 extern Session *data_ov001_020a0480;
 extern int func_ov001_0206dc38(void);
 extern EntryData *GetBoundedEntryField(int index);
-extern void func_ov001_020645e8(u32 eventId);
+extern void ClearSessionPackedBit(u32 eventId);
 extern BOOL func_ov001_020645c8(u32 eventId);
 extern u32 GetClampedTimerValue(void);
 extern u32 _u32_div_f(u32 dividend, u32 divisor);
 extern void WriteSessionPackedBits(int bitOffset, u32 bitCount, u32 value);
-extern void func_ov001_020690dc(void);
+extern void ClearSecondaryTaskCount(void);
 extern void func_ov001_02068e54(void);
 extern void SaveElapsedSeconds(void);
 extern int func_ov001_0206dc4c(int index);
@@ -93,13 +93,13 @@ int SelectNextSessionState(void)
     PromptHandlers *handlers = &session->handlers;
 
     if (func_ov001_0206dc38() > 0 && GetBoundedEntryField(0)->stats->count > 1) {
-        func_ov001_020645e8(0x35c9);
+        ClearSessionPackedBit(0x35c9);
     }
     if (func_ov001_020645c8(0x35f0)) {
         WriteSessionPackedBits(0x35e6, 10, _u32_div_f(GetClampedTimerValue(), 1000));
     }
     if (session->flags.resumePending) {
-        func_ov001_020690dc();
+        ClearSecondaryTaskCount();
         func_ov001_02068e54();
         handlers->close(session->closeArg);
         if (session->unk_20E == -2) {
@@ -124,7 +124,7 @@ int SelectNextSessionState(void)
             SetMenuHighlight(0);
         }
         session->status.bit4 = 1;
-        func_ov001_020690dc();
+        ClearSecondaryTaskCount();
         func_ov001_02068e54();
         session->displayFlags |= 0x10;
         session->flags.promptOpen = FALSE;
@@ -136,7 +136,7 @@ int SelectNextSessionState(void)
             session->flags.promptOpen = FALSE;
         } else if (!func_ov001_0206685c()) {
             NotifySceneActorsPaused(1);
-            func_ov001_020690dc();
+            ClearSecondaryTaskCount();
             func_ov001_0206e444(1);
             Camera_SaveSnapshot(session->unk_27B8);
             session->status.panelMode = func_ov001_0207b484();
@@ -148,20 +148,20 @@ int SelectNextSessionState(void)
         return -1;
     }
     if (session->inputFlags & 0x80) {
-        func_ov001_020690dc();
+        ClearSecondaryTaskCount();
         func_ov001_02068e54();
         data_ov001_020a0480->redrawRequested = 1;
         return 8;
     }
     if (handlers->poll != NULL && handlers->poll()) {
-        func_ov001_020690dc();
+        ClearSecondaryTaskCount();
         func_ov001_02068e54();
         handlers->close(0);
         return 10;
     }
     if (session->pendingCount > 0) {
         func_ov001_02063130(session->pendingIndex, 0);
-        func_ov001_020690dc();
+        ClearSecondaryTaskCount();
         func_ov001_02068e54();
         handlers->close(0);
         session->flags.promptOpen = FALSE;

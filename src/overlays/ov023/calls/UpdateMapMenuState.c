@@ -47,10 +47,10 @@ extern BOOL CanOpenFieldMenu(void);
 extern BOOL func_ov001_0207b61c(void);
 extern void IndexedRecords_SetFlag2(void *renderer, int slot, int value);
 extern void *func_ov027_020b9f9c(TouchSample *out);
-extern void func_ov001_0207b6dc(void);
+extern void SetPanelInputActive(void);
 extern void RequestPanelModeWithStyle2(int mode);
 extern void PlaySoundEffect(int channel, int sound);
-extern void func_ov001_0207b6ec(void);
+extern void ClearPanelInputActive(void);
 extern void MI_CpuCopy8(const void *src, void *dest, u32 size);
 
 void *UpdateMapMenuState(void)
@@ -91,12 +91,12 @@ void *UpdateMapMenuState(void)
         if (touch.touching == 1) {
             if (state->lastTouch.touching == 0 && touch.invalid == 0 && touch.x >= 0xc0 && touch.x <= 0xff
                 && touch.y >= 0x86 && touch.y <= 0xa6) {
-                func_ov001_0207b6dc();
+                SetPanelInputActive();
                 RequestPanelModeWithStyle2(2);
                 PlaySoundEffect(0, 0x3b);
             }
         } else {
-            func_ov001_0207b6ec();
+            ClearPanelInputActive();
         }
     }
     MI_CpuCopy8(&touch, &state->lastTouch, sizeof(TouchSample));

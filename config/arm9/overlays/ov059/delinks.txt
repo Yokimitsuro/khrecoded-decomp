@@ -224,6 +224,10 @@ src/overlays/ov059/calls/Actor_AddExtraVelocity.c:
     complete
     .text       start:0x020cbff0 end:0x020cc00c
 
+src/overlays/ov059/calls/GetObjectPayload964.c:
+    complete
+    .text       start:0x020cc00c end:0x020cc018
+
 src/overlays/ov059/calls/Actor_ChangeMotion.c:
     complete
     .text       start:0x020cc834 end:0x020cc880

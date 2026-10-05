@@ -14,13 +14,13 @@ typedef struct {
     RowEntry *rows;
 } RowOwner;
 
-extern s32 func_ov032_020bbc38(void *owner, s32 index);
+extern s32 GetRowRespawnLimit(void *owner, s32 index);
 
 void AdvanceRowCounter(RowOwner *owner, int index)
 {
     RowEntry *row = &owner->rows[index];
     if (row->state <= 3) {
-        if (row->counter < func_ov032_020bbc38(owner, index)) {
+        if (row->counter < GetRowRespawnLimit(owner, index)) {
             row->counter++;
         }
     } else {

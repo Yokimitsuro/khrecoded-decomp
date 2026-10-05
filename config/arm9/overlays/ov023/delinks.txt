@@ -132,6 +132,10 @@ src/overlays/ov023/calls/ApplyFormationSlots.c:
     complete
     .text       start:0x020b6db0 end:0x020b6e50
 
+src/overlays/ov023/calls/MarkMapMenuDirty.c:
+    complete
+    .text       start:0x020b6e50 end:0x020b6e60
+
 src/overlays/ov023/calls/UpdateMenuRangePosition.c:
     complete
     .text       start:0x020b6e60 end:0x020b6e80

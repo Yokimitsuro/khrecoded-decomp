@@ -29,8 +29,8 @@ extern void *func_ov027_020ba1f8(void *resource);
 extern MenuScreenEntry *func_ov023_020b5b8c(void *node, u16 id);
 extern void *QueueFileLoadRequest(u32 archiveId, int loadMode, void (*callback)(void *), void *userData);
 extern void LoadMenuScreenResource(void *resource);
-extern void func_ov001_0207b71c(void);
-extern void func_ov001_0207b500(void);
+extern void RequestPanelFallback(void);
+extern void SetPanelSessionActive(void);
 extern void func_ov027_020ba200(void *resource, int release);
 
 void ApplyMenuScreenEntry(void *resource)
@@ -50,8 +50,8 @@ void ApplyMenuScreenEntry(void *resource)
         state->width = 0;
         state->height = 0;
         state->param = 0;
-        func_ov001_0207b71c();
-        func_ov001_0207b500();
+        RequestPanelFallback();
+        SetPanelSessionActive();
     }
     func_ov027_020ba200(resource, 1);
 }

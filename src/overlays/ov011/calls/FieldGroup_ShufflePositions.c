@@ -12,7 +12,7 @@ typedef struct FieldGroup {
 } FieldGroup;
 
 extern void MI_CpuFill8(void *dst, int value, u32 size);
-extern FieldObject *func_ov001_0207f4dc(FieldGroup *group, int index);
+extern FieldObject *GetStridedBufferEntry(FieldGroup *group, int index);
 extern u32 random_next_scaled(u32 upperBound);
 extern VecFx32 *ClaimNthFreeSpawnPoint(int target, int count, VecFx32 *points, u8 *used);
 extern void FieldObject_SetPositionAndSync(FieldObject *object, const VecFx32 *position);
@@ -26,10 +26,10 @@ void FieldGroup_ShufflePositions(FieldGroup *group)
 
     MI_CpuFill8(used, 0, sizeof(used));
     for (; i < count; i++) {
-        positions[i] = func_ov001_0207f4dc(group, i)->position;
+        positions[i] = GetStridedBufferEntry(group, i)->position;
     }
     for (i = 0; i < count; i++) {
-        FieldObject *object = func_ov001_0207f4dc(group, i);
+        FieldObject *object = GetStridedBufferEntry(group, i);
         FieldObject_SetPositionAndSync(object, ClaimNthFreeSpawnPoint(random_next_scaled(count - i), count, positions, used));
     }
 }

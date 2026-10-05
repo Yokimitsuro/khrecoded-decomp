@@ -75,7 +75,7 @@ extern void *NNSi_FndAllocFromDefaultHeap(u32 size);
 extern void MIi_CpuClearFast(int value, void *dst, u32 size);
 extern void *func_0202c4a0(const char *path, int kind);
 extern BOOL func_ov001_020645c8(int id);
-extern void func_ov001_020645e8(int id);
+extern void ClearSessionPackedBit(int id);
 extern void func_ov041_020c0960(int slot, int kind);
 extern void func_ov041_020c09ec(int slot, Member *member, int index);
 extern void func_ov041_020be088(void);
@@ -127,7 +127,7 @@ void InitMenuScene(Scene **scenePtr, SceneSetup *setup) {
     scene->file = func_0202c4a0(sOv041_RpgEnpPP_020cf93c, 0x12);
     if (func_ov001_020645c8(0x3726)) {
         scene->flags |= 8;
-        func_ov001_020645e8(0x3726);
+        ClearSessionPackedBit(0x3726);
     }
     for (i = 0; i < 9; i++) {
         if (setup->members[i] == NULL) {

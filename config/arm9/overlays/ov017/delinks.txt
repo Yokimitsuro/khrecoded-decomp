@@ -440,6 +440,10 @@ src/overlays/ov017/calls/AimEntryLandingPoint.c:
     complete
     .text       start:0x020a5068 end:0x020a50f8
 
+src/overlays/ov017/calls/GetLinkedEntryAfterTail.c:
+    complete
+    .text       start:0x020a50f8 end:0x020a5102
+
 src/overlays/ov017/calls/IsActiveAncestorChain.c:
     complete
     .text       start:0x020a5104 end:0x020a5144

@@ -17,7 +17,7 @@ extern FadeTween *NNSi_FndGetCurrentRootHeap(void);
 extern void SampleTweenValue(void *tween, s32 *value);
 extern void SubScene9_StartFade(BOOL fadeIn);
 extern OSTick OS_GetTick(void);
-extern void func_ov001_02066df4(s32 value);
+extern void SetMainBrightnessFromFx(s32 value);
 extern void *WaitFadeDelay(void);
 
 void *StepFadeInTween(void)
@@ -33,6 +33,6 @@ void *StepFadeInTween(void)
         fade->startMilliseconds = (OS_GetTick() * 64) / 0x82ea;
         next = WaitFadeDelay;
     }
-    func_ov001_02066df4(value);
+    SetMainBrightnessFromFx(value);
     return next;
 }

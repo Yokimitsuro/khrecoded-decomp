@@ -65,7 +65,7 @@ extern BOOL UpdateHopWithSpeedRamp(void *world, int groupIndex, GroupMemberWork 
 extern BOOL HasPendingNibbleChange(ObjectGroup *group);
 extern void SetGroupEntrySlotByte(GroupObject *object, u8 value, int slot);
 extern int StoreGroupEntryVector(GroupObject *object, VecFx32 *position, int slot);
-extern int func_ov032_020bbc50(void *world, int groupIndex);
+extern int GetRowMoveSpeed(void *world, int groupIndex);
 extern void FollowChainLeader(void *context, GroupObject *object, int speed);
 extern void PickJitteredLeaderOffset(GroupObject *object, VecFx32 *out);
 extern void MoveGroupObjectAndSyncActor(GroupObject *object, const VecFx32 *delta);
@@ -164,7 +164,7 @@ int UpdateChainGroupMember(void *context, GroupObject *object)
             }
             break;
         }
-        FollowChainLeader(context, object, func_ov032_020bbc50(object->world, work->groupIndex));
+        FollowChainLeader(context, object, GetRowMoveSpeed(object->world, work->groupIndex));
         object->work->state = leader->work->state;
         delta = work->moveDelta;
         break;

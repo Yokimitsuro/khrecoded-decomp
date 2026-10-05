@@ -5,5 +5,5 @@ func_ov048_020c37ac kind:function(thumb,size=0xe) addr:0x020c37ac
 StartCameraDrift kind:function(thumb,size=0x4e) addr:0x020c37bc
 ResetCameraView kind:function(thumb,size=0x58) addr:0x020c380c
 func_ov048_020c3864 kind:function(thumb,size=0x8) addr:0x020c3864
-func_ov048_020c386c kind:function(thumb,size=0xa) addr:0x020c386c
+GetCameraViewUpVector kind:function(thumb,size=0xa) addr:0x020c386c
 InitCameraTarget kind:function(thumb,size=0x20) addr:0x020c3878

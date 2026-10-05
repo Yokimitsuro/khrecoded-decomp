@@ -1,6 +1,6 @@
 #include "nitro/types.h"
 
-extern void func_ov022_020a796c(void);
+extern void StartSubtitlePlaybackAndReturnState6(void);
 extern void func_ov022_020a79d8(void); /* ScriptCmd_EnterPhase */
 extern void func_ov022_020a795c(void); /* ScriptCmd_EnterPhase */
 extern void func_ov022_020a7978(void);
@@ -10,7 +10,7 @@ extern void func_ov022_020a79f4(void); /* thumbStep */
 extern void func_ov022_020a7a08(void); /* CmdPrepareStream */
 
 void (*gStreamScriptCommandHandlers[12])(void) = {
-    func_ov022_020a796c,
+    StartSubtitlePlaybackAndReturnState6,
     NULL,
     func_ov022_020a79d8, /* ScriptCmd_EnterPhase */
     NULL,

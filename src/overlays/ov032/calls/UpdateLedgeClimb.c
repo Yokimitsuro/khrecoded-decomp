@@ -28,7 +28,7 @@ typedef struct {
     int solid;
 } CollisionHit;
 
-extern fx32 func_ov032_020bbc50(FieldContext *context, int index);
+extern fx32 GetRowMoveSpeed(FieldContext *context, int index);
 extern fx32 ScaleValueByLevelFactor(FieldObject *object, HopState *state);
 extern CollisionHit *SweepSphereAgainstWorld(VecFx32 *position, int mask, int arg, VecFx32 *move, VecFx32 *outMove);
 extern fx32 CosAngleXZ(VecFx32 *velocity, VecFx32 *move);
@@ -36,7 +36,7 @@ extern fx32 CosAngleXZ(VecFx32 *velocity, VecFx32 *move);
 BOOL UpdateLedgeClimb(FieldContext *context, int index, HopState *state, VecFx32 *position, VecFx32 *velocity, int collisionArg, VecFx32 *outMove, BOOL *outStopped)
 {
     FieldObject *object = &context->objects[index];
-    fx32 climbSpeed = func_ov032_020bbc50(context, index);
+    fx32 climbSpeed = GetRowMoveSpeed(context, index);
     VecFx32 move;
     fx32 alignment;
 

@@ -49,7 +49,7 @@ extern const VecFx32 data_0205344c;
 extern ObjectGroup *func_ov032_020bbc80(GroupObject *object);
 extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
 extern GroupObject *func_ov001_02086384(void *world, int index);
-extern s32 func_ov032_020bbc2c(void *world, int groupIndex);
+extern s32 GetRowCycleLimit(void *world, int groupIndex);
 extern void PickJitteredPlayerOffset(GroupObject *object, VecFx32 *out);
 extern void ApplyGroupScale(GroupObject *object);
 extern void SpawnSoundSlot(int bank, int soundId, VecFx32 *position, int flags);
@@ -78,7 +78,7 @@ void UpdateGroupChaseState(GroupObject *object)
                 group->idleTime++;
                 if (group->idleTime >= 300) {
                     group->isIdleLong = 0;
-                    group->chaseLimit = func_ov032_020bbc2c(object->world, work->groupIndex);
+                    group->chaseLimit = GetRowCycleLimit(object->world, work->groupIndex);
                 }
             } else {
                 group->isIdleLong = 1;

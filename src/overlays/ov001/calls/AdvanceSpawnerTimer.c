@@ -20,7 +20,7 @@ typedef struct Spawner {
     u16 lastFrame;
 } Spawner;
 
-extern SpawnedObject *func_ov001_0207f4dc(Spawner *spawner, int index);
+extern SpawnedObject *GetStridedBufferEntry(Spawner *spawner, int index);
 extern void StartSpinningActor(SpawnedObject *object);
 
 void AdvanceSpawnerTimer(Spawner *spawner, FieldObject *object)
@@ -35,7 +35,7 @@ void AdvanceSpawnerTimer(Spawner *spawner, FieldObject *object)
         if (spawner->spawnTimer >= spawner->spawnInterval) {
             count = spawner->childCount;
             for (i = 0; i < count; i++) {
-                SpawnedObject *child = func_ov001_0207f4dc(spawner, i);
+                SpawnedObject *child = GetStridedBufferEntry(spawner, i);
 
                 if (child != NULL && child->owner == NULL) {
                     StartSpinningActor(child);

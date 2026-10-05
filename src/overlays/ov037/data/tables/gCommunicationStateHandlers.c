@@ -6,7 +6,7 @@ extern void func_ov037_020ba810(void); /* FinishCommSession */
 extern void NotifyCommSlotIfReady(void); /* NotifyCommSlotIfReady */
 extern void ResetCommSlotWhenIdle(void); /* ResetCommSlotWhenIdle */
 extern void StoreCommResultSlot(void); /* StoreCommResultSlot */
-extern void func_ov037_020ba92c(void);
+extern void UpdateMenuSelectionAndReturnState7(void);
 extern void AdvanceCommWhenReady(void); /* AdvanceCommWhenReady */
 extern void MarkCommBusyWhenReady(void); /* MarkCommBusyWhenReady */
 extern void func_ov037_020ba9a0(void); /* CloseCommAndRestoreRoom */
@@ -19,7 +19,7 @@ void (*gCommunicationStateHandlers[11])(void) = {
     NotifyCommSlotIfReady, /* NotifyCommSlotIfReady */
     ResetCommSlotWhenIdle, /* ResetCommSlotWhenIdle */
     StoreCommResultSlot, /* StoreCommResultSlot */
-    func_ov037_020ba92c,
+    UpdateMenuSelectionAndReturnState7,
     AdvanceCommWhenReady, /* AdvanceCommWhenReady */
     MarkCommBusyWhenReady, /* MarkCommBusyWhenReady */
     func_ov037_020ba9a0, /* CloseCommAndRestoreRoom */

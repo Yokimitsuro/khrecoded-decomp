@@ -13,14 +13,14 @@ typedef struct {
     RowEntry *rows;
 } RowOwner;
 
-extern s32 func_ov032_020bbc44(void *owner, s32 index);
+extern s32 GetRowStepLimit(void *owner, s32 index);
 extern BOOL BeginRowNibbleChange(RowOwner *owner, int index);
 
 void TickRowNibbleTimer(RowOwner *owner, int index)
 {
     RowEntry *row = &owner->rows[index];
     if (row->paused == 0) {
-        if (row->timer >= func_ov032_020bbc44(owner, index)) {
+        if (row->timer >= GetRowStepLimit(owner, index)) {
             if (BeginRowNibbleChange(owner, index)) {
                 row->timer = 0;
             }

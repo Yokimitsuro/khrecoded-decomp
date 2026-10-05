@@ -5,7 +5,7 @@ extern BOOL func_ov001_020645c8(u32 flag);
 extern int func_ov001_02063a38(void);
 extern BOOL ArePartyActorsSettled(void);
 extern BOOL Actor_IsIdleWithoutTarget(void);
-extern void func_ov001_020645e8(u32 flag);
+extern void ClearSessionPackedBit(u32 flag);
 extern u32 func_ov021_020af408(void);
 extern void InitFieldCameraFromPreset(void);
 extern void SetSubModeFrozen(BOOL frozen);
@@ -20,8 +20,8 @@ void *TryFinishIntroSequence(void)
         if (func_ov001_020645c8(0x3527)
             || (func_ov001_02063a38() != 7 && ArePartyActorsSettled())
             || (func_ov001_02063a38() == 7 && Actor_IsIdleWithoutTarget())) {
-            func_ov001_020645e8(0x3309);
-            func_ov001_020645e8(0x3527);
+            ClearSessionPackedBit(0x3309);
+            ClearSessionPackedBit(0x3527);
             if (!func_ov021_020af408()) {
                 InitFieldCameraFromPreset();
                 SetSubModeFrozen(TRUE);

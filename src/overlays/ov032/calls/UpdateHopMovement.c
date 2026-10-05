@@ -47,8 +47,8 @@ extern void func_01ffaff4(VecFx32 *in, VecFx32 *out);
 extern void ScaleVecFx32InPlace(VecFx32 *vec, fx32 scale);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern BOOL ProbeGroundBelow(VecFx32 *position, fx32 radius, VecFx32 *out);
-extern s32 func_ov032_020bbc1c(void *context, s32 index);
-extern s32 func_ov032_020bbc10(void *context, s32 index);
+extern s32 GetRowIdleLimit(void *context, s32 index);
+extern s32 GetRowTurnLimit(void *context, s32 index);
 extern int RollRowStepChance(void *context, s32 index);
 
 BOOL UpdateHopMovement(FieldContext *context, int index, HopState *state, VecFx32 *position, VecFx32 *velocity, int collisionArg, VecFx32 *outMove, BOOL *outStopped)
@@ -116,8 +116,8 @@ BOOL UpdateHopMovement(FieldContext *context, int index, HopState *state, VecFx3
     if (*outStopped) {
         state->idleTimer = 0;
     }
-    idleLimit = func_ov032_020bbc1c(context, index);
-    turnLimit = func_ov032_020bbc10(context, index);
+    idleLimit = GetRowIdleLimit(context, index);
+    turnLimit = GetRowTurnLimit(context, index);
     if (object->lockCount != 0) {
         state->idleTimer = 0;
     }

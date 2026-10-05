@@ -12,6 +12,7 @@ In reloc-aware mode the relocated words are masked and the relocated symbols
 Most day-to-day verification goes through tools/verify_idx.py, which reads the
 original bytes from build/func_index.json instead of a delink object.
 """
+import json
 import os
 import subprocess
 import sys
@@ -20,9 +21,27 @@ from capstone import CS_ARCH_ARM, CS_MODE_ARM, CS_MODE_THUMB, Cs
 from elftools.elf.elffile import ELFFile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from project import BUILD_DIR, CFLAGS, LICENSE, MWCCARM, ROOT  # noqa: E402
+from project import BUILD_DIR, CFLAGS, LICENSE, MWCC_DIR, MWCCARM, ROOT  # noqa: E402
 
 ROOT = str(ROOT)
+_COMPILER_MAP = None
+
+
+def source_compiler(cpath):
+    """Return the compiler selected for this source by the full build."""
+    global _COMPILER_MAP
+    if _COMPILER_MAP is None:
+        path = os.path.join(ROOT, "config", "arm9", "file_compilers.json")
+        with open(path, encoding="utf-8") as fh:
+            _COMPILER_MAP = json.load(fh)
+    try:
+        rel = os.path.relpath(os.path.abspath(cpath), ROOT).replace("\\", "/")
+    except ValueError:
+        return MWCCARM, None
+    selected = _COMPILER_MAP.get(rel)
+    if not selected or selected == "default":
+        return MWCCARM, selected
+    return MWCC_DIR / selected / "mwccarm.exe", selected
 
 
 def source_flags(cpath):
@@ -56,8 +75,13 @@ def compile_c(cpath, thumb=False, out=None):
             raise SystemExit("assembly failed")
         return o
     env = dict(os.environ, LM_LICENSE_FILE=str(LICENSE))
-    flags = source_flags(cpath) + (["-thumb"] if thumb else [])
-    r = subprocess.run([str(MWCCARM), "-c", *flags, "-o", o, cpath], capture_output=True, text=True, env=env)
+    compiler, selected = source_compiler(cpath)
+    flags = source_flags(cpath)
+    if selected == "2.0/sp2p3":
+        flags.extend(["-fp", "soft", "-ipa", "file"])
+    flags += (["-thumb"] if thumb else [])
+    r = subprocess.run([str(compiler), "-c", *flags, "-o", o, cpath],
+                       capture_output=True, text=True, env=env)
     if r.returncode != 0:
         print(r.stdout, r.stderr)
         raise SystemExit("compilation failed")

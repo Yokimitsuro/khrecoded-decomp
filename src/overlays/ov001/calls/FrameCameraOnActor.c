@@ -33,7 +33,7 @@ extern ActorNode *ActorRegistry_GetEntityByIndex(u16 actorId);
 extern u16 FX_Atan2Idx(fx32 y, fx32 x);
 extern s32 SnapAngleTowardQuadrant(s32 yaw, s32 target, int arg);
 extern BOOL func_ov001_020645c8(int bitId);
-extern void func_ov001_020645e8(int bitId);
+extern void ClearSessionPackedBit(int bitId);
 extern BOOL ResolveBlockedAngle(fx32 distance, s32 yaw, s32 currentYaw, CameraAngles *angles);
 extern int QueryWithTemporaryCamera(CameraAngles *angles, VecFx32 *focus, fx32 distance, int actorId);
 extern fx32 GetActorModeThreeTarget(int actorId);
@@ -68,7 +68,7 @@ void FrameCameraOnActor(int actorId) {
             return;
         }
     } else {
-        func_ov001_020645e8(0x363b);
+        ClearSessionPackedBit(0x363b);
     }
     distance = camera->distance;
     if (distance < 0x1800) {
