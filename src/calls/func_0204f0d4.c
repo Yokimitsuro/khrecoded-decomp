@@ -1,4 +1,4 @@
-extern void func_0204e918(void *ptr, void *arg);
+extern void UnlinkIntrusiveListNode(void *ptr, void *arg);
 
 void func_0204f0d4(unsigned char *ptr, int index) {
     int offset;
@@ -14,6 +14,6 @@ void func_0204f0d4(unsigned char *ptr, int index) {
         return;
     }
 
-    func_0204e918(ptr, ptr + 4 + offset);
+    UnlinkIntrusiveListNode(ptr, ptr + 4 + offset);
     *flags &= ~1;
 }

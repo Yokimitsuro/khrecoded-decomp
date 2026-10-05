@@ -1,5 +1,5 @@
-int func_0204e0b8(int *p) {
-    switch (*p & (int)0xc000c000) {
+int Sprite_GetHeightFromOamAttributes(int *spriteAttributes) {
+    switch (*spriteAttributes & (int)0xc000c000) {
     case 0x00000000:
     case 0x00004000:
     case 0x40004000:

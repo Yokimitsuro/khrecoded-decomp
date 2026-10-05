@@ -69,8 +69,8 @@ typedef struct DispObj {
     struct DispObjFlags flags;
 } DispObj;
 
-extern int func_0204e1a4(GXOamAttr *oam);
-extern int func_0204e0b8(GXOamAttr *oam);
+extern int Sprite_GetWidthFromOamAttributes(GXOamAttr *oam);
+extern int Sprite_GetHeightFromOamAttributes(GXOamAttr *oam);
 
 void func_0204e28c(DispObj *owner, GXOamAttr *oam, int rsParam)
 {
@@ -90,7 +90,7 @@ void func_0204e28c(DispObj *owner, GXOamAttr *oam, int rsParam)
         u32 width;
 
         cx = owner->x;
-        width = func_0204e1a4(oam);
+        width = Sprite_GetWidthFromOamAttributes(oam);
         effect |= GX_OAM_EFFECT_FLIP_H;
         x = (x - (cx >> 12)) * -1 + (cx >> 12) - width;
     }
@@ -98,7 +98,7 @@ void func_0204e28c(DispObj *owner, GXOamAttr *oam, int rsParam)
         u32 height;
 
         cy = owner->y;
-        height = func_0204e0b8(oam);
+        height = Sprite_GetHeightFromOamAttributes(oam);
         effect |= GX_OAM_EFFECT_FLIP_V;
         y = (y - (cy >> 12)) * -1 + (cy >> 12) - height;
     }

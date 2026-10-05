@@ -18,7 +18,6 @@ typedef volatile unsigned char vu8;
 #define FALSE 0
 #define HW_MAIN_MEM 0x02000000
 
-
 #define NNS_G3D_SBC_RET 0x01
 
 typedef struct CPContext {
@@ -820,8 +819,7 @@ typedef struct NNSG3dRS_ {
     NNSG3dVisAnmResult tmpVisAnmResult;
 } NNSG3dRS;
 
-/* func_02039d90 -- NitroSystem sbc.c: NNSi_G3dFuncSbc_RET. */
-void func_02039d90 (NNSG3dRS * rs, u32)
+void HandleSbcReturn (NNSG3dRS * rs, u32)
 {
 
 #if !defined(NNS_G3D_SBC_CALLBACK_TIMING_A_DISABLE) || \

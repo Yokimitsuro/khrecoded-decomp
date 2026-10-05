@@ -1,5 +1,5 @@
-extern void func_02039d68(void);
-extern void func_02039d90(void);
+extern void HandleSbcNoOp(void);
+extern void HandleSbcReturn(void);
 extern void func_01ffe280(void);
 extern void func_01ffe394(void);
 extern void func_01ffe3d8(void);
@@ -16,8 +16,8 @@ extern void func_01ffa1f4(unsigned seed);
 extern void *data_027e01f8[];
 
 void func_0203a86c(void) {
-    data_027e01f8[0] = (void *)&func_02039d68;
-    data_027e01f8[1] = (void *)&func_02039d90;
+    data_027e01f8[0] = (void *)&HandleSbcNoOp;
+    data_027e01f8[1] = (void *)&HandleSbcReturn;
     data_027e01f8[2] = (void *)&func_01ffe280;
     data_027e01f8[3] = (void *)&func_01ffe394;
     data_027e01f8[4] = (void *)&func_01ffe3d8;

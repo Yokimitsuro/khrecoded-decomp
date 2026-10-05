@@ -1,16 +1,8 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef short s16;
-typedef int s32;
-typedef int BOOL;
-typedef int OSIntrMode;
-typedef void *OSMessage;
-typedef void (*WMCallbackFunc)(void *arg);
+#include "nitro/types.h"
+#include "nitro/mi.h"
+#include "nitro/os.h"
 
-#define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
+typedef void (*WMCallbackFunc)(void *arg);
 
 #define WM_FIFO_BUF_SIZE        256
 #define WM_ARM9WM_BUF_SIZE      512
@@ -22,9 +14,6 @@ typedef void (*WMCallbackFunc)(void *arg);
 #define WM_BUF_MSG_NUM          10
 #define PXI_FIFO_TAG_WM         10
 #define PXI_PROC_ARM7           1
-#define OS_MESSAGE_NOBLOCK      0
-#define OS_MESSAGE_BLOCK        1
-#define MI_DMA_MAX_NUM          3
 
 enum {
     WM_ERRCODE_SUCCESS = 0,
@@ -234,11 +223,21 @@ typedef struct WMMpRecvHeader {
     WMMpRecvData data[1];
 } WMMpRecvHeader;
 
+extern u16 data_ov105_020bfa20;
 #define wmInitialized data_ov105_020bfa20
 #define wm9buf (*(WMArm9Buf **)((u8 *)&data_ov105_020bfa20 + 4))
 
-#define MI_CpuClear8(dst, size) MI_CpuFill8((dst), 0, (size))
-#define WMi_CheckState(state) func_ov105_020bd0a0(1, (state))
+extern WMArm9Buf *Ov105_GetContext(void);
+extern WMErrCode Ov105_IsDeviceReady(void);
+extern WMErrCode Ov105_WMi_CheckStateEx(s32 paramNum, ...);
+extern WMErrCode Ov105_WMi_SendCommand(WMApiid id, u16 paramNum, ...);
+extern WMErrCode Ov105_WMi_SendCommandDirect(void *data, u32 length);
+extern void Ov105_SetCommandArg(WMApiid id, WMCallbackFunc callback);
+extern void DC_InvalidateRange(void *addr, u32 size);
+extern void DC_StoreRange(void *addr, u32 size);
+extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
+extern void MI_CpuFill8(void *dst, u8 data, u32 size);
+#define WMi_CheckState(state) Ov105_WMi_CheckStateEx(1, (state))
 #define WM_CHECK_RESULT(res) if ((res) != WM_ERRCODE_SUCCESS) { return (res); }
 #define WM_SIZE_MP_DATA_MAX 512
 #define WM_SIZE_KS_PARENT_DATA (2 * 16 + 4)
@@ -249,7 +248,7 @@ typedef struct WMMpRecvHeader {
 #define WM_NUM_MAX_CHILD 15
 #define WM_SIZE_CHILD_SSID 24
 
-BOOL func_020117d8(const WMParentParam *param)
+BOOL WmCheckParentParameter(const WMParentParam *param)
 {
     if (param->userGameInfoLength > WM_SIZE_USER_GAMEINFO) {
         return FALSE;

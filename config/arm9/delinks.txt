@@ -2801,7 +2801,7 @@ src/calls/func_020116fc.c:
     complete
     .text       start:0x020116fc end:0x02011720
 
-src/auto/func_020117d8.c:
+src/calls/WmCheckParentParameter.c:
     complete
     .text       start:0x020117d8 end:0x02011806
 
@@ -2825,11 +2825,11 @@ src/calls/func_02012350.c:
     complete
     .text       start:0x02012350 end:0x02012378
 
-src/auto/func_0201241c.c:
+src/calls/CTRDGi_ChangeLatestAccessCycle.c:
     complete
     .text       start:0x0201241c end:0x02012450
 
-src/auto/func_02012450.c:
+src/calls/CTRDGi_RestoreAccessCycle.c:
     complete
     .text       start:0x02012450 end:0x02012478
 
@@ -5029,6 +5029,10 @@ src/auto/func_020264e8.c:
     complete
     .text       start:0x020264e8 end:0x020264ec
 
+src/calls/ScriptCmd_SetBranchTarget.c:
+    complete
+    .text       start:0x020264ec end:0x02026530
+
 src/calls/func_020266d0.c:
     complete
     .text       start:0x020266d0 end:0x02026704
@@ -5641,6 +5645,10 @@ src/calls/func_02035390.c:
     complete
     .text       start:0x02035390 end:0x020353a0
 
+src/calls/Obj_InitLinkState.c:
+    complete
+    .text       start:0x020353a0 end:0x020353b8
+
 src/calls/func_020353b8.c:
     complete
     .text       start:0x020353b8 end:0x020353e4
@@ -5669,11 +5677,27 @@ src/calls/func_02038f50.c:
     complete
     .text       start:0x02038f50 end:0x02038fe4
 
-libs/nns/g3d/auto/func_02039d68.c:
+src/calls/ModelAnimation_SampleJointTranslation.c:
+    complete
+    .text       start:0x02039144 end:0x02039294
+
+src/calls/ModelAnimation_BlendJointTranslation.c:
+    complete
+    .text       start:0x02039294 end:0x020393e8
+
+src/calls/ModelAnimation_BlendJointScale.c:
+    complete
+    .text       start:0x020395bc end:0x0203973c
+
+src/calls/BlendScaleVec.c:
+    complete
+    .text       start:0x02039cf8 end:0x02039d68
+
+src/calls/HandleSbcNoOp.c:
     complete
     .text       start:0x02039d68 end:0x02039d90
 
-libs/nns/g3d/auto/func_02039d90.c:
+src/calls/HandleSbcReturn.c:
     complete
     .text       start:0x02039d90 end:0x02039db8
 
@@ -5693,6 +5717,14 @@ src/auto/func_0203a9a8.c:
     complete
     .text       start:0x0203a9a8 end:0x0203a9b0
 
+src/calls/AdvanceAnimFrame.c:
+    complete
+    .text       start:0x0203a9b0 end:0x0203a9ee
+
+src/calls/ClearFlagIfSentinelAndReturnField.c:
+    complete
+    .text       start:0x0203ab94 end:0x0203aba6
+
 src/auto/func_0203aba8.c:
     complete
     .text       start:0x0203aba8 end:0x0203abae
@@ -5705,9 +5737,17 @@ src/auto/func_0203ac30.c:
     complete
     .text       start:0x0203ac30 end:0x0203ac34
 
+src/calls/Obj_SetWord58.c:
+    complete
+    .text       start:0x0203ac34 end:0x0203ac38
+
 src/calls/InitHitQuery.c:
     complete
     .text       start:0x0203ac38 end:0x0203ac84
+
+src/calls/OffsetBoxByDelta.c:
+    complete
+    .text       start:0x0203ac84 end:0x0203ad28
 
 src/calls/UpdateBoxAxisAlignedFlag.c:
     complete
@@ -5716,6 +5756,14 @@ src/calls/UpdateBoxAxisAlignedFlag.c:
 libs/msl/c/auto/func_0203b444.c:
     complete
     .text       start:0x0203b444 end:0x0203b450
+
+src/calls/UpdateSignedPenetrationDepth.c:
+    complete
+    .text       start:0x0203d868 end:0x0203d8c8
+
+src/calls/UpdatePenetrationDepth.c:
+    complete
+    .text       start:0x0203d8c8 end:0x0203d910
 
 src/calls/func_0203f23c.c:
     complete
@@ -5753,6 +5801,10 @@ src/calls/Square64.c:
     complete
     .text       start:0x0203fa40 end:0x0203fa4c
 
+src/calls/InitMaxDistanceHit.c:
+    complete
+    .text       start:0x0203fb88 end:0x0203fbb8
+
 src/calls/IsVecZero.c:
     complete
     .text       start:0x0203fc38 end:0x0203fc5c
@@ -5761,11 +5813,19 @@ src/calls/SetFx32Pair.c:
     complete
     .text       start:0x02040544 end:0x0204055c
 
+src/calls/IsWithinDelta16.c:
+    complete
+    .text       start:0x02040ae0 end:0x02040b00
+
 src/calls/func_02040ca0.c:
     complete
     .text       start:0x02040ca0 end:0x02040cb8
 
-src/auto/func_020434cc.c:
+src/calls/SetVec3.c:
+    complete
+    .text       start:0x02041070 end:0x02041078
+
+src/calls/SquareFx32.c:
     complete
     .text       start:0x020434cc end:0x020434e4
 
@@ -5777,13 +5837,117 @@ libs/msl/c/auto/func_02047dcc.c:
     complete
     .text       start:0x02047dcc end:0x02047dd8
 
+src/calls/SignOf.c:
+    complete
+    .text       start:0x02048aec end:0x02048b04
+
+src/calls/IntMax.c:
+    complete
+    .text       start:0x02048b7c end:0x02048b88
+
 src/auto/func_02048bbc.c:
     complete
     .text       start:0x02048bbc end:0x02048bc0
 
+src/calls/MakeSegment.c:
+    complete
+    .text       start:0x02048be4 end:0x02048c24
+
+src/calls/MulFx64ByFx32.c:
+    complete
+    .text       start:0x020496a4 end:0x020496c8
+
+src/calls/MinOfArray.c:
+    complete
+    .text       start:0x020496ec end:0x02049720
+
+src/calls/IntMin.c:
+    complete
+    .text       start:0x02049924 end:0x02049930
+
 libs/msl/c/auto/func_02049b74.c:
     complete
     .text       start:0x02049b74 end:0x02049b80
+
+src/calls/ComputeSegmentBounds.c:
+    complete
+    .text       start:0x02049b80 end:0x02049c04
+
+src/calls/ComputePolygonBounds.c:
+    complete
+    .text       start:0x02049cf8 end:0x02049d80
+
+src/calls/PowFx64MinusValue.c:
+    complete
+    .text       start:0x02049da4 end:0x02049df0
+
+src/calls/PowFx64DerivativeTimesN.c:
+    complete
+    .text       start:0x02049df0 end:0x02049e44
+
+src/calls/Vec2Add.c:
+    complete
+    .text       start:0x0204a2f4 end:0x0204a32c
+
+src/calls/Vec2Sub.c:
+    complete
+    .text       start:0x0204a32c end:0x0204a364
+
+src/calls/ScalePairInPlace.c:
+    complete
+    .text       start:0x0204a364 end:0x0204a3a4
+
+src/calls/DotFx32Xy.c:
+    complete
+    .text       start:0x0204a3a4 end:0x0204a3cc
+
+src/calls/Vec3AddScalar.c:
+    complete
+    .text       start:0x0204a548 end:0x0204a570
+
+src/calls/Vec3SubScalar.c:
+    complete
+    .text       start:0x0204a570 end:0x0204a598
+
+src/calls/MulVecFx32InPlace.c:
+    complete
+    .text       start:0x0204a598 end:0x0204a5f8
+
+src/calls/ScaleVecFx32InPlace.c:
+    complete
+    .text       start:0x0204a5f8 end:0x0204a654
+
+src/calls/ScaleVecHighShift.c:
+    complete
+    .text       start:0x0204a654 end:0x0204a694
+
+src/calls/Vec3MulScalar.c:
+    complete
+    .text       start:0x0204a694 end:0x0204a6c0
+
+src/calls/NegateVecFx32.c:
+    complete
+    .text       start:0x0204aa54 end:0x0204aa7c
+
+src/calls/PickPerpendicularAxis.c:
+    complete
+    .text       start:0x0204acc4 end:0x0204ad60
+
+src/calls/ScaleVecFx32ComponentsConditional.c:
+    complete
+    .text       start:0x0204b6d8 end:0x0204b73c
+
+src/calls/ScaleVecComponentsConditional.c:
+    complete
+    .text       start:0x0204b73c end:0x0204b76c
+
+src/calls/NegateVecComponentsConditional.c:
+    complete
+    .text       start:0x0204b76c end:0x0204b7a4
+
+src/calls/LerpVecFx32Q27InPlace.c:
+    complete
+    .text       start:0x0204be80 end:0x0204befc
 
 src/calls/func_0204d6d4.c:
     complete
@@ -5809,17 +5973,29 @@ libs/nitro/snd/calls/SNDi_BroadcastChannelOp.c:
     complete
     .text       start:0x0204da34 end:0x0204da5c
 
-src/auto/func_0204e0b8.c:
+src/calls/Sprite_GetHeightFromOamAttributes.c:
     complete
     .text       start:0x0204e0b8 end:0x0204e1a4
 
-src/auto/func_0204e1a4.c:
+src/calls/Sprite_GetWidthFromOamAttributes.c:
     complete
     .text       start:0x0204e1a4 end:0x0204e28c
 
 src/calls/func_0204e28c.c:
     complete
     .text       start:0x0204e28c end:0x0204e3a4
+
+src/calls/DispObj_AddAffineParam.c:
+    complete
+    .text       start:0x0204e470 end:0x0204e4e4
+
+src/calls/PushQueueEntry.c:
+    complete
+    .text       start:0x0204e4e4 end:0x0204e530
+
+src/calls/FindFreeRecordSlot.c:
+    complete
+    .text       start:0x0204e530 end:0x0204e564
 
 src/calls/func_0204e564.c:
     complete
@@ -5829,13 +6005,29 @@ src/auto/func_0204e59c.c:
     complete
     .text       start:0x0204e59c end:0x0204e5c0
 
-src/auto/func_0204e918.c:
+src/calls/GetElementAddress.c:
+    complete
+    .text       start:0x0204e634 end:0x0204e648
+
+src/calls/FindFirstClearFlag.c:
+    complete
+    .text       start:0x0204e648 end:0x0204e670
+
+src/calls/FindFreeElementIndex.c:
+    complete
+    .text       start:0x0204e834 end:0x0204e860
+
+src/calls/UnlinkIntrusiveListNode.c:
     complete
     .text       start:0x0204e918 end:0x0204e958
 
 src/auto/func_0204e958.c:
     complete
     .text       start:0x0204e958 end:0x0204e978
+
+src/calls/AppendDoubleLinkedNode.c:
+    complete
+    .text       start:0x0204ea0c end:0x0204ea54
 
 src/calls/func_0204f00c.c:
     complete
@@ -5877,6 +6069,10 @@ src/calls/func_0204f18c.c:
     complete
     .text       start:0x0204f18c end:0x0204f1c0
 
+src/calls/SetSlotEntryFlags.c:
+    complete
+    .text       start:0x0204f1c0 end:0x0204f218
+
 src/calls/func_0204f218.c:
     complete
     .text       start:0x0204f218 end:0x0204f23c
@@ -5897,6 +6093,10 @@ src/auto/func_0204f2f8.c:
     complete
     .text       start:0x0204f2f8 end:0x0204f31c
 
+src/calls/SlotTable_SetEntryPair.c:
+    complete
+    .text       start:0x0204f370 end:0x0204f38c
+
 src/auto/func_0204f3c4.c:
     complete
     .text       start:0x0204f3c4 end:0x0204f3dc
@@ -5904,6 +6104,22 @@ src/auto/func_0204f3c4.c:
 src/calls/func_0204f414.c:
     complete
     .text       start:0x0204f414 end:0x0204f45c
+
+src/calls/SetClampedFadeLevel.c:
+    complete
+    .text       start:0x0204f45c end:0x0204f47c
+
+src/calls/SlotTable_SetEntryPriority.c:
+    complete
+    .text       start:0x0204f47c end:0x0204f494
+
+src/calls/Slot_SetMode2Bit.c:
+    complete
+    .text       start:0x0204f494 end:0x0204f4ac
+
+src/calls/HideAllOamEntries.c:
+    complete
+    .text       start:0x0204f4d8 end:0x0204f518
 
 src/auto/func_0204f5ec.c:
     complete
@@ -5917,6 +6133,10 @@ src/auto/func_0204f600.c:
     complete
     .text       start:0x0204f600 end:0x0204f608
 
+src/calls/FindEntryById.c:
+    complete
+    .text       start:0x0204f6b8 end:0x0204f6ee
+
 src/calls/func_020505bc.c:
     complete
     .text       start:0x020505bc end:0x020505c8
@@ -5925,6 +6145,10 @@ src/calls/func_02050634.c:
     complete
     .text       start:0x02050634 end:0x02050644
 
+src/calls/FillGridRegion.c:
+    complete
+    .text       start:0x02050674 end:0x020506ac
+
 src/calls/func_02051170.c:
     complete
     .text       start:0x02051170 end:0x02051180
@@ -5932,6 +6156,18 @@ src/calls/func_02051170.c:
 src/calls/func_02051180.c:
     complete
     .text       start:0x02051180 end:0x02051190
+
+src/calls/SkipWideString.c:
+    complete
+    .text       start:0x020513b4 end:0x020513c6
+
+src/calls/LerpBySquaredRatio.c:
+    complete
+    .text       start:0x020522c8 end:0x02052328
+
+src/calls/LerpBySquaredRemaining.c:
+    complete
+    .text       start:0x02052328 end:0x0205238c
 
 libs/msl/c/data/sLowerCaseMap.c:
     complete
