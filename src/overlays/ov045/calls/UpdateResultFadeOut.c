@@ -21,7 +21,7 @@ typedef struct {
 extern ResultScreen *data_ov045_020c08a0;
 extern u16 data_02060500;
 
-extern void func_ov045_020bf0e4(void *pool, u32 recordId);
+extern void InvokeCallbackForRecordId(void *pool, u32 recordId);
 extern void PlaySoundChecked(void *ptr, int arg);
 extern BOOL PlaySoundEffect(int seqArcNo, int index);
 extern void func_02052528(Tween *tween, int mode, fx32 startValue, fx32 endValue, int duration);
@@ -43,7 +43,7 @@ int UpdateResultFadeOut(void)
     switch (screen->phase) {
     case 0:
         if (!screen->started) {
-            func_ov045_020bf0e4(screen->pool, 0x10f);
+            InvokeCallbackForRecordId(screen->pool, 0x10f);
             PlaySoundChecked(NULL, 0x12);
             screen->started = TRUE;
             break;

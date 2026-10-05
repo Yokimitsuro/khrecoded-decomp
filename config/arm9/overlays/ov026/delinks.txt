@@ -8,6 +8,10 @@ src/overlays/ov026/calls/func_ov026_020b58e8.c:
     complete
     .text       start:0x020b58e8 end:0x020b58f8
 
+src/overlays/ov026/calls/ShouldRestorePositiveBrightness.c:
+    complete
+    .text       start:0x020b5aa4 end:0x020b5ab0
+
 src/overlays/ov026/data/strings/Strings_ov026_020b5af8.c:
     complete
     .data       start:0x020b5af8 end:0x020b5b20

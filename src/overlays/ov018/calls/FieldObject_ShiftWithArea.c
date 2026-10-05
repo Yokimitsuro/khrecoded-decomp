@@ -48,11 +48,11 @@ extern int func_ov031_020bc758(void);
 extern void SetShapePosition(void *shape, const VecFx32 *position);
 extern void OffsetBoxByDelta(const void *src, void *dst, const VecFx32 *delta);
 extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern BOOL func_ov031_020bc5b4(fx32 value, fx32 range);
+extern BOOL IsOffsetBeyondActiveRecord(fx32 value, fx32 range);
 extern void func_ov018_020a335c(FieldObject *obj, BOOL disable);
 extern BOOL func_ov031_020bc670(int area);
 extern BOOL func_ov018_020a3490(FieldObject *obj);
-extern fx32 func_ov031_020bc6ac(fx32 scale);
+extern fx32 GetNegatedCombinedOffset(fx32 scale);
 extern FieldObject *func_ov001_02087264(void);
 extern void func_ov018_020a35d8(FieldObject *obj, VecFx32 *position, int spawnParam, u8 level, int kind, s8 linkIndex, s8 linkGroup, int flag);
 
@@ -78,7 +78,7 @@ int FieldObject_ShiftWithArea(FieldObject *obj, VecFx32 *move, int area)
     OffsetBoxByDelta(body->bounds, body->sweptBounds, &body->delta);
     func_01ff9e0c(&obj->position, move, &obj->position);
     func_01ff9e0c(&obj->anchor, move, &obj->anchor);
-    if (func_ov031_020bc5b4(obj->anchor.z, 0x1000)) {
+    if (IsOffsetBeyondActiveRecord(obj->anchor.z, 0x1000)) {
         if (!(obj->flags & 0x400)) {
             func_ov018_020a335c(obj, TRUE);
         }
@@ -91,7 +91,7 @@ int FieldObject_ShiftWithArea(FieldObject *obj, VecFx32 *move, int area)
         if (!(obj->flags & 0x100) && func_ov031_020bc670(area) &&
             (area != 0 || !func_ov018_020a3490(obj))) {
             spawnPos = obj->anchor;
-            spawnPos.z += func_ov031_020bc6ac(0x1000);
+            spawnPos.z += GetNegatedCombinedOffset(0x1000);
             for (other = func_ov001_02087264(); other != NULL; other = other->next) {
                 if (other->def->kind == 6 && (other->flags & 8)) {
                     level = (obj->level != 0xff) ? obj->level - 1 : 0xff;

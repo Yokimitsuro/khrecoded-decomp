@@ -1,2 +1,2 @@
-func_ov060_020c7480 kind:function(arm,size=0x14) addr:0x020c7480
-func_ov060_020c7494 kind:function(arm,size=0x24) addr:0x020c7494
+RegisterOverlay060Factory kind:function(arm,size=0x14) addr:0x020c7480
+CreateOverlay060Object kind:function(arm,size=0x24) addr:0x020c7494

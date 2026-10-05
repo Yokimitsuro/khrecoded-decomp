@@ -34,7 +34,7 @@ typedef struct {
 } EffectRequest;
 
 extern BOOL func_ov001_0208655c(FieldObject *object, int arg, VecFx32 *direction, fx32 threshold);
-extern void func_ov021_020a8ad4(EffectRequest *request);
+extern void ResetAnimationTrackState(EffectRequest *request);
 extern VecFx32 *func_ov001_0206dc60(int index);
 extern void func_ov021_020a8cc0(EffectRequest *request, int bank);
 
@@ -48,7 +48,7 @@ void FieldObject_SpawnContactEffect(void *arg0, void *arg1, VecFx32 *direction, 
     }
     object = userData;
     if (func_ov001_0208655c(object, 0, direction, 0x2000)) {
-        func_ov021_020a8ad4(&effect);
+        ResetAnimationTrackState(&effect);
         effect.unk_00 = 0;
         effect.unk_25 = 0;
         effect.unk_24 = 0;

@@ -25,8 +25,8 @@ typedef struct StageEvent {
 } StageEvent;
 
 extern BOOL PullActorTowardTarget(void *event, void *work);
-extern void func_ov001_02087d74(u32 id, u32 state);
-extern void func_ov001_02087d9c(u32 id, void *callback, void *userData);
+extern void StageRecord_ClearStateIfMatches(u32 id, u32 state);
+extern void StageRecord_SetCallback(u32 id, void *callback, void *userData);
 
 void QueuePullOnStageEvent(void *source, PullActor *actor, StageEvent *event)
 {
@@ -41,9 +41,9 @@ void QueuePullOnStageEvent(void *source, PullActor *actor, StageEvent *event)
             entry->actor = actor;
             entry->state = 0;
             entry->active = 1;
-            func_ov001_02087d9c(event->recordId, PullActorTowardTarget, entry);
+            StageRecord_SetCallback(event->recordId, PullActorTowardTarget, entry);
             return;
         }
-        func_ov001_02087d74(event->recordId, 9);
+        StageRecord_ClearStateIfMatches(event->recordId, 9);
     }
 }

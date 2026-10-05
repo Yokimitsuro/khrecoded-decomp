@@ -22,7 +22,7 @@ typedef struct EffectSource {
     s8 entryIndex;
 } EffectSource;
 
-extern void *func_ov001_0206db5c(int index);
+extern void *GetBoundedEntryField(int index);
 extern HitResult func_ov021_020ab0e8(EffectSource *attacker, HitUnit *unit, VecFx32 *position, VecFx32 *offset);
 extern s16 func_ov021_020ab43c(HitUnit *owner, fx32 step);
 
@@ -30,7 +30,7 @@ BOOL AdvanceLinkedHitUnit(EffectSource *source, HitUnit *unit, fx32 step)
 {
     VecFx32 position;
     VecFx32 offset;
-    func_ov001_0206db5c(source->entryIndex);
+    GetBoundedEntryField(source->entryIndex);
     unit->progress += step;
     position = unit->position;
     offset.z = 0;

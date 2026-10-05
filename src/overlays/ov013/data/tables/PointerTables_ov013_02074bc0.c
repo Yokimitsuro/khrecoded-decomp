@@ -21,7 +21,7 @@ extern void func_ov013_020733f0(void); /* UpdatePanelMenuState */
 extern void func_ov013_02073548(void); /* RefreshPanelSlotLinks */
 extern void func_ov013_020735d0(void); /* ClosePanelMenu */
 extern void func_ov013_0207370c(void); /* UpdatePanelBrowseState */
-extern void func_ov013_020738ec(void); /* ClearPanelListCallback */
+extern void ClearPanelListCallback(void); /* ClearPanelListCallback */
 extern void func_ov013_0207390c(void);
 extern void func_ov013_02073944(void); /* AdvancePanelCloseStep */
 extern void func_ov013_020739a0(void);
@@ -58,7 +58,7 @@ void (*gPanelMenuStateHandlers[34])(void) = {
     func_ov013_02073548, /* RefreshPanelSlotLinks */
     func_ov013_020735d0, /* ClosePanelMenu */
     func_ov013_0207370c, /* UpdatePanelBrowseState */
-    func_ov013_020738ec, /* ClearPanelListCallback */
+    ClearPanelListCallback, /* ClearPanelListCallback */
     func_ov013_0207390c,
     func_ov013_02073944, /* AdvancePanelCloseStep */
     func_ov013_020739a0,

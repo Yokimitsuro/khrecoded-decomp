@@ -53,7 +53,7 @@ typedef struct {
     s32 power;
 } RewardEffect;
 
-extern EntryInfo *func_ov001_0206db5c(int index);
+extern EntryInfo *GetBoundedEntryField(int index);
 extern void func_ov021_020aef84(RewardModel *model, void *blendTable, int blendIndex);
 
 void StartGaugeRewardEffect(RewardEffect *effect, void *arg, RewardRequest *request)
@@ -65,7 +65,7 @@ void StartGaugeRewardEffect(RewardEffect *effect, void *arg, RewardRequest *requ
     EntrySpawnCallback onSpawn;
     s32 value;
 
-    info = func_ov001_0206db5c(effect->entryIndex);
+    info = GetBoundedEntryField(effect->entryIndex);
     effect->flags = 0;
     angle = info->facing - 0x8000;
     pos = info->position;

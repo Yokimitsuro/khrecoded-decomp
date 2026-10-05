@@ -9,3 +9,7 @@ src/overlays/ov048/calls/func_ov048_020c3520.c:
 src/overlays/ov048/calls/func_ov048_020c3864.c:
     complete
     .text       start:0x020c3864 end:0x020c386c
+
+src/overlays/ov048/calls/InitCameraTarget.c:
+    complete
+    .text       start:0x020c3878 end:0x020c3898

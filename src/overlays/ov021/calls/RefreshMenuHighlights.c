@@ -22,7 +22,7 @@ struct PlayerEntry {
     s32 (*getMode)(PlayerEntry *entry);
 };
 
-extern PlayerEntry *func_ov001_0206db5c(int player);
+extern PlayerEntry *GetBoundedEntryField(int player);
 extern int func_ov001_0206dc38(void);
 extern BOOL func_ov001_020645c8(u32 flag);
 extern int func_ov001_02064784(void);
@@ -42,7 +42,7 @@ void RefreshMenuHighlights(MemberList *list)
     if (list->player != 0) {
         return;
     }
-    entry = func_ov001_0206db5c(list->player);
+    entry = GetBoundedEntryField(list->player);
     if (func_ov001_0206dc38() <= 1) {
         if (func_ov001_020645c8(0x3520)) {
             enabled = FALSE;

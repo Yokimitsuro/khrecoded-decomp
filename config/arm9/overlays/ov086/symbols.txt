@@ -43,8 +43,8 @@ func_ov086_020c1bc8 kind:function(arm,size=0x200) addr:0x020c1bc8
 func_ov086_020c1dc8 kind:function(arm,size=0xa8) addr:0x020c1dc8
 func_ov086_020c1e70 kind:function(arm,size=0x84) addr:0x020c1e70
 func_ov086_020c1ef4 kind:function(arm,size=0x16c) addr:0x020c1ef4
-func_ov086_020c2060 kind:function(arm,size=0x20) addr:0x020c2060
-func_ov086_020c2080 kind:function(arm,size=0x20) addr:0x020c2080
+OnSliderTouched kind:function(arm,size=0x20) addr:0x020c2060
+SelectRecordPage kind:function(arm,size=0x20) addr:0x020c2080
 func_ov086_020c20a0 kind:function(arm,size=0x54) addr:0x020c20a0
 data_ov086_020c20f4 kind:data(any) addr:0x020c20f4
 data_ov086_020c20fc kind:data(any) addr:0x020c20fc

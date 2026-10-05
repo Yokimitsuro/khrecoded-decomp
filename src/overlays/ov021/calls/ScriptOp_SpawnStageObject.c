@@ -52,21 +52,21 @@ typedef struct {
 extern FieldContext data_ov021_020b56c4;
 
 extern u8 *func_ov001_0209c3e8(void);
-extern TaggedValue *func_ov021_020b0394(void *context, TaggedValue *value);
+extern TaggedValue *ResolveTaggedValueRef(void *context, TaggedValue *value);
 extern void *func_ov001_0209c114(u32 id);
 extern u16 func_ov021_020b0528(void *context, u32 mode, void *operand, VecFx32 *position, const char **nodeName);
 extern void func_01ff88c4(void *dest, u32 value, u32 size);
-extern u16 func_ov001_0209c294(FieldPlayer *player);
+extern u16 GetLargeRecordIndex(FieldPlayer *player);
 extern int func_ov001_02096b08(void *eventRecord, SpawnParams *params, VecFx32 *position);
-extern StageLink *func_ov001_0209c148(void);
+extern StageLink *GetStageController(void);
 extern StageActor *func_ov001_0209c068(int id);
 extern void func_ov001_02098124(StageLink *controller);
 
 s32 ScriptOp_SpawnStageObject(void *context, SpawnCommand *cmd)
 {
     u8 *gameData = func_ov001_0209c3e8();
-    TaggedValue *ownerSlot = func_ov021_020b0394(context, &cmd->first);
-    TaggedValue *spawnArg = func_ov021_020b0394(context, &cmd->second);
+    TaggedValue *ownerSlot = ResolveTaggedValueRef(context, &cmd->first);
+    TaggedValue *spawnArg = ResolveTaggedValueRef(context, &cmd->second);
     void *eventRecord = data_ov021_020b56c4.eventRecord;
     FieldPlayer *player = data_ov021_020b56c4.player;
     StageLink *link = data_ov021_020b56c4.link;
@@ -88,7 +88,7 @@ s32 ScriptOp_SpawnStageObject(void *context, SpawnCommand *cmd)
     func_01ff88c4(&params, 0, 0x10);
     params.ownerSlot = ownerSlot->value;
     params.spawnArg = spawnArg->value;
-    params.attachActorId = func_ov001_0209c294(player);
+    params.attachActorId = GetLargeRecordIndex(player);
     params.nodeName = nodeName;
     if (flags & 0x18) {
         attach = TRUE;
@@ -99,7 +99,7 @@ s32 ScriptOp_SpawnStageObject(void *context, SpawnCommand *cmd)
     if (!func_ov001_02096b08(eventRecord, &params, &position)) {
         return 0;
     }
-    controller = func_ov001_0209c148();
+    controller = GetStageController();
     if (controller == NULL) {
         return 0;
     }

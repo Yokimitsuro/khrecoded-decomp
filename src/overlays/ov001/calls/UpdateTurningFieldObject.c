@@ -32,10 +32,10 @@ typedef struct FieldState {
 } FieldState;
 
 extern FieldState *data_ov001_020a0480;
-extern BOOL func_ov001_0207f9d0(TurnObject *object);
+extern BOOL FieldObject_GetSavedValue(TurnObject *object);
 extern BOOL func_ov001_02063838(void);
 extern BOOL func_ov001_02064490(void);
-extern BOOL func_ov001_02080e58(TurnObject *object);
+extern BOOL IsLeadActorWithinRadius(TurnObject *object);
 extern void func_ov001_0206ca68(int channel, int mode, int value);
 extern TurnActor *ActorRegistry_GetEntityByIndex(u32 id);
 extern void func_ov001_020809f8(void *anim, int blendIndex, int frame);
@@ -49,7 +49,7 @@ int UpdateTurningFieldObject(TurnObject *object)
     int delta;
     u32 angle;
 
-    if (!(object->flags & 0x80) && func_ov001_0207f9d0(object)) {
+    if (!(object->flags & 0x80) && FieldObject_GetSavedValue(object)) {
         return 0;
     }
     if (func_ov001_02063838()) {
@@ -59,7 +59,7 @@ int UpdateTurningFieldObject(TurnObject *object)
     }
     if (object->cooldown == 0 && !data_ov001_020a0480->locked && object->state != 1
         && !func_ov001_02064490() && !data_ov001_020a0480->busy
-        && func_ov001_02080e58(object)) {
+        && IsLeadActorWithinRadius(object)) {
         func_ov001_0206ca68(0, 1, 0);
     }
     if (object->state == 0 && object->animIndex > 0) {

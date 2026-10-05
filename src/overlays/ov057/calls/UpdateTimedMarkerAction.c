@@ -55,7 +55,7 @@ extern void func_ov052_020cffac(Actor *actor, AnimEntry *entry);
 extern void func_ov052_020d1a88(SlotEntry *entry, void *source, int mirrored, AnimRecord *record, int player);
 extern int func_ov052_020d014c(Actor *actor, AnimEntry *target, SlotEntry *entry);
 extern BOOL func_ov052_020d02b4(Actor *actor, AnimEntry *data, int which);
-extern void func_ov021_020a8ad4(MarkerRequest *request);
+extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern BOOL func_ov021_020a8d3c(int groupId);
 extern void func_ov021_020a8e34(int groupId, int index);
@@ -79,7 +79,7 @@ void UpdateTimedMarkerAction(Actor *actor)
         }
     } else if (actor->frame >= record->startFrame && record->markerSlot == -1) {
         func_ov052_020ceb9c(actor);
-        func_ov021_020a8ad4(&request);
+        ResetAnimationTrackState(&request);
         request.id = actor->player;
         request.visible = 1;
         request.angle = 0x8000;

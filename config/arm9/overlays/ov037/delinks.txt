@@ -4,6 +4,10 @@
     .data       start:0x020bb6c0 end:0x020bb780 kind:data align:32
     .bss        start:0x020bb780 end:0x020bb7a0 kind:bss align:32
 
+src/overlays/ov037/calls/StoreCommResultSlot.c:
+    complete
+    .text       start:0x020ba904 end:0x020ba92c
+
 src/overlays/ov037/calls/func_ov037_020baa84.c:
     complete
     .text       start:0x020baa84 end:0x020baa90
@@ -11,6 +15,14 @@ src/overlays/ov037/calls/func_ov037_020baa84.c:
 src/overlays/ov037/calls/func_ov037_020bab98.c:
     complete
     .text       start:0x020bab98 end:0x020babbc
+
+src/overlays/ov037/calls/IsPxiChannelActive.c:
+    complete
+    .text       start:0x020bac0c end:0x020bac30
+
+src/overlays/ov037/calls/ReleasePxiChannel.c:
+    complete
+    .text       start:0x020bac30 end:0x020bac50
 
 src/overlays/ov037/calls/ContinueScene_GetResult.c:
     complete

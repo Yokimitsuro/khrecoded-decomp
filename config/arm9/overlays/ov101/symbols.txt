@@ -1,4 +1,4 @@
-func_ov101_020beb20 kind:function(arm,size=0x20) addr:0x020beb20
+Fx32_Ceil kind:function(arm,size=0x20) addr:0x020beb20
 func_ov101_020beb40 kind:function(arm,size=0x21c) addr:0x020beb40
 func_ov101_020bed5c kind:function(arm,size=0x6c) addr:0x020bed5c
 func_ov101_020bedc8 kind:function(arm,size=0x84) addr:0x020bedc8

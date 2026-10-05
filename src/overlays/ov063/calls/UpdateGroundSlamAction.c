@@ -109,7 +109,7 @@ struct Actor {
 };
 
 extern void func_ov052_020ce9f4(Actor *actor, VecFx32 *out);
-extern void func_ov021_020a8ad4(MarkerRequest *request);
+extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern void func_ov021_020ab0ac(ShotDesc *desc);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
@@ -160,7 +160,7 @@ void UpdateGroundSlamAction(Actor *actor)
         actor->posZ += delta.z;
     }
     if (task->markerPlaced == FALSE && actor->frame >= 0xc000) {
-        func_ov021_020a8ad4(&request);
+        ResetAnimationTrackState(&request);
         request.id = actor->player;
         request.layer = 1;
         request.hidden = 0;
@@ -234,7 +234,7 @@ void UpdateGroundSlamAction(Actor *actor)
         func_ov021_020ab0b8(task->shotOwner, &desc);
         SpawnSoundSlot(task->soundId, 1, &desc.position, 0);
         func_ov021_020af564(3, 0);
-        func_ov021_020a8ad4(&request);
+        ResetAnimationTrackState(&request);
         request.id = actor->player;
         request.hidden = 0;
         request.layer = 1;

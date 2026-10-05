@@ -4,9 +4,33 @@
     .data       start:0x02063840 end:0x02063a00 kind:data align:32
     .bss        start:0x02063a00 end:0x02063a20 kind:bss align:32
 
+src/overlays/ov000/calls/HasRecentTouchPoints.c:
+    complete
+    .text       start:0x020613f8 end:0x0206141c
+
 src/overlays/ov000/calls/DSProt_OnDetection.c:
     complete
     .text       start:0x02061b6c end:0x02061b88
+
+src/overlays/ov000/calls/IsPanelFlagSet.c:
+    complete
+    .text       start:0x02061bb0 end:0x02061bc4
+
+src/overlays/ov000/calls/SetPanelState.c:
+    complete
+    .text       start:0x02061db0 end:0x02061dc4
+
+src/overlays/ov000/calls/SetPanelMode.c:
+    complete
+    .text       start:0x02061dc4 end:0x02061de8
+
+src/overlays/ov000/calls/StopTouchPanelSampling.c:
+    complete
+    .text       start:0x0206241c end:0x0206243c
+
+src/overlays/ov000/calls/ResetPanelStateAndLoadSlot0.c:
+    complete
+    .text       start:0x020625b0 end:0x020625d4
 
 src/overlays/ov000/calls/func_ov000_02062908.c:
     complete
@@ -15,6 +39,10 @@ src/overlays/ov000/calls/func_ov000_02062908.c:
 src/overlays/ov000/calls/func_ov000_02062a58.c:
     complete
     .text       start:0x02062a58 end:0x02062a64
+
+src/overlays/ov000/calls/ReleaseFieldAndReset.c:
+    complete
+    .text       start:0x02062bdc end:0x02062c08
 
 src/overlays/ov000/calls/func_ov000_0206300c.c:
     complete
@@ -27,6 +55,14 @@ src/overlays/ov000/auto/func_ov000_02063038.c:
 src/overlays/ov000/auto/func_ov000_02063040.c:
     complete
     .text       start:0x02063040 end:0x02063044
+
+src/overlays/ov000/calls/NotifyOv039OfWorld.c:
+    complete
+    .text       start:0x02063614 end:0x02063630
+
+src/overlays/ov000/calls/World_GetField4.c:
+    complete
+    .text       start:0x02063630 end:0x0206364c
 
 src/overlays/ov000/calls/func_ov000_0206364c.c:
     complete

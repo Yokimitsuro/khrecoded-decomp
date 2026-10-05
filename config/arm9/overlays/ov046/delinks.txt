@@ -3,9 +3,21 @@
     .data       start:0x020c33c0 end:0x020c3500 kind:data align:32
     .bss        start:0x020c3500 end:0x020c3520 kind:bss align:32
 
+src/overlays/ov046/calls/Camera_IsFrozen.c:
+    complete
+    .text       start:0x020c0c3c end:0x020c0c54
+
 src/overlays/ov046/calls/func_ov046_020c0dd4.c:
     complete
     .text       start:0x020c0dd4 end:0x020c0de4
+
+src/overlays/ov046/calls/Camera_SetFollowDistance.c:
+    complete
+    .text       start:0x020c0de4 end:0x020c0df4
+
+src/overlays/ov046/calls/Camera_ChangeModeFromCurrentView.c:
+    complete
+    .text       start:0x020c1034 end:0x020c1058
 
 src/overlays/ov046/calls/func_ov046_020c10e4.c:
     complete
@@ -15,6 +27,70 @@ src/overlays/ov046/calls/func_ov046_020c11a0.c:
     complete
     .text       start:0x020c11a0 end:0x020c11b0
 
+src/overlays/ov046/calls/Camera_BlendToFollowView.c:
+    complete
+    .text       start:0x020c1324 end:0x020c134c
+
+src/overlays/ov046/calls/Camera_IsFlag19Set.c:
+    complete
+    .text       start:0x020c1500 end:0x020c151c
+
+src/overlays/ov046/calls/Camera_ChangeViewMode.c:
+    complete
+    .text       start:0x020c1598 end:0x020c15c4
+
 src/overlays/ov046/calls/func_ov046_020c1608.c:
     complete
     .text       start:0x020c1608 end:0x020c1614
+
+src/overlays/ov046/calls/Camera_StartTargetView.c:
+    complete
+    .text       start:0x020c1688 end:0x020c16b4
+
+src/overlays/ov046/calls/Camera_ApplyStateIfStandard.c:
+    complete
+    .text       start:0x020c16b4 end:0x020c16e0
+
+src/overlays/ov046/calls/Camera_RefreshStandardView.c:
+    complete
+    .text       start:0x020c16e0 end:0x020c170c
+
+src/overlays/ov046/calls/Camera_RefreshHeading.c:
+    complete
+    .text       start:0x020c1718 end:0x020c1744
+
+src/overlays/ov046/calls/Camera_SetFlag18IfStandard.c:
+    complete
+    .text       start:0x020c1744 end:0x020c1770
+
+src/overlays/ov046/calls/Camera_GetFocusPosition.c:
+    complete
+    .text       start:0x020c17a0 end:0x020c17bc
+
+src/overlays/ov046/calls/Camera_AimAlongVelocity.c:
+    complete
+    .text       start:0x020c19bc end:0x020c19d2
+
+src/overlays/ov046/calls/Camera_IsFlag3JustSet.c:
+    complete
+    .text       start:0x020c29ac end:0x020c29d0
+
+src/overlays/ov046/calls/Camera_FollowAlongViewDirection.c:
+    complete
+    .text       start:0x020c2c0c end:0x020c2c18
+
+src/overlays/ov046/calls/EventCamera_Update.c:
+    complete
+    .text       start:0x020c2d40 end:0x020c2d6c
+
+src/overlays/ov046/calls/Camera_SetViewBuilder.c:
+    complete
+    .text       start:0x020c2d6c end:0x020c2d7c
+
+src/overlays/ov046/calls/CameraPath_Free.c:
+    complete
+    .text       start:0x020c2fb0 end:0x020c2fcc
+
+src/overlays/ov046/calls/Camera_ReturnFromPathView.c:
+    complete
+    .text       start:0x020c2fcc end:0x020c2ff4

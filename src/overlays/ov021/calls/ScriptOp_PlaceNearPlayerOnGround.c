@@ -44,8 +44,8 @@ extern FieldContext data_ov021_020b56c4;
 extern const VecFx32 data_ov021_020b5124[8];
 extern const VecFx32 data_0205344c;
 
-extern s16 *func_ov021_020b0394(ScriptObject *obj, s16 *value);
-extern s32 func_ov021_020b03d0(s16 *tagged);
+extern s16 *ResolveTaggedValueRef(ScriptObject *obj, s16 *value);
+extern s32 TaggedValueToFixed(s16 *tagged);
 extern fx32 Surface_GetKindValue(void *surface);
 extern fx32 FX_Mul(fx32 a, fx32 b);
 extern void MI_CpuFill8(void *dest, u32 value, u32 size);
@@ -57,7 +57,7 @@ extern void AddScaledVector(fx32 scale, const VecFx32 *scaledVector, const VecFx
 
 s32 ScriptOp_PlaceNearPlayerOnGround(ScriptObject *obj, ScriptCommand *cmd)
 {
-    s16 *distance = func_ov021_020b0394(obj, cmd->operand);
+    s16 *distance = ResolveTaggedValueRef(obj, cmd->operand);
     PlayerActor *player = data_ov021_020b56c4.player;
     fx32 radius = FX_Mul(Surface_GetKindValue(player->surface), 0xb33);
     int i = 0;
@@ -72,7 +72,7 @@ s32 ScriptOp_PlaceNearPlayerOnGround(ScriptObject *obj, ScriptCommand *cmd)
         CollisionResult *result;
         start = base;
         start.y += 0x800;
-        func_01ffa09c(func_ov021_020b03d0(distance), &data_ov021_020b5124[i], &data_0205344c, &motion);
+        func_01ffa09c(TaggedValueToFixed(distance), &data_ov021_020b5124[i], &data_0205344c, &motion);
         MI_CpuFill8(&query, 0, 0x60);
         query.motion = &motion;
         query.start = &start;
@@ -80,7 +80,7 @@ s32 ScriptOp_PlaceNearPlayerOnGround(ScriptObject *obj, ScriptCommand *cmd)
         query.mask = 0x7f;
         query.ignore = player->collider;
         if (QueryWorldMotionCollision(&query) == NULL) {
-            func_01ffa09c(func_ov021_020b03d0(distance), &data_ov021_020b5124[i], &base, &start);
+            func_01ffa09c(TaggedValueToFixed(distance), &data_ov021_020b5124[i], &base, &start);
             start.y += 0xa000;
             motion.x = 0;
             motion.y = -0x14000;

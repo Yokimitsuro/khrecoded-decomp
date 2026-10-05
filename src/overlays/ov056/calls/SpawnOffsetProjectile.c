@@ -44,7 +44,7 @@ typedef struct {
 
 extern const VecFx32 data_ov056_020d7fcc;
 extern s16 data_02053580[];
-extern EntryInfo *func_ov001_0206db5c(int index);
+extern EntryInfo *GetBoundedEntryField(int index);
 extern void func_ov021_020ab0ac(SpawnDesc *desc);
 extern void func_ov021_020a9180(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
 extern void *func_ov021_020ab0b8(SpawnUnit *unit, SpawnDesc *desc);
@@ -59,7 +59,7 @@ void SpawnOffsetProjectile(SpawnUnit *unit, u32 kind, u32 subKind, s32 power)
     int facing;
     int index;
 
-    info = func_ov001_0206db5c(unit->entryIndex);
+    info = GetBoundedEntryField(unit->entryIndex);
     offset = data_ov056_020d7fcc;
     unit->flags = 0;
     angle = info->facing - 0x8000;

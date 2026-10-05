@@ -19,8 +19,8 @@ typedef struct PartyEntry {
 } PartyEntry;
 
 extern u32 ActorRegistry_GetEntityByIndex(u32 actorId);
-extern PartyEntry *func_ov001_0206db5c(int index);
-extern void func_ov001_0208e320(ActorModel *actor, BOOL cullBack, BOOL cullNone);
+extern PartyEntry *GetBoundedEntryField(int index);
+extern void SetModelCullMode(ActorModel *actor, BOOL cullBack, BOOL cullNone);
 extern void NNS_G3dMdlSetMdlAlphaAll(void *model, int alpha);
 
 void SetActorModelAlpha(int actorId, int alpha, BOOL cullBack)
@@ -30,23 +30,23 @@ void SetActorModelAlpha(int actorId, int alpha, BOOL cullBack)
     ActorModel *part;
 
     if (actorId < 3) {
-        PartyEntry *entry = func_ov001_0206db5c(actorId);
-        func_ov001_0208e320(&actor->model, cullBack, TRUE);
+        PartyEntry *entry = GetBoundedEntryField(actorId);
+        SetModelCullMode(&actor->model, cullBack, TRUE);
         if (entry->setAlpha != NULL) {
             entry->setAlpha(entry, (u8)alpha);
         }
         return;
     }
     root = &actor->model;
-    func_ov001_0208e320(root, cullBack, FALSE);
+    SetModelCullMode(root, cullBack, FALSE);
     NNS_G3dMdlSetMdlAlphaAll(root->modelResource, alpha);
     part = root->child;
     if (part != NULL) {
         NNS_G3dMdlSetMdlAlphaAll(part->modelResource, alpha);
-        func_ov001_0208e320(part, cullBack, FALSE);
+        SetModelCullMode(part, cullBack, FALSE);
         for (part = part->next; part != NULL; part = part->next) {
             NNS_G3dMdlSetMdlAlphaAll(part->modelResource, alpha);
-            func_ov001_0208e320(part, cullBack, FALSE);
+            SetModelCullMode(part, cullBack, FALSE);
         }
     }
 }

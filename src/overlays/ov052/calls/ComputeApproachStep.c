@@ -84,7 +84,7 @@ extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
 extern u16 func_ov052_020ceb9c(Actor *actor);
 extern BOOL func_ov001_02087988(u32 id, EventTargetInfo *out);
-extern BOOL func_ov001_02087c74(u32 id, u32 slot, SlotPosition *out);
+extern BOOL StageRecord_GetSlotPosition(u32 id, u32 slot, SlotPosition *out);
 extern void func_01ffafb4(fx32 scale, const VecFx32 *src, VecFx32 *dst);
 extern void MTX_RotY33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
 extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *m, VecFx32 *dst);
@@ -149,7 +149,7 @@ VecFx32 ComputeApproachStep(Actor *actor, VecFx32 *input, MotionState *motion, B
         return original;
     }
     if (actor->wait.kind == 1 && func_ov001_02087988(actor->wait.eventId, &info)
-        && func_ov001_02087c74(actor->wait.eventId, actor->wait.slotId, &slotPos)) {
+        && StageRecord_GetSlotPosition(actor->wait.eventId, actor->wait.slotId, &slotPos)) {
         fx32 half = slotPos.width / 2;
         if (half < distance) {
             distance -= half;

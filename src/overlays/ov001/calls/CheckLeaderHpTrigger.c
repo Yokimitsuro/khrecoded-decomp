@@ -23,7 +23,7 @@ typedef struct {
 } HpTrigger;
 
 extern int func_ov001_02067ed4(void);
-extern BattleEntry *func_ov001_0206db5c(int index);
+extern BattleEntry *GetBoundedEntryField(int index);
 extern BOOL func_ov001_02069464(HpTrigger *trigger);
 
 int CheckLeaderHpTrigger(HpTrigger *trigger)
@@ -34,7 +34,7 @@ int CheckLeaderHpTrigger(HpTrigger *trigger)
     if (trigger->setIndex != func_ov001_02067ed4()) {
         return 0;
     }
-    entry = func_ov001_0206db5c(0);
+    entry = GetBoundedEntryField(0);
     if (entry != NULL) {
         int current = entry->hp->current;
         int maximum = entry->hp->maximum;

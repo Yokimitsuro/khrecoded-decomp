@@ -51,7 +51,7 @@ extern BOOL IsTargetInVerticalRange(TargetRef *ref);
 extern ActorNode *ActorRegistry_GetEntityByIndex(u32 actorId);
 extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern u16 func_ov001_02087950(void);
+extern u16 ForwardToActiveServiceWithResult(void);
 extern u16 func_ov001_0208796c(u16 startIndex);
 extern int func_ov001_02087c14(u32 id, int arg, VecFx32 *position, u16 *next);
 
@@ -94,7 +94,7 @@ void Seeker_SelectNearestTarget(Seeker *seeker) {
             }
         }
     }
-    for (event = func_ov001_02087950(); event != 0; event = func_ov001_0208796c(event)) {
+    for (event = ForwardToActiveServiceWithResult(); event != 0; event = func_ov001_0208796c(event)) {
         BOOL found;
         sub = 0;
         found = func_ov001_02087c14(event, 0, &eventPos, &next);

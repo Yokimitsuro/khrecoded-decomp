@@ -30,13 +30,13 @@ struct RewardEffect {
     RewardCallback onReward;
 };
 
-extern EntryInfo *func_ov001_0206db5c(int index);
+extern EntryInfo *GetBoundedEntryField(int index);
 extern void AwardPartyGaugePoints(s32 ownerId, s32 points);
 extern BOOL func_ov021_020aebf4(RewardEffect *effect, s32 step);
 
 void UpdateGaugeRewardEffect(RewardEffect *effect, s32 step)
 {
-    EntryInfo *info = func_ov001_0206db5c(effect->entryIndex);
+    EntryInfo *info = GetBoundedEntryField(effect->entryIndex);
     VecFx32 pos;
     s32 points;
 

@@ -63,10 +63,10 @@ extern const VecFx32 data_0205344c;
 extern void func_ov001_02087988(u16 id, EventTargetInfo *info);
 extern void func_ov021_020ac118(void *obj);
 extern void MI_CpuFill8(void *dest, u32 value, u32 size);
-extern PlayerEntry *func_ov001_0206db5c(int player);
+extern PlayerEntry *GetBoundedEntryField(int player);
 extern VecFx32 *func_ov001_0206dc4c(int player);
 extern fx32 ComputeAttackDamage(int player, AttackDesc *attack);
-extern s32 func_ov001_020880dc(u32 eventId, HitInfo *hit, u32 subId);
+extern s32 ForwardToActiveServiceInstance(u32 eventId, HitInfo *hit, u32 subId);
 
 BOOL RewardQueue_CanAddEventHit(RewardQueue *queue, u16 eventId, u16 subId) {
     HitInfo hit;
@@ -94,13 +94,13 @@ BOOL RewardQueue_CanAddEventHit(RewardQueue *queue, u16 eventId, u16 subId) {
     attack.attackType = 0;
     MI_CpuFill8(&hit, 0, sizeof(HitInfo));
     hit.unk_2e = 0;
-    hit.attackerLevel = func_ov001_0206db5c(0)->stats->level;
+    hit.attackerLevel = GetBoundedEntryField(0)->stats->level;
     hit.origin = *func_ov001_0206dc4c(0);
     hit.direction = data_0205344c;
     hit.targetSubId = subId;
     hit.damage = ComputeAttackDamage(0, &attack);
     {
-        s32 damage = func_ov001_020880dc(eventId, &hit, subId);
+        s32 damage = ForwardToActiveServiceInstance(eventId, &hit, subId);
         return damage * matches < info.hitPoints << 12;
     }
 }

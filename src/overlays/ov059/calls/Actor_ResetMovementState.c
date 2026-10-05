@@ -37,7 +37,7 @@ extern const VecFx32 data_0205344c;
 extern fx32 func_0202f4cc(void *player, int arg);
 extern void func_ov059_020cce30(Actor *actor, VecFx32 *out);
 extern void func_ov021_020a75f8(Actor *actor, int value);
-extern void func_ov059_020c7da8(Actor *actor, fx32 scale);
+extern void Actor_SetTimeScale(Actor *actor, fx32 scale);
 
 void Actor_ResetMovementState(Actor *actor) {
     VecFx32 delta;
@@ -57,7 +57,7 @@ void Actor_ResetMovementState(Actor *actor) {
     if (actor->chargeTime >= 0x96000) {
         actor->statusFlags &= ~(u64)0x800;
         func_ov021_020a75f8(actor, 999);
-        func_ov059_020c7da8(actor, FX32_ONE);
+        Actor_SetTimeScale(actor, FX32_ONE);
         actor->setState(actor, 1);
     }
 }

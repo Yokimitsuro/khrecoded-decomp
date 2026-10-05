@@ -1,11 +1,11 @@
 extern int RunTransitionSlotB(void *handler);
-extern void func_ov015_020737d4(int id);
+extern void WH_SetError(int id);
 extern void func_ov015_02074174(int req);
 
 int func_ov015_0207414c(void) {
     int r = RunTransitionSlotB(&func_ov015_02074174);
     if (r != 2) {
-        func_ov015_020737d4(r);
+        WH_SetError(r);
         return 0;
     }
     return 1;

@@ -1,5 +1,5 @@
-func_ov072_020d8120 kind:function(thumb,size=0x14) addr:0x020d8120
-func_ov072_020d8134 kind:function(thumb,size=0x24) addr:0x020d8134
+IsObjectType111 kind:function(thumb,size=0x14) addr:0x020d8120
+GetObjectPaletteValue kind:function(thumb,size=0x24) addr:0x020d8134
 func_ov072_020d8158 kind:function(thumb,size=0xf8) addr:0x020d8158
 SetObjectTimeScale kind:function(thumb,size=0x4) addr:0x020d8250
 func_ov072_020d8254 kind:function(thumb,size=0xa4) addr:0x020d8254

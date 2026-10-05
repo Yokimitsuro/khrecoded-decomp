@@ -65,7 +65,7 @@ extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern BOOL func_ov032_020bc770(VecFx32 *position, fx32 radius, VecFx32 *out);
 extern void SpawnSoundSlot(int bank, int id, VecFx32 *position, int flags);
 extern HitResult *func_ov032_020bcac4(VecFx32 *position, int mask, fx32 radius, VecFx32 *velocity, VecFx32 *delta);
-extern void func_ov032_020bc7f4(GroupObject *object);
+extern void ResetGroupOrbitPhase(GroupObject *object);
 extern BOOL TurnTowardOpenDirection(GroupObject *object, VecFx32 *position, fx32 radius);
 extern void func_ov032_020bbca0(void *world, int groupIndex, int slotIndex, VecFx32 *out);
 extern BOOL UpdateHopWithSpeedRamp(void *world, int groupIndex, GroupMemberWork *work, VecFx32 *position, VecFx32 *velocity, fx32 radius, VecFx32 *delta, BOOL *landed);
@@ -149,7 +149,7 @@ void UpdateBouncingGroupMember(GroupObject *object)
             work->state = leaderWork->state;
             ComputeGroupAimDelta(object, leader, &delta);
             if (work->leaderLink == -1 && work->state != 0x14) {
-                func_ov032_020bc7f4(object);
+                ResetGroupOrbitPhase(object);
             }
         }
         break;

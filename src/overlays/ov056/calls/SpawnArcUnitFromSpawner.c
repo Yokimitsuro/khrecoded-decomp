@@ -44,7 +44,7 @@ typedef struct {
 } SpawnedUnit;
 
 extern SpawnedUnit *func_ov021_020ae864(s32 ownerId, s32 entityId, u32 size, u32 kind);
-extern void func_ov021_020aecac(Spawner *spawner, SpawnParams *params);
+extern void CopyWordArray24(Spawner *spawner, SpawnParams *params);
 extern void func_ov021_020aecc4(SpawnedUnit *unit, SpawnParams *params, UnitParams *out);
 extern s32 func_ov001_0206dba0(s32 arg);
 extern void func_ov021_020ab030(SpawnedUnit *unit, u32 first, u32 second, UnitParams *params, s32 x, s32 y);
@@ -69,7 +69,7 @@ SpawnedUnit *SpawnArcUnitFromSpawner(Spawner *spawner, u16 value, u32 kind)
     unit = func_ov021_020ae864(spawner->ownerId, -1, 0x1b4, kind);
     unit->team = spawner->team;
     unit->value = value;
-    func_ov021_020aecac(spawner, &spawn);
+    CopyWordArray24(spawner, &spawn);
     func_ov021_020aecc4(unit, &spawn, &params);
     params.mode = 0x20;
     params.flags = 0;

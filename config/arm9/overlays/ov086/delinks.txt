@@ -4,6 +4,14 @@
     .data       start:0x020c2360 end:0x020c3020 kind:data align:32
     .bss        start:0x020c3020 end:0x020c3040 kind:bss align:32
 
+src/overlays/ov086/calls/OnSliderTouched.c:
+    complete
+    .text       start:0x020c2060 end:0x020c2080
+
+src/overlays/ov086/calls/SelectRecordPage.c:
+    complete
+    .text       start:0x020c2080 end:0x020c20a0
+
 src/overlays/ov086/data/strings/Strings_ov086_020c2fe4.c:
     complete
     .data       start:0x020c2fe4 end:0x020c2fe8

@@ -78,7 +78,7 @@ extern s16 data_020539c0[];
 extern s16 data_02053640[];
 
 extern s32 func_ov001_02063a38(void);
-extern StageEntry *func_ov001_0206db5c(int index);
+extern StageEntry *GetBoundedEntryField(int index);
 extern BOOL AreWallNormalsEnclosing(Actor *actor, s32 limit);
 extern void func_01ff9ea8(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -174,7 +174,7 @@ void ResolveSteepSurfaceContact(SurfaceRef *ref, VecFx32 *normal, ContactState *
         }
         if (mover->velocity.y <= 0 && !IsMode7() && body->velocity.x == 0 && body->velocity.y == 0 &&
             body->velocity.z == 0) {
-            stageKind = func_ov001_0206db5c(0)->unk_9C0;
+            stageKind = GetBoundedEntryField(0)->unk_9C0;
             if ((state->flags & 4) == 0 &&
                 ((stageKind >= 2 && stageKind <= 4) || (stageKind >= 10 && stageKind <= 13) ||
                  (stageKind >= 21 && stageKind <= 22) || (stageKind >= 25 && stageKind <= 27)) &&

@@ -60,7 +60,7 @@ extern int func_ov052_020d014c(Actor *actor, AnimEntry *target, SlotEntry *entry
 extern BOOL func_ov052_020d02b4(Actor *actor, AnimEntry *data, int which);
 extern void func_ov001_020734f8(void);
 extern void func_ov001_0206e160(u32 enabled);
-extern void func_ov021_020a8ad4(MarkerRequest *request);
+extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern void func_ov021_020af564(int a, int b);
 extern void EmitSweepHitEvents(Actor *actor);
@@ -77,7 +77,7 @@ void UpdateDualMarkerAction(Actor *actor)
     func_ov052_020d1a88(&slot, entry, 0, record, actor->player);
     EmitSweepHitEvents(actor);
     if (record->slotA == -1 && actor->frame >= 0x7000) {
-        func_ov021_020a8ad4(&request);
+        ResetAnimationTrackState(&request);
         request.id = actor->player;
         request.layer = 2;
         request.hidden = 0;
@@ -87,7 +87,7 @@ void UpdateDualMarkerAction(Actor *actor)
         record->slotA = func_ov021_020a8cc0(&request, *record->groupA);
     }
     if (record->slotB == -1 && actor->frame >= 0x35000) {
-        func_ov021_020a8ad4(&request);
+        ResetAnimationTrackState(&request);
         request.id = actor->player;
         request.layer = 1;
         request.angle = 0x8000;

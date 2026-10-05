@@ -8,6 +8,10 @@ src/overlays/ov052/calls/ApplyActorVelocity.c:
     complete
     .text       start:0x020c76ec end:0x020c7a80
 
+src/overlays/ov052/calls/ApplyTimeScaledSpeed.c:
+    complete
+    .text       start:0x020c7d48 end:0x020c7d74
+
 src/overlays/ov052/calls/CheckFallOutOfBounds.c:
     complete
     .text       start:0x020c7d74 end:0x020c7de4
@@ -23,6 +27,10 @@ src/overlays/ov052/calls/SelectGroundAction.c:
 src/overlays/ov052/calls/IsStageAllowedForMode.c:
     complete
     .text       start:0x020c8028 end:0x020c805e
+
+src/overlays/ov052/calls/FindDashWallTarget.c:
+    complete
+    .text       start:0x020c8060 end:0x020c849c
 
 src/overlays/ov052/calls/TryEnterLevelTargetState.c:
     complete
@@ -44,6 +52,10 @@ src/overlays/ov052/calls/TryFlagTargetBehind.c:
     complete
     .text       start:0x020c9bfc end:0x020c9cd8
 
+src/overlays/ov052/calls/ReleaseResourceSlotArray.c:
+    complete
+    .text       start:0x020ca304 end:0x020ca330
+
 src/overlays/ov052/calls/UpdateEndOfAction.c:
     complete
     .text       start:0x020cb21c end:0x020cb290
@@ -60,6 +72,10 @@ src/overlays/ov052/calls/UpdateModelTilt.c:
     complete
     .text       start:0x020cc140 end:0x020cc20c
 
+src/overlays/ov052/calls/ExtendIfGreater.c:
+    complete
+    .text       start:0x020cc20c end:0x020cc21c
+
 src/overlays/ov052/calls/ConsumeActionInterruptFlag.c:
     complete
     .text       start:0x020cc294 end:0x020cc310
@@ -71,6 +87,14 @@ src/overlays/ov052/calls/ComputeApproachStep.c:
 src/overlays/ov052/calls/UseFirstAvailableMember.c:
     complete
     .text       start:0x020cc8dc end:0x020cc930
+
+src/overlays/ov052/calls/AdvanceTimerWithCarry.c:
+    complete
+    .text       start:0x020ccabc end:0x020ccae8
+
+src/overlays/ov052/calls/AdvanceStepTimer.c:
+    complete
+    .text       start:0x020ccae8 end:0x020ccb08
 
 src/overlays/ov052/calls/ExitActorState.c:
     complete

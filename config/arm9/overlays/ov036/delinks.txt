@@ -8,6 +8,14 @@ src/overlays/ov036/calls/func_ov036_020bc3a4.c:
     complete
     .text       start:0x020bc3a4 end:0x020bc3c8
 
+src/overlays/ov036/calls/IsPxiFifoTagSet_020bc434.c:
+    complete
+    .text       start:0x020bc434 end:0x020bc458
+
+src/overlays/ov036/calls/InvalidatePxiFifoTag.c:
+    complete
+    .text       start:0x020bc458 end:0x020bc478
+
 src/overlays/ov036/auto/func_ov036_020bc4c0.c:
     complete
     .text       start:0x020bc4c0 end:0x020bc4c8
@@ -15,6 +23,10 @@ src/overlays/ov036/auto/func_ov036_020bc4c0.c:
 src/overlays/ov036/calls/func_ov036_020bc8c8.c:
     complete
     .text       start:0x020bc8c8 end:0x020bc8d4
+
+src/overlays/ov036/calls/ScriptCmd_ResetAndDispatch.c:
+    complete
+    .text       start:0x020bdce8 end:0x020bdd06
 
 src/overlays/ov036/calls/func_ov036_020bdd08.c:
     complete
@@ -48,6 +60,18 @@ src/overlays/ov036/calls/func_ov036_020be0a8.c:
     complete
     .text       start:0x020be0a8 end:0x020be0ca
 
+src/overlays/ov036/calls/ScriptCmd_WaitScreenLayerIdle.c:
+    complete
+    .text       start:0x020be0cc end:0x020be0e2
+
+src/overlays/ov036/calls/ScriptCmd_WaitScreenLayerIdle_020be118.c:
+    complete
+    .text       start:0x020be118 end:0x020be12e
+
+src/overlays/ov036/calls/IsPxiResourceReadyOrInitialize.c:
+    complete
+    .text       start:0x020be130 end:0x020be14c
+
 src/overlays/ov036/calls/func_ov036_020be14c.c:
     complete
     .text       start:0x020be14c end:0x020be16e
@@ -64,9 +88,17 @@ src/overlays/ov036/calls/func_ov036_020be1c0.c:
     complete
     .text       start:0x020be1c0 end:0x020be1fe
 
+src/overlays/ov036/calls/FormatWideTextV_020be2e0.c:
+    complete
+    .text       start:0x020be2e0 end:0x020be2f4
+
 src/overlays/ov036/calls/func_ov036_020be4ec.c:
     complete
     .text       start:0x020be4ec end:0x020be52a
+
+src/overlays/ov036/calls/ScriptCmd_ResetAndDispatch_020be55c.c:
+    complete
+    .text       start:0x020be55c end:0x020be57a
 
 src/overlays/ov036/calls/func_ov036_020be57c.c:
     complete
@@ -79,6 +111,14 @@ src/overlays/ov036/calls/func_ov036_020be628.c:
 src/overlays/ov036/auto/func_ov036_020be78c.c:
     complete
     .text       start:0x020be78c end:0x020be790
+
+src/overlays/ov036/calls/IsResourceReadyOrInitialize_020be790.c:
+    complete
+    .text       start:0x020be790 end:0x020be7b4
+
+src/overlays/ov036/calls/ScriptCmd_StartMosaicTransition.c:
+    complete
+    .text       start:0x020be7b4 end:0x020be7de
 
 src/overlays/ov036/calls/func_ov036_020be7e0.c:
     complete

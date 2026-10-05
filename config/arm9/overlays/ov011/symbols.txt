@@ -1,5 +1,5 @@
 func_ov011_020a0540 kind:function(thumb,size=0x3e) addr:0x020a0540
-func_ov011_020a0580 kind:function(thumb,size=0x2a) addr:0x020a0580
+ScriptCmd_SpawnActorInSlot kind:function(thumb,size=0x2a) addr:0x020a0580
 ScriptCmd_SpawnFieldObject_020a05ac kind:function(thumb,size=0xe2) addr:0x020a05ac
 func_ov011_020a0690 kind:function(thumb,size=0x34) addr:0x020a0690
 func_ov011_020a06c4 kind:function(thumb,size=0x12) addr:0x020a06c4
@@ -24,5 +24,5 @@ func_ov011_020a0fc0 kind:function(thumb,size=0x4) addr:0x020a0fc0
 FieldObject_Create_020a0fc4 kind:function(thumb,size=0xb0) addr:0x020a0fc4
 func_ov011_020a1074 kind:function(thumb,size=0x6e) addr:0x020a1074
 FieldObject_ResetToIdle kind:function(thumb,size=0x5e) addr:0x020a10e4
-func_ov011_020a1144 kind:function(thumb,size=0x28) addr:0x020a1144
+FieldObjects_ResetAllAndShuffle kind:function(thumb,size=0x28) addr:0x020a1144
 gCrawlScriptCommandHandlers kind:data(any) addr:0x020a1180

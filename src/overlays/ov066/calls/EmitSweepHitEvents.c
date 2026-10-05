@@ -71,13 +71,13 @@ extern VecFx32 *func_ov052_020ceb74(Actor *actor);
 extern void func_ov021_020a9180(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
 extern void func_0203ad28(ShapeQuery *query, Sphere *shape, const VecFx32 *center, fx32 radius);
 extern void OffsetBoxByDelta(const Box *src, Box *dst, const VecFx32 *delta);
-extern void func_ov001_020878ac(void);
+extern void ForwardToActiveService(void);
 extern s32 func_ov001_020878c4(ShapeQuery *query, QueryCursor *cursor, u16 *outResult);
 extern BOOL func_ov001_02087988(u32 id, TargetInfo *out);
 extern void func_01ffafb4(fx32 scale, const VecFx32 *src, VecFx32 *dst);
 extern void MI_CpuFill8(void *dst, int value, int size);
 extern int func_ov001_020878fc(u32 id, HitEvent *event);
-extern void func_ov021_020a8ad4(MarkerRequest *request);
+extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern fx32 nextRandom12(void);
 extern fx32 FX_Mul(fx32 a, fx32 b);
@@ -118,7 +118,7 @@ void EmitSweepHitEvents(Actor *actor)
     temp.delta = data_0205344c;
     OffsetBoxByDelta(&temp.bounds, &temp.swept, &temp.delta);
     query = temp;
-    func_ov001_020878ac();
+    ForwardToActiveService();
     do {
         id = func_ov001_020878c4(&query, &cursor, &result);
         if (id == 0) {
@@ -141,7 +141,7 @@ void EmitSweepHitEvents(Actor *actor)
         event.flags |= 0x100;
         func_ov001_020878fc(id, &event);
         pos = info.position;
-        func_ov021_020a8ad4(&request);
+        ResetAnimationTrackState(&request);
         request.id = actor->player;
         request.layer = 0;
         pos.x += FX_Mul(nextRandom12() - 0x800, 0x4cd);

@@ -10,9 +10,9 @@ typedef struct {
 extern BOOL func_ov001_020728e4(void);
 extern signed char func_ov001_02068084(void);
 extern BOOL func_ov001_020645c8(u32 id);
-extern BOOL func_ov001_020725bc(void);
-extern BOOL func_ov001_020728c4(void);
-extern BOOL func_ov001_020728a4(void);
+extern BOOL IsHudFlag7Set(void);
+extern BOOL IsFieldFlag10Set(void);
+extern BOOL IsFieldFlag8Set(void);
 extern BOOL func_ov001_020642a0(void);
 extern u32 func_ov001_0207b3f4(void);
 extern BOOL func_ov001_0207b360(u32 arg);
@@ -25,7 +25,7 @@ void UpdateIdleTimerToggle(IdleToggleState *state) {
     if (func_ov001_02068084() == 5 && func_ov001_020645c8(0x3520)) {
         return;
     }
-    if (func_ov001_020725bc() || func_ov001_020728c4() || func_ov001_020728a4()) {
+    if (IsHudFlag7Set() || IsFieldFlag10Set() || IsFieldFlag8Set()) {
         return;
     }
     if (state->active == 0) {

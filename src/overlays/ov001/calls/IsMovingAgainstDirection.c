@@ -16,7 +16,7 @@ typedef struct PartyEntry {
     VecFx32 velocity;
 } PartyEntry;
 
-extern PartyEntry *func_ov001_0206db5c(int index);
+extern PartyEntry *GetBoundedEntryField(int index);
 extern ActorBody *ActorRegistry_GetEntityByIndex(u32 actorId);
 extern void Vec3MulScalar(VecFx32 *v, fx32 factor);
 extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -30,7 +30,7 @@ BOOL IsMovingAgainstDirection(FieldObject *object, int entryIndex, VecFx32 *dire
     if (direction->y != 0) {
         result = TRUE;
     } else {
-        PartyEntry *entry = func_ov001_0206db5c(entryIndex);
+        PartyEntry *entry = GetBoundedEntryField(entryIndex);
         VecFx32 velocity = ActorRegistry_GetEntityByIndex(object->actorId)->velocity;
         VecFx32 relative;
         VecFx32 unit;

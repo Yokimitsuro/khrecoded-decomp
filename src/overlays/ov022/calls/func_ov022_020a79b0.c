@@ -1,5 +1,5 @@
 extern int func_ov022_020a73f8(void);
-extern int func_ov022_020a8938(void);
+extern int GetSubtitleStreamFrame(void);
 
 int func_ov022_020a79b0(int unused, int frames) {
     int buffered;
@@ -11,7 +11,7 @@ int func_ov022_020a79b0(int unused, int frames) {
         return 0;
     }
 
-    buffered = func_ov022_020a8938();
+    buffered = GetSubtitleStreamFrame();
     if (buffered < frames) {
         return 0;
     }

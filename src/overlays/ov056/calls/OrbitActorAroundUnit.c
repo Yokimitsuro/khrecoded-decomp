@@ -48,7 +48,7 @@ extern void MultiplyFixedPointQuaternions(QuatFx32 *dst, QuatFx32 *a, QuatFx32 *
 extern void func_0202fbbc(VecFx32 *in, QuatFx32 *rotation, VecFx32 *out);
 extern void func_ov001_020911bc(StageActor *actor);
 extern void func_ov001_020911d0(StageActor *actor);
-extern void func_ov001_02091c78(StageActor *actor, VecFx32 *offset);
+extern void AddObjectOffsetVector(StageActor *actor, VecFx32 *offset);
 extern void func_ov001_0209590c(OrbitEvent *event, int status);
 
 BOOL OrbitActorAroundUnit(OrbitEvent *event, OrbitWork *work)
@@ -86,7 +86,7 @@ BOOL OrbitActorAroundUnit(OrbitEvent *event, OrbitWork *work)
         func_ov001_020911bc(actor);
         func_ov001_020911d0(actor);
         func_01ff9e3c(&pos, func_ov001_02090f2c(actor), &dir);
-        func_ov001_02091c78(actor, &dir);
+        AddObjectOffsetVector(actor, &dir);
         return TRUE;
     }
     return FALSE;

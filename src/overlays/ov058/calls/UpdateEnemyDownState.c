@@ -48,7 +48,7 @@ struct Enemy {
 
 extern int func_ov001_0206db8c(int index);
 extern void func_ov021_020a8e34(s32 groupId, s32 emitterIndex);
-extern void func_ov021_020a8ad4(EffectParams *params);
+extern void ResetAnimationTrackState(EffectParams *params);
 extern s16 func_ov021_020a8cc0(EffectParams *params, int group);
 extern u16 func_ov052_020ceb9c(Enemy *enemy);
 extern void selectJointAnimationBlend(void *animState, u16 trackIndex, void *blendTable, s16 blendIndex);
@@ -65,7 +65,7 @@ void UpdateEnemyDownState(Enemy *enemy)
     if (enemy->animId != 0xd) {
         func_ov021_020a8e34(func_ov001_0206db8c(8), ai->soundEmitter);
         ai->soundEmitter = -1;
-        func_ov021_020a8ad4(&params);
+        ResetAnimationTrackState(&params);
         params.kind = enemy->effectKind;
         params.flagB = 1;
         params.flagA = 0;

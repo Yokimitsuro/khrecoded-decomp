@@ -17,13 +17,13 @@ func_ov019_020a274c kind:function(thumb,size=0x46) addr:0x020a274c
 func_ov019_020a2794 kind:function(arm,size=0x294) addr:0x020a2794
 func_ov019_020a2a28 kind:function(arm,size=0x1c4) addr:0x020a2a28
 func_ov019_020a2bec kind:function(arm,size=0x5c) addr:0x020a2bec
-func_ov019_020a2c48 kind:function(arm,size=0x24) addr:0x020a2c48
+TryGetExtraDataHandle kind:function(arm,size=0x24) addr:0x020a2c48
 func_ov019_020a2c6c kind:function(arm,size=0x1bc) addr:0x020a2c6c
 func_ov019_020a2e28 kind:function(arm,size=0xc4) addr:0x020a2e28
 func_ov019_020a2eec kind:function(arm,size=0x2bc) addr:0x020a2eec
 func_ov019_020a31a8 kind:function(thumb,size=0x16) addr:0x020a31a8
 func_ov019_020a31c0 kind:function(thumb,size=0x58) addr:0x020a31c0
-func_ov019_020a3218 kind:function(arm,size=0x14) addr:0x020a3218
+IsDestroyed kind:function(arm,size=0x14) addr:0x020a3218
 func_ov019_020a322c kind:function(arm,size=0x28) addr:0x020a322c
 func_ov019_020a3254 kind:function(thumb,size=0x50) addr:0x020a3254
 func_ov019_020a32a4 kind:function(thumb,size=0xa4) addr:0x020a32a4
@@ -32,7 +32,7 @@ SetLinkedCallbackId kind:function(thumb,size=0x6) addr:0x020a35a0
 func_ov019_020a35a8 kind:function(thumb,size=0x34) addr:0x020a35a8
 func_ov019_020a35dc kind:function(thumb,size=0x4c) addr:0x020a35dc
 func_ov019_020a3628 kind:function(thumb,size=0x38) addr:0x020a3628
-func_ov019_020a3660 kind:function(thumb,size=0x1c) addr:0x020a3660
+ReleaseOwnedEntryGroup kind:function(thumb,size=0x1c) addr:0x020a3660
 data_ov019_020a367c kind:data(any) addr:0x020a367c
 gLinkedObjectCreationHandlers kind:data(any) addr:0x020a36a0
 sOv019_BaEfDbhit_020a36b0 kind:data(any) addr:0x020a36b0

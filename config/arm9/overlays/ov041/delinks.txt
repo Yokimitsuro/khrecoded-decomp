@@ -16,6 +16,14 @@ src/overlays/ov041/calls/func_ov041_020be090.c:
     complete
     .text       start:0x020be090 end:0x020be098
 
+src/overlays/ov041/calls/FindFreeSlotId.c:
+    complete
+    .text       start:0x020c21d0 end:0x020c21f4
+
+src/overlays/ov041/calls/ReleaseEmbeddedObject.c:
+    complete
+    .text       start:0x020c279c end:0x020c27ac
+
 src/overlays/ov041/data/strings/Strings_ov041_020cf710.c:
     complete
     .rodata     start:0x020cf710 end:0x020cf720

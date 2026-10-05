@@ -11,7 +11,7 @@ typedef struct {
 extern void LowerFieldObjectStep(FieldObject *obj);
 extern void func_ov016_020a2cc4(FieldObject *obj);
 extern void func_ov032_020bf850(FieldObject *obj);
-extern void func_ov016_020a4ab4(FieldObject *obj);
+extern void SwayAndDropFieldObject(FieldObject *obj);
 
 void DispatchFieldObjectPhase(FieldObject *obj)
 {
@@ -41,6 +41,6 @@ void DispatchFieldObjectPhase(FieldObject *obj)
         break;
     }
     if (obj->flags & 0x100) {
-        func_ov016_020a4ab4(obj);
+        SwayAndDropFieldObject(obj);
     }
 }

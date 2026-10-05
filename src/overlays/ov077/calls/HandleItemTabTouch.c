@@ -24,7 +24,7 @@ extern TouchState *func_ov039_020bca20(void);
 extern void PlaySoundEffect(int id, int channel);
 extern void func_ov077_020c5900(ItemScreen *screen);
 extern void *func_ov039_020bc1dc(void);
-extern void func_ov077_020c9d54(void *container, int elementId);
+extern void RefreshElementCellAnimation(void *container, int elementId);
 
 BOOL HandleItemTabTouch(ItemScreen *screen)
 {
@@ -89,7 +89,7 @@ BOOL HandleItemTabTouch(ItemScreen *screen)
     if (screen->tab != prevTab) {
         PlaySoundEffect(1, 0);
         func_ov077_020c5900(screen);
-        func_ov077_020c9d54(func_ov039_020bc1dc(), 0x2a);
+        RefreshElementCellAnimation(func_ov039_020bc1dc(), 0x2a);
         return FALSE;
     }
     touch->flags = 0;

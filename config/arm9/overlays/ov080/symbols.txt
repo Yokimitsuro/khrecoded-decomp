@@ -19,7 +19,7 @@ CancelSaveSelectStep kind:function(thumb,size=0xac) addr:0x020c5c28
 func_ov080_020c5cd4 kind:function(thumb,size=0x54) addr:0x020c5cd4
 func_ov080_020c5d28 kind:function(thumb,size=0x2) addr:0x020c5d28
 func_ov080_020c5d2c kind:function(thumb,size=0x2) addr:0x020c5d2c
-func_ov080_020c5d30 kind:function(thumb,size=0x18) addr:0x020c5d30
+UpdateValidSlotCount kind:function(thumb,size=0x18) addr:0x020c5d30
 data_ov080_020c5d48 kind:data(any) addr:0x020c5d48
 data_ov080_020c5d58 kind:data(any) addr:0x020c5d58
 data_ov080_020c5d68 kind:data(any) addr:0x020c5d68

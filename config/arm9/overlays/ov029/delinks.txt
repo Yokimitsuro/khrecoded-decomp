@@ -3,9 +3,21 @@
     .data       start:0x020bab80 end:0x020babc0 kind:data align:32
     .bss        start:0x020babc0 end:0x020babe0 kind:bss align:32
 
+src/overlays/ov029/calls/MarkSoundCtxActive.c:
+    complete
+    .text       start:0x020ba5c0 end:0x020ba5e8
+
 src/overlays/ov029/calls/func_ov029_020ba9d0.c:
     complete
     .text       start:0x020ba9d0 end:0x020ba9f4
+
+src/overlays/ov029/calls/HasOv029ObjectField28.c:
+    complete
+    .text       start:0x020baa60 end:0x020baa84
+
+src/overlays/ov029/calls/ReleaseOv029Object.c:
+    complete
+    .text       start:0x020baa84 end:0x020baaa4
 
 src/overlays/ov029/auto/func_ov029_020baaec.c:
     complete

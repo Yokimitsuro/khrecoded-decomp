@@ -32,6 +32,10 @@ src/overlays/ov056/calls/SpawnGroupHitMarker.c:
     complete
     .text       start:0x020d3c50 end:0x020d3d28
 
+src/overlays/ov056/calls/ReleaseEffectPool_020d450c.c:
+    complete
+    .text       start:0x020d450c end:0x020d451c
+
 src/overlays/ov056/calls/SpawnRecordedProjectile.c:
     complete
     .text       start:0x020d4708 end:0x020d4800
@@ -48,9 +52,21 @@ src/overlays/ov056/calls/UpdateGaugeRewardEffect.c:
     complete
     .text       start:0x020d4ca0 end:0x020d4d7c
 
+src/overlays/ov056/calls/NotifyOwnerThenApplyScaledValue.c:
+    complete
+    .text       start:0x020d4e1c end:0x020d4e40
+
 src/overlays/ov056/calls/SpawnSlotRequestProjectile.c:
     complete
     .text       start:0x020d4fd8 end:0x020d50d8
+
+src/overlays/ov056/calls/InvokeRecordFilter.c:
+    complete
+    .text       start:0x020d5140 end:0x020d5152
+
+src/overlays/ov056/calls/ForEachRecordInRadius.c:
+    complete
+    .text       start:0x020d5184 end:0x020d51ac
 
 src/overlays/ov056/calls/UpdateSpinAttackUnit.c:
     complete
@@ -60,6 +76,10 @@ src/overlays/ov056/calls/CircleActorAroundUnit.c:
     complete
     .text       start:0x020d5708 end:0x020d5904
 
+src/overlays/ov056/calls/FreeSlotBuffers.c:
+    complete
+    .text       start:0x020d5904 end:0x020d5914
+
 src/overlays/ov056/calls/ApplyScaledPathHit.c:
     complete
     .text       start:0x020d5a9c end:0x020d5b5a
@@ -67,6 +87,14 @@ src/overlays/ov056/calls/ApplyScaledPathHit.c:
 src/overlays/ov056/calls/SpawnIndexedProjectile.c:
     complete
     .text       start:0x020d5e9c end:0x020d5f70
+
+src/overlays/ov056/calls/UpdateHomingArcProjectile.c:
+    complete
+    .text       start:0x020d5f9c end:0x020d63dc
+
+src/overlays/ov056/calls/FreeSlotBuffers_020d641c.c:
+    complete
+    .text       start:0x020d641c end:0x020d642c
 
 src/overlays/ov056/calls/SpawnTrailProjectile.c:
     complete
@@ -79,6 +107,10 @@ src/overlays/ov056/calls/PullActorTowardTarget.c:
 src/overlays/ov056/calls/QueuePullOnStageEvent.c:
     complete
     .text       start:0x020d6738 end:0x020d6788
+
+src/overlays/ov056/calls/FreeSlotBuffers_020d6788.c:
+    complete
+    .text       start:0x020d6788 end:0x020d6798
 
 src/overlays/ov056/calls/SpawnArcUnitFromSpawner.c:
     complete
@@ -96,6 +128,10 @@ src/overlays/ov056/calls/SpawnSlotProjectile.c:
     complete
     .text       start:0x020d6dbc end:0x020d6ea0
 
+src/overlays/ov056/calls/FreeSlotBuffers_020d7060.c:
+    complete
+    .text       start:0x020d7060 end:0x020d7070
+
 src/overlays/ov056/calls/SpawnEntryProjectile.c:
     complete
     .text       start:0x020d7140 end:0x020d7214
@@ -112,6 +148,10 @@ src/overlays/ov056/calls/QueueMotionOnStageEvent.c:
     complete
     .text       start:0x020d7834 end:0x020d788c
 
+src/overlays/ov056/calls/FreeSlotBuffers_020d788c.c:
+    complete
+    .text       start:0x020d788c end:0x020d789c
+
 src/overlays/ov056/calls/SpawnOffsetProjectile.c:
     complete
     .text       start:0x020d7a08 end:0x020d7af0
@@ -119,6 +159,10 @@ src/overlays/ov056/calls/SpawnOffsetProjectile.c:
 src/overlays/ov056/calls/UpdateTimedUnitEntries.c:
     complete
     .text       start:0x020d7af0 end:0x020d7bec
+
+src/overlays/ov056/calls/StopSlotsAndClearActive.c:
+    complete
+    .text       start:0x020d7c58 end:0x020d7c6a
 
 src/overlays/ov056/calls/AdvanceLinkedHitUnit.c:
     complete

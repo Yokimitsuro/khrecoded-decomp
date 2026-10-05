@@ -4,6 +4,14 @@
     .data       start:0x020a6e60 end:0x020a6ee0 kind:data align:32
     .bss        start:0x020a6ee0 end:0x020a6ee0 kind:bss align:32
 
+src/overlays/ov016/calls/ScriptVm_ConsumeOperandInt.c:
+    complete
+    .text       start:0x020a1e00 end:0x020a1e14
+
+src/overlays/ov016/calls/ScriptVm_ConsumeOperandFx32.c:
+    complete
+    .text       start:0x020a1e14 end:0x020a1e28
+
 src/overlays/ov016/calls/func_ov016_020a2284.c:
     complete
     .text       start:0x020a2284 end:0x020a228e
@@ -11,6 +19,18 @@ src/overlays/ov016/calls/func_ov016_020a2284.c:
 src/overlays/ov016/calls/InstallFieldObjectHitCallbacks.c:
     complete
     .text       start:0x020a25e4 end:0x020a2688
+
+src/overlays/ov016/calls/ReleaseHandleIfSet.c:
+    complete
+    .text       start:0x020a2740 end:0x020a275a
+
+src/overlays/ov016/calls/GetMaximumFieldValue.c:
+    complete
+    .text       start:0x020a2784 end:0x020a27a6
+
+src/overlays/ov016/calls/GetMaximumAlternateFieldValue.c:
+    complete
+    .text       start:0x020a27a8 end:0x020a27ca
 
 src/overlays/ov016/calls/SnapFieldObjectToGround.c:
     complete
@@ -24,13 +44,33 @@ src/overlays/ov016/calls/SetFieldObjectWeightByKind.c:
     complete
     .text       start:0x020a29ec end:0x020a2a92
 
+src/overlays/ov016/calls/InitAnimTrack.c:
+    complete
+    .text       start:0x020a2a94 end:0x020a2ab4
+
+src/overlays/ov016/calls/AdvanceAnimTrack.c:
+    complete
+    .text       start:0x020a2ab4 end:0x020a2acc
+
 src/overlays/ov016/calls/PlaceFieldObjectNode.c:
     complete
     .text       start:0x020a2acc end:0x020a2b28
 
+src/overlays/ov016/calls/StepFieldObjectAnim.c:
+    complete
+    .text       start:0x020a2b3c end:0x020a2b48
+
+src/overlays/ov016/calls/PlaceFieldObjectAtPosition.c:
+    complete
+    .text       start:0x020a2b48 end:0x020a2b58
+
 src/overlays/ov016/calls/SteerFieldObjectToTarget.c:
     complete
     .text       start:0x020a2bd0 end:0x020a2c2a
+
+src/overlays/ov016/calls/CopyEntryValueIfSet.c:
+    complete
+    .text       start:0x020a2ca8 end:0x020a2cc2
 
 src/overlays/ov016/calls/PushFieldObject.c:
     complete
@@ -39,6 +79,10 @@ src/overlays/ov016/calls/PushFieldObject.c:
 src/overlays/ov016/calls/OnFieldObjectBumped.c:
     complete
     .text       start:0x020a3374 end:0x020a341c
+
+src/overlays/ov016/calls/IsFieldStateAvailable.c:
+    complete
+    .text       start:0x020a341c end:0x020a3438
 
 src/overlays/ov016/calls/GetCarrierVelocity.c:
     complete
@@ -64,6 +108,10 @@ src/overlays/ov016/calls/RecordVisitedEntry.c:
     complete
     .text       start:0x020a3d44 end:0x020a3db0
 
+src/overlays/ov016/calls/SweepFieldObjectBounce.c:
+    complete
+    .text       start:0x020a4100 end:0x020a41cc
+
 src/overlays/ov016/auto/func_ov016_020a41cc.c:
     complete
     .text       start:0x020a41cc end:0x020a41d0
@@ -88,6 +136,10 @@ src/overlays/ov016/calls/StartFieldObjectFall.c:
     complete
     .text       start:0x020a49f8 end:0x020a4a84
 
+src/overlays/ov016/calls/SwayAndDropFieldObject.c:
+    complete
+    .text       start:0x020a4ab4 end:0x020a4c74
+
 src/overlays/ov016/calls/StackLinkedFieldObjects.c:
     complete
     .text       start:0x020a4c74 end:0x020a4cea
@@ -95,6 +147,10 @@ src/overlays/ov016/calls/StackLinkedFieldObjects.c:
 src/overlays/ov016/calls/LowerFieldObjectStep.c:
     complete
     .text       start:0x020a4d30 end:0x020a4df8
+
+src/overlays/ov016/calls/FreeHeapRecord.c:
+    complete
+    .text       start:0x020a5084 end:0x020a50a2
 
 src/overlays/ov016/calls/HandleFieldObjectHit_020a50a4.c:
     complete
@@ -119,6 +175,10 @@ src/overlays/ov016/calls/RefreshFieldObjectPhase.c:
 src/overlays/ov016/calls/SetFieldObjectVisible.c:
     complete
     .text       start:0x020a5bb4 end:0x020a5c34
+
+src/overlays/ov016/calls/GetFieldUnitPosition.c:
+    complete
+    .text       start:0x020a5c34 end:0x020a5c46
 
 src/overlays/ov016/calls/ApplyFieldObjectSpawnEntry.c:
     complete

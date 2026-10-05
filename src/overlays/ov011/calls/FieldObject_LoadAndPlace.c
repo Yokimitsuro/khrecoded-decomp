@@ -56,7 +56,7 @@ extern ActorBody *ActorRegistry_GetEntityByIndex(int actorId);
 extern void Obj_SetPosition(ActorBody *actor, const VecFx32 *position);
 extern void func_ov001_020809f8(u16 *anim, int blendIndex, int frame);
 extern void Flags16_ClearBit1(u16 *anim);
-extern BOOL func_ov001_0207f7cc(FieldObject *object);
+extern BOOL IsObjectFlagClear(FieldObject *object);
 extern void ActorSlot_SetFlag8ByIndex(int index, BOOL enable);
 extern void ApplyRecordTableEntry5(int index, int param2, int param3);
 extern void IndexedBytes_SetAt10(void *collision, int a, int b);
@@ -96,7 +96,7 @@ void FieldObject_LoadAndPlace(FieldObject *object)
     Actor_InitRotation(actor, object->rotation);
     func_ov001_020809f8(&actor->animFlags, object->animTrack, 0);
     Flags16_ClearBit1(&actor->animFlags);
-    if (func_ov001_0207f7cc(object)) {
+    if (IsObjectFlagClear(object)) {
         ActorSlot_SetFlag8ByIndex(object->actorId, TRUE);
         ApplyRecordTableEntry5(object->actorId, 0, 0);
         IndexedBytes_SetAt10(actor->collision, 1, 4);

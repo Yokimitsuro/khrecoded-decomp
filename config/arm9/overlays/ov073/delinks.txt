@@ -4,13 +4,85 @@
     .data       start:0x020c4160 end:0x020c4260 kind:data align:32
     .bss        start:0x020c4260 end:0x020c4280 kind:bss align:32
 
+src/overlays/ov073/calls/SetStatusElementVisible.c:
+    complete
+    .text       start:0x020beb7c end:0x020beb9a
+
+src/overlays/ov073/calls/CreateContainerCells.c:
+    complete
+    .text       start:0x020bfef0 end:0x020bff1c
+
 src/overlays/ov073/auto/func_ov073_020bff88.c:
     complete
     .text       start:0x020bff88 end:0x020bff8c
 
+src/overlays/ov073/calls/HideStatusScreenElement.c:
+    complete
+    .text       start:0x020c1044 end:0x020c1060
+
+src/overlays/ov073/calls/HideStatusPanelElement.c:
+    complete
+    .text       start:0x020c1250 end:0x020c1268
+
+src/overlays/ov073/calls/MakeSharedMessageKey.c:
+    complete
+    .text       start:0x020c13e4 end:0x020c1410
+
+src/overlays/ov073/calls/RefreshSharedUploadSlot.c:
+    complete
+    .text       start:0x020c1410 end:0x020c1438
+
 src/overlays/ov073/calls/GetPlayerLevelTier.c:
     complete
     .text       start:0x020c1438 end:0x020c14a8
+
+src/overlays/ov073/calls/ToggleSharedStateFlag.c:
+    complete
+    .text       start:0x020c1d3c end:0x020c1d58
+
+src/overlays/ov073/calls/ReloadStatusRecord.c:
+    complete
+    .text       start:0x020c29f8 end:0x020c2a22
+
+src/overlays/ov073/calls/SyncSharedListScroll.c:
+    complete
+    .text       start:0x020c2ae8 end:0x020c2b0c
+
+src/overlays/ov073/calls/SetSharedListMode.c:
+    complete
+    .text       start:0x020c2b0c end:0x020c2b30
+
+src/overlays/ov073/calls/SetSharedListEntries.c:
+    complete
+    .text       start:0x020c2c44 end:0x020c2c64
+
+src/overlays/ov073/calls/GetSharedSelectedIndex.c:
+    complete
+    .text       start:0x020c2cb0 end:0x020c2cc4
+
+src/overlays/ov073/calls/OnListDataLoaded.c:
+    complete
+    .text       start:0x020c36a4 end:0x020c36c2
+
+src/overlays/ov073/calls/PlaceCursorAtListEntry.c:
+    complete
+    .text       start:0x020c3798 end:0x020c37a8
+
+src/overlays/ov073/calls/IsGreaterOrEqual_020c37e0.c:
+    complete
+    .text       start:0x020c37e0 end:0x020c37ec
+
+src/overlays/ov073/calls/IsGreaterThan_020c37ec.c:
+    complete
+    .text       start:0x020c37ec end:0x020c37f8
+
+src/overlays/ov073/calls/IsLessOrEqual_020c37f8.c:
+    complete
+    .text       start:0x020c37f8 end:0x020c3804
+
+src/overlays/ov073/calls/IsLessThan_020c3804.c:
+    complete
+    .text       start:0x020c3804 end:0x020c3810
 
 src/overlays/ov073/calls/GetListBgHOffset.c:
     complete

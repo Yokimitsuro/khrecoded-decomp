@@ -7,7 +7,7 @@ extern void func_ov001_0207fb58(void);
 extern void ScriptCmd_SpawnFieldObjectInSlot(void); /* ScriptCmd_SpawnFieldObjectInSlot */
 extern void ScriptCmd_CreateRotatedFieldObject(void); /* ScriptCmd_CreateRotatedFieldObject */
 extern void func_ov001_0207fc90(void); /* ScriptCmd_SetObjectVisible */
-extern void func_ov001_0207fccc(void); /* ScriptCmd_SetObjectGroupInteractRange */
+extern void ScriptCmd_SetObjectGroupInteractRange(void); /* ScriptCmd_SetObjectGroupInteractRange */
 extern void func_ov001_0207fcf4(void); /* ScriptCmd_SetObjectAnimation */
 extern void ScriptCmd_RegisterTriggerClass(void); /* ScriptCmd_RegisterTriggerClass */
 extern void func_ov001_0207fdcc(void); /* ScriptCmd_SpawnFieldObject */
@@ -22,18 +22,18 @@ extern void ScriptCmd_CreateRunningFieldObject(void); /* ScriptCmd_CreateRunning
 extern void func_ov001_02080168(void); /* ScriptCmd_SpawnStateSpot */
 extern void func_ov001_020801a8(void); /* DefaultStepDone */
 extern void func_ov001_020801ac(void); /* DefaultStepDone */
-extern void func_ov001_020801b0(void); /* ScriptCmd_CreateObjectGroupKindB */
+extern void ScriptCmd_CreateObjectGroupKindB(void); /* ScriptCmd_CreateObjectGroupKindB */
 extern void ScriptCmd_CreateFieldObject(void); /* ScriptCmd_CreateFieldObject */
 extern void func_ov001_02080260(void); /* ScriptCmd_CreateObjectGroupKindD */
 extern void func_ov001_020802b8(void);
-extern void func_ov001_020802fc(void); /* ScriptCmd_CreateObjectGroupKind7 */
+extern void ScriptCmd_CreateObjectGroupKind7(void); /* ScriptCmd_CreateObjectGroupKind7 */
 extern void func_ov001_02080328(void); /* ScriptCmd_AddGroupObjectAtPosition */
 extern void func_ov001_02080390(void); /* ScriptOp_CallObjectVectorHook */
 extern void func_ov001_020803e4(void); /* ScriptCmd_SetObjectHeading */
-extern void func_ov001_0208042c(void); /* ScriptCmd_CreateObjectGroupKind9 */
+extern void ScriptCmd_CreateObjectGroupKind9(void); /* ScriptCmd_CreateObjectGroupKind9 */
 extern void func_ov001_02080458(void); /* ScriptCmd_CreateRoamingObject */
 extern void func_ov001_0208055c(void);
-extern void func_ov001_02080598(void); /* ScriptCmd_CreateFieldObjectFx */
+extern void ScriptCmd_CreateFieldObjectFx(void); /* ScriptCmd_CreateFieldObjectFx */
 extern void func_ov001_02080644(void); /* ScriptCmd_RegisterFieldObject */
 extern void ScriptCmd_CreateUpdatingFieldObject(void); /* ScriptCmd_CreateUpdatingFieldObject */
 extern void func_ov001_02080718(void); /* ScriptOp_SetObjectFlag6 */
@@ -55,7 +55,7 @@ void (*gFieldObjectScriptCommandHandlers[78])(void) = {
     NULL,
     func_ov001_0207fc90, /* ScriptCmd_SetObjectVisible */
     NULL,
-    func_ov001_0207fccc, /* ScriptCmd_SetObjectGroupInteractRange */
+    ScriptCmd_SetObjectGroupInteractRange, /* ScriptCmd_SetObjectGroupInteractRange */
     NULL,
     func_ov001_0207fcf4, /* ScriptCmd_SetObjectAnimation */
     NULL,
@@ -85,7 +85,7 @@ void (*gFieldObjectScriptCommandHandlers[78])(void) = {
     NULL,
     func_ov001_020801ac, /* DefaultStepDone */
     NULL,
-    func_ov001_020801b0, /* ScriptCmd_CreateObjectGroupKindB */
+    ScriptCmd_CreateObjectGroupKindB, /* ScriptCmd_CreateObjectGroupKindB */
     NULL,
     ScriptCmd_CreateFieldObject, /* ScriptCmd_CreateFieldObject */
     NULL,
@@ -93,7 +93,7 @@ void (*gFieldObjectScriptCommandHandlers[78])(void) = {
     NULL,
     func_ov001_020802b8,
     NULL,
-    func_ov001_020802fc, /* ScriptCmd_CreateObjectGroupKind7 */
+    ScriptCmd_CreateObjectGroupKind7, /* ScriptCmd_CreateObjectGroupKind7 */
     NULL,
     func_ov001_02080328, /* ScriptCmd_AddGroupObjectAtPosition */
     NULL,
@@ -101,13 +101,13 @@ void (*gFieldObjectScriptCommandHandlers[78])(void) = {
     NULL,
     func_ov001_020803e4, /* ScriptCmd_SetObjectHeading */
     NULL,
-    func_ov001_0208042c, /* ScriptCmd_CreateObjectGroupKind9 */
+    ScriptCmd_CreateObjectGroupKind9, /* ScriptCmd_CreateObjectGroupKind9 */
     NULL,
     func_ov001_02080458, /* ScriptCmd_CreateRoamingObject */
     NULL,
     func_ov001_0208055c,
     NULL,
-    func_ov001_02080598, /* ScriptCmd_CreateFieldObjectFx */
+    ScriptCmd_CreateFieldObjectFx, /* ScriptCmd_CreateFieldObjectFx */
     NULL,
     func_ov001_02080644, /* ScriptCmd_RegisterFieldObject */
     NULL,

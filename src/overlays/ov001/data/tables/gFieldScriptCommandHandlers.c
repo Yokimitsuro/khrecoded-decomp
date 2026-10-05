@@ -1,7 +1,7 @@
 #include "nitro/types.h"
 
 extern void func_ov001_02064e5c(void); /* FS_UnloadOverlayImage */
-extern void func_ov001_02064e68(void); /* ScriptCmd_RequestRoomChange */
+extern void ScriptCmd_RequestRoomChange(void); /* ScriptCmd_RequestRoomChange */
 extern void func_ov001_02064e94(void); /* ScriptCmd_SwitchFieldMode */
 extern void func_ov001_02064ec0(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_02064edc(void); /* ScriptCmd_EnterPhase */
@@ -59,10 +59,10 @@ extern void func_ov001_02065820(void); /* ScriptOp_SendPayloadWords */
 extern void func_ov001_020658b8(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_020658c4(void); /* ScriptOp_AddSessionBits */
 extern void func_ov001_02065910(void); /* ScriptCmd_EnterPhase */
-extern void func_ov001_02065920(void); /* ScriptCmd_RequestAreaChange */
+extern void ScriptCmd_RequestAreaChange(void); /* ScriptCmd_RequestAreaChange */
 extern void func_ov001_02065950(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_0206595c(void);
-extern void func_ov001_0206598c(void); /* ScriptCmd_SetAngleDegrees */
+extern void ScriptCmd_SetAngleDegrees(void); /* ScriptCmd_SetAngleDegrees */
 extern void func_ov001_020659b4(void); /* ScriptCmd_NotifyNodesOfKind */
 extern void func_ov001_020659c8(void); /* ScriptCmd_NotifyNodesOfKind */
 extern void func_ov001_020659dc(void); /* ScriptCmd_SetFieldObjectsFlag */
@@ -81,7 +81,7 @@ extern void func_ov001_02065b34(void); /* ScriptCmd_SpawnRewardAtActor */
 extern void func_ov001_02065b8c(void);
 extern void func_ov001_02065bb0(void); /* ScriptCmd_PlacePartyMember */
 extern void func_ov001_02065c10(void); /* ScriptCmd_EnterPhase */
-extern void func_ov001_02065c20(void); /* ScriptCmd_StoreRandomBits */
+extern void ScriptCmd_StoreRandomBits(void); /* ScriptCmd_StoreRandomBits */
 extern void func_ov001_02065c4c(void); /* ScriptCmd_EnterPhase */
 extern void func_ov001_02065c5c(void); /* ScriptCmd_SetLinkMode */
 extern void func_ov001_02065c80(void); /* ScriptCmd_QueueFlagTaskKind8 */
@@ -91,7 +91,7 @@ extern void func_ov001_02065d80(void);
 extern void func_ov001_02065db0(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_02065e44(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_02065e50(void);
-extern void func_ov001_02065e74(void); /* ScriptCmd_ToggleSessionBit15 */
+extern void ScriptCmd_ToggleSessionBit15(void); /* ScriptCmd_ToggleSessionBit15 */
 extern void func_ov001_02065e8c(void);
 extern void func_ov001_02065ea4(void); /* ScriptCmd_DamageLeaderNonLethal */
 extern void func_ov001_02065f04(void);
@@ -106,7 +106,7 @@ extern void func_ov001_02065f8c(void); /* ScriptCmd_RestoreSelectionRecordValue 
 void (*gFieldScriptCommandHandlers[190])(void) = {
     func_ov001_02064e5c, /* FS_UnloadOverlayImage */
     NULL,
-    func_ov001_02064e68, /* ScriptCmd_RequestRoomChange */
+    ScriptCmd_RequestRoomChange, /* ScriptCmd_RequestRoomChange */
     NULL,
     func_ov001_02064e94, /* ScriptCmd_SwitchFieldMode */
     NULL,
@@ -216,13 +216,13 @@ void (*gFieldScriptCommandHandlers[190])(void) = {
     NULL,
     func_ov001_02065910, /* ScriptCmd_EnterPhase */
     NULL,
-    func_ov001_02065920, /* ScriptCmd_RequestAreaChange */
+    ScriptCmd_RequestAreaChange, /* ScriptCmd_RequestAreaChange */
     NULL,
     func_ov001_02065950, /* FS_UnloadOverlayImage */
     NULL,
     func_ov001_0206595c,
     NULL,
-    func_ov001_0206598c, /* ScriptCmd_SetAngleDegrees */
+    ScriptCmd_SetAngleDegrees, /* ScriptCmd_SetAngleDegrees */
     NULL,
     func_ov001_020659b4, /* ScriptCmd_NotifyNodesOfKind */
     NULL,
@@ -254,7 +254,7 @@ void (*gFieldScriptCommandHandlers[190])(void) = {
     NULL,
     func_ov001_02065c10, /* ScriptCmd_EnterPhase */
     NULL,
-    func_ov001_02065c20, /* ScriptCmd_StoreRandomBits */
+    ScriptCmd_StoreRandomBits, /* ScriptCmd_StoreRandomBits */
     NULL,
     func_ov001_02065c4c, /* ScriptCmd_EnterPhase */
     NULL,
@@ -274,7 +274,7 @@ void (*gFieldScriptCommandHandlers[190])(void) = {
     NULL,
     func_ov001_02065e50,
     NULL,
-    func_ov001_02065e74, /* ScriptCmd_ToggleSessionBit15 */
+    ScriptCmd_ToggleSessionBit15, /* ScriptCmd_ToggleSessionBit15 */
     NULL,
     func_ov001_02065e8c,
     NULL,

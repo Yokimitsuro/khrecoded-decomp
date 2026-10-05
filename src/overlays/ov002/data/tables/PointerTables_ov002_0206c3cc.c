@@ -9,7 +9,7 @@ extern void func_ov002_02065374(void); /* UpdateSaveMenuState */
 extern void func_ov002_02065668(void); /* CloseMenuPopup */
 extern void func_ov002_0206574c(void); /* OpenMenuPopup */
 extern void func_ov002_020658c0(void); /* UpdateQuitMenuState */
-extern void func_ov002_02065bf4(void); /* ReleaseMenuPanelCallback */
+extern void ReleaseMenuPanelCallback(void); /* ReleaseMenuPanelCallback */
 extern void func_ov002_02065c1c(void); /* OSi_IrqDma3 */
 extern void func_ov002_02065c2c(void);
 extern void func_ov002_02065c30(void);
@@ -28,7 +28,7 @@ void (*gMenuStateHandlers[16])(void) = {
     func_ov002_02065668, /* CloseMenuPopup */
     func_ov002_0206574c, /* OpenMenuPopup */
     func_ov002_020658c0, /* UpdateQuitMenuState */
-    func_ov002_02065bf4, /* ReleaseMenuPanelCallback */
+    ReleaseMenuPanelCallback, /* ReleaseMenuPanelCallback */
     func_ov002_02065c1c, /* OSi_IrqDma3 */
     func_ov002_02065c2c,
     func_ov002_02065c30,

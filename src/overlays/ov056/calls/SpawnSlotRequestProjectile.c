@@ -61,7 +61,7 @@ typedef struct {
 } SpawnUnit;
 
 extern s16 data_02053580[];
-extern EntryInfo *func_ov001_0206db5c(int index);
+extern EntryInfo *GetBoundedEntryField(int index);
 extern void func_ov021_020a91d8(VecFx32 *out, int entryIndex, void *arg);
 extern void MTX_RotY33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
 extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *mtx, VecFx32 *dst);
@@ -83,7 +83,7 @@ void SpawnSlotRequestProjectile(SpawnUnit *unit, void *arg, SpawnRequest *reques
 
     unit->flags = 0;
     func_ov021_020ab0ac(&desc);
-    info = func_ov001_0206db5c(unit->entryIndex);
+    info = GetBoundedEntryField(unit->entryIndex);
     angle = info->facing - 0x8000;
     facing = angle + 0x8000;
     func_ov021_020a91d8(&offset, unit->entryIndex, arg);

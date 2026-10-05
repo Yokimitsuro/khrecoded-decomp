@@ -26,7 +26,7 @@ typedef struct {
 extern u32 data_ov001_0209e478[];
 extern void func_ov001_020929ec(VecFx32 *position, s32 seqArcA, s32 soundA, s32 seqArcB, u16 soundB, BOOL useFirst);
 extern int func_ov001_020929b8(int linkOwner, int id, int variant);
-extern StageController *func_ov001_0209c148(u32 id);
+extern StageController *GetStageController(u32 id);
 extern void *func_ov001_0209c068(int id);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern void func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
@@ -72,7 +72,7 @@ void SpawnLaunchedActor(int linkOwner, u8 *stage, LaunchDesc *desc, LaunchSource
     if (spawned == 0) {
         return;
     }
-    controller = func_ov001_0209c148(spawned);
+    controller = GetStageController(spawned);
     if (controller == 0) {
         return;
     }

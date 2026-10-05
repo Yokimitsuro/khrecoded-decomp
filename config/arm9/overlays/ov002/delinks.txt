@@ -12,6 +12,10 @@ src/overlays/ov002/calls/func_ov002_0206193c.c:
     complete
     .text       start:0x0206193c end:0x02061948
 
+src/overlays/ov002/calls/GetPanelSlot0.c:
+    complete
+    .text       start:0x02061948 end:0x02061964
+
 src/overlays/ov002/calls/func_ov002_02062000.c:
     complete
     .text       start:0x02062000 end:0x02062014
@@ -19,6 +23,14 @@ src/overlays/ov002/calls/func_ov002_02062000.c:
 src/overlays/ov002/calls/func_ov002_020629a8.c:
     complete
     .text       start:0x020629a8 end:0x020629b8
+
+src/overlays/ov002/calls/IsPanelBusy.c:
+    complete
+    .text       start:0x02062c6c end:0x02062c88
+
+src/overlays/ov002/calls/RefreshMenuContext.c:
+    complete
+    .text       start:0x02062d0c end:0x02062d28
 
 src/overlays/ov002/calls/func_ov002_02062d94.c:
     complete
@@ -52,17 +64,57 @@ src/overlays/ov002/auto/func_ov002_02062f84.c:
     complete
     .text       start:0x02062f84 end:0x02062f88
 
+src/overlays/ov002/calls/UpdateListCursorPad.c:
+    complete
+    .text       start:0x02062f88 end:0x02062fa0
+
+src/overlays/ov002/calls/UpdateListCursorKeys.c:
+    complete
+    .text       start:0x02062fa0 end:0x02062fb4
+
+src/overlays/ov002/calls/ScrollListPad.c:
+    complete
+    .text       start:0x02063188 end:0x020631b4
+
+src/overlays/ov002/calls/ScrollListKeys.c:
+    complete
+    .text       start:0x020631b4 end:0x020631e0
+
+src/overlays/ov002/calls/SetScrollListPosition.c:
+    complete
+    .text       start:0x02063280 end:0x020632ac
+
 src/overlays/ov002/calls/func_ov002_020632ac.c:
     complete
     .text       start:0x020632ac end:0x020632c8
+
+src/overlays/ov002/calls/IsButtonBPressed.c:
+    complete
+    .text       start:0x020632c8 end:0x020632e4
+
+src/overlays/ov002/calls/IsButtonXPressed.c:
+    complete
+    .text       start:0x020632e4 end:0x02063300
+
+src/overlays/ov002/calls/IsButtonYPressed.c:
+    complete
+    .text       start:0x02063300 end:0x0206331c
 
 src/overlays/ov002/calls/func_ov002_02064394.c:
     complete
     .text       start:0x02064394 end:0x020643a0
 
+src/overlays/ov002/calls/ClosePanelSelectorAll.c:
+    complete
+    .text       start:0x020648c0 end:0x020648d0
+
 src/overlays/ov002/auto/func_ov002_02065070.c:
     complete
     .text       start:0x02065070 end:0x02065074
+
+src/overlays/ov002/calls/ReleaseMenuPanelCallback.c:
+    complete
+    .text       start:0x02065bf4 end:0x02065c1c
 
 libs/nitro/os/calls/func_ov002_02065c1c.c:
     complete
@@ -96,6 +148,14 @@ src/overlays/ov002/auto/func_ov002_02065c50.c:
     complete
     .text       start:0x02065c50 end:0x02065c54
 
+src/overlays/ov002/calls/RemapCharHighByte.c:
+    complete
+    .text       start:0x02065fc8 end:0x02065ff4
+
+src/overlays/ov002/calls/GetWideStringLength.c:
+    complete
+    .text       start:0x02066374 end:0x02066394
+
 src/overlays/ov002/calls/func_ov002_0206655c.c:
     complete
     .text       start:0x0206655c end:0x0206656c
@@ -107,6 +167,18 @@ src/overlays/ov002/calls/func_ov002_02066c58.c:
 src/overlays/ov002/calls/func_ov002_02066c68.c:
     complete
     .text       start:0x02066c68 end:0x02066c78
+
+src/overlays/ov002/calls/GetContextSlotCount.c:
+    complete
+    .text       start:0x020672f4 end:0x02067310
+
+src/overlays/ov002/calls/SetClampedPercentValue.c:
+    complete
+    .text       start:0x020674fc end:0x02067524
+
+src/overlays/ov002/calls/WriteGlobalPackedFlag.c:
+    complete
+    .text       start:0x020679dc end:0x020679fc
 
 src/overlays/ov002/calls/ApplyCategoryRecord.c:
     complete

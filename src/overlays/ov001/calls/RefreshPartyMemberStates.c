@@ -11,7 +11,7 @@ typedef struct PartyMember {
     void (*setActive)(struct PartyMember *member, BOOL active);
 } PartyMember;
 
-extern PartyMember *func_ov001_0206db5c(int index);
+extern PartyMember *GetBoundedEntryField(int index);
 extern void ResetEnemyLaunchState(PartyMember *member);
 
 BOOL RefreshPartyMemberStates(void)
@@ -19,7 +19,7 @@ BOOL RefreshPartyMemberStates(void)
     int i;
 
     for (i = 1; i < 3; i++) {
-        PartyMember *member = func_ov001_0206db5c(i);
+        PartyMember *member = GetBoundedEntryField(i);
         if (member != NULL) {
             ResetEnemyLaunchState(member);
             if ((member->stateFlags & 0x800) == 0 && member->controller != NULL) {

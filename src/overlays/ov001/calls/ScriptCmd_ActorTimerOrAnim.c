@@ -22,7 +22,7 @@ extern int ScriptVm_ReadOperandInt(ScriptContext *context, ScriptOperand *operan
 extern int ScriptCmd_ReturnValue(ScriptContext *context, int value);
 extern int ByteCode_ResolveOperand(ScriptContext *context, ScriptOperand *operand);
 extern void func_ov001_0208a394(void *actor, int value);
-extern void func_ov001_0208a3e4(void *actor, int state, int value);
+extern void StartActorAnimState(void *actor, int state, int value);
 
 BOOL ScriptCmd_ActorTimerOrAnim(ScriptContext *context, ScriptOperand *operands)
 {
@@ -40,7 +40,7 @@ BOOL ScriptCmd_ActorTimerOrAnim(ScriptContext *context, ScriptOperand *operands)
         break;
     case 2:
         state = ByteCode_ResolveOperand(context, &operands[1]);
-        func_ov001_0208a3e4(context->actorTable->actors[index], state, ScriptVm_ReadOperandInt(context, &operands[2]));
+        StartActorAnimState(context->actorTable->actors[index], state, ScriptVm_ReadOperandInt(context, &operands[2]));
         break;
     }
     return TRUE;

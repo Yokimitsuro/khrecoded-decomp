@@ -32,6 +32,18 @@ src/overlays/ov020/auto/func_ov020_020a2920.c:
     complete
     .text       start:0x020a2920 end:0x020a2924
 
+src/overlays/ov020/calls/ReleaseAndFreeResource.c:
+    complete
+    .text       start:0x020a2adc end:0x020a2af6
+
+src/overlays/ov020/calls/TryGetFieldHandle.c:
+    complete
+    .text       start:0x020a2eb8 end:0x020a2edc
+
+src/overlays/ov020/calls/ApplyTypeCapabilityFlag.c:
+    complete
+    .text       start:0x020a3158 end:0x020a316e
+
 src/overlays/ov020/calls/ApplyBlockLift.c:
     complete
     .text       start:0x020a33b8 end:0x020a3428
@@ -43,6 +55,10 @@ src/overlays/ov020/auto/func_ov020_020a3598.c:
 src/overlays/ov020/auto/func_ov020_020a359c.c:
     complete
     .text       start:0x020a359c end:0x020a35a4
+
+src/overlays/ov020/calls/TryGetFieldHandle_020a3720.c:
+    complete
+    .text       start:0x020a3720 end:0x020a3744
 
 src/overlays/ov020/data/tables/gPanelObjectScriptCommandHandlers.c:
     complete

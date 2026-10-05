@@ -86,7 +86,7 @@ extern void SetActorExtraPosition(int index, void *owner, int a2);
 extern void NNS_G3dMdlSetMdlAlphaAll(void *model, int alpha);
 extern void func_ov001_020809f8(void *anim, int blendIndex, int frame);
 extern void Flags16_ClearBit1(void *anim);
-extern BOOL func_ov001_0207f7cc(FieldObject *object);
+extern BOOL IsObjectFlagClear(FieldObject *object);
 extern void ActorSlot_SetFlag8ByIndex(int index, BOOL enable);
 extern void ApplyRecordTableEntry5(int index, int a1, int a2);
 extern void func_ov001_02083334(void);
@@ -144,7 +144,7 @@ void RespawnCapsuleFieldObject(FieldObject *object)
     NNS_G3dMdlSetMdlAlphaAll(actor->model, object->alpha);
     func_ov001_020809f8(&actor->animFlags, object->blendIndex, 0);
     Flags16_ClearBit1(&actor->animFlags);
-    if (func_ov001_0207f7cc(object)) {
+    if (IsObjectFlagClear(object)) {
         ActorSlot_SetFlag8ByIndex(object->actorId, 1);
         ApplyRecordTableEntry5(object->actorId, 0, 0);
     } else {

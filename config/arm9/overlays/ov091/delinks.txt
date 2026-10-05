@@ -4,13 +4,37 @@
     .data       start:0x020c2a40 end:0x020c3740 kind:data align:32
     .bss        start:0x020c3740 end:0x020c3760 kind:bss align:32
 
+src/overlays/ov091/calls/AlignUpTo4K.c:
+    complete
+    .text       start:0x020beb20 end:0x020beb40
+
+src/overlays/ov091/calls/FreeMessageBuffers.c:
+    complete
+    .text       start:0x020bf1f8 end:0x020bf220
+
+src/overlays/ov091/calls/SetEntryFlag.c:
+    complete
+    .text       start:0x020c1738 end:0x020c175c
+
+src/overlays/ov091/calls/SetSceneMode.c:
+    complete
+    .text       start:0x020c175c end:0x020c1774
+
 src/overlays/ov091/auto/func_ov091_020c1780.c:
     complete
     .text       start:0x020c1780 end:0x020c1784
 
+src/overlays/ov091/calls/RequestEntryTransitionIfIdle.c:
+    complete
+    .text       start:0x020c1784 end:0x020c17b0
+
 src/overlays/ov091/auto/func_ov091_020c1dc0.c:
     complete
     .text       start:0x020c1dc0 end:0x020c1dc4
+
+src/overlays/ov091/calls/SetPopupState.c:
+    complete
+    .text       start:0x020c27a4 end:0x020c27b4
 
 src/overlays/ov091/calls/func_ov091_020c27ec.c:
     complete

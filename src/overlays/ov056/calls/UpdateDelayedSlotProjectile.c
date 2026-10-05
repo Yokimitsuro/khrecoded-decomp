@@ -22,13 +22,13 @@ typedef struct EffectSlotOwner {
 } EffectSlotOwner;
 
 extern void func_ov021_020aeba4(EffectSlotOwner *group, s32 step);
-extern EntryInfo *func_ov001_0206db5c(int index);
+extern EntryInfo *GetBoundedEntryField(int index);
 extern void func_ov056_020d6920(EffectSlotOwner *unit, int slot, s32 kind, s32 subKind, s32 power);
 
 void UpdateDelayedSlotProjectile(EffectSlotOwner *owner, s32 step)
 {
     func_ov021_020aeba4(owner, step);
-    owner->origin = func_ov001_0206db5c(owner->entryIndex)->position;
+    owner->origin = GetBoundedEntryField(owner->entryIndex)->position;
     if (owner->phase != 0) {
         if (owner->phase != 1) {
             owner->phase = 0;

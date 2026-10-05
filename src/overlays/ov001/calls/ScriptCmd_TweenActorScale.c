@@ -29,7 +29,7 @@ extern fx32 ScriptVm_ReadOperandFx32(ScriptContext *context, ScriptOperand *oper
 extern Actor *ActorRegistry_GetEntityByIndex(u32 actorId);
 extern int EvaluateInterpolationCurve(int curve, u32 duration, int remaining);
 extern fx32 ScaleAroundPivot(int t, fx32 target, fx32 start);
-extern PartyEntry *func_ov001_0206db5c(int index);
+extern PartyEntry *GetBoundedEntryField(int index);
 
 void ScriptCmd_TweenActorScale(ScriptContext *context, ScriptOperand *operands)
 {
@@ -53,6 +53,6 @@ void ScriptCmd_TweenActorScale(ScriptContext *context, ScriptOperand *operands)
     model->scale.y = model->scale.z;
     model->scale.x = model->scale.y;
     if (actorId < 3) {
-        func_ov001_0206db5c(actorId)->scale = scale;
+        GetBoundedEntryField(actorId)->scale = scale;
     }
 }

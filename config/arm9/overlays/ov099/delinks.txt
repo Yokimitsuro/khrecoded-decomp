@@ -4,9 +4,25 @@
     .data       start:0x020c22a0 end:0x020c2900 kind:data align:32
     .bss        start:0x020c2900 end:0x020c2920 kind:bss align:32
 
+src/overlays/ov099/calls/AlignUpTo4K_020beb20.c:
+    complete
+    .text       start:0x020beb20 end:0x020beb40
+
 src/overlays/ov099/calls/RemapModelId.c:
     complete
     .text       start:0x020beb40 end:0x020becb4
+
+src/overlays/ov099/calls/FreeLoadedFiles_020bf454.c:
+    complete
+    .text       start:0x020bf454 end:0x020bf47c
+
+src/overlays/ov099/calls/IsEntryFlagSet_020c16ac.c:
+    complete
+    .text       start:0x020c16ac end:0x020c16d4
+
+src/overlays/ov099/calls/SetEntryFlag_020c16d4.c:
+    complete
+    .text       start:0x020c16d4 end:0x020c16f0
 
 src/overlays/ov099/calls/SyncEnemyEntryFlags.c:
     complete
@@ -15,6 +31,14 @@ src/overlays/ov099/calls/SyncEnemyEntryFlags.c:
 src/overlays/ov099/auto/func_ov099_020c17a4.c:
     complete
     .text       start:0x020c17a4 end:0x020c17a8
+
+src/overlays/ov099/calls/FreeModelFiles.c:
+    complete
+    .text       start:0x020c1b28 end:0x020c1b44
+
+src/overlays/ov099/calls/DestroyModelViewer.c:
+    complete
+    .text       start:0x020c21b8 end:0x020c21d8
 
 src/overlays/ov099/calls/func_ov099_020c2260.c:
     complete

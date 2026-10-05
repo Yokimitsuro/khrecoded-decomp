@@ -4,6 +4,14 @@
     .data       start:0x020d9c20 end:0x020d9c40 kind:data align:32
     .bss        start:0x020d9c40 end:0x020d9c40 kind:bss align:32
 
+src/overlays/ov072/calls/IsObjectType111.c:
+    complete
+    .text       start:0x020d8120 end:0x020d8134
+
+src/overlays/ov072/calls/GetObjectPaletteValue.c:
+    complete
+    .text       start:0x020d8134 end:0x020d8158
+
 src/overlays/ov072/calls/SetObjectTimeScale.c:
     complete
     .text       start:0x020d8250 end:0x020d8254

@@ -4,13 +4,49 @@
     .data       start:0x020d1800 end:0x020d1900 kind:data align:32
     .bss        start:0x020d1900 end:0x020d1b20 kind:bss align:32
 
+src/overlays/ov075/calls/GetDialogInputMode.c:
+    complete
+    .text       start:0x020c42d4 end:0x020c42f4
+
+src/overlays/ov075/calls/ResetDirectionRepeat.c:
+    complete
+    .text       start:0x020c432c end:0x020c4344
+
+src/overlays/ov075/calls/SetMatrixDescription.c:
+    complete
+    .text       start:0x020c48e0 end:0x020c4908
+
+src/overlays/ov075/calls/HasPendingUnlocks.c:
+    complete
+    .text       start:0x020c49c8 end:0x020c49ec
+
+src/overlays/ov075/calls/GetMatrixModeLabel.c:
+    complete
+    .text       start:0x020c577c end:0x020c5798
+
 src/overlays/ov075/auto/func_ov075_020c7bdc.c:
     complete
     .text       start:0x020c7bdc end:0x020c7bf4
 
+src/overlays/ov075/calls/ScaleMatrixInput.c:
+    complete
+    .text       start:0x020c7cfc end:0x020c7d12
+
 src/overlays/ov075/auto/func_ov075_020c7d14.c:
     complete
     .text       start:0x020c7d14 end:0x020c7d1c
+
+src/overlays/ov075/calls/ShowDialogMessage.c:
+    complete
+    .text       start:0x020c8d04 end:0x020c8d2a
+
+src/overlays/ov075/calls/ShowDialogMessageAt.c:
+    complete
+    .text       start:0x020c8d2c end:0x020c8d4e
+
+src/overlays/ov075/calls/SetMatrixInputDisabled.c:
+    complete
+    .text       start:0x020c8e08 end:0x020c8e1c
 
 src/overlays/ov075/auto/func_ov075_020cc908.c:
     complete
@@ -20,9 +56,29 @@ src/overlays/ov075/auto/func_ov075_020cc90c.c:
     complete
     .text       start:0x020cc90c end:0x020cc90e
 
+src/overlays/ov075/calls/MoveCursorToSelectedColumn.c:
+    complete
+    .text       start:0x020cc910 end:0x020cc934
+
 src/overlays/ov075/auto/func_ov075_020cc934.c:
     complete
     .text       start:0x020cc934 end:0x020cc936
+
+src/overlays/ov075/calls/SetDescriptionText.c:
+    complete
+    .text       start:0x020cccf8 end:0x020ccd08
+
+src/overlays/ov075/calls/BuildCategoryList.c:
+    complete
+    .text       start:0x020cd37c end:0x020cd390
+
+src/overlays/ov075/calls/BuildCategorySetList.c:
+    complete
+    .text       start:0x020cd390 end:0x020cd3a4
+
+src/overlays/ov075/calls/SetDialogInputDisabled.c:
+    complete
+    .text       start:0x020ce598 end:0x020ce5a6
 
 src/overlays/ov075/calls/func_ov075_020ce818.c:
     complete
@@ -31,6 +87,22 @@ src/overlays/ov075/calls/func_ov075_020ce818.c:
 src/overlays/ov075/calls/func_ov075_020ce820.c:
     complete
     .text       start:0x020ce820 end:0x020ce834
+
+src/overlays/ov075/calls/CancelItemPicker.c:
+    complete
+    .text       start:0x020ceb80 end:0x020ceb98
+
+src/overlays/ov075/calls/IsDialogTransitionDone.c:
+    complete
+    .text       start:0x020cfc0c end:0x020cfc1c
+
+src/overlays/ov075/calls/DrawNodeAtInvertedY.c:
+    complete
+    .text       start:0x020d0e50 end:0x020d0e6c
+
+src/overlays/ov075/calls/SetLayoutElementVisible.c:
+    complete
+    .text       start:0x020d0e6c end:0x020d0e82
 
 src/overlays/ov075/auto/func_ov075_020d10fc.c:
     complete

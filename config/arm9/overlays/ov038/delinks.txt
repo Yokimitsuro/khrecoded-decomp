@@ -4,6 +4,10 @@
     .data       start:0x020bbda0 end:0x020bd160 kind:data align:32
     .bss        start:0x020bd160 end:0x020bd180 kind:bss align:32
 
+src/overlays/ov038/calls/MarkSoundCtxRepeatIfReady.c:
+    complete
+    .text       start:0x020ba5ac end:0x020ba5d4
+
 src/overlays/ov038/auto/func_ov038_020ba614.c:
     complete
     .text       start:0x020ba614 end:0x020ba61c
@@ -12,6 +16,22 @@ src/overlays/ov038/calls/func_ov038_020ba61c.c:
     complete
     .text       start:0x020ba61c end:0x020ba640
 
+src/overlays/ov038/calls/IsOv038SoundCtxFlag0Clear.c:
+    complete
+    .text       start:0x020ba640 end:0x020ba66c
+
+src/overlays/ov038/calls/SetSoundCtxMode.c:
+    complete
+    .text       start:0x020ba690 end:0x020ba6b4
+
+src/overlays/ov038/calls/HasOv038ObjectField28.c:
+    complete
+    .text       start:0x020ba6b4 end:0x020ba6d8
+
+src/overlays/ov038/calls/ReleaseOv038Object.c:
+    complete
+    .text       start:0x020ba6d8 end:0x020ba6f8
+
 src/overlays/ov038/auto/func_ov038_020ba6f8.c:
     complete
     .text       start:0x020ba6f8 end:0x020ba700
@@ -19,6 +39,14 @@ src/overlays/ov038/auto/func_ov038_020ba6f8.c:
 src/overlays/ov038/auto/func_ov038_020ba780.c:
     complete
     .text       start:0x020ba780 end:0x020ba788
+
+src/overlays/ov038/calls/StopOv038SoundStream.c:
+    complete
+    .text       start:0x020bac44 end:0x020bac5c
+
+src/overlays/ov038/calls/ResetOv038ExitState.c:
+    complete
+    .text       start:0x020bb658 end:0x020bb67c
 
 src/overlays/ov038/calls/func_ov038_020bbcb0.c:
     complete

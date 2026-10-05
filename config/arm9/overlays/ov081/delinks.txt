@@ -12,9 +12,17 @@ src/overlays/ov081/calls/func_ov081_020c544c.c:
     complete
     .text       start:0x020c544c end:0x020c5458
 
+src/overlays/ov081/calls/GetSlotEntry.c:
+    complete
+    .text       start:0x020c5458 end:0x020c5478
+
 src/overlays/ov081/calls/func_ov081_020c5478.c:
     complete
     .text       start:0x020c5478 end:0x020c5480
+
+src/overlays/ov081/calls/ApplyTextColorTag.c:
+    complete
+    .text       start:0x020c5530 end:0x020c5550
 
 src/overlays/ov081/calls/func_ov081_020c5660.c:
     complete

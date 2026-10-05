@@ -4,6 +4,30 @@
     .data       start:0x020c1de0 end:0x020c2540 kind:data align:32
     .bss        start:0x020c2540 end:0x020c2560 kind:bss align:32
 
+src/overlays/ov097/calls/FreeMessageBuffers_020bf70c.c:
+    complete
+    .text       start:0x020bf70c end:0x020bf734
+
+src/overlays/ov097/calls/AlignUpTo4K_020c02f4.c:
+    complete
+    .text       start:0x020c02f4 end:0x020c0314
+
+src/overlays/ov097/calls/ResetScrollTrack.c:
+    complete
+    .text       start:0x020c1248 end:0x020c1270
+
+src/overlays/ov097/calls/GetScrollTrackRow.c:
+    complete
+    .text       start:0x020c13c8 end:0x020c13e8
+
+src/overlays/ov097/calls/IsEntryFlagSet_020c1494.c:
+    complete
+    .text       start:0x020c1494 end:0x020c14c0
+
+src/overlays/ov097/calls/SetEntryFlag_020c14c0.c:
+    complete
+    .text       start:0x020c14c0 end:0x020c14e0
+
 src/overlays/ov097/auto/func_ov097_020c159c.c:
     complete
     .text       start:0x020c159c end:0x020c15a0

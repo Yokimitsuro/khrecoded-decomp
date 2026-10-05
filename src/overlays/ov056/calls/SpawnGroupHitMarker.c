@@ -45,7 +45,7 @@ typedef struct {
 } MarkerContext;
 
 extern GroupMember *func_ov021_020a8f0c(int groupId, int index);
-extern void func_ov021_020a8ad4(MarkerRequest *request);
+extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern int nextRandom12(void);
 extern fx32 FX_Mul(fx32 a, fx32 b);
@@ -61,7 +61,7 @@ void SpawnGroupHitMarker(SceneActor *actor, HitEvent *event, MarkerContext *cont
         return;
     }
     member = func_ov021_020a8f0c(*owner->groupId, 0);
-    func_ov021_020a8ad4(&request);
+    ResetAnimationTrackState(&request);
     request.id = actor->markerId;
     request.unk_25 = 0;
     request.doubled = 0;

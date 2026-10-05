@@ -14,6 +14,10 @@ src/overlays/ov043/auto/func_ov043_020bc900.c:
     complete
     .text       start:0x020bc900 end:0x020bc902
 
+src/overlays/ov043/calls/GetCameraToTargetDistance.c:
+    complete
+    .text       start:0x020bca50 end:0x020bca70
+
 src/overlays/ov043/auto/func_ov043_020bcce0.c:
     complete
     .text       start:0x020bcce0 end:0x020bcce4

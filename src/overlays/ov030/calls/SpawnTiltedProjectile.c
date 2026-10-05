@@ -42,7 +42,7 @@ typedef struct {
 } SpawnUnit;
 
 extern const s16 data_02053580[];
-extern EntryInfo *func_ov001_0206db5c(int index);
+extern EntryInfo *GetBoundedEntryField(int index);
 extern void func_ov021_020ab0ac(SpawnDesc *desc);
 extern int func_ov021_020ab0b8(SpawnUnit *unit, SpawnDesc *desc);
 extern int random_next_scaled(int range);
@@ -59,7 +59,7 @@ void SpawnTiltedProjectile(SpawnUnit *unit)
     u16 tilt;
     int index;
 
-    info = func_ov001_0206db5c(unit->entryIndex);
+    info = GetBoundedEntryField(unit->entryIndex);
     angle = info->facing - 0x8000;
     facing = angle + 0x8000;
     func_ov021_020ab0ac(&desc);

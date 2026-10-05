@@ -4,6 +4,34 @@
     .data       start:0x020c04c0 end:0x020c0720 kind:data align:32
     .bss        start:0x020c0720 end:0x020c0740 kind:bss align:32
 
+src/overlays/ov103/calls/RunSceneStateHandler.c:
+    complete
+    .text       start:0x020bebb8 end:0x020bebe4
+
+src/overlays/ov103/calls/FreeArchiveFiles.c:
+    complete
+    .text       start:0x020bef58 end:0x020bef80
+
+src/overlays/ov103/calls/ReleaseSlotPool_020bf66c.c:
+    complete
+    .text       start:0x020bf66c end:0x020bf688
+
+src/overlays/ov103/calls/InitSlotPool_020bf688.c:
+    complete
+    .text       start:0x020bf688 end:0x020bf698
+
+src/overlays/ov103/calls/IsEntryFlagSet_020c01a0.c:
+    complete
+    .text       start:0x020c01a0 end:0x020c01cc
+
+src/overlays/ov103/calls/SetEntryFlag_020c01cc.c:
+    complete
+    .text       start:0x020c01cc end:0x020c01ec
+
+src/overlays/ov103/calls/SetScenePhase.c:
+    complete
+    .text       start:0x020c0314 end:0x020c032c
+
 src/overlays/ov103/auto/func_ov103_020c0338.c:
     complete
     .text       start:0x020c0338 end:0x020c033c

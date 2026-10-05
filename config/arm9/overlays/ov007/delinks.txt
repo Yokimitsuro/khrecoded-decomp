@@ -11,9 +11,33 @@ src/overlays/ov007/calls/func_ov007_020a0680.c:
     complete
     .text       start:0x020a0680 end:0x020a06b0
 
+src/overlays/ov007/calls/ScriptCmd_ForceRequest.c:
+    complete
+    .text       start:0x020a06b0 end:0x020a06d4
+
 src/overlays/ov007/calls/func_ov007_020a0894.c:
     complete
     .text       start:0x020a0894 end:0x020a08a2
+
+src/overlays/ov007/calls/GetRaisedOwnerPosition.c:
+    complete
+    .text       start:0x020a1018 end:0x020a1044
+
+src/overlays/ov007/calls/ResetSlotFlags.c:
+    complete
+    .text       start:0x020a1b38 end:0x020a1b5c
+
+src/overlays/ov007/calls/SetSlotSide.c:
+    complete
+    .text       start:0x020a1b5c end:0x020a1b84
+
+src/overlays/ov007/calls/SetTargetPosition_020a1b84.c:
+    complete
+    .text       start:0x020a1b84 end:0x020a1ba0
+
+src/overlays/ov007/calls/InitTaskCallbacks.c:
+    complete
+    .text       start:0x020a1bf0 end:0x020a1c18
 
 src/overlays/ov007/data/tables/gFieldActorScriptCommandHandlers.c:
     complete

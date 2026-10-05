@@ -25,9 +25,9 @@ typedef struct PartyEntry {
 } PartyEntry;
 
 extern FieldManager *data_ov001_020a04bc;
-extern BOOL func_ov001_020735b8(void);
+extern BOOL IsFieldFlag16Set(void);
 extern s32 func_ov001_02063a38(void);
-extern PartyEntry *func_ov001_0206db5c(int index);
+extern PartyEntry *GetBoundedEntryField(int index);
 extern u32 func_ov001_02075248(int index);
 extern BOOL IsPlayerEntryFlagSet(int player, u32 id);
 extern BOOL func_ov001_0206e224(void);
@@ -41,14 +41,14 @@ void AwardPartyGaugePoints(int index, int points)
     int state;
     GaugeFlash *flash;
 
-    if (manager == NULL || func_ov001_020735b8()) {
+    if (manager == NULL || IsFieldFlag16Set()) {
         return;
     }
     phase = func_ov001_02063a38();
     if (phase != 0 && phase != 8 && phase != 10) {
         return;
     }
-    entry = func_ov001_0206db5c(index);
+    entry = GetBoundedEntryField(index);
     if (entry == NULL) {
         return;
     }

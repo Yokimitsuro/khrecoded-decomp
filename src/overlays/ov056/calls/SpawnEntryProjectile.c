@@ -52,7 +52,7 @@ typedef struct {
 } SpawnUnit;
 
 extern s16 data_02053580[];
-extern EntryInfo *func_ov001_0206db5c(int index);
+extern EntryInfo *GetBoundedEntryField(int index);
 extern void func_ov021_020ab0ac(SpawnDesc *desc);
 extern int func_ov021_020ab0b8(SpawnUnit *unit, SpawnDesc *desc);
 
@@ -67,7 +67,7 @@ void SpawnEntryProjectile(SpawnUnit *unit, void *arg, SpawnRequest *request)
     EntrySpawnCallback onSpawn;
     s32 value;
 
-    info = func_ov001_0206db5c(unit->entryIndex);
+    info = GetBoundedEntryField(unit->entryIndex);
     unit->flags = 0;
     angle = info->facing - 0x8000;
     facing = angle + 0x8000;

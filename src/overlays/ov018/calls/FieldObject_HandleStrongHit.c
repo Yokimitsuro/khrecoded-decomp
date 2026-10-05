@@ -44,7 +44,7 @@ extern const VecFx32 data_0205344c;
 extern const s16 data_02053980;
 
 extern BOOL func_ov018_020a382c(FieldObject *object);
-extern PushSystem *func_ov001_0206db5c(int index);
+extern PushSystem *GetBoundedEntryField(int index);
 extern void PlaySoundChecked(int bank, int soundId);
 
 BOOL FieldObject_HandleStrongHit(void *arg0, Contact *contact, HitInfo *hit, FieldObject *object)
@@ -64,7 +64,7 @@ BOOL FieldObject_HandleStrongHit(void *arg0, Contact *contact, HitInfo *hit, Fie
         request.unk_20 = 0;
         request.unk_30 = 0;
         request.unk_34 = 0;
-        system = func_ov001_0206db5c(0);
+        system = GetBoundedEntryField(0);
         if (system->push != NULL) {
             system->push(system, &request);
         }

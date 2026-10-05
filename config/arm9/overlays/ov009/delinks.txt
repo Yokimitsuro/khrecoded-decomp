@@ -3,6 +3,10 @@
     .data       start:0x020a0c60 end:0x020a0c80 kind:data align:32
     .bss        start:0x020a0c80 end:0x020a0c80 kind:bss align:32
 
+src/overlays/ov009/calls/ScriptCmd_CreateObjectInSlot_020a0540.c:
+    complete
+    .text       start:0x020a0540 end:0x020a056a
+
 src/overlays/ov009/auto/func_ov009_020a0908.c:
     complete
     .text       start:0x020a0908 end:0x020a090a
@@ -23,6 +27,14 @@ src/overlays/ov009/auto/func_ov009_020a096c.c:
     complete
     .text       start:0x020a096c end:0x020a0970
 
+src/overlays/ov009/calls/ScriptCmd_SpawnModeTwo.c:
+    complete
+    .text       start:0x020a0970 end:0x020a097c
+
+src/overlays/ov009/calls/IsKind4WithState0Or3.c:
+    complete
+    .text       start:0x020a0a94 end:0x020a0aae
+
 src/overlays/ov009/calls/func_ov009_020a0ad8.c:
     complete
     .text       start:0x020a0ad8 end:0x020a0ae2
@@ -30,6 +42,10 @@ src/overlays/ov009/calls/func_ov009_020a0ad8.c:
 src/overlays/ov009/calls/func_ov009_020a0ae4.c:
     complete
     .text       start:0x020a0ae4 end:0x020a0aee
+
+src/overlays/ov009/calls/SetFlagBit0x10At0x4e.c:
+    complete
+    .text       start:0x020a0c14 end:0x020a0c3c
 
 src/overlays/ov009/calls/func_ov009_020a0c3c.c:
     complete

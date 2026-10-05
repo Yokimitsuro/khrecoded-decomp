@@ -84,7 +84,7 @@ extern const VecFx32 data_ov056_020d7f6c;
 extern const VecFx32 data_0205344c;
 extern s32 func_ov052_020ceb9c(ShotActor *actor);
 extern VecFx32 *func_ov052_020ceb74(ShotActor *actor);
-extern void func_ov021_020a8ad4(MarkerRequest *request);
+extern void ResetAnimationTrackState(MarkerRequest *request);
 extern s8 func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern void func_ov021_020ab0ac(ShotDesc *desc);
 extern void func_ov021_020a9180(VecFx32 *out, const VecFx32 *origin, u16 angle, const VecFx32 *offset);
@@ -107,7 +107,7 @@ BOOL FireMarkedLinkedShot(ShotActor *actor, void *arg, ShotPattern *pattern, Sho
     shot = actor->shot;
     func_ov021_020a9180(&pos, func_ov052_020ceb74(actor), angle, &pos);
     if (shot->handle == -1) {
-        func_ov021_020a8ad4(&request);
+        ResetAnimationTrackState(&request);
         request.id = actor->markerId;
         request.angle = angle;
         request.offset = pos;

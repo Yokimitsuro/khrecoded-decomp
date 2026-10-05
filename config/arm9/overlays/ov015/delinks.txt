@@ -4,9 +4,21 @@
     .data       start:0x0207e720 end:0x0207e960 kind:data align:32
     .bss        start:0x0207e960 end:0x02081300 kind:bss align:32
 
+src/overlays/ov015/calls/ShutdownPanelState_0206c4d4.c:
+    complete
+    .text       start:0x0206c4d4 end:0x0206c4f0
+
 src/overlays/ov015/calls/func_ov015_0206c660.c:
     complete
     .text       start:0x0206c660 end:0x0206c670
+
+src/overlays/ov015/calls/MacAddressesEqual.c:
+    complete
+    .text       start:0x0206f4f8 end:0x0206f524
+
+src/overlays/ov015/calls/ResetPanelExitFlags.c:
+    complete
+    .text       start:0x02070b60 end:0x02070b8c
 
 src/overlays/ov015/auto/func_ov015_02070c54.c:
     complete
@@ -108,6 +120,18 @@ src/overlays/ov015/auto/func_ov015_02073280.c:
     complete
     .text       start:0x02073280 end:0x02073284
 
+src/overlays/ov015/calls/InvokePanelCallback.c:
+    complete
+    .text       start:0x02073598 end:0x020735bc
+
+src/overlays/ov015/calls/SetPanelTransitionMode.c:
+    complete
+    .text       start:0x020737c4 end:0x020737d4
+
+src/overlays/ov015/calls/WH_SetError.c:
+    complete
+    .text       start:0x020737d4 end:0x020737f0
+
 src/overlays/ov015/calls/func_ov015_020737f0.c:
     complete
     .text       start:0x020737f0 end:0x02073830
@@ -128,6 +152,10 @@ src/overlays/ov015/calls/func_ov015_02073d1c.c:
     complete
     .text       start:0x02073d1c end:0x02073d44
 
+src/overlays/ov015/calls/HandlePanelPromptSelection.c:
+    complete
+    .text       start:0x02073d44 end:0x02073d68
+
 src/overlays/ov015/calls/func_ov015_0207414c.c:
     complete
     .text       start:0x0207414c end:0x02074174
@@ -144,13 +172,25 @@ src/overlays/ov015/calls/func_ov015_02074664.c:
     complete
     .text       start:0x02074664 end:0x02074698
 
+src/overlays/ov015/calls/HandlePanelConfirmSelection.c:
+    complete
+    .text       start:0x020746d4 end:0x020746f8
+
 src/overlays/ov015/calls/func_ov015_020746f8.c:
     complete
     .text       start:0x020746f8 end:0x02074728
 
+src/overlays/ov015/calls/ChoosePanelModeFromSelection.c:
+    complete
+    .text       start:0x020748ac end:0x020748d4
+
 src/overlays/ov015/calls/func_ov015_020748d4.c:
     complete
     .text       start:0x020748d4 end:0x020748e4
+
+src/overlays/ov015/calls/GetPanelTransitionMode.c:
+    complete
+    .text       start:0x020748e4 end:0x020748f4
 
 src/overlays/ov015/calls/func_ov015_02074b04.c:
     complete
@@ -164,17 +204,37 @@ src/overlays/ov015/calls/func_ov015_02074e74.c:
     complete
     .text       start:0x02074e74 end:0x02074e80
 
+src/overlays/ov015/calls/SetPanelPendingValue.c:
+    complete
+    .text       start:0x02075014 end:0x02075024
+
+src/overlays/ov015/calls/ReleaseWorkBuffer.c:
+    complete
+    .text       start:0x020752f4 end:0x02075320
+
 src/overlays/ov015/auto/func_ov015_02075338.c:
     complete
     .text       start:0x02075338 end:0x0207533c
+
+src/overlays/ov015/calls/ClearBuffer5100.c:
+    complete
+    .text       start:0x02078bb4 end:0x02078bd0
 
 src/overlays/ov015/calls/MI_CpuClear32_0x800.c:
     complete
     .text       start:0x02078f00 end:0x02078f18
 
+src/overlays/ov015/calls/ClearSubBg2Screen.c:
+    complete
+    .text       start:0x02078f34 end:0x02078f58
+
 src/overlays/ov015/calls/G2S_ClearBG2Screen.c:
     complete
     .text       start:0x02079870 end:0x02079880
+
+src/overlays/ov015/calls/ClearPanelBgWithSound.c:
+    complete
+    .text       start:0x02079880 end:0x0207989c
 
 src/overlays/ov015/data/strings/Strings_ov015_0207e730.c:
     complete

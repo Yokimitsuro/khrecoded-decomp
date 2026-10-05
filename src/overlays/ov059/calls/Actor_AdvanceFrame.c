@@ -44,15 +44,15 @@ struct Actor {
 extern int func_ov001_02063a4c(void);
 extern void StopSeqArcOrDefault(int seqArcNo, int player, int fadeFrames);
 extern void StopSoundSeqHandle(u32 handle);
-extern fx32 func_ov031_020bc014(void);
+extern fx32 GetField28(void);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern fx32 FX_Mul(fx32 a, fx32 b);
 extern void func_ov021_020a8198(void *owner, int id);
 extern fx32 func_ov031_020bc060(void);
-extern fx32 func_ov031_020bc038(void);
+extern fx32 GetSeekStep(void);
 extern u16 AdvanceAnimationTracks(void *state, fx32 delta);
 extern fx32 Anim_GetFrame(void *anim, int channel);
-extern u16 func_ov059_020cd104(Actor *actor);
+extern u16 GetLinkedAngleOffset_020cd104(Actor *actor);
 extern void func_ov021_020a9ac4(void *object, fx32 delta);
 extern void func_ov021_020aafe4(void *entry, fx32 value);
 extern void func_ov021_020a8b08(int playerIndex, fx32 delta);
@@ -72,7 +72,7 @@ void Actor_AdvanceFrame(Actor *actor, fx32 delta)
         StopSoundSeqHandle(actor->sound);
     }
     if (actor->action == 1) {
-        speed = FX_Mul(delta, FX_Div(func_ov031_020bc014(), 0x333));
+        speed = FX_Mul(delta, FX_Div(GetField28(), 0x333));
         if (actor->actionDone) {
             func_ov021_020a8198(actor->cueTable, 1);
         }
@@ -86,11 +86,11 @@ void Actor_AdvanceFrame(Actor *actor, fx32 delta)
             }
         } else {
             fx32 end = func_ov031_020bc060();
-            fx32 frame = func_ov031_020bc014();
+            fx32 frame = GetField28();
             fx32 remaining = end - frame;
 
             if (remaining != 0) {
-                FX_Div(remaining, func_ov031_020bc038());
+                FX_Div(remaining, GetSeekStep());
                 if (actor->onActionEnd != NULL) {
                     BOOL moving = TRUE;
                     if (frame == 0) {
@@ -113,7 +113,7 @@ void Actor_AdvanceFrame(Actor *actor, fx32 delta)
         events = (s16)AdvanceAnimationTracks(actor->model->animation, speed);
         actor->actionFrame = Anim_GetFrame(actor->model->animation, 0);
     }
-    actor->angle = func_ov059_020cd104(actor);
+    actor->angle = GetLinkedAngleOffset_020cd104(actor);
     actor->actionDone = FALSE;
     if (events & 1) {
         actor->actionDone = TRUE;

@@ -13,13 +13,13 @@ struct Actor {
     VecFx32 knockback;
 };
 
-extern u16 func_ov059_020cd104(Actor *actor);
+extern u16 GetLinkedAngleOffset_020cd104(Actor *actor);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern int FX_Atan2Idx(fx32 y, fx32 x);
 extern u32 func_0202a9e4(int range);
 
 void Actor_PlayHitReaction(Actor *actor) {
-    u16 facing = func_ov059_020cd104(actor);
+    u16 facing = GetLinkedAngleOffset_020cd104(actor);
     VecFx32 dir;
     u16 angle;
     int diff;

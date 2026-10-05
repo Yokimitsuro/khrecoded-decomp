@@ -4,9 +4,33 @@
     .data       start:0x020bcfa0 end:0x020bd020 kind:data align:32
     .bss        start:0x020bd020 end:0x020bd040 kind:bss align:32
 
+src/overlays/ov030/calls/EnterState12WithHalfRate_020ba8f0.c:
+    complete
+    .text       start:0x020ba8f0 end:0x020ba90a
+
 src/overlays/ov030/calls/func_ov030_020babc8.c:
     complete
     .text       start:0x020babc8 end:0x020babe0
+
+src/overlays/ov030/calls/MobiClip_IsDecoderReady.c:
+    complete
+    .text       start:0x020bac2c end:0x020bac48
+
+src/overlays/ov030/calls/MobiClip_CloseDecoder.c:
+    complete
+    .text       start:0x020bac48 end:0x020bac68
+
+src/overlays/ov030/calls/IsSceneUnpaused_020bacd4.c:
+    complete
+    .text       start:0x020bacd4 end:0x020bacec
+
+src/overlays/ov030/calls/SetSceneLock.c:
+    complete
+    .text       start:0x020bb394 end:0x020bb3b0
+
+src/overlays/ov030/calls/ClearSceneEntry.c:
+    complete
+    .text       start:0x020bb444 end:0x020bb460
 
 src/overlays/ov030/calls/UpdateDraggedActorMotion.c:
     complete
@@ -27,3 +51,11 @@ src/overlays/ov030/calls/SpawnTiltedProjectile.c:
 src/overlays/ov030/calls/UpdateSpiralProjectile.c:
     complete
     .text       start:0x020bcc98 end:0x020bcdac
+
+src/overlays/ov030/calls/ReleaseEffectPool.c:
+    complete
+    .text       start:0x020bcf44 end:0x020bcf54
+
+src/overlays/ov030/calls/ResetUnitCounts.c:
+    complete
+    .text       start:0x020bcf54 end:0x020bcf64

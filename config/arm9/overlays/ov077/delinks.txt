@@ -32,6 +32,22 @@ src/overlays/ov077/calls/BuildItemListForType.c:
     complete
     .text       start:0x020c633c end:0x020c644c
 
+src/overlays/ov077/calls/BuildItemListForCategory.c:
+    complete
+    .text       start:0x020c65f8 end:0x020c660c
+
+src/overlays/ov077/calls/BuildItemListForCategories.c:
+    complete
+    .text       start:0x020c660c end:0x020c6620
+
+src/overlays/ov077/calls/InitImageQuad_020c67c4.c:
+    complete
+    .text       start:0x020c67c4 end:0x020c67e6
+
+src/overlays/ov077/calls/SetDialogInputDisabled_020c73dc.c:
+    complete
+    .text       start:0x020c73dc end:0x020c73ea
+
 src/overlays/ov077/calls/func_ov077_020c765c.c:
     complete
     .text       start:0x020c765c end:0x020c7664
@@ -40,9 +56,25 @@ src/overlays/ov077/calls/func_ov077_020c7664.c:
     complete
     .text       start:0x020c7664 end:0x020c7678
 
+src/overlays/ov077/calls/CancelAndCloseMenu.c:
+    complete
+    .text       start:0x020c79c4 end:0x020c79dc
+
 src/overlays/ov077/calls/CanUseItemEntry.c:
     complete
     .text       start:0x020c7b8c end:0x020c7ce8
+
+src/overlays/ov077/calls/InitDefaultMessageWindow.c:
+    complete
+    .text       start:0x020c83d4 end:0x020c83fc
+
+src/overlays/ov077/calls/SetContainerElementVisible_020c9d3c.c:
+    complete
+    .text       start:0x020c9d3c end:0x020c9d52
+
+src/overlays/ov077/calls/RefreshElementCellAnimation.c:
+    complete
+    .text       start:0x020c9d54 end:0x020c9d6a
 
 src/overlays/ov077/auto/func_ov077_020c9f7c.c:
     complete

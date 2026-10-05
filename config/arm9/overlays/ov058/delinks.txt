@@ -8,6 +8,10 @@ src/overlays/ov058/calls/HasReachedMoveTarget.c:
     complete
     .text       start:0x020d485c end:0x020d4968
 
+src/overlays/ov058/calls/UpdateEnemyTargetTracking.c:
+    complete
+    .text       start:0x020d4b84 end:0x020d4fcc
+
 src/overlays/ov058/calls/CheckEnemyContactAbove.c:
     complete
     .text       start:0x020d5180 end:0x020d5354
@@ -23,6 +27,10 @@ src/overlays/ov058/calls/UpdateEnemyDownState.c:
 src/overlays/ov058/calls/UpdateEnemyApproachState.c:
     complete
     .text       start:0x020d5b14 end:0x020d5f08
+
+src/overlays/ov058/calls/InitTrackedRecordEntry.c:
+    complete
+    .text       start:0x020d5f08 end:0x020d5f24
 
 src/overlays/ov058/calls/SetEnemyTargetAndClearFlag.c:
     complete
@@ -72,6 +80,22 @@ src/overlays/ov058/calls/ClearStageEventsAndPlayerFlags.c:
     complete
     .text       start:0x020d7424 end:0x020d74b8
 
+src/overlays/ov058/calls/ReleaseRecordEntry_020d7600.c:
+    complete
+    .text       start:0x020d7600 end:0x020d7618
+
+src/overlays/ov058/calls/RebindEmitterSlotsPhase3.c:
+    complete
+    .text       start:0x020d7648 end:0x020d7660
+
+src/overlays/ov058/calls/ResetEmitterRigAndApply.c:
+    complete
+    .text       start:0x020d7758 end:0x020d7784
+
+src/overlays/ov058/calls/RebindEmitterSlotsPhase3_020d7784.c:
+    complete
+    .text       start:0x020d7784 end:0x020d779c
+
 src/overlays/ov058/calls/UpdateHazardRig.c:
     complete
     .text       start:0x020d779c end:0x020d7838
@@ -79,6 +103,10 @@ src/overlays/ov058/calls/UpdateHazardRig.c:
 src/overlays/ov058/calls/PlaceRigAtPlayerOffset.c:
     complete
     .text       start:0x020d7838 end:0x020d78dc
+
+src/overlays/ov058/calls/RebindEmitterSlotsPhase1.c:
+    complete
+    .text       start:0x020d790c end:0x020d7924
 
 src/overlays/ov058/calls/PurgeNearbyStageObjects.c:
     complete

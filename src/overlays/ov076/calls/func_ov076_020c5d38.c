@@ -1,5 +1,5 @@
-extern int func_ov076_020c5c00();
+extern int SlotMenu_RefreshView();
 
 int func_ov076_020c5d38(int arg0) {
-    return func_ov076_020c5c00(arg0);
+    return SlotMenu_RefreshView(arg0);
 }

@@ -14,7 +14,7 @@ typedef struct {
 } Enemy;
 
 extern u32 func_ov052_020ce5f4(Enemy *enemy);
-extern PlayerInfo *func_ov001_0206db5c(int index);
+extern PlayerInfo *GetBoundedEntryField(int index);
 
 u32 FilterEnemyStatusFlags(Enemy *enemy)
 {
@@ -39,7 +39,7 @@ u32 FilterEnemyStatusFlags(Enemy *enemy)
     }
     if (flags & 1) {
         playerFlags = 0;
-        player = func_ov001_0206db5c(0);
+        player = GetBoundedEntryField(0);
         if (player->flagsCallback != NULL) {
             playerFlags = player->flagsCallback(player);
         }

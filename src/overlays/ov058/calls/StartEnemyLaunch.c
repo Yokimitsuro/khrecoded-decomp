@@ -42,7 +42,7 @@ struct Enemy {
     AiState ai;
 };
 
-extern void func_ov021_020a8ad4(EffectParams *params);
+extern void ResetAnimationTrackState(EffectParams *params);
 extern s16 func_ov021_020a8cc0(EffectParams *params, int group);
 extern int func_ov001_0206db8c(int index);
 extern VecFx32 *func_ov052_020ceb74(Enemy *enemy);
@@ -57,7 +57,7 @@ void StartEnemyLaunch(Enemy *enemy)
     if ((enemy->stateFlags & 0x20000) == 0) {
         EffectParams params;
 
-        func_ov021_020a8ad4(&params);
+        ResetAnimationTrackState(&params);
         params.kind = enemy->effectKind;
         params.flagB = 0;
         params.flagA = 0;

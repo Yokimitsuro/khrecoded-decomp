@@ -8,7 +8,7 @@ typedef struct SlotEntry {
 } SlotEntry;
 
 extern SlotEntry data_020608e0[8];
-int func_ov001_02064574(u32 bitOffset, int bitCount);
+int ReadSessionPackedBits(u32 bitOffset, int bitCount);
 
 void LoadSlotEntriesFromBits(void)
 {
@@ -21,8 +21,8 @@ void LoadSlotEntriesFromBits(void)
         int state;
         entry->id = -1;
         entry->state = 0;
-        id = func_ov001_02064574(bitOffset, 4);
-        state = func_ov001_02064574(bitOffset + 4, 9);
+        id = ReadSessionPackedBits(bitOffset, 4);
+        state = ReadSessionPackedBits(bitOffset + 4, 9);
         bitOffset += 0xd;
         if (id > 0) {
             entry->id = id + 0xca;

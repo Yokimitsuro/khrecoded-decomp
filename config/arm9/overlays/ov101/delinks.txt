@@ -4,6 +4,10 @@
     .data       start:0x020c19a0 end:0x020c5920 kind:data align:32
     .bss        start:0x020c5920 end:0x020c5940 kind:bss align:32
 
+src/overlays/ov101/calls/Fx32_Ceil.c:
+    complete
+    .text       start:0x020beb20 end:0x020beb40
+
 src/overlays/ov101/auto/func_ov101_020c17e0.c:
     complete
     .text       start:0x020c17e0 end:0x020c17e4

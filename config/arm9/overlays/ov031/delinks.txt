@@ -3,6 +3,102 @@
     .data       start:0x020bc7a0 end:0x020bc820 kind:data align:32
     .bss        start:0x020bc820 end:0x020bc840 kind:bss align:32
 
+src/overlays/ov031/calls/TryEnterState1.c:
+    complete
+    .text       start:0x020ba634 end:0x020ba660
+
+src/overlays/ov031/calls/TryEnterState3.c:
+    complete
+    .text       start:0x020ba698 end:0x020ba6c4
+
+src/overlays/ov031/calls/TryEnterState4.c:
+    complete
+    .text       start:0x020ba6c4 end:0x020ba6dc
+
+src/overlays/ov031/calls/EnterState10.c:
+    complete
+    .text       start:0x020ba8e0 end:0x020ba900
+
+src/overlays/ov031/calls/EnterState12.c:
+    complete
+    .text       start:0x020ba960 end:0x020ba97a
+
+src/overlays/ov031/calls/TryReenterState7.c:
+    complete
+    .text       start:0x020ba97c end:0x020ba99e
+
+src/overlays/ov031/calls/TryReenterState7Clear.c:
+    complete
+    .text       start:0x020ba9a0 end:0x020ba9c8
+
+src/overlays/ov031/calls/EnterState15.c:
+    complete
+    .text       start:0x020ba9c8 end:0x020ba9f0
+
+src/overlays/ov031/calls/TryEnterState17.c:
+    complete
+    .text       start:0x020baa2c end:0x020baa54
+
+src/overlays/ov031/calls/LeaveState.c:
+    complete
+    .text       start:0x020bab20 end:0x020bab3e
+
 src/overlays/ov031/calls/func_ov031_020bb494.c:
     complete
     .text       start:0x020bb494 end:0x020bb4ac
+
+src/overlays/ov031/calls/SetModeByte.c:
+    complete
+    .text       start:0x020bb4e0 end:0x020bb4fc
+
+src/overlays/ov031/calls/IsPxiFifoTagSet.c:
+    complete
+    .text       start:0x020bb4fc end:0x020bb518
+
+src/overlays/ov031/calls/ReleasePxiFifoTag.c:
+    complete
+    .text       start:0x020bb518 end:0x020bb538
+
+src/overlays/ov031/calls/IsStopFlagClear.c:
+    complete
+    .text       start:0x020bb57c end:0x020bb594
+
+src/overlays/ov031/calls/IsSupportedOwnerState.c:
+    complete
+    .text       start:0x020bb594 end:0x020bb5b8
+
+src/overlays/ov031/calls/FlagKind6Objects.c:
+    complete
+    .text       start:0x020bbe68 end:0x020bbe8a
+
+src/overlays/ov031/calls/ResetField44.c:
+    complete
+    .text       start:0x020bbec4 end:0x020bbedc
+
+src/overlays/ov031/calls/GetSubStruct1C.c:
+    complete
+    .text       start:0x020bc000 end:0x020bc014
+
+src/overlays/ov031/calls/GetField28.c:
+    complete
+    .text       start:0x020bc014 end:0x020bc028
+
+src/overlays/ov031/calls/SetFields30And34.c:
+    complete
+    .text       start:0x020bc028 end:0x020bc038
+
+src/overlays/ov031/calls/GetSeekStep.c:
+    complete
+    .text       start:0x020bc038 end:0x020bc060
+
+src/overlays/ov031/calls/IsOffsetBeyondActiveRecord.c:
+    complete
+    .text       start:0x020bc5b4 end:0x020bc5ce
+
+src/overlays/ov031/calls/GetNegatedCombinedOffset.c:
+    complete
+    .text       start:0x020bc6ac end:0x020bc6d0
+
+src/overlays/ov031/calls/SetFlagBit4.c:
+    complete
+    .text       start:0x020bc768 end:0x020bc790

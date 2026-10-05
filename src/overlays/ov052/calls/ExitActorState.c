@@ -66,7 +66,7 @@ struct Actor {
 extern void *func_ov001_0206db78(int player);
 extern BOOL CanUseMemberSlot(Actor *actor, int index);
 extern BOOL func_ov052_020d0688(Actor *actor);
-extern void func_ov052_020c7d48(Actor *actor, fx32 targetSpeed);
+extern void ApplyTimeScaledSpeed(Actor *actor, fx32 targetSpeed);
 extern void func_ov021_020aa4e8(void *handle);
 extern BOOL func_ov052_020c9648(Actor *actor, int nextState);
 extern void func_ov001_02063a80(int index, int amount);
@@ -129,7 +129,7 @@ BOOL ExitActorState(Actor *actor, int nextState, BOOL force)
     action = choice->action;
     switch (action) {
     case 1:
-        func_ov052_020c7d48(actor, 0x1000);
+        ApplyTimeScaledSpeed(actor, 0x1000);
         break;
     case 6:
     case 0x10:
@@ -142,7 +142,7 @@ BOOL ExitActorState(Actor *actor, int nextState, BOOL force)
         break;
     case 8:
         actor->flags &= ~2ULL;
-        func_ov052_020c7d48(actor, 0x1000);
+        ApplyTimeScaledSpeed(actor, 0x1000);
         break;
     case 0x13:
         func_ov052_020d1310(actor, 0);
@@ -171,7 +171,7 @@ BOOL ExitActorState(Actor *actor, int nextState, BOOL force)
         }
         actor->flags &= ~0x80000ULL;
         actor->flags &= ~0x10000000ULL;
-        func_ov052_020c7d48(actor, 0x1000);
+        ApplyTimeScaledSpeed(actor, 0x1000);
         break;
     case 0x11: {
         BodyAnim *anim = &actor->body->anim;

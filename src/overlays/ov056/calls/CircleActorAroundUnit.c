@@ -74,7 +74,7 @@ extern void func_0202fbbc(VecFx32 *in, QuatFx32 *rotation, VecFx32 *out);
 extern void func_ov056_020d5368(VecFx32 *out, const VecFx32 *start, const VecFx32 *end, const VecFx32 *startTangent, const VecFx32 *endTangent, fx32 t);
 extern void func_ov001_020911bc(StageActor *actor);
 extern void func_ov001_020911d0(StageActor *actor);
-extern void func_ov001_02091c78(StageActor *actor, VecFx32 *offset);
+extern void AddObjectOffsetVector(StageActor *actor, VecFx32 *offset);
 extern void func_ov001_02090f64(StageActor *actor, int degrees);
 extern void func_ov001_0209590c(CircleEvent *event, int status);
 
@@ -127,7 +127,7 @@ BOOL CircleActorAroundUnit(CircleEvent *event, CircleWork *work)
             func_01ff9e3c(&next, &pos, &work->velocity);
             func_ov001_020911bc(actor);
             func_ov001_020911d0(actor);
-            func_ov001_02091c78(actor, &work->velocity);
+            AddObjectOffsetVector(actor, &work->velocity);
             work->elapsed += step;
             break;
         }
@@ -140,7 +140,7 @@ BOOL CircleActorAroundUnit(CircleEvent *event, CircleWork *work)
         func_ov001_020911bc(actor);
         func_ov001_020911d0(actor);
         func_01ff9e3c(&delta, func_ov001_02090f2c(actor), &delta);
-        func_ov001_02091c78(actor, &delta);
+        AddObjectOffsetVector(actor, &delta);
         func_ov001_02090f64(actor, params->facingOffset + (fx32)(((s64)actor->facing * 0x1680000 + 0x80000) >> 20));
         break;
     }

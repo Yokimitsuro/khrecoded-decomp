@@ -10,7 +10,7 @@ typedef struct {
 
 extern u8 *data_0205fe0c;
 extern int ReadGlobalPackedBits(int bitOffset, int bitCount);
-extern int func_ov001_02064574(int bitOffset, int bitCount);
+extern int ReadSessionPackedBits(int bitOffset, int bitCount);
 extern s32 _s32_div_f(s32 numerator, s32 denominator);
 
 void ScaleStatsByPercent(UnitStats *stats, BOOL useOverlay)
@@ -19,7 +19,7 @@ void ScaleStatsByPercent(UnitStats *stats, BOOL useOverlay)
 
     if (*(s8 *)(data_0205fe0c + 0x28d4) == 6 && ReadGlobalPackedBits(0x1a00, 2) != 3) {
         if (useOverlay) {
-            percent = func_ov001_02064574(0x3700, 0x10);
+            percent = ReadSessionPackedBits(0x3700, 0x10);
         } else {
             percent = ReadGlobalPackedBits(ReadGlobalPackedBits(0x1a00, 2) * 0xf00 + 0x3700, 0x10);
         }

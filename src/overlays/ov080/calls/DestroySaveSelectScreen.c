@@ -26,8 +26,8 @@ extern SaveData *data_0205fe0c;
 extern SaveSelectScreen *data_ov080_020c5e20;
 extern void func_ov027_020b833c(void *tracker);
 extern void func_ov027_020b902c(void *container);
-extern void func_ov027_020b905c(void *owner);
-extern void func_ov027_020ba2b4(void **ptr);
+extern void ReleaseIfMarked(void *owner);
+extern void FreePointerIfSet(void **ptr);
 extern BOOL DestroyFndObjectList(TextLayer *layer);
 extern void func_ov039_020be6c0(void);
 extern void RebuildRecordCounters(void);
@@ -43,8 +43,8 @@ void DestroySaveSelectScreen(SaveSelectScreen *screen)
 {
     func_ov027_020b833c(screen->tagTracker);
     func_ov027_020b902c(screen->panel);
-    func_ov027_020b905c(screen->panel);
-    func_ov027_020ba2b4(&screen->buffer);
+    ReleaseIfMarked(screen->panel);
+    FreePointerIfSet(&screen->buffer);
     DestroyFndObjectList(&screen->layers[0]);
     DestroyFndObjectList(&screen->layers[1]);
     DestroyFndObjectList(&screen->layers[3]);

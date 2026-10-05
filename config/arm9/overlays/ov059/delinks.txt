@@ -8,6 +8,14 @@ src/overlays/ov059/calls/Actor_SelectAction.c:
     complete
     .text       start:0x020c784c end:0x020c7980
 
+src/overlays/ov059/calls/MapKindToSlotIndex_020c7a44.c:
+    complete
+    .text       start:0x020c7a44 end:0x020c7a68
+
+src/overlays/ov059/calls/Actor_SetTimeScale.c:
+    complete
+    .text       start:0x020c7da8 end:0x020c7dc8
+
 src/overlays/ov059/calls/Actor_ConsumeKnockback.c:
     complete
     .text       start:0x020c7dc8 end:0x020c7e7c
@@ -20,17 +28,41 @@ src/overlays/ov059/calls/Actor_UpdateCommandInput.c:
     complete
     .text       start:0x020c8490 end:0x020c8568
 
+src/overlays/ov059/calls/Collider_IsOwnerKind11.c:
+    complete
+    .text       start:0x020c8568 end:0x020c8578
+
 src/overlays/ov059/calls/Actor_ApplyFrameMotion.c:
     complete
     .text       start:0x020c87b4 end:0x020c88e4
+
+src/overlays/ov059/calls/Actor_ExtendCountdown.c:
+    complete
+    .text       start:0x020c8a1c end:0x020c8a2c
+
+src/overlays/ov059/calls/Actor_FreeAttachedModels.c:
+    complete
+    .text       start:0x020c8b70 end:0x020c8b9a
+
+src/overlays/ov059/calls/NodeCallback_CaptureMatrix.c:
+    complete
+    .text       start:0x020c9154 end:0x020c9164
 
 src/overlays/ov059/calls/Actor_PlayHitReaction.c:
     complete
     .text       start:0x020c9164 end:0x020c921c
 
+src/overlays/ov059/calls/Actor_ConsumeCommand.c:
+    complete
+    .text       start:0x020c9a50 end:0x020c9a74
+
 src/overlays/ov059/calls/Actor_UpdateChargeCommand.c:
     complete
     .text       start:0x020c9b8c end:0x020c9d34
+
+src/overlays/ov059/calls/QueryFilter_IsKind24.c:
+    complete
+    .text       start:0x020ca1f4 end:0x020ca206
 
 src/overlays/ov059/calls/Actor_SelectInputState.c:
     complete
@@ -48,6 +80,18 @@ src/overlays/ov059/auto/func_ov059_020cb92c.c:
     complete
     .text       start:0x020cb92c end:0x020cb930
 
+src/overlays/ov059/calls/EffectGroup_RewindEntry.c:
+    complete
+    .text       start:0x020cba0c end:0x020cba32
+
+src/overlays/ov059/calls/IsButtonAOrRActive.c:
+    complete
+    .text       start:0x020cba34 end:0x020cba5a
+
+src/overlays/ov059/calls/Actor_AddExtraVelocity.c:
+    complete
+    .text       start:0x020cbff0 end:0x020cc00c
+
 src/overlays/ov059/calls/Actor_PlaySurfaceSound.c:
     complete
     .text       start:0x020cca34 end:0x020ccb08
@@ -64,6 +108,14 @@ src/overlays/ov059/calls/Actor_GetModelPosition.c:
     complete
     .text       start:0x020cd0f8 end:0x020cd102
 
+src/overlays/ov059/calls/GetLinkedAngleOffset_020cd104.c:
+    complete
+    .text       start:0x020cd104 end:0x020cd11a
+
+src/overlays/ov059/calls/SetLinkedAngleOffset.c:
+    complete
+    .text       start:0x020cd11c end:0x020cd142
+
 src/overlays/ov059/calls/func_ov059_020cd3d8.c:
     complete
     .text       start:0x020cd3d8 end:0x020cd3e4
@@ -71,6 +123,22 @@ src/overlays/ov059/calls/func_ov059_020cd3d8.c:
 src/overlays/ov059/calls/SpawnSourceRewardOrbs.c:
     complete
     .text       start:0x020cd3e4 end:0x020cd46c
+
+src/overlays/ov059/calls/MapStateToEvenIndex.c:
+    complete
+    .text       start:0x020cd944 end:0x020cd970
+
+src/overlays/ov059/calls/MapStateToOddIndex.c:
+    complete
+    .text       start:0x020cd970 end:0x020cd99c
+
+src/overlays/ov059/calls/Collider_IsOwnerKind11_020cdd30.c:
+    complete
+    .text       start:0x020cdd30 end:0x020cdd40
+
+src/overlays/ov059/calls/MarkList_AddAtObject.c:
+    complete
+    .text       start:0x020cde6c end:0x020cde8a
 
 src/overlays/ov059/calls/Seeker_SelectNearestTarget.c:
     complete
@@ -80,6 +148,14 @@ src/overlays/ov059/calls/IsTargetInVerticalRange.c:
     complete
     .text       start:0x020cf120 end:0x020cf1bc
 
+src/overlays/ov059/calls/SlotTable_ResetIds.c:
+    complete
+    .text       start:0x020cf22c end:0x020cf250
+
+src/overlays/ov059/calls/BufferSlots_FreePair.c:
+    complete
+    .text       start:0x020cf308 end:0x020cf322
+
 src/overlays/ov059/calls/RewardQueue_Push.c:
     complete
     .text       start:0x020cf324 end:0x020cf3b4
@@ -88,6 +164,14 @@ src/overlays/ov059/calls/EntryQueue_Clear.c:
     complete
     .text       start:0x020cf3fc end:0x020cf406
 
+src/overlays/ov059/calls/EntryList_FindByKey.c:
+    complete
+    .text       start:0x020cf408 end:0x020cf424
+
+src/overlays/ov059/calls/EntryList_FindByKeyFirst.c:
+    complete
+    .text       start:0x020cf424 end:0x020cf43c
+
 src/overlays/ov059/calls/RewardQueue_CanAddEventHit.c:
     complete
     .text       start:0x020cf4e8 end:0x020cf5d4
@@ -95,6 +179,10 @@ src/overlays/ov059/calls/RewardQueue_CanAddEventHit.c:
 src/overlays/ov059/calls/RewardQueue_PruneOutOfRange.c:
     complete
     .text       start:0x020cf5d4 end:0x020cf67a
+
+src/overlays/ov059/calls/BufferSlotSet_FreeAll.c:
+    complete
+    .text       start:0x020cf9f0 end:0x020cfa18
 
 src/overlays/ov059/auto/func_ov059_020cfe0c.c:
     complete

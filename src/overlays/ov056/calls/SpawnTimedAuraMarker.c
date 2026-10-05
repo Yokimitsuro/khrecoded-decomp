@@ -42,7 +42,7 @@ typedef struct {
 } AuraMarker;
 
 extern s32 func_ov052_020ceb9c(AuraActor *actor);
-extern void func_ov021_020a8ad4(MarkerRequest *request);
+extern void ResetAnimationTrackState(MarkerRequest *request);
 extern s8 func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 
 void SpawnTimedAuraMarker(AuraMarker *marker, AuraActor *actor, s32 frame)
@@ -53,7 +53,7 @@ void SpawnTimedAuraMarker(AuraMarker *marker, AuraActor *actor, s32 frame)
         return;
     }
     func_ov052_020ceb9c(actor);
-    func_ov021_020a8ad4(&request);
+    ResetAnimationTrackState(&request);
     request.id = actor->markerId;
     request.mode = 1;
     request.angle = 0x8000;

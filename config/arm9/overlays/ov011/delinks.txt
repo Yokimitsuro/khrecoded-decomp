@@ -3,6 +3,10 @@
     .data       start:0x020a1180 end:0x020a11c0 kind:data align:32
     .bss        start:0x020a11c0 end:0x020a11c0 kind:bss align:32
 
+src/overlays/ov011/calls/ScriptCmd_SpawnActorInSlot.c:
+    complete
+    .text       start:0x020a0580 end:0x020a05aa
+
 src/overlays/ov011/calls/ScriptCmd_SpawnFieldObject_020a05ac.c:
     complete
     .text       start:0x020a05ac end:0x020a068e
@@ -66,6 +70,10 @@ src/overlays/ov011/calls/FieldObject_Create_020a0fc4.c:
 src/overlays/ov011/calls/FieldObject_ResetToIdle.c:
     complete
     .text       start:0x020a10e4 end:0x020a1142
+
+src/overlays/ov011/calls/FieldObjects_ResetAllAndShuffle.c:
+    complete
+    .text       start:0x020a1144 end:0x020a116c
 
 src/overlays/ov011/data/tables/gCrawlScriptCommandHandlers.c:
     complete

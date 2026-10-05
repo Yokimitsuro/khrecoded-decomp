@@ -19,7 +19,7 @@ typedef struct RewardQueue {
     int uniqueCount;
 } RewardQueue;
 
-extern int func_ov059_020cf424(RewardQueue *queue, RewardEntry *entry);
+extern int EntryList_FindByKeyFirst(RewardQueue *queue, RewardEntry *entry);
 extern u32 func_ov031_020bc730(u32 eventId);
 extern BOOL PlaySoundEffect(int seqArcNo, int index);
 extern void PlaySoundChecked(int seqArcNo, int index);
@@ -27,7 +27,7 @@ extern void PlaySoundChecked(int seqArcNo, int index);
 void RewardQueue_Push(RewardQueue *queue, RewardEntry *entry) {
     if (queue->count == 0) {
         queue->uniqueCount = 1;
-    } else if (func_ov059_020cf424(queue, entry) == -1) {
+    } else if (EntryList_FindByKeyFirst(queue, entry) == -1) {
         queue->uniqueCount++;
     }
     queue->entries[queue->count] = *entry;

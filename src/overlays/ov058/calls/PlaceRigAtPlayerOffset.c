@@ -15,7 +15,7 @@ typedef struct {
 
 extern const RigOffsetTable data_ov058_020d89d4;
 
-extern int func_ov001_0206db5c(int index);
+extern int GetBoundedEntryField(int index);
 extern VecFx32 *func_ov052_020ceb74(int entity);
 extern u16 func_ov052_020ceb9c(int entity);
 extern void func_ov021_020a9180(VecFx32 *out, const VecFx32 *origin, int angle, const VecFx32 *offset);
@@ -24,7 +24,7 @@ void PlaceRigAtPlayerOffset(EmitterRig *rig, int index)
 {
     VecFx32 pos;
     RigOffsetTable table = data_ov058_020d89d4;
-    int entity = func_ov001_0206db5c(index);
+    int entity = GetBoundedEntryField(index);
     u16 angle;
 
     pos = *func_ov052_020ceb74(entity);

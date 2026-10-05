@@ -1,12 +1,12 @@
 #include "nitro/types.h"
 
-extern void func_ov000_0206241c(void); /* StopTouchPanelSampling */
+extern void StopTouchPanelSampling(void); /* StopTouchPanelSampling */
 extern void func_ov000_020622b8(void); /* ApplyPanelSelection */
 extern void func_ov000_02062318(void);
 extern void func_ov000_0206243c(void); /* InitPanelSceneAndClearBg1 */
 extern void func_ov000_02062568(void); /* WaitForAnimationFinish */
 extern void func_ov000_02062598(void); /* ForceReleaseEmbedded */
-extern void func_ov000_020625b0(void); /* ResetPanelStateAndLoadSlot0 */
+extern void ResetPanelStateAndLoadSlot0(void); /* ResetPanelStateAndLoadSlot0 */
 extern void func_ov000_020625d4(void); /* ScanSaveSlots */
 extern void func_ov000_0206276c(void);
 extern void func_ov000_02062794(void); /* EnterPanelMenuScreen */
@@ -17,7 +17,7 @@ extern void func_ov000_02062a10(void); /* TryEnterPanelState */
 extern void func_ov000_02062a58(void); /* PXI_Init */
 extern void func_ov000_02062a64(void); /* SetupPanelField */
 extern void func_ov000_02062a98(void);
-extern void func_ov000_02062bdc(void); /* ReleaseFieldAndReset */
+extern void ReleaseFieldAndReset(void); /* ReleaseFieldAndReset */
 extern void func_ov000_02062c08(void); /* UpdatePanelLookup */
 extern void func_ov000_02062c64(void); /* HandleSessionModeTransition */
 extern void func_ov000_02062cf4(void); /* ReleaseHandleAndResetDisplay */
@@ -35,20 +35,20 @@ extern void func_ov000_02063038(void);
 extern void func_ov000_02063040(void);
 
 void (*gPanelStateHandlers[43])(void) = {
-    func_ov000_0206241c, /* StopTouchPanelSampling */
+    StopTouchPanelSampling, /* StopTouchPanelSampling */
     func_ov000_020622b8, /* ApplyPanelSelection */
     func_ov000_02062318,
-    func_ov000_0206241c, /* StopTouchPanelSampling */
+    StopTouchPanelSampling, /* StopTouchPanelSampling */
     func_ov000_020622b8, /* ApplyPanelSelection */
     func_ov000_02062318,
-    func_ov000_0206241c, /* StopTouchPanelSampling */
+    StopTouchPanelSampling, /* StopTouchPanelSampling */
     func_ov000_020622b8, /* ApplyPanelSelection */
     func_ov000_02062318,
-    func_ov000_0206241c, /* StopTouchPanelSampling */
+    StopTouchPanelSampling, /* StopTouchPanelSampling */
     func_ov000_0206243c, /* InitPanelSceneAndClearBg1 */
     func_ov000_02062568, /* WaitForAnimationFinish */
     func_ov000_02062598, /* ForceReleaseEmbedded */
-    func_ov000_020625b0, /* ResetPanelStateAndLoadSlot0 */
+    ResetPanelStateAndLoadSlot0, /* ResetPanelStateAndLoadSlot0 */
     func_ov000_020625d4, /* ScanSaveSlots */
     func_ov000_0206276c,
     func_ov000_02062794, /* EnterPanelMenuScreen */
@@ -59,10 +59,10 @@ void (*gPanelStateHandlers[43])(void) = {
     func_ov000_02062a58, /* PXI_Init */
     func_ov000_02062a64, /* SetupPanelField */
     func_ov000_02062a98,
-    func_ov000_02062bdc, /* ReleaseFieldAndReset */
+    ReleaseFieldAndReset, /* ReleaseFieldAndReset */
     func_ov000_02062a64, /* SetupPanelField */
     func_ov000_02062a98,
-    func_ov000_02062bdc, /* ReleaseFieldAndReset */
+    ReleaseFieldAndReset, /* ReleaseFieldAndReset */
     func_ov000_02062c08, /* UpdatePanelLookup */
     func_ov000_02062c64, /* HandleSessionModeTransition */
     func_ov000_02062cf4, /* ReleaseHandleAndResetDisplay */

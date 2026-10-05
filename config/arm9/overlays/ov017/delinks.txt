@@ -4,9 +4,41 @@
     .data       start:0x020a5e80 end:0x020a5f60 kind:data align:32
     .bss        start:0x020a5f60 end:0x020a5f60 kind:bss align:32
 
+src/overlays/ov017/calls/ScriptCmd_CreateSlotObjectKind4.c:
+    complete
+    .text       start:0x020a1e00 end:0x020a1e2e
+
 src/overlays/ov017/auto/func_ov017_020a2234.c:
     complete
     .text       start:0x020a2234 end:0x020a2238
+
+src/overlays/ov017/calls/ScriptCmd_ResetEntry.c:
+    complete
+    .text       start:0x020a2238 end:0x020a2264
+
+src/overlays/ov017/calls/ScriptCmd_InitPool0.c:
+    complete
+    .text       start:0x020a2574 end:0x020a258c
+
+src/overlays/ov017/calls/ScriptCmd_InitPool1.c:
+    complete
+    .text       start:0x020a258c end:0x020a25a4
+
+src/overlays/ov017/calls/ScriptCmd_InitPool2.c:
+    complete
+    .text       start:0x020a25a4 end:0x020a25bc
+
+src/overlays/ov017/calls/ScriptCmd_InitPool3.c:
+    complete
+    .text       start:0x020a25bc end:0x020a25d4
+
+src/overlays/ov017/calls/ScriptCmd_InitPool4.c:
+    complete
+    .text       start:0x020a25d4 end:0x020a25ec
+
+src/overlays/ov017/calls/ScriptCmd_SetManagerValue.c:
+    complete
+    .text       start:0x020a2648 end:0x020a265e
 
 src/overlays/ov017/auto/func_ov017_020a276c.c:
     complete
@@ -24,6 +56,10 @@ src/overlays/ov017/calls/func_ov017_020a2e84.c:
     complete
     .text       start:0x020a2e84 end:0x020a2e90
 
+src/overlays/ov017/calls/FreeBlockChain.c:
+    complete
+    .text       start:0x020a2ea4 end:0x020a2ec0
+
 src/overlays/ov017/calls/GetOwnerRaisedPosition.c:
     complete
     .text       start:0x020a3260 end:0x020a32a4
@@ -35,6 +71,14 @@ src/overlays/ov017/calls/GetActorVelocity.c:
 src/overlays/ov017/auto/func_ov017_020a3964.c:
     complete
     .text       start:0x020a3964 end:0x020a3966
+
+src/overlays/ov017/calls/AppendFieldValueSlot.c:
+    complete
+    .text       start:0x020a3fa4 end:0x020a3fcc
+
+src/overlays/ov017/calls/SetFieldObjectPosition_020a40fc.c:
+    complete
+    .text       start:0x020a40fc end:0x020a4120
 
 src/overlays/ov017/auto/func_ov017_020a4290.c:
     complete

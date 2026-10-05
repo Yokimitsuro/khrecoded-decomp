@@ -4,6 +4,26 @@
     .data       start:0x02064520 end:0x020645a0 kind:data align:32
     .bss        start:0x020645a0 end:0x020645c0 kind:bss align:32
 
+src/overlays/ov004/calls/FrameTimer_Start.c:
+    complete
+    .text       start:0x020613e0 end:0x02061400
+
+src/overlays/ov004/calls/FrameTimer_GetElapsed.c:
+    complete
+    .text       start:0x02061400 end:0x0206142c
+
+src/overlays/ov004/calls/FrameTimer_IsExpired.c:
+    complete
+    .text       start:0x0206146c end:0x0206148c
+
+src/overlays/ov004/calls/FrameTimer_GetDuration.c:
+    complete
+    .text       start:0x0206148c end:0x020614a4
+
+src/overlays/ov004/calls/RoundFx32ToInt.c:
+    complete
+    .text       start:0x020614a4 end:0x020614b8
+
 src/overlays/ov004/auto/func_ov004_0206223c.c:
     complete
     .text       start:0x0206223c end:0x02062250

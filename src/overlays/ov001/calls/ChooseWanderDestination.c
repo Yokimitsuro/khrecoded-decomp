@@ -25,7 +25,7 @@ typedef struct {
     s16 actorId;
 } StageEventRecord;
 
-extern int func_ov001_0209c250(WanderEntry *entry);
+extern int GetStageRowIndex(WanderEntry *entry);
 extern void func_ov001_02091840(WanderActor *actor);
 extern int func_ov001_02096a2c(WanderEntry *target, int mode);
 extern u32 random_next_scaled(u32 range);
@@ -35,7 +35,7 @@ extern void func_ov001_0209265c(fx32 length, VecFx32 *out);
 
 void ChooseWanderDestination(WanderEntry *entry, WanderActor *actor, VecFx32 *destination)
 {
-    int row = func_ov001_0209c250(entry);
+    int row = GetStageRowIndex(entry);
     WanderActor *other;
     int nearest;
     VecFx32 offset;

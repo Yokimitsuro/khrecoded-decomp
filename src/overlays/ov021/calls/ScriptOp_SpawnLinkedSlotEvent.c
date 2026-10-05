@@ -68,13 +68,13 @@ typedef struct {
 
 extern FieldContext data_ov021_020b56c4;
 
-extern TaggedValue *func_ov021_020b0394(void *context, TaggedValue *value);
+extern TaggedValue *ResolveTaggedValueRef(void *context, TaggedValue *value);
 extern u16 func_ov021_020b0528(void *context, u32 mode, void *operands, VecFx32 *out, const char **outName);
 extern StageLink *func_ov001_020995ac(u32 id);
 extern StageEvent *func_ov001_0209c114(u32 id);
-extern void func_ov001_02093e50(StageEvent *record, BOOL keepSpeed);
+extern void ResetActorMotion(StageEvent *record, BOOL keepSpeed);
 extern void func_ov001_02094f88(StageEvent *record, int groupArg, int scale, int arg);
-extern u16 func_ov001_0209c250(StageEvent *record);
+extern u16 GetStageRowIndex(StageEvent *record);
 extern StageActor *func_ov001_0209c068(int id);
 extern void func_ov001_02090f34(StageActor *actor, const VecFx32 *position);
 extern void AttachActorToStageNode(StageActor *actor, int stageActorId, const char *nodeName, int align);
@@ -118,8 +118,8 @@ static inline LinkSlot *GetLinkSlot(StageLink *link, u16 index)
 
 s32 ScriptOp_SpawnLinkedSlotEvent(void *context, SlotSpawnCommand *cmd)
 {
-    TaggedValue *slotRef = func_ov021_020b0394(context, &cmd->slot);
-    TaggedValue *argRef = func_ov021_020b0394(context, &cmd->spawnArg);
+    TaggedValue *slotRef = ResolveTaggedValueRef(context, &cmd->slot);
+    TaggedValue *argRef = ResolveTaggedValueRef(context, &cmd->spawnArg);
     StageEvent *eventRecord = data_ov021_020b56c4.eventRecord;
     StageController *controller = data_ov021_020b56c4.link;
     FieldPlayer *player = data_ov021_020b56c4.player;
@@ -173,10 +173,10 @@ s32 ScriptOp_SpawnLinkedSlotEvent(void *context, SlotSpawnCommand *cmd)
     if (record->kind != entry->eventKind) {
         return 0;
     }
-    func_ov001_02093e50(record, FALSE);
+    ResetActorMotion(record, FALSE);
     func_ov001_02094f88(record, entry->groupArg, 0x1000, 0);
     if (eventRecord != NULL) {
-        record->row = func_ov001_0209c250(eventRecord);
+        record->row = GetStageRowIndex(eventRecord);
     }
     actor = func_ov001_0209c068((s16)record->actorId);
     if (actor != NULL) {

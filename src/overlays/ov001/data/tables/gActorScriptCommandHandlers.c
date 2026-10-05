@@ -4,7 +4,7 @@ extern void func_ov001_0208d254(void); /* ScriptCmd_SetScreenSwap */
 extern void func_ov001_0208c764(void); /* DefaultStepDone */
 extern void func_ov001_0208d5c8(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_0208d5d4(void); /* ScriptCmd_ReleaseSceneActors */
-extern void func_ov001_0208dec0(void); /* ScriptOp_RunActorPass */
+extern void ScriptOp_RunActorPass(void); /* ScriptOp_RunActorPass */
 extern void func_ov001_0208d1ac(void); /* ScriptCmd_BeginBrightnessFade */
 extern void func_ov001_0208d214(void); /* ScriptCmd_UpdateScreenBrightnessFades */
 extern void func_ov001_0208d5c0(void); /* DefaultStepDone */
@@ -26,7 +26,7 @@ extern void PlaceActorRelativeToActor(void); /* PlaceActorRelativeToActor */
 extern void func_ov001_0208cbdc(void); /* Script_SetActorParameterFromInteger */
 extern void ScriptCmd_PlaceActor_0208e114(void); /* ScriptCmd_PlaceActor */
 extern void func_ov001_0208ddf0(void); /* ScriptCmd_BindActorTarget */
-extern void func_ov001_0208de44(void); /* ScriptCmd_SetElemFieldIfFlagSet */
+extern void ScriptCmd_SetElemFieldIfFlagSet(void); /* ScriptCmd_SetElemFieldIfFlagSet */
 extern void func_ov001_0208e4b4(void); /* ScriptCmd_SetActorPlaybackRate */
 extern void func_ov001_0208e2a0(void); /* ScriptCmd_SetActorFlagBit4 */
 extern void func_ov001_0208d694(void); /* ScriptCmd_SetActorPrimarySlot */
@@ -45,14 +45,14 @@ extern void func_ov001_0208dd0c(void); /* ScriptCmd_WaitActorReady */
 extern void func_ov001_0208cff0(void); /* ScriptCmd_SetActorHeadingTowardTarget */
 extern void func_ov001_0208d034(void); /* ScriptCmd_SetActorHeadingDegrees */
 extern void func_ov001_0208d29c(void); /* ScriptCmd_StartChannelTransform */
-extern void func_ov001_0208d534(void); /* ScriptCmd_SetActorChannelState */
+extern void ScriptCmd_SetActorChannelState(void); /* ScriptCmd_SetActorChannelState */
 extern void func_ov001_0208d588(void); /* ScriptCmd_PlayActorChannel */
 extern void func_ov001_0208d574(void); /* thumbStep */
 extern void func_ov001_0208d55c(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_0208d568(void); /* FS_UnloadOverlayImage */
 extern void func_ov001_0208d430(void); /* ScriptCmd_SetCameraTarget */
 extern void ScriptCmd_ActorTimerOrAnim(void); /* ScriptCmd_ActorTimerOrAnim */
-extern void func_ov001_0208e0f0(void); /* ScriptCmd_ClearActorTimers */
+extern void ScriptCmd_ClearActorTimers(void); /* ScriptCmd_ClearActorTimers */
 extern void func_ov001_0208e4ac(void); /* DefaultStepDone */
 extern void func_ov001_0208e4b0(void); /* DefaultStepDone */
 extern void func_ov001_0208e4e4(void); /* ScriptCmd_PlaySoundAtActor */
@@ -70,7 +70,7 @@ extern void func_ov001_0208e6e8(void); /* ScriptCmd_ShowMessageWindow */
 extern void func_ov001_0208e778(void); /* DefaultStepDone */
 extern void func_ov001_0208e77c(void); /* ScriptCmd_DispatchToHandler */
 extern void func_ov001_0208e794(void); /* ScriptCmd_StartScreenFade */
-extern void func_ov001_0208e7d0(void); /* IsResourceReadyOrInitialize */
+extern void IsResourceReadyOrInitialize(void); /* IsResourceReadyOrInitialize */
 extern void func_ov001_0208e7f8(void); /* ScriptCmd_OpenFieldPanelScreen */
 extern void func_ov001_0208e870(void); /* ScriptCmd_CloseFieldPanelScreen */
 extern void func_ov001_0208e8c4(void); /* ScriptCmd_SetActorExtraAnimation */
@@ -93,8 +93,8 @@ extern void func_ov001_0208ec98(void); /* ScriptCmd_PlayStageEventAnimation */
 extern void func_ov001_0208ecec(void);
 extern void func_ov001_0208ed10(void); /* ScriptCmd_SetSceneFlagBit2 */
 extern void func_ov001_0208ed54(void); /* ScriptCmd_FaceTargetWithAnims */
-extern void func_ov001_0208ee18(void); /* ScriptOp_InitSubsystemIfFlagClear */
-extern void func_ov001_0208ee34(void); /* ScriptCmd_QueueCameraAngleTransition */
+extern void ScriptOp_InitSubsystemIfFlagClear(void); /* ScriptOp_InitSubsystemIfFlagClear */
+extern void ScriptCmd_QueueCameraAngleTransition(void); /* ScriptCmd_QueueCameraAngleTransition */
 extern void func_ov001_0208ee58(void); /* ScriptCmd_EnterPhase */
 extern void func_ov001_0208ee68(void);
 extern void RefreshPartyMemberStates(void); /* RefreshPartyMemberStates */
@@ -113,7 +113,7 @@ void (*gActorScriptCommandHandlers[186])(void) = {
     NULL,
     func_ov001_0208d5d4, /* ScriptCmd_ReleaseSceneActors */
     NULL,
-    func_ov001_0208dec0, /* ScriptOp_RunActorPass */
+    ScriptOp_RunActorPass, /* ScriptOp_RunActorPass */
     NULL,
     func_ov001_0208d1ac, /* ScriptCmd_BeginBrightnessFade */
     func_ov001_0208d214, /* ScriptCmd_UpdateScreenBrightnessFades */
@@ -150,7 +150,7 @@ void (*gActorScriptCommandHandlers[186])(void) = {
     ScriptCmd_PlaceActor_0208e114, /* ScriptCmd_PlaceActor */
     NULL,
     func_ov001_0208ddf0, /* ScriptCmd_BindActorTarget */
-    func_ov001_0208de44, /* ScriptCmd_SetElemFieldIfFlagSet */
+    ScriptCmd_SetElemFieldIfFlagSet, /* ScriptCmd_SetElemFieldIfFlagSet */
     func_ov001_0208e4b4, /* ScriptCmd_SetActorPlaybackRate */
     NULL,
     func_ov001_0208e2a0, /* ScriptCmd_SetActorFlagBit4 */
@@ -183,7 +183,7 @@ void (*gActorScriptCommandHandlers[186])(void) = {
     NULL,
     func_ov001_0208d29c, /* ScriptCmd_StartChannelTransform */
     NULL,
-    func_ov001_0208d534, /* ScriptCmd_SetActorChannelState */
+    ScriptCmd_SetActorChannelState, /* ScriptCmd_SetActorChannelState */
     NULL,
     func_ov001_0208d588, /* ScriptCmd_PlayActorChannel */
     NULL,
@@ -197,7 +197,7 @@ void (*gActorScriptCommandHandlers[186])(void) = {
     NULL,
     ScriptCmd_ActorTimerOrAnim, /* ScriptCmd_ActorTimerOrAnim */
     NULL,
-    func_ov001_0208e0f0, /* ScriptCmd_ClearActorTimers */
+    ScriptCmd_ClearActorTimers, /* ScriptCmd_ClearActorTimers */
     NULL,
     func_ov001_0208e4ac, /* DefaultStepDone */
     NULL,
@@ -228,7 +228,7 @@ void (*gActorScriptCommandHandlers[186])(void) = {
     func_ov001_0208e77c, /* ScriptCmd_DispatchToHandler */
     NULL,
     func_ov001_0208e794, /* ScriptCmd_StartScreenFade */
-    func_ov001_0208e7d0, /* IsResourceReadyOrInitialize */
+    IsResourceReadyOrInitialize, /* IsResourceReadyOrInitialize */
     func_ov001_0208e7f8, /* ScriptCmd_OpenFieldPanelScreen */
     NULL,
     func_ov001_0208e870, /* ScriptCmd_CloseFieldPanelScreen */
@@ -271,9 +271,9 @@ void (*gActorScriptCommandHandlers[186])(void) = {
     NULL,
     func_ov001_0208ed54, /* ScriptCmd_FaceTargetWithAnims */
     NULL,
-    func_ov001_0208ee18, /* ScriptOp_InitSubsystemIfFlagClear */
+    ScriptOp_InitSubsystemIfFlagClear, /* ScriptOp_InitSubsystemIfFlagClear */
     NULL,
-    func_ov001_0208ee34, /* ScriptCmd_QueueCameraAngleTransition */
+    ScriptCmd_QueueCameraAngleTransition, /* ScriptCmd_QueueCameraAngleTransition */
     NULL,
     func_ov001_0208ee58, /* ScriptCmd_EnterPhase */
     NULL,

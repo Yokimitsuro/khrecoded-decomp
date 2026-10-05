@@ -17,13 +17,13 @@ typedef struct GameSession {
 
 extern GameSession *data_0205fe0c;
 extern int func_ov001_0206dc38(void);
-extern PartyMember *func_ov001_0206db5c(int index);
+extern PartyMember *GetBoundedEntryField(int index);
 extern void AddClampedHealth(PartyMember *member, s16 amount);
 extern void func_ov001_02063a80(int counterId, int amount);
 extern void func_ov001_02063d4c(int id, int amount);
 extern int func_ov001_02064784(void);
-extern int func_ov001_02064574(int bitOffset, int bitCount);
-extern void func_ov001_0206459c(int bitOffset, u32 bitCount, u32 value);
+extern int ReadSessionPackedBits(int bitOffset, int bitCount);
+extern void WriteSessionPackedBits(int bitOffset, u32 bitCount, u32 value);
 extern void func_0204f854(void);
 
 void ApplyRewardByTier(int unused, int kind, int tier)
@@ -48,7 +48,7 @@ void ApplyRewardByTier(int unused, int kind, int tier)
         }
         if (amount > 0) {
             for (index = 0; index < func_ov001_0206dc38(); index++) {
-                PartyMember *member = func_ov001_0206db5c(index);
+                PartyMember *member = GetBoundedEntryField(index);
                 if (member->stats->currentHp != 0) {
                     AddClampedHealth(member, amount);
                 }
@@ -122,8 +122,8 @@ void ApplyRewardByTier(int unused, int kind, int tier)
         break;
     case 5:
         if (func_ov001_02064784() == 6) {
-            level = func_ov001_02064574(0x3700, 0x10);
-            maxLevel = func_ov001_02064574(0x3710, 3) + 1;
+            level = ReadSessionPackedBits(0x3700, 0x10);
+            maxLevel = ReadSessionPackedBits(0x3710, 3) + 1;
             switch (tier) {
             case 0:
                 amount = 1;
@@ -139,7 +139,7 @@ void ApplyRewardByTier(int unused, int kind, int tier)
             if (level >= maxLevel * 20) {
                 level = maxLevel * 20;
             }
-            func_ov001_0206459c(0x3700, 0x10, level);
+            WriteSessionPackedBits(0x3700, 0x10, level);
             func_0204f854();
         }
         break;

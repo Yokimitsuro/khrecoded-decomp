@@ -4,6 +4,10 @@
     .data       start:0x020b5200 end:0x020b5620 kind:data align:32
     .bss        start:0x020b5620 end:0x020b5820 kind:bss align:32
 
+src/overlays/ov021/calls/GetSubModeState.c:
+    complete
+    .text       start:0x020a6ee0 end:0x020a6efc
+
 src/overlays/ov021/calls/func_ov021_020a7524.c:
     complete
     .text       start:0x020a7524 end:0x020a7530
@@ -48,6 +52,14 @@ src/overlays/ov021/calls/ApplyRewardByTier.c:
     complete
     .text       start:0x020a7a60 end:0x020a7c00
 
+src/overlays/ov021/calls/FindTableEntryById.c:
+    complete
+    .text       start:0x020a7c58 end:0x020a7c7e
+
+src/overlays/ov021/calls/CallEntryHandler.c:
+    complete
+    .text       start:0x020a7c80 end:0x020a7ca6
+
 src/overlays/ov021/calls/func_ov021_020a7ca8.c:
     complete
     .text       start:0x020a7ca8 end:0x020a7cb0
@@ -56,9 +68,81 @@ src/overlays/ov021/calls/func_ov021_020a7ccc.c:
     complete
     .text       start:0x020a7ccc end:0x020a7ce8
 
+src/overlays/ov021/calls/SetSoundPairAndQueue.c:
+    complete
+    .text       start:0x020a7f94 end:0x020a7fb0
+
+src/overlays/ov021/calls/SetSoundIdAndQueue.c:
+    complete
+    .text       start:0x020a7fb0 end:0x020a7fc0
+
+src/overlays/ov021/calls/RestartScriptSound.c:
+    complete
+    .text       start:0x020a81ac end:0x020a81d8
+
 src/overlays/ov021/calls/func_ov021_020a8254.c:
     complete
     .text       start:0x020a8254 end:0x020a8260
+
+src/overlays/ov021/calls/ResetAnimationTrackState.c:
+    complete
+    .text       start:0x020a8ad4 end:0x020a8afa
+
+src/overlays/ov021/calls/GetGroupMemberCount.c:
+    complete
+    .text       start:0x020a8e84 end:0x020a8ea8
+
+src/overlays/ov021/calls/SetSlotEntryValue.c:
+    complete
+    .text       start:0x020a8f6c end:0x020a8f94
+
+src/overlays/ov021/calls/MakeVramUploadParams.c:
+    complete
+    .text       start:0x020a95e8 end:0x020a960c
+
+src/overlays/ov021/calls/MakePaletteUploadParams20.c:
+    complete
+    .text       start:0x020a960c end:0x020a9634
+
+src/overlays/ov021/calls/MakePaletteUploadParams230.c:
+    complete
+    .text       start:0x020a9634 end:0x020a965c
+
+src/overlays/ov021/calls/MakePaletteUploadParams210.c:
+    complete
+    .text       start:0x020a965c end:0x020a9684
+
+src/overlays/ov021/calls/MakePaletteUploadParams160.c:
+    complete
+    .text       start:0x020a9684 end:0x020a96ac
+
+src/overlays/ov021/calls/MakePaletteUploadParams40.c:
+    complete
+    .text       start:0x020a96ac end:0x020a96d4
+
+src/overlays/ov021/calls/MakePaletteUploadParams60.c:
+    complete
+    .text       start:0x020a96d4 end:0x020a96fc
+
+src/overlays/ov021/calls/MakePaletteUploadParams130.c:
+    complete
+    .text       start:0x020a9764 end:0x020a978c
+
+src/overlays/ov021/calls/MakePaletteUploadParams145.c:
+    complete
+    .text       start:0x020a978c end:0x020a97b4
+
+src/overlays/ov021/calls/ReleaseEntryGroup.c:
+    complete
+    .text       start:0x020aaf30 end:0x020aaf5c
+
+src/overlays/ov021/calls/ReleaseCallbackOwnedBuffer.c:
+    complete
+    .text       start:0x020aafcc end:0x020aafe4
+
+src/overlays/ov021/calls/ResetEntryStates.c:
+    complete
+    .text       start:0x020ab004 end:0x020ab02e
 
 src/overlays/ov021/auto/func_ov021_020ac168.c:
     complete
@@ -68,13 +152,53 @@ src/overlays/ov021/calls/ComputeAttackDamage.c:
     complete
     .text       start:0x020ac6ec end:0x020ac810
 
+src/overlays/ov021/calls/IsObjectIdle.c:
+    complete
+    .text       start:0x020ac810 end:0x020ac832
+
 src/overlays/ov021/calls/RefreshMenuHighlights.c:
     complete
     .text       start:0x020aca50 end:0x020acb8c
 
+src/overlays/ov021/calls/FindListObjectByIdPrimary.c:
+    complete
+    .text       start:0x020accdc end:0x020acd08
+
+src/overlays/ov021/calls/FindListObjectByIdSecondary.c:
+    complete
+    .text       start:0x020acd08 end:0x020acd34
+
+src/overlays/ov021/calls/ReleaseMemberResources.c:
+    complete
+    .text       start:0x020acdac end:0x020acdd2
+
+src/overlays/ov021/calls/ResetObjectSlots.c:
+    complete
+    .text       start:0x020ad490 end:0x020ad4b4
+
+src/overlays/ov021/calls/QueueGroupSounds.c:
+    complete
+    .text       start:0x020ad86c end:0x020ad896
+
+src/overlays/ov021/calls/GetMemberValue.c:
+    complete
+    .text       start:0x020ad898 end:0x020ad8b4
+
 src/overlays/ov021/calls/SelectMenuMember.c:
     complete
     .text       start:0x020ad9a0 end:0x020adacc
+
+src/overlays/ov021/calls/GetMemberByIndex.c:
+    complete
+    .text       start:0x020adacc end:0x020adade
+
+src/overlays/ov021/calls/InitScriptTask.c:
+    complete
+    .text       start:0x020adc7c end:0x020adca0
+
+src/overlays/ov021/calls/ResetTargetSet.c:
+    complete
+    .text       start:0x020adfb0 end:0x020adfd6
 
 src/overlays/ov021/calls/func_ov021_020ae738.c:
     complete
@@ -88,9 +212,93 @@ src/overlays/ov021/calls/func_ov021_020ae8ac.c:
     complete
     .text       start:0x020ae8ac end:0x020ae90c
 
+src/overlays/ov021/calls/CopyWordArray24.c:
+    complete
+    .text       start:0x020aecac end:0x020aecc4
+
+src/overlays/ov021/calls/RunSubModeUpdate.c:
+    complete
+    .text       start:0x020af384 end:0x020af3a0
+
 src/overlays/ov021/calls/func_ov021_020af408.c:
     complete
     .text       start:0x020af408 end:0x020af414
+
+src/overlays/ov021/calls/ForwardSubModeStart.c:
+    complete
+    .text       start:0x020af7d8 end:0x020af804
+
+src/overlays/ov021/calls/ForwardSubModeEnd.c:
+    complete
+    .text       start:0x020af804 end:0x020af830
+
+src/overlays/ov021/calls/AsinToRadians.c:
+    complete
+    .text       start:0x020af9a0 end:0x020af9c4
+
+src/overlays/ov021/calls/ResolveTaggedValueRef.c:
+    complete
+    .text       start:0x020b0394 end:0x020b03b6
+
+src/overlays/ov021/calls/TaggedValueToInt.c:
+    complete
+    .text       start:0x020b03b8 end:0x020b03d0
+
+src/overlays/ov021/calls/TaggedValueToFixed.c:
+    complete
+    .text       start:0x020b03d0 end:0x020b03e8
+
+src/overlays/ov021/calls/ScriptOp_GetPlayerHiddenFlag.c:
+    complete
+    .text       start:0x020b0ab0 end:0x020b0ad4
+
+src/overlays/ov021/calls/ScriptOp_GetSecondSharedValue.c:
+    complete
+    .text       start:0x020b0c80 end:0x020b0c9c
+
+src/overlays/ov021/calls/ScriptOp_GetFirstSharedValue.c:
+    complete
+    .text       start:0x020b0c9c end:0x020b0cb8
+
+src/overlays/ov021/calls/ScriptOp_GetActiveObjectValue.c:
+    complete
+    .text       start:0x020b0cd8 end:0x020b0cfc
+
+src/overlays/ov021/calls/ScriptOp_GetOwnerIntegerField.c:
+    complete
+    .text       start:0x020b0ff0 end:0x020b1014
+
+src/overlays/ov021/calls/ScriptOp_GetPlayerStateBit0.c:
+    complete
+    .text       start:0x020b1064 end:0x020b1090
+
+src/overlays/ov021/calls/ScriptOp_GetObjectFixedField.c:
+    complete
+    .text       start:0x020b10dc end:0x020b10fc
+
+src/overlays/ov021/calls/ScriptOp_IsObjectCounterNonpositive.c:
+    complete
+    .text       start:0x020b1140 end:0x020b116a
+
+src/overlays/ov021/calls/ScriptOp_GetObjectVerticalOffset.c:
+    complete
+    .text       start:0x020b116c end:0x020b1194
+
+src/overlays/ov021/calls/ScriptOp_GetPlayerLockFlag.c:
+    complete
+    .text       start:0x020b122c end:0x020b1250
+
+src/overlays/ov021/calls/ScriptOp_GetObjectVectorMagnitude.c:
+    complete
+    .text       start:0x020b1290 end:0x020b12b8
+
+src/overlays/ov021/calls/ScriptOp_GetMotionAnchor.c:
+    complete
+    .text       start:0x020b15e0 end:0x020b1608
+
+src/overlays/ov021/calls/ScriptOp_GetMotionTarget.c:
+    complete
+    .text       start:0x020b170c end:0x020b1734
 
 src/overlays/ov021/calls/ScriptOp_PlaceNearPlayerOnGround.c:
     complete
@@ -99,6 +307,26 @@ src/overlays/ov021/calls/ScriptOp_PlaceNearPlayerOnGround.c:
 src/overlays/ov021/calls/ScriptOp_PlaceAroundPlayer.c:
     complete
     .text       start:0x020b1870 end:0x020b19d0
+
+src/overlays/ov021/calls/LoadStageEntryPosition.c:
+    complete
+    .text       start:0x020b19d0 end:0x020b19f0
+
+src/overlays/ov021/calls/ScriptOp_GetStageAnchorA.c:
+    complete
+    .text       start:0x020b1b94 end:0x020b1bb4
+
+src/overlays/ov021/calls/ScriptOp_GetStageAnchorB.c:
+    complete
+    .text       start:0x020b1bb4 end:0x020b1bd4
+
+src/overlays/ov021/calls/ScriptOp_GetCameraTarget.c:
+    complete
+    .text       start:0x020b1c50 end:0x020b1c70
+
+src/overlays/ov021/calls/ScriptOp_GetObjectPosition.c:
+    complete
+    .text       start:0x020b1e04 end:0x020b1e24
 
 src/overlays/ov021/calls/PickSpawnPointNearPlayer.c:
     complete
@@ -116,13 +344,61 @@ src/overlays/ov021/calls/ScriptOp_SpawnLinkedSlotEvent.c:
     complete
     .text       start:0x020b25d4 end:0x020b2780
 
+src/overlays/ov021/calls/ScriptCmd_StopActorMotion.c:
+    complete
+    .text       start:0x020b28e8 end:0x020b2914
+
 src/overlays/ov021/calls/ScriptOp_SpawnStageObject.c:
     complete
     .text       start:0x020b2914 end:0x020b2a6c
 
+src/overlays/ov021/calls/ScriptCmd_SetActorGroupFlag.c:
+    complete
+    .text       start:0x020b3050 end:0x020b3070
+
+src/overlays/ov021/calls/ScriptCmd_SetActorGroupFlag_020b3070.c:
+    complete
+    .text       start:0x020b3070 end:0x020b3090
+
+src/overlays/ov021/calls/ScriptOp_SetContextFlag0.c:
+    complete
+    .text       start:0x020b3420 end:0x020b3448
+
+src/overlays/ov021/calls/ScriptOp_SetContextFlag16.c:
+    complete
+    .text       start:0x020b3448 end:0x020b3470
+
+src/overlays/ov021/calls/ScriptOp_CopyTaggedValue.c:
+    complete
+    .text       start:0x020b3470 end:0x020b349c
+
+src/overlays/ov021/calls/ScriptOp_JumpIfEntryInactive.c:
+    complete
+    .text       start:0x020b34a4 end:0x020b34c6
+
+src/overlays/ov021/calls/DispatchScriptHandler.c:
+    complete
+    .text       start:0x020b34d0 end:0x020b34f4
+
+src/overlays/ov021/calls/EvalRandomRangeOperand.c:
+    complete
+    .text       start:0x020b3918 end:0x020b3938
+
+src/overlays/ov021/calls/ScriptOp_SetActiveObjectValue.c:
+    complete
+    .text       start:0x020b39a8 end:0x020b39c8
+
+src/overlays/ov021/calls/ScriptOp_DispatchIndexedCommand.c:
+    complete
+    .text       start:0x020b39c8 end:0x020b39f4
+
 src/overlays/ov021/auto/func_ov021_020b48a0.c:
     complete
     .text       start:0x020b48a0 end:0x020b48a4
+
+src/overlays/ov021/calls/FreeOwnedBuffer.c:
+    complete
+    .text       start:0x020b4b80 end:0x020b4b9c
 
 src/overlays/ov021/data/strings/Strings_ov021_020b4fe8.c:
     complete

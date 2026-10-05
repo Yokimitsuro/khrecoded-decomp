@@ -32,7 +32,7 @@ typedef struct {
 
 extern VecFx32 *func_ov052_020ceb74(Enemy *enemy);
 extern BOOL func_ov001_02087988(u32 id, EventTargetInfo *out);
-extern BOOL func_ov001_02087c74(u32 id, u32 slot, SlotPoint *outPoint);
+extern BOOL StageRecord_GetSlotPosition(u32 id, u32 slot, SlotPoint *outPoint);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 
 BOOL HasReachedMoveTarget(Enemy *enemy, const VecFx32 *dest)
@@ -57,7 +57,7 @@ BOOL HasReachedMoveTarget(Enemy *enemy, const VecFx32 *dest)
         if (!func_ov001_02087988(target->eventId, &info)) {
             break;
         }
-        if (!func_ov001_02087c74(target->eventId, target->slot, &point)) {
+        if (!StageRecord_GetSlotPosition(target->eventId, target->slot, &point)) {
             break;
         }
         dist = VEC_Distance(&pos, &goal);

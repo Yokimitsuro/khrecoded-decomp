@@ -31,7 +31,7 @@ extern GroupMemberWork *func_ov032_020bbc98(GroupObject *object);
 extern ObjectGroup *func_ov032_020bbc80(GroupObject *object);
 extern void *ActorRegistry_GetEntityByIndex(int actorId);
 extern int func_ov032_020bc6f8(GroupObject *object);
-extern int func_ov032_020be460(int value, int limit);
+extern int ClampSymmetricValue(int value, int limit);
 extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
@@ -71,9 +71,9 @@ BOOL SteerMemberToFormationSlot(GroupObject *object, u32 *step)
         speed = 1;
     }
     func_01ff9e3c(&target, &object->position, &diff);
-    work->moveDelta.x += func_ov032_020be460(diff.x, limit);
-    work->moveDelta.y += func_ov032_020be460(diff.y, limit);
-    work->moveDelta.z += func_ov032_020be460(diff.z, limit);
+    work->moveDelta.x += ClampSymmetricValue(diff.x, limit);
+    work->moveDelta.y += ClampSymmetricValue(diff.y, limit);
+    work->moveDelta.z += ClampSymmetricValue(diff.z, limit);
     if (VEC_Mag(&work->moveDelta) > 0) {
         VEC_Normalize(&work->moveDelta, &work->moveDelta);
         ScaleVecFx32InPlace(&work->moveDelta, speed);

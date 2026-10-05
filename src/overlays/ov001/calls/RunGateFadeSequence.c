@@ -36,7 +36,7 @@ typedef struct {
 } StageManager;
 
 extern StageActor *func_ov001_0209c068(int id);
-extern void *func_ov001_0209c0ec(u16 id);
+extern void *GetStageObjectHandle(u16 id);
 extern StageManager *func_ov001_0209c3e8(void);
 extern u32 func_ov001_0209d0a8(s32 seqArcId, s32 soundId, VecFx32 *position, u32 flags);
 extern void func_ov001_02093358(GateRecord *record);
@@ -50,7 +50,7 @@ int RunGateFadeSequence(GateRecord *record)
     StageManager *manager;
     int mode;
 
-    func_ov001_0209c0ec(record->objectId);
+    GetStageObjectHandle(record->objectId);
     manager = func_ov001_0209c3e8();
     if (record->armed && record->kind == 4) {
         switch (record->step) {

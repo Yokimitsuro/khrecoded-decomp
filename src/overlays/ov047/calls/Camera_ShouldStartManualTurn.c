@@ -15,12 +15,12 @@ typedef struct CameraManager {
 extern GameSettings *data_0205fe0c;
 extern u16 data_020604fc;
 extern u16 data_02060500;
-extern VecFx32 *func_ov046_020c17a0(void);
+extern VecFx32 *Camera_GetFocusPosition(void);
 extern VecFx32 *func_ov001_0206dc4c(int playerIndex);
 
 BOOL Camera_ShouldStartManualTurn(void *tracking, CameraManager *camera, u32 buttons)
 {
-    if (func_ov046_020c17a0() != func_ov001_0206dc4c(0)) {
+    if (Camera_GetFocusPosition() != func_ov001_0206dc4c(0)) {
         return FALSE;
     }
     if (!data_0205fe0c->classicControls) {

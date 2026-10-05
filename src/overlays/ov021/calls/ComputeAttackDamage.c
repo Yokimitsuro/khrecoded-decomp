@@ -14,7 +14,7 @@ typedef struct {
     u8 element;
 } AttackDesc;
 
-extern void *func_ov001_0206db5c(int player);
+extern void *GetBoundedEntryField(int player);
 extern BOOL func_ov001_02075248(int player);
 extern BOOL IsPlayerEntryFlagSet(int player, u32 id);
 extern int GetPlayerEntryCount(int player, u32 id);
@@ -27,7 +27,7 @@ fx32 ComputeAttackDamage(int player, AttackDesc *attack)
     PlayerStats *stats;
     fx32 damage;
     BOOL boosted;
-    stats = *(PlayerStats **)((u8 *)func_ov001_0206db5c(player) + 0x1d4);
+    stats = *(PlayerStats **)((u8 *)GetBoundedEntryField(player) + 0x1d4);
     damage = 0;
     physical = FALSE;
     magical = FALSE;

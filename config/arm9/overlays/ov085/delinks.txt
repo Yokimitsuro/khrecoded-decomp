@@ -4,6 +4,14 @@
     .data       start:0x020c2360 end:0x020c2400 kind:data align:32
     .bss        start:0x020c2400 end:0x020c2400 kind:bss align:32
 
+src/overlays/ov085/calls/FilterEntriesByCategory.c:
+    complete
+    .text       start:0x020c1fac end:0x020c1fc0
+
+src/overlays/ov085/calls/FilterEntriesByCategorySet.c:
+    complete
+    .text       start:0x020c1fc0 end:0x020c1fd4
+
 src/overlays/ov085/data/strings/Strings_ov085_020c23a4.c:
     complete
     .data       start:0x020c23a4 end:0x020c23bc

@@ -28,7 +28,7 @@ typedef struct FieldState {
 extern FieldState *data_ov001_020a0480;
 
 extern u32 random_next_scaled(int range);
-extern void func_ov001_02084750(FieldObject *object, int bits);
+extern void FieldObject_SetSavedBits1To6(FieldObject *object, int bits);
 
 void FieldObject_AdvanceRandomVariant(FieldObject *object)
 {
@@ -40,7 +40,7 @@ void FieldObject_AdvanceRandomVariant(FieldObject *object)
         step = 0;
     }
     object->variantIndex = (object->variantIndex + 1 + step) % object->variantCount;
-    func_ov001_02084750(object, object->variants[object->variantIndex].savedBits);
+    FieldObject_SetSavedBits1To6(object, object->variants[object->variantIndex].savedBits);
     object->timer = 0;
     object->flags &= 0xFFEF;
     object->flags &= 0xFFDF;

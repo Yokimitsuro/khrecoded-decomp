@@ -65,7 +65,7 @@ extern const BurstSchedule data_ov061_020d8520;
 extern void func_ov052_020cffac(Actor *actor, AnimEntry *entry);
 extern void func_ov052_020d1a88(SlotEntry *entry, void *source, int mirrored, AnimRecord *record, int player);
 extern void SpawnGroupHitMarker();
-extern void func_ov021_020a8ad4(MarkerRequest *request);
+extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern void func_ov021_020af564(int first, int second);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
@@ -101,7 +101,7 @@ void UpdateTimedBurstAction(Actor *actor)
         if (!(record->spawnedMask & bit) && actor->frame >= schedule.frames[i]) {
             BOOL found;
 
-            func_ov021_020a8ad4(&request);
+            ResetAnimationTrackState(&request);
             request.id = actor->player;
             request.visible = 1;
             request.angle = 0x8000;

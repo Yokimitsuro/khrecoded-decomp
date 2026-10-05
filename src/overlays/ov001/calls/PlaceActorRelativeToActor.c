@@ -22,7 +22,7 @@ typedef struct MtxFx43 {
 extern int ScriptVm_ReadOperandInt(void *scriptContext, ScriptOperand *operand);
 extern fx32 ScriptVm_ReadOperandFx32(void *scriptContext, ScriptOperand *operand);
 extern int ScriptCmd_ReturnValue(void *scriptContext, int actorId);
-extern VecFx32 *func_ov001_0208bd20(void);
+extern VecFx32 *GetSharedCommandDataOffset44(void);
 extern ActorNode *ActorRegistry_GetEntityByIndex(u16 actorId);
 extern void MTX_Identity43_(MtxFx43 *matrix);
 extern void MTX_RotY43_(MtxFx43 *matrix, fx32 sine, fx32 cosine);
@@ -50,7 +50,7 @@ int PlaceActorRelativeToActor(void *scriptContext, ScriptOperand *operands) {
     referenceId = ScriptVm_ReadOperandInt(scriptContext, operands + 1);
     height = ScriptVm_ReadOperandFx32(scriptContext, operands + 2);
     actorId = ScriptCmd_ReturnValue(scriptContext, actorId);
-    orientation = *func_ov001_0208bd20();
+    orientation = *GetSharedCommandDataOffset44();
     position = ActorRegistry_GetEntityByIndex(referenceId)->position;
     depth = operands[3].type == 0 ? height : ScriptVm_ReadOperandFx32(scriptContext, operands + 3);
     offset.x = 0;

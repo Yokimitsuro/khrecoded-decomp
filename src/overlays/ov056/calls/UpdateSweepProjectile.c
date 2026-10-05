@@ -38,7 +38,7 @@ typedef struct {
 } ProjectileOwner;
 
 extern s16 data_02053580[];
-extern EntryInfo *func_ov001_0206db5c(int index);
+extern EntryInfo *GetBoundedEntryField(int index);
 extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
@@ -56,7 +56,7 @@ BOOL UpdateSweepProjectile(ProjectileOwner *owner, Projectile *proj, fx32 step)
     int index;
 
     if (proj->timer == 0) {
-        info = func_ov001_0206db5c(owner->entryIndex);
+        info = GetBoundedEntryField(owner->entryIndex);
         angle = info->facing - 0x8000;
         pos = info->position;
         pos.y += 0xc00;

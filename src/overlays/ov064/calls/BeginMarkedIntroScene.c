@@ -45,21 +45,21 @@ typedef struct {
     void *cameraPath;
 } SceneTask;
 
-extern Actor *func_ov001_0206db5c(int index);
-extern void func_ov021_020a8ad4(MarkerRequest *request);
+extern Actor *GetBoundedEntryField(int index);
+extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern void UpdateFacingTowardTarget(Actor *actor, BOOL useEntry);
 extern void func_ov046_020c2f64(void *path);
 
 s32 BeginMarkedIntroScene(SceneOwner *owner, SceneTask *task, u32 *errorCode)
 {
-    Actor *actor = func_ov001_0206db5c(owner->playerIndex);
+    Actor *actor = GetBoundedEntryField(owner->playerIndex);
     MarkerRequest request;
     int motion;
 
     task->started = 0;
     task->timer = 0;
-    func_ov021_020a8ad4(&request);
+    ResetAnimationTrackState(&request);
     request.id = actor->player;
     request.layer = 2;
     request.hidden = 0;

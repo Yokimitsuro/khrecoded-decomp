@@ -51,7 +51,7 @@ extern void func_ov076_020c5318(SlotMenu *menu, u16 slot, u16 column, int mode, 
 extern BOOL func_ov076_020cbbc0(MenuPanel *panel, SlotMenu *owner, int (*getValue)(SlotMenu *), void (*onClose)(SlotMenu *), ScreenPos *pos, int style);
 extern int func_ov076_020c51b0(SlotMenu *menu);
 extern int func_ov076_020c51d0(SlotMenu *menu);
-extern void func_ov076_020c4f38(SlotMenu *menu);
+extern void SlotMenu_OpenConfirmPrompt(SlotMenu *menu);
 extern void func_ov076_020c4f54(SlotMenu *menu);
 extern void func_ov076_020c83a8(SlotMenu *menu, int messageId);
 extern void func_ov076_020ccd50(void *container, BOOL visible);
@@ -76,7 +76,7 @@ void SlotMenu_HandleSlotSelect(SlotMenu *menu)
         if (func_ov076_020c44e0(menu, slot)) {
             func_ov076_020c5318(menu, menu->slotIndex, menu->column, 0, &data_ov076_020cd2d4);
             func_ov076_020c5318(menu, menu->slotIndex, menu->column, 0, &data_ov076_020cd2e0);
-            if (func_ov076_020cbbc0(&menu->panel, menu, func_ov076_020c51b0, func_ov076_020c4f38, &data_ov076_020cd2d4, 2)) {
+            if (func_ov076_020cbbc0(&menu->panel, menu, func_ov076_020c51b0, SlotMenu_OpenConfirmPrompt, &data_ov076_020cd2d4, 2)) {
                 menu->state = 2;
                 func_ov076_020ccd50(func_ov039_020bc1dc(), FALSE);
                 menu->showTutorial = 1;

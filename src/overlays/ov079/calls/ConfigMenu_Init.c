@@ -80,7 +80,7 @@ extern void func_ov027_020b8208(void *pool, void *tag, s16 x, s16 y);
 extern void func_ov027_020b8408(void *pool, void *tag, BOOL arm);
 extern int func_ov039_020bc934(void);
 extern void func_ov039_020bc338(int a, int b, int c, int d, int e, u16 f);
-extern void func_ov036_020bc434(int a, int b, int c);
+extern void IsPxiFifoTagSet_020bc434(int a, int b, int c);
 
 BOOL ConfigMenu_Init(ConfigMenu *menu)
 {
@@ -158,7 +158,7 @@ BOOL ConfigMenu_Init(ConfigMenu *menu)
     func_ov027_020b8408(pool, menu->arrowLeft, TRUE);
     func_ov027_020b8408(pool, menu->arrowRight, TRUE);
     func_ov039_020bc338(0, 4, 0xc, 0x1b, 2, func_ov039_020bc934());
-    func_ov036_020bc434(1, 0, 0xc0);
+    IsPxiFifoTagSet_020bc434(1, 0, 0xc0);
     menu->tracker = pool;
     menu->dirty = 2;
     menu->pageChanged = 2;

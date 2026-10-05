@@ -29,7 +29,7 @@ extern GameState *data_0205fe0c;
 extern SelectionRecord *GetOverlaySelectionRecord(int index);
 extern BOOL func_ov001_020645c8(u32 value);
 extern int func_ov001_020644b0(void);
-extern void func_ov001_0206459c(int bitOffset, u32 bitCount, u32 value);
+extern void WriteSessionPackedBits(int bitOffset, u32 bitCount, u32 value);
 extern void DecrementByteCounter(int index);
 extern u16 func_02029254(int index, const void *src);
 extern void func_ov001_02072530(u32 choice);
@@ -72,10 +72,10 @@ void AddRegionProgress(int amount)
         func_ov001_02072530(progress->level);
         block->points[progress->region] = 0;
         if (progress->region == 0 && progress->level == 1 && IsRegionMilestoneReady()) {
-            func_ov001_0206459c(0x380a, 1, 1);
+            WriteSessionPackedBits(0x380a, 1, 1);
         }
     }
     if (progress->level == 4) {
-        func_ov001_0206459c(progress->region + 0xbd9, 1, 1);
+        WriteSessionPackedBits(progress->region + 0xbd9, 1, 1);
     }
 }

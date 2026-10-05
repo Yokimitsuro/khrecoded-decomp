@@ -1,6 +1,6 @@
 func_ov010_020a0540 kind:function(thumb,size=0x8c) addr:0x020a0540
 func_ov010_020a05cc kind:function(thumb,size=0x86) addr:0x020a05cc
-func_ov010_020a0654 kind:function(thumb,size=0x2a) addr:0x020a0654
+ScriptCmd_SpawnObjectIntoSlot kind:function(thumb,size=0x2a) addr:0x020a0654
 func_ov010_020a0680 kind:function(thumb,size=0x3a) addr:0x020a0680
 func_ov010_020a06bc kind:function(thumb,size=0xf8) addr:0x020a06bc
 func_ov010_020a07b4 kind:function(thumb,size=0x2) addr:0x020a07b4
@@ -44,7 +44,7 @@ func_ov010_020a1978 kind:function(thumb,size=0x20) addr:0x020a1978
 func_ov010_020a1998 kind:function(thumb,size=0x130) addr:0x020a1998
 func_ov010_020a1ac8 kind:function(thumb,size=0x46) addr:0x020a1ac8
 func_ov010_020a1b10 kind:function(thumb,size=0x3c) addr:0x020a1b10
-func_ov010_020a1b4c kind:function(thumb,size=0x22) addr:0x020a1b4c
+AnimSequence_AddClip kind:function(thumb,size=0x22) addr:0x020a1b4c
 func_ov010_020a1b70 kind:function(thumb,size=0x124) addr:0x020a1b70
 func_ov010_020a1c94 kind:function(thumb,size=0xac) addr:0x020a1c94
 data_ov010_020a1d40 kind:data(any) addr:0x020a1d40

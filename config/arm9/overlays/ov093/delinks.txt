@@ -4,6 +4,34 @@
     .data       start:0x020c3ea0 end:0x020c5100 kind:data align:32
     .bss        start:0x020c5100 end:0x020c5120 kind:bss align:32
 
+src/overlays/ov093/calls/CeilFx32.c:
+    complete
+    .text       start:0x020beb20 end:0x020beb40
+
+src/overlays/ov093/calls/FreeLoadedFiles.c:
+    complete
+    .text       start:0x020bf8e0 end:0x020bf904
+
+src/overlays/ov093/calls/ResetSmoothValue.c:
+    complete
+    .text       start:0x020c2078 end:0x020c20a0
+
+src/overlays/ov093/calls/GetSmoothValueInt.c:
+    complete
+    .text       start:0x020c21f8 end:0x020c2218
+
+src/overlays/ov093/calls/SetEntryFlag_020c22f4.c:
+    complete
+    .text       start:0x020c22f4 end:0x020c2318
+
+src/overlays/ov093/calls/ClearEntryFlag.c:
+    complete
+    .text       start:0x020c2318 end:0x020c233c
+
+src/overlays/ov093/calls/SetSceneState.c:
+    complete
+    .text       start:0x020c233c end:0x020c2368
+
 src/overlays/ov093/auto/func_ov093_020c2374.c:
     complete
     .text       start:0x020c2374 end:0x020c2378
@@ -15,6 +43,10 @@ src/overlays/ov093/auto/func_ov093_020c2b20.c:
 src/overlays/ov093/auto/func_ov093_020c31f4.c:
     complete
     .text       start:0x020c31f4 end:0x020c31f8
+
+src/overlays/ov093/calls/StateMachine_SetState.c:
+    complete
+    .text       start:0x020c3be4 end:0x020c3bf4
 
 src/overlays/ov093/calls/func_ov093_020c3c2c.c:
     complete

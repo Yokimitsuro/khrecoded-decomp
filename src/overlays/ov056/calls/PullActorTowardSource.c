@@ -29,7 +29,7 @@ extern void func_01ffa09c(fx32 scale, const VecFx32 *v, const VecFx32 *add, VecF
 extern int FX_Mul(int left, int right);
 extern void func_ov001_020911bc(StageActor *actor);
 extern void func_ov001_020911d0(StageActor *actor);
-extern void func_ov001_02091c78(StageActor *actor, VecFx32 *offset);
+extern void AddObjectOffsetVector(StageActor *actor, VecFx32 *offset);
 extern void func_ov001_0209590c(PullEvent *event, int status);
 
 BOOL PullActorTowardSource(PullEvent *event, PullWork *work)
@@ -64,7 +64,7 @@ BOOL PullActorTowardSource(PullEvent *event, PullWork *work)
             func_ov001_020911bc(actor);
             func_ov001_020911d0(actor);
             func_01ff9e3c(&pos, func_ov001_02090f2c(actor), &dir);
-            func_ov001_02091c78(actor, &dir);
+            AddObjectOffsetVector(actor, &dir);
         }
         return TRUE;
     }

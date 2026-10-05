@@ -24,13 +24,13 @@ typedef struct {
     void *cameraPath;
 } SceneTask;
 
-extern Actor *func_ov001_0206db5c(int index);
+extern Actor *GetBoundedEntryField(int index);
 extern void UpdateFacingTowardTarget(Actor *actor, BOOL useEntry);
 extern void func_ov046_020c2f64(void *path);
 
 s32 BeginBossIntroScene(SceneOwner *owner, SceneTask *task, u32 *errorCode)
 {
-    Actor *actor = func_ov001_0206db5c(owner->playerIndex);
+    Actor *actor = GetBoundedEntryField(owner->playerIndex);
     int motion;
 
     task->step = 0;

@@ -1,9 +1,9 @@
-func_ov004_020613e0 kind:function(arm,size=0x20) addr:0x020613e0
-func_ov004_02061400 kind:function(arm,size=0x2c) addr:0x02061400
+FrameTimer_Start kind:function(arm,size=0x20) addr:0x020613e0
+FrameTimer_GetElapsed kind:function(arm,size=0x2c) addr:0x02061400
 func_ov004_0206142c kind:function(arm,size=0x40) addr:0x0206142c
-func_ov004_0206146c kind:function(arm,size=0x20) addr:0x0206146c
-func_ov004_0206148c kind:function(arm,size=0x18) addr:0x0206148c
-func_ov004_020614a4 kind:function(arm,size=0x14) addr:0x020614a4
+FrameTimer_IsExpired kind:function(arm,size=0x20) addr:0x0206146c
+FrameTimer_GetDuration kind:function(arm,size=0x18) addr:0x0206148c
+RoundFx32ToInt kind:function(arm,size=0x14) addr:0x020614a4
 func_ov004_020614b8 kind:function(arm,size=0xe0) addr:0x020614b8
 func_ov004_02061598 kind:function(arm,size=0xfc) addr:0x02061598
 func_ov004_02061694 kind:function(arm,size=0x20) addr:0x02061694

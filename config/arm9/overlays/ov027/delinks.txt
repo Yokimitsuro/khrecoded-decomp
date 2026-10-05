@@ -100,13 +100,33 @@ src/overlays/ov027/auto/func_ov027_020b85e4.c:
     complete
     .text       start:0x020b85e4 end:0x020b85f0
 
+src/overlays/ov027/calls/ForEachListElement.c:
+    complete
+    .text       start:0x020b8b3c end:0x020b8b68
+
 src/overlays/ov027/calls/func_ov027_020b8ca0.c:
     complete
     .text       start:0x020b8ca0 end:0x020b8cb4
 
+src/overlays/ov027/calls/UpdateWidgetRootAndFireAlarm.c:
+    complete
+    .text       start:0x020b8cb4 end:0x020b8cc8
+
+src/overlays/ov027/calls/UpdateWidgetRootOnly.c:
+    complete
+    .text       start:0x020b8cc8 end:0x020b8cdc
+
 src/overlays/ov027/calls/func_ov027_020b8fb8.c:
     complete
     .text       start:0x020b8fb8 end:0x020b8fde
+
+src/overlays/ov027/calls/ReleaseIfMarked.c:
+    complete
+    .text       start:0x020b905c end:0x020b9080
+
+src/overlays/ov027/calls/InitObjManagerAndMark.c:
+    complete
+    .text       start:0x020b9080 end:0x020b9098
 
 src/overlays/ov027/calls/func_ov027_020b9098.c:
     complete
@@ -115,6 +135,18 @@ src/overlays/ov027/calls/func_ov027_020b9098.c:
 src/overlays/ov027/calls/func_ov027_020b90a8.c:
     complete
     .text       start:0x020b90a8 end:0x020b90b8
+
+src/overlays/ov027/calls/IsWidgetMoveFinished.c:
+    complete
+    .text       start:0x020b9120 end:0x020b914c
+
+src/overlays/ov027/calls/TweenWidgetBaseToAway.c:
+    complete
+    .text       start:0x020b94d4 end:0x020b94f8
+
+src/overlays/ov027/calls/TweenWidgetToHome.c:
+    complete
+    .text       start:0x020b94f8 end:0x020b951c
 
 src/overlays/ov027/calls/func_ov027_020b9604.c:
     complete
@@ -135,6 +167,26 @@ src/overlays/ov027/calls/func_ov027_020b96c0.c:
 src/overlays/ov027/calls/func_ov027_020b97d8.c:
     complete
     .text       start:0x020b97d8 end:0x020b981c
+
+src/overlays/ov027/calls/SetWidgetRootTouchEnabled.c:
+    complete
+    .text       start:0x020b986c end:0x020b9894
+
+src/overlays/ov027/calls/SetWidgetRootDpadEnabled.c:
+    complete
+    .text       start:0x020b9894 end:0x020b98bc
+
+src/overlays/ov027/calls/FindTileTableIndex.c:
+    complete
+    .text       start:0x020b9940 end:0x020b9968
+
+src/overlays/ov027/calls/GetTileTableRow.c:
+    complete
+    .text       start:0x020b9968 end:0x020b998e
+
+src/overlays/ov027/calls/FreeAllocatedBuffers.c:
+    complete
+    .text       start:0x020b9a80 end:0x020b9a92
 
 src/overlays/ov027/calls/func_ov027_020b9d68.c:
     complete
@@ -176,6 +228,10 @@ src/overlays/ov027/calls/func_ov027_020ba200.c:
     complete
     .text       start:0x020ba200 end:0x020ba27c
 
+src/overlays/ov027/calls/FreePointerIfSet.c:
+    complete
+    .text       start:0x020ba2b4 end:0x020ba2c8
+
 src/overlays/ov027/auto/func_ov027_020ba2c8.c:
     complete
     .text       start:0x020ba2c8 end:0x020ba300
@@ -187,3 +243,7 @@ src/overlays/ov027/calls/func_ov027_020ba300.c:
 src/overlays/ov027/calls/func_ov027_020ba33c.c:
     complete
     .text       start:0x020ba33c end:0x020ba368
+
+src/overlays/ov027/calls/FindPageEntryById.c:
+    complete
+    .text       start:0x020ba368 end:0x020ba384

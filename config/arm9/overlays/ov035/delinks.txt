@@ -8,9 +8,25 @@ src/overlays/ov035/calls/func_ov035_020ba960.c:
     complete
     .text       start:0x020ba960 end:0x020ba978
 
+src/overlays/ov035/calls/MobiClip_SrcIsOpen_020ba9c4.c:
+    complete
+    .text       start:0x020ba9c4 end:0x020ba9e0
+
+src/overlays/ov035/calls/MobiClip_SrcClose_020ba9e0.c:
+    complete
+    .text       start:0x020ba9e0 end:0x020ba9f8
+
 src/overlays/ov035/auto/func_ov035_020bac90.c:
     complete
     .text       start:0x020bac90 end:0x020bac92
+
+src/overlays/ov035/calls/EndOverlay40Phase.c:
+    complete
+    .text       start:0x020bad08 end:0x020bad28
+
+src/overlays/ov035/calls/QueueColorUpload.c:
+    complete
+    .text       start:0x020bb7f8 end:0x020bb81c
 
 src/overlays/ov035/data/strings/Strings_ov035_020bc4c0.c:
     complete

@@ -6,3 +6,7 @@
 src/overlays/ov047/calls/Camera_ShouldStartManualTurn.c:
     complete
     .text       start:0x020c3af8 end:0x020c3b7c
+
+src/overlays/ov047/calls/IsAngleDifferenceLarge.c:
+    complete
+    .text       start:0x020c4824 end:0x020c4842

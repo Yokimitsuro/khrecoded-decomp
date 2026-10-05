@@ -5,7 +5,7 @@ extern void func_ov007_020a059c(void); /* ScriptCmd_ShowActorEmote */
 extern void func_ov007_020a05d8(void); /* ScriptCmd_SetActorWander */
 extern void func_ov007_020a0670(void); /* ScriptCmd_EnterPhase */
 extern void func_ov007_020a0680(void);
-extern void func_ov007_020a06b0(void); /* ScriptCmd_ForceRequest */
+extern void ScriptCmd_ForceRequest(void); /* ScriptCmd_ForceRequest */
 extern void func_ov007_020a06d4(void); /* ScriptCmd_PlayValueSequence */
 extern void func_ov007_020a0734(void); /* ScriptCmd_SetActorPath */
 extern void func_ov007_020a07ac(void); /* ScriptCmd_CreateFieldTask */
@@ -24,7 +24,7 @@ void (*gFieldActorScriptCommandHandlers[23])(void) = {
     NULL,
     func_ov007_020a0680,
     NULL,
-    func_ov007_020a06b0, /* ScriptCmd_ForceRequest */
+    ScriptCmd_ForceRequest, /* ScriptCmd_ForceRequest */
     NULL,
     func_ov007_020a06d4, /* ScriptCmd_PlayValueSequence */
     NULL,

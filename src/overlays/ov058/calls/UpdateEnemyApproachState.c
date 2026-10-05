@@ -53,7 +53,7 @@ extern int func_ov058_020d895c(void);
 extern int GetSceneSlotAngle(int mode);
 extern int func_ov001_0206db8c(int index);
 extern BOOL func_ov021_020a8d3c(int groupId, int index);
-extern void func_ov021_020a8ad4(TrackRequest *request);
+extern void ResetAnimationTrackState(TrackRequest *request);
 extern int func_ov021_020a8cc0(TrackRequest *request, int groupId);
 extern void func_ov052_020ceb80(Enemy *enemy, VecFx32 *target);
 extern void *GetActorRegistry(void);
@@ -81,7 +81,7 @@ void UpdateEnemyApproachState(Enemy *enemy)
         if (index != -1 && func_ov021_020a8d3c(func_ov001_0206db8c(7), index)) {
             return;
         }
-        func_ov021_020a8ad4(&request);
+        ResetAnimationTrackState(&request);
         request.id = enemy->mode;
         request.flagB = 0;
         request.flagA = 0;

@@ -34,7 +34,7 @@ typedef struct GlowObject {
 
 extern const u8 data_ov001_0209e358[3];
 extern const GlowColors data_ov001_0209e35b[];
-extern u32 func_ov001_02064574(int bitOffset, u32 bitCount);
+extern u32 ReadSessionPackedBits(int bitOffset, u32 bitCount);
 extern VecFx32 *func_ov001_0206dc4c(int index);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
@@ -57,7 +57,7 @@ int UpdateProximityGlow(GlowObject *object)
 
     if (object->owner->state >= 0) {
         material = &object->model->material;
-        level = func_ov001_02064574(0x1a0f, 3) - 1;
+        level = ReadSessionPackedBits(0x1a0f, 3) - 1;
         if (level < 0) {
             level = 0;
         }

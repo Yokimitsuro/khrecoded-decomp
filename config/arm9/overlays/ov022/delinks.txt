@@ -4,6 +4,10 @@
     .data       start:0x020b7c00 end:0x020b7da0 kind:data align:32
     .bss        start:0x020b7da0 end:0x020b7e40 kind:bss align:32
 
+src/overlays/ov022/calls/StartSubtitlePlayback.c:
+    complete
+    .text       start:0x020a73d0 end:0x020a73f8
+
 src/overlays/ov022/auto/func_ov022_020a77b0.c:
     complete
     .text       start:0x020a77b0 end:0x020a77b8
@@ -15,6 +19,14 @@ src/overlays/ov022/calls/func_ov022_020a7810.c:
 src/overlays/ov022/auto/func_ov022_020a7878.c:
     complete
     .text       start:0x020a7878 end:0x020a787c
+
+src/overlays/ov022/calls/IsMoviePlaybackIdle.c:
+    complete
+    .text       start:0x020a791c end:0x020a793c
+
+src/overlays/ov022/calls/SetMovieStateText.c:
+    complete
+    .text       start:0x020a793c end:0x020a795c
 
 src/overlays/ov022/calls/func_ov022_020a795c.c:
     complete
@@ -68,9 +80,37 @@ src/overlays/ov022/calls/func_ov022_020a809c.c:
     complete
     .text       start:0x020a809c end:0x020a80bc
 
+src/overlays/ov022/calls/FreeMovieFileBuffer.c:
+    complete
+    .text       start:0x020a8314 end:0x020a833c
+
+src/overlays/ov022/calls/SetupMovieScreenHardware.c:
+    complete
+    .text       start:0x020a833c end:0x020a8358
+
+src/overlays/ov022/calls/TickSubtitleTimer.c:
+    complete
+    .text       start:0x020a88e4 end:0x020a8910
+
+src/overlays/ov022/calls/ActivateSubtitleStream.c:
+    complete
+    .text       start:0x020a8910 end:0x020a8938
+
+src/overlays/ov022/calls/GetSubtitleStreamFrame.c:
+    complete
+    .text       start:0x020a8938 end:0x020a8954
+
 src/overlays/ov022/calls/func_ov022_020a8a64.c:
     complete
     .text       start:0x020a8a64 end:0x020a8a70
+
+src/overlays/ov022/calls/ResetSubtitleLine.c:
+    complete
+    .text       start:0x020a8a70 end:0x020a8a90
+
+src/overlays/ov022/calls/UploadDirtySubtitleTiles.c:
+    complete
+    .text       start:0x020a916c end:0x020a9190
 
 src/overlays/ov022/calls/func_ov022_020a9294.c:
     complete

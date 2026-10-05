@@ -16,9 +16,21 @@ src/overlays/ov019/auto/func_ov019_020a23cc.c:
     complete
     .text       start:0x020a23cc end:0x020a23ce
 
+src/overlays/ov019/calls/TryGetExtraDataHandle.c:
+    complete
+    .text       start:0x020a2c48 end:0x020a2c6c
+
+src/overlays/ov019/calls/IsDestroyed.c:
+    complete
+    .text       start:0x020a3218 end:0x020a322c
+
 src/overlays/ov019/calls/SetLinkedCallbackId.c:
     complete
     .text       start:0x020a35a0 end:0x020a35a6
+
+src/overlays/ov019/calls/ReleaseOwnedEntryGroup.c:
+    complete
+    .text       start:0x020a3660 end:0x020a367c
 
 src/overlays/ov019/data/strings/Strings_ov019_020a36b0.c:
     complete

@@ -8,7 +8,7 @@ typedef struct SlotEntry {
 } SlotEntry;
 
 extern SlotEntry data_020608e0[8];
-void func_ov001_0206459c(int bitOffset, u32 bitCount, u32 value);
+void WriteSessionPackedBits(int bitOffset, u32 bitCount, u32 value);
 
 void SaveSlotEntriesToBits(void)
 {
@@ -23,8 +23,8 @@ void SaveSlotEntriesToBits(void)
             state = entry->state;
             id = entry->id - 0xca;
         }
-        func_ov001_0206459c(bitOffset, 4, id);
-        func_ov001_0206459c(bitOffset + 4, 9, state);
+        WriteSessionPackedBits(bitOffset, 4, id);
+        WriteSessionPackedBits(bitOffset + 4, 9, state);
         i++;
         bitOffset += 0xd;
     } while (i < 8);

@@ -4,6 +4,18 @@
     .data       start:0x020a18e0 end:0x020a1900 kind:data align:32
     .bss        start:0x020a1900 end:0x020a1900 kind:bss align:32
 
+src/overlays/ov006/calls/ResolveSegmentNodes.c:
+    complete
+    .text       start:0x020a123c end:0x020a126a
+
+src/overlays/ov006/calls/GetGridCellCenter.c:
+    complete
+    .text       start:0x020a1390 end:0x020a13bc
+
+src/overlays/ov006/calls/AddTouchPoint.c:
+    complete
+    .text       start:0x020a156c end:0x020a158e
+
 src/overlays/ov006/data/tables/gOv006Handlers.c:
     complete
     .data       start:0x020a18e0 end:0x020a1900

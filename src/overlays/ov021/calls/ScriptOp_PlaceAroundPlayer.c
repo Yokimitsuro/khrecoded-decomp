@@ -32,15 +32,15 @@ typedef struct {
 extern FieldContext data_ov021_020b56c4;
 extern const s16 data_02053580[];
 
-extern s16 *func_ov021_020b0394(ScriptObject *obj, s16 *value);
-extern s32 func_ov021_020b03d0(s16 *tagged);
-extern s32 func_ov021_020b03b8(s16 *tagged);
+extern s16 *ResolveTaggedValueRef(ScriptObject *obj, s16 *value);
+extern s32 TaggedValueToFixed(s16 *tagged);
+extern s32 TaggedValueToInt(s16 *tagged);
 extern void func_ov001_02091c5c(PlayerActor *actor, VecFx32 *out);
 extern u32 func_ov001_02099240(u32 id);
 extern fx32 Surface_GetKindValue(void *surface);
 extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void func_01ffaff4(const VecFx32 *src, VecFx32 *dst);
-extern void func_ov001_020992d4(u32 id, VecFx32 *outPosition);
+extern void GetStageEntryPosition(u32 id, VecFx32 *outPosition);
 extern void MTX_Identity33_(MtxFx33 *mtx);
 extern void MTX_RotY33_(MtxFx33 *mtx, fx32 sinVal, fx32 cosVal);
 extern void func_01ff9404(const VecFx32 *vec, const MtxFx33 *m, VecFx32 *dst);
@@ -49,9 +49,9 @@ extern BOOL func_ov021_020afd48(VecFx32 *from, VecFx32 *to, VecFx32 *hitNormal, 
 
 s32 ScriptOp_PlaceAroundPlayer(ScriptObject *obj, PlaceCommand *cmd)
 {
-    s16 *distanceRef = func_ov021_020b0394(obj, cmd->distance);
-    s16 *angleRef = func_ov021_020b0394(obj, cmd->angle);
-    s16 *flagsRef = func_ov021_020b0394(obj, cmd->flags);
+    s16 *distanceRef = ResolveTaggedValueRef(obj, cmd->distance);
+    s16 *angleRef = ResolveTaggedValueRef(obj, cmd->angle);
+    s16 *flagsRef = ResolveTaggedValueRef(obj, cmd->flags);
     PlayerActor *player = data_ov021_020b56c4.player;
     fx32 distance;
     fx32 degrees;
@@ -65,9 +65,9 @@ s32 ScriptOp_PlaceAroundPlayer(ScriptObject *obj, PlaceCommand *cmd)
     MtxFx33 rotation;
 
     func_ov001_02091c5c(player, &base);
-    distance = func_ov021_020b03d0(distanceRef);
-    degrees = func_ov021_020b03d0(angleRef);
-    flags = func_ov021_020b03b8(flagsRef);
+    distance = TaggedValueToFixed(distanceRef);
+    degrees = TaggedValueToFixed(angleRef);
+    flags = TaggedValueToInt(flagsRef);
     angle = (u16)(((s64)degrees * 0xb60b60b60bLL + 0x80000000000LL) >> 44);
     minDistance = func_ov001_02099240(player->stageEntry) + Surface_GetKindValue(player->surface);
     if (distance < minDistance) {
@@ -78,7 +78,7 @@ s32 ScriptOp_PlaceAroundPlayer(ScriptObject *obj, PlaceCommand *cmd)
         direction.y = 0;
         func_01ffaff4(&direction, &direction);
     } else {
-        func_ov001_020992d4(player->stageEntry, &direction);
+        GetStageEntryPosition(player->stageEntry, &direction);
     }
     if (flags & 2) {
         flags |= 4;

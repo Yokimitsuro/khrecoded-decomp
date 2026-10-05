@@ -47,7 +47,7 @@ typedef struct FieldObject {
     u32 flags;
 } FieldObject;
 
-extern PlayerEntry *func_ov001_0206db5c(int index);
+extern PlayerEntry *GetBoundedEntryField(int index);
 extern VecFx32 *func_ov001_0206dc4c(int index);
 extern void func_ov001_0208645c(FieldObject *object, int pose);
 extern void *ActorRegistry_GetEntityByIndex(int actorId);
@@ -98,7 +98,7 @@ void ApplyFieldObjectForceToPlayer(FieldObject *object)
     int facing;
     fx32 offset;
 
-    func_ov001_0206db5c(0);
+    GetBoundedEntryField(0);
     player = *func_ov001_0206dc4c(0);
     object->flags &= ~0x80000;
     if (object->pose != 1) {
@@ -162,7 +162,7 @@ void ApplyFieldObjectForceToPlayer(FieldObject *object)
         func_01ff9e3c(&player, &object->position, &away);
         VEC_Normalize(&away, &normal);
         force = ScaleVec(&normal, -0xcd);
-        entry = func_ov001_0206db5c(0);
+        entry = GetBoundedEntryField(0);
         if (entry->push != NULL) {
             entry->push(entry, &force);
         }

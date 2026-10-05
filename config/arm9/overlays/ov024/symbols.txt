@@ -1,6 +1,6 @@
-func_ov024_020b5820 kind:function(thumb,size=0x28) addr:0x020b5820
+ReleaseSubObjectIfActive kind:function(thumb,size=0x28) addr:0x020b5820
 func_ov024_020b5848 kind:function(thumb,size=0x598) addr:0x020b5848
-func_ov024_020b5de0 kind:function(thumb,size=0x24) addr:0x020b5de0
+ReleaseOverlayResourceSlots kind:function(thumb,size=0x24) addr:0x020b5de0
 func_ov024_020b5e04 kind:function(thumb,size=0x126) addr:0x020b5e04
 RerollBoardSlots kind:function(thumb,size=0x1d4) addr:0x020b5f2c
 GenerateRandomLinks kind:function(thumb,size=0xa6) addr:0x020b6100
@@ -14,7 +14,7 @@ func_ov024_020b65e8 kind:function(thumb,size=0x14) addr:0x020b65e8
 func_ov024_020b65fc kind:function(thumb,size=0x70) addr:0x020b65fc
 func_ov024_020b666c kind:function(thumb,size=0xe4) addr:0x020b666c
 func_ov024_020b6750 kind:function(thumb,size=0x48) addr:0x020b6750
-func_ov024_020b6798 kind:function(thumb,size=0x1c) addr:0x020b6798
+CreateDefaultObjectSlot kind:function(thumb,size=0x1c) addr:0x020b6798
 func_ov024_020b67b4 kind:function(thumb,size=0x6c) addr:0x020b67b4
 func_ov024_020b6820 kind:function(thumb,size=0x340) addr:0x020b6820
 func_ov024_020b6b60 kind:function(thumb,size=0x70) addr:0x020b6b60

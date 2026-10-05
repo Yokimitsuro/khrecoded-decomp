@@ -29,13 +29,13 @@ typedef struct EffectSource {
     s8 entryIndex;
 } EffectSource;
 
-extern EntryInfo *func_ov001_0206db5c(int index);
+extern EntryInfo *GetBoundedEntryField(int index);
 extern HitResult func_ov021_020ab0e8(EffectSource *attacker, HitUnit *unit, VecFx32 *position, VecFx32 *offset);
 extern s16 func_ov021_020ab43c(HitUnit *owner, fx32 step);
 
 BOOL AdvancePulsingHitUnit(EffectSource *source, HitUnit *unit, fx32 step)
 {
-    EntryInfo *entry = func_ov001_0206db5c(source->entryIndex);
+    EntryInfo *entry = GetBoundedEntryField(source->entryIndex);
     VecFx32 position;
     VecFx32 offset;
     int i;

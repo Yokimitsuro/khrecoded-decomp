@@ -39,7 +39,7 @@ typedef struct HitRequest {
     StatSource *source;
 } HitRequest;
 
-extern void *func_ov001_0206db5c(int index);
+extern void *GetBoundedEntryField(int index);
 extern void func_ov021_020ac118(void *obj);
 extern void func_ov056_020d4260(StatSource *source, ScaledStats *stats, s32 percent, u8 flags, fx32 scale);
 extern void func_ov021_020ac124(PathSegment *segment, s32 id, s32 count, s32 param, const VecFx32 *start, const VecFx32 *end);
@@ -53,7 +53,7 @@ int ApplyScaledPathHit(s32 attacker, VecFx32 *position, HitRequest *request)
     ScaledStats stats;
     PathSegment segment;
 
-    func_ov001_0206db5c(source->entryIndex);
+    GetBoundedEntryField(source->entryIndex);
     func_ov021_020ac118(&stats);
     func_ov056_020d4260(source, &stats, (u8)source->percent, (u8)source->flags, source->scale);
     switch (source->kind) {

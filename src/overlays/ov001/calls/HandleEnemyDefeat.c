@@ -20,7 +20,7 @@ typedef struct EnemyTableHolder {
 extern EnemyTableHolder *data_ov001_020a0490;
 extern void func_ov001_0206671c(s32 amount, u32 position, u32 kind);
 extern int func_ov001_020644b0(void);
-extern u32 func_ov032_020bb88c(u8 kind);
+extern u32 GetGroupIndexedValue(u8 kind);
 extern int func_ov001_02063a38(void);
 extern BOOL func_ov035_020bae94(void);
 extern BOOL func_ov001_020645c8(u32 flagId);
@@ -47,7 +47,7 @@ void HandleEnemyDefeat(s32 group, s32 index, u32 position, BOOL notify, int leve
     record = &holder->table->records[index];
     kind = record->kind;
     if (func_ov001_020644b0() == 900) {
-        kind = func_ov032_020bb88c(record->kind);
+        kind = GetGroupIndexedValue(record->kind);
     }
     if (func_ov001_02063a38() == 6) {
         dropItem = FALSE;

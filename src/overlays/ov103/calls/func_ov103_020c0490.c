@@ -1,5 +1,5 @@
-extern void *func_ov103_020bf688();
+extern void *InitSlotPool_020bf688();
 
 void *func_ov103_020c0490() {
-    return func_ov103_020bf688();
+    return InitSlotPool_020bf688();
 }

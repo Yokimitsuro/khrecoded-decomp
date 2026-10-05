@@ -31,7 +31,7 @@ typedef struct {
 extern FieldContext data_ov021_020b56c4;
 extern const s16 data_02053580[];
 
-extern u16 *func_ov001_0209c0ec(u32 id);
+extern u16 *GetStageObjectHandle(u32 id);
 extern SpawnArea *func_ov001_0209c334(u32 index);
 extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
@@ -59,7 +59,7 @@ s32 PickSpawnPointNearPlayer(SpawnTarget *target)
     if (player == NULL) {
         return 0;
     }
-    area = func_ov001_0209c334(*func_ov001_0209c0ec(stage->stageObjectId));
+    area = func_ov001_0209c334(*GetStageObjectHandle(stage->stageObjectId));
     func_01ff9e3c(&player->position, &area->center, &offset);
     distance = VEC_Mag(&offset);
     if (func_ov001_02063a38() != 4) {

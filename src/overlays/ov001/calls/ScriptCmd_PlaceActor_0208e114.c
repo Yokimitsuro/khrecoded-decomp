@@ -43,7 +43,7 @@ extern int ProjectPositionDownward(void *model, void *key, VecFx32 *out);
 extern void func_01ff9e0c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int CollModel_GetEntryField14(void *model, void *key);
 extern void func_ov001_0208a480(Actor *actor);
-extern void func_ov001_0208a324(Actor *actor, int angle);
+extern void ActorObject_SynchronizeConvertedParameter(Actor *actor, int angle);
 extern void func_02038e80(void *link, int mode);
 
 int ScriptCmd_PlaceActor_0208e114(ScriptContext *context, ScriptOperand *operands)
@@ -72,7 +72,7 @@ int ScriptCmd_PlaceActor_0208e114(ScriptContext *context, ScriptOperand *operand
         Obj_SetPosition(node, &offset);
         actor = context->scene->actorObjects[actorId];
         if (actor != NULL && (actor->unk_D18 != NULL || (actor->flags & 0x4000) != 0)) {
-            func_ov001_0208a324(actor, heading);
+            ActorObject_SynchronizeConvertedParameter(actor, heading);
         } else if ((node->flags & 0x20) == 0) {
             node->angle = heading;
             node->flags_004 |= 0x20;
@@ -88,7 +88,7 @@ int ScriptCmd_PlaceActor_0208e114(ScriptContext *context, ScriptOperand *operand
         }
         actor = context->scene->actorObjects[actorId];
         if (actor != NULL && (actor->unk_D18 != NULL || (actor->flags & 0x4000) != 0)) {
-            func_ov001_0208a324(actor, angle);
+            ActorObject_SynchronizeConvertedParameter(actor, angle);
         } else if ((node->flags & 0x20) == 0) {
             node->angle = angle;
             node->flags_004 |= 0x20;

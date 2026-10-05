@@ -12,7 +12,7 @@ extern void func_ov040_020bd418(void);
 extern void func_ov040_020bd484(void); /* FadeInAreaScreens */
 extern void func_ov040_020bd548(void);
 extern void func_ov040_020bd568(void);
-extern void func_ov040_020bd5c4(void); /* EnterState13WithHalfRate */
+extern void EnterState13WithHalfRate(void); /* EnterState13WithHalfRate */
 extern void func_ov040_020bd5e0(void);
 extern void func_ov040_020bd604(void);
 extern void func_ov040_020bd624(void);
@@ -33,7 +33,7 @@ void (*gAreaSceneStateHandlers[19])(void) = {
     func_ov040_020bd484, /* FadeInAreaScreens */
     func_ov040_020bd548,
     func_ov040_020bd568,
-    func_ov040_020bd5c4, /* EnterState13WithHalfRate */
+    EnterState13WithHalfRate, /* EnterState13WithHalfRate */
     func_ov040_020bd5e0,
     func_ov040_020bd604,
     func_ov040_020bd624,

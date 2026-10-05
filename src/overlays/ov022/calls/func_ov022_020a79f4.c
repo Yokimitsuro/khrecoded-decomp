@@ -1,5 +1,5 @@
-extern int func_ov022_020a791c();
+extern int IsMoviePlaybackIdle();
 int func_ov022_020a79f4(void) {
-    if (func_ov022_020a791c() != 0) return 1;
+    if (IsMoviePlaybackIdle() != 0) return 1;
     return 0;
 }

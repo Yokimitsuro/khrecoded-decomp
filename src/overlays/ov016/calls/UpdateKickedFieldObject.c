@@ -30,7 +30,7 @@ typedef struct {
 } FieldObject;
 
 extern const VecFx32 data_0205344c;
-extern PlayerEntry *func_ov001_0206db5c(int index);
+extern PlayerEntry *GetBoundedEntryField(int index);
 extern void MI_CpuFill8(void *dst, u32 value, u32 size);
 extern u32 SpawnSoundSlot(u32 owner, u32 kind, VecFx32 *position, u32 flags);
 extern BOOL AreVecsWithinRange16(const VecFx32 *a, const VecFx32 *b);
@@ -53,7 +53,7 @@ void UpdateKickedFieldObject(FieldObject *obj)
         }
     }
     if (obj->flags & 0x10000) {
-        player = func_ov001_0206db5c(0);
+        player = GetBoundedEntryField(0);
         if (obj->velocity.y <= 0 || obj->velocity.x != 0 || obj->velocity.z != 0) {
             velocity = obj->velocity;
             if (velocity.y < 0) {

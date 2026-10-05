@@ -30,7 +30,7 @@ typedef struct StageEvent {
 
 extern const MotionParams data_0205584c;
 extern void OrbitActorAroundUnit(void);
-extern void func_ov001_02087d9c(u32 id, void *callback, void *userData);
+extern void StageRecord_SetCallback(u32 id, void *callback, void *userData);
 
 void QueueMotionOnStageEvent(void *source, MotionActor *actor, StageEvent *event)
 {
@@ -45,7 +45,7 @@ void QueueMotionOnStageEvent(void *source, MotionActor *actor, StageEvent *event
             entry->params = data_0205584c;
             entry->state = 0;
             entry->active = 1;
-            func_ov001_02087d9c(event->recordId, OrbitActorAroundUnit, entry);
+            StageRecord_SetCallback(event->recordId, OrbitActorAroundUnit, entry);
         }
     }
 }

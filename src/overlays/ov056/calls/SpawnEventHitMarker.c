@@ -51,9 +51,9 @@ typedef struct {
     s32 markerIndex;
 } EntryInfo;
 
-extern void func_ov021_020a8ad4(MarkerRequest *request);
+extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
-extern EntryInfo *func_ov001_0206db5c(int index);
+extern EntryInfo *GetBoundedEntryField(int index);
 extern int func_ov001_0206db8c(int kind);
 
 void SpawnEventHitMarker(s32 *entryIndex, HitUnit *unit, HitEvent *event)
@@ -78,7 +78,7 @@ void SpawnEventHitMarker(s32 *entryIndex, HitUnit *unit, HitEvent *event)
     if (!spawn) {
         return;
     }
-    func_ov021_020a8ad4(&request);
+    ResetAnimationTrackState(&request);
     request.id = *entryIndex;
     request.style = 0;
     request.unk_24 = 0;
@@ -86,7 +86,7 @@ void SpawnEventHitMarker(s32 *entryIndex, HitUnit *unit, HitEvent *event)
     request.prevIndex = request.index;
     pos = event->pos;
     if (owner->kind == 0x90) {
-        info = func_ov001_0206db5c(*entryIndex);
+        info = GetBoundedEntryField(*entryIndex);
         request.prevIndex = info->markerIndex;
         request.index = 2;
         pos = unit->position;

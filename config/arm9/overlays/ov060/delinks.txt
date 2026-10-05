@@ -1,3 +1,11 @@
     .text       start:0x020c7480 end:0x020c74b8 kind:code align:32
     .ctor       start:0x020c74b8 end:0x020c74b8 kind:rodata align:4
     .bss        start:0x020c74c0 end:0x020c74c0 kind:bss align:32
+
+src/overlays/ov060/calls/RegisterOverlay060Factory.c:
+    complete
+    .text       start:0x020c7480 end:0x020c7494
+
+src/overlays/ov060/calls/CreateOverlay060Object.c:
+    complete
+    .text       start:0x020c7494 end:0x020c74b8

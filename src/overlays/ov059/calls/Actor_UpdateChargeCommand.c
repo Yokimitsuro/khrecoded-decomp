@@ -35,7 +35,7 @@ extern BOOL func_0204dc50(u32 handle);
 extern u32 SpawnSoundSlot(u32 owner, u32 kind, VecFx32 *position, u32 flags);
 extern VecFx32 *Actor_GetModelPosition(Actor *actor);
 extern void func_ov059_020c7a90(Actor *actor);
-extern void func_ov059_020c9a50(Actor *actor);
+extern void Actor_ConsumeCommand(Actor *actor);
 extern void func_ov001_0206e6f4(int arg);
 
 void Actor_UpdateChargeCommand(Actor *actor, InputRecord *input)
@@ -87,7 +87,7 @@ void Actor_UpdateChargeCommand(Actor *actor, InputRecord *input)
                 }
             }
             actor->changeState(actor, 12);
-            func_ov059_020c9a50(actor);
+            Actor_ConsumeCommand(actor);
             break;
         case 2:
             actor->changeState(actor, 7);

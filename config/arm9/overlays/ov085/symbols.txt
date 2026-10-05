@@ -29,8 +29,8 @@ func_ov085_020c1994 kind:function(thumb,size=0x348) addr:0x020c1994
 func_ov085_020c1cdc kind:function(thumb,size=0x110) addr:0x020c1cdc
 func_ov085_020c1dec kind:function(thumb,size=0x1ac) addr:0x020c1dec
 func_ov085_020c1f98 kind:function(thumb,size=0x14) addr:0x020c1f98
-func_ov085_020c1fac kind:function(thumb,size=0x14) addr:0x020c1fac
-func_ov085_020c1fc0 kind:function(thumb,size=0x14) addr:0x020c1fc0
+FilterEntriesByCategory kind:function(thumb,size=0x14) addr:0x020c1fac
+FilterEntriesByCategorySet kind:function(thumb,size=0x14) addr:0x020c1fc0
 func_ov085_020c1fd4 kind:function(thumb,size=0x18c) addr:0x020c1fd4
 func_ov085_020c2160 kind:function(thumb,size=0x184) addr:0x020c2160
 data_ov085_020c22e4 kind:data(any) addr:0x020c22e4

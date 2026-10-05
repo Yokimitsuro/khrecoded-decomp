@@ -27,7 +27,7 @@ extern void func_ov059_020c897c(VecFx32 *out, Actor *actor);
 extern BOOL func_ov021_020a754c(void *holder, u16 mask);
 extern void func_ov059_020c9a74(Actor *actor, int arg);
 extern void func_ov059_020c9d34(Actor *actor);
-extern void func_ov059_020c9a50(Actor *actor);
+extern void Actor_ConsumeCommand(Actor *actor);
 
 void Actor_UpdateCommandInput(Actor *actor) {
     void *input = func_ov001_0206db78(actor->playerIndex);
@@ -43,7 +43,7 @@ void Actor_UpdateCommandInput(Actor *actor) {
         func_ov059_020c9d34(actor);
         command = actor->commands[actor->commandIndex];
         if (command == 3 || command == -1) {
-            func_ov059_020c9a50(actor);
+            Actor_ConsumeCommand(actor);
         }
     }
     if (actor->statusFlags & 0x10) {

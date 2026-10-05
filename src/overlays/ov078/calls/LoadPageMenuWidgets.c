@@ -18,7 +18,7 @@ typedef struct PageMenu {
 extern const ObjManagerConfig data_ov078_020c4fb0;
 
 extern void *func_ov039_020bc1dc(void);
-extern void func_ov027_020b9080(void *container, ObjManagerConfig *config);
+extern void InitObjManagerAndMark(void *container, ObjManagerConfig *config);
 extern void func_ov027_020b8fb8(void *container, u32 fileId, int count);
 extern void *func_ov027_020b90c4(void *container, int id);
 extern void func_ov027_020b97d8(void *container, void *widget, int mode);
@@ -35,7 +35,7 @@ void LoadPageMenuWidgets(PageMenu *menu)
     int cleared;
 
     config.cellFileId = ARCHIVE_FILE_ID(menu->archive, 1);
-    func_ov027_020b9080(container, &config);
+    InitObjManagerAndMark(container, &config);
     func_ov027_020b8fb8(container, ARCHIVE_FILE_ID(menu->archive, 2), 0x12);
     menu->nodes[0] = func_ov027_020b90c4(container, 0xe);
     menu->nodes[1] = func_ov027_020b90c4(container, 0);

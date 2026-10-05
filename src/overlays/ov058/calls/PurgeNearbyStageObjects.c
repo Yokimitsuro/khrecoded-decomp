@@ -7,7 +7,7 @@ typedef struct StageNode {
 
 extern VecFx32 data_ov058_020d8a4c;
 
-extern BOOL func_ov001_0206e584(void);
+extern BOOL IsFirstEntryFlagSet(void);
 extern StageNode *func_ov001_02087264(void);
 extern VecFx32 *func_ov001_0208641c(StageNode *node);
 extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
@@ -20,7 +20,7 @@ void PurgeNearbyStageObjects(void)
     VecFx32 *pos;
     fx32 delta;
 
-    if (func_ov001_0206e584()) {
+    if (IsFirstEntryFlagSet()) {
         return;
     }
     for (node = func_ov001_02087264(); node != NULL; node = node->next) {

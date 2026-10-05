@@ -4,13 +4,45 @@
     .data       start:0x020c0820 end:0x020c08a0 kind:data align:32
     .bss        start:0x020c08a0 end:0x020c08c0 kind:bss align:32
 
+src/overlays/ov045/calls/CopyTileRowPair.c:
+    complete
+    .text       start:0x020bf0b8 end:0x020bf0e4
+
+src/overlays/ov045/calls/InvokeCallbackForRecordId.c:
+    complete
+    .text       start:0x020bf0e4 end:0x020bf0fa
+
+src/overlays/ov045/calls/OffsetRecordYById.c:
+    complete
+    .text       start:0x020bf0fc end:0x020bf122
+
+src/overlays/ov045/calls/StartUnitTween.c:
+    complete
+    .text       start:0x020bf218 end:0x020bf236
+
+src/overlays/ov045/calls/ArmTagById.c:
+    complete
+    .text       start:0x020bf268 end:0x020bf28a
+
+src/overlays/ov045/calls/DisarmTagById.c:
+    complete
+    .text       start:0x020bf28c end:0x020bf2a4
+
 src/overlays/ov045/calls/CollectRecordPickup.c:
     complete
     .text       start:0x020bf344 end:0x020bf3dc
 
+src/overlays/ov045/calls/UpdateTweenIsFinished.c:
+    complete
+    .text       start:0x020bf3dc end:0x020bf3ee
+
 src/overlays/ov045/calls/UpdateResultFadeOut.c:
     complete
     .text       start:0x020c0064 end:0x020c0138
+
+src/overlays/ov045/calls/ReleaseHeapBlockIfAllocated.c:
+    complete
+    .text       start:0x020c0340 end:0x020c0354
 
 src/overlays/ov045/data/strings/Strings_ov045_020c0834.c:
     complete

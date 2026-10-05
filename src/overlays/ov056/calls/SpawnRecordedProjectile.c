@@ -67,7 +67,7 @@ typedef struct {
 } SpawnUnit;
 
 extern s16 data_02053580[];
-extern EntryInfo *func_ov001_0206db5c(int index);
+extern EntryInfo *GetBoundedEntryField(int index);
 extern VecFx32 func_ov021_020aed44(SpawnUnit *unit, void *arg);
 extern void func_ov021_020ab0ac(SpawnDesc *desc);
 extern SpawnedProjectile *func_ov021_020ab0b8(SpawnUnit *unit, SpawnDesc *desc);
@@ -85,7 +85,7 @@ void SpawnRecordedProjectile(SpawnUnit *unit, void *arg, SpawnRequest *request)
     int facing;
     int index;
 
-    info = func_ov001_0206db5c(unit->entryIndex);
+    info = GetBoundedEntryField(unit->entryIndex);
     angle = info->facing - 0x8000;
     facing = (u16)(angle + 0x8000);
     origin = func_ov021_020aed44(unit, arg);

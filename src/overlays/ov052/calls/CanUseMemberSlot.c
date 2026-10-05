@@ -10,22 +10,22 @@ typedef struct {
     MemberInfo *info;
 } Member;
 
-extern unsigned int func_ov021_020ad898(int *container, int index);
-extern Member *func_ov021_020adacc(int *container, int index);
+extern unsigned int GetMemberValue(int *container, int index);
+extern Member *GetMemberByIndex(int *container, int index);
 extern BOOL func_ov021_020ae748(MemberInfo *counter);
 
 BOOL CanUseMemberSlot(int entity, int index)
 {
     BOOL result = TRUE;
     Member *member;
-    switch (func_ov021_020ad898((int *)(entity + 0x1070), index)) {
+    switch (GetMemberValue((int *)(entity + 0x1070), index)) {
     case 1:
         if (*(int *)(entity + 0x1078) != 0) {
             result = FALSE;
         }
         break;
     case 2:
-        member = func_ov021_020adacc((int *)(entity + 0x1070), index);
+        member = GetMemberByIndex((int *)(entity + 0x1070), index);
         result = func_ov021_020ae748(member->info);
         if (result && member->info->kind == 3 && *(int *)(entity + 0x1078) != 0) {
             result = FALSE;

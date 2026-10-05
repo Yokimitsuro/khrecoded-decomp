@@ -20,7 +20,7 @@ typedef struct {
 
 extern s16 data_ov001_0209da7a[];
 extern DropEntry *GetRecordSlot5Entry(int recordId);
-extern u32 func_ov001_020649b8(void);
+extern u32 GetSessionStateFlags2Bit(void);
 extern SelectionRecord *GetOverlaySelectionRecord(u32 index);
 extern int CheckStatusAndThreshold(void);
 extern int ComputeScaledPercentPlusOne(void);
@@ -38,7 +38,7 @@ static inline BOOL IsEquipmentId(int id)
 void RollEnemyDrop(int level, int recordId, u32 owner, BOOL reduced)
 {
     DropEntry *entries = GetRecordSlot5Entry(recordId);
-    u32 slot = func_ov001_020649b8();
+    u32 slot = GetSessionStateFlags2Bit();
     DropEntry *entry = &entries[slot];
     int chance;
     RewardItem reward;

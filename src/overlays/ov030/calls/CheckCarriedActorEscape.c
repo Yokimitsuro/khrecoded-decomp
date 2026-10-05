@@ -63,7 +63,7 @@ extern ViewBounds *func_ov042_020bd5b0(void);
 extern BOOL func_ov001_020645c8(int flagId);
 extern void func_ov021_020ab85c(void *obj);
 extern void ActorSlot_UnlinkByIndex(int index);
-extern void func_ov021_020a8ad4(MarkerRequest *request);
+extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern int func_ov001_0206db8c(int index);
 extern fx32 func_ov021_020a7670(EscapeActor *actor, fx32 value);
@@ -100,7 +100,7 @@ BOOL CheckCarriedActorEscape(EscapeActor *actor)
     if (escaped) {
         func_ov021_020ab85c(actor->hitState);
         ActorSlot_UnlinkByIndex(actor->entryId);
-        func_ov021_020a8ad4(&request);
+        ResetAnimationTrackState(&request);
         request.id = actor->entryId;
         request.unk_25 = 0;
         request.unk_24 = 0;

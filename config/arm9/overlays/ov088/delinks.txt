@@ -8,6 +8,18 @@ src/overlays/ov088/calls/func_ov088_020bebe8.c:
     complete
     .text       start:0x020bebe8 end:0x020bebfc
 
+src/overlays/ov088/calls/ClearOverlay088Grid.c:
+    complete
+    .text       start:0x020bed14 end:0x020bed2c
+
+src/overlays/ov088/calls/InitializeOverlay088.c:
+    complete
+    .text       start:0x020bee0c end:0x020bee38
+
+src/overlays/ov088/calls/ShutdownOverlay088.c:
+    complete
+    .text       start:0x020bee38 end:0x020bee58
+
 src/overlays/ov088/auto/func_ov088_020bee58.c:
     complete
     .text       start:0x020bee58 end:0x020bee5c

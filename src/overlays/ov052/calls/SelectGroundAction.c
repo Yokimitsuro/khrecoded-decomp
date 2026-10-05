@@ -32,7 +32,7 @@ extern BOOL IsPlayerEntryFlagSet(int player, u32 id);
 extern BOOL func_ov052_020cfb78(GroundActor *actor);
 extern BOOL func_ov001_020645c8(int id);
 extern BOOL func_ov052_020cf008(GroundActor *actor, ActionInput *input);
-extern BOOL func_ov052_020c8060(GroundActor *actor, ActionInput *input);
+extern BOOL FindDashWallTarget(GroundActor *actor, ActionInput *input);
 
 BOOL SelectGroundAction(GroundActor *actor, ActionInput *input)
 {
@@ -70,7 +70,7 @@ BOOL SelectGroundAction(GroundActor *actor, ActionInput *input)
                 return TRUE;
             }
         }
-        if (func_ov052_020c8060(actor, input)) {
+        if (FindDashWallTarget(actor, input)) {
             actor->onEvent(actor, 0x10);
             return TRUE;
         }

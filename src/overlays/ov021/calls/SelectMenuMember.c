@@ -24,12 +24,12 @@ struct MemberList {
 };
 
 extern int func_ov021_020adae0(MemberList *list);
-extern u8 *func_ov001_0206db5c(int player);
+extern u8 *GetBoundedEntryField(int player);
 extern void func_ov021_020a7fc0(void *obj, u32 value);
 extern void func_ov001_02063a80(int index, int amount);
 extern s32 func_ov001_02063a38(void);
-extern u32 func_ov001_02064574(int bitOffset, u32 bitCount);
-extern void func_ov001_0206459c(int bitOffset, u32 bitCount, u32 value);
+extern u32 ReadSessionPackedBits(int bitOffset, u32 bitCount);
+extern void WriteSessionPackedBits(int bitOffset, u32 bitCount, u32 value);
 extern void func_ov001_0206df78(void);
 extern s32 func_ov001_02078494(void);
 extern void func_ov001_02078360(int a, int b);
@@ -46,7 +46,7 @@ s32 SelectMenuMember(MemberList *list, int index, MenuCommand *command)
         return 0;
     }
     if (index >= 0) {
-        u8 *entry = func_ov001_0206db5c(list->player);
+        u8 *entry = GetBoundedEntryField(list->player);
         list->current = list->members[index];
         if (list->current != NULL) {
             func_ov021_020a7fc0(entry + 0xb2c, list->current->label);
@@ -79,11 +79,11 @@ s32 SelectMenuMember(MemberList *list, int index, MenuCommand *command)
             break;
         }
         if (func_ov001_02063a38() != 4) {
-            u32 total = func_ov001_02064574(0xb15, 0x11);
+            u32 total = ReadSessionPackedBits(0xb15, 0x11);
             if (total < 99999) {
                 total++;
             }
-            func_ov001_0206459c(0xb15, 0x11, total);
+            WriteSessionPackedBits(0xb15, 0x11, total);
         }
         break;
     case 3:

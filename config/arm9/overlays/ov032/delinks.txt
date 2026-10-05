@@ -4,9 +4,69 @@
     .data       start:0x020bffe0 end:0x020c0080 kind:data align:32
     .bss        start:0x020c0080 end:0x020c00a0 kind:bss align:32
 
+src/overlays/ov032/calls/AcknowledgeGroupTransition.c:
+    complete
+    .text       start:0x020ba960 end:0x020ba98c
+
+src/overlays/ov032/calls/InitializeGroupAction.c:
+    complete
+    .text       start:0x020bb14c end:0x020bb170
+
+src/overlays/ov032/calls/EnterState12WithHalfRate_020bb1cc.c:
+    complete
+    .text       start:0x020bb1cc end:0x020bb1e6
+
+src/overlays/ov032/calls/EnterGroupActionState.c:
+    complete
+    .text       start:0x020bb218 end:0x020bb240
+
+src/overlays/ov032/calls/FinishGroupActionState.c:
+    complete
+    .text       start:0x020bb27c end:0x020bb2a4
+
+src/overlays/ov032/calls/ClearGroupTransitionFlags.c:
+    complete
+    .text       start:0x020bb350 end:0x020bb36c
+
 src/overlays/ov032/calls/func_ov032_020bb468.c:
     complete
     .text       start:0x020bb468 end:0x020bb480
+
+src/overlays/ov032/calls/MobiClip_SrcIsOpen.c:
+    complete
+    .text       start:0x020bb4cc end:0x020bb4e8
+
+src/overlays/ov032/calls/MobiClip_SrcClose.c:
+    complete
+    .text       start:0x020bb4e8 end:0x020bb500
+
+src/overlays/ov032/calls/GetGroupIndexedValue.c:
+    complete
+    .text       start:0x020bb88c end:0x020bb8a4
+
+src/overlays/ov032/calls/UploadGroupPaletteSegment.c:
+    complete
+    .text       start:0x020bb8f4 end:0x020bb914
+
+src/overlays/ov032/calls/DrawTileColumnPattern.c:
+    complete
+    .text       start:0x020bb9ac end:0x020bb9d8
+
+src/overlays/ov032/calls/SetGroupMenuProgress.c:
+    complete
+    .text       start:0x020bb9d8 end:0x020bba00
+
+src/overlays/ov032/calls/ReleaseGroupResourceBuffers.c:
+    complete
+    .text       start:0x020bbb44 end:0x020bbb6c
+
+src/overlays/ov032/calls/SetGroupMenuPercent.c:
+    complete
+    .text       start:0x020bbb9c end:0x020bbbc8
+
+src/overlays/ov032/calls/UploadGroupMenuTiles.c:
+    complete
+    .text       start:0x020bbbc8 end:0x020bbbf4
 
 src/overlays/ov032/calls/SetGroupFormation.c:
     complete
@@ -23,6 +83,10 @@ src/overlays/ov032/calls/QueueFieldObjectModeChange.c:
 src/overlays/ov032/calls/UpdateFieldObjectModeTransition.c:
     complete
     .text       start:0x020bc518 end:0x020bc60c
+
+src/overlays/ov032/calls/ResetGroupOrbitPhase.c:
+    complete
+    .text       start:0x020bc7f4 end:0x020bc814
 
 src/overlays/ov032/calls/ComputeGroupOrbitPosition.c:
     complete
@@ -56,6 +120,10 @@ src/overlays/ov032/calls/SpawnRowChainMembers.c:
     complete
     .text       start:0x020bd2a8 end:0x020bd434
 
+src/overlays/ov032/calls/ForceGroupRespawn.c:
+    complete
+    .text       start:0x020bd434 end:0x020bd45e
+
 src/overlays/ov032/calls/HitAllGroupMembersExcept.c:
     complete
     .text       start:0x020bd490 end:0x020bd538
@@ -83,6 +151,10 @@ src/overlays/ov032/calls/PickJitteredPlayerOffset.c:
 src/overlays/ov032/calls/RollGroupAndSteerMember.c:
     complete
     .text       start:0x020be368 end:0x020be460
+
+src/overlays/ov032/calls/ClampSymmetricValue.c:
+    complete
+    .text       start:0x020be460 end:0x020be472
 
 src/overlays/ov032/calls/SteerMemberToFormationSlot.c:
     complete

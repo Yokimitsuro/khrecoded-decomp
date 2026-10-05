@@ -20,6 +20,14 @@ src/overlays/ov039/calls/func_ov039_020bb708.c:
     complete
     .text       start:0x020bb708 end:0x020bb72c
 
+src/overlays/ov039/calls/DrawWidgetOnScreenLayer.c:
+    complete
+    .text       start:0x020bb72c end:0x020bb750
+
+src/overlays/ov039/calls/ClearWidgetOnScreenLayer.c:
+    complete
+    .text       start:0x020bb750 end:0x020bb774
+
 src/overlays/ov039/calls/StartSubScene.c:
     complete
     .text       start:0x020bbf98 end:0x020bc038
@@ -28,9 +36,29 @@ src/overlays/ov039/calls/RuntimeState_SetCondition.c:
     complete
     .text       start:0x020bc05c end:0x020bc074
 
+src/overlays/ov039/calls/SetScreenLayerDirty.c:
+    complete
+    .text       start:0x020bc124 end:0x020bc148
+
+src/overlays/ov039/calls/ClearScreenLayerDirty.c:
+    complete
+    .text       start:0x020bc148 end:0x020bc16c
+
 src/overlays/ov039/calls/func_ov039_020bc1dc.c:
     complete
     .text       start:0x020bc1dc end:0x020bc1ec
+
+src/overlays/ov039/calls/UpdateScreenWidgetLayer.c:
+    complete
+    .text       start:0x020bc204 end:0x020bc228
+
+src/overlays/ov039/calls/SetScreenBrightness.c:
+    complete
+    .text       start:0x020bc668 end:0x020bc690
+
+src/overlays/ov039/calls/SetStateFlagBits.c:
+    complete
+    .text       start:0x020bc6a8 end:0x020bc6d0
 
 src/overlays/ov039/calls/RuntimeState_SetFlags.c:
     complete

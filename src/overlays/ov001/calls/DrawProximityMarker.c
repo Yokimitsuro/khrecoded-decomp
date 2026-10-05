@@ -32,7 +32,7 @@ typedef struct {
 } MarkerOwner;
 
 extern void func_ov001_020995ec(int kind, int owner);
-extern MarkerRecord *func_ov001_0209c0c8(void);
+extern MarkerRecord *GetStageObjectRecord(void);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern fx32 FX_Mul(fx32 a, fx32 b);
 extern BOOL func_ov001_02063a24(void);
@@ -51,7 +51,7 @@ void DrawProximityMarker(MarkerOwner *owner)
     int mode;
 
     func_ov001_020995ec(0x1c, 1);
-    node = &func_ov001_0209c0c8()->node;
+    node = &GetStageObjectRecord()->node;
     if (!(owner->flags & 0x10)) {
         return;
     }
