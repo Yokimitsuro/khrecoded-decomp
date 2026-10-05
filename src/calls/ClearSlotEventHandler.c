@@ -1,6 +1,6 @@
 #include "nitro/types.h"
 
-extern int func_02011460(int slot, void (*callback)(void *), void *arg);
+extern int SetSlotEventHandler(int slot, void (*callback)(void *), void *arg);
 
 int ClearSlotEventHandler(void *record)
 {
@@ -15,7 +15,7 @@ int ClearSlotEventHandler(void *record)
         return 3;
     }
     slot = *(u16 *)((u8 *)record + 0x816);
-    func_02011460(slot, 0, 0);
+    SetSlotEventHandler(slot, 0, 0);
     *handlerActive = 0;
     *(u16 *)((u8 *)record + 0x81c) = 0;
     return 0;

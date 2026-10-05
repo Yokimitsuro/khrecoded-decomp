@@ -6,6 +6,7 @@
 typedef void (*WMCallbackFunc)(void *arg);
 typedef int WMErrCode;
 typedef int WMApiid;
+typedef struct WMStartScanCallback WMStartScanCallback;
 
 enum {
     WM_ERRCODE_SUCCESS = 0,
@@ -73,6 +74,46 @@ typedef struct WMStatus {
     BOOL apiBusy;
     BOOL scanContinue;
     BOOL mp_flag;
+    BOOL dcf_flag;
+    BOOL ks_flag;
+    BOOL dcf_sendFlag;
+    BOOL vsyncFlag;
+    u8 wlVersion[8];
+    u16 macVersion;
+    u16 rfVersion;
+    u16 bbpVersion[2];
+    u16 mp_parentSize;
+    u16 mp_childSize;
+    u16 mp_parentMaxSize;
+    u16 mp_childMaxSize;
+    u16 mp_sendSize;
+    u16 mp_recvSize;
+    u16 mp_maxSendSize;
+    u16 mp_maxRecvSize;
+    u8 reserved40[0x72 - 0x40];
+    u16 mp_recvBufSize;
+    void *mp_recvBuf[2];
+    u32 *mp_sendBuf;
+    u16 mp_sendBufSize;
+    u16 mp_ackTime;
+    u16 mp_waitAckFlag;
+    u16 mp_readyBitmap;
+    u8 reserved88[0x9c - 0x88];
+    u16 mp_ignoreSizePrecheckMode;
+    u8 reserved9e[0xbc - 0x9e];
+    u16 linkLevel;
+    u16 minRssi;
+    u16 rssiCounter;
+    u16 beaconIndicateFlag;
+    u16 wepKeyId;
+    u16 pwrMgtMode;
+    u8 reservedc8[0x182 - 0xc8];
+    u16 child_bitmap;
+    void *pInfoBuf;
+    u16 aid;
+    u8 parentMacAddress[6];
+    u16 scan_channel;
+    u8 reserved192[0x800 - 0x192];
 } WMStatus;
 
 typedef struct WMArm9Buf {
@@ -88,8 +129,50 @@ typedef struct WMMeasureChannelReq {
     u16 measureTime;
 } WMMeasureChannelReq;
 
+typedef struct WMMPParam {
+    u32 mask;
+    u16 minFrequency;
+    u16 frequency;
+    u16 maxFrequency;
+    u16 parentSize;
+    u16 childSize;
+    u16 parentInterval;
+    u16 childInterval;
+    u16 parentVCount;
+    u16 childVCount;
+    u16 defaultRetryCount;
+    u8 minPollBmpMode;
+    u8 singlePacketMode;
+    u8 ignoreFatalErrorMode;
+    u8 ignoreSizePrecheckMode;
+} WMMPParam;
+
+typedef struct WMMPTmpParam {
+    u32 mask;
+    u16 minFrequency;
+    u16 frequency;
+    u16 maxFrequency;
+    u16 defaultRetryCount;
+    u8 minPollBmpMode;
+    u8 singlePacketMode;
+    u8 ignoreFatalErrorMode;
+    u8 reserved[1];
+} WMMPTmpParam;
+
+typedef struct WMStartMPReq {
+    u16 apiid;
+    u16 reserved;
+    u32 *recvBuf;
+    u32 recvBufSize;
+    u32 *sendBuf;
+    u32 sendBufSize;
+    WMMPParam param;
+    WMMPTmpParam tmpParam;
+} WMStartMPReq;
+
 #define WM_WEPMODE_NO 0
 #define WM_SIZE_WEPKEY 80
+#define WM_SIZE_MP_DATA_MAX 512
 #define WMi_CheckState(state) WMi_CheckStateEx(1, (state))
 #define WM_CHECK_RESULT(result) \
     if ((result) != WM_ERRCODE_SUCCESS) { return (result); }

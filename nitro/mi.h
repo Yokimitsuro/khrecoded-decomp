@@ -21,4 +21,15 @@ typedef enum MIProcessor {
     MI_PROCESSOR_ARM7
 } MIProcessor;
 
+typedef void *(*MIAllocatorAllocFunction)(void *userData, u32 length, u32 alignment);
+typedef void (*MIAllocatorFreeFunction)(void *userData, void *buffer);
+
+typedef struct MIAllocator {
+    void *userData;
+    MIAllocatorAllocFunction alloc;
+    MIAllocatorFreeFunction free;
+} MIAllocator;
+
+#define MI_CpuClear8(destination, size) MI_CpuFill8((destination), 0, (size))
+
 #endif

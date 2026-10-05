@@ -10,15 +10,15 @@ typedef struct {
     s32 archiveHeader;
 } ArchiveContext;
 
-extern int func_0202c4b4(int flags, s32 archive, s32 chunkSize);
-extern int func_02025820(ArchiveContext *record, int flag, int extra);
+extern int LoadFileIntoBuffer(int flags, s32 archive, s32 chunkSize);
+extern int ScriptVm_Start(ArchiveContext *record, int flag, int extra);
 
 int RoundAndInitArchive(ArchiveContext *record, int flags, int flag, int extra)
 {
     int size;
     int remainder;
 
-    size = func_0202c4b4(flags, record->archiveHeader, record->chunkSize);
+    size = LoadFileIntoBuffer(flags, record->archiveHeader, record->chunkSize);
     if (size < 0) {
         return 0;
     }
@@ -31,5 +31,5 @@ int RoundAndInitArchive(ArchiveContext *record, int flags, int flag, int extra)
     record->size = size;
     record->sizeCopy = size;
 
-    return func_02025820(record, flag, extra);
+    return ScriptVm_Start(record, flag, extra);
 }

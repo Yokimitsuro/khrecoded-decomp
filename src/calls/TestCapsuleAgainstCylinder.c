@@ -26,8 +26,8 @@ typedef struct SphereShapeRef {
     s32 kind;
 } SphereShapeRef;
 
-extern BOOL func_0204a908(const VecFx32 *a, const VecFx32 *b);
-extern BOOL func_02040cb8(CylinderShapeRef *segmentRef, CylinderShapeRef *cylinderRef, void *contact, u32 flags);
+extern BOOL AreVecsWithinRange16(const VecFx32 *a, const VecFx32 *b);
+extern BOOL TestSegmentAgainstCylinder(CylinderShapeRef *segmentRef, CylinderShapeRef *cylinderRef, void *contact, u32 flags);
 extern void GetSegmentDelta(VecFx32 *out, const CollisionCylinder *segment);
 extern BOOL func_0204268c(SphereShapeRef *sphereRef, CylinderShapeRef *cylinderRef, void *contact, u32 flags, const VecFx32 *velocity);
 
@@ -39,8 +39,8 @@ void TestCapsuleAgainstCylinder(CylinderShapeRef *segmentRef, CylinderShapeRef *
     SphereShapeRef sphereRef;
     CollisionSphere sphere;
 
-    if ((flags & 2) || (flags & 1) || func_0204a908(&segment->start, &segment->end)) {
-        func_02040cb8(segmentRef, cylinderRef, contact, flags);
+    if ((flags & 2) || (flags & 1) || AreVecsWithinRange16(&segment->start, &segment->end)) {
+        TestSegmentAgainstCylinder(segmentRef, cylinderRef, contact, flags);
         return;
     }
     sphereRef.sphere = &sphere;

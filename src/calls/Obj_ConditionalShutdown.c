@@ -9,7 +9,7 @@ typedef struct {
 
 extern void func_02036888(Container *obj, u16 arg);
 extern void func_020359c4(Container *obj);
-extern void func_02035c5c(Container *obj);
+extern void ActorSlot_Unlink(Container *obj);
 extern void Obj_ShutdownBase(void *entity);
 
 void Obj_ConditionalShutdown(Container *obj, u16 arg) {
@@ -24,7 +24,7 @@ void Obj_ConditionalShutdown(Container *obj, u16 arg) {
     }
     func_020359c4(obj);
     if (obj->flags & 2) {
-        func_02035c5c(obj);
+        ActorSlot_Unlink(obj);
     }
     Obj_ShutdownBase((u8 *)obj + 0x10);
     obj->flags = 0;

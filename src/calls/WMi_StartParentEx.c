@@ -230,7 +230,7 @@ extern u16 data_ov105_020bfa20;
 extern WMArm9Buf *func_02011050(void);
 extern WMErrCode Ov105_IsDeviceReady(void);
 extern WMErrCode WMi_CheckStateEx(s32 paramNum, ...);
-extern WMErrCode func_02010f94(WMApiid id, u16 paramNum, ...);
+extern WMErrCode WMi_SendCommand(WMApiid id, u16 paramNum, ...);
 extern WMErrCode Ov105_WMi_SendCommandDirect(void *data, u32 length);
 extern void SetCommandArg(WMApiid id, WMCallbackFunc callback);
 extern void DC_InvalidateRange(void *addr, u32 size);
@@ -263,7 +263,7 @@ WMErrCode WMi_StartParentEx(WMCallbackFunc callback, BOOL powerSave)
 
     SetCommandArg(WM_APIID_START_PARENT, callback);
 
-    result = func_02010f94(WM_APIID_START_PARENT, 1, (u32)powerSave);
+    result = WMi_SendCommand(WM_APIID_START_PARENT, 1, (u32)powerSave);
     WM_CHECK_RESULT(result);
 
     return WM_ERRCODE_OPERATING;

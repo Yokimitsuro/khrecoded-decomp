@@ -2,6 +2,7 @@
 #define NNSYS_G2D_H
 
 #include "nitro/types.h"
+#include "nitro/gx.h"
 
 #define NNS_G2D_GLYPH_INDEX_NOT_FOUND 0xffff
 
@@ -42,6 +43,18 @@ typedef struct NNSG2dFont {
 
 typedef struct NNSG2dCharCanvas NNSG2dCharCanvas;
 
+typedef struct NNSiG2dCharCanvasVTable NNSiG2dCharCanvasVTable;
+
+struct NNSG2dCharCanvas {
+    u8 *charBase;
+    int areaWidth;
+    int areaHeight;
+    u8 dstBpp;
+    u8 reserved[3];
+    u32 param;
+    const NNSiG2dCharCanvasVTable *vtable;
+};
+
 typedef struct NNSG2dTextCanvas {
     NNSG2dCharCanvas *pCanvas;
     NNSG2dFont *pFont;
@@ -53,5 +66,42 @@ typedef struct NNSiG2dTextDirection {
     s8 x;
     s8 y;
 } NNSiG2dTextDirection;
+
+typedef struct NNSG2dTagCallbackInfo {
+    NNSG2dTextCanvas txn;
+    const void *str;
+    int x;
+    int y;
+    int clr;
+    void *cbParam;
+} NNSG2dTagCallbackInfo;
+
+typedef void (*NNSG2dTagCallback)(u16 tag, NNSG2dTagCallbackInfo *info);
+
+typedef struct NNSG2dScreenData {
+    u16 screenWidth;
+    u16 screenHeight;
+    u16 colorMode;
+    u16 screenFormat;
+    u32 szByte;
+    u32 rawData[1];
+} NNSG2dScreenData;
+
+typedef struct NNSG2dCharacterData {
+    u16 height;
+    u16 width;
+    GXTexFmt pixelFmt;
+    GXOBJVRamModeChar mappingType;
+    u32 characterFmt;
+    u32 szByte;
+    void *pRawData;
+} NNSG2dCharacterData;
+
+typedef struct NNSG2dPaletteData {
+    GXTexFmt fmt;
+    BOOL extendedPalette;
+    u32 szByte;
+    void *pRawData;
+} NNSG2dPaletteData;
 
 #endif

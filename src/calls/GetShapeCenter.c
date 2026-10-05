@@ -12,7 +12,7 @@ typedef struct CollisionShape {
     s32 kind;
 } CollisionShape;
 
-extern VecFx32 func_0204b618(s32 count, ...);
+extern VecFx32 AverageVecs(s32 count, ...);
 
 VecFx32 GetShapeCenter(const CollisionShape *shape)
 {
@@ -24,7 +24,7 @@ VecFx32 GetShapeCenter(const CollisionShape *shape)
     case 2:
     case 3:
     case 4:
-        return func_0204b618(2, &shape->data->start, &shape->data->end);
+        return AverageVecs(2, &shape->data->start, &shape->data->end);
     }
     return shape->data->start;
 }

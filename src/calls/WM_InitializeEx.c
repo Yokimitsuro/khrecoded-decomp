@@ -11,7 +11,7 @@ extern int WmInit(int wmSysBuf, int dmaNo);
 extern void SetCommandArg(int idx, int value);
 extern void func_020113f4(void);
 extern int func_02011050(void);
-extern int func_02010f94(int id, u16 paramNum, ...);
+extern int WMi_SendCommand(int id, u16 paramNum, ...);
 
 int WM_InitializeEx(int wmSysBuf, int callback, int dmaNo, int miscFlags)
 {
@@ -27,7 +27,7 @@ int WM_InitializeEx(int wmSysBuf, int callback, int dmaNo, int miscFlags)
     func_020113f4();
 
     wm9buf = (WMArm9Buf *)func_02011050();
-    result = func_02010f94(0, 4, (int)wm9buf->WM7, (int)wm9buf->status, (int)wm9buf->fifo7to9, miscFlags);
+    result = WMi_SendCommand(0, 4, (int)wm9buf->WM7, (int)wm9buf->status, (int)wm9buf->fifo7to9, miscFlags);
     if (result == 0) {
         result = 2;
     }

@@ -9,7 +9,7 @@ extern CardThreadState data_0205fe00;
 extern void *CARD_LockBackup(int id);
 extern void CARD_UnlockBackup(int id);
 extern int ReadCardBackupSync(u32 src, void *dst, u32 length);
-extern BOOL func_02026d44(void);
+extern BOOL FormatCardBackup(void);
 extern void func_02026ef4(u32 mode);
 
 BOOL FormatSaveData(void)
@@ -19,7 +19,7 @@ BOOL FormatSaveData(void)
 
     CARD_LockBackup(data_0205fe00.resourceId);
     success = TRUE;
-    if (ReadCardBackupSync(0, &probe, 1) != 0 || func_02026d44() == 0) {
+    if (ReadCardBackupSync(0, &probe, 1) != 0 || FormatCardBackup() == 0) {
         success = FALSE;
     }
     CARD_UnlockBackup(data_0205fe00.resourceId);

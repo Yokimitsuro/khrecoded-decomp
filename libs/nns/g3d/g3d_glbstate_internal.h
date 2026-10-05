@@ -2,15 +2,7 @@
 #define G3D_GLBSTATE_INTERNAL_H
 
 #include "libs/nns/g3d/g3d_kernel_internal.h"
-
-typedef long long fx64;
-typedef long long fx64c;
-
-typedef struct VecFx32_ {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
+#include "nitro/fx_types.h"
 
 typedef union MtxFx33_ {
     struct {

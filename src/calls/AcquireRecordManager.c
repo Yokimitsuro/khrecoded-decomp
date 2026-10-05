@@ -14,7 +14,7 @@ extern const char sMain_DbDbP2_02056198[];
 extern const char sMain_DbLanguageP2_020561a4[];
 extern void *NNSi_FndAllocFromDefaultHeap(u32 size);
 extern void MI_CpuFill8(void *dst, int value, int size);
-extern void *func_0202cc80(const char *name, u32 mode, BOOL allocFromEnd);
+extern void *Msg_OpenContainerAndReadHeader(const char *name, u32 mode, BOOL allocFromEnd);
 
 BOOL AcquireRecordManager(void)
 {
@@ -28,7 +28,7 @@ BOOL AcquireRecordManager(void)
     data_020613d0 = manager;
     MI_CpuFill8(manager, 0, sizeof(RecordManager));
     manager->useCount = 1;
-    manager->containerA = func_0202cc80(sMain_DbDbP2_02056198, 0x11, FALSE);
-    manager->containerB = func_0202cc80(sMain_DbLanguageP2_020561a4, 0x11, FALSE);
+    manager->containerA = Msg_OpenContainerAndReadHeader(sMain_DbDbP2_02056198, 0x11, FALSE);
+    manager->containerB = Msg_OpenContainerAndReadHeader(sMain_DbLanguageP2_020561a4, 0x11, FALSE);
     return TRUE;
 }

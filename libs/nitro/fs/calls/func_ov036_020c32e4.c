@@ -1,7 +1,7 @@
 /* Ends the overlay and always reports success. */
-extern void func_02028690(void *p);
+extern void UpdatePanelPromptInput(void *p);
 
 int func_ov036_020c32e4(void *p) {
-    func_02028690(p);
+    UpdatePanelPromptInput(p);
     return 1;
 }

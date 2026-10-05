@@ -45,7 +45,7 @@ extern void MIi_CpuCopy32(const void *src, void *dst, u32 size);
 #define MI_CpuClear32(dst, size) MIi_CpuClear32(0, (dst), (size))
 #define MI_CpuCopy32(src, dst, size) MIi_CpuCopy32((src), (dst), (size))
 
-extern WMErrCode func_02011a84(WMCallbackFunc callback, u16 *recvBuf, u16 recvBufSize, u16 *sendBuf, u16 sendBufSize, WMMPTmpParam *tmpParam);
+extern WMErrCode WMi_StartMP(WMCallbackFunc callback, u16 *recvBuf, u16 recvBufSize, u16 *sendBuf, u16 sendBufSize, WMMPTmpParam *tmpParam);
 
 WMErrCode WM_StartMP(WMCallbackFunc callback, u16 *recvBuf, u16 recvBufSize, u16 *sendBuf, u16 sendBufSize, u16 mpFreq)
 {
@@ -57,5 +57,5 @@ WMErrCode WM_StartMP(WMCallbackFunc callback, u16 *recvBuf, u16 recvBufSize, u16
     tmpParam.minFrequency = mpFreq;
     tmpParam.frequency = mpFreq;
 
-    return func_02011a84(callback, recvBuf, recvBufSize, sendBuf, sendBufSize, &tmpParam);
+    return WMi_StartMP(callback, recvBuf, recvBufSize, sendBuf, sendBufSize, &tmpParam);
 }

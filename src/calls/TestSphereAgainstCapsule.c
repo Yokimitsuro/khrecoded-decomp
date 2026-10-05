@@ -31,7 +31,7 @@ typedef struct CollisionHit {
     u8 kind;
 } CollisionHit;
 
-extern BOOL func_0203f2fc(CollisionShape *sphereShape, CollisionShape *segmentShape, CollisionHit *hit, u32 flags);
+extern BOOL TestSphereAgainstSegment(CollisionShape *sphereShape, CollisionShape *segmentShape, CollisionHit *hit, u32 flags);
 
 BOOL TestSphereAgainstCapsule(CollisionShape *sphereShape, CollisionShape *capsuleShape, CollisionHit *hit, u32 flags)
 {
@@ -45,5 +45,5 @@ BOOL TestSphereAgainstCapsule(CollisionShape *sphereShape, CollisionShape *capsu
     sphereRef.data = &sphere;
     segmentRef.data = &segment;
     sphere.radius += ((CollisionCapsule *)capsuleShape->data)->radius;
-    return func_0203f2fc(&sphereRef, &segmentRef, hit, flags | 0x10);
+    return TestSphereAgainstSegment(&sphereRef, &segmentRef, hit, flags | 0x10);
 }

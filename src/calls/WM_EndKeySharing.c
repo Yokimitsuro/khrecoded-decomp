@@ -1,5 +1,5 @@
-extern void *func_0202d8d8();
+extern void *Text_VSNPrintf();
 
 void *WM_EndKeySharing() {
-    return func_0202d8d8();
+    return Text_VSNPrintf();
 }

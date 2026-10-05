@@ -2,7 +2,7 @@
 #include "nitro/fx.h"
 
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern u16 func_0202ab34(int cosine);
+extern u16 Math_AcosIdx(int cosine);
 
 s16 AngleBetweenVecs(const VecFx32 *a, const VecFx32 *b)
 {
@@ -16,5 +16,5 @@ s16 AngleBetweenVecs(const VecFx32 *a, const VecFx32 *b)
     } else if (cosine < -FX32_ONE) {
         cosine = -FX32_ONE;
     }
-    return func_0202ab34(cosine);
+    return Math_AcosIdx(cosine);
 }

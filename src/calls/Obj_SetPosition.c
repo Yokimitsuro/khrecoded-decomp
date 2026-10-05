@@ -9,12 +9,12 @@ typedef struct {
     u8 node[0x18];
 } Entity;
 
-extern void func_02033f5c(void *node, const VecFx32 *position);
+extern void SetCollisionObjectPosition(void *node, const VecFx32 *position);
 
 void Obj_SetPosition(Entity *entity, const VecFx32 *position)
 {
     if ((entity->flags & 0x10) == 0) {
-        func_02033f5c(entity->node, position);
+        SetCollisionObjectPosition(entity->node, position);
     }
     entity->position = *position;
 }

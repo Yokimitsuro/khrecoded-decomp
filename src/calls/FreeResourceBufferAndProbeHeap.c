@@ -7,11 +7,11 @@ typedef struct {
 
 extern void **data_0206039c;
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
-extern int func_02013318(void *heap, int alignmentInput);
+extern int findLargestAlignedHeapBlock(void *heap, int alignmentInput);
 
 BOOL FreeResourceBufferAndProbeHeap(FreeableResource *resource)
 {
     NNSi_FndFreeFromDefaultHeap(resource->buffer);
-    func_02013318(*data_0206039c, 4);
+    findLargestAlignedHeapBlock(*data_0206039c, 4);
     return TRUE;
 }

@@ -1,6 +1,7 @@
 #ifndef NNSYS_G3D_H
 #define NNSYS_G3D_H
 
+#include "nnsys/gfd.h"
 #include "libs/nns/g3d/g3d_nsbca_internal.h"
 
 typedef struct NNSG3dResDictMdlSetData_ {

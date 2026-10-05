@@ -2,7 +2,7 @@
 
 extern u8 *data_0206084c;
 extern void NNS_SndPlayerStopSeq(void *handle, BOOL flag);
-extern void func_0204cd04(void *entry);
+extern void FreeSoundHandleSlot(void *entry);
 
 void StopSoundSeqHandle(u32 handle)
 {
@@ -15,5 +15,5 @@ void StopSoundSeqHandle(u32 handle)
         return;
     }
     NNS_SndPlayerStopSeq(entry + 0x1c, 0);
-    func_0204cd04(entry);
+    FreeSoundHandleSlot(entry);
 }

@@ -14,7 +14,7 @@ extern WMArm9Buf *Ov105_GetContext(void);
 extern WMErrCode Ov105_IsDeviceReady(void);
 extern WMErrCode PollDeviceStatus(void);
 extern WMErrCode Ov105_WMi_CheckStateEx(s32 paramNum, ...);
-extern WMErrCode func_02010f94(WMApiid id, u16 paramNum, ...);
+extern WMErrCode WMi_SendCommand(WMApiid id, u16 paramNum, ...);
 extern WMErrCode Ov105_WMi_SendCommandDirect(void *data, u32 length);
 extern void SetCommandArg(WMApiid id, WMCallbackFunc callback);
 extern int Ov105_WM_GetMPSendBufferSize(void);
@@ -47,7 +47,7 @@ WMErrCode WM_SetWEPKey(WMCallbackFunc callback, u16 wepmode, const u16 *wepkey)
 
     SetCommandArg(WM_APIID_SET_WEPKEY, callback);
 
-    result = func_02010f94(WM_APIID_SET_WEPKEY, 2, (u32)wepmode, (u32)wepkey);
+    result = WMi_SendCommand(WM_APIID_SET_WEPKEY, 2, (u32)wepmode, (u32)wepkey);
     WM_CHECK_RESULT(result);
 
     return WM_ERRCODE_OPERATING;

@@ -2,7 +2,7 @@
 #include "nitro/fx_types.h"
 
 void NegateVecFx32(VecFx32 *vec);
-BOOL func_0204847c(void *first, void *second, void *contact, u32 flags, const VecFx32 *velocity);
+BOOL SweepSegmentAgainstCylinder(void *first, void *second, void *contact, u32 flags, const VecFx32 *velocity);
 
 BOOL SweepCylinderAgainstSegmentSwapped(void *first, void *second, void *contact, u32 options, const VecFx32 *velocity)
 {
@@ -17,5 +17,5 @@ BOOL SweepCylinderAgainstSegmentSwapped(void *first, void *second, void *contact
     reversed = *velocity;
     NegateVecFx32(&reversed);
     copy = reversed;
-    return func_0204847c(second, first, contact, flags, &copy);
+    return SweepSegmentAgainstCylinder(second, first, contact, flags, &copy);
 }

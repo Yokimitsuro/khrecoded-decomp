@@ -13,7 +13,7 @@ typedef struct OverlaySelectionRecord {
 } OverlaySelectionRecord;
 
 extern int FindSlotByActiveOrder(int targetOrder);
-extern u16 func_020294cc(int index);
+extern u16 RefillSlotItemUses(int index);
 extern OverlaySelectionRecord *GetOverlaySelectionRecord(u32 selectionIndex);
 
 int AddSlotItemUses(int order)
@@ -24,7 +24,7 @@ int AddSlotItemUses(int order)
     if (slot < 0) {
         amount = -1;
     } else {
-        amount = (s16)func_020294cc(slot);
+        amount = (s16)RefillSlotItemUses(slot);
     }
     if (amount > 0) {
         SelectionSlot *entry = &GetOverlaySelectionRecord(0)->slots[order];

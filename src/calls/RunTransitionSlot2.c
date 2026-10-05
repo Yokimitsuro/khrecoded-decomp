@@ -1,6 +1,6 @@
 extern int WMi_CheckStateEx(int a, int b);
 extern void SetCommandArg(int slot, int arg);
-extern int func_02010f94(int slot, int flag);
+extern int WMi_SendCommand(int slot, int flag);
 
 int RunTransitionSlot2(int arg) {
     int r = WMi_CheckStateEx(1, 2);
@@ -8,7 +8,7 @@ int RunTransitionSlot2(int arg) {
         return r;
     }
     SetCommandArg(2, arg);
-    r = func_02010f94(2, 0);
+    r = WMi_SendCommand(2, 0);
     if (r == 0) {
         r = 2;
     }

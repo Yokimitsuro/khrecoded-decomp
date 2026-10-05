@@ -2,9 +2,9 @@
 
 typedef struct CylinderShapeRef CylinderShapeRef;
 
-extern BOOL func_020410b4(CylinderShapeRef *refA, CylinderShapeRef *refB, void *contact, u32 flags);
+extern BOOL TestCylinderAgainstCylinder(CylinderShapeRef *refA, CylinderShapeRef *refB, void *contact, u32 flags);
 
 BOOL TestCylinderAgainstCylinderSwapped(CylinderShapeRef *refA, CylinderShapeRef *refB, void *contact, u32 flags)
 {
-    return func_020410b4(refB, refA, contact, flags ^ 1);
+    return TestCylinderAgainstCylinder(refB, refA, contact, flags ^ 1);
 }

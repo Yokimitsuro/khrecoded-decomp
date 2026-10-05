@@ -23,7 +23,7 @@ extern GameState *data_0205fe0c;
 extern OverlaySelectionRecord *GetOverlaySelectionRecord(u32 selectionIndex);
 extern void AcquireRecordManager(void);
 extern void ReleaseRecordManager(void);
-extern int func_02051d50(int slot, int param);
+extern int AcquireRecordSlot(int slot, int param);
 extern BOOL func_02051e10(s32 slot);
 extern SlotPair0Entry *GetRecordSlotPair0Entry(s32 index);
 
@@ -33,7 +33,7 @@ void SyncSelectionRecordFromSlotEntry(void)
     u16 entryIndex = data_0205fe0c->unk_2DB6;
 
     AcquireRecordManager();
-    func_02051d50(0, 1);
+    AcquireRecordSlot(0, 1);
     record->unk_130 = GetRecordSlotPair0Entry(entryIndex)->unk_20;
     record->unk_134 = 0;
     func_02051e10(0);

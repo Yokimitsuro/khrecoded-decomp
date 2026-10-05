@@ -16,7 +16,7 @@ typedef struct {
 } CollisionQuery;
 
 extern void InitGatherQueryFromParams(CollisionQuery *query, void *params);
-extern void func_020337d8(CollisionQuery *query, CollisionMesh *mesh);
+extern void GatherModelFaces(CollisionQuery *query, CollisionMesh *mesh);
 
 void TestQueryAgainstMeshList(CollisionMeshList *list, void *params)
 {
@@ -27,7 +27,7 @@ void TestQueryAgainstMeshList(CollisionMeshList *list, void *params)
     for (i = 0; i < count; i++) {
         CollisionMesh *mesh = list->meshes[i];
         if ((mesh->flags & 0x2000) == 0) {
-            func_020337d8(&query, mesh);
+            GatherModelFaces(&query, mesh);
         }
     }
 }

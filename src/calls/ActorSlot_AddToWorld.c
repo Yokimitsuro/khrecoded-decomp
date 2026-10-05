@@ -11,11 +11,11 @@ typedef struct {
     VecFx32 position;
 } ActorSlot;
 
-extern void func_02035594(ActorRegistry *registry, void *entity, VecFx32 *position);
+extern void Obj_PlaceInWorld(ActorRegistry *registry, void *entity, VecFx32 *position);
 extern ActorRegistry *data_0206083c;
 
 void ActorSlot_AddToWorld(ActorSlot *slot)
 {
-    func_02035594(data_0206083c, slot->entity, &slot->position);
+    Obj_PlaceInWorld(data_0206083c, slot->entity, &slot->position);
     slot->flags |= 0x100;
 }

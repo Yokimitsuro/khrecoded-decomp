@@ -40,7 +40,7 @@ void OS_InitArena(void);
 void CARD_Init(void);
 void MI_Init(void);
 void PM_Init(void);
-void func_02012564(void);
+void CTRDG_Init(void);
 extern void OSi_CancelDma0 (void);
 
 /* NitroSDK operating-system initialization. */
@@ -74,7 +74,7 @@ void OS_Init(void)
 #endif
 
 #ifndef SDK_TEG
-    func_02012564();
+    CTRDG_Init();
 #endif
 
 #ifndef SDK_SMALL_BUILD
@@ -106,7 +106,7 @@ void OS_Init(void)
 #endif
 
 #ifndef SDK_TEG
-    func_02012564();
+    CTRDG_Init();
 #endif
 
 #endif

@@ -7,6 +7,7 @@
 #define FX32_ONE 0x1000
 
 typedef s64 fx64;
+typedef s64 fx64c;
 
 typedef struct VecFx32 {
     fx32 x;
