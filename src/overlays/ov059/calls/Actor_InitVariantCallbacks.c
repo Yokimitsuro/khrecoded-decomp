@@ -34,7 +34,7 @@ extern void Actor_QueueBattleSounds(void);
 extern void Actor_BuildHitSphereWithCue(void);
 extern void Actor_LoadAnimResources(void);
 extern void func_ov059_020c76a4(void);
-extern void func_ov059_020cbf18(Actor *actor);
+extern void Actor_InstallCallbacks(Actor *actor);
 
 void Actor_InitVariantCallbacks(Actor *actor, u8 variant) {
     int i;
@@ -48,7 +48,7 @@ void Actor_InitVariantCallbacks(Actor *actor, u8 variant) {
         actor->targetIds[i] = -1;
     }
     actor->targetIds[1] = -2;
-    func_ov059_020cbf18(actor);
+    Actor_InstallCallbacks(actor);
     actor->onFree = FreeWorkBuffer;
     actor->onUpdate = Actor_SelectAction;
     actor->onResetMotion = Actor_ResetMotion;

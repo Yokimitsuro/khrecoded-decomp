@@ -63,7 +63,7 @@ extern void LoadResGroupHandles(SceneTask *task, TaskOwner *owner, void *resDesc
 extern void BeginMarkedIntroScene();
 extern void func_ov064_020d86d4();
 extern void func_ov064_020d86f0();
-extern void func_ov064_020d8254();
+extern void UpdateOv064BossSequence();
 extern void func_ov064_020d86c4();
 extern void UpdateRisingFinisherAction();
 
@@ -84,7 +84,7 @@ SceneTask *CreateMarkedSceneTask(TaskOwner *owner, void *resDesc, TaskDesc *desc
     task->onStart = BeginMarkedIntroScene;
     task->update = func_ov064_020d86d4;
     task->draw = func_ov064_020d86f0;
-    task->cleanup = func_ov064_020d8254;
+    task->cleanup = UpdateOv064BossSequence;
     task->onEvent = func_ov064_020d86c4;
     task->onAction = UpdateRisingFinisherAction;
     names = data_ov064_020d885c;

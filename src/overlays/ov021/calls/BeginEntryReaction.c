@@ -34,7 +34,7 @@ extern void *SelectFallStateHandler(ReactEntry *entry, int *state);
 extern void RefreshLockTarget(ReactEntry *entry);
 extern void UpdateFacingTowardTarget(ReactEntry *entry, int flag);
 extern BOOL IsPlayerEntryFlagSet(int player, u32 id);
-extern void func_ov056_020d318c(void);
+extern void UpdateGrabHoldState(void);
 
 void *BeginEntryReaction(ReactOwner *owner, ReactActor *actor, int *state) {
     ReactEntry *entry = GetBoundedEntryField(owner->entryIndex);
@@ -86,5 +86,5 @@ void *BeginEntryReaction(ReactOwner *owner, ReactActor *actor, int *state) {
     if (IsPlayerEntryFlagSet(entry->index, 0x15) && actor->source->kind == 3) {
         entry->reactTimer = 0x3000;
     }
-    return func_ov056_020d318c;
+    return UpdateGrabHoldState;
 }

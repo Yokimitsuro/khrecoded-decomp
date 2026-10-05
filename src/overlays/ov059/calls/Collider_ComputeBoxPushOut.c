@@ -78,7 +78,7 @@ typedef struct Collider {
 } Collider;
 
 extern const VecFx32 data_0205344c;
-extern void func_ov059_020cd744(void);
+extern void Request_IsIdle(void);
 extern void CollisionQuery_Init(CollisionQuery *query, u16 id, void *actor, u8 kind, u8 unk3C, u8 unk3D, void *shape, QueryWorkspace *workspace, s32 filter);
 extern void MTX_Identity33_(MtxFx33 *mtx);
 extern void InitBoxShape(CollisionShape *shape, void *storage, const VecFx32 *center, const VecFx32 *halfExtents, const MtxFx33 *rotation);
@@ -145,7 +145,7 @@ void Collider_ComputeBoxPushOut(void *world, int unused1, Collider *collider, in
     sweep.shape->sweptBox.maxY = pos->y + 0x10;
     sweep.shape->shape.bounds = sweep.shape->sweptBox;
     sweep.limit = 0x7fffffff;
-    sweep.callback = MakeCallback(func_ov059_020cd744, NULL);
+    sweep.callback = MakeCallback(Request_IsIdle, NULL);
     hit = CollWorld_FindHit(world, &sweep);
     if (hit != NULL) {
         if (workspace.hitType == 0) {

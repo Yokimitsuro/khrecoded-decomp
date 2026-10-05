@@ -59,7 +59,7 @@ extern void func_ov021_020adca0(void);
 extern void func_ov021_020adcac(void);
 extern void BeginEntryReaction(void);
 extern void func_ov021_020ad078(void);
-extern void func_ov056_020d318c(void);
+extern void UpdateGrabHoldState(void);
 
 EffectTask *CreateEffectTask(EffectOwner *owner, void *resDesc, EffectDesc *desc)
 {
@@ -74,7 +74,7 @@ EffectTask *CreateEffectTask(EffectOwner *owner, void *resDesc, EffectDesc *desc
     task->cleanup = func_ov021_020adcac;
     task->onResume = BeginEntryReaction;
     task->onPause = func_ov021_020ad078;
-    task->onEvent = func_ov056_020d318c;
+    task->onEvent = UpdateGrabHoldState;
     def = desc->def;
     task->source = DispatchModeHandler(def, desc->arg, owner->player);
     task->flags = def->flags;

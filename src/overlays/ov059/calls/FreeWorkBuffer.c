@@ -1,4 +1,4 @@
-extern void func_ov059_020cbd08();
+extern void Actor_ReleaseResources();
 extern int data_ov059_020cffc0;
 
 void FreeWorkBuffer(void) {
@@ -6,6 +6,6 @@ void FreeWorkBuffer(void) {
     if (p == 0) {
         return;
     }
-    func_ov059_020cbd08(p);
+    Actor_ReleaseResources(p);
     data_ov059_020cffc0 = 0;
 }

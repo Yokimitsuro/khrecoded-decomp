@@ -51,6 +51,10 @@ src/overlays/ov044/calls/StartPanelTransition.c:
     complete
     .text       start:0x020d02e0 end:0x020d034c
 
+src/overlays/ov044/calls/StepPanelTransition.c:
+    complete
+    .text       start:0x020d034c end:0x020d0580
+
 src/overlays/ov044/auto/func_ov044_020d0580.c:
     complete
     .text       start:0x020d0580 end:0x020d0582

@@ -73,7 +73,7 @@ extern void BuildNodeRecords(SceneObject *obj, ObjectOwner *owner, void *resDesc
 extern u32 func_ov001_0206dba0(int index);
 extern void *AcquireRecordHandle(ObjectOwner *owner, void *resDesc, int id, u32 key);
 extern void LoadResGroupHandles(SceneObject *obj, ObjectOwner *owner, void *resDesc);
-extern void func_ov066_020d8120();
+extern void BeginSweepIntroScene();
 extern void func_ov066_020d81e8();
 extern void UpdateDualMarkerAction();
 
@@ -122,7 +122,7 @@ SceneObject *CreateOv066SceneObject(ObjectOwner *owner, void *resDesc, ObjectDes
     group.param = 1;
     targets->groups[2] = func_ov021_020a89c8(&group);
     obj->groupC = &targets->groups[2];
-    obj->onStart = func_ov066_020d8120;
+    obj->onStart = BeginSweepIntroScene;
     obj->draw = func_ov066_020d81e8;
     obj->onAction = UpdateDualMarkerAction;
 

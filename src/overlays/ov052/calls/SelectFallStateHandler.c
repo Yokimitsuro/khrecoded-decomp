@@ -22,7 +22,7 @@ struct FallActor {
 };
 
 extern BOOL IsLockedOnActiveFieldUnit(FallActor *actor);
-extern void func_ov052_020d085c(void);
+extern void UpdateGlideState(void);
 extern void ChooseNextAction(void);
 
 StateHandler SelectFallStateHandler(FallActor *actor, int *nextState)
@@ -34,7 +34,7 @@ StateHandler SelectFallStateHandler(FallActor *actor, int *nextState)
         if (IsLockedOnActiveFieldUnit(actor)) {
             actor->onEvent(actor, 3);
             *nextState = 2;
-            handler = func_ov052_020d085c;
+            handler = UpdateGlideState;
             actor->stateFlags |= 0x1000000000ULL;
         }
     } else {

@@ -36,7 +36,7 @@ extern void ApplyAnimRootMotion(BattleScene *scene, BattleEntry *entry);
 extern void func_ov052_020d1a88(CommandBuffer *buffer, BattleEntry *entry, int arg, BattleContext *context, u8 kind);
 extern BOOL ProcessTargetHitEntries(BattleScene *scene, BattleEntry *entry, CommandBuffer *buffer);
 extern BOOL UpdateActionPhase(BattleScene *scene, BattleEntry *entry, int arg);
-extern BOOL func_ov052_020d03d8(BattleScene *scene);
+extern BOOL HandlePendingCommand(BattleScene *scene);
 extern void FireLinkedShot(BattleScene *scene);
 
 void PrepareEntryCommandAndSetMode(BattleScene *scene)
@@ -61,7 +61,7 @@ void PrepareEntryCommandAndSetMode(BattleScene *scene)
         return;
     }
     hasFlag = scene->flags & 4;
-    if (func_ov052_020d03d8(scene)) {
+    if (HandlePendingCommand(scene)) {
         return;
     }
     if (hasFlag) {

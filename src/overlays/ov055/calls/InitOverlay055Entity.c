@@ -30,7 +30,7 @@ typedef struct Entity {
 } Entity;
 
 extern void InitTrackedRecordEntry(void *work);
-extern void func_ov052_020cce8c(Entity *entity);
+extern void InstallActorCallbacks(Entity *entity);
 extern void HandleEnemyEvent(void);
 extern void SetEnemyModeEnabled(void);
 extern void LoadSceneSoundArchives(void);
@@ -54,7 +54,7 @@ void InitOverlay055Entity(Entity *entity, u8 kind)
         entity->targets[i] = -1;
     }
     entity->targets[1] = -2;
-    func_ov052_020cce8c(entity);
+    InstallActorCallbacks(entity);
     entity->eventCallback = HandleEnemyEvent;
     entity->modeCallback = SetEnemyModeEnabled;
     entity->stepCallback = LoadSceneSoundArchives;

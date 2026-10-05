@@ -12,6 +12,10 @@ src/overlays/ov064/calls/UpdateRisingFinisherAction.c:
     complete
     .text       start:0x020d81bc end:0x020d8254
 
+src/overlays/ov064/calls/UpdateOv064BossSequence.c:
+    complete
+    .text       start:0x020d8254 end:0x020d86c2
+
 src/overlays/ov064/calls/CreateMarkedSceneTask.c:
     complete
     .text       start:0x020d8708 end:0x020d8844

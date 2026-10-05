@@ -16,6 +16,10 @@ src/overlays/ov052/calls/TickActorTimers.c:
     complete
     .text       start:0x020c7bcc end:0x020c7c54
 
+src/overlays/ov052/calls/SweepActorBodyCapsule.c:
+    complete
+    .text       start:0x020c7c54 end:0x020c7d48
+
 src/overlays/ov052/calls/ApplyTimeScaledSpeed.c:
     complete
     .text       start:0x020c7d48 end:0x020c7d74
@@ -39,6 +43,10 @@ src/overlays/ov052/calls/IsStageAllowedForMode.c:
 src/overlays/ov052/calls/FindDashWallTarget.c:
     complete
     .text       start:0x020c8060 end:0x020c849c
+
+src/overlays/ov052/calls/IsForwardPathBlocked.c:
+    complete
+    .text       start:0x020c849c end:0x020c85b8
 
 src/overlays/ov052/calls/ReactToEvent.c:
     complete
@@ -91,6 +99,14 @@ src/overlays/ov052/calls/DispatchAttackHitEvent.c:
 src/overlays/ov052/calls/ResetMotionState_020c9fa8.c:
     complete
     .text       start:0x020c9fa8 end:0x020c9fd4
+
+src/overlays/ov052/calls/ConfigureCameraMode.c:
+    complete
+    .text       start:0x020c9fd4 end:0x020ca22c
+
+src/overlays/ov052/calls/LoadSlotModels.c:
+    complete
+    .text       start:0x020ca22c end:0x020ca304
 
 src/overlays/ov052/calls/ReleaseResourceSlotArray.c:
     complete
@@ -159,6 +175,10 @@ src/overlays/ov052/calls/ResolvePendingModeChange.c:
 src/overlays/ov052/calls/CachePositionAndFlushScale.c:
     complete
     .text       start:0x020cb8d0 end:0x020cb928
+
+src/overlays/ov052/calls/UpdateWallSlide.c:
+    complete
+    .text       start:0x020cba44 end:0x020cbe9c
 
 src/overlays/ov052/calls/UpdateActorShadow.c:
     complete
@@ -247,6 +267,10 @@ src/overlays/ov052/calls/DrawActor.c:
 src/overlays/ov052/calls/RefreshActorState.c:
     complete
     .text       start:0x020cce28 end:0x020cce8c
+
+src/overlays/ov052/calls/InstallActorCallbacks.c:
+    complete
+    .text       start:0x020cce8c end:0x020ccfa0
 
 src/overlays/ov052/auto/func_ov052_020ccfbc.c:
     complete
@@ -364,6 +388,10 @@ src/overlays/ov052/calls/UpdateActionPhase.c:
     complete
     .text       start:0x020d02b4 end:0x020d03d8
 
+src/overlays/ov052/calls/HandlePendingCommand.c:
+    complete
+    .text       start:0x020d03d8 end:0x020d0544
+
 src/overlays/ov052/calls/HandleMemberMenuInput.c:
     complete
     .text       start:0x020d0544 end:0x020d0620
@@ -383,6 +411,10 @@ src/overlays/ov052/calls/GetAttachmentWorldPosition.c:
 src/overlays/ov052/calls/UpdateMemberActionTrigger.c:
     complete
     .text       start:0x020d0768 end:0x020d085c
+
+src/overlays/ov052/calls/UpdateGlideState.c:
+    complete
+    .text       start:0x020d085c end:0x020d0cb8
 
 src/overlays/ov052/calls/ChooseHandleFollowupMode.c:
     complete

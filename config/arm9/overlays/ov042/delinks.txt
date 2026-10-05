@@ -66,6 +66,10 @@ src/overlays/ov042/calls/StartCameraParticle.c:
     complete
     .text       start:0x020bd71c end:0x020bd76c
 
+src/overlays/ov042/calls/BuildCameraFrustumColliders.c:
+    complete
+    .text       start:0x020bd878 end:0x020bdb28
+
 src/overlays/ov042/calls/IsHitEntryAccepted.c:
     complete
     .text       start:0x020bdb28 end:0x020bdb4a

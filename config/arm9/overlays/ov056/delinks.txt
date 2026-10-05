@@ -24,6 +24,10 @@ src/overlays/ov056/calls/FireLinkedShot.c:
     complete
     .text       start:0x020d3098 end:0x020d318c
 
+src/overlays/ov056/calls/UpdateGrabHoldState.c:
+    complete
+    .text       start:0x020d318c end:0x020d3418
+
 src/overlays/ov056/calls/UpdateRisingShockwaveSlot.c:
     complete
     .text       start:0x020d3550 end:0x020d36fc
@@ -35,6 +39,10 @@ src/overlays/ov056/calls/UpdateRisingEffectSlots.c:
 src/overlays/ov056/calls/PullActorTowardSource.c:
     complete
     .text       start:0x020d385c end:0x020d3924
+
+src/overlays/ov056/calls/UpdateGrabSweepHits.c:
+    complete
+    .text       start:0x020d3924 end:0x020d3b3c
 
 src/overlays/ov056/auto/func_ov056_020d3b3c.c:
     complete

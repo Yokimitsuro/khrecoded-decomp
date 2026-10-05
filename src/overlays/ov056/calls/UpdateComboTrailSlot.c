@@ -68,7 +68,7 @@ extern void ApplyAnimRootMotion(Actor *actor, AnimEntry *entry);
 extern void func_ov052_020d1a88(SlotEntry *entry, void *source, int mirrored, AnimRecord *record, int player);
 extern int ProcessTargetHitEntries(Actor *actor, AnimEntry *target, SlotEntry *entry);
 extern BOOL UpdateActionPhase(Actor *actor, AnimEntry *data, int which);
-extern int func_ov052_020d03d8(Actor *actor);
+extern int HandlePendingCommand(Actor *actor);
 extern void ResetAnimationTrackState(MarkerRequest *request);
 extern int func_ov021_020a8cc0(MarkerRequest *request, int groupId);
 extern void func_ov021_020a8ec8(int groupId, int index, s32 target);
@@ -117,7 +117,7 @@ void UpdateComboTrailSlot(Actor *actor)
         return;
     }
     stateFlags = actor->stateFlags & 4;
-    if (func_ov052_020d03d8(actor)) {
+    if (HandlePendingCommand(actor)) {
         return;
     }
     if (stateFlags) {

@@ -10,8 +10,8 @@ licensed under the MIT License reproduced below. Renaming functions,
 reformatting source or replacing raw field accesses with structures does not
 remove this notice or change the license of the underlying contribution.
 
-The imported/adapted material was introduced principally by these commits in
-this repository:
+The initial imported/adapted material was introduced principally by these
+commits in this repository:
 
 - `98c25364` - Recover 80 verified reference functions
 - `b1743bd4` - Import 750 verified reference functions
@@ -20,6 +20,12 @@ this repository:
 - `0b879289` - Recover structured leaf wrappers
 - `d33aa943` - Import updated verified reference matches
 - `5c755cab` - Import remaining verified reference matches
+
+Later imports and adaptations from the same project are covered by this notice
+as well. The next source updates were taken from these upstream commits:
+
+- `6678116` - Match 25 more functions in ov041-ov066
+- `1cbfaa9` - Match 6 more functions in ov052-ov070
 
 ### MIT License
 

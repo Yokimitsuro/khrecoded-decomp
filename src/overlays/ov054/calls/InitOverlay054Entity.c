@@ -44,7 +44,7 @@ extern FieldState *data_ov001_020a0480;
 extern u8 data_020608c8;
 extern u8 *GetOverlaySelectionRecord(u32 index);
 extern void LoadSceneModelResources(void);
-extern void func_ov052_020cce8c(Entity *entity);
+extern void InstallActorCallbacks(Entity *entity);
 extern void ShutdownOverlay054(void);
 extern void RequestOverlay054ActorState(void);
 extern void func_ov054_020d24fc(void);
@@ -53,7 +53,7 @@ extern void func_ov054_020d250c(void);
 extern void LoadOverlay054EntityResources(void);
 extern void RefreshModeMenuHighlights(void);
 extern void func_ov054_020d2794(void);
-extern void func_ov054_020d2dcc(void);
+extern void HandleOverlay054MenuCommand(void);
 
 void InitOverlay054Entity(Entity *entity, int kind)
 {
@@ -86,7 +86,7 @@ void InitOverlay054Entity(Entity *entity, int kind)
         entity->targets[i] = -1;
     }
     entity->targets[1] = -2;
-    func_ov052_020cce8c(entity);
+    InstallActorCallbacks(entity);
     entity->shutdownCallback = ShutdownOverlay054;
     entity->updateCallback = RequestOverlay054ActorState;
     entity->drawCallback = func_ov054_020d24fc;
@@ -95,5 +95,5 @@ void InitOverlay054Entity(Entity *entity, int kind)
     entity->actionCallback = LoadOverlay054EntityResources;
     entity->thinkCallback = RefreshModeMenuHighlights;
     entity->specialCallback = func_ov054_020d2794;
-    entity->handleCallback = func_ov054_020d2dcc;
+    entity->handleCallback = HandleOverlay054MenuCommand;
 }

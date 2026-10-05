@@ -84,6 +84,10 @@ src/overlays/ov045/calls/UpdateResultFadeOut.c:
     complete
     .text       start:0x020c0064 end:0x020c0138
 
+src/overlays/ov045/calls/CopyTileRect.c:
+    complete
+    .text       start:0x020c0138 end:0x020c01cc
+
 src/overlays/ov045/calls/ClearTileRect.c:
     complete
     .text       start:0x020c01cc end:0x020c0234

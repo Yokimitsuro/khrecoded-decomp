@@ -67,7 +67,7 @@ extern void InitSlotTable(SlotTable *table, u8 player);
 extern void InitSlotMarker(void *marker, u32 player);
 extern void func_ov021_020ad5e8(void *members);
 extern void func_ov021_020a7ce8(void *stats, int kind, u8 player);
-extern void func_ov052_020ca22c(Actor *actor, void *linkState);
+extern void LoadSlotModels(Actor *actor, void *linkState);
 
 void ResetActorCombatState(Actor *actor)
 {
@@ -110,7 +110,7 @@ void ResetActorCombatState(Actor *actor)
     func_ov021_020ad5e8(actor->members);
     func_ov021_020a7ce8(actor->stats, actor->kind, actor->player);
     actor->markerIndex = -1;
-    func_ov052_020ca22c(actor, actor->linkState);
+    LoadSlotModels(actor, actor->linkState);
     if (actor->onInit != NULL) {
         actor->onInit(actor);
     }

@@ -93,7 +93,7 @@ extern void func_ov052_020d1a18(ClipEventContext *ctx, AnimClip *clip, int arg, 
 extern void SpawnJitteredMarker(void);
 extern BOOL ProcessTargetHitEntries(DragActor *actor, AnimClip *clip, ClipEventContext *ctx);
 extern BOOL UpdateActionPhase(DragActor *actor, AnimClip *clip, int arg);
-extern BOOL func_ov052_020d03d8(DragActor *actor);
+extern BOOL HandlePendingCommand(DragActor *actor);
 
 void UpdateDraggedActorMotion(DragActor *actor)
 {
@@ -163,7 +163,7 @@ void UpdateDraggedActorMotion(DragActor *actor)
     }
     heavy = actor->moveFlags & 4;
     keepPose = clip->keepPose;
-    if (func_ov052_020d03d8(actor)) {
+    if (HandlePendingCommand(actor)) {
         return;
     }
     if (heavy) {

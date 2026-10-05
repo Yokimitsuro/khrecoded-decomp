@@ -52,7 +52,7 @@ extern void *Msg_OpenContainerAndReadHeader(const char *name, u32 mode, BOOL all
 extern void ZeroBytes0x14(EntryGroupDesc *desc);
 extern int func_ov021_020a89c8(EntryGroupDesc *desc);
 extern void InitObjWithCallback(void *obj, u32 player, u32 arg);
-extern void func_ov063_020d81c4(TaskOwner *owner, SceneTask *task);
+extern void SetupUnitEffectModel(TaskOwner *owner, SceneTask *task);
 extern u32 func_ov001_0206dba0(int index);
 extern void *AcquireRecordHandle(TaskOwner *owner, void *resDesc, u32 id, u32 key);
 extern void LoadResGroupHandles(SceneTask *task, TaskOwner *owner, void *resDesc);
@@ -95,7 +95,7 @@ SceneTask *CreateSceneTask(TaskOwner *owner, void *resDesc, TaskDesc *desc)
     task->groupB = func_ov021_020a89c8(&group);
     task->model = NNSi_FndAllocFromDefaultHeap(0x3c);
     InitObjWithCallback(task->model, owner->player, 1);
-    func_ov063_020d81c4(owner, task);
+    SetupUnitEffectModel(owner, task);
     task->resourceId = *desc->resource;
     task->handleCount = 1;
     task->handles = NNSi_FndAllocFromDefaultHeap(task->handleCount * 4);

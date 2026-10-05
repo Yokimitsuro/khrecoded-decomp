@@ -1,4 +1,4 @@
-func_ov066_020d8120 kind:function(thumb,size=0xc8) addr:0x020d8120
+BeginSweepIntroScene kind:function(thumb,size=0xc8) addr:0x020d8120
 func_ov066_020d81e8 kind:function(thumb,size=0x2a) addr:0x020d81e8
 UpdateDualMarkerAction kind:function(thumb,size=0x15c) addr:0x020d8214
 EmitSweepHitEvents kind:function(thumb,size=0x1f8) addr:0x020d8370

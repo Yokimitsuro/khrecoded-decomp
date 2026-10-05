@@ -52,7 +52,7 @@ extern void ApplyAnimRootMotion(Actor *actor, Target *target);
 extern void func_ov052_020d1a18(SlotEntry *entry, Target *source, int mirrored, int player);
 extern BOOL ProcessTargetHitEntries(Actor *actor, Target *target, SlotEntry *entry);
 extern BOOL UpdateActionPhase(Actor *actor, Target *target, BOOL mirrored);
-extern BOOL func_ov052_020d03d8(Actor *actor);
+extern BOOL HandlePendingCommand(Actor *actor);
 
 void UpdateTargetSlotsAndMode(Actor *actor)
 {
@@ -87,7 +87,7 @@ void UpdateTargetSlotsAndMode(Actor *actor)
         return;
     }
     flagSet = actor->flags & 4;
-    if (func_ov052_020d03d8(actor)) {
+    if (HandlePendingCommand(actor)) {
         return;
     }
     if (flagSet) {

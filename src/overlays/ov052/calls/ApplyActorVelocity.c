@@ -58,7 +58,7 @@ struct Actor {
 extern void ResolvePushVelocity(Actor *actor, VecFx32 *out);
 extern VecFx32 *func_ov052_020ceb74(Actor *actor);
 extern void func_02038e80(PhysicsBody *body, int arg);
-extern void func_ov052_020c7c54(Actor *actor);
+extern void SweepActorBodyCapsule(Actor *actor);
 extern int func_ov001_02067ed4(void);
 extern fx32 func_ov001_02068070(void);
 extern void Obj_SetPosition(void *object, const VecFx32 *position);
@@ -131,7 +131,7 @@ void ApplyActorVelocity(Actor *actor)
         func_02038e80(&actor->body, 1);
     } else {
         actor->body.flags &= 0xffffc371;
-        func_ov052_020c7c54(actor);
+        SweepActorBodyCapsule(actor);
     }
     actor->velocity.z = 0;
     actor->velocity.y = 0;

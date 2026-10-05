@@ -176,6 +176,14 @@ src/overlays/ov059/calls/Actor_UpdateOrbitEffects.c:
     complete
     .text       start:0x020cabe0 end:0x020cac3c
 
+src/overlays/ov059/calls/Actor_UpdateRootMotionJump.c:
+    complete
+    .text       start:0x020cad60 end:0x020caec0
+
+src/overlays/ov059/calls/Actor_UpdateHaltFlags.c:
+    complete
+    .text       start:0x020cb418 end:0x020cb510
+
 src/overlays/ov059/calls/Actor_UpdateSettleState.c:
     complete
     .text       start:0x020cb510 end:0x020cb5c8
@@ -216,9 +224,17 @@ src/overlays/ov059/calls/Actor_Init.c:
     complete
     .text       start:0x020cba5c end:0x020cbd08
 
+src/overlays/ov059/calls/Actor_ReleaseResources.c:
+    complete
+    .text       start:0x020cbd08 end:0x020cbdf0
+
 src/overlays/ov059/calls/Actor_Update.c:
     complete
     .text       start:0x020cbeb8 end:0x020cbf18
+
+src/overlays/ov059/calls/Actor_InstallCallbacks.c:
+    complete
+    .text       start:0x020cbf18 end:0x020cbff0
 
 src/overlays/ov059/calls/Actor_AddExtraVelocity.c:
     complete
@@ -251,6 +267,10 @@ src/overlays/ov059/calls/Actor_PlaySurfaceSound.c:
 src/overlays/ov059/calls/Actor_TakeHit.c:
     complete
     .text       start:0x020ccb08 end:0x020ccc88
+
+src/overlays/ov059/calls/Actor_GetReadyFlags.c:
+    complete
+    .text       start:0x020ccc88 end:0x020ccd0c
 
 src/overlays/ov059/calls/Actor_ClearMotionState.c:
     complete
@@ -319,6 +339,10 @@ src/overlays/ov059/calls/SpawnSourceRewardOrbs.c:
 src/overlays/ov059/calls/Collider_ComputeBoxPushOut.c:
     complete
     .text       start:0x020cd46c end:0x020cd744
+
+src/overlays/ov059/calls/Request_IsIdle.c:
+    complete
+    .text       start:0x020cd744 end:0x020cd752
 
 src/overlays/ov059/calls/Actor_IsIdleWithoutTarget.c:
     complete
