@@ -49,9 +49,9 @@ gScrollTextHandlers kind:data(any) addr:0x02064520
 data_ov004_02064530 kind:data(any) addr:0x02064530
 sOv004_SfSfP2_02064544 kind:data(any) addr:0x02064544
 sOv004_SfSffont10Nftr_02064550 kind:data(any) addr:0x02064550
-data_ov004_02064564 kind:data(any) addr:0x02064564
+sOv004_SfSffont8Nftr_02064564 kind:data(any) addr:0x02064564
 data_ov004_02064575 kind:data(any) addr:0x02064575 ambiguous
-data_ov004_02064578 kind:data(any) addr:0x02064578
-data_ov004_02064580 kind:data(any) addr:0x02064580
+sOv004_SfV_02064578 kind:data(any) addr:0x02064578
+sOv004_SfSfZ_02064580 kind:data(any) addr:0x02064580
 data_ov004_0206459d kind:data(any) addr:0x0206459d ambiguous
 data_ov004_020645a0 kind:bss addr:0x020645a0

@@ -2429,5 +2429,6 @@
   "src/calls/WmDataSharingReceiveData.c": "dsi/1.2",
   "src/calls/WmDataSharingReceiveCallback_Parent.c": "dsi/1.2",
   "src/calls/WmDataSharingSendDataSet.c": "dsi/1.2",
-  "src/calls/SoundMgr_ExpireRequests.c": "2.0/base"
+  "src/calls/SoundMgr_ExpireRequests.c": "2.0/base",
+  "src/overlays/ov004/data/strings/Strings_ov004_02064564.c": "dsi/1.1"
 }

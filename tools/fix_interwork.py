@@ -202,15 +202,38 @@ def main():
             if not (os.path.exists(built_p) and os.path.exists(orig_p)):
                 images[mod] = None
             else:
+                built = bytearray(open(built_p, "rb").read())
+                orig = open(orig_p, "rb").read()
+                trimmed_bss = 0
+                nonzero_tail = 0
+                dirty = False
+
+                # mwld can materialize a trailing SHT_NOBITS section when a
+                # compiled DATA object precedes an overlay's BSS. NDS overlay
+                # files contain only the load image; the BSS size lives in the
+                # overlay table and those bytes must not be written to disk.
+                # Trim only a zero-filled excess, using the extracted module's
+                # size as ground truth. A non-zero excess remains a hard error.
+                if len(built) > len(orig):
+                    tail = built[len(orig):]
+                    if not any(tail):
+                        trimmed_bss = len(tail)
+                        del built[len(orig):]
+                        dirty = True
+                    else:
+                        nonzero_tail = len(tail)
+
                 images[mod] = {
                     "built_p": built_p,
-                    "built": bytearray(open(built_p, "rb").read()),
-                    "orig": open(orig_p, "rb").read(),
+                    "built": built,
+                    "orig": orig,
                     "base": module_base(mod),
                     "stats": {"ok": 0, "patched": 0, "mismatch": 0,
                               "skipped": 0, "nosym": 0,
-                              "stub_restored": 0},
-                    "dirty": False,
+                              "stub_restored": 0,
+                              "trimmed_bss": trimmed_bss,
+                              "nonzero_tail": nonzero_tail},
+                    "dirty": dirty,
                 }
         return images[mod]
 
@@ -358,8 +381,14 @@ def main():
                               f"({tmode}): built={cur.hex()} exp={exp.hex()} "
                               f"orig={og.hex()}")
 
+    # Load every requested module even when it has no call relocations. This
+    # keeps the load-image/BSS boundary check independent from code content.
+    for mod in sorted(only or modules):
+        get_module(mod)
+
     grand = {"ok": 0, "patched": 0, "mismatch": 0, "skipped": 0,
-             "nosym": 0, "stub_restored": 0}
+             "nosym": 0, "stub_restored": 0, "trimmed_bss": 0,
+             "nonzero_tail": 0}
     for mod in sorted(images):
         img = images[mod]
         if img is None:
@@ -369,9 +398,12 @@ def main():
         st = img["stats"]
         for k in grand:
             grand[k] += st[k]
-        if st["patched"] or st["mismatch"] or st["stub_restored"] or verbose:
+        if (st["patched"] or st["mismatch"] or st["stub_restored"]
+                or st["trimmed_bss"] or st["nonzero_tail"] or verbose):
             print(f"{mod}: ok={st['ok']} patched={st['patched']} "
                   f"stub-restored={st['stub_restored']} "
+                  f"trimmed-bss={st['trimmed_bss']} "
+                  f"nonzero-tail={st['nonzero_tail']} "
                   f"recompute!=orig={st['mismatch']} "
                   f"not-call={st['skipped']} no-sym={st['nosym']}")
         if write and img["dirty"]:
@@ -379,7 +411,8 @@ def main():
 
     print(f"\nTOTAL: ok={grand['ok']} patched={grand['patched']} "
           f"mismatches={grand['mismatch']} not-call={grand['skipped']} "
-          f"no-sym={grand['nosym']} unreadable={len(unreadable)}")
+          f"no-sym={grand['nosym']} trimmed-bss={grand['trimmed_bss']} "
+          f"nonzero-tail={grand['nonzero_tail']} unreadable={len(unreadable)}")
     if unreadable:
         print(f"!! {len(unreadable)} object(s) listed in build/objects.txt could not be read:")
         for op, why in unreadable[:20]:
@@ -388,7 +421,7 @@ def main():
             print(f"   ... and {len(unreadable) - 20} more")
     if not write and grand["patched"]:
         print("(dry-run: nothing written; re-run with --write)")
-    if unreadable:
+    if unreadable or grand["nonzero_tail"]:
         sys.exit(1)
 
 
