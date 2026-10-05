@@ -1,0 +1,16 @@
+#include "nitro/types.h"
+
+typedef struct ActorSlot ActorSlot;
+
+typedef struct {
+    u8 pad_00[0x20];
+    ActorSlot *slots[1];
+} ActorRegistry;
+
+extern BOOL Container_HasFlag1(ActorSlot *slot);
+extern ActorRegistry *data_0206083c;
+
+BOOL ActorSlot_IsLinked(int index)
+{
+    return Container_HasFlag1(data_0206083c->slots[index]);
+}

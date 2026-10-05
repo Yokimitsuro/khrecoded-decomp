@@ -272,6 +272,13 @@ def main() -> None:
             rewrites = relocation_rewrites(item, function)
         rewrites = {**rewrites, reference_symbol: readable_name}
         source = replace_identifiers(source, rewrites)
+        source = re.sub(
+            r"\.L_([0-9a-fA-F]{8})",
+            lambda match: canonical_target(
+                match.group(0), int(match.group(1), 16)
+            ),
+            source,
+        )
 
         destination = ROOT / "src" / "calls" / f"{readable_name}.c"
         destination.parent.mkdir(parents=True, exist_ok=True)

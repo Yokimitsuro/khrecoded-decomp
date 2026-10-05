@@ -1,6 +1,6 @@
-extern int func_0204dea4();
+extern int ClearStreamFlag();
 
 int ScriptCmd_RestorePanel_02026ad0(void) {
-    func_0204dea4(0);
+    ClearStreamFlag(0);
     return 1;
 }
