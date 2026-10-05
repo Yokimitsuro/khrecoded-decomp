@@ -28,7 +28,7 @@ extern PanelState *data_ov013_02074ce0;
 extern ProgressCursor data_0206085c;
 extern void func_ov013_0206cfd8(void);
 extern void func_ov013_020704a0(void);
-extern void func_ov013_0206e574(void);
+extern void DrawPlayerCardDetails(void);
 extern void RebuildPanelSelection(void);
 extern void RecordPanelClear(int index);
 extern void func_ov013_0206fbbc(void);
@@ -45,7 +45,7 @@ void UpdatePanelEntryState(void) {
     case 0:
         func_ov013_0206cfd8();
         func_ov013_020704a0();
-        func_ov013_0206e574();
+        DrawPlayerCardDetails();
         if ((data_ov013_02074ce0->list.index + 1) % 10 != 0) {
             RebuildPanelSelection();
             data_ov013_02074ce0->showSelection = 1;

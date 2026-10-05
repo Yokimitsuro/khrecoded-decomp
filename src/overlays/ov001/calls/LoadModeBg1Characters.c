@@ -22,7 +22,7 @@ extern ActiveContext *data_ov001_020a04e4;
 extern void *func_ov027_020ba1f8(void *resource);
 extern void func_ov027_020ba200(void *resource, BOOL freeData);
 extern BOOL NNS_G2dGetUnpackedBGCharacterData(void *file, CharacterData **out);
-extern void func_ov001_02078ba8(void *charData, int layout);
+extern void DrawCategoryLabel(void *charData, int layout);
 extern void DC_FlushAll(void);
 extern void GX_LoadBG1Char(const void *src, u32 offset, u32 size);
 extern void LoadMenuEntryGraphic(void *modeState, int layout);
@@ -37,7 +37,7 @@ void LoadModeBg1Characters(void *resource)
         return;
     }
     NNS_G2dGetUnpackedBGCharacterData(func_ov027_020ba1f8(resource), &charData);
-    func_ov001_02078ba8(charData->pRawData, context->layout);
+    DrawCategoryLabel(charData->pRawData, context->layout);
     DC_FlushAll();
     GX_LoadBG1Char(charData->pRawData, 0x1c00, 0x3840);
     LoadMenuEntryGraphic(context->modeState, context->layout);

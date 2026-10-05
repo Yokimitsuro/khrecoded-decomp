@@ -53,7 +53,7 @@ extern void EnablePanelWidget(void);
 extern void func_ov013_020704a0(void);
 extern void func_ov013_0206fbbc(void);
 extern void func_ov013_02071444(void);
-extern void func_ov013_0206e574(void);
+extern void DrawPlayerCardDetails(void);
 
 void UpdateSlotRemovalPhase(void)
 {
@@ -160,7 +160,7 @@ void UpdateSlotRemovalPhase(void)
         if ((data_ov013_02074ce0->cursor + 1) % 10 != 0) {
             func_ov013_02071444();
         } else {
-            func_ov013_0206e574();
+            DrawPlayerCardDetails();
         }
         func_ov013_020716e4(1);
         break;

@@ -32,6 +32,14 @@ src/overlays/ov015/calls/ShowPlayerCardSummary.c:
     complete
     .text       start:0x0206f048 end:0x0206f22c
 
+src/overlays/ov015/calls/SelectWidgetAndSlideOut.c:
+    complete
+    .text       start:0x0206f22c end:0x0206f310
+
+src/overlays/ov015/calls/SlideInPanelWidget.c:
+    complete
+    .text       start:0x0206f310 end:0x0206f418
+
 src/overlays/ov015/calls/SetContextFlagBit.c:
     complete
     .text       start:0x0206f418 end:0x0206f460
@@ -56,6 +64,10 @@ src/overlays/ov015/calls/UpdatePlayerCounter.c:
     complete
     .text       start:0x0206f5d8 end:0x0206f688
 
+src/overlays/ov015/calls/BobPanelWidgets.c:
+    complete
+    .text       start:0x0206f7d8 end:0x0206fa38
+
 src/overlays/ov015/calls/HasIdleActiveEntry.c:
     complete
     .text       start:0x0206fa38 end:0x0206fa98
@@ -63,6 +75,10 @@ src/overlays/ov015/calls/HasIdleActiveEntry.c:
 src/overlays/ov015/calls/AnimatePanelBackground.c:
     complete
     .text       start:0x0206fb14 end:0x0206fb6c
+
+src/overlays/ov015/calls/AnimateSubBg1Screen.c:
+    complete
+    .text       start:0x0206fb6c end:0x0206fcd8
 
 src/overlays/ov015/calls/UpdateDriftingElementsByMode.c:
     complete
@@ -135,6 +151,10 @@ src/overlays/ov015/auto/func_ov015_02071060.c:
 src/overlays/ov015/calls/StartPlayerCardSharing.c:
     complete
     .text       start:0x02071064 end:0x02071100
+
+src/overlays/ov015/calls/UpdatePanelShareState.c:
+    complete
+    .text       start:0x02071100 end:0x020716ec
 
 src/overlays/ov015/calls/func_ov015_020716ec.c:
     complete
@@ -327,6 +347,10 @@ src/overlays/ov015/calls/BeginPeerCardExchange.c:
 src/overlays/ov015/calls/InvokePanelCallback.c:
     complete
     .text       start:0x02073598 end:0x020735bc
+
+src/overlays/ov015/calls/PrepareOpponentProfile.c:
+    complete
+    .text       start:0x020735bc end:0x020736e0
 
 src/overlays/ov015/calls/IsPlayerCardValid.c:
     complete
@@ -532,6 +556,10 @@ src/overlays/ov015/calls/RunPanelIntroSequence.c:
     complete
     .text       start:0x020763a8 end:0x020764c4
 
+src/overlays/ov015/calls/UpdatePanelBoard.c:
+    complete
+    .text       start:0x020764c4 end:0x020766d0
+
 src/overlays/ov015/calls/StopPanelSequence.c:
     complete
     .text       start:0x0207793c end:0x02077978
@@ -572,6 +600,10 @@ src/overlays/ov015/calls/SetContainerSubitem1Active.c:
     complete
     .text       start:0x02078228 end:0x0207830c
 
+src/overlays/ov015/calls/GrantRewardEntry.c:
+    complete
+    .text       start:0x02078438 end:0x02078554
+
 src/overlays/ov015/calls/SetSceneRecordValue.c:
     complete
     .text       start:0x020785f8 end:0x02078638
@@ -592,6 +624,10 @@ src/overlays/ov015/calls/MeasureTextWidth.c:
     complete
     .text       start:0x02078950 end:0x020789b8
 
+src/overlays/ov015/calls/DrawCenteredLayerText.c:
+    complete
+    .text       start:0x020789b8 end:0x02078af4
+
 src/overlays/ov015/calls/CountTextLines.c:
     complete
     .text       start:0x02078af4 end:0x02078b24
@@ -603,6 +639,10 @@ src/overlays/ov015/calls/CopyTileGridToScreen.c:
 src/overlays/ov015/calls/ClearBuffer5100.c:
     complete
     .text       start:0x02078bb4 end:0x02078bd0
+
+src/overlays/ov015/calls/DrawSlotTileBlocks.c:
+    complete
+    .text       start:0x02078bd0 end:0x02078d14
 
 src/overlays/ov015/calls/ConvertTileGrid.c:
     complete
@@ -643,6 +683,18 @@ src/overlays/ov015/calls/IsPointInRect.c:
 src/overlays/ov015/calls/ComputeEmptyPixelPercent.c:
     complete
     .text       start:0x02079194 end:0x02079228
+
+src/overlays/ov015/calls/ClearCircleMask.c:
+    complete
+    .text       start:0x02079228 end:0x02079318
+
+src/overlays/ov015/calls/ClearTracedPathTiles.c:
+    complete
+    .text       start:0x02079318 end:0x0207943c
+
+src/overlays/ov015/calls/ClearTilesAlongLine.c:
+    complete
+    .text       start:0x0207943c end:0x02079648
 
 src/overlays/ov015/calls/OpenPanelConfirmWindow.c:
     complete

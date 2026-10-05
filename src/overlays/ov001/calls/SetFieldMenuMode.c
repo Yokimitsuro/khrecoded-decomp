@@ -22,7 +22,7 @@ extern FieldMenuHandle data_ov001_020a04d0;
 extern void *GetSceneTagTracker(void);
 extern void *func_ov001_0207123c(void);
 extern u16 *UpdateFieldWidgetLayer(int layerId);
-extern void func_ov001_02078360(int a, int b);
+extern void SetFieldMenuMode_02078360(int a, int b);
 extern void *FindActiveRecordById(void *pool, u32 recordId);
 extern void func_ov027_020b8230(void *pool, void *record);
 extern void func_ov027_020b8288(void *pool, void *record);
@@ -52,7 +52,7 @@ void SetFieldMenuMode(int mode) {
         break;
     case 10:
         shown = TRUE;
-        func_ov001_02078360(0, 1);
+        SetFieldMenuMode_02078360(0, 1);
         func_ov027_020b8230(pool, FindActiveRecordById(pool, 0x24));
         func_ov001_02075e10(menu, pool, menu->menuLabel);
         func_ov027_020b8288(pool, FindActiveRecordById(pool, 0xc));

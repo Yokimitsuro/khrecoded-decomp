@@ -13,7 +13,7 @@ typedef struct PanelState {
 
 extern PanelState *data_ov013_02074ce0;
 extern void func_ov002_0206203c(int selector);
-extern void func_ov013_0206da20(void);
+extern void InitRecordScreenGraphics(void);
 extern void func_ov013_0206eb18(void);
 extern BOOL func_02029f6c(void);
 extern void RefreshProgressCaption(void);
@@ -32,7 +32,7 @@ void CloseRecordPanelMenu(void) {
 
     mode = 0;
     data_ov013_02074ce0->resultState = 0;
-    func_ov013_0206da20();
+    InitRecordScreenGraphics();
     func_ov002_0206203c(-1);
     func_ov013_0206eb18();
     RefreshProgressCaption();

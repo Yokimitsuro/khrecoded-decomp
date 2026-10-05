@@ -16,6 +16,10 @@ src/overlays/ov037/calls/ShutdownCommChannelAndAudio.c:
     complete
     .text       start:0x020ba504 end:0x020ba564
 
+src/overlays/ov037/calls/ClassifySessionStateForMode.c:
+    complete
+    .text       start:0x020ba564 end:0x020ba75c
+
 src/overlays/ov037/calls/MarkCommChannelBusy.c:
     complete
     .text       start:0x020ba75c end:0x020ba784

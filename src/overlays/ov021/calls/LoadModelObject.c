@@ -39,7 +39,7 @@ extern void func_0202f5a4(void *model, s32 value);
 extern void Obj_SetHalfwordFC(void *model, s32 value);
 extern void AcquireSharedRecordState(void *state, s32 key, void *model, s32 context);
 extern void LoadModelSetSlots(ModelObject *obj, ModelSetupDesc *desc);
-extern void func_ov021_020a9834(void *extra, ModelSetupDesc *desc, s32 heapId);
+extern void LoadSlotModelObject(void *extra, ModelSetupDesc *desc, s32 heapId);
 
 void LoadModelObject(ModelObject *obj, ModelSetupDesc *desc)
 {
@@ -78,7 +78,7 @@ void LoadModelObject(ModelObject *obj, ModelSetupDesc *desc)
         }
         if (desc->hasExtra) {
             obj->extra = NNSi_FndAllocFromDefaultHeap(0x114);
-            func_ov021_020a9834(obj->extra, desc, obj->heapId);
+            LoadSlotModelObject(obj->extra, desc, obj->heapId);
         }
     }
 }

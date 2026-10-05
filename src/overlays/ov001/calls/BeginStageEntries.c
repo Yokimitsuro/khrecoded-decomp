@@ -41,7 +41,7 @@ extern void AnimSequence_Reset(void);
 extern void AnimSequence_Update_020a1b70(void);
 extern void AnimSequence_GetCurrentPosition(void);
 extern void AnimSequence_AddClip(void);
-extern void func_ov001_02099c50(void);
+extern void UpdateStageEventSpawns(void);
 
 void BeginStageEntries(StageSource *source)
 {
@@ -76,5 +76,5 @@ void BeginStageEntries(StageSource *source)
     data_ov001_020a0528->entryRefs = NNSi_FndAllocFromDefaultHeap(data_ov001_020a0528->entryCount * 4);
     func_01ff88c4(data_ov001_020a0528->entries, 0, data_ov001_020a0528->entryCount * 0x28);
     func_01ff88c4(data_ov001_020a0528->entryRefs, 0, data_ov001_020a0528->entryCount * 4);
-    Obj_SetWord14(data_ov001_020a0528->loader, func_ov001_02099c50);
+    Obj_SetWord14(data_ov001_020a0528->loader, UpdateStageEventSpawns);
 }

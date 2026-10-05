@@ -24,7 +24,7 @@ typedef struct GroundActor {
     fx32 probeDistance;
 } GroundActor;
 
-extern CollisionHit *func_ov001_02091698(GroundActor *actor, const VecFx32 *origin, const VecFx32 *target,
+extern CollisionHit *ProbeGroundBelowActor(GroundActor *actor, const VecFx32 *origin, const VecFx32 *target,
                                          VecFx32 *hitPosition, fx32 distance);
 
 CollisionHit *ProbeActorGround(GroundActor *actor, const VecFx32 *origin, VecFx32 *hitPosition)
@@ -37,7 +37,7 @@ CollisionHit *ProbeActorGround(GroundActor *actor, const VecFx32 *origin, VecFx3
         return NULL;
     }
     ignoreHit = FALSE;
-    hit = func_ov001_02091698(actor, origin, NULL, hitPosition, actor->probeDistance);
+    hit = ProbeGroundBelowActor(actor, origin, NULL, hitPosition, actor->probeDistance);
     if (hit != NULL) {
         collider = hit->collider;
         if (collider != NULL) {

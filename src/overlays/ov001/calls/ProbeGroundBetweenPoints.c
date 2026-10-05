@@ -29,7 +29,7 @@ typedef struct GroundProbe {
 
 extern int func_ov001_02063a24(void);
 extern s32 func_ov001_02063a38(void);
-extern HitResult *func_ov001_02091698(GroundProbe *probe, void *area, VecFx32 *from, VecFx32 *to, fx32 reach);
+extern HitResult *ProbeGroundBelowActor(GroundProbe *probe, void *area, VecFx32 *from, VecFx32 *to, fx32 reach);
 
 static inline s32 GetSessionMode(void)
 {
@@ -57,7 +57,7 @@ HitResult *ProbeGroundBetweenPoints(GroundProbe *probe, VecFx32 *from, VecFx32 *
     if (reach < probe->minReach) {
         reach = probe->minReach;
     }
-    hit = func_ov001_02091698(probe, probe->probeArea, from, to, reach);
+    hit = ProbeGroundBelowActor(probe, probe->probeArea, from, to, reach);
     if (hit != NULL) {
         if (hit->owner != NULL && hit->owner->kind == 5) {
             probe->groundHeight = -0x3000;

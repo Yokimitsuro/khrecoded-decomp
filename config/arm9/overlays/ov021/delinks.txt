@@ -320,6 +320,10 @@ src/overlays/ov021/calls/LoadModelSetSlots.c:
     complete
     .text       start:0x020a97b4 end:0x020a9832
 
+src/overlays/ov021/calls/LoadSlotModelObject.c:
+    complete
+    .text       start:0x020a9834 end:0x020a9908
+
 src/overlays/ov021/calls/InitSlotTable.c:
     complete
     .text       start:0x020a9908 end:0x020a9948
@@ -363,6 +367,10 @@ src/overlays/ov021/calls/SetObjectAnimationEnabled.c:
 src/overlays/ov021/calls/RelocateUnitMotionData.c:
     complete
     .text       start:0x020a9d88 end:0x020a9e1c
+
+src/overlays/ov021/calls/BuildNodeGraph.c:
+    complete
+    .text       start:0x020a9e1c end:0x020a9eea
 
 src/overlays/ov021/calls/SelectSubObject.c:
     complete
@@ -888,6 +896,10 @@ src/overlays/ov021/calls/func_ov021_020ae8ac.c:
     complete
     .text       start:0x020ae8ac end:0x020ae90c
 
+src/overlays/ov021/calls/SpawnPairedEntryUnit.c:
+    complete
+    .text       start:0x020ae958 end:0x020aea2c
+
 src/overlays/ov021/calls/SpawnUnitProjectile.c:
     complete
     .text       start:0x020aea2c end:0x020aeaec
@@ -931,6 +943,10 @@ src/overlays/ov021/calls/LoadUnitSharedRecords.c:
 src/overlays/ov021/calls/RebindAnimTracks_020aef84.c:
     complete
     .text       start:0x020aef84 end:0x020aefd0
+
+src/overlays/ov021/calls/SpawnSlotTrackerUnit.c:
+    complete
+    .text       start:0x020aefd0 end:0x020af124
 
 src/overlays/ov021/calls/SpawnEffectParticle.c:
     complete

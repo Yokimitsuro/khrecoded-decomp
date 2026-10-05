@@ -1,6 +1,6 @@
 #include "nitro/types.h"
 
-extern void func_ov001_0207a504(int mode, int x, int y, int width, int textId, int choiceId, int arg, int flags);
+extern void OpenMessageWindow_0207a504(int mode, int x, int y, int width, int textId, int choiceId, int arg, int flags);
 
 void ShowMessageWindowByKind(int arg, int kind)
 {
@@ -23,5 +23,5 @@ void ShowMessageWindowByKind(int arg, int kind)
         mode = 4;
         break;
     }
-    func_ov001_0207a504(mode, 0, 0, 0, -1, -1, arg, 0);
+    OpenMessageWindow_0207a504(mode, 0, 0, 0, -1, -1, arg, 0);
 }

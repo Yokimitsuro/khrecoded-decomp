@@ -20,14 +20,14 @@ typedef struct FieldState {
 extern CommState *gContinueSceneState;
 extern FieldState *data_ov001_020a0480;
 extern BOOL func_ov001_020645c8(int bitId);
-extern u8 func_ov037_020ba564(void);
+extern u8 ClassifySessionStateForMode(void);
 extern void RefreshSessionSelections(void);
 
 s32 SyncSessionCommFlags(void)
 {
     gContinueSceneState->keepAudio = (u8)func_ov001_020645c8(0x3525);
     if (!data_ov001_020a0480->selectionLocked) {
-        data_ov001_020a0480->selection = func_ov037_020ba564();
+        data_ov001_020a0480->selection = ClassifySessionStateForMode();
         RefreshSessionSelections();
         data_ov001_020a0480->pendingSlot = -1;
     }

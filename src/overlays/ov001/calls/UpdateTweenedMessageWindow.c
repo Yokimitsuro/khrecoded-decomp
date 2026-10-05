@@ -25,7 +25,7 @@ extern void func_ov027_020b9e20(int widgets, int layer);
 extern void SampleTweenValue(Tween *tween, s32 *out);
 extern void DrawScaledWindowFrame(MessageWindow *window, int target, int percent);
 extern void func_ov001_020794c8(MessageWindow *window);
-extern void func_ov001_02079e2c(MessageWindow *window);
+extern void DrawWindowScrollArrow(MessageWindow *window);
 extern u64 OS_GetTick(void);
 
 void UpdateTweenedMessageWindow(MessageWindow *window)
@@ -40,7 +40,7 @@ void UpdateTweenedMessageWindow(MessageWindow *window)
     if (window->opening) {
         func_ov001_020794c8(window);
         if ((window->closeTimer != 0x7fffffff && *mode == 8) || *mode == 9) {
-            func_ov001_02079e2c(window);
+            DrawWindowScrollArrow(window);
         }
         *(u64 *)&window->tickLo = OS_GetTick();
         window->state = 4;

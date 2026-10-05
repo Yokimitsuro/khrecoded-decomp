@@ -68,11 +68,11 @@ typedef struct SessionInfo {
 extern SessionInfo data_0206085c;
 extern void func_ov002_0206203c(int value);
 extern void func_ov002_020620fc(int value);
-extern void func_ov013_0206fc74(void);
+extern void LayoutPanelSlotWidgets(void);
 extern void func_ov013_0206fbbc(void);
 extern void RefreshProgressCaption(void);
 extern BOOL IsPanelBusy(void);
-extern void func_ov013_0206e574(void);
+extern void DrawPlayerCardDetails(void);
 extern void func_ov013_0206eb18(void);
 extern void RecordPanelClear(int day);
 
@@ -80,22 +80,22 @@ void ResolvePanelExitMode(void)
 {
     func_ov002_0206203c(-1);
     func_ov002_020620fc(-1);
-    func_ov013_0206fc74();
+    LayoutPanelSlotWidgets();
     func_ov013_0206fbbc();
     RefreshProgressCaption();
     if (IsPanelBusy()) {
-        func_ov013_0206e574();
+        DrawPlayerCardDetails();
         data_ov013_02074ce0->step = 0;
         return;
     }
     switch (data_0206085c.exitMode) {
     case 2:
-        func_ov013_0206e574();
+        DrawPlayerCardDetails();
         data_ov013_02074ce0->step = 0;
         break;
     case 4:
         RecordPanelClear(data_0206085c.offset + data_0206085c.base);
-        func_ov013_0206e574();
+        DrawPlayerCardDetails();
         data_ov013_02074ce0->step = 0;
         break;
     case 0:
@@ -103,7 +103,7 @@ void ResolvePanelExitMode(void)
             data_ov013_02074ce0->step = 0x3c;
             return;
         }
-        func_ov013_0206e574();
+        DrawPlayerCardDetails();
         data_ov013_02074ce0->step = 0;
         break;
     case 1:

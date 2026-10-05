@@ -40,7 +40,7 @@ extern PanelState *data_ov013_02074ce0;
 extern void UpdateWidgetRootOnly(void *panel, int index);
 extern BOOL AreAllWidgetMovesFinished(void *panel);
 extern int DispatchContextCommand(u32 kind, int arg1, int arg2, int arg3);
-extern void func_ov013_0206fc74(void);
+extern void LayoutPanelSlotWidgets(void);
 
 BOOL LoadPanelSlotCount(void)
 {
@@ -54,6 +54,6 @@ BOOL LoadPanelSlotCount(void)
     count = data_ov013_02074ce0->slotCount;
     separators = (count + (count + 1) / 10 + 1) / 10;
     data_ov013_02074ce0->slotCount = count + separators;
-    func_ov013_0206fc74();
+    LayoutPanelSlotWidgets();
     return TRUE;
 }

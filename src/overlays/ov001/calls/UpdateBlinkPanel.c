@@ -20,8 +20,8 @@ extern BlinkState *data_ov001_020a04f0;
 
 extern int func_0202a7b8(void);
 extern void TickBlinkTimer(BlinkState *blink);
-extern void func_ov001_0207db78(BlinkState *blink);
-extern void func_ov001_0207d870(BlinkState *blink);
+extern void AnimateSwapSlotLabels(BlinkState *blink);
+extern void UpdateArrowPromptTimer(BlinkState *blink);
 
 BOOL UpdateBlinkPanel(void)
 {
@@ -35,10 +35,10 @@ BOOL UpdateBlinkPanel(void)
             blink->frame = 1;
         }
         TickBlinkTimer(blink);
-        func_ov001_0207db78(blink);
-        func_ov001_0207d870(blink);
+        AnimateSwapSlotLabels(blink);
+        UpdateArrowPromptTimer(blink);
     } else if (blink->fading != 0) {
-        func_ov001_0207d870(blink);
+        UpdateArrowPromptTimer(blink);
     }
     return FALSE;
 }

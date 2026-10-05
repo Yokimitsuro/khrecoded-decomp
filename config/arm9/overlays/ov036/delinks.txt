@@ -20,6 +20,10 @@ src/overlays/ov036/calls/RunPanelSubScriptFrame.c:
     complete
     .text       start:0x020ba9f0 end:0x020baa58
 
+src/overlays/ov036/calls/FinishPanelSceneSetup.c:
+    complete
+    .text       start:0x020baa58 end:0x020bab74
+
 src/overlays/ov036/calls/UpdatePendingSlotScene.c:
     complete
     .text       start:0x020bafc8 end:0x020bb004
@@ -460,6 +464,10 @@ src/overlays/ov036/auto/func_ov036_020bf6dc.c:
     complete
     .text       start:0x020bf6dc end:0x020bf6e0
 
+src/overlays/ov036/calls/OpenQueuedTextWindow.c:
+    complete
+    .text       start:0x020bf6e0 end:0x020bfb2c
+
 src/overlays/ov036/calls/LoadTextWindowFrame.c:
     complete
     .text       start:0x020bfb2c end:0x020bfe38
@@ -479,6 +487,10 @@ src/overlays/ov036/auto/func_ov036_020c0e30.c:
 src/overlays/ov036/calls/AdvanceTextWindowPage.c:
     complete
     .text       start:0x020c0e34 end:0x020c1188
+
+src/overlays/ov036/calls/StepPanelFadeOut.c:
+    complete
+    .text       start:0x020c1188 end:0x020c1254
 
 src/overlays/ov036/calls/CloseTextWindowEntry.c:
     complete

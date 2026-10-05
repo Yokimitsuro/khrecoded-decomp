@@ -13,7 +13,7 @@ extern void func_ov027_020b9d74(int screen, int layer, int x, int y, int width, 
 extern void func_ov001_02075d1c(CountPanel *panel, u32 window, int row);
 extern void *FindActiveRecordById(void *pool, u16 recordId);
 extern void func_ov027_020b824c(void *pool, void *record, s16 row, int layer);
-extern void func_ov001_02075604(u16 x0, u32 y0, u16 x1, u32 y1, u32 mode, u32 color, u32 shade);
+extern void DrawGradientRect(u16 x0, u32 y0, u16 x1, u32 y1, u32 mode, u32 color, u32 shade);
 
 void DrawItemCountBadge(CountPanel *panel)
 {
@@ -53,6 +53,6 @@ void DrawItemCountBadge(CountPanel *panel)
         if (offset > 0) {
             left = offset;
         }
-        func_ov001_02075604(left, 0x31, offset + 0x43, 0x3f, 0x2000, 0, 0);
+        DrawGradientRect(left, 0x31, offset + 0x43, 0x3f, 0x2000, 0, 0);
     }
 }

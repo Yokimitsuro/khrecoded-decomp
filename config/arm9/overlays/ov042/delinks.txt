@@ -74,6 +74,10 @@ src/overlays/ov042/calls/IsTargetFacing.c:
     complete
     .text       start:0x020bdb4c end:0x020bdb6a
 
+src/overlays/ov042/calls/InitCameraScene.c:
+    complete
+    .text       start:0x020bdb6c end:0x020bde3c
+
 src/overlays/ov042/auto/func_ov042_020bde3c.c:
     complete
     .text       start:0x020bde3c end:0x020bde3e

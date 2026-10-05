@@ -17,7 +17,7 @@ extern EventActor *GetStageActor(int id);
 extern u32 func_ov001_0209c5ac(u32 mask);
 extern s32 *GetStageEventRecord(u32 id);
 extern BOOL IsCommandType8(s32 *type);
-extern void func_ov001_02093f14(s32 *record);
+extern void UpdateStageEventTracking(s32 *record);
 
 void TryTriggerActorEvent(EventTrigger *trigger, BOOL busy)
 {
@@ -37,5 +37,5 @@ void TryTriggerActorEvent(EventTrigger *trigger, BOOL busy)
     if (record == NULL || IsCommandType8(record)) {
         return;
     }
-    func_ov001_02093f14(record);
+    UpdateStageEventTracking(record);
 }

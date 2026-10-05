@@ -68,6 +68,10 @@ src/overlays/ov027/auto/func_ov027_020b7f80.c:
     complete
     .text       start:0x020b7f80 end:0x020b7fac
 
+src/overlays/ov027/calls/CreateTagRecord.c:
+    complete
+    .text       start:0x020b7fe0 end:0x020b80ac
+
 src/overlays/ov027/calls/ReleaseListElementBuffer.c:
     complete
     .text       start:0x020b80ac end:0x020b80dc

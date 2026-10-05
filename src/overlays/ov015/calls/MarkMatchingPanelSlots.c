@@ -24,7 +24,7 @@ typedef struct {
 extern PanelState *data_ov015_020812e0;
 extern void ClearBuffer5100(void *buffer);
 extern void SetPanelEntrySequence(int slot, int mode);
-extern void func_ov015_02078bd0(void *buffer, int count, int slot, int color, int flag);
+extern void DrawSlotTileBlocks(void *buffer, int count, int slot, int color, int flag);
 extern void func_ov015_02078f18(void);
 extern void *G2S_GetBG2ScrPtr(void);
 extern void BuildTileGridMap(void *screen, int tile);
@@ -57,7 +57,7 @@ BOOL MarkMatchingPanelSlots(void) {
         for (i = 0; i < count; i++) {
             if (data_ov015_020812e0->slots[i].flags & 4) {
                 SetPanelEntrySequence(i, 6);
-                func_ov015_02078bd0((u8 *)data_ov015_020812e0 + 0x15f38, data_ov015_020812e0->slotCount, i, 0xff, 0);
+                DrawSlotTileBlocks((u8 *)data_ov015_020812e0 + 0x15f38, data_ov015_020812e0->slotCount, i, 0xff, 0);
             }
         }
         plane = (REG_DB_DISPCNT & 0x1f00) >> 8;

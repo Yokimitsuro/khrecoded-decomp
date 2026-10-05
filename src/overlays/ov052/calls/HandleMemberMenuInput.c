@@ -21,7 +21,7 @@ extern int func_ov001_02078494(void);
 extern int func_ov001_02078898(void);
 extern void PlaySoundChecked(void *ptr, int arg);
 extern int func_ov001_02063a38(void);
-extern void func_ov001_02078360(int mode, int arg);
+extern void SetFieldMenuMode_02078360(int mode, int arg);
 extern BOOL IsField1078Clear(MenuActor *actor);
 extern BOOL CanUseMemberSlot(MenuActor *actor, int index);
 
@@ -54,7 +54,7 @@ BOOL HandleMemberMenuInput(MenuActor *actor)
             break;
         case 0:
             if (func_ov001_02063a38() == 6 && slot >= 0) {
-                func_ov001_02078360(2, 1);
+                SetFieldMenuMode_02078360(2, 1);
                 useSlot = FALSE;
                 PlaySoundChecked(NULL, 1);
             }

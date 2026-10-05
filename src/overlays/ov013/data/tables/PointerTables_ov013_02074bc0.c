@@ -2,7 +2,7 @@
 
 extern void func_ov013_02071a90(void); /* PXI_Init */
 extern void ResetPanelStepAndNotify(void); /* ResetPanelStepAndNotify */
-extern void func_ov013_02071b6c(void);
+extern void UpdatePanelScrollState(void);
 extern void ApplyPanelSubitem5(void); /* ApplyPanelSubitem5 */
 extern void func_ov013_0207225c(void);
 extern void UpdatePanelResultState(void); /* UpdatePanelResultState */
@@ -10,7 +10,7 @@ extern void ResetPanelLayoutClearFlag(void); /* ResetPanelLayoutClearFlag */
 extern void RefreshSelectedSlotFlags(void); /* RefreshSelectedSlotFlags */
 extern void UpdateSlotRemovalPhase(void); /* UpdateSlotRemovalPhase */
 extern void CancelPanelConfirm(void); /* CancelPanelConfirm */
-extern void func_ov013_020727b4(void);
+extern void OpenPanelResultMenu(void);
 extern void UpdatePanelResultPrompt(void); /* UpdatePanelResultPrompt */
 extern void ResetPanelLayout(void); /* ResetPanelLayout */
 extern void func_ov013_02073234(void);
@@ -39,7 +39,7 @@ extern void UpdatePanelEntryState(void); /* UpdatePanelEntryState */
 void (*gPanelMenuStateHandlers[34])(void) = {
     func_ov013_02071a90, /* PXI_Init */
     ResetPanelStepAndNotify, /* ResetPanelStepAndNotify */
-    func_ov013_02071b6c,
+    UpdatePanelScrollState,
     ApplyPanelSubitem5, /* ApplyPanelSubitem5 */
     func_ov013_0207225c,
     UpdatePanelResultState, /* UpdatePanelResultState */
@@ -47,7 +47,7 @@ void (*gPanelMenuStateHandlers[34])(void) = {
     RefreshSelectedSlotFlags, /* RefreshSelectedSlotFlags */
     UpdateSlotRemovalPhase, /* UpdateSlotRemovalPhase */
     CancelPanelConfirm, /* CancelPanelConfirm */
-    func_ov013_020727b4,
+    OpenPanelResultMenu,
     UpdatePanelResultPrompt, /* UpdatePanelResultPrompt */
     ResetPanelLayout, /* ResetPanelLayout */
     func_ov013_02073234,

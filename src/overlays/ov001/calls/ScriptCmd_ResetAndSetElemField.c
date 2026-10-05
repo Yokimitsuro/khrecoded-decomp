@@ -3,7 +3,7 @@
 extern void MIi_CpuClear32(u32 data, void *dst, u32 size);
 extern void ScriptCmd_SetElemField(void *scriptContext, u32 value);
 extern int IsFieldPanelShown(void);
-extern u32 func_ov001_0208d760(void *scriptContext, u32 value);
+extern u32 OpenScriptChoiceBalloon(void *scriptContext, u32 value);
 
 u32 ScriptCmd_ResetAndSetElemField(u8 *scriptContext, u32 value)
 {
@@ -16,7 +16,7 @@ u32 ScriptCmd_ResetAndSetElemField(u8 *scriptContext, u32 value)
     ScriptCmd_SetElemField(scriptContext, value);
     flag = IsFieldPanelShown();
     if (flag != 0) {
-        result = func_ov001_0208d760(scriptContext, value);
+        result = OpenScriptChoiceBalloon(scriptContext, value);
     }
     return result;
 }

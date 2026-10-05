@@ -1,7 +1,7 @@
 BeginCommSession kind:function(arm,size=0x7c) addr:0x020ba400
 RunCommStepMachine kind:function(arm,size=0x88) addr:0x020ba47c
 ShutdownCommChannelAndAudio kind:function(arm,size=0x60) addr:0x020ba504
-func_ov037_020ba564 kind:function(arm,size=0x1f8) addr:0x020ba564
+ClassifySessionStateForMode kind:function(arm,size=0x1f8) addr:0x020ba564
 MarkCommChannelBusy kind:function(arm,size=0x28) addr:0x020ba75c
 SyncSessionCommFlags kind:function(arm,size=0x8c) addr:0x020ba784
 func_ov037_020ba810 kind:function(arm,size=0x84) addr:0x020ba810

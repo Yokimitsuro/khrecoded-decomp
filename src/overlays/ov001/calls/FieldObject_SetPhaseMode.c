@@ -18,7 +18,7 @@ typedef struct FieldObject {
 extern void func_ov001_0207f71c(FieldObject *object, BOOL enabled);
 extern void ActorSlot_Unlink(void *slot);
 extern int AdvanceWrappedPhase(FieldObject *object);
-extern int func_ov001_02082490(FieldObject *object);
+extern int FallFieldObject(FieldObject *object);
 
 void FieldObject_SetPhaseMode(FieldObject *object, int mode)
 {
@@ -29,7 +29,7 @@ void FieldObject_SetPhaseMode(FieldObject *object, int mode)
         func_ov001_0207f71c(object, TRUE);
         return;
     case 1:
-        object->updateFunc = func_ov001_02082490;
+        object->updateFunc = FallFieldObject;
         object->phase = 0;
         func_ov001_0207f71c(object, TRUE);
         return;

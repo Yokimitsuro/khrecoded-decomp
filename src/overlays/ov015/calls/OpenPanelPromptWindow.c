@@ -25,7 +25,7 @@ extern void NNS_G2dBGLoadScreenRect(void *dst, void *screen, int srcX, int srcY,
 extern void DestroyOwnedObjectList(void **slot);
 extern u32 GetPanelSlot0(void);
 extern void *CreateTileObject(u32 ownerId, u32 value, u16 *layout, void *tileData, void *mapData);
-extern void func_ov015_020789b8(void *object, int a, int b, int c, int d, int e);
+extern void DrawCenteredLayerText(void *object, int a, int b, int c, int d, int e);
 extern void Text_UploadTileBuffer(void *surface);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 extern void ZeroHalfThenFree(int handle);
@@ -56,7 +56,7 @@ void OpenPanelPromptWindow(int x, int y, int style)
     slot = GetPanelSlot0();
     charPtr = G2S_GetBG2CharPtr();
     data_ov015_020812e0->tileObject = CreateTileObject(6, slot, layout, charPtr, G2S_GetBG2ScrPtr());
-    func_ov015_020789b8(data_ov015_020812e0->tileObject, -1, -1, 0xf, 0, style);
+    DrawCenteredLayerText(data_ov015_020812e0->tileObject, -1, -1, 0xf, 0, style);
     Text_UploadTileBuffer(data_ov015_020812e0->tileObject);
     if (archive != NULL) {
         NNSi_FndFreeFromDefaultHeap(archive);

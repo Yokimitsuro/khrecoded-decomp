@@ -60,10 +60,10 @@ extern GroupObject *func_ov001_02086384(GroupWorld *world, int index);
 extern void TickFieldObjectCounters(GroupWorld *world, int groupIndex);
 extern void UpdateFieldObjectModeTransition(GroupWorld *world, int groupIndex);
 extern void ReleaseCurrentRowHold(GroupObject *object);
-extern void func_ov032_020bd9d8(int index, GroupObject *object);
-extern void func_ov032_020bde74(GroupObject *object);
+extern void UpdateChainGroupMember(int index, GroupObject *object);
+extern void UpdateGatheringGroupMember(GroupObject *object);
 extern int UpdateGroupMember(GroupObject *object);
-extern void func_ov032_020bf250(GroupObject *object);
+extern void UpdateRespawningGroupMember(GroupObject *object);
 extern void UpdateBouncingGroupMember(GroupObject *object);
 extern void UpdateGroupChaseState(GroupObject *object);
 extern u8 SelectGroupMemberPose(GroupObject *object, int index);
@@ -104,16 +104,16 @@ int UpdateObjectGroupMembers(GroupObject *object)
             work = func_ov032_020bbc98(member);
             switch (group->mode) {
             case 0:
-                func_ov032_020bd9d8(index, member);
+                UpdateChainGroupMember(index, member);
                 break;
             case 1:
-                func_ov032_020bde74(member);
+                UpdateGatheringGroupMember(member);
                 break;
             case 2:
                 UpdateGroupMember(member);
                 break;
             case 4:
-                func_ov032_020bf250(member);
+                UpdateRespawningGroupMember(member);
                 break;
             case 3:
                 UpdateBouncingGroupMember(member);

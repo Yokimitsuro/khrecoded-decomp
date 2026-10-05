@@ -5,7 +5,7 @@ typedef struct PanelContext {
 } PanelContext;
 
 extern PanelContext *data_ov015_0207e960;
-extern void func_ov015_0206fb6c(void);
+extern void AnimateSubBg1Screen(void);
 extern void func_ov015_0206fcd8(void);
 extern void func_ov015_0206fe44(void);
 
@@ -15,7 +15,7 @@ void AnimatePanelBackground(void)
     case 0:
     case 1:
     case 7:
-        func_ov015_0206fb6c();
+        AnimateSubBg1Screen();
         break;
     case 2:
     case 3:

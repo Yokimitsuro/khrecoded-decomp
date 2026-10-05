@@ -38,7 +38,7 @@ typedef struct {
 
 extern int func_ov001_02063a38(void);
 extern ZoneState *func_ov001_02073060(void);
-extern void func_ov021_020a9e1c(void *motion, u8 selection, u32 *extra, u32 *offsets);
+extern void BuildNodeGraph(void *motion, u8 selection, u32 *extra, u32 *offsets);
 
 void RelocateUnitMotionData(UnitResources *unit, MotionFile *file, int kind)
 {
@@ -70,6 +70,6 @@ void RelocateUnitMotionData(UnitResources *unit, MotionFile *file, int kind)
     block->offsets[5] = (u32)((u8 *)file + block->offsets[5]);
     block->offsets[6] = (u32)((u8 *)file + block->offsets[6]);
     block->offsets[7] = (u32)((u8 *)file + block->offsets[7]);
-    func_ov021_020a9e1c(unit->motionA, unit->selection, block->extraA, &block->offsets[0]);
-    func_ov021_020a9e1c(unit->motionB, unit->selection, block->extraB, &block->offsets[4]);
+    BuildNodeGraph(unit->motionA, unit->selection, block->extraA, &block->offsets[0]);
+    BuildNodeGraph(unit->motionB, unit->selection, block->extraB, &block->offsets[4]);
 }

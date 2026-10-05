@@ -14,7 +14,7 @@ extern void func_ov002_020664f4(int mode);
 extern void func_ov002_020664e4(int mode);
 extern void func_ov002_0206203c(int selector);
 extern void func_ov013_0206caa4(void);
-extern void func_ov013_0206e574(void);
+extern void DrawPlayerCardDetails(void);
 extern void func_ov013_020716e4(int mode);
 extern void LeavePanelScene(int mode);
 
@@ -40,7 +40,7 @@ void UpdatePanelMenuState(void) {
         if (func_ov002_0206655c()) {
             func_ov013_0206caa4();
             func_ov002_0206203c(-1);
-            func_ov013_0206e574();
+            DrawPlayerCardDetails();
             func_ov002_020664e4(1);
             data_ov013_02074ce0->resultState = 30;
         }

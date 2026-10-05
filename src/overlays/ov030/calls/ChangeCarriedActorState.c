@@ -34,7 +34,7 @@ struct Actor {
     ActorMotion motion;
 };
 
-extern int func_ov030_020bb5c0(Actor *actor);
+extern int UpdateDraggedActorState(Actor *actor);
 extern int ExitActorState(Actor *actor, int state, int force);
 extern int func_ov052_020cd358(Actor *actor, int state);
 
@@ -50,7 +50,7 @@ int ChangeCarriedActorState(Actor *actor, int state)
             ActorMotion *motion;
 
             result = 1;
-            slot->handler = func_ov030_020bb5c0;
+            slot->handler = UpdateDraggedActorState;
             slot->timer = 0;
             slot->state = result;
             motion = &actor->motion;

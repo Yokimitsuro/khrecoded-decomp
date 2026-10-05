@@ -13,7 +13,7 @@ typedef struct PanelState {
 
 extern PanelState *data_ov013_02074ce0;
 extern void func_ov002_0206203c(int selector);
-extern void func_ov013_0206eef4(void);
+extern void DrawPanelHeaderTexts(void);
 extern void RefreshProgressCaption(void);
 extern void func_ov002_020664e4(int mode);
 extern int GetCachedSoundParam(void);
@@ -30,7 +30,7 @@ void ClosePanelMenu(void) {
     data_ov013_02074ce0->resultState = 0;
     data_ov013_02074ce0->resultMode = 0;
     func_ov002_0206203c(-1);
-    func_ov013_0206eef4();
+    DrawPanelHeaderTexts();
     RefreshProgressCaption();
     object = FindWidgetById(data_ov013_02074ce0->panel, 0);
     func_ov027_020b9604(data_ov013_02074ce0->panel, object);

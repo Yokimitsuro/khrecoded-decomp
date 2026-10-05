@@ -39,7 +39,7 @@ extern ElevatorObject *FieldObject_Create(FieldObjectClass *objectClass, u8 slot
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void BuildCollisionShape(void *shape, const VecFx32 *position, int kind, fx32 sizeX, fx32 sizeY, fx32 sizeZ, s32 angle, BOOL allocate, int priority);
 extern int UpdateElevatorObject(void *object);
-extern int func_ov006_020a0ce8(void *object);
+extern int UpdateStaticElevator(void *object);
 
 ElevatorObject *CreateElevatorObject(FieldObjectClass *objectClass, u8 slotIndex, u16 saveBitOffset, u8 saveBitCount, const VecFx32 *position, const VecFx32 *offset) {
     ElevatorObject *object = FieldObject_Create(objectClass, slotIndex);
@@ -54,7 +54,7 @@ ElevatorObject *CreateElevatorObject(FieldObjectClass *objectClass, u8 slotIndex
     object->timer = 0;
     object->saveBitOffset = saveBitOffset;
     object->saveBitCount = saveBitCount;
-    object->update = object->moving ? UpdateElevatorObject : func_ov006_020a0ce8;
+    object->update = object->moving ? UpdateElevatorObject : UpdateStaticElevator;
     VEC_Add(position, offset, &object->center);
     if (object->moving) {
         object->solid = TRUE;

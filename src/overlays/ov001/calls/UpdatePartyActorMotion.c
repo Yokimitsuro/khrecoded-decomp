@@ -23,7 +23,7 @@ typedef struct PartyActor {
 } PartyActor;
 
 extern const VecFx32 data_0205344c;
-extern void func_ov001_020893bc(PartyActor *actor);
+extern void UpdateActorMotionTracks(PartyActor *actor);
 extern void func_ov001_02089bfc(PartyActor *actor);
 extern void ApplyActorRootMotion(PartyActor *actor, VecFx32 *out);
 extern void Actor_StepTowardTarget(PartyActor *actor);
@@ -52,7 +52,7 @@ void UpdatePartyActorMotion(PartyActor *actor)
     drift.x = 0;
     flags = actor->flags;
     if (flags & 0x200) {
-        func_ov001_020893bc(actor);
+        UpdateActorMotionTracks(actor);
         flags = actor->flags;
         if (flags == 0) {
             return;

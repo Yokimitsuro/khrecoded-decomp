@@ -84,6 +84,10 @@ src/overlays/ov020/auto/func_ov020_020a2920.c:
     complete
     .text       start:0x020a2920 end:0x020a2924
 
+src/overlays/ov020/calls/LoadStackedBlockPhase.c:
+    complete
+    .text       start:0x020a2924 end:0x020a2ada
+
 src/overlays/ov020/calls/ReleaseAndFreeResource.c:
     complete
     .text       start:0x020a2adc end:0x020a2af6

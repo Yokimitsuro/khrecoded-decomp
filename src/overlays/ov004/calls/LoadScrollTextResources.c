@@ -27,7 +27,7 @@ extern void SetSecondaryBrightness(int value);
 extern void *Msg_OpenContainerAndReadHeader(const char *name, u32 mode, BOOL allocFromEnd);
 extern void *func_0202c378(const char *path, u32 mode);
 extern void InitTitleDisplay(void);
-extern void func_ov004_0206366c(void);
+extern void SetupScrollTextBackgrounds(void);
 extern int func_0202c44c(void);
 extern void func_ov004_02063598(void);
 extern void InitScrollTextLayers(void);
@@ -45,7 +45,7 @@ void *LoadScrollTextResources(void)
     data_ov004_020645a0.work->mainFontFile = func_0202c378(sOv004_SfSffont10Nftr_02064550, 0xe);
     data_ov004_020645a0.work->subFontFile = func_0202c378(sOv004_SfSffont8Nftr_02064564, 0xe);
     InitTitleDisplay();
-    func_ov004_0206366c();
+    SetupScrollTextBackgrounds();
     func_0202c44c();
     func_ov004_02063598();
     InitScrollTextLayers();

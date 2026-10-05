@@ -18,7 +18,7 @@ extern void MI_CpuFill8(void *dest, u32 value, u32 size);
 extern void *NNSi_FndAllocFromExpHeapEx(u32 size, void **heap);
 extern void func_02029f8c(int processor, int overlayId);
 extern SubModeUpdateFunc func_ov046_020c08c0(void *arg, void *block);
-extern SubModeUpdateFunc func_ov042_020bdb6c(void *arg, void *block);
+extern SubModeUpdateFunc InitCameraScene(void *arg, void *block);
 extern SubModeUpdateFunc InitCameraState_020bcbec(void *arg, void *block);
 extern SubModeUpdateFunc InitPanel(void *arg, void *block);
 
@@ -61,7 +61,7 @@ void StartSubMode(void *arg, void **heap, s32 mode)
         data_ov021_020b56c0->update = func_ov046_020c08c0(arg, data_ov021_020b56c0->block);
         break;
     case 1:
-        data_ov021_020b56c0->update = func_ov042_020bdb6c(arg, data_ov021_020b56c0->block);
+        data_ov021_020b56c0->update = InitCameraScene(arg, data_ov021_020b56c0->block);
         break;
     case 2:
         data_ov021_020b56c0->update = InitCameraState_020bcbec(arg, data_ov021_020b56c0->block);

@@ -53,7 +53,7 @@ extern BOOL func_ov001_0206e224(void);
 extern void AwardPartyGaugePoints(int index, int points);
 extern void AdvanceMenuLevel(int step);
 extern s32 func_ov001_02078494(void);
-extern void func_ov001_02078360(int mode, int arg);
+extern void SetFieldMenuMode_02078360(int mode, int arg);
 extern void func_ov001_02078000(int listKind, int entryId);
 extern void FieldMenu_TryOpenByMode(void);
 extern u8 UpdateSelectionCount(int order);
@@ -167,7 +167,7 @@ void ApplyItemRewardEffect(RewardActor *actor, int groupId, int kind, int order,
     }
     if (openMenu) {
         if (func_ov001_02078494() == 2) {
-            func_ov001_02078360(0, 1);
+            SetFieldMenuMode_02078360(0, 1);
         }
         func_ov001_02078000(func_ov001_02078494(), order);
         FieldMenu_TryOpenByMode();

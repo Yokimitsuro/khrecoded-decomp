@@ -265,6 +265,10 @@ src/calls/OverlapsHeightRange.c:
     complete
     .text       start:0x01ffb328 end:0x01ffb3a0
 
+src/calls/ApplyShapeVelocity.c:
+    complete
+    .text       start:0x01ffcd30 end:0x01ffce24
+
 src/calls/QueryModelCollision.c:
     complete
     .text       start:0x01ffce24 end:0x01ffce6c
@@ -324,6 +328,10 @@ src/calls/NNS_G3dDraw1Mat1Shp.c:
 src/calls/func_01fff67c.c:
     complete
     .text       start:0x01fff67c end:0x01fff6c8
+
+src/calls/ClipRayAgainstPlane.c:
+    complete
+    .text       start:0x01fff6c8 end:0x01fff810
 
 src/calls/SetupModelDrawState.c:
     complete

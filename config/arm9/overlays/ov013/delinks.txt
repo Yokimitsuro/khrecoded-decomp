@@ -8,17 +8,49 @@ src/overlays/ov013/calls/InitPanelScene_0206c480.c:
     complete
     .text       start:0x0206c480 end:0x0206c760
 
+src/overlays/ov013/calls/UpdatePanelScene_0206c7e8.c:
+    complete
+    .text       start:0x0206c7e8 end:0x0206c9d4
+
 src/overlays/ov013/calls/InitMenuScreenGraphics.c:
     complete
     .text       start:0x0206cb80 end:0x0206cfd8
+
+src/overlays/ov013/calls/InitPanelSubScreenGraphics.c:
+    complete
+    .text       start:0x0206d078 end:0x0206da20
+
+src/overlays/ov013/calls/InitRecordScreenGraphics.c:
+    complete
+    .text       start:0x0206da20 end:0x0206df40
+
+src/overlays/ov013/calls/DrawPlayerCardDetails.c:
+    complete
+    .text       start:0x0206e574 end:0x0206eb18
+
+src/overlays/ov013/calls/DrawPanelHeaderTexts.c:
+    complete
+    .text       start:0x0206eef4 end:0x0206f06c
 
 src/overlays/ov013/calls/RefreshProgressCaption.c:
     complete
     .text       start:0x0206f06c end:0x0206f3d8
 
+src/overlays/ov013/calls/DrawPanelResultCaption.c:
+    complete
+    .text       start:0x0206f3d8 end:0x0206f978
+
 src/overlays/ov013/calls/LeavePanelScene.c:
     complete
     .text       start:0x0206f978 end:0x0206fbbc
+
+src/overlays/ov013/calls/LayoutPanelSlotWidgets.c:
+    complete
+    .text       start:0x0206fc74 end:0x0206fe50
+
+src/overlays/ov013/calls/RefreshPanelSlotDigits.c:
+    complete
+    .text       start:0x0206fe50 end:0x020704a0
 
 src/overlays/ov013/calls/ShiftPanelSlotsDown.c:
     complete
@@ -39,6 +71,10 @@ src/overlays/ov013/calls/RebuildPanelSelection.c:
 src/overlays/ov013/calls/func_ov013_02071444.c:
     complete
     .text       start:0x02071444 end:0x02071454
+
+src/overlays/ov013/calls/BlinkPanelCursor_02071454.c:
+    complete
+    .text       start:0x02071454 end:0x02071590
 
 src/overlays/ov013/calls/QueryPanelSlotStates.c:
     complete
@@ -64,6 +100,10 @@ src/overlays/ov013/calls/ResetPanelStepAndNotify.c:
     complete
     .text       start:0x02071a9c end:0x02071b6c
 
+src/overlays/ov013/calls/UpdatePanelScrollState.c:
+    complete
+    .text       start:0x02071b6c end:0x02072228
+
 src/overlays/ov013/calls/ApplyPanelSubitem5.c:
     complete
     .text       start:0x02072228 end:0x0207225c
@@ -75,6 +115,10 @@ src/overlays/ov013/calls/UpdatePanelResultState.c:
 src/overlays/ov013/calls/ResetPanelLayoutClearFlag.c:
     complete
     .text       start:0x02072674 end:0x020727b4
+
+src/overlays/ov013/calls/OpenPanelResultMenu.c:
+    complete
+    .text       start:0x020727b4 end:0x020729e4
 
 src/overlays/ov013/calls/UpdatePanelResultPrompt.c:
     complete

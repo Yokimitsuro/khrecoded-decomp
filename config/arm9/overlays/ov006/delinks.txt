@@ -8,6 +8,10 @@ src/overlays/ov006/calls/BuildDescendingLevelTable.c:
     complete
     .text       start:0x020a0694 end:0x020a0706
 
+src/overlays/ov006/calls/RespawnElevatorObject.c:
+    complete
+    .text       start:0x020a07d4 end:0x020a0a58
+
 src/overlays/ov006/auto/func_ov006_020a0a58.c:
     complete
     .text       start:0x020a0a58 end:0x020a0a5c
@@ -15,6 +19,10 @@ src/overlays/ov006/auto/func_ov006_020a0a58.c:
 src/overlays/ov006/calls/UpdateElevatorObject.c:
     complete
     .text       start:0x020a0c20 end:0x020a0ce8
+
+src/overlays/ov006/calls/UpdateStaticElevator.c:
+    complete
+    .text       start:0x020a0ce8 end:0x020a0e5c
 
 src/overlays/ov006/calls/CreateElevatorObject.c:
     complete

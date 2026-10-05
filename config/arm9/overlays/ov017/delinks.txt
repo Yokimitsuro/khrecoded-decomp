@@ -132,6 +132,10 @@ src/overlays/ov017/calls/IsFieldTypeOneOrTen.c:
     complete
     .text       start:0x020a2bd0 end:0x020a2bf0
 
+src/overlays/ov017/calls/LoadTriggerObjectPhase.c:
+    complete
+    .text       start:0x020a2bf0 end:0x020a2e6c
+
 src/overlays/ov017/calls/IsState1Or2.c:
     complete
     .text       start:0x020a2e6c end:0x020a2e84
@@ -355,6 +359,10 @@ src/overlays/ov017/calls/CanUseContactTarget.c:
 src/overlays/ov017/calls/IsFacingContact.c:
     complete
     .text       start:0x020a4548 end:0x020a4592
+
+src/overlays/ov017/calls/ResolveFieldContact.c:
+    complete
+    .text       start:0x020a4594 end:0x020a468c
 
 src/overlays/ov017/calls/ResetFallTarget.c:
     complete

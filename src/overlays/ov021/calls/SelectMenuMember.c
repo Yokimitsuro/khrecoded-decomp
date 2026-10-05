@@ -32,7 +32,7 @@ extern u32 ReadSessionPackedBits(int bitOffset, u32 bitCount);
 extern void WriteSessionPackedBits(int bitOffset, u32 bitCount, u32 value);
 extern void func_ov001_0206df78(void);
 extern s32 func_ov001_02078494(void);
-extern void func_ov001_02078360(int a, int b);
+extern void SetFieldMenuMode_02078360(int a, int b);
 extern void func_ov001_02078000(int listKind, int entryId);
 extern BOOL FieldMenu_TryOpenByMode(void);
 
@@ -99,7 +99,7 @@ s32 SelectMenuMember(MemberList *list, int index, MenuCommand *command)
     result = list->current->handler(list, list->current, command);
     if (member->category != 1 && member->category != 4 && command->id != 0x1c) {
         if (func_ov001_02078494() == 2) {
-            func_ov001_02078360(0, 1);
+            SetFieldMenuMode_02078360(0, 1);
         }
         func_ov001_02078000(func_ov001_02078494(), index);
         FieldMenu_TryOpenByMode();

@@ -163,6 +163,10 @@ src/overlays/ov031/calls/RestoreActiveRecordItems.c:
     complete
     .text       start:0x020bbca4 end:0x020bbd08
 
+src/overlays/ov031/calls/PlaceRecordPanels.c:
+    complete
+    .text       start:0x020bbd08 end:0x020bbe04
+
 src/overlays/ov031/calls/RemoveGroupObjectsFromTree.c:
     complete
     .text       start:0x020bbe04 end:0x020bbe68

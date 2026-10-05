@@ -26,7 +26,7 @@ typedef struct Kind4EntryPool {
 
 extern Kind4EntryPool *CreateEntryPool(int headerSize, int entrySize, int count);
 extern void ResetPoolDefaultParams(Kind4EntryPool *pool);
-extern void func_ov017_020a2bf0(void);
+extern void LoadTriggerObjectPhase(void);
 extern void LinkObjectChainTail(void);
 extern void func_ov017_020a2e84(void);
 extern void ReleaseFieldObjectResources(void);
@@ -48,7 +48,7 @@ Kind4EntryPool *CreateKind4EntryPool(int count)
     pool->extent.y = 0x1800;
     pool->extent.z = 0x1800;
     pool->range = 0x3000;
-    pool->callbacks[0] = func_ov017_020a2bf0;
+    pool->callbacks[0] = LoadTriggerObjectPhase;
     pool->callbacks[1] = LinkObjectChainTail;
     pool->callbacks[2] = NULL;
     pool->callbacks[4] = func_ov017_020a2e84;

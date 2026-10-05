@@ -68,8 +68,8 @@ extern u32 IsPanelBusy(void);
 extern int SetSelectionIfChanged(int selection);
 extern void func_ov013_0206df40(int index);
 extern void func_ov013_0206caa4(void);
-extern void func_ov013_0206da20(void);
-extern void func_ov013_0206d078(void);
+extern void InitRecordScreenGraphics(void);
+extern void InitPanelSubScreenGraphics(void);
 extern void SetWidgetRootDpadEnabled(void *panel, int flag);
 extern void SetWidgetRootTouchEnabled(void *panel, int flag);
 extern void InitScrollList(ScrollList *list, int itemCount, int visibleCount, int rowHeight);
@@ -116,7 +116,7 @@ void InitPanelScene_0206c480(void) {
             if (data_0206085c.slot == 7) {
                 func_ov013_0206df40(data_0206085c.offset + data_0206085c.base);
             } else {
-                func_ov013_0206da20();
+                InitRecordScreenGraphics();
             }
             break;
         case 3:
@@ -124,7 +124,7 @@ void InitPanelScene_0206c480(void) {
             break;
         }
     }
-    func_ov013_0206d078();
+    InitPanelSubScreenGraphics();
     SetWidgetRootDpadEnabled(data_ov013_02074ce0->panel, 1);
     SetWidgetRootDpadEnabled(data_ov013_02074ce0->manager, 1);
     SetWidgetRootTouchEnabled(data_ov013_02074ce0->panel, 1);

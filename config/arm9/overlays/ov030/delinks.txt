@@ -88,6 +88,14 @@ src/overlays/ov030/calls/SnapCarriedActorToView.c:
     complete
     .text       start:0x020bb494 end:0x020bb5c0
 
+src/overlays/ov030/calls/UpdateDraggedActorState.c:
+    complete
+    .text       start:0x020bb5c0 end:0x020bb890
+
+src/overlays/ov030/calls/SteerCarriedActorInView.c:
+    complete
+    .text       start:0x020bb890 end:0x020bb9e8
+
 src/overlays/ov030/calls/CheckHeadroomClear.c:
     complete
     .text       start:0x020bb9e8 end:0x020bbaec
@@ -120,6 +128,10 @@ src/overlays/ov030/calls/InitMovieSelectionItems.c:
     complete
     .text       start:0x020bc444 end:0x020bc4c8
 
+src/overlays/ov030/calls/EnterCarryState.c:
+    complete
+    .text       start:0x020bc4c8 end:0x020bc644
+
 src/overlays/ov030/calls/DrawCarriedActor.c:
     complete
     .text       start:0x020bc644 end:0x020bc814
@@ -132,6 +144,10 @@ src/overlays/ov030/calls/ChangeCarriedActorState.c:
     complete
     .text       start:0x020bc86c end:0x020bc920
 
+src/overlays/ov030/calls/UpdateCarriedLauncher.c:
+    complete
+    .text       start:0x020bc920 end:0x020bcb3c
+
 src/overlays/ov030/calls/OnUnitHitEvent.c:
     complete
     .text       start:0x020bcb50 end:0x020bcbac
@@ -143,6 +159,10 @@ src/overlays/ov030/calls/SpawnTiltedProjectile.c:
 src/overlays/ov030/calls/UpdateSpiralProjectile.c:
     complete
     .text       start:0x020bcc98 end:0x020bcdac
+
+src/overlays/ov030/calls/SpawnSpiralProjectile.c:
+    complete
+    .text       start:0x020bcdac end:0x020bcec0
 
 src/overlays/ov030/calls/ReleaseEffectPool.c:
     complete

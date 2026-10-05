@@ -34,7 +34,7 @@ extern void func_ov015_0207533c(int a, int b, int c);
 extern void func_ov015_020759cc(void);
 extern void *func_ov027_020ba2c8(int *bank, int index);
 extern void func_ov015_02075034(u16 *dst, const void *first, const void *second, int value);
-extern void func_ov015_020789b8(void *object, int x, int y, int color, int width, const void *text);
+extern void DrawCenteredLayerText(void *object, int x, int y, int color, int width, const void *text);
 extern void Text_UploadTileBuffer(void *surface);
 extern void *SPrintfUnbounded(void *dst, const void *fmt, ...);
 extern int MeasureTextWidth(void *font, const u16 *text, int maxLines);
@@ -57,7 +57,7 @@ void SetupResultPanel(int a, int b, int c) {
     titleIds = data_ov015_0207a2b8;
     title = func_ov027_020ba2c8(work->textBank, titleIds.ids[work->titleIndex]);
     func_ov015_02075034(headerBuf, title, func_ov027_020ba2c8(work->textBank, data_ov015_0207a40f[work->playerRank].textId), work->score);
-    func_ov015_020789b8(data_ov015_020812e0->headerText, 0, 0, 0xf, 0, headerBuf);
+    DrawCenteredLayerText(data_ov015_020812e0->headerText, 0, 0, 0xf, 0, headerBuf);
     Text_UploadTileBuffer(data_ov015_020812e0->headerText);
     work = data_ov015_020812e0;
     kind = work->resultKind;
@@ -68,12 +68,12 @@ void SetupResultPanel(int a, int b, int c) {
                 work = data_ov015_020812e0;
                 SPrintfUnbounded(bodyBuf, func_ov027_020ba2c8(work->textBank, 2), work->playerName);
             }
-            func_ov015_020789b8(data_ov015_020812e0->bodyText, 0, 0, 0xf, 0, bodyBuf);
+            DrawCenteredLayerText(data_ov015_020812e0->bodyText, 0, 0, 0xf, 0, bodyBuf);
         } else if (kind == 6) {
             altIds = data_ov015_0207a2cc;
             title = func_ov027_020ba2c8(work->textBank, altIds.ids[work->titleIndex]);
             func_ov015_02075034(bodyBuf, title, func_ov027_020ba2c8(work->textBank, data_ov015_0207a40f[work->partnerRank].textId), 1);
-            func_ov015_020789b8(data_ov015_020812e0->bodyText, 0, 0, 0xf, 0, bodyBuf);
+            DrawCenteredLayerText(data_ov015_020812e0->bodyText, 0, 0, 0xf, 0, bodyBuf);
         }
         Text_UploadTileBuffer(data_ov015_020812e0->bodyText);
     }

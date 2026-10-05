@@ -38,7 +38,7 @@ extern OverlayState *data_ov031_020bc820;
 extern void func_ov031_020bb710(void);
 extern void UpdateRecordActors(void);
 extern void RestoreActiveRecordItems(void);
-extern void func_ov031_020bbd08(void);
+extern void PlaceRecordPanels(void);
 extern s32 func_ov001_02063a4c(void);
 extern void SetFields30And34(u32 a, u32 b);
 extern void ResetCameraUp(s32 angle);
@@ -70,7 +70,7 @@ void BeginNextRecord(void)
     func_ov031_020bb710();
     UpdateRecordActors();
     RestoreActiveRecordItems();
-    func_ov031_020bbd08();
+    PlaceRecordPanels();
     record = &data_ov031_020bc820->records[data_ov031_020bc820->recordIndex];
     if (func_ov001_02063a4c() == 4) {
         if (data_ov031_020bc820->position != record->position) {

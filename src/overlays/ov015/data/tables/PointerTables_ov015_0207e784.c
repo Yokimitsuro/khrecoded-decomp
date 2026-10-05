@@ -8,7 +8,7 @@ extern void func_ov015_02070fb4(void);
 extern void UpdatePanelPendingAction(void); /* UpdatePanelPendingAction */
 extern void func_ov015_02071060(void);
 extern void StartPlayerCardSharing(void); /* StartPlayerCardSharing */
-extern void func_ov015_02071100(void);
+extern void UpdatePanelShareState(void);
 extern void func_ov015_020716ec(void); /* PXI_Init */
 extern void func_ov015_02071a78(void); /* OSi_IrqDma0 */
 extern void func_ov015_02071a88(void);
@@ -33,7 +33,7 @@ void (*gLinkPanelStateHandlers[22])(void) = {
     UpdatePanelPendingAction, /* UpdatePanelPendingAction */
     func_ov015_02071060,
     StartPlayerCardSharing, /* StartPlayerCardSharing */
-    func_ov015_02071100,
+    UpdatePanelShareState,
     func_ov015_020716ec, /* PXI_Init */
     func_ov015_02071a78, /* OSi_IrqDma0 */
     func_ov015_02071a88,
