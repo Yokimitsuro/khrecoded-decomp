@@ -8,7 +8,7 @@ typedef struct {
 extern u8 data_0205347c[];
 extern s32 data_02053530[];
 extern u32 func_0202a9e4(u32 range);
-extern int func_02027808(s32 recordIndex, s32 *outByteIndex, u8 *outMask);
+extern int TestRecordFlagBit(s32 recordIndex, s32 *outByteIndex, u8 *outMask);
 extern BOOL IsValueInTable(s32 value);
 extern RecordB *GetRecordTableBEntry(s32 index);
 
@@ -30,7 +30,7 @@ s32 PickRandomRecordInCategory(s32 category, s32 requiredTag)
     end = first + count;
     recordIndex = first + func_0202a9e4(count);
     for (attempt = 0; attempt < count; attempt++) {
-        if (func_02027808(recordIndex, NULL, NULL) == 0 && IsValueInTable(recordIndex)) {
+        if (TestRecordFlagBit(recordIndex, NULL, NULL) == 0 && IsValueInTable(recordIndex)) {
             if (requiredTag == -1) {
                 break;
             } else {

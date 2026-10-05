@@ -15,7 +15,7 @@ extern u8 data_0205fdc4;
 extern u16 data_02060500;
 extern void SNDi_BroadcastChannelOp(int arg0);
 extern void PlaySoundEffect(u32 a, u32 b);
-extern void func_020281b0(void);
+extern void ResetPanelFieldB8AndNotify(void);
 extern BOOL func_0202858c(void);
 extern int InvokeCallbackSlot(int index);
 
@@ -33,7 +33,7 @@ BOOL UpdatePanelActivation(void)
     }
     if (data_0205fdc4 == 0) {
         if (panel->active != 0) {
-            func_020281b0();
+            ResetPanelFieldB8AndNotify();
         }
         return FALSE;
     }

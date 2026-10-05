@@ -16,7 +16,7 @@ typedef struct PanelState {
 extern PanelState *data_0205fe24;
 extern u16 data_02060500;
 extern void PlaySoundEffect(u32 a, u32 b);
-extern void func_020284b0(void *state, int page, int delta);
+extern void AdjustPanelSlotSrcYAndDraw(void *state, int page, int delta);
 
 BOOL ToggleSelectedPanelSlot(void)
 {
@@ -30,7 +30,7 @@ BOOL ToggleSelectedPanelSlot(void)
         panel->slots[panel->selectedSlot].mode = 1;
         panel->slots[panel->selectedSlot].timer = 0;
         for (slot = 0; slot < 2; slot++) {
-            func_020284b0(panel->pages, slot, panel->slots[slot].mode);
+            AdjustPanelSlotSrcYAndDraw(panel->pages, slot, panel->slots[slot].mode);
         }
         return TRUE;
     }

@@ -45,9 +45,9 @@ typedef struct SweepResult {
 
 extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern BOOL func_0203c26c(CollisionShape *segmentShape, CollisionShape *polygonShape, void *contact, u32 flags);
-extern void func_02047d00(SweepResult *out);
+extern void CopyInitializedRecord13(SweepResult *out);
 extern void SubtractVecFx32Out(VecFx32 *out, const VecFx32 *a, const VecFx32 *b);
-extern BOOL func_02047d70(fx32 extent, const VecFx32 *offset, const VecFx32 *axis, u8 feature, const VecFx32 *velocity, SweepResult *result, s64 *outTime);
+extern BOOL DotProductForward(fx32 extent, const VecFx32 *offset, const VecFx32 *axis, u8 feature, const VecFx32 *velocity, SweepResult *result, s64 *outTime);
 extern void AddVecFx32Out(VecFx32 *out, const VecFx32 *a, const VecFx32 *b);
 extern BOOL SweepAlongProjectedAxis(fx32 extent, const VecFx32 *offset, const VecFx32 *axis, u8 feature, const VecFx32 *velocity, SweepResult *result, s64 *outTime);
 extern BOOL ResolveSweepContact(SweepResult *result, void *contact, u32 flags, const VecFx32 *velocity);
@@ -88,7 +88,7 @@ static inline VecFx32 ScaleVec(const VecFx32 *vec, fx32 scale)
 static inline SweepResult MakeSweepResult(void)
 {
     SweepResult result;
-    func_02047d00(&result);
+    CopyInitializedRecord13(&result);
     return result;
 }
 
@@ -129,7 +129,7 @@ BOOL SweepSegmentAgainstPolygon(CollisionShape *segmentShape, CollisionShape *po
     offset = VecSub(&center, &polygon->edges[0].vertex);
     extent = AbsDotProduct(&halfAxis, &polygon->normal);
     axis = polygon->normal;
-    if (!func_02047d70(extent, &offset, &axis, 0, velocity, &result, NULL)) {
+    if (!DotProductForward(extent, &offset, &axis, 0, velocity, &result, NULL)) {
         return FALSE;
     }
     edgeCount = polygon->edgeCount;

@@ -48,7 +48,7 @@ typedef struct ModelInstance {
 } ModelInstance;
 
 extern void func_0202c6a4(int useDefault);
-extern void *func_0202c954(ModelResList *list, int texFlag, int fileId);
+extern void *AcquireOrRefreshResourceBlock(ModelResList *list, int texFlag, int fileId);
 extern void func_0202d410(void *file, void *texSet, int texSource);
 extern void *NestedPointer_GetFirstWord(void *archive, int memberIndex, int subIndex);
 extern ResMdlSet *NNS_G3dGetMdlSet(void *header);
@@ -84,7 +84,7 @@ BOOL InitModelInstance(ModelInstance *inst, int texFlag, int hasTexSource, int f
     if (texFlag != 0 || (hasTexSource != 0 && fileId != 0)) {
         func_0202c6a4(0);
     }
-    file = func_0202c954(inst->resList, texFlag, fileId);
+    file = AcquireOrRefreshResourceBlock(inst->resList, texFlag, fileId);
     if (texFlag == 0) {
         if (hasTexSource != 0) {
             if (fileId != 0) {

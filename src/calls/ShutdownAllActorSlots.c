@@ -21,7 +21,7 @@ typedef struct {
     ActorSlot *slots[0x200];
 } ActorRegistry;
 
-extern void func_020359ac(u16 index);
+extern void ApplyRecordTableEntry3(u16 index);
 extern void ActorSlot_UnlinkByIndex(u16 index);
 extern void Obj_ShutdownBase(void *entity);
 extern void FreeRecordArrayAndReset(ActorRegistry *registry);
@@ -36,7 +36,7 @@ void ShutdownAllActorSlots(void)
     for (i = 0; i < 0x200; i++) {
         ActorSlot *slot = registry->slots[i];
         if (slot != NULL && (slot->flags & 4) && (slot->flags & 2) && (slot->flags & 0x40) == 0) {
-            func_020359ac(i);
+            ApplyRecordTableEntry3(i);
             if (slot->flags & 2) {
                 ActorSlot_UnlinkByIndex(i);
             }

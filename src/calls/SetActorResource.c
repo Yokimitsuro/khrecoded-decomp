@@ -7,7 +7,7 @@ typedef struct {
 
 extern SharedRecord *SND_RegisterSeq(u32 fileId, int kind);
 extern void *func_0202c4a0(u32 fileId, int kind);
-extern void func_020358c4(u16 actorIndex, SharedRecord *record, void *data, int kind);
+extern void ApplyRecordTableEntry2(u16 actorIndex, SharedRecord *record, void *data, int kind);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
 void SetActorResource(int actorIndex, u32 resourceFileId, u32 dataFileId)
@@ -18,7 +18,7 @@ void SetActorResource(int actorIndex, u32 resourceFileId, u32 dataFileId)
     if (record->loadedCount == 0) {
         data = func_0202c4a0(dataFileId, 0xd);
     }
-    func_020358c4(actorIndex, record, data, 0xd);
+    ApplyRecordTableEntry2(actorIndex, record, data, 0xd);
     if (data != NULL) {
         NNSi_FndFreeFromDefaultHeap(data);
     }

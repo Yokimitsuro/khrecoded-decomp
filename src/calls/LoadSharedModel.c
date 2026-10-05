@@ -9,7 +9,7 @@ typedef struct SharedModel {
 extern SharedModel data_02060840;
 extern void *Archive_LoadFile(u32 fileId, u32 mode);
 extern void func_0202c6a4(int enable);
-extern s32 func_0202d0ac(void *resource, void *heap);
+extern s32 ValidateResourceTagAndDispatch(void *resource, void *heap);
 extern NNSG3dResMdlSet *NNS_G3dGetMdlSet(const NNSG3dResFileHeader *header);
 extern void NNS_G3dMdlSetMdlLightEnableFlag(NNSG3dResMdl *model, u32 matId, int light);
 
@@ -39,7 +39,7 @@ BOOL LoadSharedModel(u32 fileId)
 {
     data_02060840.file = Archive_LoadFile(fileId, 0x11);
     func_0202c6a4(0);
-    func_0202d0ac(data_02060840.file, NULL);
+    ValidateResourceTagAndDispatch(data_02060840.file, NULL);
     func_0202c6a4(1);
     data_02060840.model = GetMdlByIdx(NNS_G3dGetMdlSet(data_02060840.file), 0);
     NNS_G3dMdlSetMdlLightEnableFlag(data_02060840.model, 0, 0);

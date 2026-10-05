@@ -41,7 +41,7 @@ extern void *G2_GetBG2ScrPtr(void);
 extern void *G2_GetBG3ScrPtr(void);
 extern void MIi_CpuClearFast(u32 data, void *dst, u32 size);
 extern void ResetPanelPageLayout(void);
-extern void func_020284b0(void *pages, int index, s32 srcY);
+extern void AdjustPanelSlotSrcYAndDraw(void *pages, int index, s32 srcY);
 extern void GX_LoadBGPltt(const void *src, u32 offset, u32 size);
 extern void GX_LoadBG3Char(const void *src, u32 offset, u32 size);
 extern void GX_LoadBG3Scr(const void *src, u32 offset, u32 size);
@@ -121,7 +121,7 @@ void UpdatePanelScreenSetup(void)
         MIi_CpuClearFast(0, G2_GetBG3ScrPtr(), 0x800);
         ResetPanelPageLayout();
         for (i = 0; i < 2; i++) {
-            func_020284b0(panel->pages, i, panel->slots[i].srcY);
+            AdjustPanelSlotSrcYAndDraw(panel->pages, i, panel->slots[i].srcY);
         }
         if (func_ov001_02063a38() == 8) {
             u32 size = graphics->palette->szByte;

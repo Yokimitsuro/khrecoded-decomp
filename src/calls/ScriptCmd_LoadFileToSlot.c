@@ -11,13 +11,13 @@ typedef struct {
 } ScriptContext;
 
 extern int ScriptVm_ReadOperandInt(ScriptContext *ctx, void *cmd);
-extern const char *func_02025dc0(ScriptContext *ctx, void *operand);
+extern const char *ByteCode_ResolveOperand(ScriptContext *ctx, void *operand);
 extern void *Msg_OpenContainerAndReadHeader(const char *path, u32 kind, u32 fromTop);
 
 int ScriptCmd_LoadFileToSlot(ScriptContext *ctx, void *cmd)
 {
     int slot = ScriptVm_ReadOperandInt(ctx, cmd);
-    const char *path = func_02025dc0(ctx, (u8 *)cmd + 8);
+    const char *path = ByteCode_ResolveOperand(ctx, (u8 *)cmd + 8);
 
     ctx->fileSlots->loadedFiles[slot] = Msg_OpenContainerAndReadHeader(path, 0x11, 0);
     return 1;

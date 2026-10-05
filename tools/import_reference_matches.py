@@ -208,19 +208,69 @@ def automatic_candidates(results: list[dict], index: dict, symbols: str) -> list
     return candidates
 
 
+def inferred_name_candidates(results: list[dict], index: dict,
+                             symbols: str) -> list[tuple]:
+    """Return verified matches whose recovered body still has a generic name.
+
+    These entries were excluded from the original automatic pass because the
+    reference function name is address-based. The batch verifier also records
+    a reviewed semantic name for some of them, which is safe to use after the
+    same relocation checks as the normal import path.
+    """
+    occupied = set(CURRENT_NAMES)
+    candidates = []
+    for item in results:
+        if item.get("result") != "match":
+            continue
+        rom_symbol = item["eu"]["name"]
+        match = item["match"]
+        source_symbol = match["source_symbol"]
+        readable_name = ADDRESS_SUFFIX_RE.sub("", match.get("name", ""))
+        if not source_symbol.startswith(("func_", "FUN_")):
+            continue
+        if (not readable_name
+                or readable_name.lower() in ("func", "function")
+                or readable_name.lower().startswith("unknown")):
+            continue
+        if readable_name.startswith(("func_", "FUN_")):
+            continue
+        if not readable_name.isidentifier():
+            continue
+        if not re.search(
+            rf"^{re.escape(rom_symbol)} kind:function", symbols, re.MULTILINE
+        ):
+            continue
+        if readable_name in occupied:
+            readable_name = f"{readable_name}_{item['eu']['address']:08x}"
+        if readable_name in occupied:
+            continue
+        try:
+            rewrites = relocation_rewrites(item, index[rom_symbol])
+        except (KeyError, RuntimeError):
+            continue
+        occupied.add(readable_name)
+        candidates.append((rom_symbol, readable_name, item, rewrites))
+    candidates.sort(key=lambda value: (value[2]["eu"]["size"], value[2]["ordinal"]))
+    return candidates
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("mapping", nargs="*", type=parse_mapping)
     parser.add_argument("--inventory", action="store_true")
     parser.add_argument("--auto", action="store_true")
+    parser.add_argument("--inferred-inventory", action="store_true")
+    parser.add_argument("--inferred-auto", action="store_true")
     parser.add_argument("--limit", type=int, default=0)
     args = parser.parse_args()
 
-    if args.inventory and args.auto:
-        parser.error("--inventory and --auto are mutually exclusive")
-    if args.mapping and (args.inventory or args.auto):
+    modes = sum((args.inventory, args.auto, args.inferred_inventory,
+                 args.inferred_auto))
+    if modes > 1:
+        parser.error("select only one automatic or inventory mode")
+    if args.mapping and modes:
         parser.error("explicit mappings cannot be combined with --inventory or --auto")
-    if not args.mapping and not args.inventory and not args.auto:
+    if not args.mapping and not modes:
         parser.error("provide mappings, --inventory, or --auto")
 
     result_list = json.loads(RESULTS.read_text(encoding="utf-8"))
@@ -233,8 +283,11 @@ def main() -> None:
     symbols = SYMBOLS.read_text(encoding="utf-8")
 
     cached_rewrites = {}
-    if args.inventory or args.auto:
-        candidates = automatic_candidates(result_list, index, symbols)
+    if modes:
+        if args.inferred_inventory or args.inferred_auto:
+            candidates = inferred_name_candidates(result_list, index, symbols)
+        else:
+            candidates = automatic_candidates(result_list, index, symbols)
         if args.limit:
             candidates = candidates[:args.limit]
         total = sum(item[2]["eu"]["size"] for item in candidates)
@@ -246,7 +299,7 @@ def main() -> None:
             )
             cached_rewrites[rom_symbol] = rewrites
         print(f"eligible {len(candidates)} functions, {total} bytes")
-        if args.inventory:
+        if args.inventory or args.inferred_inventory:
             return
         args.mapping = [(item[0], item[1]) for item in candidates]
 

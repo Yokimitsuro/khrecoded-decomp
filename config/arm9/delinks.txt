@@ -5365,6 +5365,10 @@ src/calls/ScriptVm_ResolveOperand.c:
     complete
     .text       start:0x02025d1c end:0x02025dc0
 
+src/calls/ByteCode_ResolveOperand.c:
+    complete
+    .text       start:0x02025dc0 end:0x02025df6
+
 src/calls/ScriptVm_ReadOperandInt.c:
     complete
     .text       start:0x02025df8 end:0x02025e0c
@@ -5389,6 +5393,10 @@ src/calls/ScriptVm_EvalExpr.c:
     complete
     .text       start:0x02025e64 end:0x020262b8
 
+src/calls/IsSoundParamStale.c:
+    complete
+    .text       start:0x020262b8 end:0x020262e0
+
 src/calls/ScriptCmd_CopyOperandOrInvokeHandler.c:
     complete
     .text       start:0x020262e0 end:0x02026334
@@ -5404,6 +5412,10 @@ src/calls/ScriptVm_PushFrame.c:
 src/calls/FSi_CloseFileCommandNoOpA.c:
     complete
     .text       start:0x020263d0 end:0x020263d4
+
+src/calls/ByteCode_ExecuteLoadOp.c:
+    complete
+    .text       start:0x020263d4 end:0x02026440
 
 src/calls/FSi_EmptyArchiveProcThumbStub.c:
     complete
@@ -5440,6 +5452,10 @@ src/calls/ScriptCmd_SetBranchTarget.c:
 src/calls/ScriptCmd_SetElemFieldFromOperand.c:
     complete
     .text       start:0x02026530 end:0x02026544
+
+src/calls/ScriptCmd_AdvanceOrSetField.c:
+    complete
+    .text       start:0x02026544 end:0x02026568
 
 src/calls/ScriptCmd_ArmPair.c:
     complete
@@ -5480,6 +5496,10 @@ src/calls/ScriptCmd_FreeFileSlot.c:
 src/calls/ScriptCmd_AcquireActorResource.c:
     complete
     .text       start:0x02026868 end:0x0202690c
+
+src/calls/ScriptCmd_TurnHandler.c:
+    complete
+    .text       start:0x0202690c end:0x02026972
 
 src/calls/ScriptCmd_SetActorResourceFromPaths.c:
     complete
@@ -5553,6 +5573,10 @@ src/calls/VerifySha1Signature.c:
     complete
     .text       start:0x02026cb0 end:0x02026cf4
 
+src/calls/VerifyCardIdMatchesReference.c:
+    complete
+    .text       start:0x02026cf4 end:0x02026d44
+
 src/calls/FormatCardBackup.c:
     complete
     .text       start:0x02026d44 end:0x02026dd4
@@ -5572,6 +5596,10 @@ src/calls/PollCardThreadResult.c:
 src/calls/OnCardBackupUnlockDone.c:
     complete
     .text       start:0x020270f4 end:0x02027124
+
+src/calls/InvokeCallback.c:
+    complete
+    .text       start:0x020271fc end:0x0202720c
 
 src/calls/PollCardThreadState.c:
     complete
@@ -5609,6 +5637,30 @@ src/calls/WriteGlobalPackedBits.c:
     complete
     .text       start:0x02027374 end:0x02027390
 
+src/calls/GetBit26Flag.c:
+    complete
+    .text       start:0x020273bc end:0x020273d4
+
+src/calls/GetSlotFlagsField.c:
+    complete
+    .text       start:0x020273d4 end:0x020273e8
+
+src/calls/InitDifficultyConfigBlock.c:
+    complete
+    .text       start:0x0202756c end:0x020275dc
+
+src/calls/CheckStatusAndThreshold.c:
+    complete
+    .text       start:0x020275dc end:0x020275f6
+
+src/calls/CountSetBitsInMainFlagArray.c:
+    complete
+    .text       start:0x020275f8 end:0x02027630
+
+src/calls/SetSharedFlagBits.c:
+    complete
+    .text       start:0x02027630 end:0x02027684
+
 src/calls/GrantStartingRecords.c:
     complete
     .text       start:0x02027684 end:0x02027808
@@ -5637,6 +5689,14 @@ src/calls/ToggleSelectedPanelSlot.c:
     complete
     .text       start:0x02028118 end:0x0202819c
 
+src/calls/ResetPanelFieldB8AndNotify.c:
+    complete
+    .text       start:0x020281b0 end:0x020281c8
+
+src/calls/InitPanelResources.c:
+    complete
+    .text       start:0x020282d0 end:0x02028324
+
 src/calls/ResetPanelPageLayout.c:
     complete
     .text       start:0x02028324 end:0x020283ac
@@ -5644,6 +5704,18 @@ src/calls/ResetPanelPageLayout.c:
 src/calls/SetPanelPageParams.c:
     complete
     .text       start:0x020283ac end:0x020283d0
+
+src/calls/UpdatePanelSlotBlink.c:
+    complete
+    .text       start:0x020283d0 end:0x02028410
+
+src/calls/UpdatePanelPromptBlink.c:
+    complete
+    .text       start:0x02028410 end:0x0202845c
+
+src/calls/AdjustPanelSlotSrcYAndDraw.c:
+    complete
+    .text       start:0x020284b0 end:0x020284d0
 
 src/calls/RegisterPanelCallbacks.c:
     complete
@@ -5701,6 +5773,10 @@ src/calls/CreateManagerObjects.c:
     complete
     .text       start:0x02028be0 end:0x02028c08
 
+src/calls/InitPxiChannelsPair.c:
+    complete
+    .text       start:0x02028c08 end:0x02028c20
+
 src/calls/func_02028c20.c:
     complete
     .text       start:0x02028c20 end:0x02028c2c
@@ -5720,6 +5796,10 @@ src/calls/PXI_Init_02028dc0.c:
 src/calls/PXI_Init_02028dcc.c:
     complete
     .text       start:0x02028dcc end:0x02028dd8
+
+src/calls/SetFlagAndBumpCounter.c:
+    complete
+    .text       start:0x02028e00 end:0x02028e18
 
 src/calls/SelectLocalizedTextIds.c:
     complete
@@ -6257,6 +6337,10 @@ libs/nitro/snd/calls/SND_RegisterSeq.c:
     complete
     .text       start:0x0202c820 end:0x0202c8bc
 
+src/calls/AcquireOrRefreshResourceBlock.c:
+    complete
+    .text       start:0x0202c954 end:0x0202ca2c
+
 src/calls/QueueTypedMessage.c:
     complete
     .text       start:0x0202ca9c end:0x0202cae0
@@ -6268,6 +6352,10 @@ src/calls/QueueTypedMessageWithHandle.c:
 src/calls/QueueTypedMessageWithHandle_0202cb38.c:
     complete
     .text       start:0x0202cb38 end:0x0202cb90
+
+src/calls/OpenAndClassifyFile.c:
+    complete
+    .text       start:0x0202cb90 end:0x0202cc80
 
 src/calls/ZeroHalfThenFree.c:
     complete
@@ -6288,6 +6376,10 @@ src/calls/openFileFromNitroRomArchive.c:
 src/calls/SetupResourceTextures.c:
     complete
     .text       start:0x0202cef0 end:0x0202d0ac
+
+src/calls/ValidateResourceTagAndDispatch.c:
+    complete
+    .text       start:0x0202d0ac end:0x0202d160
 
 src/calls/Tex_LoadVram.c:
     complete
@@ -6377,6 +6469,10 @@ src/calls/Text_VSNPrintf.c:
     complete
     .text       start:0x0202d8d8 end:0x0202e072
 
+src/calls/SPrintfUnbounded.c:
+    complete
+    .text       start:0x0202e074 end:0x0202e094
+
 src/calls/OS_SNPrintf_0202e094.c:
     complete
     .text       start:0x0202e094 end:0x0202e0ae
@@ -6393,6 +6489,14 @@ src/calls/BindModelAnimations.c:
     complete
     .text       start:0x0202e868 end:0x0202ea00
 
+src/calls/InitSharedRecordThenTexture.c:
+    complete
+    .text       start:0x0202ea00 end:0x0202ea4c
+
+src/calls/PrepareTextureAndDispatch.c:
+    complete
+    .text       start:0x0202ea4c end:0x0202ea8c
+
 src/calls/DispatchResourceLoad.c:
     complete
     .text       start:0x0202ea8c end:0x0202eb08
@@ -6405,9 +6509,21 @@ src/calls/InitModelInstance.c:
     complete
     .text       start:0x0202eb98 end:0x0202ed0c
 
+src/calls/InitSharedRecordAndDispatch.c:
+    complete
+    .text       start:0x0202ed0c end:0x0202ed50
+
+src/calls/InitSharedRecordAndDispatchAlt.c:
+    complete
+    .text       start:0x0202ed50 end:0x0202ed94
+
 src/calls/func_0202edd0.c:
     complete
     .text       start:0x0202edd0 end:0x0202edec
+
+src/calls/InitSharedRecordAndDispatchZero.c:
+    complete
+    .text       start:0x0202edec end:0x0202ee30
 
 src/calls/DetachObjectTreeNode.c:
     complete
@@ -6837,9 +6953,49 @@ src/calls/InsertNodeByPriority.c:
     complete
     .text       start:0x020356e0 end:0x02035760
 
+src/calls/InitActorRegistry.c:
+    complete
+    .text       start:0x02035760 end:0x02035788
+
+src/calls/ShutdownActorRegistry.c:
+    complete
+    .text       start:0x02035788 end:0x020357c8
+
+src/calls/OpenActorModelGroupResource.c:
+    complete
+    .text       start:0x020357c8 end:0x020357ec
+
+src/calls/ApplyRecordTableEntry.c:
+    complete
+    .text       start:0x020358ac end:0x020358c4
+
+src/calls/ApplyRecordTableEntry2.c:
+    complete
+    .text       start:0x020358c4 end:0x020358dc
+
 src/calls/ActorEntry_SetModel.c:
     complete
     .text       start:0x020358dc end:0x02035944
+
+src/calls/ActivateEntrySubobject.c:
+    complete
+    .text       start:0x02035944 end:0x020359ac
+
+src/calls/ApplyRecordTableEntry3.c:
+    complete
+    .text       start:0x020359ac end:0x020359c4
+
+src/calls/ApplyRecordTableEntry4.c:
+    complete
+    .text       start:0x020359e8 end:0x02035a00
+
+src/calls/ForwardType7RecordSpanFromOffset14.c:
+    complete
+    .text       start:0x02035a00 end:0x02035a0c
+
+src/calls/ApplyRecordTableEntry5.c:
+    complete
+    .text       start:0x02035a0c end:0x02035a2c
 
 src/calls/ActorSlot_IsLinked.c:
     complete
@@ -6953,6 +7109,10 @@ src/calls/FindWorldCollisionEntry.c:
     complete
     .text       start:0x0203655c end:0x02036578
 
+src/calls/ProjectRecordPositionDownward.c:
+    complete
+    .text       start:0x02036578 end:0x0203659c
+
 src/calls/PushVramState.c:
     complete
     .text       start:0x020365b8 end:0x02036604
@@ -6981,13 +7141,29 @@ src/calls/func_020367d4.c:
     complete
     .text       start:0x020367d4 end:0x020367e4
 
+src/calls/ShutdownRecordSlotByIndex.c:
+    complete
+    .text       start:0x020368b8 end:0x020368dc
+
 src/calls/Obj_ConditionalShutdown.c:
     complete
     .text       start:0x020368dc end:0x02036938
 
+src/calls/TransitionRecordSlot.c:
+    complete
+    .text       start:0x02036938 end:0x02036958
+
 src/calls/ActorSlot_AddToWorld.c:
     complete
     .text       start:0x02036958 end:0x02036988
+
+src/calls/ClearRecordSlotFlag.c:
+    complete
+    .text       start:0x02036988 end:0x020369a8
+
+src/calls/SetActorExtraPosition.c:
+    complete
+    .text       start:0x020369dc end:0x02036a08
 
 src/calls/ActorSlot_Draw.c:
     complete
@@ -6996,6 +7172,10 @@ src/calls/ActorSlot_Draw.c:
 src/calls/ActorSlot_AdvanceAnimation.c:
     complete
     .text       start:0x02036a48 end:0x02036a84
+
+src/calls/SetRecordSlotValue.c:
+    complete
+    .text       start:0x02036a84 end:0x02036aa4
 
 src/calls/Obj_SetWord1C8.c:
     complete
@@ -7693,9 +7873,17 @@ src/calls/SweepObbAgainstObb.c:
     complete
     .text       start:0x02047b54 end:0x02047cfe
 
+src/calls/CopyInitializedRecord13.c:
+    complete
+    .text       start:0x02047d00 end:0x02047d40
+
 src/calls/SubtractVecFx32Out.c:
     complete
     .text       start:0x02047d40 end:0x02047d70
+
+src/calls/DotProductForward.c:
+    complete
+    .text       start:0x02047d70 end:0x02047dc0
 
 src/calls/PXI_Init_02047dc0.c:
     complete

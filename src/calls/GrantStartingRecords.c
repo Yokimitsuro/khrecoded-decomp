@@ -32,7 +32,7 @@ extern int AcquireRecordSlot(int slot, int param);
 extern BOOL func_02051e10(s32 slot);
 extern RecordC *GetRecordTableCEntry(s32 index);
 extern RecordB *GetRecordTableBEntry(s32 index);
-extern s32 func_02027630(u32 handle);
+extern s32 SetSharedFlagBits(u32 handle);
 extern BOOL EquipRecordList(s32 *recordIndices, s32 count);
 extern u32 func_0202a9e4(u32 range);
 extern s32 PickRandomRecordInCategory(s32 category, s32 requiredTag);
@@ -74,7 +74,7 @@ void GrantStartingRecords(void)
         if (recordIndex == -1) {
             continue;
         }
-        func_02027630(recordIndex);
+        SetSharedFlagBits(recordIndex);
         if (tag == -1 && i >= 6) {
             RecordB *record = GetRecordTableBEntry(recordIndex);
             if (record->tag != -1) {
@@ -84,28 +84,28 @@ void GrantStartingRecords(void)
     }
     for (i = 0; i < 5; i++) {
         recordIndex = i;
-        func_02027630(recordIndex);
+        SetSharedFlagBits(recordIndex);
         if (i == 0) {
             EquipRecordList(&recordIndex, 1);
         }
     }
     for (i = 0; i < 5; i++) {
         recordIndex = i + 0x10;
-        func_02027630(recordIndex);
+        SetSharedFlagBits(recordIndex);
         if (i == 0) {
             EquipRecordList(&recordIndex, 1);
         }
     }
     for (i = 0; i < 0x21; i++) {
         recordIndex = i + 0x20;
-        func_02027630(recordIndex);
+        SetSharedFlagBits(recordIndex);
         if (i == 0) {
             EquipRecordList(&recordIndex, 1);
         }
     }
     for (i = 0; i < 11; i++) {
         recordIndex = data_020534b8[i];
-        func_02027630(recordIndex);
+        SetSharedFlagBits(recordIndex);
         if (i == 0) {
             EquipRecordList(&recordIndex, 1);
         }
@@ -113,7 +113,7 @@ void GrantStartingRecords(void)
     for (i = 3; i < 20; i++) {
         recordIndex = PickRandomRecordInCategory(i + 1, func_0202a9e4(100) < 70 ? tag : -1);
         if (recordIndex != -1) {
-            func_02027630(recordIndex);
+            SetSharedFlagBits(recordIndex);
         }
     }
     for (i = 0; i < 20; i++) {

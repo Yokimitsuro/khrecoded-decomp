@@ -37,7 +37,7 @@ typedef struct {
 } NNSG3dResTex;
 
 extern void func_0202c6a4(int useDefault);
-extern s32 func_0202d0ac(void *resource, void *heap);
+extern s32 ValidateResourceTagAndDispatch(void *resource, void *heap);
 extern NNSG3dResTex *NNS_G3dGetTex(void *file);
 
 static inline void *GetResDataByIdx(const NNSG3dResDict *dict, u32 idx)
@@ -61,7 +61,7 @@ int Tex0_GetTexPlttParams(u32 *out, void *file, int setup)
 
     if (setup) {
         func_0202c6a4(0);
-        func_0202d0ac(file, 0);
+        ValidateResourceTagAndDispatch(file, 0);
         func_0202c6a4(1);
     }
     tex = NNS_G3dGetTex(file);

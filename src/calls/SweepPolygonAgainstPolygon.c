@@ -32,7 +32,7 @@ typedef struct SweepResult {
     u8 pad_33;
 } SweepResult;
 
-extern SweepResult func_02047d00(void);
+extern SweepResult CopyInitializedRecord13(void);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern fx32 GetProjectedInterval(CollisionPolygon *shape, const VecFx32 *axis, fx32 *center);
 extern BOOL SweepIntervalOnAxis(fx32 extent, fx32 distance, const VecFx32 *axis, u8 feature, const VecFx32 *velocity, SweepResult *result, s64 *outTime);
@@ -49,7 +49,7 @@ static inline VecFx32 NormalizedVec(const VecFx32 *vec)
 
 BOOL SweepPolygonAgainstPolygon(CollisionPolygon **refA, CollisionPolygon **refB, void *contact, u32 flags, const VecFx32 *velocity)
 {
-    SweepResult result = func_02047d00();
+    SweepResult result = CopyInitializedRecord13();
     CollisionPolygon *polygons[2];
     CollisionPolygon *polyA;
     CollisionPolygon *polyB;

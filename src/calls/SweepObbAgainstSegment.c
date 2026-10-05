@@ -40,9 +40,9 @@ extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int FX_Mul(int left, int right);
 extern BOOL TestCapsuleAgainstBox(SegmentShapeRef *segmentRef, OrientedBox **boxRef, void *contact, u32 flags);
 extern VecFx32 GetSegmentHalfDelta(const CollisionSegment *segment);
-extern SweepResult func_02047d00(void);
+extern SweepResult CopyInitializedRecord13(void);
 extern VecFx32 SubtractVecFx32Out(const VecFx32 *a, const VecFx32 *b);
-extern BOOL func_02047d70(fx32 extent, const VecFx32 *diff, const VecFx32 *axis, u8 feature, const VecFx32 *velocity, SweepResult *result, s64 *outTime);
+extern BOOL DotProductForward(fx32 extent, const VecFx32 *diff, const VecFx32 *axis, u8 feature, const VecFx32 *velocity, SweepResult *result, s64 *outTime);
 extern fx32 PXI_Init_02047dc0(fx32 value);
 extern VecFx32 AddVecFx32Out(const VecFx32 *a, const VecFx32 *b);
 extern VecFx32 NegateVecFx32Out(const VecFx32 *v);
@@ -64,7 +64,7 @@ BOOL SweepObbAgainstSegment(OrientedBox **boxRef, SegmentShapeRef *segmentRef, v
         return TestCapsuleAgainstBox(&swappedRef, boxRef, contact, ~flags & 1);
     }
     {
-        SweepResult result = func_02047d00();
+        SweepResult result = CopyInitializedRecord13();
         VecFx32 axis;
         VecFx32 center = AverageVecs(2, &segment->start, &segment->end);
         VecFx32 diff = SubtractVecFx32Out(&box->center, &center);
@@ -76,7 +76,7 @@ BOOL SweepObbAgainstSegment(OrientedBox **boxRef, SegmentShapeRef *segmentRef, v
         for (i = 0; i < 3; i++) {
             axis = box->axes[i];
             extent = box->halfExtents[i];
-            if (!func_02047d70(extent + AbsDotProduct(&dir, &axis), &diff, &axis, 0, velocity, &result, NULL)) {
+            if (!DotProductForward(extent + AbsDotProduct(&dir, &axis), &diff, &axis, 0, velocity, &result, NULL)) {
                 return FALSE;
             }
         }
@@ -90,7 +90,7 @@ BOOL SweepObbAgainstSegment(OrientedBox **boxRef, SegmentShapeRef *segmentRef, v
                         extent += PXI_Init_02047dc0(FX_Mul(VEC_DotProduct(&axis, &box->axes[j]), box->halfExtents[j]));
                     }
                 }
-                if (!func_02047d70(extent, &diff, &axis, 0, velocity, &result, NULL)) {
+                if (!DotProductForward(extent, &diff, &axis, 0, velocity, &result, NULL)) {
                     return FALSE;
                 }
             }

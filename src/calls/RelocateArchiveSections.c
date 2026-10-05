@@ -6,7 +6,7 @@ typedef struct RelocState {
     int sections[8];
 } RelocState;
 
-extern void func_0202d0ac(void *entry, int flags);
+extern void ValidateResourceTagAndDispatch(void *entry, int flags);
 
 /* Turns eight relative section offsets into pointers. */
 void RelocateArchiveSections(RelocState *state, int flags, int enableDispatch)
@@ -26,7 +26,7 @@ void RelocateArchiveSections(RelocState *state, int flags, int enableDispatch)
                 ((int *)state->sections[i])[entryIndex + 1] =
                     (int)((char *)state + ((int *)state->sections[i])[entryIndex + 1]);
                 if (enableDispatch != 0 && state->tag == 0x4850414b && i == 7) {
-                    func_0202d0ac((void *)((int *)state->sections[i])[entryIndex + 1], flags);
+                    ValidateResourceTagAndDispatch((void *)((int *)state->sections[i])[entryIndex + 1], flags);
                 }
                 entryIndex = entryIndex + 1;
             }

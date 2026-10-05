@@ -12,7 +12,7 @@ typedef struct PanelState {
 extern PanelState *data_0205fe24;
 extern void *NNSi_FndAllocFromDefaultHeap(int size);
 extern void MI_CpuFill8(void *dst, int value, int size);
-extern void func_020282d0(void);
+extern void InitPanelResources(void);
 extern void RegisterPanelCallbacks(void);
 
 void InitPanelState(void) {
@@ -24,7 +24,7 @@ void InitPanelState(void) {
         MI_CpuFill8(panel, 0, 200);
         panel->field_a0 = -8;
         panel->field_8c = -1;
-        func_020282d0();
+        InitPanelResources();
         RegisterPanelCallbacks();
         panel->state = 3;
     }

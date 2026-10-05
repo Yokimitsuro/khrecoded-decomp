@@ -70,7 +70,7 @@ extern int ScriptVm_RunFrame(ScriptVm *vm);
 extern void G2x_SetBlendBrightness_(u32 reg, int planes, int value);
 extern void SetBrightnessAndSyncMain(s32 brightness);
 extern void SetSecondaryBrightness(s32 brightness);
-extern int func_0202690c(ScriptVm *vm, s32 arg);
+extern int ScriptCmd_TurnHandler(ScriptVm *vm, s32 arg);
 extern void func_02026974(ScriptVm *vm, s32 index);
 extern void MIi_CpuClear32(u32 value, void *dest, u32 size);
 
@@ -121,7 +121,7 @@ void ScriptVm_FinishSkip(ScriptVm *vm)
 
     for (i = 0; i < 10; i++) {
         if (frame->slots[i + 1].fn != NULL) {
-            if (frame->slots[i + 1].fn == func_0202690c) {
+            if (frame->slots[i + 1].fn == ScriptCmd_TurnHandler) {
                 func_02026974(vm, frame->slots[i + 1].arg);
             }
             frame->slots[i + 1].fn = NULL;
@@ -130,7 +130,7 @@ void ScriptVm_FinishSkip(ScriptVm *vm)
     }
 
     if (frame->slots[0].fn != NULL) {
-        if (frame->slots[0].fn == func_0202690c) {
+        if (frame->slots[0].fn == ScriptCmd_TurnHandler) {
             func_02026974(vm, frame->slots[0].arg);
         }
         frame->slots[0].fn = NULL;

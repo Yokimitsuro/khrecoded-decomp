@@ -69,9 +69,9 @@ extern BOOL func_020405c8(SegmentShapeRef *segmentRef, CylinderShapeRef *cylinde
 extern VecFx32 ComputeVectorRejection(const VecFx32 *v, const VecFx32 *axis);
 extern VecFx32 GetSegmentHalfDirection(const CollisionCylinder *cylinder);
 extern BOOL ResolveSweepContact(SweepResult *result, void *contact, u32 flags, const VecFx32 *velocity);
-extern SweepResult func_02047d00(void);
+extern SweepResult CopyInitializedRecord13(void);
 extern VecFx32 SubtractVecFx32Out(const VecFx32 *a, const VecFx32 *b);
-extern BOOL func_02047d70(fx32 extent, const VecFx32 *diff, const VecFx32 *axis, u8 feature, const VecFx32 *velocity, SweepResult *result, s64 *outTime);
+extern BOOL DotProductForward(fx32 extent, const VecFx32 *diff, const VecFx32 *axis, u8 feature, const VecFx32 *velocity, SweepResult *result, s64 *outTime);
 extern fx32 PXI_Init_02047dc0(fx32 value);
 extern VecFx32 AddVecFx32Out(const VecFx32 *a, const VecFx32 *b);
 extern VecFx32 NegateVecFx32Out(const VecFx32 *v);
@@ -115,7 +115,7 @@ BOOL SweepSegmentAgainstCylinder(SegmentShapeRef *segmentRef, CylinderShapeRef *
     }
     {
         BOOL isCapsule = cylinderRef->kind == 3;
-        SweepResult result = func_02047d00();
+        SweepResult result = CopyInitializedRecord13();
         VecFx32 axis;
         VecFx32 centerA = AverageVecs(2, &segment->start, &segment->end);
         VecFx32 centerB = AverageVecs(2, &cylinder->start, &cylinder->end);
@@ -145,7 +145,7 @@ BOOL SweepSegmentAgainstCylinder(SegmentShapeRef *segmentRef, CylinderShapeRef *
         } else {
             VEC_Normalize(&cross, &axis);
         }
-        if (!func_02047d70(cylinder->radius, &delta, &axis, 0, velocity, &result, NULL)) {
+        if (!DotProductForward(cylinder->radius, &delta, &axis, 0, velocity, &result, NULL)) {
             return FALSE;
         }
         {
@@ -201,7 +201,7 @@ BOOL SweepSegmentAgainstCylinder(SegmentShapeRef *segmentRef, CylinderShapeRef *
                             extent = ComputeDirectionalExtent(cylinder, &dirB, halfLengthB * 2, &axis);
                         }
                     }
-                    if (!func_02047d70(extent + AbsDotProduct(&halfA, &axis), &delta, &axis, 2, velocity, &result, NULL)) {
+                    if (!DotProductForward(extent + AbsDotProduct(&halfA, &axis), &delta, &axis, 2, velocity, &result, NULL)) {
                         return FALSE;
                     }
                 }
@@ -230,7 +230,7 @@ BOOL SweepSegmentAgainstCylinder(SegmentShapeRef *segmentRef, CylinderShapeRef *
                         if ((a == 0 ? -1 : 1) * VEC_DotProduct(&axis, &segment->direction) < 0 &&
                             (j == 0 ? -1 : 1) * VEC_DotProduct(&axis, &cylinder->direction) > 0) {
                             VEC_Normalize(&axis, &axis);
-                            if (!func_02047d70(cylinder->radius, &diff, &axis, 2, velocity, &result, NULL)) {
+                            if (!DotProductForward(cylinder->radius, &diff, &axis, 2, velocity, &result, NULL)) {
                                 return FALSE;
                             }
                         }
@@ -241,7 +241,7 @@ BOOL SweepSegmentAgainstCylinder(SegmentShapeRef *segmentRef, CylinderShapeRef *
 
                 axis = dirB;
                 extent = AbsDotProduct(&halfA, &axis);
-                if (!func_02047d70(extent + halfLengthB, &delta, &axis, 0, velocity, &result, NULL)) {
+                if (!DotProductForward(extent + halfLengthB, &delta, &axis, 0, velocity, &result, NULL)) {
                     return FALSE;
                 }
             }
