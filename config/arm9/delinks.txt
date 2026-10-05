@@ -4725,15 +4725,31 @@ libs/nns/snd/calls/OnDataEnd.c:
     complete
     .text       start:0x02020cec end:0x02020e28
 
+libs/nns/snd/calls/SetupStreamFunction.c:
+    complete
+    .text       start:0x02021630 end:0x02021698
+
+libs/nns/snd/calls/OpenFileStream.c:
+    complete
+    .text       start:0x02021698 end:0x02021790
+
+libs/nns/snd/calls/CloseFileStream.c:
+    complete
+    .text       start:0x02021790 end:0x020217a0
+
 libs/nns/snd/calls/ReadFileStream.c:
     complete
     .text       start:0x020217a0 end:0x020217d8
+
+libs/nns/snd/calls/CancelFileStream.c:
+    complete
+    .text       start:0x020217d8 end:0x020217e8
 
 libs/nns/snd/calls/OpenMemoryStream.c:
     complete
     .text       start:0x020217e8 end:0x02021810
 
-src/auto/func_02021810.c:
+libs/nns/snd/auto/CloseMemoryStream.c:
     complete
     .text       start:0x02021810 end:0x02021814
 
@@ -4741,9 +4757,13 @@ libs/nns/snd/calls/ReadMemoryStream.c:
     complete
     .text       start:0x02021814 end:0x02021830
 
-src/auto/func_02021830.c:
+libs/nns/snd/auto/CancelMemoryStream.c:
     complete
     .text       start:0x02021830 end:0x02021834
+
+libs/nns/snd/calls/StrmThread.c:
+    complete
+    .text       start:0x02021834 end:0x02021888
 
 libs/nns/snd/auto/NNSi_SndSeqArcGetSeqCount.c:
     complete

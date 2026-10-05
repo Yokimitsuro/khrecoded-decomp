@@ -227,6 +227,9 @@ extern void OS_CreateThread(
 extern void OS_WakeupThreadDirect(void *thread);
 extern void OS_WakeupThread(OSThreadQueue *queue);
 extern void FS_InitFile(FSFile *file);
+extern BOOL FS_CloseFile(FSFile *file);
+extern void FS_CancelFile(FSFile *file);
+extern BOOL FS_SetSeekCache(FSFile *file, void *buffer, u32 bufferSize);
 extern void NNS_SndStrmInit(void *stream);
 extern BOOL NNS_SndStrmSetup(
     NNSSndStrm *stream,
@@ -244,9 +247,15 @@ extern void NNS_SndStrmSetChannelPan(
 extern void NNS_SndStrmFreeChannel(NNSSndStrm *stream);
 extern void CreateThread(NNSSndStrmThread *thread, u32 threadPriority);
 extern void StrmThread(void *argument);
+extern void OS_SleepThread(OSThreadQueue *queue);
 extern const NNSSndArcStrmPlayerInfo *NNS_SndArcGetStrmPlayerInfo(
     int playerNo);
 extern const NNSSndArcStrmInfo *NNS_SndArcGetStrmInfo(int streamNo);
+extern u32 NNS_SndArcGetFileOffset(u32 fileId);
+extern FSFileID NNS_SndArcGetFileID(void);
+extern const char *NNSi_SndArcGetFilePath(void);
+extern void *NNSi_SndArcGetSeekCacheBuffer(void);
+extern u32 NNSi_SndArcGetSeekCacheSize(void);
 extern void ForceStopStrm_2(NNSSndStrmPlayer *player);
 extern void ShutdownStreamPlayer(NNSSndStrmPlayer *player);
 extern NNSSndStrmPlayer *AllocPlayer(
@@ -272,7 +281,25 @@ extern void RemoveCommandByPlayer(
     const NNSSndStrmPlayer *player);
 extern NNSSndStrmCommand *AllocCommandBuffer(void);
 extern void FreeCommandBuffer(NNSSndStrmCommand *command);
+extern NNSSndStrmCommand *ReadCommandBuffer(NNSFndList *commandList);
 extern void OnDataEnd(NNSSndStrmPlayer *player);
+extern void NNSi_SndArcStrm_MakeWaveData(NNSSndStrmCommand *command);
+extern BOOL OpenFileStream(NNSSndStrmPlayer *player, u32 fileId);
+extern void CloseFileStream(NNSSndStrmPlayer *player);
+extern int ReadFileStream(
+    NNSSndStrmPlayer *player,
+    void *destination,
+    u32 size,
+    u32 offset);
+extern void CancelFileStream(NNSSndStrmPlayer *player);
+extern BOOL OpenMemoryStream(NNSSndStrmPlayer *player, u32 fileId);
+extern void CloseMemoryStream(NNSSndStrmPlayer *player);
+extern int ReadMemoryStream(
+    NNSSndStrmPlayer *player,
+    void *destination,
+    u32 size,
+    u32 offset);
+extern void CancelMemoryStream(NNSSndStrmPlayer *player);
 extern void NNSi_SndFaderInit(NNSSndFader *fader);
 extern void NNSi_SndFaderSet(
     NNSSndFader *fader,
