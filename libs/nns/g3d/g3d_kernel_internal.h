@@ -17,6 +17,7 @@ typedef short fx16;
 #define NNS_G3D_ANMOBJ_MAPDATA_EXIST 0x0100
 #define NNS_G3D_RENDEROBJ_FLAG_HINT_OBSOLETE 0x00000010
 #define FX32_ONE 0x1000
+#define FX32_SHIFT 12
 #define NNS_GFD_TEXKEY_ADDR_SHIFT 3
 #define REG_G3_TEXIMAGE_PARAM_TGEN_MASK 0xc0000000
 #define REG_G3_TEXIMAGE_PARAM_FT_MASK 0x00080000
@@ -39,6 +40,18 @@ typedef struct NNSG3dResDataBlockHeader_ {
     };
     u32 size;
 } NNSG3dResDataBlockHeader;
+
+typedef struct NNSG3dResFileHeader_ {
+    union {
+        char signature[4];
+        u32 sigVal;
+    };
+    u16 byteOrder;
+    u16 version;
+    u32 fileSize;
+    u16 headerSize;
+    u16 dataBlocks;
+} NNSG3dResFileHeader;
 
 typedef struct NNSG3dResDictTreeNode_ {
     u8 refBit;
@@ -102,6 +115,38 @@ typedef union NNSG3dResName_ {
     char name[16];
     u32 val[4];
 } NNSG3dResName;
+
+typedef struct NNSG3dResTexPatAnm_ {
+    NNSG3dResAnmHeader anmHeader;
+    u16 numFrame;
+    u8 numTex;
+    u8 numPltt;
+    u16 ofsTexName;
+    u16 ofsPlttName;
+    NNSG3dResDict dict;
+} NNSG3dResTexPatAnm;
+
+typedef struct NNSG3dResTexPatAnmFV_ {
+    u16 idxFrame;
+    u8 idTex;
+    u8 idPltt;
+} NNSG3dResTexPatAnmFV;
+
+typedef struct NNSG3dResDictTexPatAnmData_ {
+    u16 numFV;
+    u16 flag;
+    fx16 ratioDataFrame;
+    u16 offset;
+} NNSG3dResDictTexPatAnmData;
+
+typedef struct NNSG3dResDictAnmSetData_ {
+    u32 offset;
+} NNSG3dResDictAnmSetData;
+
+typedef struct NNSG3dResAnmSet_ {
+    NNSG3dResDataBlockHeader header;
+    NNSG3dResDict dict;
+} NNSG3dResAnmSet;
 
 typedef struct NNSG3dResDictTexData_ {
     u32 texImageParam;

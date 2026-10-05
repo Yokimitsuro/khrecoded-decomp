@@ -3937,23 +3937,39 @@ libs/nns/g3d/auto/NNS_G3dGetTex.c:
     complete
     .text       start:0x0201ac84 end:0x0201acc4
 
-libs/nns/g3d/auto/func_0201acc4.c:
+libs/nns/g3d/auto/NNS_G3dGetAnmByIdx.c:
     complete
     .text       start:0x0201acc4 end:0x0201ad20
 
-libs/nns/g3d/calls/func_0201ad70.c:
+libs/nns/g3d/auto/NNSi_G3dGetTexPatAnmTexNameByIdx.c:
+    complete
+    .text       start:0x0201ad20 end:0x0201ad48
+
+libs/nns/g3d/auto/NNSi_G3dGetTexPatAnmPlttNameByIdx.c:
+    complete
+    .text       start:0x0201ad48 end:0x0201ad70
+
+libs/nns/g3d/calls/NNSi_G3dGetTexPatAnmFV.c:
     complete
     .text       start:0x0201ad70 end:0x0201ade4
 
-libs/nns/g3d/auto/func_0201ade4.c:
+libs/nns/g3d/auto/NNSi_G3dGetTexPatAnmDataByIdx.c:
     complete
     .text       start:0x0201ade4 end:0x0201ae18
 
-libs/nns/g3d/calls/func_0201ae94.c:
+libs/nns/g3d/calls/NNSi_G3dAnmObjInitNsBca.c:
+    complete
+    .text       start:0x0201ae18 end:0x0201ae94
+
+libs/nns/g3d/calls/NNSi_G3dAnmCalcNsBca.c:
     complete
     .text       start:0x0201ae94 end:0x0201aed0
 
-libs/nns/g3d/calls/func_0201af64.c:
+libs/nns/g3d/calls/getMdlTrans_.c:
+    complete
+    .text       start:0x0201aed0 end:0x0201af64
+
+libs/nns/g3d/calls/getMdlScale_.c:
     complete
     .text       start:0x0201af64 end:0x0201aff4
 

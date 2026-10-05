@@ -602,5 +602,14 @@
   "libs/nns/g3d/auto/AccumulateVec3Scaled.c": "dsi/1.1",
   "libs/nns/g3d/calls/NNS_G3dGetCurrentMtx.c": "dsi/1.1",
   "libs/nns/g3d/calls/NNS_G3dResDefaultRelease.c": "dsi/1.1",
-  "libs/nns/g3d/calls/NNS_G3dScrPosToWorldLine.c": "dsi/1.1"
+  "libs/nns/g3d/calls/NNS_G3dScrPosToWorldLine.c": "dsi/1.1",
+  "libs/nns/g3d/auto/NNS_G3dGetAnmByIdx.c": "dsi/1.1",
+  "libs/nns/g3d/auto/NNSi_G3dGetTexPatAnmTexNameByIdx.c": "dsi/1.1",
+  "libs/nns/g3d/auto/NNSi_G3dGetTexPatAnmPlttNameByIdx.c": "dsi/1.1",
+  "libs/nns/g3d/calls/NNSi_G3dGetTexPatAnmFV.c": "dsi/1.1",
+  "libs/nns/g3d/auto/NNSi_G3dGetTexPatAnmDataByIdx.c": "dsi/1.1",
+  "libs/nns/g3d/calls/NNSi_G3dAnmObjInitNsBca.c": "dsi/1.1",
+  "libs/nns/g3d/calls/NNSi_G3dAnmCalcNsBca.c": "dsi/1.1",
+  "libs/nns/g3d/calls/getMdlTrans_.c": "dsi/1.1",
+  "libs/nns/g3d/calls/getMdlScale_.c": "dsi/1.1"
 }

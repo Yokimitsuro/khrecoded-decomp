@@ -12,7 +12,7 @@ typedef struct NNSG3dRenderState {
     JointScaleCallback joint_scale_callback;
 } NNSG3dRenderState;
 
-extern NNSG3dRenderState *data_0205ab60;
+extern NNSG3dRenderState *NNS_G3dRS;
 
 extern void func_02039a68(void *model, void *record, u32 packed,
                           u32 coordinate, u32 *result, u32 *scratch);
@@ -53,7 +53,7 @@ void func_01ffd934(u32 *result, u32 *input, s32 index)
     }
 
     callback_flags = (*result & 1) ? 4 : 0;
-    state = data_0205ab60;
+    state = NNS_G3dRS;
     state->joint_scale_callback(result, scratch, state->render_context,
                                 callback_flags);
 }

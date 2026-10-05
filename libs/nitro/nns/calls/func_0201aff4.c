@@ -64,7 +64,7 @@ typedef struct NNSG3dRS {
     const NNSG3dResNodeInfo *pResNodeInfo;
 } NNSG3dRS;
 
-extern NNSG3dRS *data_0205ab60;
+extern NNSG3dRS *NNS_G3dRS;
 /* pivotUtil_[9][4] (g3d_nsbca_pivot_table.c): the four off-pivot cells of a pivot-compressed
  * rotation, read one column at a time */
 extern const u8 data_02053108[];
@@ -104,9 +104,9 @@ void func_0201aff4(NNSG3dJntAnmResult *pResult)
     const NNSG3dResNodeData *pNd;
     const u8 *p;
 
-    idxNode = *(data_0205ab60->c + 1);
+    idxNode = *(NNS_G3dRS->c + 1);
 
-    pNd = NNS_G3dGetNodeDataByIdx(data_0205ab60->pResNodeInfo, idxNode);
+    pNd = NNS_G3dGetNodeDataByIdx(NNS_G3dRS->pResNodeInfo, idxNode);
     p = (const u8 *)pNd + sizeof(*pNd);
 
     if (!(pNd->flag & 1)) {

@@ -1,9 +1,8 @@
 #ifndef G3D_GLBSTATE_INTERNAL_H
 #define G3D_GLBSTATE_INTERNAL_H
 
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int fx32;
+#include "libs/nns/g3d/g3d_kernel_internal.h"
+
 typedef long long fx64;
 typedef long long fx64c;
 
