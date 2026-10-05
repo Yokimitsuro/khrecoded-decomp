@@ -1,5 +1,5 @@
-extern int func_0202d460();
+extern int SetPackedBit();
 
 int func_ov036_020c27dc(int arg0) {
-    return func_0202d460(arg0 + 0xc);
+    return SetPackedBit(arg0 + 0xc);
 }

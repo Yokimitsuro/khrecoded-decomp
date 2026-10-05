@@ -1,5 +1,5 @@
-extern int func_0202fdcc();
+extern int LinkNodeAtListHead();
 
 int func_020367c4(int arg0) {
-    return func_0202fdcc(arg0 + 0x10);
+    return LinkNodeAtListHead(arg0 + 0x10);
 }

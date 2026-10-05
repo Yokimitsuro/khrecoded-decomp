@@ -1,5 +1,5 @@
-extern int func_0202d488();
+extern int ClearPackedBit();
 
 int func_ov036_020c27ec(int arg0) {
-    return func_0202d488(arg0 + 0xc);
+    return ClearPackedBit(arg0 + 0xc);
 }

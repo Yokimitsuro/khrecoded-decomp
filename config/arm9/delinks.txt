@@ -4825,9 +4825,13 @@ libs/msl/c/calls/strnicmp.c:
     complete
     .text       start:0x02021bec end:0x02021c68
 
-src/auto/func_02021c68.c:
+src/calls/CompareByteStrings.c:
     complete
     .text       start:0x02021c68 end:0x02021ca8
+
+src/calls/CharCursor_Control.c:
+    complete
+    .text       start:0x02021de0 end:0x02021e58
 
 libs/msl/c/calls/strlen.c:
     complete
@@ -4861,15 +4865,15 @@ src/calls/func_02022570.c:
     complete
     .text       start:0x02022570 end:0x02022584
 
-src/auto/func_02022a4c.c:
+src/calls/Utf16Length.c:
     complete
     .text       start:0x02022a4c end:0x02022a68
 
-src/auto/func_02022a68.c:
+src/calls/Utf16Copy.c:
     complete
     .text       start:0x02022a68 end:0x02022a88
 
-src/auto/func_02022a88.c:
+src/calls/Utf16CopyPadded.c:
     complete
     .text       start:0x02022a88 end:0x02022ad8
 
@@ -5377,21 +5381,25 @@ src/calls/func_0202d410.c:
     complete
     .text       start:0x0202d410 end:0x0202d460
 
-src/auto/func_0202d460.c:
+src/calls/SetPackedBit.c:
     complete
     .text       start:0x0202d460 end:0x0202d488
 
-src/auto/func_0202d488.c:
+src/calls/ClearPackedBit.c:
     complete
     .text       start:0x0202d488 end:0x0202d4b4
 
-src/auto/func_0202d4b4.c:
+src/calls/GetPackedBitMask.c:
     complete
     .text       start:0x0202d4b4 end:0x0202d4d8
 
-src/auto/func_0202d4d8.c:
+src/calls/ReadPackedBitField.c:
     complete
     .text       start:0x0202d4d8 end:0x0202d574
+
+src/calls/WritePackedBits.c:
+    complete
+    .text       start:0x0202d574 end:0x0202d620
 
 src/auto/func_0202d634.c:
     complete
@@ -5401,13 +5409,21 @@ src/auto/func_0202d64c.c:
     complete
     .text       start:0x0202d64c end:0x0202d664
 
-src/auto/func_0202d664.c:
+src/calls/FillByteBuffer.c:
     complete
     .text       start:0x0202d664 end:0x0202d692
 
-src/auto/func_0202d6c8.c:
+src/calls/FillWideBuffer.c:
+    complete
+    .text       start:0x0202d694 end:0x0202d6c6
+
+src/calls/CopyIntoByteBuffer.c:
     complete
     .text       start:0x0202d6c8 end:0x0202d6f8
+
+src/calls/CopyIntoWideBuffer.c:
+    complete
+    .text       start:0x0202d6f8 end:0x0202d72c
 
 src/calls/func_0202e094.c:
     complete
@@ -5457,11 +5473,11 @@ src/auto/func_0202fdc4.c:
     complete
     .text       start:0x0202fdc4 end:0x0202fdcc
 
-src/auto/func_0202fdcc.c:
+src/calls/LinkNodeAtListHead.c:
     complete
     .text       start:0x0202fdcc end:0x0202fde0
 
-src/auto/func_0202fde0.c:
+src/calls/UnlinkDoublyLinkedNode.c:
     complete
     .text       start:0x0202fde0 end:0x0202fe06
 
@@ -5469,9 +5485,25 @@ libs/nitro/fx/auto/VEC_DotProductFx16.c:
     complete
     .text       start:0x0202ffcc end:0x02030008
 
+src/calls/CrossProductFx32Fx16Out.c:
+    complete
+    .text       start:0x02030008 end:0x020300ac
+
+src/calls/AddScaledVector.c:
+    complete
+    .text       start:0x020301c0 end:0x02030218
+
 src/auto/func_02030580.c:
     complete
     .text       start:0x02030580 end:0x02030582
+
+src/calls/CopyShortTripleToIntTriple.c:
+    complete
+    .text       start:0x0203385c end:0x02033878
+
+src/calls/UnlinkNodeFromList.c:
+    complete
+    .text       start:0x02033c00 end:0x02033c50
 
 src/calls/func_02033c50.c:
     complete
@@ -5496,6 +5528,10 @@ src/calls/func_02035390.c:
 src/calls/func_020353b8.c:
     complete
     .text       start:0x020353b8 end:0x020353e4
+
+src/calls/InsertNodeByPriority.c:
+    complete
+    .text       start:0x020356e0 end:0x02035760
 
 src/calls/func_02036244.c:
     complete
@@ -5553,6 +5589,14 @@ src/auto/func_0203ac30.c:
     complete
     .text       start:0x0203ac30 end:0x0203ac34
 
+src/calls/InitHitQuery.c:
+    complete
+    .text       start:0x0203ac38 end:0x0203ac84
+
+src/calls/UpdateBoxAxisAlignedFlag.c:
+    complete
+    .text       start:0x0203b1d4 end:0x0203b204
+
 libs/msl/c/auto/func_0203b444.c:
     complete
     .text       start:0x0203b444 end:0x0203b450
@@ -5565,13 +5609,41 @@ libs/msl/c/auto/func_0203f248.c:
     complete
     .text       start:0x0203f248 end:0x0203f254
 
+src/calls/Sign.c:
+    complete
+    .text       start:0x0203f254 end:0x0203f26c
+
 src/auto/func_0203f2b0.c:
     complete
     .text       start:0x0203f2b0 end:0x0203f2b4
 
+src/calls/SignNonNegativeOne.c:
+    complete
+    .text       start:0x0203f2b4 end:0x0203f2c4
+
+src/calls/MultiplyShiftRight27.c:
+    complete
+    .text       start:0x0203f614 end:0x0203f624
+
+src/calls/MinFx32.c:
+    complete
+    .text       start:0x0203f9f4 end:0x0203fa00
+
 src/calls/func_0203fa00.c:
     complete
     .text       start:0x0203fa00 end:0x0203fa10
+
+src/calls/Square64.c:
+    complete
+    .text       start:0x0203fa40 end:0x0203fa4c
+
+src/calls/IsVecZero.c:
+    complete
+    .text       start:0x0203fc38 end:0x0203fc5c
+
+src/calls/SetFx32Pair.c:
+    complete
+    .text       start:0x02040544 end:0x0204055c
 
 src/calls/func_02040ca0.c:
     complete

@@ -1,5 +1,5 @@
-extern int func_0202fde0();
+extern int UnlinkDoublyLinkedNode();
 
 int func_020367d4(int arg0) {
-    return func_0202fde0(arg0 + 0x10);
+    return UnlinkDoublyLinkedNode(arg0 + 0x10);
 }
