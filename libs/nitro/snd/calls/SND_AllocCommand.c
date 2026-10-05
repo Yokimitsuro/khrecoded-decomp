@@ -41,7 +41,7 @@ enum {
 #define PushCommand(c, a0, a1, a2, a3) PushCommand_impl((c), (u32)(a0), (u32)(a1), (u32)(a2), (u32)(a3))
 
 extern BOOL IsCommandAvailable(void);
-extern SNDCommand *func_0200f45c(void);       /* AllocCommand */
+extern SNDCommand *PopSoundCommand(void);       /* AllocCommand */
 extern int SND_CountWaitingCommand(void);
 extern const SNDCommand *SND_RecvCommandReply(u32 flags);   /* SND_RecvCommandReply */
 extern BOOL SND_FlushCommand(u32 flags);         /* SND_FlushCommand */
@@ -57,7 +57,7 @@ SNDCommand *SND_AllocCommand(u32 flags)
     if (!IsCommandAvailable())
         return NULL;
 
-    command = func_0200f45c();
+    command = PopSoundCommand();
     if (command != NULL)
         return command;
 
@@ -68,7 +68,7 @@ SNDCommand *SND_AllocCommand(u32 flags)
         while (SND_RecvCommandReply(SND_COMMAND_NOBLOCK) != NULL) {
         }
 
-        command = func_0200f45c();
+        command = PopSoundCommand();
         if (command != NULL)
             return command;
     } else {
@@ -79,7 +79,7 @@ SNDCommand *SND_AllocCommand(u32 flags)
 
     do {
         (void)SND_RecvCommandReply(SND_COMMAND_BLOCK);
-        command = func_0200f45c();
+        command = PopSoundCommand();
     } while (command == NULL);
 
     return command;

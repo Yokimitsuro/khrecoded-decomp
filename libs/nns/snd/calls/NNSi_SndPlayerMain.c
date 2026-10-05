@@ -21,7 +21,7 @@ typedef volatile unsigned char vu8;
 
 #define FADER_SHIFT 8
 
-BOOL func_0200f2c8(u32 tag);
+BOOL sound_command_tag_reached(u32 tag);
 typedef enum {
     SND_DUTY_1_8,
     SND_DUTY_2_8,
@@ -210,7 +210,7 @@ void NNSi_SndPlayerMain (void)
         next = (NNSSndSeqPlayer *)NNS_FndGetNextListObject(&sSndSeqPlayerList, seqPlayer);
 
         if (!seqPlayer->startFlag) {
-            if (func_0200f2c8(seqPlayer->commandTag)) {
+            if (sound_command_tag_reached(seqPlayer->commandTag)) {
                 seqPlayer->startFlag = TRUE;
             }
         }

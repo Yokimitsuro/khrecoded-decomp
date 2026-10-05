@@ -1,12 +1,12 @@
 extern int ScriptVm_ReadOperandInt(void *a);
-extern int func_0204da5c(int x);
+extern int IsCachedSeqPlaying(int x);
 extern void ScriptCmd_SetElemField(void *a, int b);
 extern void func_0204d750(int x);
 extern unsigned char data_02055e00;
 
 int func_020266d0(void *obj, int arg1) {
     int r4 = ScriptVm_ReadOperandInt(obj);
-    if (func_0204da5c(r4) != 0) {
+    if (IsCachedSeqPlaying(r4) != 0) {
         ScriptCmd_SetElemField(obj, r4);
         return 0;
     }

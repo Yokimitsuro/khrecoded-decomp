@@ -5,11 +5,11 @@ typedef struct {
     VecFx32 row[3];
 } Basis3x3;
 
-extern void func_0204befc(const VecFx32 *vec, const Basis3x3 *basis, VecFx32 *out);
+extern void TransformVectorByBasis(const VecFx32 *vec, const Basis3x3 *basis, VecFx32 *out);
 
 void TransformVectorByBasisOut_0204960c(VecFx32 *dst, const VecFx32 *vec, const Basis3x3 *basis)
 {
     VecFx32 tmp;
-    func_0204befc(vec, basis, &tmp);
+    TransformVectorByBasis(vec, basis, &tmp);
     *dst = tmp;
 }

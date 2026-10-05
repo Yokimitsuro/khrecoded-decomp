@@ -9,11 +9,11 @@ typedef struct {
     s16 animSpeed;
 } ActorSlot;
 
-extern u32 func_02035648(ActorRegistry *registry, void *entity, fx32 frameStep);
+extern u32 Obj_UpdateQuadTreeLink(ActorRegistry *registry, void *entity, fx32 frameStep);
 extern ActorRegistry *data_0206083c;
 
 void ActorSlot_AdvanceAnimation(ActorSlot *slot, fx32 frameStep)
 {
-    func_02035648(data_0206083c, slot->entity,
+    Obj_UpdateQuadTreeLink(data_0206083c, slot->entity,
                                     (fx32)(((s64)frameStep * slot->animSpeed + 0x800) >> 12));
 }

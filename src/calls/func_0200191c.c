@@ -1,5 +1,5 @@
-extern int func_02001200();
+extern int GetLineWidth();
 
 int func_0200191c(int arg0) {
-    return func_02001200(arg0 + 0x10);
+    return GetLineWidth(arg0 + 0x10);
 }

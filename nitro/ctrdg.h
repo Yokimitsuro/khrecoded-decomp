@@ -18,4 +18,9 @@ typedef struct CTRDGLockByProc {
     OSIntrMode irq;
 } CTRDGLockByProc;
 
+typedef struct CTRDGWork {
+    vu16 subpInitialized;
+    u16 lockID;
+} CTRDGWork;
+
 #endif

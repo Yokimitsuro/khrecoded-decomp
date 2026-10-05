@@ -1,4 +1,4 @@
-extern int func_0200fc8c();
+extern int TP_Init();
 extern int func_0200fcd0();
 extern int func_0200fd4c();
 extern int func_0200fefc();
@@ -8,7 +8,7 @@ extern int TP_CheckError();
 void InitTouchPanel(void) {
     int buf[2];
 
-    func_0200fc8c();
+    TP_Init();
     if (func_0200fcd0(buf) != 0) {
         func_0200fd4c(buf);
     }

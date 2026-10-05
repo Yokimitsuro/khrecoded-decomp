@@ -1,7 +1,16 @@
 #ifndef NNSYS_G3D_H
 #define NNSYS_G3D_H
 
-#include "libs/nns/g3d/g3d_kernel_internal.h"
+#include "libs/nns/g3d/g3d_nsbca_internal.h"
+
+typedef struct NNSG3dResDictMdlSetData_ {
+    u32 offset;
+} NNSG3dResDictMdlSetData;
+
+typedef struct NNSG3dResMdlSet_ {
+    NNSG3dResDataBlockHeader header;
+    NNSG3dResDict dict;
+} NNSG3dResMdlSet;
 
 typedef enum NNSG3dMatAnmResultFlag_ {
     NNS_G3D_MATANM_RESULTFLAG_TEXMTX_SCALEONE = 0x00000001,
