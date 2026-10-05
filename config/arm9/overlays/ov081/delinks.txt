@@ -35,3 +35,7 @@ src/overlays/ov081/data/strings/Strings_ov081_020c5d30.c:
 src/overlays/ov081/data/strings/Strings_ov081_020c5d48.c:
     complete
     .data       start:0x020c5d48 end:0x020c5d60
+
+src/overlays/ov081/data/tables/gBgCharacterLoaders.c:
+    complete
+    .rodata     start:0x020c5c84 end:0x020c5c94

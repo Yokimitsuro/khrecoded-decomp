@@ -21,4 +21,4 @@ func_ov009_020a0af0 kind:function(thumb,size=0xac) addr:0x020a0af0
 func_ov009_020a0b9c kind:function(thumb,size=0x76) addr:0x020a0b9c
 func_ov009_020a0c14 kind:function(thumb,size=0x28) addr:0x020a0c14
 func_ov009_020a0c3c kind:function(thumb,size=0x8) addr:0x020a0c3c
-data_ov009_020a0c60 kind:data(any) addr:0x020a0c60
+gOv009ScriptObjectHandlers kind:data(any) addr:0x020a0c60

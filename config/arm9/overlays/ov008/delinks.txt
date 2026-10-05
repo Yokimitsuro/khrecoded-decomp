@@ -27,3 +27,7 @@ src/overlays/ov008/data/strings/Strings_ov008_020a13b4.c:
 src/overlays/ov008/data/strings/Strings_ov008_020a1428.c:
     complete
     .data       start:0x020a1428 end:0x020a1440
+
+src/overlays/ov008/data/tables/gOv008ScriptObjectCreationHandlers.c:
+    complete
+    .data       start:0x020a13e0 end:0x020a1400

@@ -50,7 +50,7 @@ func_ov010_020a1c94 kind:function(thumb,size=0xac) addr:0x020a1c94
 data_ov010_020a1d40 kind:data(any) addr:0x020a1d40
 data_ov010_020a1d4c kind:data(any) addr:0x020a1d4c
 data_ov010_020a1d7c kind:data(any) addr:0x020a1d7c
-data_ov010_020a1da0 kind:data(any) addr:0x020a1da0
+gOv010ScriptObjectCreationHandlers kind:data(any) addr:0x020a1da0
 sOv010_BaEfFnW7P2_020a1dc0 kind:data(any) addr:0x020a1dc0
 sOv010_CmDD_020a1dd0 kind:data(any) addr:0x020a1dd0
 data_ov010_020a1de0 kind:bss addr:0x020a1de0

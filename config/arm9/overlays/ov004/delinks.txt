@@ -27,3 +27,11 @@ src/overlays/ov004/auto/func_ov004_02062d78.c:
 src/overlays/ov004/data/strings/Strings_ov004_02064544.c:
     complete
     .data       start:0x02064544 end:0x02064564
+
+src/overlays/ov004/data/tables/gOv004Callbacks.c:
+    complete
+    .rodata     start:0x02063be0 end:0x02063bf0
+
+src/overlays/ov004/data/tables/gScrollTextHandlers.c:
+    complete
+    .data       start:0x02064520 end:0x02064530

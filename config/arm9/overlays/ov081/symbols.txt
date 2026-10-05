@@ -32,7 +32,7 @@ func_ov081_020c5c18 kind:function(thumb,size=0x14) addr:0x020c5c18
 func_ov081_020c5c2c kind:function(thumb,size=0x38) addr:0x020c5c2c
 data_ov081_020c5c64 kind:data(any) addr:0x020c5c64
 data_ov081_020c5c74 kind:data(any) addr:0x020c5c74
-data_ov081_020c5c84 kind:data(any) addr:0x020c5c84
+gBgCharacterLoaders kind:data(any) addr:0x020c5c84
 data_ov081_020c5c94 kind:data(any) addr:0x020c5c94
 data_ov081_020c5cc0 kind:data(any) addr:0x020c5cc0 ambiguous
 sOv081_UiMenuTutorialP2_020c5d04 kind:data(any) addr:0x020c5d04

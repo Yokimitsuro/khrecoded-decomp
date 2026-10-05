@@ -1295,5 +1295,15 @@
   "src/overlays/ov019/data/tables/gLinkedObjectCreationHandlers.c": "dsi/1.1",
   "src/overlays/ov033/data/tables/gResumeModeHandlers.c": "dsi/1.1",
   "src/overlays/ov052/data/tables/gWeaponAttachmentBoneNames.c": "dsi/1.1",
-  "src/overlays/ov059/data/tables/gBattleEffectPathParts.c": "dsi/1.1"
+  "src/overlays/ov059/data/tables/gBattleEffectPathParts.c": "dsi/1.1",
+  "src/overlays/ov004/data/tables/gOv004Callbacks.c": "dsi/1.1",
+  "src/overlays/ov004/data/tables/gScrollTextHandlers.c": "dsi/1.1",
+  "src/overlays/ov008/data/tables/gOv008ScriptObjectCreationHandlers.c": "dsi/1.1",
+  "src/overlays/ov009/data/tables/gOv009ScriptObjectHandlers.c": "dsi/1.1",
+  "src/overlays/ov010/data/tables/gOv010ScriptObjectCreationHandlers.c": "dsi/1.1",
+  "src/overlays/ov029/data/tables/gOv029SoundControlHandlers.c": "dsi/1.1",
+  "src/overlays/ov034/data/tables/gResultsScreenHandlers.c": "dsi/1.1",
+  "src/overlays/ov035/data/tables/gMovieSkipHandlers.c": "dsi/1.1",
+  "src/overlays/ov049/data/tables/gCameraMotionInitializers.c": "dsi/1.1",
+  "src/overlays/ov081/data/tables/gBgCharacterLoaders.c": "dsi/1.1"
 }

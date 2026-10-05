@@ -133,5 +133,5 @@ Naming is tracked separately and does not count as reconstructed DATA.
 
 | Metric | Complete | Total | % |
 |---|---:|---:|---:|
-| Reconstructed byte-exact DATA | **11,342** | **228,172** | **4.97%** |
-| Named DATA symbols | **602** | **2,379** | **25.30%** |
+| Reconstructed byte-exact DATA | **11,614** | **228,172** | **5.09%** |
+| Named DATA symbols | **612** | **2,379** | **25.73%** |

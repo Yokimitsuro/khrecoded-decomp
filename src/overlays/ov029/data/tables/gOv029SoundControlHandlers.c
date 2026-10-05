@@ -1,0 +1,21 @@
+#include "nitro/types.h"
+
+extern void func_ov029_020ba588(void);
+extern void func_ov029_020ba5c0(void); /* MarkSoundCtxActive */
+extern void func_ov029_020ba5e8(void);
+extern void func_ov029_020ba5fc(void);
+extern void func_ov029_020ba690(void); /* EnableOv029Sound */
+extern void func_ov029_020ba728(void); /* HandleOverlayExitFlag */
+extern void func_ov029_020ba788(void); /* DisableOv029Sound */
+extern void func_ov029_020ba844(void);
+
+void (*gOv029SoundControlHandlers[8])(void) = {
+    func_ov029_020ba588,
+    func_ov029_020ba5c0, /* MarkSoundCtxActive */
+    func_ov029_020ba5e8,
+    func_ov029_020ba5fc,
+    func_ov029_020ba690, /* EnableOv029Sound */
+    func_ov029_020ba728, /* HandleOverlayExitFlag */
+    func_ov029_020ba788, /* DisableOv029Sound */
+    func_ov029_020ba844,
+};

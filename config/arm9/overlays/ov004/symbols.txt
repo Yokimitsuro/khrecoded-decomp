@@ -41,11 +41,11 @@ func_ov004_02063a28 kind:function(arm,size=0xc4) addr:0x02063a28
 func_ov004_02063aec kind:function(arm,size=0xbc) addr:0x02063aec
 data_ov004_02063ba8 kind:data(any) addr:0x02063ba8
 data_ov004_02063bb0 kind:data(any) addr:0x02063bb0
-data_ov004_02063be0 kind:data(any) addr:0x02063be0
+gOv004Callbacks kind:data(any) addr:0x02063be0
 data_ov004_02063bf0 kind:data(any) addr:0x02063bf0
 data_ov004_02063c30 kind:data(any) addr:0x02063c30
 data_ov004_02063ec0 kind:data(any) addr:0x02063ec0
-data_ov004_02064520 kind:data(any) addr:0x02064520
+gScrollTextHandlers kind:data(any) addr:0x02064520
 data_ov004_02064530 kind:data(any) addr:0x02064530
 sOv004_SfSfP2_02064544 kind:data(any) addr:0x02064544
 sOv004_SfSffont10Nftr_02064550 kind:data(any) addr:0x02064550

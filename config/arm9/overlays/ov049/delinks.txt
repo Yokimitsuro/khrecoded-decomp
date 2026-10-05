@@ -6,3 +6,7 @@
 src/overlays/ov049/calls/func_ov049_020c4240.c:
     complete
     .text       start:0x020c4240 end:0x020c4248
+
+src/overlays/ov049/data/tables/gCameraMotionInitializers.c:
+    complete
+    .data       start:0x020c4700 end:0x020c4720

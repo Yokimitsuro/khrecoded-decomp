@@ -33,7 +33,7 @@ func_ov008_020a132c kind:function(thumb,size=0x10) addr:0x020a132c
 func_ov008_020a133c kind:function(thumb,size=0x10) addr:0x020a133c
 func_ov008_020a134c kind:function(thumb,size=0x66) addr:0x020a134c
 sOv008_BlockElevator_020a13b4 kind:data(any) addr:0x020a13b4
-data_ov008_020a13e0 kind:data(any) addr:0x020a13e0
+gOv008ScriptObjectCreationHandlers kind:data(any) addr:0x020a13e0
 data_ov008_020a1400 kind:data(any) addr:0x020a1400
 data_ov008_020a140e kind:data(any) addr:0x020a140e
 sOv008_FormatSFormat02d_020a1428 kind:data(any) addr:0x020a1428

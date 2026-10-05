@@ -35,3 +35,7 @@ src/overlays/ov010/data/strings/Strings_ov010_020a1dc0.c:
 src/overlays/ov010/data/strings/Strings_ov010_020a1dd0.c:
     complete
     .data       start:0x020a1dd0 end:0x020a1de0
+
+src/overlays/ov010/data/tables/gOv010ScriptObjectCreationHandlers.c:
+    complete
+    .data       start:0x020a1da0 end:0x020a1dc0

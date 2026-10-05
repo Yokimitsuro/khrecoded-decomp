@@ -39,3 +39,7 @@ src/overlays/ov034/data/strings/Strings_ov034_020c0f10.c:
 src/overlays/ov034/data/strings/Strings_ov034_020c0f64.c:
     complete
     .data       start:0x020c0f64 end:0x020c0fa0
+
+src/overlays/ov034/data/tables/gResultsScreenHandlers.c:
+    complete
+    .data       start:0x020be944 end:0x020be954
