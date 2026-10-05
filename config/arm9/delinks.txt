@@ -144,6 +144,10 @@ src/calls/InitTextLayer.c:
     complete
     .text       start:0x020012dc end:0x0200146c
 
+src/calls/func_0200146c.c:
+    complete
+    .text       start:0x0200146c end:0x02001486
+
 src/calls/FreeResourceBufferAndProbeHeap.c:
     complete
     .text       start:0x02001488 end:0x020014a4
@@ -188,9 +192,17 @@ src/calls/DrawTextAnchored.c:
     complete
     .text       start:0x020015b4 end:0x02001620
 
+src/calls/func_02001620.c:
+    complete
+    .text       start:0x02001620 end:0x0200167a
+
 src/calls/DrawTextColored.c:
     complete
     .text       start:0x0200167c end:0x02001704
+
+src/calls/func_02001704.c:
+    complete
+    .text       start:0x02001704 end:0x0200175e
 
 src/calls/DrawTextPackedColor.c:
     complete
@@ -2605,6 +2617,10 @@ libs/nitro/snd/calls/SND_Init.c:
     complete
     .text       start:0x0200eda4 end:0x0200eddc
 
+src/calls/func_0200eddc.c:
+    complete
+    .text       start:0x0200eddc end:0x0200edf0
+
 libs/nitro/snd/calls/SNDi_UnlockMutex.c:
     complete
     .text       start:0x0200edf0 end:0x0200ee04
@@ -3092,6 +3108,10 @@ src/calls/WmDataSharingReceiveCallback_Child.c:
 src/calls/WmGetSharedDataAddress.c:
     complete
     .text       start:0x02012264 end:0x02012282
+
+src/calls/func_02012284.c:
+    complete
+    .text       start:0x02012284 end:0x02012298
 
 src/calls/PXI_Init_02012298.c:
     complete
@@ -5213,9 +5233,17 @@ src/calls/func_02022570.c:
     complete
     .text       start:0x02022570 end:0x02022584
 
+src/calls/func_02022584.c:
+    complete
+    .text       start:0x02022584 end:0x020225d4
+
 src/calls/LeapDays.c:
     complete
     .text       start:0x020225d4 end:0x02022688
+
+src/calls/func_02022688.c:
+    complete
+    .text       start:0x02022688 end:0x020226c8
 
 src/calls/TimeToCalendar.c:
     complete
@@ -5228,6 +5256,10 @@ src/calls/__msl_mktime.c:
 src/calls/ComputeSignedDifferenceAsDouble.c:
     complete
     .text       start:0x020229a4 end:0x020229dc
+
+src/calls/func_020229dc.c:
+    complete
+    .text       start:0x020229dc end:0x02022a4c
 
 src/calls/Utf16Length.c:
     complete
@@ -5352,6 +5384,14 @@ src/calls/EvaluateInterpolationCurve.c:
 src/calls/ScaleAroundPivot.c:
     complete
     .text       start:0x020257c4 end:0x020257d6
+
+src/calls/func_020257d8.c:
+    complete
+    .text       start:0x020257d8 end:0x020257f8
+
+src/calls/func_020257f8.c:
+    complete
+    .text       start:0x020257f8 end:0x02025820
 
 src/calls/ScriptVm_Start.c:
     complete
@@ -5497,6 +5537,22 @@ src/calls/ScriptCmd_ArmPair.c:
     complete
     .text       start:0x02026568 end:0x02026590
 
+src/calls/func_02026590.c:
+    complete
+    .text       start:0x02026590 end:0x020265ec
+
+src/calls/func_020265ec.c:
+    complete
+    .text       start:0x020265ec end:0x02026634
+
+src/calls/func_02026634.c:
+    complete
+    .text       start:0x02026634 end:0x02026678
+
+src/calls/func_02026678.c:
+    complete
+    .text       start:0x02026678 end:0x020266d0
+
 src/calls/func_020266d0.c:
     complete
     .text       start:0x020266d0 end:0x02026704
@@ -5513,6 +5569,10 @@ src/calls/Script_StepAndIsIdle.c:
     complete
     .text       start:0x0202673c end:0x02026752
 
+src/calls/func_02026754.c:
+    complete
+    .text       start:0x02026754 end:0x02026788
+
 src/calls/func_02026788.c:
     complete
     .text       start:0x02026788 end:0x020267b8
@@ -5520,6 +5580,10 @@ src/calls/func_02026788.c:
 src/calls/func_020267b8.c:
     complete
     .text       start:0x020267b8 end:0x020267d8
+
+src/calls/func_020267d8.c:
+    complete
+    .text       start:0x020267d8 end:0x02026810
 
 src/calls/ScriptCmd_LoadFileToSlot.c:
     complete
@@ -5536,6 +5600,10 @@ src/calls/ScriptCmd_AcquireActorResource.c:
 src/calls/ScriptCmd_TurnHandler.c:
     complete
     .text       start:0x0202690c end:0x02026972
+
+src/calls/func_02026974.c:
+    complete
+    .text       start:0x02026974 end:0x0202698e
 
 src/calls/ScriptCmd_SetActorResourceFromPaths.c:
     complete
@@ -5556,6 +5624,10 @@ src/calls/FS_UnloadOverlayImage_02026a90.c:
 src/calls/ScriptCmd_PostEvent0.c:
     complete
     .text       start:0x02026a9c end:0x02026aae
+
+src/calls/func_02026ab0.c:
+    complete
+    .text       start:0x02026ab0 end:0x02026ac4
 
 src/calls/ScriptCmd_RestorePanel.c:
     complete
@@ -5725,9 +5797,17 @@ src/calls/ToggleSelectedPanelSlot.c:
     complete
     .text       start:0x02028118 end:0x0202819c
 
+src/calls/func_0202819c.c:
+    complete
+    .text       start:0x0202819c end:0x020281b0
+
 src/calls/ResetPanelFieldB8AndNotify.c:
     complete
     .text       start:0x020281b0 end:0x020281c8
+
+src/calls/func_020281c8.c:
+    complete
+    .text       start:0x020281c8 end:0x020281e0
 
 src/calls/InitPanelResources.c:
     complete
@@ -5749,13 +5829,37 @@ src/calls/UpdatePanelPromptBlink.c:
     complete
     .text       start:0x02028410 end:0x0202845c
 
+src/calls/func_0202845c.c:
+    complete
+    .text       start:0x0202845c end:0x020284b0
+
 src/calls/AdjustPanelSlotSrcYAndDraw.c:
     complete
     .text       start:0x020284b0 end:0x020284d0
 
+src/calls/func_020284d0.c:
+    complete
+    .text       start:0x020284d0 end:0x020284e4
+
+src/calls/func_020284e4.c:
+    complete
+    .text       start:0x020284e4 end:0x020284fa
+
+src/calls/func_020284fc.c:
+    complete
+    .text       start:0x020284fc end:0x0202852a
+
+src/calls/func_0202852c.c:
+    complete
+    .text       start:0x0202852c end:0x0202855a
+
 src/calls/RegisterPanelCallbacks.c:
     complete
     .text       start:0x0202855c end:0x0202858c
+
+src/calls/func_0202858c.c:
+    complete
+    .text       start:0x0202858c end:0x020285b4
 
 src/calls/OpenPanel.c:
     complete
@@ -5841,6 +5945,10 @@ src/calls/PXI_Init_02028dcc.c:
     complete
     .text       start:0x02028dcc end:0x02028dd8
 
+src/calls/func_02028dd8.c:
+    complete
+    .text       start:0x02028dd8 end:0x02028e00
+
 src/calls/SetFlagAndBumpCounter.c:
     complete
     .text       start:0x02028e00 end:0x02028e18
@@ -5884,6 +5992,10 @@ src/calls/DecrementByteCounter.c:
 src/calls/ReleaseRecordEntry.c:
     complete
     .text       start:0x0202939c end:0x020293d8
+
+src/calls/func_0202947c.c:
+    complete
+    .text       start:0x0202947c end:0x020294cc
 
 src/calls/RefillSlotItemUses.c:
     complete
@@ -5957,6 +6069,10 @@ src/calls/func_02029f5c.c:
     complete
     .text       start:0x02029f5c end:0x02029f6c
 
+src/calls/func_02029f6c.c:
+    complete
+    .text       start:0x02029f6c end:0x02029f7c
+
 src/calls/func_02029f7c.c:
     complete
     .text       start:0x02029f7c end:0x02029f8c
@@ -5980,6 +6096,10 @@ src/calls/InitEngineHeaps.c:
 src/calls/CreateHeapRecord.c:
     complete
     .text       start:0x0202a0c8 end:0x0202a104
+
+src/calls/func_0202a104.c:
+    complete
+    .text       start:0x0202a104 end:0x0202a148
 
 src/calls/SetDefaultHeap.c:
     complete
@@ -6032,6 +6152,14 @@ src/calls/Obj_LinkNode.c:
 src/calls/unlink_object_registry_node.c:
     complete
     .text       start:0x0202a3bc end:0x0202a438
+
+src/calls/func_0202a438.c:
+    complete
+    .text       start:0x0202a438 end:0x0202a45c
+
+src/calls/func_0202a45c.c:
+    complete
+    .text       start:0x0202a45c end:0x0202a490
 
 src/calls/Obj_CreateWithTailWork.c:
     complete
@@ -6301,6 +6429,10 @@ src/calls/GetBgDataFromArchive.c:
     complete
     .text       start:0x0202b568 end:0x0202b5e6
 
+src/calls/func_0202b5e8.c:
+    complete
+    .text       start:0x0202b5e8 end:0x0202b62c
+
 src/calls/CopyRecentTouchPoints.c:
     complete
     .text       start:0x0202b62c end:0x0202b6e4
@@ -6308,6 +6440,10 @@ src/calls/CopyRecentTouchPoints.c:
 src/calls/CopyRecentInputRecords.c:
     complete
     .text       start:0x0202b6e4 end:0x0202b774
+
+src/calls/func_0202b774.c:
+    complete
+    .text       start:0x0202b774 end:0x0202b79c
 
 src/calls/GetLanguageIndex.c:
     complete
@@ -6320,6 +6456,10 @@ src/calls/Msg_BuildLangPath.c:
 src/calls/AllocLoaderRequest.c:
     complete
     .text       start:0x0202b824 end:0x0202b880
+
+src/calls/func_0202b880.c:
+    complete
+    .text       start:0x0202b880 end:0x0202b8a8
 
 src/calls/StartStreamUncompress.c:
     complete
@@ -6357,17 +6497,37 @@ src/calls/InitFileLoader.c:
     complete
     .text       start:0x0202c220 end:0x0202c378
 
+src/calls/func_0202c378.c:
+    complete
+    .text       start:0x0202c378 end:0x0202c38c
+
+src/calls/func_0202c38c.c:
+    complete
+    .text       start:0x0202c38c end:0x0202c3a0
+
 src/calls/IsRecordIdFree.c:
     complete
     .text       start:0x0202c3a0 end:0x0202c44c
+
+src/calls/func_0202c44c.c:
+    complete
+    .text       start:0x0202c44c end:0x0202c48c
 
 src/calls/Archive_LoadFile.c:
     complete
     .text       start:0x0202c48c end:0x0202c4a0
 
+src/calls/func_0202c4a0.c:
+    complete
+    .text       start:0x0202c4a0 end:0x0202c4b4
+
 src/calls/LoadFileIntoBuffer.c:
     complete
     .text       start:0x0202c4b4 end:0x0202c6a4
+
+src/calls/func_0202c6a4.c:
+    complete
+    .text       start:0x0202c6a4 end:0x0202c6e0
 
 src/calls/ResCache_FindSlot.c:
     complete
@@ -6437,6 +6597,10 @@ src/calls/RelocateArchiveSections.c:
     complete
     .text       start:0x0202d25c end:0x0202d328
 
+src/calls/func_0202d328.c:
+    complete
+    .text       start:0x0202d328 end:0x0202d33c
+
 src/calls/CallSelectionHandler.c:
     complete
     .text       start:0x0202d33c end:0x0202d34c
@@ -6476,6 +6640,10 @@ src/calls/ReadPackedBitField.c:
 src/calls/WritePackedBits.c:
     complete
     .text       start:0x0202d574 end:0x0202d620
+
+src/calls/func_0202d620.c:
+    complete
+    .text       start:0x0202d620 end:0x0202d634
 
 src/calls/PrintfDest_PutChar.c:
     complete
@@ -6561,6 +6729,14 @@ src/calls/InitSharedRecordAndDispatchAlt.c:
     complete
     .text       start:0x0202ed50 end:0x0202ed94
 
+src/calls/func_0202ed94.c:
+    complete
+    .text       start:0x0202ed94 end:0x0202edb0
+
+src/calls/func_0202edb0.c:
+    complete
+    .text       start:0x0202edb0 end:0x0202edd0
+
 src/calls/func_0202edd0.c:
     complete
     .text       start:0x0202edd0 end:0x0202edec
@@ -6609,6 +6785,10 @@ src/calls/Anim_GetFrame.c:
     complete
     .text       start:0x0202f4b4 end:0x0202f4cc
 
+src/calls/func_0202f4cc.c:
+    complete
+    .text       start:0x0202f4cc end:0x0202f4ec
+
 src/calls/Flags16_SetBit1.c:
     complete
     .text       start:0x0202f4ec end:0x0202f4fc
@@ -6648,6 +6828,10 @@ src/calls/MultiplyFixedPointQuaternions.c:
 src/calls/QuatFromAxisAngle.c:
     complete
     .text       start:0x0202fb0c end:0x0202fbbc
+
+src/calls/func_0202fbbc.c:
+    complete
+    .text       start:0x0202fbbc end:0x0202fbf0
 
 src/calls/MeasureVector4Length.c:
     complete
@@ -6768,6 +6952,10 @@ src/calls/DispatchContactCallbacks.c:
 src/calls/RecordContactPlane.c:
     complete
     .text       start:0x02031d38 end:0x02032000
+
+src/calls/func_02032000.c:
+    complete
+    .text       start:0x02032000 end:0x0203201c
 
 src/calls/PushContact.c:
     complete
@@ -6941,6 +7129,10 @@ src/calls/FreeRecordArrayAndReset.c:
     complete
     .text       start:0x0203518c end:0x020351ca
 
+src/calls/func_020351cc.c:
+    complete
+    .text       start:0x020351cc end:0x020351e0
+
 src/calls/PXI_Init_02035278.c:
     complete
     .text       start:0x02035278 end:0x02035284
@@ -7040,6 +7232,10 @@ src/calls/ActivateEntrySubobject.c:
 src/calls/ApplyRecordTableEntry3.c:
     complete
     .text       start:0x020359ac end:0x020359c4
+
+src/calls/func_020359c4.c:
+    complete
+    .text       start:0x020359c4 end:0x020359e8
 
 src/calls/ApplyRecordTableEntry4.c:
     complete
@@ -7193,6 +7389,10 @@ src/calls/ShutdownAllActorSlots.c:
     complete
     .text       start:0x02036680 end:0x0203670c
 
+src/calls/func_0203670c.c:
+    complete
+    .text       start:0x0203670c end:0x02036724
+
 src/calls/ActorSlot_LinkAsRoot.c:
     complete
     .text       start:0x02036724 end:0x0203675c
@@ -7252,6 +7452,10 @@ src/calls/ActorSlot_AddToWorld.c:
 src/calls/ClearRecordSlotFlag.c:
     complete
     .text       start:0x02036988 end:0x020369a8
+
+src/calls/func_020369a8.c:
+    complete
+    .text       start:0x020369a8 end:0x020369dc
 
 src/calls/SetActorExtraPosition.c:
     complete
@@ -7336,6 +7540,10 @@ src/calls/InitTrackingState.c:
 src/calls/ResetPositionState.c:
     complete
     .text       start:0x02038b40 end:0x02038b64
+
+src/calls/func_02038e80.c:
+    complete
+    .text       start:0x02038e80 end:0x02038eba
 
 src/calls/ModelAnimation_ApplyDefaultJointPosition.c:
     complete
@@ -7725,6 +7933,10 @@ src/calls/NormalizeVectorInto.c:
     complete
     .text       start:0x0203f594 end:0x0203f5c0
 
+src/calls/func_0203f5c0.c:
+    complete
+    .text       start:0x0203f5c0 end:0x0203f5e8
+
 src/calls/NormalizeVectorAltInto.c:
     complete
     .text       start:0x0203f5e8 end:0x0203f614
@@ -7777,6 +7989,14 @@ src/calls/InitMaxDistanceHit.c:
     complete
     .text       start:0x0203fb88 end:0x0203fbb8
 
+src/calls/func_0203fbb8.c:
+    complete
+    .text       start:0x0203fbb8 end:0x0203fbf8
+
+src/calls/func_0203fbf8.c:
+    complete
+    .text       start:0x0203fbf8 end:0x0203fc38
+
 src/calls/IsVecZero.c:
     complete
     .text       start:0x0203fc38 end:0x0203fc5c
@@ -7796,6 +8016,14 @@ src/calls/GetSegmentHalfDelta.c:
 src/calls/GetSegmentDelta.c:
     complete
     .text       start:0x0203ffe0 end:0x02040010
+
+src/calls/func_02040010.c:
+    complete
+    .text       start:0x02040010 end:0x02040038
+
+src/calls/func_020404b4.c:
+    complete
+    .text       start:0x020404b4 end:0x020404dc
 
 src/calls/NormalizeCrossProduct.c:
     complete
@@ -7857,9 +8085,17 @@ src/calls/GetSegmentHalfDirection.c:
     complete
     .text       start:0x02040ff0 end:0x02041048
 
+src/calls/func_02041048.c:
+    complete
+    .text       start:0x02041048 end:0x02041070
+
 src/calls/SetVec3.c:
     complete
     .text       start:0x02041070 end:0x02041078
+
+src/calls/func_02041078.c:
+    complete
+    .text       start:0x02041078 end:0x020410b4
 
 src/calls/TestCylinderAgainstCylinder.c:
     complete
@@ -7997,9 +8233,17 @@ src/calls/NegateVecFx32Out.c:
     complete
     .text       start:0x02047fdc end:0x0204800c
 
+src/calls/func_0204800c.c:
+    complete
+    .text       start:0x0204800c end:0x02048034
+
 src/calls/SweepAlongProjectedAxis.c:
     complete
     .text       start:0x020481d8 end:0x02048228
+
+src/calls/func_020483f8.c:
+    complete
+    .text       start:0x020483f8 end:0x02048420
 
 src/calls/NormalizeVectorOut.c:
     complete
@@ -8024,6 +8268,10 @@ src/calls/SignOf.c:
 src/calls/ScaleAxisByDot.c:
     complete
     .text       start:0x02048b04 end:0x02048b44
+
+src/calls/func_02048b44.c:
+    complete
+    .text       start:0x02048b44 end:0x02048b7c
 
 src/calls/IntMax.c:
     complete
@@ -8053,6 +8301,10 @@ src/calls/MakeSegment.c:
     complete
     .text       start:0x02048be4 end:0x02048c24
 
+src/calls/func_02048c24.c:
+    complete
+    .text       start:0x02048c24 end:0x02048c5c
+
 src/calls/MultAddOut.c:
     complete
     .text       start:0x02048c5c end:0x02048c90
@@ -8073,9 +8325,17 @@ src/calls/TransformVectorByBasisOut_0204960c.c:
     complete
     .text       start:0x0204960c end:0x0204963c
 
+src/calls/func_0204963c.c:
+    complete
+    .text       start:0x0204963c end:0x02049664
+
 src/calls/SetVec3Values.c:
     complete
     .text       start:0x02049664 end:0x0204966c
+
+src/calls/func_0204966c.c:
+    complete
+    .text       start:0x0204966c end:0x020496a4
 
 src/calls/MulFx64ByFx32.c:
     complete
@@ -8565,6 +8825,10 @@ src/calls/StopSoundSeqHandle.c:
     complete
     .text       start:0x0204dbf8 end:0x0204dc50
 
+src/calls/func_0204dc50.c:
+    complete
+    .text       start:0x0204dc50 end:0x0204dca8
+
 src/calls/SetSoundListenerFrame.c:
     complete
     .text       start:0x0204dca8 end:0x0204dd00
@@ -8588,6 +8852,10 @@ src/calls/RequestSoundSlotLoad.c:
 src/calls/IsSlotStateNotOne.c:
     complete
     .text       start:0x0204de3c end:0x0204de64
+
+src/calls/func_0204de64.c:
+    complete
+    .text       start:0x0204de64 end:0x0204dea4
 
 src/calls/ClearStreamFlag.c:
     complete
@@ -8716,6 +8984,10 @@ src/calls/DispObjList_Update.c:
 src/calls/SlotTable_AddEntry.c:
     complete
     .text       start:0x0204ee48 end:0x0204eef4
+
+src/calls/func_0204eef4.c:
+    complete
+    .text       start:0x0204eef4 end:0x0204ef1e
 
 src/calls/FreeAndClearNodeList.c:
     complete
@@ -8853,6 +9125,10 @@ src/calls/UpdateKeyRepeat.c:
     complete
     .text       start:0x0204f518 end:0x0204f5a0
 
+src/calls/func_0204f5a0.c:
+    complete
+    .text       start:0x0204f5a0 end:0x0204f5ec
+
 src/calls/FSi_DefaultStepDoneB.c:
     complete
     .text       start:0x0204f5ec end:0x0204f5f0
@@ -8893,6 +9169,10 @@ src/calls/SetupFlaggedSelectionRecords.c:
     complete
     .text       start:0x0204f78c end:0x0204f818
 
+src/calls/func_0204f854.c:
+    complete
+    .text       start:0x0204f854 end:0x0204f870
+
 src/calls/SetupAllSelectionRecords.c:
     complete
     .text       start:0x0204f870 end:0x0204f8f0
@@ -8912,6 +9192,10 @@ src/calls/SyncSelectionRecordFromSlotEntry.c:
 src/calls/RefreshSelectionLinkValues.c:
     complete
     .text       start:0x0204fb30 end:0x0204fbb4
+
+src/calls/func_0204fbb4.c:
+    complete
+    .text       start:0x0204fbb4 end:0x0204fbe0
 
 src/calls/ApplySelectionStatScaling.c:
     complete
@@ -9045,6 +9329,10 @@ src/calls/AcquireMapLayout.c:
     complete
     .text       start:0x020506f0 end:0x02050a58
 
+src/calls/func_02050a58.c:
+    complete
+    .text       start:0x02050a58 end:0x02050a94
+
 src/calls/ScaleStatsByPercent.c:
     complete
     .text       start:0x02050a94 end:0x02050b44
@@ -9121,9 +9409,25 @@ src/calls/LoadStringPointerTableB.c:
     complete
     .text       start:0x02051594 end:0x0205162c
 
+src/calls/func_02051724.c:
+    complete
+    .text       start:0x02051724 end:0x02051770
+
+src/calls/func_02051770.c:
+    complete
+    .text       start:0x02051770 end:0x020517bc
+
 src/calls/LoadRelocatedOffsetTable.c:
     complete
     .text       start:0x020517bc end:0x0205182c
+
+src/calls/func_0205182c.c:
+    complete
+    .text       start:0x0205182c end:0x02051878
+
+src/calls/func_02051878.c:
+    complete
+    .text       start:0x02051878 end:0x020518c4
 
 src/calls/LoadRecordTables.c:
     complete
@@ -9136,6 +9440,10 @@ src/calls/LoadLinkedEntryTables.c:
 src/calls/LoadNamedRecordTables.c:
     complete
     .text       start:0x020519ec end:0x02051ab8
+
+src/calls/func_02051ab8.c:
+    complete
+    .text       start:0x02051ab8 end:0x02051b04
 
 src/calls/FreeRecordSlotPair0.c:
     complete
@@ -9312,6 +9620,18 @@ src/calls/LerpBySquaredRemaining.c:
 src/calls/TweenValue.c:
     complete
     .text       start:0x0205238c end:0x020524fc
+
+src/calls/func_020524fc.c:
+    complete
+    .text       start:0x020524fc end:0x02052528
+
+src/calls/func_02052528.c:
+    complete
+    .text       start:0x02052528 end:0x02052570
+
+src/calls/func_02052570.c:
+    complete
+    .text       start:0x02052570 end:0x020525a0
 
 src/calls/SampleTweenValue.c:
     complete

@@ -379,6 +379,59 @@ def linked_candidates(results: list[dict], index: dict,
     return candidates
 
 
+def raw_candidates(results: list[dict], index: dict,
+                   symbols: str) -> list[tuple]:
+    """Return exact reference bodies even when no semantic name is available.
+
+    The earlier automatic passes deliberately skipped generic reference names.
+    That made sense while recovering names, but it also left a large number of
+    already-matching functions as assembly. Keep the ROM symbol when the
+    reference has no safe unique name so the verified C body can still land.
+    """
+    occupied = set(CURRENT_NAMES)
+    existing_sources = {
+        path.stem
+        for directory in (ROOT / "src", ROOT / "libs")
+        for path in directory.rglob("*.c")
+    }
+    candidates = []
+    seen = set()
+    for item in results:
+        rom_symbol = item["eu"]["name"]
+        if rom_symbol in seen or rom_symbol in existing_sources:
+            continue
+        if not rom_symbol.startswith("func_"):
+            continue
+        if not re.search(
+            rf"^{re.escape(rom_symbol)} kind:function", symbols, re.MULTILINE
+        ):
+            continue
+        if item.get("compiled_size") != item.get("expected_size"):
+            continue
+        try:
+            function = index[rom_symbol]
+            rewrites = relocation_rewrites(item, function)
+            if not equal_outside_relocations(item, function):
+                continue
+        except (KeyError, RuntimeError, StopIteration, FileNotFoundError):
+            continue
+
+        match = item["match"]
+        readable_name = ADDRESS_SUFFIX_RE.sub("", match.get("name", ""))
+        if (not readable_name or readable_name.startswith(("func_", "FUN_"))
+                or readable_name.lower() in ("func", "function")
+                or readable_name.lower().startswith("unknown")
+                or not readable_name.isidentifier()
+                or readable_name in occupied):
+            readable_name = rom_symbol
+
+        seen.add(rom_symbol)
+        occupied.add(readable_name)
+        candidates.append((rom_symbol, readable_name, item, rewrites))
+    candidates.sort(key=lambda value: (value[2]["eu"]["size"], value[2]["ordinal"]))
+    return candidates
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("mapping", nargs="*", type=parse_mapping)
@@ -388,6 +441,8 @@ def main() -> None:
     parser.add_argument("--inferred-auto", action="store_true")
     parser.add_argument("--linked-inventory", action="store_true")
     parser.add_argument("--linked-auto", action="store_true")
+    parser.add_argument("--raw-inventory", action="store_true")
+    parser.add_argument("--raw-auto", action="store_true")
     parser.add_argument(
         "--shifted-relocs", action="store_true",
         help="pair equal-count source/EU relocations by order for an explicit import",
@@ -396,7 +451,8 @@ def main() -> None:
     args = parser.parse_args()
 
     modes = sum((args.inventory, args.auto, args.inferred_inventory,
-                 args.inferred_auto, args.linked_inventory, args.linked_auto))
+                 args.inferred_auto, args.linked_inventory, args.linked_auto,
+                 args.raw_inventory, args.raw_auto))
     if modes > 1:
         parser.error("select only one automatic or inventory mode")
     if args.mapping and modes:
@@ -413,7 +469,9 @@ def main() -> None:
 
     cached_rewrites = {}
     if modes:
-        if args.linked_inventory or args.linked_auto:
+        if args.raw_inventory or args.raw_auto:
+            candidates = raw_candidates(result_list, index, symbols)
+        elif args.linked_inventory or args.linked_auto:
             candidates = linked_candidates(result_list, index, symbols)
         elif args.inferred_inventory or args.inferred_auto:
             candidates = inferred_name_candidates(result_list, index, symbols)
@@ -430,7 +488,8 @@ def main() -> None:
             )
             cached_rewrites[rom_symbol] = rewrites
         print(f"eligible {len(candidates)} functions, {total} bytes")
-        if args.inventory or args.inferred_inventory or args.linked_inventory:
+        if (args.inventory or args.inferred_inventory or args.linked_inventory
+                or args.raw_inventory):
             return
         args.mapping = [(item[0], item[1]) for item in candidates]
 
@@ -440,7 +499,8 @@ def main() -> None:
     imported = []
     renamed_symbols = {}
     for rom_symbol, readable_name in args.mapping:
-        if re.search(rf"^{re.escape(readable_name)} kind:function", symbols, re.MULTILINE):
+        if (readable_name != rom_symbol and re.search(
+                rf"^{re.escape(readable_name)} kind:function", symbols, re.MULTILINE)):
             raise RuntimeError(f"function name already exists: {readable_name}")
         item = results[rom_symbol]
         function = index[rom_symbol]
@@ -500,7 +560,8 @@ def main() -> None:
 
         compiler_map[relative_destination] = "dsi/1.1"
         imported.append((rom_symbol, readable_name, size))
-        renamed_symbols[rom_symbol] = readable_name
+        if rom_symbol != readable_name:
+            renamed_symbols[rom_symbol] = readable_name
 
     for source_root in (ROOT / "src", ROOT / "libs"):
         for path in source_root.rglob("*"):
