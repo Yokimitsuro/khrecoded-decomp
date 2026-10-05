@@ -8,7 +8,7 @@ extern void LoadSeqArcIfChanged(int a);
 extern void ResetSceneCtl(void);
 extern void CreateManagerObjects(void);
 extern void SetPendingScene(s32 pendId, s32 pendArg);
-extern int func_02025554(void);
+extern int UpdateSceneCallback(void);
 extern u32 gEngineState;
 
 SceneStepFn InitSceneSystem(void)
@@ -19,5 +19,5 @@ SceneStepFn InitSceneSystem(void)
     ResetSceneCtl();
     CreateManagerObjects();
     SetPendingScene(1, gEngineState);
-    return func_02025554;
+    return UpdateSceneCallback;
 }

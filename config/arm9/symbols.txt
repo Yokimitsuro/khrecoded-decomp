@@ -1423,11 +1423,11 @@ ClearBusyFlag kind:function(thumb,size=0xc) addr:0x020254f0
 IsBusyFlagSet kind:function(thumb,size=0xc) addr:0x020254fc
 InitSceneSystem kind:function(arm,size=0x48) addr:0x02025508
 PanelState_NoOpE kind:function(arm,size=0x4) addr:0x02025550
-func_02025554 kind:function(arm,size=0x10) addr:0x02025554
+UpdateSceneCallback kind:function(arm,size=0x10) addr:0x02025554
 ResetSceneCtl kind:function(arm,size=0x20) addr:0x02025564
-func_02025584 kind:function(arm,size=0xd4) addr:0x02025584
+AdvancePendingScene kind:function(arm,size=0xd4) addr:0x02025584
 SetPendingScene kind:function(arm,size=0x14) addr:0x02025658
-func_0202566c kind:function(arm,size=0x10) addr:0x0202566c
+GetCurrentSceneId kind:function(arm,size=0x10) addr:0x0202566c
 StoreGlobalArrayEntry kind:function(thumb,size=0xc) addr:0x0202567c
 FindNameIndexInTable kind:function(thumb,size=0x38) addr:0x02025688
 ParseSlotQuantityId kind:function(thumb,size=0x6c) addr:0x020256c0
@@ -2729,7 +2729,7 @@ gJointAnimationResultDispatch kind:data(any) addr:0x02055d64
 gJointAnimationNodeDispatch kind:data(any) addr:0x02055d70
 gMaterialAnimationDispatch kind:data(any) addr:0x02055d7c
 data_02055d8c kind:data(any) addr:0x02055d8c
-data_02055da0 kind:data(any) addr:0x02055da0
+gSceneTable kind:data(any) addr:0x02055da0
 gScriptState kind:data(any) addr:0x02055e00
 data_02055e04 kind:data(any) addr:0x02055e04
 data_02055e28 kind:data(any) addr:0x02055e28
@@ -2975,7 +2975,8 @@ data_0205fdd4 kind:bss addr:0x0205fdd4
 data_0205fde0 kind:bss addr:0x0205fde0
 data_0205fde4 kind:bss addr:0x0205fde4
 gBusyCounterState kind:bss addr:0x0205fde8
-data_0205fdec kind:bss addr:0x0205fdec
+gSceneController kind:bss addr:0x0205fdec
+gSceneControllerStorage kind:bss addr:0x0205fdec
 data_0205fe00 kind:bss addr:0x0205fe00
 data_0205fe0c kind:bss addr:0x0205fe0c
 data_0205fe20 kind:bss addr:0x0205fe20

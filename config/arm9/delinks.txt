@@ -5313,7 +5313,7 @@ src/calls/PanelState_NoOpE.c:
     complete
     .text       start:0x02025550 end:0x02025554
 
-src/calls/func_02025554.c:
+src/calls/UpdateSceneCallback.c:
     complete
     .text       start:0x02025554 end:0x02025564
 
@@ -5321,11 +5321,15 @@ src/calls/ResetSceneCtl.c:
     complete
     .text       start:0x02025564 end:0x02025584
 
+src/calls/AdvancePendingScene.c:
+    complete
+    .text       start:0x02025584 end:0x02025658
+
 src/calls/SetPendingScene.c:
     complete
     .text       start:0x02025658 end:0x0202566c
 
-src/calls/func_0202566c.c:
+src/calls/GetCurrentSceneId.c:
     complete
     .text       start:0x0202566c end:0x0202567c
 
