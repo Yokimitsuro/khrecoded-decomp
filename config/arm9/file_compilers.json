@@ -2267,5 +2267,7 @@
   "src/calls/InitDifficultyConfigBlock.c": "dsi/1.1",
   "src/calls/ValidateResourceTagAndDispatch.c": "dsi/1.1",
   "src/calls/AcquireOrRefreshResourceBlock.c": "dsi/1.1",
-  "src/calls/OpenAndClassifyFile.c": "dsi/1.1"
+  "src/calls/OpenAndClassifyFile.c": "dsi/1.1",
+  "src/calls/Ov105_ClearSharedRequestBit.c": "dsi/1.1",
+  "src/calls/CTRDGi_HasValidModuleInfo.c": "dsi/1.1"
 }

@@ -763,7 +763,7 @@ IsDeviceReady kind:function(thumb,size=0x14) addr:0x0201105c
 PollDeviceStatus kind:function(thumb,size=0x2c) addr:0x02011070
 WMi_CheckStateEx kind:function(thumb,size=0x50) addr:0x0201109c
 func_020110ec kind:function(thumb,size=0x2a0) addr:0x020110ec
-func_0201138c kind:function(thumb,size=0x1c) addr:0x0201138c
+Ov105_ClearSharedRequestBit kind:function(thumb,size=0x1c) addr:0x0201138c
 GetSessionChannel kind:function(thumb,size=0x24) addr:0x020113a8
 GetSessionLinkState kind:function(thumb,size=0x28) addr:0x020113cc
 func_020113f4 kind:function(thumb,size=0x24) addr:0x020113f4
@@ -806,7 +806,7 @@ func_02012284 kind:function(thumb,size=0x14) addr:0x02012284
 PXI_Init_02012298 kind:function(thumb,size=0x8) addr:0x02012298
 WM_SetWEPKey kind:function(thumb,size=0x4a) addr:0x020122a0
 WM_MeasureChannel kind:function(thumb,size=0x48) addr:0x020122ec
-func_02012334 kind:function(thumb,size=0x1c) addr:0x02012334
+CTRDGi_HasValidModuleInfo kind:function(thumb,size=0x1c) addr:0x02012334
 CTRDGi_InitCommon kind:function(thumb,size=0x28) addr:0x02012350
 CTRDG_IsExisting kind:function(thumb,size=0xa4) addr:0x02012378
 CTRDGi_ChangeLatestAccessCycle kind:function(thumb,size=0x34) addr:0x0201241c
@@ -3045,3 +3045,5 @@ data_02060f23 kind:bss addr:0x02060f23
 data_02060f24 kind:bss addr:0x02060f24
 data_020613cc kind:bss addr:0x020613cc
 data_020613d0 kind:bss addr:0x020613d0
+data_02fffc30 kind:data(any) addr:0x02fffc30
+data_02ffff96 kind:data(any) addr:0x02ffff96

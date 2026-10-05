@@ -17,6 +17,8 @@ SYMBOLS = ROOT / "config" / "arm9" / "symbols.txt"
 DELINKS = ROOT / "config" / "arm9" / "delinks.txt"
 COMPILERS = ROOT / "config" / "arm9" / "file_compilers.json"
 TRIALS = ROOT / "build" / "reference_trials" / "dsi_1.1"
+ARM9_BIN = ROOT / "dsd_extract" / "arm9" / "arm9.bin"
+ARM9_BASE = 0x02000000
 ADDRESS_SUFFIX_RE = re.compile(r"_[0-9a-fA-F]{8}$")
 SYMBOL_LINE_RE = re.compile(
     r"^(\S+)\s+kind:(?:function|data|bss)(?:\([^)]*\))?\s+"
@@ -122,7 +124,7 @@ def replace_identifiers(source: str, replacements: dict[str, str]) -> str:
     return pattern.sub(lambda match: replacements[match.group(0)], source)
 
 
-def relocation_rewrites(item: dict, function: dict) -> dict[str, str]:
+def source_relocations(item: dict) -> dict[int, str]:
     object_path = TRIALS / f"{item['ordinal']:04d}.o"
     if not object_path.exists():
         raise RuntimeError(f"compiled trial missing: {object_path}")
@@ -158,9 +160,14 @@ def relocation_rewrites(item: dict, function: dict) -> dict[str, str]:
                         f"multiple source relocations at {source_symbol}+0x{offset:x}"
                     )
                 source_relocs[offset] = target
+    return source_relocs
+
+
+def relocation_rewrites(item: dict, function: dict) -> dict[str, str]:
+    source_relocs = source_relocations(item)
 
     eu_relocs = {int(offset): target for offset, target in function["relocs"]}
-    if set(source_relocs) != set(eu_relocs):
+    if set(eu_relocs) - set(source_relocs):
         raise RuntimeError(
             f"relocation offsets differ for {item['eu']['name']}: "
             f"source={sorted(source_relocs)} eu={sorted(eu_relocs)}"
@@ -168,15 +175,73 @@ def relocation_rewrites(item: dict, function: dict) -> dict[str, str]:
 
     rewrites = {}
     for offset, source_name in source_relocs.items():
-        target_name = canonical_target(
-            eu_relocs[offset], item["eu"]["address"] + offset
-        )
+        if offset in eu_relocs:
+            target_name = canonical_target(
+                eu_relocs[offset], item["eu"]["address"] + offset
+            )
+        else:
+            address = item["eu"]["address"]
+            data = ARM9_BIN.read_bytes()[
+                address - ARM9_BASE + offset:address - ARM9_BASE + offset + 4
+            ]
+            target_address = int.from_bytes(data, "little")
+            choices = CURRENT_BY_ADDRESS.get(target_address, [])
+            if not choices and target_address & 1:
+                choices = CURRENT_BY_ADDRESS.get(target_address - 1, [])
+            if not choices:
+                raise RuntimeError(
+                    f"cannot resolve linked literal 0x{target_address:08x} "
+                    f"at {item['eu']['name']}+0x{offset:x}"
+                )
+            target_name = min(
+                choices,
+                key=lambda value: (
+                    value.startswith(("func_", "data_", "bss_")),
+                    len(value),
+                    value,
+                ),
+            )
         previous = rewrites.setdefault(source_name, target_name)
         if previous != target_name:
             raise RuntimeError(
                 f"{source_name} maps to both {previous} and {target_name}"
             )
     return rewrites
+
+
+def compiled_symbol_bytes(item: dict) -> bytes:
+    object_path = TRIALS / f"{item['ordinal']:04d}.o"
+    with object_path.open("rb") as handle:
+        elf = ELFFile(handle)
+        symtab = elf.get_section_by_name(".symtab")
+        symbol = next(
+            candidate for candidate in symtab.iter_symbols()
+            if candidate.name == item["match"]["source_symbol"]
+        )
+        section = elf.get_section(symbol["st_shndx"])
+        start = symbol["st_value"]
+        return section.data()[start:start + symbol["st_size"]]
+
+
+def equal_outside_relocations(item: dict, function: dict) -> bool:
+    trial = compiled_symbol_bytes(item)
+    address = item["eu"]["address"]
+    size = item["eu"]["size"]
+    if len(trial) != size:
+        return False
+    expected = ARM9_BIN.read_bytes()[
+        address - ARM9_BASE:address - ARM9_BASE + size
+    ]
+    ignored = set()
+    relocation_offsets = {int(offset) for offset, _target in function["relocs"]}
+    relocation_offsets.update(source_relocations(item))
+    for offset in relocation_offsets:
+        ignored.update(range(int(offset), min(int(offset) + 4, size)))
+    return all(
+        expected[offset] == trial[offset]
+        for offset in range(size)
+        if offset not in ignored
+    )
 
 
 def automatic_candidates(results: list[dict], index: dict, symbols: str) -> list[tuple]:
@@ -254,6 +319,50 @@ def inferred_name_candidates(results: list[dict], index: dict,
     return candidates
 
 
+def linked_candidates(results: list[dict], index: dict,
+                      symbols: str) -> list[tuple]:
+    """Return same-size trials that differ only at relocation-covered bytes."""
+    occupied = set(CURRENT_NAMES)
+    candidates = []
+    for item in results:
+        if item.get("result") != "different":
+            continue
+        if item.get("compiled_size") != item.get("expected_size"):
+            continue
+        rom_symbol = item["eu"]["name"]
+        match = item["match"]
+        source_symbol = match["source_symbol"]
+        readable_name = match.get("name", "")
+        if (not readable_name or readable_name.startswith(("func_", "FUN_"))
+                or readable_name.lower() in ("func", "function")
+                or readable_name.lower().startswith("unknown")):
+            readable_name = ADDRESS_SUFFIX_RE.sub("", source_symbol)
+        if (not readable_name or readable_name.startswith(("func_", "FUN_"))
+                or readable_name.lower() in ("func", "function")
+                or readable_name.lower().startswith("unknown")
+                or not readable_name.isidentifier()):
+            continue
+        if not re.search(
+            rf"^{re.escape(rom_symbol)} kind:function", symbols, re.MULTILINE
+        ):
+            continue
+        if readable_name in occupied:
+            readable_name = f"{readable_name}_{item['eu']['address']:08x}"
+        if readable_name in occupied:
+            continue
+        try:
+            function = index[rom_symbol]
+            rewrites = relocation_rewrites(item, function)
+            if not equal_outside_relocations(item, function):
+                continue
+        except (KeyError, RuntimeError, StopIteration):
+            continue
+        occupied.add(readable_name)
+        candidates.append((rom_symbol, readable_name, item, rewrites))
+    candidates.sort(key=lambda value: (value[2]["eu"]["size"], value[2]["ordinal"]))
+    return candidates
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("mapping", nargs="*", type=parse_mapping)
@@ -261,11 +370,13 @@ def main() -> None:
     parser.add_argument("--auto", action="store_true")
     parser.add_argument("--inferred-inventory", action="store_true")
     parser.add_argument("--inferred-auto", action="store_true")
+    parser.add_argument("--linked-inventory", action="store_true")
+    parser.add_argument("--linked-auto", action="store_true")
     parser.add_argument("--limit", type=int, default=0)
     args = parser.parse_args()
 
     modes = sum((args.inventory, args.auto, args.inferred_inventory,
-                 args.inferred_auto))
+                 args.inferred_auto, args.linked_inventory, args.linked_auto))
     if modes > 1:
         parser.error("select only one automatic or inventory mode")
     if args.mapping and modes:
@@ -274,17 +385,15 @@ def main() -> None:
         parser.error("provide mappings, --inventory, or --auto")
 
     result_list = json.loads(RESULTS.read_text(encoding="utf-8"))
-    results = {
-        item["eu"]["name"]: item
-        for item in result_list
-        if item.get("result") == "match"
-    }
+    results = {item["eu"]["name"]: item for item in result_list}
     index = json.loads(INDEX.read_text(encoding="utf-8"))
     symbols = SYMBOLS.read_text(encoding="utf-8")
 
     cached_rewrites = {}
     if modes:
-        if args.inferred_inventory or args.inferred_auto:
+        if args.linked_inventory or args.linked_auto:
+            candidates = linked_candidates(result_list, index, symbols)
+        elif args.inferred_inventory or args.inferred_auto:
             candidates = inferred_name_candidates(result_list, index, symbols)
         else:
             candidates = automatic_candidates(result_list, index, symbols)
@@ -299,7 +408,7 @@ def main() -> None:
             )
             cached_rewrites[rom_symbol] = rewrites
         print(f"eligible {len(candidates)} functions, {total} bytes")
-        if args.inventory or args.inferred_inventory:
+        if args.inventory or args.inferred_inventory or args.linked_inventory:
             return
         args.mapping = [(item[0], item[1]) for item in candidates]
 

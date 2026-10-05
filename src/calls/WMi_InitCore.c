@@ -32,7 +32,7 @@ extern void PXI_Init(void);
 extern BOOL PXI_IsCallbackReady(int tag, int proc);
 extern void DC_InvalidateRange(void *addr, u32 size);
 extern void MIi_DmaFill32(u32 dmaNo, void *dest, u32 data, u32 size, BOOL sync);
-extern void func_0201138c(void);
+extern void Ov105_ClearSharedRequestBit(void);
 extern void OS_InitMessageQueue(void *queue, void **messages, int count);
 extern void DC_StoreRange(void *addr, u32 size);
 extern BOOL OS_SendMessage(void *queue, void *message, int flags);
@@ -83,7 +83,7 @@ int WMi_InitCore(void *buffer, u16 dmaNo, u32 size)
     data_020597fc.buffer->status = data_020597fc.buffer->wm7Buffer + 0x300;
     data_020597fc.buffer->fifo9to7 = data_020597fc.buffer->status + 0x800;
     data_020597fc.buffer->fifo7to9 = data_020597fc.buffer->fifo9to7 + 0x100;
-    func_0201138c();
+    Ov105_ClearSharedRequestBit();
     data_020597fc.buffer->dmaNo = dmaNo;
     data_020597fc.buffer->scanOnlyFlag = 0;
     data_020597fc.buffer->connectedCount = 0;

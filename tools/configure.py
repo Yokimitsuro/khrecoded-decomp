@@ -36,6 +36,10 @@ ABSOLUTE_SYMBOLS = {
     "SDK_IRQ_STACKSIZE": 0x800,
     # Inter-processor lock word at the top of main RAM.
     "data_027ffff0": 0x027FFFF0,
+    # Cartridge module information cached in the shared system work area.
+    "data_02fffc30": 0x02FFFC30,
+    # Shared wireless request flags written by ARM7.
+    "data_02ffff96": 0x02FFFF96,
 }
 
 

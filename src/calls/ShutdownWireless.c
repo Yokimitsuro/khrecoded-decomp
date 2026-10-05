@@ -2,7 +2,7 @@ extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern int IsDeviceReady(void);
 extern int WMi_CheckStateEx(int a, int b);
-extern void func_0201138c(void);
+extern void Ov105_ClearSharedRequestBit(void);
 extern void PXI_SetFifoRecvCallback(int tag, void *callback);
 extern char data_020597fc;
 
@@ -17,7 +17,7 @@ int ShutdownWireless(void) {
     if (err != 0) {
         return err;
     }
-    func_0201138c();
+    Ov105_ClearSharedRequestBit();
     PXI_SetFifoRecvCallback(0xa, 0);
     *(int *)((char *)&data_020597fc + 4) = 0;
     *(short *)&data_020597fc = 0;

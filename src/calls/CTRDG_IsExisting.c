@@ -7,7 +7,7 @@ extern struct {
 } data_0205a2a0;
 
 
-extern BOOL func_02012334(void);
+extern BOOL CTRDGi_HasValidModuleInfo(void);
 extern void CTRDGi_LockByProcessor(u16 lockID, CTRDGLockByProc *info);
 extern void CTRDGi_UnlockByProcessor(u16 lockID, CTRDGLockByProc *info);
 extern void CTRDGi_ChangeLatestAccessCycle(CTRDGRomCycle *r);
@@ -21,7 +21,7 @@ BOOL CTRDG_IsExisting(void)
     CTRDGHeader *chp = (CTRDGHeader *)0x08000000;
     CTRDGModuleInfo *cip = (CTRDGModuleInfo *)0x02fffc30;
 
-    if (!func_02012334()) {
+    if (!CTRDGi_HasValidModuleInfo()) {
         return FALSE;
     }
 

@@ -8,7 +8,7 @@ extern struct {
 
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
-extern BOOL func_02012334(void);
+extern BOOL CTRDGi_HasValidModuleInfo(void);
 extern u32 OS_SetDPermissionsForProtectionRegion(u32 mask, u32 access);
 extern void DC_FlushAll(void);
 extern void DC_WaitWriteBufferEmpty(void);
@@ -24,7 +24,7 @@ void CTRDG_Enable(BOOL enable) {
 
     data_0205a2a0.enableFlag = enable;
 
-    if (func_02012334()) {
+    if (CTRDGi_HasValidModuleInfo()) {
         u32 access = enable ? (1 << 12) : (5 << 12);
         OS_SetDPermissionsForProtectionRegion(0xf << 12, access);
         if (enable) {

@@ -2949,6 +2949,10 @@ src/calls/WMi_CheckStateEx.c:
     complete
     .text       start:0x0201109c end:0x020110ec
 
+src/calls/Ov105_ClearSharedRequestBit.c:
+    complete
+    .text       start:0x0201138c end:0x020113a8
+
 src/calls/GetSessionChannel.c:
     complete
     .text       start:0x020113a8 end:0x020113cc
@@ -3088,6 +3092,10 @@ src/calls/WM_SetWEPKey.c:
 src/calls/WM_MeasureChannel.c:
     complete
     .text       start:0x020122ec end:0x02012334
+
+src/calls/CTRDGi_HasValidModuleInfo.c:
+    complete
+    .text       start:0x02012334 end:0x02012350
 
 src/calls/CTRDGi_InitCommon.c:
     complete
