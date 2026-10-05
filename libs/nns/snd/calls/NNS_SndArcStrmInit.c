@@ -27,9 +27,9 @@ void NNS_SndArcStrmInit(u32 threadPriority, NNSSndHeapHandle heap)
     for (playerNo = 0; playerNo < NNS_SND_STRM_PLAYER_NUM; playerNo++) {
         player = &sStrmPlayers[playerNo];
 
-        player->flags &= ~NNS_SND_STRM_PLAYER_ACTIVE;
+        player->activeFlag = FALSE;
         FS_InitFile((FSFile *)player->fileStorage);
-        NNS_SndStrmInit(player->streamStorage);
+        NNS_SndStrmInit(&player->stream);
         player->playerNo = playerNo;
         player->numChannels = 0;
         player->buffer = NULL;

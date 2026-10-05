@@ -9,7 +9,8 @@ enum {
     NNS_SND_STRM_BLOCK_SIZE = 512,
     NNS_SND_STRM_BLOCK_NUM = 4,
     NNS_SND_STRM_PLAYER_ACTIVE = 1 << 0,
-    NNS_SND_STRM_PLAYER_STARTING = 1 << 2
+    NNS_SND_STRM_PLAYER_STARTING = 1 << 2,
+    NNS_SND_ARC_STRM_FORCE_STEREO = 1 << 0
 };
 
 typedef struct NNSFndList {
@@ -19,32 +20,147 @@ typedef struct NNSFndList {
     u16 offset;
 } NNSFndList;
 
+struct NNSSndStrmPlayer;
+typedef struct NNSSndStrmThread NNSSndStrmThread;
+
 typedef struct NNSSndStrmCommand {
     void *previous;
     void *next;
-    u32 parameter[10];
+    struct NNSSndStrmPlayer *player;
+    int status;
+    int numChannels;
+    void *buffers[6];
+    u32 bufferLength;
 } NNSSndStrmCommand;
 
 typedef struct NNSSndArcStreamState {
     BOOL initialized;
-    void *prepareThread;
+    NNSSndStrmThread *prepareThread;
     u8 *decodeBuffer;
 } NNSSndArcStreamState;
 
+typedef enum NNSSndStrmFormat {
+    NNS_SND_STRM_FORMAT_PCM8,
+    NNS_SND_STRM_FORMAT_PCM16
+} NNSSndStrmFormat;
+
+typedef enum NNSSndStrmCallbackStatus {
+    NNS_SND_STRM_CALLBACK_SETUP,
+    NNS_SND_STRM_CALLBACK_INTERVAL
+} NNSSndStrmCallbackStatus;
+
+typedef enum NNSSndArcStrmCallbackStatus {
+    NNS_SND_ARC_STRM_CALLBACK_DATA_END
+} NNSSndArcStrmCallbackStatus;
+
+typedef enum NNSSndStrmDataFormat {
+    NNS_SND_STRM_DATA_FORMAT_PCM8,
+    NNS_SND_STRM_DATA_FORMAT_PCM16,
+    NNS_SND_STRM_DATA_FORMAT_ADPCM
+} NNSSndStrmDataFormat;
+
+typedef struct NNSSndStrm {
+    u8 storage[0x5c];
+} NNSSndStrm;
+
+typedef struct NNSSndFader {
+    int origin;
+    int target;
+    int counter;
+    int frame;
+} NNSSndFader;
+
+typedef struct NNSSndStrmData {
+    SNDBinaryFileHeader fileHeader;
+    SNDBinaryBlockHeader blockHeader;
+    u8 format;
+    u8 loopFlag;
+    u8 numChannels;
+    u8 padding;
+    u16 sampleRate;
+    u16 timer;
+    u32 loopStart;
+    u32 loopEnd;
+    u32 dataOffset;
+    u32 numBlocks;
+    u32 blockSize;
+    u32 blockSamples;
+    u32 lastBlockSize;
+    u32 lastBlockSamples;
+} NNSSndStrmData;
+
+typedef struct NNSSndAdpcmState {
+    short previousSample;
+    u8 previousIndex;
+    u8 padding;
+} NNSSndAdpcmState;
+
+typedef void (*NNSSndStrmCallback)(
+    NNSSndStrmCallbackStatus status,
+    int numChannels,
+    void *buffers[],
+    u32 length,
+    NNSSndStrmFormat format,
+    void *argument);
+typedef BOOL (*NNSSndArcStrmCallback)(
+    NNSSndArcStrmCallbackStatus status,
+    const void *info,
+    void *parameter,
+    void *argument);
+typedef BOOL (*NNSSndOpenStreamFunction)(
+    struct NNSSndStrmPlayer *player,
+    u32 fileId);
+typedef void (*NNSSndCloseStreamFunction)(
+    struct NNSSndStrmPlayer *player);
+typedef int (*NNSSndReadStreamFunction)(
+    struct NNSSndStrmPlayer *player,
+    void *destination,
+    u32 size,
+    u32 offset);
+typedef void (*NNSSndCancelStreamFunction)(
+    struct NNSSndStrmPlayer *player);
+
 typedef struct NNSSndStrmPlayer {
-    u8 streamStorage[0x64];
-    u8 fileStorage[0xb4];
-    u32 flags;
-    u8 reserved11c[0x0c];
+    NNSSndStrm stream;
+    u32 reservedAfterStream[2];
+    u8 fileStorage[0x48];
+    u32 fileOffset;
+    NNSSndStrmData info;
+    NNSSndFader fader;
+    NNSSndAdpcmState adpcmState[6];
+    BOOL activeFlag : 1;
+    BOOL playFlag : 1;
+    BOOL startFlag : 1;
+    BOOL fadeOutFlag : 1;
+    BOOL dirtyFlag : 1;
+    BOOL finishFlag : 1;
+    BOOL monoFlag : 1;
+    BOOL reservedFlags : 25;
+    volatile int finishCounter;
+    volatile BOOL prepareFlag;
+    volatile int commandCount;
     int allocChannelCount;
     u8 numChannels;
     u8 padding12d;
     u8 channelNumbers[6];
     void *buffer;
     u32 bufferSize;
-    u8 reserved13c[0x14];
+    NNSSndStrmCallback streamCallback;
+    void *streamCallbackArgument;
+    NNSSndArcStrmCallback archiveCallback;
+    void *archiveCallbackArgument;
+    int streamNo;
     int playerNo;
-    u8 reserved154[0x28];
+    struct NNSSndStrmHandle *handle;
+    int priority;
+    int initialVolume;
+    int externalVolume;
+    int volume;
+    u32 currentSample;
+    NNSSndOpenStreamFunction openStream;
+    NNSSndCloseStreamFunction closeStream;
+    NNSSndReadStreamFunction readStream;
+    NNSSndCancelStreamFunction cancelStream;
 } NNSSndStrmPlayer;
 
 typedef struct NNSSndStrmHandle {
@@ -64,12 +180,18 @@ typedef struct NNSSndArcStrmInfo {
     u8 flags;
 } NNSSndArcStrmInfo;
 
-typedef void (*NNSSndStrmCallback)(void);
-typedef void (*NNSSndArcStrmCallback)(void);
+typedef struct NNSSndThreadQueue {
+    void *head;
+    void *tail;
+} NNSSndThreadQueue;
 
-typedef struct NNSSndStrmThread {
-    u8 storage[0x18c];
-} NNSSndStrmThread;
+struct NNSSndStrmThread {
+    u8 thread[0xc0];
+    u8 stack[0x1000];
+    NNSSndThreadQueue threadQueue;
+    u8 mutex[0x18];
+    NNSFndList commandList;
+};
 
 extern NNSSndArcStreamState sSoundArcStreamState;
 extern NNSFndList sFreeStreamCommandList;
@@ -78,17 +200,73 @@ extern NNSSndStrmCommand sStreamCommands[NNS_SND_STRM_COMMAND_NUM];
 extern u8 sDecodeBufferArea[0x200];
 extern NNSSndStrmPlayer sStrmPlayers[NNS_SND_STRM_PLAYER_NUM];
 extern NNSSndStrmThread sPrepareStreamThread;
+extern NNSFndList sStreamCommandList;
 
 extern void NNS_FndInitList(NNSFndList *list, u16 offset);
 extern void NNS_FndAppendListObject(NNSFndList *list, void *object);
+extern void *NNS_FndGetNextListObject(NNSFndList *list, void *object);
+extern void NNS_FndRemoveListObject(NNSFndList *list, void *object);
+extern u32 OS_DisableInterrupts(void);
+extern u32 OS_RestoreInterrupts(u32 state);
 extern void OS_InitMutex(void *mutex);
+extern void OS_CreateThread(
+    void *thread,
+    void (*entry)(void *),
+    void *argument,
+    void *stackTop,
+    u32 stackSize,
+    u32 priority);
+extern void OS_WakeupThreadDirect(void *thread);
 extern void FS_InitFile(FSFile *file);
 extern void NNS_SndStrmInit(void *stream);
+extern BOOL NNS_SndStrmSetup(
+    NNSSndStrm *stream,
+    NNSSndStrmFormat format,
+    void *buffer,
+    u32 bufferSize,
+    int timer,
+    int interval,
+    NNSSndStrmCallback callback,
+    void *argument);
+extern void NNS_SndStrmSetChannelPan(
+    NNSSndStrm *stream,
+    int channelNo,
+    int pan);
 extern void CreateThread(NNSSndStrmThread *thread, u32 threadPriority);
+extern void StrmThread(void *argument);
 extern const NNSSndArcStrmPlayerInfo *NNS_SndArcGetStrmPlayerInfo(
     int playerNo);
 extern const NNSSndArcStrmInfo *NNS_SndArcGetStrmInfo(int streamNo);
 extern void ForceStopStrm_2(NNSSndStrmPlayer *player);
+extern void ShutdownStreamPlayer(NNSSndStrmPlayer *player);
+extern NNSSndStrmPlayer *AllocPlayer(
+    NNSSndStrmHandle *handle,
+    int playerNo,
+    int priority);
+extern void FreePlayer(NNSSndStrmPlayer *player);
+extern BOOL AllocChannel(
+    NNSSndStrmPlayer *player,
+    int numChannels,
+    const u8 channelNumbers[]);
+extern void FreeChannel(NNSSndStrmPlayer *player);
+extern void StrmCallback_2(
+    NNSSndStrmCallbackStatus status,
+    int numChannels,
+    void *buffers[],
+    u32 length,
+    NNSSndStrmFormat format,
+    void *argument);
+extern void SetupStreamFunction(NNSSndStrmPlayer *player, u32 fileId);
+extern void RemoveCommandByPlayer(
+    NNSFndList *commandList,
+    const NNSSndStrmPlayer *player);
+extern NNSSndStrmCommand *AllocCommandBuffer(void);
+extern void FreeCommandBuffer(NNSSndStrmCommand *command);
+extern void NNSi_SndFaderInit(NNSSndFader *fader);
+extern void NNSi_SndFaderSet(
+    NNSSndFader *fader,
+    int target,
+    int frameCount);
 extern void DisposeCallback_2(
     void *memory,
     u32 size,

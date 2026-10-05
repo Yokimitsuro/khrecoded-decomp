@@ -741,5 +741,11 @@
   "libs/nns/snd/auto/NNS_SndArcStrmStartPrepared.c": "dsi/1.1",
   "libs/nns/snd/calls/NNS_SndArcStrmStart.c": "dsi/1.1",
   "libs/nns/snd/calls/NNS_SndArcStrmStop.c": "dsi/1.1",
-  "libs/nns/snd/auto/Word_ClearB.c": "dsi/1.1"
+  "libs/nns/snd/auto/Word_ClearB.c": "dsi/1.1",
+  "libs/nns/snd/calls/PrepareStrm.c": "dsi/1.1",
+  "libs/nns/snd/calls/ShutdownStreamPlayer.c": "dsi/1.1",
+  "libs/nns/snd/calls/CreateThread.c": "dsi/1.1",
+  "libs/nns/snd/calls/RemoveCommandByPlayer.c": "dsi/1.1",
+  "libs/nns/snd/calls/AllocCommandBuffer.c": "dsi/1.1",
+  "libs/nns/snd/calls/FreeCommandBuffer.c": "dsi/1.1"
 }

@@ -24,7 +24,7 @@ extern SoundArcStreamState sSoundArcStreamState;
 extern void OS_LockMutex(void *mutex);
 extern void OS_UnlockMutex(void *mutex);
 extern void NNS_SndStrmStop(void *stream);
-extern void func_020208bc(NNSSndStrmPlayer *player);
+extern void ShutdownStreamPlayer(NNSSndStrmPlayer *player);
 
 void ForceStopStrm_2(NNSSndStrmPlayer *player)
 {
@@ -38,7 +38,7 @@ void ForceStopStrm_2(NNSSndStrmPlayer *player)
     if (player->activeFlag) {
         player->cancelStreamFunc(player);
     }
-    func_020208bc(player);
+    ShutdownStreamPlayer(player);
     OS_UnlockMutex(&sSoundArcStreamMutex);
     if (sSoundArcStreamState.prepareThread) {
         OS_UnlockMutex(&sSoundArcStreamState.prepareThread->mutex);

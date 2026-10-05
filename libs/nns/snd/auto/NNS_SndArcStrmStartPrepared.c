@@ -11,5 +11,5 @@ void NNS_SndArcStrmStartPrepared(NNSSndStrmHandle *handle)
         return;
     }
 
-    handle->player->flags |= NNS_SND_STRM_PLAYER_STARTING;
+    handle->player->startFlag = TRUE;
 }

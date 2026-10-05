@@ -4669,6 +4669,10 @@ libs/nns/snd/auto/FreePlayer.c:
     complete
     .text       start:0x02020534 end:0x02020560
 
+libs/nns/snd/calls/PrepareStrm.c:
+    complete
+    .text       start:0x02020560 end:0x020207cc
+
 libs/nitro/snd/calls/SNDi_FreeVoiceChannel.c:
     complete
     .text       start:0x020207cc end:0x02020824
@@ -4676,6 +4680,10 @@ libs/nitro/snd/calls/SNDi_FreeVoiceChannel.c:
 libs/nns/snd/calls/ForceStopStrm_2.c:
     complete
     .text       start:0x02020824 end:0x020208bc
+
+libs/nns/snd/calls/ShutdownStreamPlayer.c:
+    complete
+    .text       start:0x020208bc end:0x02020924
 
 libs/nns/snd/calls/AllocChannel.c:
     complete
@@ -4685,7 +4693,11 @@ libs/nns/snd/calls/FreeChannel.c:
     complete
     .text       start:0x0202095c end:0x02020980
 
-libs/nns/snd/calls/func_020209e8.c:
+libs/nns/snd/calls/CreateThread.c:
+    complete
+    .text       start:0x02020980 end:0x020209e8
+
+libs/nns/snd/calls/RemoveCommandByPlayer.c:
     complete
     .text       start:0x020209e8 end:0x02020a58
 
@@ -4693,7 +4705,11 @@ libs/nns/snd/calls/ReadCommandBuffer.c:
     complete
     .text       start:0x02020a58 end:0x02020aa8
 
-libs/nns/snd/calls/func_02020aec.c:
+libs/nns/snd/calls/AllocCommandBuffer.c:
+    complete
+    .text       start:0x02020aa8 end:0x02020aec
+
+libs/nns/snd/calls/FreeCommandBuffer.c:
     complete
     .text       start:0x02020aec end:0x02020b18
 
