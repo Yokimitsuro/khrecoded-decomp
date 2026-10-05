@@ -18,7 +18,7 @@ NNSSndArcLoadResult NNSi_SndArcLoadSeq(
     }
 
     result = NNSi_SndArcLoadBank(
-        seqInfo->parameter.bankNo,
+        seqInfo->param.bankNo,
         loadFlag,
         heap,
         setAddress,

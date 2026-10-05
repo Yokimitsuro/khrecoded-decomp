@@ -88,11 +88,26 @@ typedef struct NNSSndArcSeqArcInfo {
     u32 fileId;
 } NNSSndArcSeqArcInfo;
 
+typedef struct NNSSndSeqParam {
+    u16 bankNo;
+    u8 volume;
+    u8 channelPrio;
+    u8 playerPrio;
+    u8 playerNo;
+    u16 reserved;
+} NNSSndSeqParam;
+
+typedef struct NNSSndSeqArcSeqInfo {
+    u32 offset;
+    NNSSndSeqParam param;
+} NNSSndSeqArcSeqInfo;
+
 typedef struct NNSSndSeqArc {
     SNDBinaryFileHeader fileHeader;
     SNDBinaryBlockHeader blockHeader;
     u32 baseOffset;
     u32 count;
+    NNSSndSeqArcSeqInfo info[1];
 } NNSSndSeqArc;
 
 typedef struct NNSSndArcHeader {

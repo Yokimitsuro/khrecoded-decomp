@@ -726,5 +726,13 @@
   "libs/nns/snd/calls/NNS_SndArcLoadWaveArcTable.c": "dsi/1.1",
   "libs/nns/snd/calls/SingleWaveDisposeCallback.c": "dsi/1.1",
   "libs/nns/snd/calls/SndLoadWaveData.c": "dsi/1.1",
-  "libs/nns/snd/calls/LoadSingleWaves.c": "dsi/1.1"
+  "libs/nns/snd/calls/LoadSingleWaves.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndPlayerFreeSeqPlayer.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcPlayerSetup.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcPlayerStartSeq.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcPlayerStartSeqArc.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndArcPlayerStartSeqArcEx.c": "dsi/1.1",
+  "libs/nns/snd/calls/StartSeq.c": "dsi/1.1",
+  "libs/nns/snd/calls/StartSeqArc.c": "dsi/1.1",
+  "libs/nns/snd/auto/NNSi_SndSeqArcGetSeqInfo.c": "dsi/1.1"
 }

@@ -4,15 +4,6 @@
 #include "libs/nns/snd/sndarc_internal.h"
 
 typedef int NNSSndArcLoadResult;
-typedef struct NNSSndSeqParam {
-    u16 bankNo;
-    u8 volume;
-    u8 channelPriority;
-    u8 playerPriority;
-    u8 playerNo;
-    u16 reserved;
-} NNSSndSeqParam;
-
 typedef struct NNSSndSeqData {
     SNDBinaryFileHeader fileHeader;
     SNDBinaryBlockHeader blockHeader;
@@ -22,7 +13,7 @@ typedef struct NNSSndSeqData {
 
 typedef struct NNSSndArcSeqInfo {
     u32 fileId;
-    NNSSndSeqParam parameter;
+    NNSSndSeqParam param;
 } NNSSndArcSeqInfo;
 typedef struct SNDWaveArcLink {
     struct SNDWaveArc *waveArc;

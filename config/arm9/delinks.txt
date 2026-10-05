@@ -4245,7 +4245,7 @@ libs/nns/snd/calls/NNSi_SndPlayerAllocSeqPlayer.c:
     complete
     .text       start:0x0201daec end:0x0201db88
 
-src/calls/func_0201db88.c:
+libs/nns/snd/calls/NNSi_SndPlayerFreeSeqPlayer.c:
     complete
     .text       start:0x0201db88 end:0x0201db94
 
@@ -4593,17 +4593,29 @@ libs/nns/snd/calls/LoadSingleWaves.c:
     complete
     .text       start:0x0201fbf0 end:0x0201fcb0
 
-libs/nns/snd/calls/func_0201fd48.c:
+libs/nns/snd/calls/NNS_SndArcPlayerSetup.c:
+    complete
+    .text       start:0x0201fcb0 end:0x0201fd48
+
+libs/nns/snd/calls/NNS_SndArcPlayerStartSeq.c:
     complete
     .text       start:0x0201fd48 end:0x0201fd90
 
-libs/nns/snd/calls/func_0201fd90.c:
+libs/nns/snd/calls/NNS_SndArcPlayerStartSeqArc.c:
     complete
     .text       start:0x0201fd90 end:0x0201fe10
 
-libs/nns/snd/calls/func_0201fe10.c:
+libs/nns/snd/calls/NNS_SndArcPlayerStartSeqArcEx.c:
     complete
     .text       start:0x0201fe10 end:0x0201febc
+
+libs/nns/snd/calls/StartSeq.c:
+    complete
+    .text       start:0x0201febc end:0x0201ffc0
+
+libs/nns/snd/calls/StartSeqArc.c:
+    complete
+    .text       start:0x0201ffc0 end:0x02020088
 
 libs/nns/snd/calls/func_02020254.c:
     complete
@@ -4697,7 +4709,7 @@ libs/nns/snd/auto/NNSi_SndSeqArcGetSeqCount.c:
     complete
     .text       start:0x02021888 end:0x02021890
 
-libs/nns/snd/auto/func_02021890.c:
+libs/nns/snd/auto/NNSi_SndSeqArcGetSeqInfo.c:
     complete
     .text       start:0x02021890 end:0x020218d0
 
