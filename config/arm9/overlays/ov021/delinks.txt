@@ -60,6 +60,46 @@ src/overlays/ov021/auto/func_ov021_020b48a0.c:
     complete
     .text       start:0x020b48a0 end:0x020b48a4
 
+src/overlays/ov021/data/strings/Strings_ov021_020b4fe8.c:
+    complete
+    .rodata     start:0x020b4fe8 end:0x020b4ff8
+
+src/overlays/ov021/data/strings/Strings_ov021_020b5004.c:
+    complete
+    .rodata     start:0x020b5004 end:0x020b5014
+
+src/overlays/ov021/data/strings/Strings_ov021_020b5200.c:
+    complete
+    .data       start:0x020b5200 end:0x020b520c
+
+src/overlays/ov021/data/strings/Strings_ov021_020b520c.c:
+    complete
+    .data       start:0x020b520c end:0x020b5214
+
+src/overlays/ov021/data/strings/Strings_ov021_020b5214.c:
+    complete
+    .data       start:0x020b5214 end:0x020b521c
+
+src/overlays/ov021/data/strings/Strings_ov021_020b5228.c:
+    complete
+    .data       start:0x020b5228 end:0x020b5238
+
+src/overlays/ov021/data/strings/Strings_ov021_020b5238.c:
+    complete
+    .data       start:0x020b5238 end:0x020b5248
+
+src/overlays/ov021/data/strings/Strings_ov021_020b5248.c:
+    complete
+    .data       start:0x020b5248 end:0x020b5258
+
+src/overlays/ov021/data/strings/Strings_ov021_020b5258.c:
+    complete
+    .data       start:0x020b5258 end:0x020b5268
+
+src/overlays/ov021/data/strings/Strings_ov021_020b52a4.c:
+    complete
+    .data       start:0x020b52a4 end:0x020b52b0
+
 src/overlays/ov021/data/tables/PointerTables_ov021_020b52d4.c:
     complete
     .data       start:0x020b52d4 end:0x020b560c

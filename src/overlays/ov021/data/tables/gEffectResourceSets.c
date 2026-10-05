@@ -1,11 +1,11 @@
 #include "nitro/types.h"
 
-extern u8 data_ov021_020b5238[];
-extern u8 data_ov021_020b5228[];
-extern u8 data_ov021_020b5248[];
+extern u8 sOv021_BaChSoWP2_020b5238[];
+extern u8 sOv021_BaChDoWP2_020b5228[];
+extern u8 sOv021_BaChGoWP2_020b5248[];
 
 void *gEffectResourceSets[3] = {
-    data_ov021_020b5238,
-    data_ov021_020b5228,
-    data_ov021_020b5248,
+    sOv021_BaChSoWP2_020b5238,
+    sOv021_BaChDoWP2_020b5228,
+    sOv021_BaChGoWP2_020b5248,
 };

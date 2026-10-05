@@ -16,6 +16,78 @@ src/overlays/ov041/calls/func_ov041_020be090.c:
     complete
     .text       start:0x020be090 end:0x020be098
 
+src/overlays/ov041/data/strings/Strings_ov041_020cf710.c:
+    complete
+    .rodata     start:0x020cf710 end:0x020cf720
+
+src/overlays/ov041/data/strings/Strings_ov041_020cf730.c:
+    complete
+    .rodata     start:0x020cf730 end:0x020cf740
+
+src/overlays/ov041/data/strings/Strings_ov041_020cf770.c:
+    complete
+    .rodata     start:0x020cf770 end:0x020cf780
+
+src/overlays/ov041/data/strings/Strings_ov041_020cf780.c:
+    complete
+    .rodata     start:0x020cf780 end:0x020cf790
+
+src/overlays/ov041/data/strings/Strings_ov041_020cf93c.c:
+    complete
+    .data       start:0x020cf93c end:0x020cf958
+
+src/overlays/ov041/data/strings/Strings_ov041_020cf958.c:
+    complete
+    .data       start:0x020cf958 end:0x020cf968
+
+src/overlays/ov041/data/strings/Strings_ov041_020cf968.c:
+    complete
+    .data       start:0x020cf968 end:0x020cf978
+
+src/overlays/ov041/data/strings/Strings_ov041_020cf9f8.c:
+    complete
+    .data       start:0x020cf9f8 end:0x020cfa08
+
+src/overlays/ov041/data/strings/Strings_ov041_020cfa08.c:
+    complete
+    .data       start:0x020cfa08 end:0x020cfa18
+
+src/overlays/ov041/data/strings/Strings_ov041_020cfa18.c:
+    complete
+    .data       start:0x020cfa18 end:0x020cfa20
+
+src/overlays/ov041/data/strings/Strings_ov041_020cfa20.c:
+    complete
+    .data       start:0x020cfa20 end:0x020cfa44
+
+src/overlays/ov041/data/strings/Strings_ov041_020cfa44.c:
+    complete
+    .data       start:0x020cfa44 end:0x020cfa54
+
+src/overlays/ov041/data/strings/Strings_ov041_020cfa54.c:
+    complete
+    .data       start:0x020cfa54 end:0x020cfa78
+
+src/overlays/ov041/data/strings/Strings_ov041_020cfa78.c:
+    complete
+    .data       start:0x020cfa78 end:0x020cfa8c
+
+src/overlays/ov041/data/strings/Strings_ov041_020cfa8c.c:
+    complete
+    .data       start:0x020cfa8c end:0x020cfaa0
+
+src/overlays/ov041/data/strings/Strings_ov041_020cfaa0.c:
+    complete
+    .data       start:0x020cfaa0 end:0x020cfab0
+
+src/overlays/ov041/data/strings/Strings_ov041_020cfab0.c:
+    complete
+    .data       start:0x020cfab0 end:0x020cfac0
+
+src/overlays/ov041/data/strings/Strings_ov041_020cfac0.c:
+    complete
+    .data       start:0x020cfac0 end:0x020cfac8
+
 src/overlays/ov041/data/tables/gOv041ResourceSets.c:
     complete
     .data       start:0x020cfac8 end:0x020cfae0

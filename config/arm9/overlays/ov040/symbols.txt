@@ -56,11 +56,11 @@ func_ov040_020be158 kind:function(thumb,size=0x68) addr:0x020be158
 data_ov040_020be1c0 kind:data(any) addr:0x020be1c0
 data_ov040_020be1c4 kind:data(any) addr:0x020be1c4
 gAreaSceneStateHandlers kind:data(any) addr:0x020be1e0
-data_ov040_020be22c kind:data(any) addr:0x020be22c
-data_ov040_020be238 kind:data(any) addr:0x020be238
-data_ov040_020be240 kind:data(any) addr:0x020be240
-data_ov040_020be248 kind:data(any) addr:0x020be248
-data_ov040_020be254 kind:data(any) addr:0x020be254
-data_ov040_020be260 kind:data(any) addr:0x020be260
+sOv040_BugcolFormat02d_020be22c kind:data(any) addr:0x020be22c
+sOv040_FormatSFormat02d_020be238 kind:data(any) addr:0x020be238
+sOv040_Area_020be240 kind:data(any) addr:0x020be240
+sOv040_RpgEfEcZ_020be248 kind:data(any) addr:0x020be248
+sOv040_RpgEnpEP_020be254 kind:data(any) addr:0x020be254
+sOv040_RpgEnpBL_020be260 kind:data(any) addr:0x020be260
 data_ov040_020be280 kind:bss addr:0x020be280
 data_ov040_020be284 kind:bss addr:0x020be284

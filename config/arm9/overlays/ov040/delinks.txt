@@ -16,6 +16,22 @@ src/overlays/ov040/calls/func_ov040_020be00c.c:
     complete
     .text       start:0x020be00c end:0x020be028
 
+src/overlays/ov040/data/strings/Strings_ov040_020be22c.c:
+    complete
+    .data       start:0x020be22c end:0x020be238
+
+src/overlays/ov040/data/strings/Strings_ov040_020be238.c:
+    complete
+    .data       start:0x020be238 end:0x020be240
+
+src/overlays/ov040/data/strings/Strings_ov040_020be240.c:
+    complete
+    .data       start:0x020be240 end:0x020be254
+
+src/overlays/ov040/data/strings/Strings_ov040_020be254.c:
+    complete
+    .data       start:0x020be254 end:0x020be280
+
 src/overlays/ov040/data/tables/gAreaSceneStateHandlers.c:
     complete
     .data       start:0x020be1e0 end:0x020be22c
