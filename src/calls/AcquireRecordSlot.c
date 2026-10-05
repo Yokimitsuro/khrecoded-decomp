@@ -1,6 +1,6 @@
 #include "nitro/types.h"
 
-extern int data_020613d0;
+extern int gRecordManager;
 
 extern void LoadTextEntryTablesLarge(int param);
 extern void LoadTextEntryTables(int param);
@@ -22,8 +22,8 @@ int AcquireRecordSlot(int slot, int param)
 {
     int manager;
 
-    manager = data_020613d0;
-    *(u8 *)(data_020613d0 + 0x44 + slot) = *(u8 *)(data_020613d0 + 0x44 + slot) + 1;
+    manager = gRecordManager;
+    *(u8 *)(gRecordManager + 0x44 + slot) = *(u8 *)(gRecordManager + 0x44 + slot) + 1;
     if (*(u8 *)(manager + slot + 0x44) > 1) {
         return 1;
     }

@@ -16,7 +16,7 @@ typedef struct ChannelSlot {
 
 extern u32 data_020569d8[];
 extern ChannelSlot data_020569e0[4][4];
-extern ActiveEntryState data_020569cc;
+extern ActiveEntryState gVBlankCallbackState;
 
 extern int strncmp(const char *s1, const char *s2, unsigned n);
 extern u32 UnlinkNodeIrqSafe(u32 listHead, u32 irqMask, ChannelSlot *node);
@@ -37,7 +37,7 @@ void UnregisterChannelEntry(u32 irqMask, const char *name, int channel)
         return;
     }
     heads[channel] = UnlinkNodeIrqSafe(heads[channel], irqMask, slot);
-    if (data_020569cc.index == channel) {
-        data_020569cc.value = heads[channel];
+    if (gVBlankCallbackState.index == channel) {
+        gVBlankCallbackState.value = heads[channel];
     }
 }

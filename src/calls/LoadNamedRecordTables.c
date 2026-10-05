@@ -16,13 +16,13 @@ typedef struct {
     u32 descriptionTable;
 } State;
 
-extern State *data_020613d0;
+extern State *gRecordManager;
 extern u32 Archive_LoadFile(u32 fileId, u32 param2);
 extern u32 func_0202c4a0(u32 fileId, u32 param2);
 
 void LoadNamedRecordTables(int useAlt)
 {
-    State *state = data_020613d0;
+    State *state = gRecordManager;
     int i;
     u32 *nameTable;
     u32 *descriptionTable;

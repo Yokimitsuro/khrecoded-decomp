@@ -5,12 +5,12 @@ typedef struct {
     u16 *tableA;
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 
 /* Sums record table A entries. */
 u16 SumRecordTableAEntries(int count)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
     int i;
     u16 sum = 0;
 

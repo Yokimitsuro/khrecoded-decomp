@@ -11,13 +11,13 @@ typedef struct ArchiveState {
     OffsetTable *table;
 } ArchiveState;
 
-extern ArchiveState *data_020613d0;
+extern ArchiveState *gRecordManager;
 u32 Archive_LoadFile(u32 fileId, u32 heapId, u32 unused, u32 extra);
 u32 func_0202c4a0(u32 fileId, u32 heapId, u32 unused, u32 extra);
 
 void LoadRelocatedOffsetTable(BOOL fromTop, u32 unused, u32 arg2, u32 arg3)
 {
-    ArchiveState *state = data_020613d0;
+    ArchiveState *state = gRecordManager;
     u32 baseId = state->baseId;
     OffsetTable *table;
     int i;

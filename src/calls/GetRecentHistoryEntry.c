@@ -11,11 +11,11 @@ typedef struct SceneHistory {
     u8 count;
 } SceneHistory;
 
-extern SceneHistory *data_0206084c;
+extern SceneHistory *gSoundWork;
 
 HistoryEntry *GetRecentHistoryEntry(int age)
 {
-    SceneHistory *scene = data_0206084c;
+    SceneHistory *scene = gSoundWork;
 
     if (age >= scene->count) {
         return NULL;

@@ -1,4 +1,4 @@
-﻿#include "nitro/types.h"
+#include "nitro/types.h"
 #include "nnsys/g2d.h"
 
 typedef struct BgGraphicsData {
@@ -29,7 +29,7 @@ typedef struct PanelState {
     u32 active;
 } PanelState;
 
-extern PanelState *data_0205fe24;
+extern PanelState *gPanelState;
 extern u32 data_0205fde4;
 extern u8 data_0205fdc4;
 extern char sMain_PauseRefresh_02055f44[];
@@ -92,7 +92,7 @@ static inline void SetSubBlendBrightness(int plane, int brightness)
 }
 void UpdatePanelScreenSetup(void)
 {
-    PanelState *panel = data_0205fe24;
+    PanelState *panel = gPanelState;
     BgGraphicsData *graphics = &panel->graphics;
     int i;
 

@@ -1,4 +1,4 @@
-extern int data_020603c8[];
+extern int gTaskManager[];
 extern int data_020603d8[];
 
 void unlink_object_registry_node(int node)
@@ -8,8 +8,8 @@ void unlink_object_registry_node(int node)
     int bucketHead;
 
     nodeKey = *(unsigned short *)(node + 0x10);
-    if (data_020603c8[3] == node) {
-        data_020603c8[3] = *(int *)(node + 0xc);
+    if (gTaskManager[3] == node) {
+        gTaskManager[3] = *(int *)(node + 0xc);
     }
     bucketHead = data_020603d8[nodeKey];
     if (bucketHead == node) {

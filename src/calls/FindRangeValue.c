@@ -12,11 +12,11 @@ typedef struct RangeTables {
     RangeEntry *ranges;
 } RangeTables;
 
-extern RangeTables *data_020613d0;
+extern RangeTables *gRecordManager;
 
 int FindRangeValue(int major, int minor)
 {
-    RangeTables *tables = data_020613d0;
+    RangeTables *tables = gRecordManager;
     int i;
     RangeEntry *entry;
     int result = -1;

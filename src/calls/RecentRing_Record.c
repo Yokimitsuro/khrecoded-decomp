@@ -1,4 +1,4 @@
-extern int data_0206084c;
+extern int gSoundWork;
 
 typedef struct {
     unsigned short id;
@@ -15,7 +15,7 @@ typedef struct {
 
 int RecentRing_Record(unsigned short id, unsigned char kind)
 {
-    RingQueue *q = (RingQueue *)(*(int *)&data_0206084c + 739128);
+    RingQueue *q = (RingQueue *)(*(int *)&gSoundWork + 739128);
     unsigned short i = 0;
     unsigned short count = q->count;
     RingSlot *slot;

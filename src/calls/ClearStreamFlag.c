@@ -1,8 +1,8 @@
 #include "nitro/types.h"
 
-extern u8 *data_0206084c;
+extern u8 *gSoundWork;
 
 void ClearStreamFlag(int index)
 {
-    *(u8 *)(data_0206084c + index * 8 + 0xb44ce) = 0;
+    *(u8 *)(gSoundWork + index * 8 + 0xb44ce) = 0;
 }

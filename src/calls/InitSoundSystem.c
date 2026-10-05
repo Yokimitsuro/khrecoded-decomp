@@ -1,28 +1,28 @@
 #include "nitro/types.h"
 
-extern u8 *data_0206084c;
+extern u8 *gSoundWork;
 extern void *data_02060394;
 extern void *NNSi_FndAllocFromExpHeapEx(u32 size, void *heap);
 extern void MI_CpuFill8(void *dest, u32 value, u32 size);
 extern void NNS_SndInit(void);
 extern u32 NNS_SndHeapCreate(void *buffer, u32 size);
-extern void func_0204cacc(void);
+extern void RecentRing_Reset(void);
 
 BOOL InitSoundSystem(void)
 {
     u8 *scene;
 
-    if (data_0206084c != NULL) {
+    if (gSoundWork != NULL) {
         return TRUE;
     }
     scene = NNSi_FndAllocFromExpHeapEx(0xb47dc, data_02060394);
-    data_0206084c = scene;
+    gSoundWork = scene;
     MI_CpuFill8(scene, 0, 0xb47dc);
     NNS_SndInit();
     *(u32 *)(scene + 0xb04b4) = NNS_SndHeapCreate(scene + 0xb4, 0x65400);
     *(u32 *)(scene + 0xb04b8) = NNS_SndHeapCreate(scene + 0x654b4, 0x4b000);
     *(u32 *)(scene + 0xb44bc) = NNS_SndHeapCreate(scene + 0xb04bc, 0x4000);
-    func_0204cacc();
+    RecentRing_Reset();
     *(u32 *)(scene + 0xb4500) = 0;
     *(u32 *)(scene + 0xb4504) = 0;
     *(u32 *)(scene + 0xb4508) = 0;

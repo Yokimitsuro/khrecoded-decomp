@@ -8,12 +8,12 @@ typedef struct {
     s16 currentBgmId;
 } SoundWork;
 
-extern SoundWork *data_0206084c;
+extern SoundWork *gSoundWork;
 extern void NNS_SndPlayerPause(NNSSndHandle *handle, BOOL flag);
 
 void PauseBgm(BOOL pause)
 {
-    SoundWork *work = data_0206084c;
+    SoundWork *work = gSoundWork;
 
     if (work->currentBgmId < 0) {
         return;

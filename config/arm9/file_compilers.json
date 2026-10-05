@@ -2284,5 +2284,18 @@
   "src/calls/ActorSlot_GetByIndex.c": "dsi/1.1",
   "src/calls/ActorSlot_AddPriorityByIndex.c": "dsi/1.1",
   "src/calls/ActorRegistry_RegisterSlot.c": "dsi/1.1",
-  "src/calls/ActorRegistry_UnregisterSlot.c": "dsi/1.1"
+  "src/calls/ActorRegistry_UnregisterSlot.c": "dsi/1.1",
+  "src/calls/SetVBlankStateWord.c": "dsi/1.1",
+  "src/calls/SetScriptBusyFlag.c": "dsi/1.1",
+  "src/calls/GetPanelFieldB8.c": "dsi/1.1",
+  "src/calls/SetPanelFieldA0.c": "dsi/1.1",
+  "src/calls/GetPrimaryRecordCount.c": "dsi/1.1",
+  "src/calls/TaskManager_SetEnabled.c": "dsi/1.1",
+  "src/calls/GetLanguageIndex.c": "dsi/1.1",
+  "src/calls/RecentRing_Reset.c": "dsi/1.1",
+  "src/calls/GetSoundStreamHandle.c": "dsi/1.1",
+  "src/calls/GetSelectionPackedValueBlock.c": "dsi/1.1",
+  "src/calls/GetMapBonusStats.c": "dsi/1.1",
+  "src/calls/GetMapFinalStats.c": "dsi/1.1",
+  "src/calls/GetRecordTableAEntry.c": "dsi/1.1"
 }

@@ -27,7 +27,7 @@ typedef struct PanelState {
     s32 opened;
 } PanelState;
 
-extern PanelState *data_0205fe24;
+extern PanelState *gPanelState;
 extern u8 data_0205fdc4;
 extern u8 sMain_PauseRefresh_02055f44[];
 extern s32 func_ov001_02063a38(void);
@@ -44,7 +44,7 @@ extern void InvokeForChannelOrBoth(u32 arg0, void *arg1, void *arg2, int channel
 
 BOOL OpenPanel(void)
 {
-    PanelState *panel = data_0205fe24;
+    PanelState *panel = gPanelState;
 
     if (func_ov001_02063a38() == 9) {
         return FALSE;

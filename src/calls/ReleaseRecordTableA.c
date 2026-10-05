@@ -5,13 +5,13 @@ typedef struct {
     void *tableA;
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
 /* Frees and clears record table A. */
 void ReleaseRecordTableA(void)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
 
     NNSi_FndFreeFromDefaultHeap(manager->tableA);
     manager->tableA = 0;

@@ -5,11 +5,11 @@ typedef struct QueuedSound {
     u16 second;
 } QueuedSound;
 
-extern char *data_0206084c;
+extern char *gSoundWork;
 
 void PopQueuedSound(void)
 {
-    char *base = data_0206084c;
+    char *base = gSoundWork;
 
     if (*(u8 *)(base + 0xb47d3) == 0) {
         *(u8 *)(base + 0xb47be) = 0;

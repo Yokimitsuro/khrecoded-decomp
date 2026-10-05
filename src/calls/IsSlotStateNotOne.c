@@ -11,9 +11,9 @@ typedef struct SceneData {
     SlotState slots[1];
 } SceneData;
 
-extern SceneData *data_0206084c;
+extern SceneData *gSoundWork;
 
 BOOL IsSlotStateNotOne(int slot)
 {
-    return data_0206084c->slots[slot].state != 1;
+    return gSoundWork->slots[slot].state != 1;
 }

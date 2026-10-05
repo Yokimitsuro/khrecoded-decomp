@@ -2,7 +2,7 @@
 
 extern u8 *data_0205fe0c;
 extern u16 data_0205fec4[];
-extern u16 data_0205ffc4[2];
+extern u16 gRecordCounters[2];
 
 typedef struct RecordEntry
 {
@@ -25,5 +25,5 @@ void ReleaseRecordEntry(int index)
 
     entry->active = 0;
     data_0205fec4[entry->category] -= 1;
-    data_0205ffc4[0] -= 1;
+    gRecordCounters[0] -= 1;
 }

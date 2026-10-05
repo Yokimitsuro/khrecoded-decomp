@@ -6,13 +6,13 @@ typedef struct {
     void *tableCAux;
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
 /* Frees and clears record table C. */
 void ReleaseRecordTableC(void)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
 
     NNSi_FndFreeFromDefaultHeap(manager->tableC);
     NNSi_FndFreeFromDefaultHeap(manager->tableCAux);

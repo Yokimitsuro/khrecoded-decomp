@@ -14,13 +14,13 @@ typedef struct {
     u32 table;
 } TableState;
 
-extern TableState *data_020613d0;
+extern TableState *gRecordManager;
 extern u32 Archive_LoadFile(u32 fileId, u32 param2);
 extern u32 func_0202c4a0(u32 fileId, u32 param2);
 
 void LoadLinkedEntryTables(int useAlt)
 {
-    TableState *TableState = data_020613d0;
+    TableState *TableState = gRecordManager;
     int i;
     u32 *table;
 

@@ -5,20 +5,20 @@ typedef struct PanelState {
     s32 state;
 } PanelState;
 
-extern PanelState *data_0205fe24;
+extern PanelState *gPanelState;
 
 void SetPanelReadyState(int readyA, int readyB) {
     if (readyA != 0 && readyB != 0) {
-        data_0205fe24->state = 0;
+        gPanelState->state = 0;
         return;
     }
     if (readyA != 0) {
-        data_0205fe24->state = 2;
+        gPanelState->state = 2;
         return;
     }
     if (readyB != 0) {
-        data_0205fe24->state = 1;
+        gPanelState->state = 1;
         return;
     }
-    data_0205fe24->state = 3;
+    gPanelState->state = 3;
 }

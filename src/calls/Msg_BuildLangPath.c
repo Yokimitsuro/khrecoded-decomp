@@ -6,13 +6,13 @@ typedef struct LangPath {
     char *buf;
 } LangPath;
 
-extern LangPath data_0206055c;
+extern LangPath gLanguagePath;
 extern const char *gLanguageCodeTable[];
 
 char *Msg_BuildLangPath(const char *src)
 {
-    char *dst = data_0206055c.buf;
-    const char *p = gLanguageCodeTable[data_0206055c.lang];
+    char *dst = gLanguagePath.buf;
+    const char *p = gLanguageCodeTable[gLanguagePath.lang];
 
     while (*src != 0) {
         char c = *(const volatile char *)src;
@@ -31,5 +31,5 @@ char *Msg_BuildLangPath(const char *src)
         }
     }
     *dst = 0;
-    return data_0206055c.buf;
+    return gLanguagePath.buf;
 }

@@ -16,7 +16,7 @@ typedef struct ChannelSlot {
 
 extern volatile u32 data_020569d8[];
 extern ChannelSlot data_020569e0[4][4];
-extern volatile ActiveEntryState data_020569cc;
+extern volatile ActiveEntryState gVBlankCallbackState;
 
 extern char *strncpy(char *dst, const char *src, unsigned n);
 extern void AppendNodeToListTail(u32 *node, u32 *newNode);
@@ -46,8 +46,8 @@ void RegisterChannelEntry(u32 arg0, const char *name, int kind, int channel)
     AppendNodeToListTail((u32 *)head, (u32 *)slot);
 
     if (data_020569d8[channel] == 0) {
-        if (data_020569cc.index == channel) {
-            data_020569cc.value = (u32)slot;
+        if (gVBlankCallbackState.index == channel) {
+            gVBlankCallbackState.value = (u32)slot;
         }
         data_020569d8[channel] = (u32)slot;
     }

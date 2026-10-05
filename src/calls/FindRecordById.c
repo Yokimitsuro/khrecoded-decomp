@@ -10,12 +10,12 @@ typedef struct {
     IdRecord *idTable;
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 
 /* Finds an id-table entry by id. */
 IdRecord *FindRecordById(u32 id)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
     IdRecord *entry;
     int index;
 

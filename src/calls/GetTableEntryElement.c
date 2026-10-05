@@ -5,11 +5,11 @@ typedef struct ValueTables {
     s16 **entries;
 } ValueTables;
 
-extern ValueTables *data_020613d0;
+extern ValueTables *gRecordManager;
 
 s16 *GetTableEntryElement(int index, int position)
 {
-    ValueTables *tables = data_020613d0;
+    ValueTables *tables = gRecordManager;
     s16 *entry;
 
     if (index >= 0 && index < 9) {

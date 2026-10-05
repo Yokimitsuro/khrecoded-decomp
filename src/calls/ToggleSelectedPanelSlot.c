@@ -13,14 +13,14 @@ typedef struct PanelState {
     s32 selectedSlot;
 } PanelState;
 
-extern PanelState *data_0205fe24;
+extern PanelState *gPanelState;
 extern u16 data_02060500;
 extern void PlaySoundEffect(u32 a, u32 b);
 extern void AdjustPanelSlotSrcYAndDraw(void *state, int page, int delta);
 
 BOOL ToggleSelectedPanelSlot(void)
 {
-    PanelState *panel = data_0205fe24;
+    PanelState *panel = gPanelState;
     int slot;
 
     if ((data_02060500 & 0x80) || (data_02060500 & 0x40)) {

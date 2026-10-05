@@ -5,13 +5,13 @@ typedef struct SlotLink {
     struct SlotLink *prev;
 } SlotLink;
 
-extern char *data_0206084c;
+extern char *gSoundWork;
 
 /* Unlink from active list, push onto free list */
 void FreeSoundHandleSlot(void *entry)
 {
     SlotLink *node = (SlotLink *)entry;
-    char *base = data_0206084c;
+    char *base = gSoundWork;
 
     {
         SlotLink *tail = *(SlotLink **)(base + 0xb471c);

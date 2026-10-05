@@ -4,10 +4,10 @@ struct V3 {
     int z;
 };
 
-extern char *data_0206084c;
+extern char *gSoundWork;
 
 void Handle_WritePayloadIfLive(unsigned int handle, struct V3 *src) {
-    char *rec = data_0206084c + 738584 + (handle >> 24) * 32;
+    char *rec = gSoundWork + 738584 + (handle >> 24) * 32;
     if (*(unsigned short *)(rec + 0x14) == 0) {
         return;
     }

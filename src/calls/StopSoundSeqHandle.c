@@ -1,12 +1,12 @@
 #include "nitro/types.h"
 
-extern u8 *data_0206084c;
+extern u8 *gSoundWork;
 extern void NNS_SndPlayerStopSeq(void *handle, BOOL flag);
 extern void FreeSoundHandleSlot(void *entry);
 
 void StopSoundSeqHandle(u32 handle)
 {
-    u8 *entry = data_0206084c + 0xb4518 + (handle >> 24) * 0x20;
+    u8 *entry = gSoundWork + 0xb4518 + (handle >> 24) * 0x20;
 
     if (*(u16 *)(entry + 0x14) == 0) {
         return;

@@ -19,11 +19,11 @@ typedef struct ValueTables {
     ValueEntries *entries;
 } ValueTables;
 
-extern ValueTables *data_020613d0;
+extern ValueTables *gRecordManager;
 
 s16 *GetSecondTableTriple(int index, int position)
 {
-    ValueTables *tables = data_020613d0;
+    ValueTables *tables = gRecordManager;
     TripleList *list;
 
     if (index >= 0 && index < 8) {

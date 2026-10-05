@@ -12,10 +12,10 @@ typedef struct {
     u8 currentStrmNo;
 } SoundWork;
 
-extern SoundWork *data_0206084c;
+extern SoundWork *gSoundWork;
 extern BOOL NNS_SndArcStrmStart(NNSSndStrmHandle *handle, int strmNo, u32 offset);
 
 void StartSoundStreamAtOffset(int handleIndex, u32 offset)
 {
-    NNS_SndArcStrmStart(&data_0206084c->streamHandles[handleIndex], data_0206084c->currentStrmNo, offset);
+    NNS_SndArcStrmStart(&gSoundWork->streamHandles[handleIndex], gSoundWork->currentStrmNo, offset);
 }

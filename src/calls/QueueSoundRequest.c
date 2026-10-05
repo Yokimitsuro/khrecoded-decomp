@@ -6,7 +6,7 @@ typedef struct SoundQueueEntry {
     u16 value;
 } SoundQueueEntry;
 
-extern char *data_0206084c;
+extern char *gSoundWork;
 SoundQueueEntry *GetRecentHistoryEntry(int age);
 void PushSoundQueueEntry(int kind, int arg, u16 value);
 
@@ -14,7 +14,7 @@ void QueueSoundRequest(int kind, int arg, int value)
 {
     SoundQueueEntry *entry;
 
-    if (*(s16 *)(data_0206084c + 0xb472a) == arg && *(u8 *)(data_0206084c + 0xb47d3) == 0)
+    if (*(s16 *)(gSoundWork + 0xb472a) == arg && *(u8 *)(gSoundWork + 0xb47d3) == 0)
         return;
 
     /* Update the newest pending request of this kind */

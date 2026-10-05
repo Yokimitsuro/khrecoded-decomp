@@ -9,12 +9,12 @@ typedef struct {
     SlotPair0Entry *slotPair0;
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 
 /* Gets a slot-pair-0 table entry pointer. */
 SlotPair0Entry *GetRecordSlotPair0Entry(s32 index)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
 
     if (index == -1) {
         return 0;

@@ -11,12 +11,12 @@ typedef struct UnlockFlags {
     u32 mask;
 } UnlockFlags;
 
-extern SlotValues *data_020613cc;
+extern SlotValues *gMapLayout;
 extern UnlockFlags *data_0205fe0c;
 
 int GetUnlockedSlotValue(u32 index)
 {
-    SlotValues *slots = data_020613cc;
+    SlotValues *slots = gMapLayout;
     int result = -1;
 
     if (index < slots->count && (data_0205fe0c->mask & (1 << index))) {

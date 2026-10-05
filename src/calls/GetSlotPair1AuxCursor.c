@@ -6,12 +6,12 @@ typedef struct {
     int *slotPair1Aux;
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 
 /* Reads the slot-pair-1 aux cursor. */
 int GetSlotPair1AuxCursor(int *out)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
 
     if (manager == 0 || manager->slotPair1 == 0) {
         return 0;

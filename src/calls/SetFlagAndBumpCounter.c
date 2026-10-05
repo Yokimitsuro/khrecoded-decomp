@@ -5,12 +5,12 @@ typedef struct Counter {
     u16 value;
 } Counter;
 
-extern Counter data_0205ffc4;
+extern Counter gRecordCounters;
 
 void SetFlagAndBumpCounter(u8 *flag)
 {
     if (*flag == 0) {
         *flag = *flag + 1;
-        data_0205ffc4.value += 1;
+        gRecordCounters.value += 1;
     }
 }

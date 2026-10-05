@@ -9,7 +9,7 @@ typedef struct PanelState {
     s32 state;
 } PanelState;
 
-extern PanelState *data_0205fe24;
+extern PanelState *gPanelState;
 extern void *NNSi_FndAllocFromDefaultHeap(int size);
 extern void MI_CpuFill8(void *dst, int value, int size);
 extern void InitPanelResources(void);
@@ -18,9 +18,9 @@ extern void RegisterPanelCallbacks(void);
 void InitPanelState(void) {
     PanelState *panel;
 
-    if (data_0205fe24 == NULL) {
+    if (gPanelState == NULL) {
         panel = NNSi_FndAllocFromDefaultHeap(200);
-        data_0205fe24 = panel;
+        gPanelState = panel;
         MI_CpuFill8(panel, 0, 200);
         panel->field_a0 = -8;
         panel->field_8c = -1;

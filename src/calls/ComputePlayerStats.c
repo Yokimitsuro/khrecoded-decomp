@@ -57,7 +57,7 @@ typedef struct GameState {
     u16 activeGroupMask;
 } GameState;
 
-extern MapLayout *data_020613cc;
+extern MapLayout *gMapLayout;
 extern GameState *data_0205fe0c;
 
 extern void AcquireRecordManager(void);
@@ -73,7 +73,7 @@ extern s64 _s32_div_f(s32 numerator, s32 denominator);
 
 void ComputePlayerStats(GameState *state, PlayerStats *out, BOOL recompute, int scaleParam)
 {
-    MapLayout *map = data_020613cc;
+    MapLayout *map = gMapLayout;
     PlayerStats bonus = {0};
     PlayerStats base;
     fx32 factor;

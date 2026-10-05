@@ -1,7 +1,7 @@
 #include "nitro/types.h"
 #include "nnsys/snd.h"
 
-extern u8 *data_0206084c;
+extern u8 *gSoundWork;
 extern int NNS_SndHeapSaveState(NNSSndHeapHandle heap);
 extern void NNS_SndHeapLoadState(NNSSndHeapHandle heap, int level);
 extern void FSi_WaitForCardThread(void);
@@ -10,7 +10,7 @@ extern BOOL NNS_SndArcLoadSeqArc(int seqNo, NNSSndHeapHandle heap);
 
 void LoadSeqArcIfChanged(int seqArcNo)
 {
-    u8 *base = data_0206084c;
+    u8 *base = gSoundWork;
     int index;
 
     if (*(int *)(base + 0xa4) == seqArcNo) {

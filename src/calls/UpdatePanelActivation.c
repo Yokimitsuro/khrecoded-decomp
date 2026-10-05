@@ -10,7 +10,7 @@ typedef struct PanelState {
     s32 inputLocked;
 } PanelState;
 
-extern PanelState *data_0205fe24;
+extern PanelState *gPanelState;
 extern u8 data_0205fdc4;
 extern u16 data_02060500;
 extern void SNDi_BroadcastChannelOp(int arg0);
@@ -21,7 +21,7 @@ extern int InvokeCallbackSlot(int index);
 
 BOOL UpdatePanelActivation(void)
 {
-    PanelState *panel = data_0205fe24;
+    PanelState *panel = gPanelState;
 
     if (panel == NULL) {
         return FALSE;

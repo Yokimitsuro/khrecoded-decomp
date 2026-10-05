@@ -7,7 +7,7 @@ typedef struct {
 } ActiveEntryState;
 
 extern volatile u32 data_020569d8[];
-extern volatile ActiveEntryState data_020569cc;
+extern volatile ActiveEntryState gVBlankCallbackState;
 
 void SelectActiveEntry(int index)
 {
@@ -15,8 +15,8 @@ void SelectActiveEntry(int index)
     u16 oldIme = *ime;
 
     *ime = 0;
-    data_020569cc.index = index;
-    data_020569cc.value = data_020569d8[index];
+    gVBlankCallbackState.index = index;
+    gVBlankCallbackState.value = data_020569d8[index];
     if (oldIme != 0) {
         (void)*ime;
         *ime = 1;

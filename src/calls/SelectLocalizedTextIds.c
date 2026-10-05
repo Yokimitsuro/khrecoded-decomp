@@ -9,13 +9,13 @@ typedef struct LocalizedTextIds
 } LocalizedTextIds;
 
 extern LocalizedTextIds data_02055fd4;
-extern int func_0202b79c(void);
+extern int GetLanguageIndex(void);
 
 void SelectLocalizedTextIds(void)
 {
     u16 baseId;
 
-    switch (func_0202b79c())
+    switch (GetLanguageIndex())
     {
     case 2:
         baseId = 0x3b4;

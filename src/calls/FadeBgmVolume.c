@@ -8,11 +8,11 @@ typedef struct {
     u8 bgmVolume;
 } SoundWork;
 
-extern SoundWork *data_0206084c;
+extern SoundWork *gSoundWork;
 extern void NNS_SndPlayerMoveVolume(NNSSndHandle *handle, int targetVolume, int frames);
 
 void FadeBgmVolume(int targetVolume, int frames)
 {
-    NNS_SndPlayerMoveVolume(&data_0206084c->bgmHandle, targetVolume, frames);
-    data_0206084c->bgmVolume = targetVolume;
+    NNS_SndPlayerMoveVolume(&gSoundWork->bgmHandle, targetVolume, frames);
+    gSoundWork->bgmVolume = targetVolume;
 }

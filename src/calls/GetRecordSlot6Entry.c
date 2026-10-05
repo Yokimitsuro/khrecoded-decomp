@@ -5,12 +5,12 @@ typedef struct {
     u8 *slot6;
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 
 /* Returns a pointer to record slot 6 entry. */
 u8 *GetRecordSlot6Entry(int index)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
     u8 *table;
 
     if (manager == NULL || (table = manager->slot6) == NULL) {

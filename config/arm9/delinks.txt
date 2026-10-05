@@ -124,7 +124,7 @@ src/calls/NotifyBothOrOne.c:
     complete
     .text       start:0x02001168 end:0x020011a8
 
-src/calls/func_020011a8.c:
+src/calls/SetVBlankStateWord.c:
     complete
     .text       start:0x020011a8 end:0x020011b8
 
@@ -5357,7 +5357,7 @@ src/calls/SetLoaderCallbacks.c:
     complete
     .text       start:0x02025928 end:0x0202595c
 
-src/calls/func_0202595c.c:
+src/calls/SetScriptBusyFlag.c:
     complete
     .text       start:0x0202595c end:0x02025968
 
@@ -5769,9 +5769,17 @@ src/calls/UpdatePanelActivation.c:
     complete
     .text       start:0x020288b4 end:0x02028954
 
+src/calls/GetPanelFieldB8.c:
+    complete
+    .text       start:0x02028954 end:0x02028964
+
 src/calls/PXI_Init_02028964.c:
     complete
     .text       start:0x02028964 end:0x0202896c
+
+src/calls/SetPanelFieldA0.c:
+    complete
+    .text       start:0x0202896c end:0x0202897c
 
 src/calls/SetPanelReadyState.c:
     complete
@@ -5841,7 +5849,7 @@ src/calls/AddSlotLevelProgress.c:
     complete
     .text       start:0x02029020 end:0x020290cc
 
-src/calls/func_020291c8.c:
+src/calls/GetPrimaryRecordCount.c:
     complete
     .text       start:0x020291c8 end:0x020291d4
 
@@ -6057,7 +6065,7 @@ src/calls/Obj_GetWord28.c:
     complete
     .text       start:0x0202a7a0 end:0x0202a7a8
 
-src/calls/func_0202a7a8.c:
+src/calls/TaskManager_SetEnabled.c:
     complete
     .text       start:0x0202a7a8 end:0x0202a7b8
 
@@ -6289,7 +6297,7 @@ src/calls/CopyRecentInputRecords.c:
     complete
     .text       start:0x0202b6e4 end:0x0202b774
 
-src/calls/func_0202b79c.c:
+src/calls/GetLanguageIndex.c:
     complete
     .text       start:0x0202b79c end:0x0202b7ac
 
@@ -8405,6 +8413,10 @@ src/calls/SolveMonicQuadratic.c:
     complete
     .text       start:0x0204c190 end:0x0204c214
 
+src/calls/RecentRing_Reset.c:
+    complete
+    .text       start:0x0204cacc end:0x0204caf8
+
 src/calls/RecentRing_Record.c:
     complete
     .text       start:0x0204cbb0 end:0x0204cc70
@@ -8576,6 +8588,10 @@ src/calls/GetNextStreamCursorOrInvalid.c:
 src/calls/StartSoundStreamAtOffset.c:
     complete
     .text       start:0x0204df64 end:0x0204df94
+
+src/calls/GetSoundStreamHandle.c:
+    complete
+    .text       start:0x0204df94 end:0x0204dfb0
 
 src/calls/SetSoundListenersEnabled.c:
     complete
@@ -8969,7 +8985,7 @@ src/calls/LoadSelectionPackedValues.c:
     complete
     .text       start:0x02050550 end:0x020505bc
 
-src/calls/func_020505bc.c:
+src/calls/GetSelectionPackedValueBlock.c:
     complete
     .text       start:0x020505bc end:0x020505c8
 
@@ -9021,6 +9037,10 @@ src/calls/BuildAbilityTable.c:
     complete
     .text       start:0x02050eb8 end:0x02051138
 
+src/calls/GetMapBonusStats.c:
+    complete
+    .text       start:0x02051138 end:0x02051148
+
 src/calls/ComputeScaledPercentPlusOne.c:
     complete
     .text       start:0x02051148 end:0x02051170
@@ -9048,6 +9068,10 @@ src/calls/CountUnlockedSlotsFx.c:
 src/calls/HalveForEachFlag.c:
     complete
     .text       start:0x02051240 end:0x02051270
+
+src/calls/GetMapFinalStats.c:
+    complete
+    .text       start:0x02051270 end:0x02051284
 
 src/calls/GetUnlockedSlotValue.c:
     complete
@@ -9236,6 +9260,10 @@ src/calls/GetShortTableValueOrDefault.c:
 src/calls/SumRecordTableAEntries.c:
     complete
     .text       start:0x0205220c end:0x02052238
+
+src/calls/GetRecordTableAEntry.c:
+    complete
+    .text       start:0x02052238 end:0x0205224c
 
 src/calls/GetRecordTableBEntry.c:
     complete

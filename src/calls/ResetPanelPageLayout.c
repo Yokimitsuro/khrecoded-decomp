@@ -17,14 +17,14 @@ typedef struct PanelState {
     s32 splitLayout;
 } PanelState;
 
-extern PanelState *data_0205fe24;
+extern PanelState *gPanelState;
 extern void MIi_CpuClearFast(u32 data, void *dst, u32 size);
 extern void SetPanelPageParams(void *pages, s32 index, u32 valueA, s32 valueB, u32 valueC, u32 valueD, u32 valueE, u32 valueF);
 
 void ResetPanelPageLayout(void)
 {
     BOOL fullLayout = FALSE;
-    PanelState *panel = data_0205fe24;
+    PanelState *panel = gPanelState;
     NNSG2dScreenData *screen = panel->screenData;
 
     if (panel->splitLayout == 0) {

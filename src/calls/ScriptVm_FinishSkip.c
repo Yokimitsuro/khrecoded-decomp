@@ -56,7 +56,7 @@ typedef struct {
     s32 busy;
 } ScriptGlobals;
 
-extern ScriptGlobals data_02055e00;
+extern ScriptGlobals gScriptState;
 
 extern int func_ov001_02063838(void);
 extern ActorNode *func_ov001_0207f0b4(void);
@@ -81,7 +81,7 @@ void ScriptVm_FinishSkip(ScriptVm *vm)
     int i;
     int depth;
 
-    if (data_02055e00.busy == 0) {
+    if (gScriptState.busy == 0) {
         vm->skipping = 1;
         vm->status = -1;
 

@@ -6,11 +6,11 @@ typedef struct SoundListenerNode {
     u16 flags;
 } SoundListenerNode;
 
-extern u8 *data_0206084c;
+extern u8 *gSoundWork;
 
 void SetSoundListenersEnabled(int enabled)
 {
-    u8 *work = data_0206084c;
+    u8 *work = gSoundWork;
     SoundListenerNode *node;
 
     *(u8 *)(work + 0xb47d4) = (u8)enabled;

@@ -8,13 +8,13 @@ typedef struct {
     NNSSndHandle seHandle;
 } SoundWork;
 
-extern SoundWork *data_0206084c;
+extern SoundWork *gSoundWork;
 extern BOOL NNS_SndArcPlayerStartSeqArc(NNSSndHandle *handle, int seqArcNo, int index);
 
 BOOL PlaySoundEffect(int seqArcNo, int index)
 {
     if (seqArcNo == 0) {
-        seqArcNo = data_0206084c->defaultSeqArcNo;
+        seqArcNo = gSoundWork->defaultSeqArcNo;
     }
-    return NNS_SndArcPlayerStartSeqArc(&data_0206084c->seHandle, seqArcNo, index);
+    return NNS_SndArcPlayerStartSeqArc(&gSoundWork->seHandle, seqArcNo, index);
 }

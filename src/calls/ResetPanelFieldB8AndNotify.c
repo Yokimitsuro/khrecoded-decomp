@@ -5,11 +5,11 @@ typedef struct PanelState {
     s32 field_b8;
 } PanelState;
 
-extern PanelState *data_0205fe24;
+extern PanelState *gPanelState;
 extern void InvokeCallbackSlot(int mode);
 
 void ResetPanelFieldB8AndNotify(void)
 {
-    data_0205fe24->field_b8 = 0;
+    gPanelState->field_b8 = 0;
     InvokeCallbackSlot(2);
 }

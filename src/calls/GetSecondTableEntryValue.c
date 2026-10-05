@@ -10,11 +10,11 @@ typedef struct ValueTables {
     ValueEntries *entries;
 } ValueTables;
 
-extern ValueTables *data_020613d0;
+extern ValueTables *gRecordManager;
 
 int GetSecondTableEntryValue(int index)
 {
-    ValueTables *tables = data_020613d0;
+    ValueTables *tables = gRecordManager;
 
     if (index >= 0 && index < 8) {
         return *tables->entries->second[index];

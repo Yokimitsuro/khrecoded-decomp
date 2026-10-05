@@ -34,7 +34,7 @@ typedef struct PartyRecord {
 } PartyRecord;
 
 extern GameState *data_0205fe0c;
-extern MapLayout *data_020613cc;
+extern MapLayout *gMapLayout;
 
 extern void AcquireRecordManager(void);
 extern void ReleaseRecordManager(void);
@@ -49,7 +49,7 @@ extern void WriteGlobalPackedBits(u32 bitOffset, u32 bitCount, u32 value);
 void BuildAbilityTable(TaggedEntryTable *table)
 {
     u32 mask = data_0205fe0c->activeChipMask;
-    MapLayout *map = data_020613cc;
+    MapLayout *map = gMapLayout;
     u32 countA = 0;
     u32 countB = 0;
     u32 countC = 0;

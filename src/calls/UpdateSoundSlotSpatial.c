@@ -1,7 +1,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 
-extern u8 *data_0206084c;
+extern u8 *gSoundWork;
 extern void func_01ff9e3c(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Mag(const VecFx32 *vec);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
@@ -11,7 +11,7 @@ extern void NNS_SndPlayerSetTrackVolume(void *player, u32 trackMask, int volume)
 
 void UpdateSoundSlotSpatial(int slot)
 {
-    u8 *base = data_0206084c;
+    u8 *base = gSoundWork;
     VecFx32 delta;
     fx32 distance;
     int pan;

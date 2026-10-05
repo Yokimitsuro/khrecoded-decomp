@@ -9,7 +9,7 @@ typedef struct RecordManager {
     u8 pad_53[0x74 - 0x53];
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 extern const char sMain_DbDbP2_02056198[];
 extern const char sMain_DbLanguageP2_020561a4[];
 extern void *NNSi_FndAllocFromDefaultHeap(u32 size);
@@ -20,12 +20,12 @@ BOOL AcquireRecordManager(void)
 {
     RecordManager *manager;
 
-    if (data_020613d0 != NULL) {
-        data_020613d0->useCount++;
+    if (gRecordManager != NULL) {
+        gRecordManager->useCount++;
         return TRUE;
     }
     manager = NNSi_FndAllocFromDefaultHeap(sizeof(RecordManager));
-    data_020613d0 = manager;
+    gRecordManager = manager;
     MI_CpuFill8(manager, 0, sizeof(RecordManager));
     manager->useCount = 1;
     manager->containerA = Msg_OpenContainerAndReadHeader(sMain_DbDbP2_02056198, 0x11, FALSE);

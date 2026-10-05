@@ -10,11 +10,11 @@ typedef struct GridTables {
     GridTable *table;
 } GridTables;
 
-extern GridTables *data_020613d0;
+extern GridTables *gRecordManager;
 
 int GetGridTableValue_02051f84(int row, int column)
 {
-    GridTables *tables = data_020613d0;
+    GridTables *tables = gRecordManager;
     GridTable *table = tables->table;
     int index;
 

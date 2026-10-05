@@ -24,7 +24,7 @@ typedef struct BitOffsetTable {
 
 extern const BitOffsetTable data_02055a40;
 extern SelectionState data_020608c8;
-extern PackedValueBlock data_020608d0;
+extern PackedValueBlock gSelectionPackedValues;
 extern OverlaySelectionRecord *GetOverlaySelectionRecord(u32 selectionIndex);
 extern u32 ReadGlobalPackedBits(u32 bitOffset, u32 bitCount);
 
@@ -36,7 +36,7 @@ void LoadSelectionPackedValues(void)
     i = 0;
     data_020608c8.savedByte = GetOverlaySelectionRecord(0)->unk_010;
     do {
-        data_020608d0.values[i] = ReadGlobalPackedBits(table.offsets[i], 0x10);
+        gSelectionPackedValues.values[i] = ReadGlobalPackedBits(table.offsets[i], 0x10);
         i++;
     } while (i < 3);
 }

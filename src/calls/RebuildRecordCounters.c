@@ -34,7 +34,7 @@ typedef struct RecordCounters
 
 extern u8 *data_0205fe0c;
 extern RecordCounters data_0205fec4;
-extern u16 data_0205ffc4[2];
+extern u16 gRecordCounters[2];
 extern void func_01ff88c4(void *dst, u32 value, u32 size);
 extern SlotPair0Entry *GetRecordSlotPair0Entry(s32 index);
 extern int AcquireRecordSlot(int slot, int param);
@@ -59,7 +59,7 @@ void RebuildRecordCounters(void)
     func_01ff88c4(counters, 0, sizeof(RecordCounters));
     AcquireRecordManager();
     AcquireRecordSlot(0, 1);
-    data_0205ffc4[1] = 600;
+    gRecordCounters[1] = 600;
     do
     {
         if (IsCategoryIndex(index))

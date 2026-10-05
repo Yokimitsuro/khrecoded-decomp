@@ -9,7 +9,7 @@ typedef struct SoundSlot {
     u8 queue[4];
 } SoundSlot;
 
-extern u8 *data_0206084c;
+extern u8 *gSoundWork;
 extern char sMain_SdSoundDataSdat_02056134[];
 
 extern void SoundMgr_WaitLoaderIfState1(void);
@@ -27,7 +27,7 @@ extern int NNS_SndHeapSaveState(void *heap);
 
 void SoundMgr_Init(const char *path, BOOL loadSymbols)
 {
-    u8 *base = data_0206084c;
+    u8 *base = gSoundWork;
     SoundSlot *slots;
     int i;
 
@@ -59,7 +59,7 @@ void SoundMgr_Init(const char *path, BOOL loadSymbols)
     *(s16 *)(base + 0xb4736) = -1;
     *(u16 *)(base + 0xb4734) = 0;
     NNS_SndArcLoadBank(0x29, *(void **)(base + 0xb04b4));
-    *(int *)(base + 0xa8) = NNS_SndHeapSaveState(*(void **)(data_0206084c + 0xb04b4));
+    *(int *)(base + 0xa8) = NNS_SndHeapSaveState(*(void **)(gSoundWork + 0xb04b4));
     *(int *)(base + 0xa0) = *(int *)(base + 0xa8);
     *(int *)(base + 0xa4) = -1;
 }

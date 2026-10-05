@@ -8,12 +8,12 @@ typedef struct PanelState {
     void *buffer64;
 } PanelState;
 
-extern PanelState *data_0205fe24;
+extern PanelState *gPanelState;
 extern void setDualArrayEntry(int page, int a, int b);
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
 
 void ShutdownPanelState(void) {
-    PanelState *panel = data_0205fe24;
+    PanelState *panel = gPanelState;
 
     if (panel != NULL) {
         setDualArrayEntry(0, 0, 0);
@@ -23,6 +23,6 @@ void ShutdownPanelState(void) {
         NNSi_FndFreeFromDefaultHeap(panel->buffer10);
         NNSi_FndFreeFromDefaultHeap(panel->bufferC);
         NNSi_FndFreeFromDefaultHeap(panel);
-        data_0205fe24 = NULL;
+        gPanelState = NULL;
     }
 }

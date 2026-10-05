@@ -1,11 +1,11 @@
 #include "nitro/types.h"
 
-extern void *data_0205fe24;
+extern void *gPanelState;
 extern void AdjustPanelSlotSrcYAndDraw(void *state, int page, int delta);
 
 void UpdatePanelSlotBlink(int slot)
 {
-    u8 *base = (u8 *)data_0205fe24;
+    u8 *base = (u8 *)gPanelState;
     int byteOffset = slot * 8;
     u8 *timerBase = base + 0x74;
     s32 timer = *(s32 *)(timerBase + byteOffset) + 1;

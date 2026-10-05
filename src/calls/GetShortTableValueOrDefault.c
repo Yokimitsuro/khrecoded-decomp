@@ -5,12 +5,12 @@ typedef struct {
     s16 *shortTable;
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 
 /* Reads a short table entry, or default. */
 signed long GetShortTableValueOrDefault(signed long index)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
     signed long value;
 
     value = manager->shortTable[index + 1];

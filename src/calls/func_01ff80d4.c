@@ -1,5 +1,5 @@
-extern int data_020569cc;
+extern int gVBlankCallbackState;
 
 int func_01ff80d4(void) {
-    return data_020569cc;
+    return gVBlankCallbackState;
 }

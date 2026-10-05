@@ -1,7 +1,7 @@
 #include "nitro/types.h"
 
 extern short *ScriptVm_ResolveOperand(int scriptCtx, unsigned short *operand);
-extern int func_0202b79c(void);
+extern int GetLanguageIndex(void);
 
 int ByteCode_ResolveOperand(int scriptCtx, unsigned short *operand)
 {
@@ -10,7 +10,7 @@ int ByteCode_ResolveOperand(int scriptCtx, unsigned short *operand)
 
     if (*resolved == 0x40) {
         int indexBase = *(int *)(base + 0x14) + *(volatile int *)(resolved + 2);
-        int selector = func_0202b79c();
+        int selector = GetLanguageIndex();
         return *(int *)(base + 0x14) + *(int *)(indexBase + selector * 4);
     }
     return *(int *)(base + 0x14) + *(volatile int *)(resolved + 2);

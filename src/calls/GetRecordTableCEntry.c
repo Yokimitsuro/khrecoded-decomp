@@ -9,12 +9,12 @@ typedef struct {
     RecordC *tableC;
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 
 /* Gets a record table C entry. */
 RecordC *GetRecordTableCEntry(s32 index)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
 
     if (manager == 0) {
         return 0;

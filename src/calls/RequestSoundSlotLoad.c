@@ -12,12 +12,12 @@ typedef struct SoundWork {
     SoundLoadSlot slots[1];
 } SoundWork;
 
-extern SoundWork *data_0206084c;
+extern SoundWork *gSoundWork;
 extern s32 QueueTypedMessageWithHandle_0202cb38(u16 field1, u16 field2, s32 arg2);
 
 BOOL RequestSoundSlotLoad(int index, u32 fileId)
 {
-    SoundLoadSlot *slot = &data_0206084c->slots[index];
+    SoundLoadSlot *slot = &gSoundWork->slots[index];
 
     if (slot->state != 0) {
         return FALSE;

@@ -1,11 +1,11 @@
 #include "nitro/types.h"
 
-extern void *data_0205fe24;
+extern void *gPanelState;
 extern void AdjustPanelSlotSrcYAndDraw(void *state, int page, int delta);
 
 void UpdatePanelPromptBlink(void)
 {
-    u8 *base = (u8 *)data_0205fe24;
+    u8 *base = (u8 *)gPanelState;
     s32 *statusPtr = (s32 *)(base + 0x84);
     *(s32 *)(base + 0x84) = *(s32 *)(base + 0x84) + 1;
     s32 mode = statusPtr[1];

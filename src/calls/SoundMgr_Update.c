@@ -28,7 +28,7 @@ typedef struct {
     u8 commandReady;
 } SoundWork;
 
-extern SoundWork *data_0206084c;
+extern SoundWork *gSoundWork;
 extern const u8 data_020559ec[];
 extern void func_0204caf8(void);
 extern void PopQueuedSound(void);
@@ -47,7 +47,7 @@ extern void NNS_SndMain(void);
 
 void SoundMgr_Update(void)
 {
-    SoundWork *work = data_0206084c;
+    SoundWork *work = gSoundWork;
 
     func_0204caf8();
 

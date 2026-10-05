@@ -7,13 +7,13 @@ typedef struct {
     void *tableDAux2;
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
 /* Frees and clears record table D. */
 void ReleaseRecordTableD(void)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
 
     NNSi_FndFreeFromDefaultHeap(manager->tableD);
     NNSi_FndFreeFromDefaultHeap(manager->tableDAux1);

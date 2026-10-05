@@ -13,7 +13,7 @@ typedef struct {
     u8 *file;
 } State;
 
-extern State *data_020613d0;
+extern State *gRecordManager;
 extern u32 Archive_LoadFile(u32 fileId, u32 param2);
 extern u32 func_0202c4a0(u32 fileId, u32 param2);
 extern void *NNSi_FndAllocFromDefaultHeap(u32 size);
@@ -24,7 +24,7 @@ extern u16 *SkipWideString(u16 *text);
 
 void LoadStringPointerTableB(int useAlt)
 {
-    State *state = data_020613d0;
+    State *state = gRecordManager;
     StringTable *table;
     int i;
 

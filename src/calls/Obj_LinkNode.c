@@ -15,7 +15,7 @@ typedef struct TaskManager {
     TaskObject *head;
 } TaskManager;
 
-extern TaskManager data_020603c8;
+extern TaskManager gTaskManager;
 extern TaskObject *data_020603d8[];
 
 #pragma push
@@ -28,8 +28,8 @@ void Obj_LinkNode(TaskObject *node)
     TaskObject *next;
     int k;
 
-    if (data_020603c8.head == NULL) {
-        data_020603c8.head = node;
+    if (gTaskManager.head == NULL) {
+        gTaskManager.head = node;
         node->prev = NULL;
         node->next = NULL;
         data_020603d8[key] = node;
@@ -73,7 +73,7 @@ link:
     if (prev != NULL) {
         prev->next = node;
     } else {
-        data_020603c8.head = node;
+        gTaskManager.head = node;
     }
 }
 #pragma pop

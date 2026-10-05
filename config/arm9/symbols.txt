@@ -34,7 +34,7 @@ UnregisterChannelEntry kind:function(arm,size=0x9c) addr:0x02001044
 InitVBlankInterrupt kind:function(arm,size=0x40) addr:0x020010e0
 InvokeForChannelOrBoth kind:function(arm,size=0x48) addr:0x02001120
 NotifyBothOrOne kind:function(arm,size=0x40) addr:0x02001168
-func_020011a8 kind:function(arm,size=0x10) addr:0x020011a8
+SetVBlankStateWord kind:function(arm,size=0x10) addr:0x020011a8
 SelectActiveEntry kind:function(arm,size=0x48) addr:0x020011b8
 GetLineWidth kind:function(thumb,size=0x68) addr:0x02001200
 HandleTextTag kind:function(thumb,size=0x72) addr:0x02001268
@@ -1439,7 +1439,7 @@ ScriptVm_Start kind:function(thumb,size=0xa4) addr:0x02025820
 RoundAndInitArchive kind:function(thumb,size=0x48) addr:0x020258c4
 PcmChannel_ResetAndEnable kind:function(thumb,size=0x1c) addr:0x0202590c
 SetLoaderCallbacks kind:function(thumb,size=0x34) addr:0x02025928
-func_0202595c kind:function(thumb,size=0xc) addr:0x0202595c
+SetScriptBusyFlag kind:function(thumb,size=0xc) addr:0x0202595c
 LoadGlobalS8At0 kind:function(thumb,size=0xc) addr:0x02025968
 ScriptCmd_ReturnValue kind:function(thumb,size=0x4) addr:0x02025974
 AllocateSlotIfNull kind:function(thumb,size=0x38) addr:0x02025978
@@ -1565,9 +1565,9 @@ ClosePanelAndResume kind:function(thumb,size=0xc4) addr:0x02028760
 InitPanelState kind:function(thumb,size=0x44) addr:0x02028824
 ShutdownPanelState kind:function(thumb,size=0x4c) addr:0x02028868
 UpdatePanelActivation kind:function(thumb,size=0xa0) addr:0x020288b4
-func_02028954 kind:function(thumb,size=0x10) addr:0x02028954
+GetPanelFieldB8 kind:function(thumb,size=0x10) addr:0x02028954
 PXI_Init_02028964 kind:function(thumb,size=0x8) addr:0x02028964
-func_0202896c kind:function(thumb,size=0x10) addr:0x0202896c
+SetPanelFieldA0 kind:function(thumb,size=0x10) addr:0x0202896c
 SetPanelReadyState kind:function(thumb,size=0x44) addr:0x0202897c
 func_020289c0 kind:function(thumb,size=0x8) addr:0x020289c0
 func_020289c8 kind:function(arm,size=0x164) addr:0x020289c8
@@ -1589,7 +1589,7 @@ RebuildRecordCounters kind:function(thumb,size=0xd8) addr:0x02028e80
 RefreshSlotRecordCache kind:function(thumb,size=0xc8) addr:0x02028f58
 AddSlotLevelProgress kind:function(thumb,size=0xac) addr:0x02029020
 func_020290cc kind:function(thumb,size=0xfc) addr:0x020290cc
-func_020291c8 kind:function(thumb,size=0xc) addr:0x020291c8
+GetPrimaryRecordCount kind:function(thumb,size=0xc) addr:0x020291c8
 GetSecondaryRecordCount kind:function(thumb,size=0xc) addr:0x020291d4
 GetByteCounterOrDefault kind:function(thumb,size=0x2c) addr:0x020291e0
 CanAllocateRecordSlot kind:function(thumb,size=0x48) addr:0x0202920c
@@ -1654,7 +1654,7 @@ func_0202a768 kind:function(arm,size=0x10) addr:0x0202a768
 NNSi_FndGetCurrentRootHeap kind:function(arm,size=0x14) addr:0x0202a778
 StoreToGlobalPtr4Field28 kind:function(arm,size=0x14) addr:0x0202a78c
 Obj_GetWord28 kind:function(arm,size=0x8) addr:0x0202a7a0
-func_0202a7a8 kind:function(arm,size=0x10) addr:0x0202a7a8
+TaskManager_SetEnabled kind:function(arm,size=0x10) addr:0x0202a7a8
 func_0202a7b8 kind:function(arm,size=0x10) addr:0x0202a7b8
 LoadDefaultProjectionValues kind:function(arm,size=0x60) addr:0x0202a7c8
 func_0202a828 kind:function(arm,size=0xb0) addr:0x0202a828
@@ -1715,7 +1715,7 @@ func_0202b5e8 kind:function(arm,size=0x44) addr:0x0202b5e8
 CopyRecentTouchPoints kind:function(arm,size=0xb8) addr:0x0202b62c
 CopyRecentInputRecords kind:function(arm,size=0x90) addr:0x0202b6e4
 func_0202b774 kind:function(thumb,size=0x28) addr:0x0202b774
-func_0202b79c kind:function(arm,size=0x10) addr:0x0202b79c
+GetLanguageIndex kind:function(arm,size=0x10) addr:0x0202b79c
 Msg_BuildLangPath kind:function(arm,size=0x78) addr:0x0202b7ac
 AllocLoaderRequest kind:function(arm,size=0x5c) addr:0x0202b824
 func_0202b880 kind:function(arm,size=0x28) addr:0x0202b880
@@ -2332,7 +2332,7 @@ NewtonSolveFloat kind:function(arm,size=0x9c) addr:0x0204c0f4
 SolveMonicQuadratic kind:function(arm,size=0x84) addr:0x0204c190
 func_0204c214 kind:function(arm,size=0x4c0) addr:0x0204c214
 func_0204c6d4 kind:function(arm,size=0x3f8) addr:0x0204c6d4
-func_0204cacc kind:function(arm,size=0x2c) addr:0x0204cacc
+RecentRing_Reset kind:function(arm,size=0x2c) addr:0x0204cacc
 func_0204caf8 kind:function(arm,size=0xb8) addr:0x0204caf8
 RecentRing_Record kind:function(arm,size=0xc0) addr:0x0204cbb0
 func_0204cc70 kind:function(arm,size=0x94) addr:0x0204cc70
@@ -2381,7 +2381,7 @@ StopSoundStreamAtIndex kind:function(arm,size=0x24) addr:0x0204dec4
 IsSoundStreamActive kind:function(arm,size=0x30) addr:0x0204dee8
 GetNextStreamCursorOrInvalid kind:function(arm,size=0x4c) addr:0x0204df18
 StartSoundStreamAtOffset kind:function(arm,size=0x30) addr:0x0204df64
-func_0204df94 kind:function(arm,size=0x1c) addr:0x0204df94
+GetSoundStreamHandle kind:function(arm,size=0x1c) addr:0x0204df94
 SetSoundListenersEnabled kind:function(arm,size=0x70) addr:0x0204dfb0
 CacheSeqArcStatus kind:function(arm,size=0x34) addr:0x0204e020
 ReleaseSeqArcHeapLevel kind:function(arm,size=0x30) addr:0x0204e054
@@ -2491,7 +2491,7 @@ GetConsumableSlotUses kind:function(arm,size=0x60) addr:0x020504c8
 GetPrimarySelectionByte1E kind:function(arm,size=0x14) addr:0x02050528
 ResetParamWord8 kind:function(arm,size=0x14) addr:0x0205053c
 LoadSelectionPackedValues kind:function(arm,size=0x6c) addr:0x02050550
-func_020505bc kind:function(arm,size=0xc) addr:0x020505bc
+GetSelectionPackedValueBlock kind:function(arm,size=0xc) addr:0x020505bc
 StoreSelectionPackedValues kind:function(arm,size=0x6c) addr:0x020505c8
 SetParamWord8 kind:function(arm,size=0x10) addr:0x02050634
 SetParamHalf18 kind:function(arm,size=0x10) addr:0x02050644
@@ -2505,7 +2505,7 @@ func_02050a58 kind:function(thumb,size=0x3c) addr:0x02050a58
 ScaleStatsByPercent kind:function(thumb,size=0xb0) addr:0x02050a94
 ComputePlayerStats kind:function(thumb,size=0x372) addr:0x02050b44
 BuildAbilityTable kind:function(thumb,size=0x280) addr:0x02050eb8
-func_02051138 kind:function(thumb,size=0x10) addr:0x02051138
+GetMapBonusStats kind:function(thumb,size=0x10) addr:0x02051138
 ComputeScaledPercentPlusOne kind:function(thumb,size=0x28) addr:0x02051148
 ArmObject kind:function(thumb,size=0x10) addr:0x02051170
 ArmObject_02051180 kind:function(thumb,size=0x10) addr:0x02051180
@@ -2513,7 +2513,7 @@ GetDifficultyScale kind:function(thumb,size=0x48) addr:0x02051190
 GetFlagTableValue kind:function(thumb,size=0x3c) addr:0x020511d8
 CountUnlockedSlotsFx kind:function(thumb,size=0x2c) addr:0x02051214
 HalveForEachFlag kind:function(thumb,size=0x30) addr:0x02051240
-func_02051270 kind:function(thumb,size=0x14) addr:0x02051270
+GetMapFinalStats kind:function(thumb,size=0x14) addr:0x02051270
 GetUnlockedSlotValue kind:function(thumb,size=0x44) addr:0x02051284
 Utf8ToUcs2 kind:function(arm,size=0xec) addr:0x020512c8
 SkipWideString kind:function(thumb,size=0x12) addr:0x020513b4
@@ -2568,7 +2568,7 @@ GetSecondTableEntryValue kind:function(thumb,size=0x24) addr:0x0205219c
 GetSecondTableTriple kind:function(thumb,size=0x30) addr:0x020521c0
 GetShortTableValueOrDefault kind:function(thumb,size=0x1c) addr:0x020521f0
 SumRecordTableAEntries kind:function(thumb,size=0x2c) addr:0x0205220c
-func_02052238 kind:function(thumb,size=0x14) addr:0x02052238
+GetRecordTableAEntry kind:function(thumb,size=0x14) addr:0x02052238
 GetRecordTableBEntry kind:function(thumb,size=0x24) addr:0x0205224c
 GetRecordTableCEntry kind:function(thumb,size=0x24) addr:0x02052270
 GetRecordTableDEntry kind:function(thumb,size=0x20) addr:0x02052294
@@ -2730,7 +2730,7 @@ gJointAnimationNodeDispatch kind:data(any) addr:0x02055d70
 gMaterialAnimationDispatch kind:data(any) addr:0x02055d7c
 data_02055d8c kind:data(any) addr:0x02055d8c
 data_02055da0 kind:data(any) addr:0x02055da0
-data_02055e00 kind:data(any) addr:0x02055e00
+gScriptState kind:data(any) addr:0x02055e00
 data_02055e04 kind:data(any) addr:0x02055e04
 data_02055e28 kind:data(any) addr:0x02055e28
 gGameTitleStringTable kind:data(any) addr:0x02055f30
@@ -2783,7 +2783,7 @@ SDK_OVERLAY_DIGEST kind:data(any) addr:0x020561ac
 SDK_OVERLAY_DIGEST_END kind:data(any) addr:0x020561ac
 data_020561c0 kind:bss addr:0x020561c0
 data_020569c8 kind:bss addr:0x020569c8
-data_020569cc kind:bss addr:0x020569cc
+gVBlankCallbackState kind:bss addr:0x020569cc
 data_020569d8 kind:bss addr:0x020569d8
 data_020569e0 kind:bss addr:0x020569e0
 gTextTagColors kind:bss addr:0x02056ae0
@@ -2979,7 +2979,7 @@ data_0205fdec kind:bss addr:0x0205fdec
 data_0205fe00 kind:bss addr:0x0205fe00
 data_0205fe0c kind:bss addr:0x0205fe0c
 data_0205fe20 kind:bss addr:0x0205fe20
-data_0205fe24 kind:bss addr:0x0205fe24
+gPanelState kind:bss addr:0x0205fe24
 data_0205fe28 kind:bss addr:0x0205fe28
 data_0205fe34 kind:bss addr:0x0205fe34
 data_0205fe40 kind:bss addr:0x0205fe40
@@ -2987,7 +2987,7 @@ data_0205fe4c kind:bss addr:0x0205fe4c
 data_0205fe8c kind:bss addr:0x0205fe8c
 data_0205fea8 kind:bss addr:0x0205fea8
 data_0205fec4 kind:bss addr:0x0205fec4
-data_0205ffc4 kind:bss addr:0x0205ffc4
+gRecordCounters kind:bss addr:0x0205ffc4
 data_0205ffc8 kind:bss addr:0x0205ffc8
 data_0206005a kind:bss addr:0x0206005a
 data_02060088 kind:bss addr:0x02060088
@@ -3000,7 +3000,7 @@ data_020603a0 kind:bss addr:0x020603a0
 data_020603a4 kind:bss addr:0x020603a4
 data_020603b4 kind:bss addr:0x020603b4
 data_020603b8 kind:bss addr:0x020603b8
-data_020603c8 kind:bss addr:0x020603c8
+gTaskManager kind:bss addr:0x020603c8
 data_020603d8 kind:bss addr:0x020603d8
 data_020604d8 kind:bss addr:0x020604d8
 data_020604e4 kind:bss addr:0x020604e4
@@ -3008,7 +3008,7 @@ data_020604fc kind:bss addr:0x020604fc
 data_02060500 kind:bss addr:0x02060500
 data_02060504 kind:bss addr:0x02060504
 data_02060534 kind:bss addr:0x02060534
-data_0206055c kind:bss addr:0x0206055c
+gLanguagePath kind:bss addr:0x0206055c
 gFileLoader kind:bss addr:0x02060564
 data_02060570 kind:bss addr:0x02060570
 data_02060574 kind:bss addr:0x02060574
@@ -3023,13 +3023,13 @@ data_02060784 kind:bss addr:0x02060784
 gActorRegistry kind:bss addr:0x0206083c
 data_02060840 kind:bss addr:0x02060840
 data_02060848 kind:bss addr:0x02060848
-data_0206084c kind:bss addr:0x0206084c
+gSoundWork kind:bss addr:0x0206084c
 data_02060850 kind:bss addr:0x02060850
 data_0206085c kind:bss addr:0x0206085c
 data_02060878 kind:bss addr:0x02060878
 data_0206088e kind:bss addr:0x0206088e
 data_020608c8 kind:bss addr:0x020608c8
-data_020608d0 kind:bss addr:0x020608d0
+gSelectionPackedValues kind:bss addr:0x020608d0
 data_020608d4 kind:bss addr:0x020608d4
 data_020608e0 kind:bss addr:0x020608e0
 data_020608e4 kind:bss addr:0x020608e4
@@ -3043,8 +3043,8 @@ data_02060f20 kind:bss addr:0x02060f20
 data_02060f22 kind:bss addr:0x02060f22
 data_02060f23 kind:bss addr:0x02060f23
 data_02060f24 kind:bss addr:0x02060f24
-data_020613cc kind:bss addr:0x020613cc
-data_020613d0 kind:bss addr:0x020613d0
+gMapLayout kind:bss addr:0x020613cc
+gRecordManager kind:bss addr:0x020613d0
 gEngineState kind:data(any) addr:0x02fffc20
 data_02fffc30 kind:data(any) addr:0x02fffc30
 gVBlankCount kind:data(any) addr:0x02fffc3c

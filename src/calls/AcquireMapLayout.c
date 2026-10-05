@@ -47,7 +47,7 @@ typedef struct GameState {
     s8 cellParams[1];
 } GameState;
 
-extern MapLayout *data_020613cc;
+extern MapLayout *gMapLayout;
 extern GameState *data_0205fe0c;
 extern const char sMain_UiSmxMapZ_02056188[];
 
@@ -85,7 +85,7 @@ int *AcquireMapLayout(BOOL reload, BOOL discard)
     if (discard) {
         map = NULL;
     } else {
-        map = data_020613cc;
+        map = gMapLayout;
     }
     data_0205fe0c->mapMode = data_0205fe0c->mapModeSource;
     if (map == NULL || reload) {
@@ -231,7 +231,7 @@ int *AcquireMapLayout(BOOL reload, BOOL discard)
         swap = map->unk_2360[20];
         map->unk_2360[20] = map->unk_2360[21];
         map->unk_2360[21] = swap;
-        data_020613cc = map;
+        gMapLayout = map;
     }
     map->refCount++;
     return &map->linkCount;

@@ -6,7 +6,7 @@ typedef struct PanelState {
     u8 pad_68[0x18];
 } PanelState;
 
-extern PanelState *data_0205fe24;
+extern PanelState *gPanelState;
 extern u32 Archive_LoadFile(u32 fileId, u32 param2, u32 param3, u32 param4);
 extern void GetBgDataFromArchive(void *view, u32 resource, int a, int b, int c);
 extern void *AllocAndRegisterOrFree(int this_, int arg1, int arg2);
@@ -16,7 +16,7 @@ extern u8 sMain_PauseEtciconNSCRZ_02055f94[];
 
 void InitPanelResources(int param1, int param2, u32 param3, u32 param4)
 {
-    PanelState *panel = data_0205fe24;
+    PanelState *panel = gPanelState;
     panel->resourceId = Archive_LoadFile((u32)sMain_PausePausebgLanguagePbgZ_02055f64, 0x11, param3, param4);
     GetBgDataFromArchive((u8 *)panel + 0x68, panel->resourceId, 0, 0, 0);
     *(void **)((u8 *)panel + 0x10) = AllocAndRegisterOrFree((int)((u8 *)panel + 0x18), (int)sMain_PausePauseiconNSCRZ_02055f7c, 0x11);

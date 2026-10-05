@@ -9,14 +9,14 @@ typedef struct RecordManager {
     u8 pad_53[0x74 - 0x53];
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 extern BOOL func_02051e10(s32 slot);
 extern void ZeroHalfThenFree(void *container);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
 void ReleaseRecordManager(void)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
     int slot;
 
     if (manager == NULL) {
@@ -35,5 +35,5 @@ void ReleaseRecordManager(void)
     ZeroHalfThenFree(manager->containerB);
     ZeroHalfThenFree(manager->containerA);
     NNSi_FndFreeFromDefaultHeap(manager);
-    data_020613d0 = NULL;
+    gRecordManager = NULL;
 }

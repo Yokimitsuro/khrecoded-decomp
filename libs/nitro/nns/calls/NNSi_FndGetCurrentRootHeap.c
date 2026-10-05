@@ -1,8 +1,8 @@
 typedef unsigned int u32;
 
-extern u32 *data_020603c8[];
+extern u32 *gTaskManager[];
 
 void *NNSi_FndGetCurrentRootHeap(void)
 {
-    return (void *)data_020603c8[1][8];
+    return (void *)gTaskManager[1][8];
 }

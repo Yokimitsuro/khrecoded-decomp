@@ -6,13 +6,13 @@ typedef struct {
     void *slotPair3Aux;
 } RecordManager;
 
-extern RecordManager *data_020613d0;
+extern RecordManager *gRecordManager;
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
 /* Frees and clears record slot pair 3. */
 void FreeRecordSlotPair3(void)
 {
-    RecordManager *manager = data_020613d0;
+    RecordManager *manager = gRecordManager;
 
     NNSi_FndFreeFromDefaultHeap(manager->slotPair3);
     NNSi_FndFreeFromDefaultHeap(manager->slotPair3Aux);
