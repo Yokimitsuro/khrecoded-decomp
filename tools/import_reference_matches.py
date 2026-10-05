@@ -58,6 +58,8 @@ def main() -> None:
     imported = []
     renamed_symbols = {}
     for rom_symbol, readable_name in args.mapping:
+        if re.search(rf"^{re.escape(readable_name)} kind:function", symbols, re.MULTILINE):
+            raise RuntimeError(f"function name already exists: {readable_name}")
         item = results[rom_symbol]
         function = index[rom_symbol]
         if function["relocs"]:

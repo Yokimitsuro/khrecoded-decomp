@@ -1,9 +1,9 @@
-extern int func_0202d3f4(int a, int b, int c);
+extern int NestedPointer_GetFirstWord(int a, int b, int c);
 extern int NNS_G3dGetTex(int entry);
 extern void func_0202a294(int a, int b, int c, int d);
 
 void func_0202d410(int param_1, int param_2, int param_3) {
-    int entry = func_0202d3f4(param_1, 7, 0);
+    int entry = NestedPointer_GetFirstWord(param_1, 7, 0);
     int base;
     if (entry == 0) return;
     base = NNS_G3dGetTex(entry);

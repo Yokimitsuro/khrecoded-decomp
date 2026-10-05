@@ -1,4 +1,4 @@
-extern int func_0204f2f8();
+extern int IndexedRecord_ClearActive();
 
 void func_ov027_020b9604(int a, int *b) {
     int i;
@@ -6,7 +6,7 @@ void func_ov027_020b9604(int a, int *b) {
     for (i = 0; i < 2; i++) {
         v = b[i + 5];
         if (v != -1) {
-            func_0204f2f8(a, v);
+            IndexedRecord_ClearActive(a, v);
         }
     }
 }

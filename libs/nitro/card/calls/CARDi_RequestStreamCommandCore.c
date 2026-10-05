@@ -2,7 +2,7 @@
 
 u8 sCardBackupCachePageBuffer[0x100] __attribute__((aligned(32)));
 
-extern void func_02000b64(const void *descriptor);
+extern void PanelState_NoOpB(const void *descriptor);
 extern u32 CARD_GetBackupSectorSize(void);
 extern void DC_InvalidateRange(void *address, u32 length);
 extern void MI_CpuCopy8(const void *source, void *destination, u32 length);
@@ -28,7 +28,7 @@ void CARDi_RequestStreamCommandCore(CARDiCommon *common)
     const int retryCount = common->requestRetryCount;
     u32 size = sizeof(sCardBackupCachePageBuffer);
 
-    func_02000b64(cardi_backup_assert);
+    PanelState_NoOpB(cardi_backup_assert);
 
     if (requestType == CARD_REQ_ERASE_SECTOR_BACKUP) {
         size = CARD_GetBackupSectorSize();

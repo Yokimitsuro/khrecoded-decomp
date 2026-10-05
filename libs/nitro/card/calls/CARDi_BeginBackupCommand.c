@@ -2,7 +2,7 @@
 
 typedef void (*MIDmaCallback)(void *argument);
 
-extern void func_02000b64(const void *descriptor);
+extern void PanelState_NoOpB(const void *descriptor);
 extern void CARD_CheckEnabled(void);
 extern u32 CARDi_GetAccessLevel(void);
 extern void OS_Terminate(void);
@@ -14,7 +14,7 @@ extern BOOL CARDi_WaitForTask(CARDiCommon *common, BOOL restart,
 void CARDi_BeginBackupCommand(u32 accessLevel, MIDmaCallback callback,
                               void *argument)
 {
-    func_02000b64(cardi_backup_assert);
+    PanelState_NoOpB(cardi_backup_assert);
     CARD_CheckEnabled();
 
     if ((CARDi_GetAccessLevel() & accessLevel) != accessLevel) {

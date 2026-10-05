@@ -1,5 +1,5 @@
-extern void *func_0203f248();
+extern void *MSL_AbsB();
 
 void *func_0203f23c() {
-    return func_0203f248();
+    return MSL_AbsB();
 }
