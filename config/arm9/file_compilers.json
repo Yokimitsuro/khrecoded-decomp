@@ -2214,5 +2214,11 @@
   "src/calls/Text_VSNPrintf.c": "dsi/1.1",
   "src/calls/MoveActorAndSnapToGround.c": "dsi/1.1",
   "src/calls/ResolveSlideMovement.c": "dsi/1.1",
-  "src/calls/TestCylinderAgainstPolygon.c": "dsi/1.1"
+  "src/calls/TestCylinderAgainstPolygon.c": "dsi/1.1",
+  "src/overlays/ov055/data/strings/Strings_ov055_020d3ee0.c": "dsi/1.1",
+  "src/overlays/ov055/data/strings/Strings_ov055_020d3ef4.c": "dsi/1.1",
+  "src/overlays/ov057/data/strings/Strings_ov057_020d44c0.c": "dsi/1.1",
+  "src/overlays/ov057/data/strings/Strings_ov057_020d44d4.c": "dsi/1.1",
+  "src/overlays/ov058/data/strings/Strings_ov058_020d8a00.c": "dsi/1.1",
+  "src/overlays/ov058/data/strings/Strings_ov058_020d8a14.c": "dsi/1.1"
 }

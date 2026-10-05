@@ -70,9 +70,9 @@ data_ov058_020d89b4 kind:data(any) addr:0x020d89b4
 data_ov058_020d89bc kind:data(any) addr:0x020d89bc
 data_ov058_020d89c8 kind:data(any) addr:0x020d89c8
 data_ov058_020d89d4 kind:data(any) addr:0x020d89d4
-data_ov058_020d8a00 kind:data(any) addr:0x020d8a00
-data_ov058_020d8a14 kind:data(any) addr:0x020d8a14
-data_ov058_020d8a24 kind:data(any) addr:0x020d8a24
+sOv058_BaChSoTMPZ_020d8a00 kind:data(any) addr:0x020d8a00
+sOv058_BaEfFnTrP2_020d8a14 kind:data(any) addr:0x020d8a14
+sOv058_CmAR_020d8a24 kind:data(any) addr:0x020d8a24
 data_ov058_020d8a40 kind:bss addr:0x020d8a40
 data_ov058_020d8a44 kind:bss addr:0x020d8a44
 data_ov058_020d8a4c kind:bss addr:0x020d8a4c

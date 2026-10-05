@@ -10,8 +10,8 @@ func_ov055_020d3b1c kind:function(arm,size=0x104) addr:0x020d3b1c
 func_ov055_020d3c20 kind:function(arm,size=0x1b4) addr:0x020d3c20
 func_ov055_020d3dd4 kind:function(thumb,size=0x28) addr:0x020d3dd4
 func_ov055_020d3dfc kind:function(thumb,size=0xe0) addr:0x020d3dfc
-data_ov055_020d3ee0 kind:data(any) addr:0x020d3ee0
-data_ov055_020d3ef4 kind:data(any) addr:0x020d3ef4
-data_ov055_020d3f08 kind:data(any) addr:0x020d3f08
+sOv055_BaChFormatSDefPZ_020d3ee0 kind:data(any) addr:0x020d3ee0
+sOv055_BaChFormatSEtcPZ_020d3ef4 kind:data(any) addr:0x020d3ef4
+sOv055_BaChFormatSJpPZ_020d3f08 kind:data(any) addr:0x020d3f08
 data_ov055_020d3f20 kind:bss addr:0x020d3f20
 data_ov055_020d3f3d kind:bss addr:0x020d3f3d ambiguous
