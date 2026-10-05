@@ -691,5 +691,12 @@
   "libs/nns/snd/calls/ForceStopSeq.c": "dsi/1.1",
   "libs/nns/snd/calls/AllocSeqPlayer.c": "dsi/1.1",
   "libs/nns/snd/calls/ShutdownPlayer.c": "dsi/1.1",
-  "libs/nns/snd/calls/SetPlayerPriority.c": "dsi/1.1"
+  "libs/nns/snd/calls/SetPlayerPriority.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndStrmInit.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNS_SndStrmSetup.c": "dsi/1.1",
+  "libs/nns/snd/calls/AlarmCallback.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndCaptureMain.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndCaptureStop.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndCaptureEndSleep.c": "dsi/1.1",
+  "libs/nns/snd/calls/ShutdownStrm.c": "dsi/1.1"
 }

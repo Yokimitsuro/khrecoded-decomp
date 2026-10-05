@@ -4297,6 +4297,10 @@ libs/nns/snd/calls/SetPlayerPriority.c:
     complete
     .text       start:0x0201df14 end:0x0201df74
 
+libs/nns/snd/calls/NNS_SndStrmInit.c:
+    complete
+    .text       start:0x0201df74 end:0x0201dfe8
+
 libs/nns/snd/calls/NNS_SndStrmAllocChannel.c:
     complete
     .text       start:0x0201dfe8 end:0x0201e044
@@ -4304,6 +4308,10 @@ libs/nns/snd/calls/NNS_SndStrmAllocChannel.c:
 libs/nns/snd/calls/NNS_SndStrmFreeChannel.c:
     complete
     .text       start:0x0201e044 end:0x0201e06c
+
+libs/nns/snd/calls/NNS_SndStrmSetup.c:
+    complete
+    .text       start:0x0201e06c end:0x0201e20c
 
 libs/nns/snd/calls/NNS_SndStrmStart.c:
     complete
@@ -4329,7 +4337,7 @@ libs/nns/snd/calls/ShutdownStrm.c:
     complete
     .text       start:0x0201e38c end:0x0201e3bc
 
-src/calls/func_0201e3bc.c:
+libs/nns/snd/calls/AlarmCallback.c:
     complete
     .text       start:0x0201e3bc end:0x0201e3cc
 
@@ -4353,9 +4361,17 @@ libs/nns/snd/calls/NNSi_SndCaptureMain.c:
     complete
     .text       start:0x0201e558 end:0x0201e5d8
 
+libs/nns/snd/calls/NNSi_SndCaptureStop.c:
+    complete
+    .text       start:0x0201e5d8 end:0x0201e6bc
+
 libs/nns/snd/calls/NNSi_SndCaptureBeginSleep.c:
     complete
     .text       start:0x0201e6bc end:0x0201e714
+
+libs/nns/snd/calls/NNSi_SndCaptureEndSleep.c:
+    complete
+    .text       start:0x0201e714 end:0x0201e794
 
 libs/nitro/snd/calls/SND_SetActiveSlotSwap.c:
     complete

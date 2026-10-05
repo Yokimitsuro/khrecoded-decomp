@@ -1,5 +1,5 @@
-extern void *func_0201e714();
+extern void *NNSi_SndCaptureEndSleep();
 
 void *func_0201d30c() {
-    return func_0201e714();
+    return NNSi_SndCaptureEndSleep();
 }
