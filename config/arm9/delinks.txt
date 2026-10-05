@@ -96,19 +96,31 @@ src/auto/func_02000b64.c:
     complete
     .text       start:0x02000b64 end:0x02000b68
 
+src/calls/AppendNodeToListTail.c:
+    complete
+    .text       start:0x02000f14 end:0x02000f48
+
 src/calls/func_020011a8.c:
     complete
     .text       start:0x020011a8 end:0x020011b8
 
-src/auto/func_020014a4.c:
+src/calls/Obj_SetField14.c:
     complete
     .text       start:0x020014a4 end:0x020014a8
+
+src/calls/CallVirtualHandlerSlot1.c:
+    complete
+    .text       start:0x02001588 end:0x02001596
+
+src/calls/ClearTextArea.c:
+    complete
+    .text       start:0x02001598 end:0x020015b2
 
 src/calls/func_0200191c.c:
     complete
     .text       start:0x0200191c end:0x02001928
 
-src/auto/func_02001a04.c:
+src/calls/GetWord20.c:
     complete
     .text       start:0x02001a04 end:0x02001a08
 
@@ -119,6 +131,14 @@ src/auto/func_02001a08.c:
 src/calls/func_02001a14.c:
     complete
     .text       start:0x02001a14 end:0x02001a50
+
+src/calls/CallVirtualHandler.c:
+    complete
+    .text       start:0x02001a50 end:0x02001a74
+
+src/calls/SetFieldAt2C.c:
+    complete
+    .text       start:0x02001b30 end:0x02001b34
 
 libs/nitro/os/calls/OS_WaitIrq.c:
     complete
@@ -4809,6 +4829,14 @@ libs/msl/c/calls/MSL_Div.c:
     complete
     .text       start:0x020219ac end:0x02021a18
 
+src/calls/TryAddInt32A.c:
+    complete
+    .text       start:0x02021a18 end:0x02021a64
+
+src/calls/TryAddInt32B.c:
+    complete
+    .text       start:0x02021a64 end:0x02021ab0
+
 libs/msl/c/calls/CheckedMultiply.c:
     complete
     .text       start:0x02021ab0 end:0x02021b1c
@@ -4877,6 +4905,10 @@ src/calls/Utf16CopyPadded.c:
     complete
     .text       start:0x02022a88 end:0x02022ad8
 
+src/calls/MSL_Fabs.c:
+    complete
+    .text       start:0x02022ad8 end:0x02022af8
+
 src/calls/func_02022af8.c:
     complete
     .text       start:0x02022af8 end:0x02022b04
@@ -4937,6 +4969,14 @@ src/calls/func_02025968.c:
     complete
     .text       start:0x02025968 end:0x02025974
 
+src/calls/ScriptCmd_ReturnValue.c:
+    complete
+    .text       start:0x02025974 end:0x02025978
+
+src/calls/ScriptVm_ResolveOperand.c:
+    complete
+    .text       start:0x02025d1c end:0x02025dc0
+
 src/calls/func_02025df8.c:
     complete
     .text       start:0x02025df8 end:0x02025e0c
@@ -4945,13 +4985,21 @@ src/calls/func_02025e0c.c:
     complete
     .text       start:0x02025e0c end:0x02025e2a
 
+src/calls/ScriptCmd_SetElemField.c:
+    complete
+    .text       start:0x02025e2c end:0x02025e3c
+
 src/auto/func_02025e3c.c:
     complete
     .text       start:0x02025e3c end:0x02025e54
 
-src/auto/func_02025e54.c:
+src/calls/GetField4UnlessState2.c:
     complete
     .text       start:0x02025e54 end:0x02025e62
+
+src/calls/ScriptCmd_SetElemOffset.c:
+    complete
+    .text       start:0x02026334 end:0x0202634e
 
 src/auto/func_020263d0.c:
     complete
@@ -4961,7 +5009,15 @@ src/auto/func_02026440.c:
     complete
     .text       start:0x02026440 end:0x02026444
 
-src/auto/func_020264d4.c:
+src/calls/ResetRequestRecord.c:
+    complete
+    .text       start:0x02026444 end:0x02026460
+
+src/calls/ScriptVm_RunCallback.c:
+    complete
+    .text       start:0x02026494 end:0x020264d2
+
+src/calls/IsDerefZero.c:
     complete
     .text       start:0x020264d4 end:0x020264e2
 
@@ -5008,6 +5064,10 @@ src/calls/func_02026ac4.c:
 src/calls/func_02026ad0.c:
     complete
     .text       start:0x02026ad0 end:0x02026adc
+
+src/calls/InvokeOptionalCallback.c:
+    complete
+    .text       start:0x02026adc end:0x02026af4
 
 src/calls/func_02026c80.c:
     complete
@@ -5060,6 +5120,10 @@ src/calls/func_02028dcc.c:
 src/calls/func_020291c8.c:
     complete
     .text       start:0x020291c8 end:0x020291d4
+
+src/calls/TruncateToU16.c:
+    complete
+    .text       start:0x0202957c end:0x02029582
 
 src/auto/func_02029584.c:
     complete
@@ -5149,6 +5213,10 @@ src/calls/func_0202a7b8.c:
     complete
     .text       start:0x0202a7b8 end:0x0202a7c8
 
+src/calls/LoadDefaultProjectionValues.c:
+    complete
+    .text       start:0x0202a7c8 end:0x0202a828
+
 src/calls/func_0202a998.c:
     complete
     .text       start:0x0202a998 end:0x0202a9e4
@@ -5161,11 +5229,11 @@ src/calls/func_0202abbc.c:
     complete
     .text       start:0x0202abbc end:0x0202abdc
 
-src/auto/func_0202acac.c:
+src/calls/SetEngineBBG3Control.c:
     complete
     .text       start:0x0202acac end:0x0202acd8
 
-src/auto/func_0202acd8.c:
+src/calls/SetEngineBBG2Control.c:
     complete
     .text       start:0x0202acd8 end:0x0202ad04
 
@@ -5192,6 +5260,10 @@ src/auto/func_0202adc4.c:
 src/auto/func_0202adf8.c:
     complete
     .text       start:0x0202adf8 end:0x0202ae2c
+
+src/calls/LookupPairValue.c:
+    complete
+    .text       start:0x0202ae2c end:0x0202ae5c
 
 src/calls/func_0202ae90.c:
     complete
@@ -5401,11 +5473,11 @@ src/calls/WritePackedBits.c:
     complete
     .text       start:0x0202d574 end:0x0202d620
 
-src/auto/func_0202d634.c:
+src/calls/PrintfDest_PutChar.c:
     complete
     .text       start:0x0202d634 end:0x0202d64c
 
-src/auto/func_0202d64c.c:
+src/calls/PrintfDestWide_PutChar.c:
     complete
     .text       start:0x0202d64c end:0x0202d664
 
@@ -5429,7 +5501,7 @@ src/calls/func_0202e094.c:
     complete
     .text       start:0x0202e094 end:0x0202e0ae
 
-src/auto/func_0202e818.c:
+src/calls/ReadValidatedRecordByte.c:
     complete
     .text       start:0x0202e818 end:0x0202e868
 
@@ -5441,9 +5513,13 @@ src/calls/func_0202edd0.c:
     complete
     .text       start:0x0202edd0 end:0x0202edec
 
-src/auto/func_0202ee30.c:
+src/calls/DetachObjectTreeNode.c:
     complete
     .text       start:0x0202ee30 end:0x0202eeb4
+
+src/calls/BuildSlotMask.c:
+    complete
+    .text       start:0x0202f048 end:0x0202f0a4
 
 src/calls/func_0202f2e0.c:
     complete
@@ -5461,7 +5537,11 @@ src/calls/func_0202f5d0.c:
     complete
     .text       start:0x0202f5d0 end:0x0202f5dc
 
-src/auto/func_0202f950.c:
+src/calls/QuaternionToRotationMatrix.c:
+    complete
+    .text       start:0x0202f81c end:0x0202f950
+
+src/calls/MultiplyFixedPointQuaternions.c:
     complete
     .text       start:0x0202f950 end:0x0202fb0c
 
@@ -5497,9 +5577,33 @@ src/auto/func_02030580.c:
     complete
     .text       start:0x02030580 end:0x02030582
 
+src/calls/DispatchContactCallbacks.c:
+    complete
+    .text       start:0x02031c04 end:0x02031d38
+
+src/calls/PushContact.c:
+    complete
+    .text       start:0x0203201c end:0x02032108
+
+src/calls/RemoveContactSlot.c:
+    complete
+    .text       start:0x02032108 end:0x020321e8
+
+src/calls/AddUniqueContactId.c:
+    complete
+    .text       start:0x020322bc end:0x02032304
+
+src/calls/InitGatherQueryFromParams.c:
+    complete
+    .text       start:0x020335e4 end:0x02033680
+
 src/calls/CopyShortTripleToIntTriple.c:
     complete
     .text       start:0x0203385c end:0x02033878
+
+src/calls/ForEachFaceOnPoint.c:
+    complete
+    .text       start:0x0203392c end:0x02033aa4
 
 src/calls/UnlinkNodeFromList.c:
     complete
@@ -5512,6 +5616,18 @@ src/calls/func_02033c50.c:
 src/calls/func_02033c74.c:
     complete
     .text       start:0x02033c74 end:0x02033c90
+
+src/calls/Surface_GetKindValue.c:
+    complete
+    .text       start:0x02034c38 end:0x02034c88
+
+src/calls/CollisionQuery_Init.c:
+    complete
+    .text       start:0x02034c88 end:0x02034d00
+
+src/calls/AttachToAnchor.c:
+    complete
+    .text       start:0x02034d00 end:0x02034d78
 
 src/calls/func_02035278.c:
     complete

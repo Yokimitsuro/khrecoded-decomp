@@ -19,7 +19,7 @@ extern void *func_02036254(u16 nEntity);
 extern void  func_020361ac(u16 nEntity, int bEnable, int nDuration);
 extern int   func_0202572c(int nMode, int nTotal, int nRemaining);
 extern int   func_020257c4(int nFactor, int nFrom, int nTo);
-extern void  func_02025e2c(void *pCtx, void *pCmd);
+extern void  ScriptCmd_SetElemField(void *pCtx, void *pCmd);
 
 int func_ov001_0208cb3c(void *pCtx, Ov023RampCmd *pCmd)
 {
@@ -39,6 +39,6 @@ int func_ov001_0208cb3c(void *pCtx, Ov023RampCmd *pCmd)
         return 1;
     }
     func_020361ac((u16)nActor, 1, func_020257c4(func_0202572c(2, nFrames, pCmd->nRemaining), nTo, nFrom));
-    func_02025e2c(pCtx, pCmd);
+    ScriptCmd_SetElemField(pCtx, pCmd);
     return 0;
 }

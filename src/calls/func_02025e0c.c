@@ -1,7 +1,7 @@
-extern short *func_02025d1c(void);
+extern short *ScriptVm_ResolveOperand(void);
 
 int func_02025e0c(void) {
-    short *ptr = func_02025d1c();
+    short *ptr = ScriptVm_ResolveOperand();
     int value = 0;
 
     if (ptr[0] == 1) {
