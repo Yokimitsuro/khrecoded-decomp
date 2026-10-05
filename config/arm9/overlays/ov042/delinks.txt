@@ -10,6 +10,10 @@ src/overlays/ov042/calls/func_ov042_020bd110.c:
     complete
     .text       start:0x020bd110 end:0x020bd11c
 
+src/overlays/ov042/auto/func_ov042_020bd18c.c:
+    complete
+    .text       start:0x020bd18c end:0x020bd198
+
 src/overlays/ov042/calls/TranslateCameraTarget.c:
     complete
     .text       start:0x020bd198 end:0x020bd1e0
@@ -45,6 +49,14 @@ src/overlays/ov042/calls/InitCameraState.c:
 src/overlays/ov042/calls/func_ov042_020bd5a4.c:
     complete
     .text       start:0x020bd5a4 end:0x020bd5b0
+
+src/overlays/ov042/auto/func_ov042_020bd5b0.c:
+    complete
+    .text       start:0x020bd5b0 end:0x020bd5bc
+
+src/overlays/ov042/auto/func_ov042_020bd5f4.c:
+    complete
+    .text       start:0x020bd5f4 end:0x020bd600
 
 src/overlays/ov042/calls/SetCameraMode.c:
     complete

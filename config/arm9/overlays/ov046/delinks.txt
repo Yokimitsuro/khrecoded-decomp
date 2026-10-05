@@ -127,6 +127,10 @@ src/overlays/ov046/calls/Camera_RefreshStandardView.c:
     complete
     .text       start:0x020c16e0 end:0x020c170c
 
+src/overlays/ov046/auto/func_ov046_020c170c.c:
+    complete
+    .text       start:0x020c170c end:0x020c1718
+
 src/overlays/ov046/calls/Camera_RefreshHeading.c:
     complete
     .text       start:0x020c1718 end:0x020c1744

@@ -20,9 +20,122 @@ def destination(module: str, name: str) -> Path:
     return ROOT / "src" / "auto" / f"{name}.c"
 
 
-def source_for(name: str, mode: str, code: bytes) -> str | None:
+def source_for(name: str, mode: str, code: bytes, relocs: list[list]) -> str | None:
     decoder = Cs(CS_ARCH_ARM, CS_MODE_THUMB if mode == "thumb" else CS_MODE_ARM)
-    insns = [(item.mnemonic, item.op_str) for item in decoder.disasm(code, 0)]
+    instruction_size = min((offset for offset, _ in relocs), default=len(code))
+    insns = [(item.mnemonic, item.op_str) for item in decoder.disasm(code[:instruction_size], 0)]
+
+    # Accessors for a global which stores an object pointer. The exact external
+    # symbol is retained, so relocation verification remains as strict as the
+    # instruction-byte comparison.
+    if len(relocs) == 1 and relocs[0][1].startswith("data_"):
+        symbol = relocs[0][1]
+        pointer_header = HEADER + f"extern u8 *{symbol};\n\n"
+
+        if (
+            len(insns) == 4
+            and insns[0][0] == "ldr"
+            and "[pc" in insns[0][1]
+            and insns[1] == ("ldr", "r0, [r0]")
+            and insns[2][0] in {"ldr", "ldrh", "ldrb"}
+            and insns[2][1].startswith("r0, [r0")
+            and insns[3] == ("bx", "lr")
+        ):
+            offset = 0 if insns[2][1] == "r0, [r0]" else int(insns[2][1].split("#", 1)[1].rstrip("]"), 0)
+            value_type = {"ldr": "u32", "ldrh": "u16", "ldrb": "u8"}[insns[2][0]]
+            return pointer_header + (
+                f"{value_type} {name}(void)\n{{\n"
+                f"    return *(const {value_type} *)({symbol} + 0x{offset:x});\n"
+                "}\n"
+            )
+
+        if (
+            len(insns) == 4
+            and insns[0][0] == "ldr"
+            and "[pc" in insns[0][1]
+            and insns[1] == ("ldr", "r1, [r1]")
+            and insns[2][0] in {"str", "strh", "strb"}
+            and insns[2][1].startswith("r0, [r1")
+            and insns[3] == ("bx", "lr")
+        ):
+            offset = 0 if insns[2][1] == "r0, [r1]" else int(insns[2][1].split("#", 1)[1].rstrip("]"), 0)
+            value_type = {"str": "u32", "strh": "u16", "strb": "u8"}[insns[2][0]]
+            return pointer_header + (
+                f"void {name}({value_type} value)\n{{\n"
+                f"    *({value_type} *)({symbol} + 0x{offset:x}) = value;\n"
+                "}\n"
+            )
+
+        if (
+            len(insns) == 4
+            and insns[0][0] == "ldr"
+            and "[pc" in insns[0][1]
+            and insns[1] == ("ldr", "r0, [r0]")
+            and insns[2][0] == "adds"
+            and insns[2][1].startswith("r0, #")
+            and insns[3] == ("bx", "lr")
+        ):
+            offset = int(insns[2][1].split("#", 1)[1], 0)
+            return pointer_header + (
+                f"void *{name}(void)\n{{\n"
+                f"    return {symbol} + 0x{offset:x};\n"
+                "}\n"
+            )
+
+        if (
+            len(insns) == 6
+            and insns[0][0] == "ldr"
+            and "[pc" in insns[0][1]
+            and insns[1] == ("ldr", "r0, [r0]")
+            and insns[2][0] in {"ldr", "ldrh", "ldrb"}
+            and insns[2][1].startswith("r1, [r0")
+            and insns[3][0] == "movs"
+            and insns[3][1].startswith("r0, #")
+            and insns[4] == ("ands", "r0, r1")
+            and insns[5] == ("bx", "lr")
+        ):
+            offset = 0 if insns[2][1] == "r1, [r0]" else int(insns[2][1].split("#", 1)[1].rstrip("]"), 0)
+            mask = int(insns[3][1].split("#", 1)[1], 0)
+            value_type = {"ldr": "u32", "ldrh": "u16", "ldrb": "u8"}[insns[2][0]]
+            return pointer_header + (
+                f"u32 {name}(void)\n{{\n"
+                f"    return *(const {value_type} *)({symbol} + 0x{offset:x}) & 0x{mask:x};\n"
+                "}\n"
+            )
+
+        if (
+            len(insns) == 5
+            and insns[0][0] == "ldr"
+            and "[pc" in insns[0][1]
+            and insns[1][0] == "movs"
+            and insns[1][1].startswith("r1, #")
+            and insns[2] == ("ldr", "r0, [r0]")
+            and insns[3][0] in {"str", "strh", "strb"}
+            and insns[3][1].startswith("r1, [r0")
+            and insns[4] == ("bx", "lr")
+        ):
+            value = int(insns[1][1].split("#", 1)[1], 0)
+            offset = 0 if insns[3][1] == "r1, [r0]" else int(insns[3][1].split("#", 1)[1].rstrip("]"), 0)
+            value_type = {"str": "u32", "strh": "u16", "strb": "u8"}[insns[3][0]]
+            return pointer_header + (
+                f"void {name}(void)\n{{\n"
+                f"    *({value_type} *)({symbol} + 0x{offset:x}) = {value};\n"
+                "}\n"
+            )
+
+        # Direct byte-addressed table rather than a global pointer variable.
+        if (
+            len(insns) == 3
+            and insns[0][0] == "ldr"
+            and insns[0][1].startswith("r1, [pc")
+            and insns[1] == ("adds", "r0, r0, r1")
+            and insns[2] == ("bx", "lr")
+        ):
+            return HEADER + f"extern u8 {symbol}[];\n\n" + (
+                f"void *{name}(u32 offset)\n{{\n"
+                f"    return {symbol} + offset;\n"
+                "}\n"
+            )
 
     # Pointer adjustment: adds r0, #imm / add r0, r0, #imm; bx lr.
     if len(insns) == 2 and insns[1] == ("bx", "lr"):
@@ -533,9 +646,9 @@ def main() -> None:
         if item["category"] != "todo" or not (0 < item["size"] <= args.max_size):
             continue
         entry = index[item["name"]]
-        if entry["relocs"]:
-            continue
-        source = source_for(item["name"], item["mode"], bytes.fromhex(entry["hex"]))
+        source = source_for(
+            item["name"], item["mode"], bytes.fromhex(entry["hex"]), entry["relocs"]
+        )
         if source is None:
             continue
         trial = trial_dir / f"{item['name']}.c"

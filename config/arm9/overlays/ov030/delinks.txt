@@ -48,6 +48,10 @@ src/overlays/ov030/calls/IsSceneUnpaused_020bacd4.c:
     complete
     .text       start:0x020bacd4 end:0x020bacec
 
+src/overlays/ov030/auto/func_ov030_020bb230.c:
+    complete
+    .text       start:0x020bb230 end:0x020bb240
+
 src/overlays/ov030/calls/SuspendSceneAtQuarterRate.c:
     complete
     .text       start:0x020bb240 end:0x020bb288
@@ -55,6 +59,10 @@ src/overlays/ov030/calls/SuspendSceneAtQuarterRate.c:
 src/overlays/ov030/calls/InstallSceneHandlers_020bb288.c:
     complete
     .text       start:0x020bb288 end:0x020bb2ec
+
+src/overlays/ov030/auto/func_ov030_020bb388.c:
+    complete
+    .text       start:0x020bb388 end:0x020bb394
 
 src/overlays/ov030/calls/SetSceneLock.c:
     complete

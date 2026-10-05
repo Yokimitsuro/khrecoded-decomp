@@ -152,6 +152,10 @@ src/overlays/ov001/calls/StartSessionScene.c:
     complete
     .text       start:0x020636f8 end:0x0206375c
 
+src/overlays/ov001/auto/func_ov001_02063838.c:
+    complete
+    .text       start:0x02063838 end:0x02063848
+
 src/overlays/ov001/calls/IsSessionIdle.c:
     complete
     .text       start:0x02063860 end:0x020638ec
@@ -968,6 +972,18 @@ src/overlays/ov001/calls/func_ov001_02068e8c.c:
     complete
     .text       start:0x02068e8c end:0x02068e98
 
+src/overlays/ov001/auto/func_ov001_02068e98.c:
+    complete
+    .text       start:0x02068e98 end:0x02068ea4
+
+src/overlays/ov001/auto/func_ov001_02068ec4.c:
+    complete
+    .text       start:0x02068ec4 end:0x02068ed0
+
+src/overlays/ov001/auto/func_ov001_02068ef0.c:
+    complete
+    .text       start:0x02068ef0 end:0x02068efc
+
 src/overlays/ov001/calls/PollEventTriggerList.c:
     complete
     .text       start:0x02068f64 end:0x02068ff4
@@ -1203,6 +1219,10 @@ src/overlays/ov001/calls/SetScreenFlag200.c:
 src/overlays/ov001/calls/LoadCenteredScreenSprite.c:
     complete
     .text       start:0x0206a860 end:0x0206a8c8
+
+src/overlays/ov001/auto/func_ov001_0206a8c8.c:
+    complete
+    .text       start:0x0206a8c8 end:0x0206a8d4
 
 src/overlays/ov001/calls/InitSlotFromFile.c:
     complete
@@ -2476,6 +2496,14 @@ src/overlays/ov001/calls/SetPanelItemHighlight.c:
     complete
     .text       start:0x0207b1c4 end:0x0207b21c
 
+src/overlays/ov001/auto/func_ov001_0207b21c.c:
+    complete
+    .text       start:0x0207b21c end:0x0207b228
+
+src/overlays/ov001/auto/func_ov001_0207b228.c:
+    complete
+    .text       start:0x0207b228 end:0x0207b234
+
 src/overlays/ov001/calls/RequestPanelModeChange.c:
     complete
     .text       start:0x0207b2a4 end:0x0207b348
@@ -2500,9 +2528,17 @@ src/overlays/ov001/calls/func_ov001_0207b604.c:
     complete
     .text       start:0x0207b604 end:0x0207b610
 
+src/overlays/ov001/auto/func_ov001_0207b610.c:
+    complete
+    .text       start:0x0207b610 end:0x0207b61c
+
 src/overlays/ov001/calls/IsSceneModeThreeOrSix.c:
     complete
     .text       start:0x0207b634 end:0x0207b654
+
+src/overlays/ov001/auto/func_ov001_0207b6fc.c:
+    complete
+    .text       start:0x0207b6fc end:0x0207b708
 
 src/overlays/ov001/calls/Panel_CaptureBrightness.c:
     complete
@@ -2511,6 +2547,10 @@ src/overlays/ov001/calls/Panel_CaptureBrightness.c:
 src/overlays/ov001/calls/func_ov001_0207b764.c:
     complete
     .text       start:0x0207b764 end:0x0207b770
+
+src/overlays/ov001/auto/func_ov001_0207b770.c:
+    complete
+    .text       start:0x0207b770 end:0x0207b77c
 
 src/overlays/ov001/calls/IntPow.c:
     complete
@@ -2784,6 +2824,10 @@ src/overlays/ov001/calls/DestroyListNodes.c:
     complete
     .text       start:0x0207ef1c end:0x0207ef44
 
+src/overlays/ov001/auto/func_ov001_0207ef90.c:
+    complete
+    .text       start:0x0207ef90 end:0x0207efa0
+
 src/overlays/ov001/calls/ObjectManager_LoadShadowModel.c:
     complete
     .text       start:0x0207efd4 end:0x0207f018
@@ -2795,6 +2839,10 @@ src/overlays/ov001/calls/InvokeListNodeCallbacks.c:
 src/overlays/ov001/calls/ObjectManager_IsFlagBitSet.c:
     complete
     .text       start:0x0207f090 end:0x0207f0b4
+
+src/overlays/ov001/auto/func_ov001_0207f0b4.c:
+    complete
+    .text       start:0x0207f0b4 end:0x0207f0c0
 
 src/overlays/ov001/calls/AcquireEffectRecordPair.c:
     complete
@@ -3620,6 +3668,10 @@ src/overlays/ov001/calls/AppendNodeToActiveList.c:
     complete
     .text       start:0x02086fd4 end:0x02087010
 
+src/overlays/ov001/auto/func_ov001_020870e4.c:
+    complete
+    .text       start:0x020870e4 end:0x020870f4
+
 src/overlays/ov001/calls/ReleaseEffectResources.c:
     complete
     .text       start:0x020870f4 end:0x02087160
@@ -3631,6 +3683,10 @@ src/overlays/ov001/calls/ReallocTableEntry.c:
 src/overlays/ov001/calls/ResourceCache_Shutdown.c:
     complete
     .text       start:0x020871b8 end:0x0208722c
+
+src/overlays/ov001/auto/func_ov001_02087264.c:
+    complete
+    .text       start:0x02087264 end:0x02087270
 
 src/overlays/ov001/calls/CacheEntry_SetActive.c:
     complete
@@ -3667,6 +3723,10 @@ src/overlays/ov001/calls/GrantEntryUnlockReward.c:
 src/overlays/ov001/calls/func_ov001_02087644.c:
     complete
     .text       start:0x02087644 end:0x02087650
+
+src/overlays/ov001/auto/func_ov001_02087674.c:
+    complete
+    .text       start:0x02087674 end:0x02087684
 
 src/overlays/ov001/calls/StageEvents_StartIfIdle.c:
     complete

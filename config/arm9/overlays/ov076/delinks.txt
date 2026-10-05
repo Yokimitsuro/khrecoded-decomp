@@ -264,6 +264,10 @@ src/overlays/ov076/calls/SlotMenu_ReloadAllSlots.c:
     complete
     .text       start:0x020c8f18 end:0x020c8f44
 
+src/overlays/ov076/auto/func_ov076_020c8f44.c:
+    complete
+    .text       start:0x020c8f44 end:0x020c8f50
+
 src/overlays/ov076/calls/ItemList_CompareStock.c:
     complete
     .text       start:0x020c8f50 end:0x020c8fbe
