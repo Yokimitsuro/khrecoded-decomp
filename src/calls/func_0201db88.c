@@ -1,5 +1,5 @@
-extern void *func_0201de44();
+extern void *ShutdownPlayer();
 
 void *func_0201db88() {
-    return func_0201de44();
+    return ShutdownPlayer();
 }

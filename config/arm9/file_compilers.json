@@ -680,5 +680,16 @@
   "libs/nns/snd/auto/NNS_SndPlayerGetSeqNo.c": "dsi/1.1",
   "libs/nns/snd/calls/NNS_SndPlayerReadVariable.c": "dsi/1.1",
   "libs/nns/snd/calls/NNS_SndPlayerWriteVariable.c": "dsi/1.1",
-  "libs/nns/snd/calls/NNSi_SndPlayerInit.c": "dsi/1.1"
+  "libs/nns/snd/calls/NNSi_SndPlayerInit.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndPlayerAllocSeqPlayer.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndPlayerStartSeq.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndPlayerStopSeq.c": "dsi/1.1",
+  "libs/nns/snd/calls/NNSi_SndPlayerAllocHeap.c": "dsi/1.1",
+  "libs/nns/snd/calls/InitPlayer.c": "dsi/1.1",
+  "libs/nns/snd/calls/InsertPlayerList.c": "dsi/1.1",
+  "libs/nns/snd/calls/InsertPrioList.c": "dsi/1.1",
+  "libs/nns/snd/calls/ForceStopSeq.c": "dsi/1.1",
+  "libs/nns/snd/calls/AllocSeqPlayer.c": "dsi/1.1",
+  "libs/nns/snd/calls/ShutdownPlayer.c": "dsi/1.1",
+  "libs/nns/snd/calls/SetPlayerPriority.c": "dsi/1.1"
 }

@@ -4241,27 +4241,59 @@ libs/nns/snd/calls/NNSi_SndPlayerMain.c:
     complete
     .text       start:0x0201d988 end:0x0201daec
 
+libs/nns/snd/calls/NNSi_SndPlayerAllocSeqPlayer.c:
+    complete
+    .text       start:0x0201daec end:0x0201db88
+
 src/calls/func_0201db88.c:
     complete
     .text       start:0x0201db88 end:0x0201db94
+
+libs/nns/snd/calls/NNSi_SndPlayerStartSeq.c:
+    complete
+    .text       start:0x0201db94 end:0x0201dbe4
+
+libs/nns/snd/calls/NNSi_SndPlayerStopSeq.c:
+    complete
+    .text       start:0x0201dbe4 end:0x0201dc34
 
 libs/nns/snd/calls/NNSi_SndPlayerPause.c:
     complete
     .text       start:0x0201dc34 end:0x0201dc5c
 
-libs/nns/snd/calls/func_0201dcfc.c:
+libs/nns/snd/calls/NNSi_SndPlayerAllocHeap.c:
+    complete
+    .text       start:0x0201dc5c end:0x0201dcb4
+
+libs/nns/snd/calls/InitPlayer.c:
+    complete
+    .text       start:0x0201dcb4 end:0x0201dcfc
+
+libs/nns/snd/calls/InsertPlayerList.c:
     complete
     .text       start:0x0201dcfc end:0x0201dd4c
 
-libs/nns/snd/calls/func_0201dda0.c:
+libs/nns/snd/calls/InsertPrioList.c:
+    complete
+    .text       start:0x0201dd4c end:0x0201dda0
+
+libs/nns/snd/calls/ForceStopSeq.c:
     complete
     .text       start:0x0201dda0 end:0x0201ddd8
+
+libs/nns/snd/calls/AllocSeqPlayer.c:
+    complete
+    .text       start:0x0201ddd8 end:0x0201de44
+
+libs/nns/snd/calls/ShutdownPlayer.c:
+    complete
+    .text       start:0x0201de44 end:0x0201dec4
 
 libs/nns/snd/calls/PlayerHeapDisposeCallback.c:
     complete
     .text       start:0x0201dec4 end:0x0201df14
 
-libs/nns/snd/calls/func_0201df14.c:
+libs/nns/snd/calls/SetPlayerPriority.c:
     complete
     .text       start:0x0201df14 end:0x0201df74
 

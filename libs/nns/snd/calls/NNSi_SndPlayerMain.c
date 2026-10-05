@@ -192,10 +192,8 @@ typedef struct NNSSndPlayerHeap {
     int playerNo;
 } NNSSndPlayerHeap;
 extern NNSFndList sSndSeqPlayerList;
-extern void func_0201de44(NNSSndSeqPlayer * seqPlayer);
-extern void func_0201dda0(NNSSndSeqPlayer * seqPlayer);
-extern void func_0201dda0 (NNSSndSeqPlayer * seqPlayer);
-extern void func_0201de44 (NNSSndSeqPlayer * seqPlayer);
+extern void ShutdownPlayer(NNSSndSeqPlayer * seqPlayer);
+extern void ForceStopSeq(NNSSndSeqPlayer * seqPlayer);
 
 /* NNSi_SndPlayerMain -- NitroSystem player.c: NNSi_SndPlayerMain. */
 void NNSi_SndPlayerMain (void)
@@ -219,7 +217,7 @@ void NNSi_SndPlayerMain (void)
 
         if (seqPlayer->startFlag) {
             if ((status & (1 << seqPlayer->playerNo)) == 0) {
-                func_0201de44(seqPlayer);
+                ShutdownPlayer(seqPlayer);
                 continue;
             }
         }
@@ -242,7 +240,7 @@ void NNSi_SndPlayerMain (void)
 
         if (seqPlayer->status == NNS_SND_SEQ_PLAYER_STATUS_FADEOUT) {
             if (NNSi_SndFaderIsFinished(&seqPlayer->fader)) {
-                func_0201dda0(seqPlayer);
+                ForceStopSeq(seqPlayer);
             }
         }
 

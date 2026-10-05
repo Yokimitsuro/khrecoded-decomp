@@ -28,6 +28,7 @@ typedef struct NNSSndFader {
 struct NNSSndSeqPlayer;
 struct NNSSndPlayer;
 struct NNSSndPlayerHeap;
+typedef struct SNDBankData SNDBankData;
 
 typedef struct NNSSndHandle {
     struct NNSSndSeqPlayer *player;
