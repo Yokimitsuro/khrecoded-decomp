@@ -1,5 +1,5 @@
-extern void *func_02011eb8();
+extern void *ClearSlotEventHandler();
 
 void *PXI_Init_02012298() {
-    return func_02011eb8();
+    return ClearSlotEventHandler();
 }

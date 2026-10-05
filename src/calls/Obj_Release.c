@@ -1,9 +1,9 @@
 extern void Slot_UnlinkAll(void *);
-extern void func_0204ef20(void *);
+extern void FreeAndClearNodeList(void *);
 
 int Obj_Release(void *object)
 {
     Slot_UnlinkAll(object);
-    func_0204ef20(object);
+    FreeAndClearNodeList(object);
     return 1;
 }

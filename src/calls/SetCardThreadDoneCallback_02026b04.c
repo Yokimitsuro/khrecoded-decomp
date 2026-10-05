@@ -6,9 +6,9 @@ typedef struct {
 } CardThreadState;
 
 extern CardThreadState data_0205fe00;
-extern void func_020270f4(void);
+extern void OnCardBackupUnlockDone(void);
 
 void SetCardThreadDoneCallback_02026b04(void)
 {
-    data_0205fe00.doneCallback = func_020270f4;
+    data_0205fe00.doneCallback = OnCardBackupUnlockDone;
 }

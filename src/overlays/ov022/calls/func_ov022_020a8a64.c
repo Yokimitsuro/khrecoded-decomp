@@ -1,5 +1,5 @@
-extern void *func_02001504();
+extern void *DestroyFndObjectList();
 
 void *func_ov022_020a8a64() {
-    return func_02001504();
+    return DestroyFndObjectList();
 }

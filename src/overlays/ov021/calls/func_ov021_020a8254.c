@@ -32,7 +32,7 @@ typedef struct NNSG2dUserExCellAttrBank {
     u16 numAttribute;
     NNSG2dUserExCellAttr * pCellAttrArray;
 } NNSG2dUserExCellAttrBank;
-void func_0202eefc(NNSG2dUserExCellAttrBank * pCellAttrBank);
+void ReleaseResourceAndDetach(NNSG2dUserExCellAttrBank * pCellAttrBank);
 
 void func_ov021_020a8254 (void * pExData)
 {
@@ -40,6 +40,6 @@ void func_ov021_020a8254 (void * pExData)
         NNSG2dUserExDataBlock * pBlk = (NNSG2dUserExDataBlock *)pExData;
         NNSG2dUserExCellAttrBank * pCellAttrBank = (NNSG2dUserExCellAttrBank *)(pBlk + 1);
 
-        func_0202eefc(pCellAttrBank);
+        ReleaseResourceAndDetach(pCellAttrBank);
     }
 }

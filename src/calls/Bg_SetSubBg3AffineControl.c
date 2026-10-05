@@ -1,0 +1,12 @@
+extern void SetSubEngineGraphicsModeFromTable(void *ptr);
+extern char data_02055678;
+extern int sBGAreaOver;
+
+void Bg_SetSubBg3AffineControl(int arg0, int arg1, int arg2) {
+    volatile unsigned short *reg_bg3cnt_b = (volatile unsigned short *)0x0400100e;
+    int arg3;
+
+    SetSubEngineGraphicsModeFromTable(&data_02055678);
+    arg3 = sBGAreaOver;
+    *reg_bg3cnt_b = (*reg_bg3cnt_b & 0x43) | (arg0 << 14) | (arg1 << 8) | (arg2 << 2) | (arg3 << 13);
+}

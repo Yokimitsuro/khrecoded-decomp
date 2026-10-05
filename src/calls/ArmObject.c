@@ -1,5 +1,5 @@
-extern int func_020506ac(int arg);
+extern int MultiplyTwoPercentFractions(int arg);
 extern int data_0205fe0c;
 int ArmObject(void) {
-    return func_020506ac(*(int *)&data_0205fe0c);
+    return MultiplyTwoPercentFractions(*(int *)&data_0205fe0c);
 }
