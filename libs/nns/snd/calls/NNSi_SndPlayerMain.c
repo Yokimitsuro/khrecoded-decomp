@@ -191,7 +191,7 @@ typedef struct NNSSndPlayerHeap {
     NNSSndSeqPlayer * player;
     int playerNo;
 } NNSSndPlayerHeap;
-extern NNSFndList data_0205d8ac;
+extern NNSFndList sSndSeqPlayerList;
 extern void func_0201de44(NNSSndSeqPlayer * seqPlayer);
 extern void func_0201dda0(NNSSndSeqPlayer * seqPlayer);
 extern void func_0201dda0 (NNSSndSeqPlayer * seqPlayer);
@@ -207,9 +207,9 @@ void NNSi_SndPlayerMain (void)
 
     status = SND_GetPlayerStatus();
 
-    for (seqPlayer = (NNSSndSeqPlayer *)NNS_FndGetNextListObject(&data_0205d8ac, NULL);
+    for (seqPlayer = (NNSSndSeqPlayer *)NNS_FndGetNextListObject(&sSndSeqPlayerList, NULL);
          seqPlayer != NULL; seqPlayer = next) {
-        next = (NNSSndSeqPlayer *)NNS_FndGetNextListObject(&data_0205d8ac, seqPlayer);
+        next = (NNSSndSeqPlayer *)NNS_FndGetNextListObject(&sSndSeqPlayerList, seqPlayer);
 
         if (!seqPlayer->startFlag) {
             if (func_0200f2c8(seqPlayer->commandTag)) {

@@ -4097,11 +4097,15 @@ libs/nns/g3d/auto/BuildTextureScaleMatrix_.c:
     complete
     .text       start:0x0201d1e0 end:0x0201d228
 
+libs/nns/snd/calls/NNS_SndInit.c:
+    complete
+    .text       start:0x0201d228 end:0x0201d2a4
+
 libs/nns/snd/calls/NNS_SndMain.c:
     complete
     .text       start:0x0201d2a4 end:0x0201d2d4
 
-libs/nns/snd/calls/func_0201d2d4.c:
+libs/nns/snd/calls/BeginSleep.c:
     complete
     .text       start:0x0201d2d4 end:0x0201d30c
 
@@ -4117,37 +4121,77 @@ libs/nns/snd/calls/NNS_SndUnlockChannel.c:
     complete
     .text       start:0x0201d35c end:0x0201d38c
 
-libs/nns/snd/calls/func_0201d38c.c:
+libs/nns/snd/calls/NNS_SndUnlockCapture.c:
     complete
     .text       start:0x0201d38c end:0x0201d3a8
+
+libs/nns/snd/calls/NNS_SndAllocAlarm.c:
+    complete
+    .text       start:0x0201d3a8 end:0x0201d3ec
 
 libs/nitro/snd/calls/SND_ClearChannelBit.c:
     complete
     .text       start:0x0201d3ec end:0x0201d40c
 
-src/calls/func_0201d40c.c:
+libs/nitro/snd/calls/SndCapture_Reset.c:
     complete
     .text       start:0x0201d40c end:0x0201d428
 
-libs/nns/snd/calls/func_0201d428.c:
+libs/nns/snd/calls/NNS_SndPlayerSetPlayableSeqCount.c:
     complete
     .text       start:0x0201d428 end:0x0201d448
 
-libs/nns/snd/calls/func_0201d448.c:
+libs/nns/snd/calls/NNS_SndPlayerSetAllocatableChannel.c:
     complete
     .text       start:0x0201d448 end:0x0201d460
 
-libs/nns/snd/calls/func_0201d604.c:
+libs/nns/snd/calls/NNS_SndPlayerCreateHeap.c:
+    complete
+    .text       start:0x0201d460 end:0x0201d4e4
+
+libs/nns/snd/calls/NNS_SndPlayerStopSeq.c:
+    complete
+    .text       start:0x0201d4e4 end:0x0201d4f4
+
+libs/nns/snd/calls/NNS_SndPlayerStopSeqByPlayerNo.c:
+    complete
+    .text       start:0x0201d4f4 end:0x0201d550
+
+libs/nns/snd/calls/NNS_SndPlayerStopSeqBySeqArcIdx.c:
+    complete
+    .text       start:0x0201d550 end:0x0201d5b4
+
+libs/nns/snd/calls/NNS_SndPlayerStopSeqAll.c:
+    complete
+    .text       start:0x0201d5b4 end:0x0201d5f4
+
+libs/nns/snd/calls/NNS_SndPlayerPause.c:
+    complete
+    .text       start:0x0201d5f4 end:0x0201d604
+
+libs/nns/snd/calls/NNS_SndPlayerPauseByPlayerNo.c:
     complete
     .text       start:0x0201d604 end:0x0201d65c
 
-src/auto/func_0201d6ac.c:
+libs/nns/snd/calls/NNS_SndPlayerPauseAll.c:
+    complete
+    .text       start:0x0201d65c end:0x0201d6ac
+
+libs/nns/snd/auto/Word_Clear.c:
     complete
     .text       start:0x0201d6ac end:0x0201d6b8
 
-libs/nns/snd/calls/func_0201d6d4.c:
+libs/nns/snd/auto/NNS_SndHandleReleaseSeq.c:
+    complete
+    .text       start:0x0201d6b8 end:0x0201d6d4
+
+libs/nns/snd/calls/NNS_SndPlayerCountPlayingSeqByPlayerNo.c:
     complete
     .text       start:0x0201d6d4 end:0x0201d6ec
+
+libs/nns/snd/calls/NNS_SndPlayerCountPlayingSeqBySeqNo.c:
+    complete
+    .text       start:0x0201d6ec end:0x0201d740
 
 libs/nns/snd/auto/func_0201d740.c:
     complete
@@ -4189,7 +4233,7 @@ src/calls/func_0201db88.c:
     complete
     .text       start:0x0201db88 end:0x0201db94
 
-libs/nns/snd/calls/func_0201dc34.c:
+libs/nns/snd/calls/NNSi_SndPlayerPause.c:
     complete
     .text       start:0x0201dc34 end:0x0201dc5c
 
@@ -4201,7 +4245,7 @@ libs/nns/snd/calls/func_0201dda0.c:
     complete
     .text       start:0x0201dda0 end:0x0201ddd8
 
-libs/nns/snd/calls/func_0201dec4.c:
+libs/nns/snd/calls/PlayerHeapDisposeCallback.c:
     complete
     .text       start:0x0201dec4 end:0x0201df14
 
@@ -4257,7 +4301,7 @@ libs/nns/snd/calls/EndSleep.c:
     complete
     .text       start:0x0201e4c8 end:0x0201e538
 
-libs/nns/snd/calls/func_0201e538.c:
+libs/nns/snd/calls/NNSi_SndCaptureInit.c:
     complete
     .text       start:0x0201e538 end:0x0201e558
 
@@ -4265,7 +4309,7 @@ libs/nns/snd/calls/NNSi_SndCaptureMain.c:
     complete
     .text       start:0x0201e558 end:0x0201e5d8
 
-libs/nns/snd/calls/func_0201e6bc.c:
+libs/nns/snd/calls/NNSi_SndCaptureBeginSleep.c:
     complete
     .text       start:0x0201e6bc end:0x0201e714
 

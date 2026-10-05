@@ -1,5 +1,6 @@
-extern struct { int a, b; } data_0205d894;
+#include "libs/nns/snd/snd_internal.h"
 
-void SND_ClearChannelBit(int bit) {
-    data_0205d894.b &= ~(1 << bit);
+void SND_ClearChannelBit(int alarmNo)
+{
+    sSndResourceLocks.alarm &= ~(1 << alarmNo);
 }

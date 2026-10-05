@@ -1,21 +1,17 @@
-typedef struct NNSSndResourceLocks {
-    unsigned int alarm;
-    unsigned int capture;
-    unsigned int channel;
-} NNSSndResourceLocks;
+#include "libs/nns/snd/snd_internal.h"
 
-extern NNSSndResourceLocks data_0205d894;
-extern void SND_LockChannel(unsigned int channelMask, unsigned int flags);
+extern void SND_LockChannel(u32 channelMask, u32 flags);
 
-int NNS_SndLockChannel(unsigned int channelMask)
+int NNS_SndLockChannel(u32 channelMask)
 {
     if (channelMask == 0) {
-        return 1;
+        return TRUE;
     }
-    if ((channelMask & data_0205d894.channel) != 0) {
-        return 0;
+    if ((channelMask & sSndResourceLocks.channel) != 0) {
+        return FALSE;
     }
+
     SND_LockChannel(channelMask, 0);
-    data_0205d894.channel |= channelMask;
-    return 1;
+    sSndResourceLocks.channel |= channelMask;
+    return TRUE;
 }

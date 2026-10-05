@@ -173,7 +173,7 @@ typedef struct NNSSndPlayerHeap {
     NNSSndSeqPlayer * player;
     int playerNo;
 } NNSSndPlayerHeap;
-extern NNSFndList data_0205d8ac;
+extern NNSFndList sSndSeqPlayerList;
 extern void func_0201dcfc(NNSSndPlayer * player, NNSSndSeqPlayer * seqPlayer);
 extern void func_0201dd4c(NNSSndSeqPlayer * seqPlayer);
 extern void func_0201dcfc (NNSSndPlayer * player, NNSSndSeqPlayer * seqPlayer);
@@ -192,7 +192,7 @@ void func_0201df14 (NNSSndSeqPlayer * seqPlayer, int priority)
         seqPlayer->player = NULL;
     }
 
-    NNS_FndRemoveListObject(&data_0205d8ac, seqPlayer);
+    NNS_FndRemoveListObject(&sSndSeqPlayerList, seqPlayer);
 
     seqPlayer->prio = (u8)priority;
 
